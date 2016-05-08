@@ -1,10 +1,10 @@
-#Tipe Data, Identifier, Operator dan Control Statement
+# Tipe Data, Identifier, Operator dan Control Statement
 
-##Tipe Data dan Identifier
+## Tipe Data dan Identifier
 
-Program adalah kumpulan instruksi yang disusun sedemikian rupa sehingga mempunyai urutan nalar yang tepat untuk menyelesaikan suatu persoalan. Instruksi-instruksi yang digunakan dalam pemrograman mengacu pada suatu bahasa pemrograman tertentu, pada buku ini menggunakan bahasa pemrograman C++, sehingga penulisan program pada buku ini mengikuti tata bahasa C++.
+[Program](https://id.wikipedia.org/wiki/Program_komputer) adalah kumpulan instruksi yang disusun sedemikian rupa sehingga mempunyai urutan nalar yang tepat untuk menyelesaikan suatu persoalan. Instruksi-instruksi yang digunakan dalam pemrograman mengacu pada suatu bahasa pemrograman tertentu, pada buku ini menggunakan bahasa pemrograman C++, sehingga penulisan program pada buku ini mengikuti tata bahasa C++.
 
-Segala sesuatu yang diproses oleh program adalah data. Dalam hal ini data adalah elemen-elemen yang digunakan untuk menjelaskan segala sesuatu yang mempunyai besaran (ukuran/ nilai), seperti misalnya umur besarannya bisa berupa biangan desimal 42.5 (maksudnya 42½ tahun), golongan seorang karyawan besarannya bisa berupa sebuah karakter A (maksudnya goongan A) dan sebagainya. Bahasa C++ menyimpan besaran-besaran tersebut di memori utama untuk dikelola oleh program, sehingga perlu dilakukan pengaturan pemakaian memori, oleh karena itu dalam bahasa pemrograman selalu terdapat istilah-istilah yang bernama Tipe Data, Variabel dan Konstanta.
+Segala sesuatu yang diproses oleh program adalah [data](https://id.wikipedia.org/wiki/Data). Dalam hal ini data adalah elemen-elemen yang digunakan untuk menjelaskan segala sesuatu yang mempunyai besaran (ukuran/ nilai), seperti misalnya umur besarannya bisa berupa biangan desimal 42.5 (maksudnya 42½ tahun), golongan seorang karyawan besarannya bisa berupa sebuah karakter A (maksudnya goongan A) dan sebagainya. Bahasa C++ menyimpan besaran-besaran tersebut di memori utama untuk dikelola oleh program, sehingga perlu dilakukan pengaturan pemakaian memori, oleh karena itu dalam bahasa pemrograman selalu terdapat istilah-istilah yang bernama Tipe Data, Variabel dan Konstanta.
 
 Identifier (pengenal) adalah suatu nama yang digunakan program untuk merujuk ke suatu lokasi memori tertentu agar nilai pada lokasi tersebut dapat diakses. Alamat lokasi memori sebenarnya berupa angkaangka heksadesimal, namun pada bahasa pemrograman setingkat C++ (middle level programming language) dan di atasnya, telah mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf atau kata (label) sehingga kita tidak perlu mengetahu alamat yang sesungguhnya dan dengan identifier (label) akan lebih mudah untuk diingat.
 
@@ -21,8 +21,8 @@ Data yang dapat dikelola oleh program bisa bermacam-macam, seperti misalnya bila
 |long int 			|4 bytes 	|–2,147,483,648 to 2,147,483,647
 |int (16 bit)		| 2 bytes 	|–32,768 to 32,767
 |int (32 bit) 		|4 bytes 	|–2,147,483,648 to 2,147,483,647
-|unsigned int (16 bit) |2 bytes 	|0 to 65,535
-|unsigned int (32 bit) |4 bytes 	|0 to 4,294,967,295
+|unsigned int (16 bit) |2 bytes |0 to 65,535
+|unsigned int (32 bit) |4 bytes |0 to 4,294,967,295
 |char 				|1 byte 	|256 character values
 |float 				|4 bytes 	|1.2e–38 to 3.4e38
 |double				| 8 bytes 	|2.2e–308 to 1.8e308
@@ -56,8 +56,7 @@ Perhatikan bahwa kapasitas tidak mempunyai tipe data tertentu (int, char dsb.). 
 
 T> **TIPS**
 T>
-T> Walaupun dengan memakai preprocessor directive #define tampak mudah, namun sebaiknya cara ini
-tidak digunakan, karena sudah dinyatakan usang pada standard C++.
+T> Walaupun dengan memakai preprocessor directive #define tampak mudah, namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang pada standard C++.
 
 Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan memakai kata kunci const seperti berikut :
 
@@ -100,11 +99,9 @@ Dalam bahasa C++, sebuah statement mengontrol urutan pengerjaan eksekusi, mengev
 
 Pernyataan tersebut bukanlah suatu pernyataan persamaan aljabar dalam matematika yang artinya x sama dengan a + b, melainkan memberi nilai x dengan hasil penjumlahan a dengan b. Pada statement ini terjadi 2 urutan pengerjaan, yaitu pertama menambahkan a dengan b, kemudian yang kedua memberikan hasil perhitungan tersebut ke variabel x dengan operator pengerjaan (=). Walaupun pada pernyataan tersebut terdapat 2 pekerjaan, namun merupakan sebuah statement dan oleh karena itu diakhiri hanya dengan sebuah titik koma (;) saja. Hasil penjumlahan a dengan b ini disebut ekspresi, sedangkan sama dengan (=) dan plus (+) dinamakan operator yang akan dibahas berikut ini.
 
-T> CATATAN
-T> Operator pengerjaan “=“ akan mengambil nilai apapun yang ada disebelah kanannya kenudian
-T> memberikannya kepada apapun yang berada di sebelah kirinya.
-T> C++ mengenal juga operator pembanding “==“ yang mempunyai arti berbeda dengan operator sama
-T> dengan “=”, akan dibahas lebih detail pada sub bab berikut ini.
+T> **CATATAN**
+
+T> Operator pengerjaan “=“ akan mengambil nilai apapun yang ada disebelah kanannya kenudian  memberikannya kepada apapun yang berada di sebelah kirinya.  C++ mengenal juga operator pembanding “==“ yang mempunyai arti berbeda dengan operator sama  dengan “=”, akan dibahas lebih detail pada sub bab berikut ini.
 
 ## Operator dan Ekspresi
 
@@ -114,19 +111,19 @@ Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Opera
 |---------|----------|-------------|-------------------
 |Kurung, indeks larik dan elemen struktur data 			| () [] . -> 	|Kiri - Kanan	| 1
 |Operator Unary											| ! ~ - ++ -- 	|Kanan – Kiri 	|2
-|Operator Aritmatika Perkalian,Pembagian dan Sisa Pembagian| * / % 		|Kiri – Kanan	| 3
+|Operator Aritmatika Perkalian, Pembagian dan Sisa Pembagian| * / % 		|Kiri – Kanan	| 3
 |Operator aritmatika Pertambahan dan Pengurangan			| + - 			|Kiri – Kanan	| 4
 |Operator Bitwise Pergeseran Bit 						|<< >> 			|Kiri – Kanan 	|5
 |Operator Hubungan										| < <= > >= 	|Kiri – Kanan 	|6
 |Operator Hubungan Kesamaan dan Ketidaksamaan 			|== != 			|Kiri – Kanan 	|7
 |Operator Bitwise AND 									|& 				|Kiri – Kanan 	|8
 |Operator Bitwise XOR 									|^ 				|Kiri – Kanan 	|9
-|Operator Bitwise OR 									|&#124; 		|Kiri – Kanan 	|10
+|Operator Bitwise OR 									| \| 			|Kiri – Kanan 	|10
 |Operator Kondisi AND 									|&& 			|Kiri – Kanan 	|11
-|Operator Kondisi OR 									|&#124;&#124;	| Kiri – Kanan 	|12
+|Operator Kondisi OR 									| \| \|			| Kiri – Kanan 	|12
 |Operator Ternary 										|? 				| Kanan – Kiri 	|13
-|Operator Pengerjaan Aritmatika 							|= += -= *= /= %= |Kanan – Kiri |14
-|Operator Pengerjaan Bitwise 							|&= ^= &#124;= <<= >>= |Kanan – Kiri |15
+|Operator Pengerjaan Aritmatika 						|= += -= *= /= %= |Kanan – Kiri |14
+|Operator Pengerjaan Bitwise 							|&= ^= \|= <<= >>= |Kanan – Kiri |15
 |Operator Koma											| , 			|Kiri – Kanan 	|16
 
 Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari sebuah variabel maupun kumpulan variabel-variabel yang dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi adalah suatu nilai yang mempunyai besaran dan tipe data tertentu. Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan “panjang * lebar” yang menghasilkan nilai 15, 12 dan 180:
@@ -153,8 +150,7 @@ baru kemudian operator “=”, sehingga yang dilakukan:
 
 T> **TIPS**
 T>
-T> Operator “(“ dan “)” dapat dipakai untuk merubah jenjang suatu ekspresi menjadi jenjang tertinggi,
-sehingga akan diproses terlebih dahulu.
+T> Operator “(“ dan “)” dapat dipakai untuk merubah jenjang suatu ekspresi menjadi jenjang tertinggi, sehingga akan diproses terlebih dahulu.
 
 ### Operator Unary
 
@@ -177,10 +173,13 @@ Operator ini dipakai untuk memberi nilai minus suatu nilai numerik (bukan pengur
 Operator unary “++“ dan “--“ merupakan operator khusus yang ada di bahasa C. Operator “++“ akan menambahkan nilai 1 ke pengenal yang menggunakannya sedangkan operator “--“ akan mengurangi dengan nilai numerik 1. Operator unary tersebut jika dituliskan sebelum operand disebut pre increment sedangkan jika ditulis setelah operand disebut post
 increment. Perhatikan perbedaannya pada contoh dibawah ini :
 
-|Post Increment 			|Pre Increment
-|---------------------------|----------------
-|x = 5;<br>a = x++;			|x = 5;<br>a = ++x;
-|Hasil :<br>x = 6 dan a = 5	|Hasil :<br>x = 6 dan a = 6
+|Post Increment 			|Pre Increment		|
+|---------------------------|-------------------|
+|x = 5;						|x = 5;				|
+|a = x++;					|a = ++x;			|
+|-----------------------------------------------|
+|Hasil :					|Hasil :			|
+|x = 6 dan a = 5			|x = 6 dan a = 6	|
 	
 
 #### Operator Pengerjaan
@@ -191,7 +190,7 @@ Operator pengerjaan atau disebut assignment operator, digunakan untuk menempatka
 |-----------|---------------|------------------
 |= 			|a = b + c 		|Mengerjakan b+c ke a
 |+= 		|a += 1 		|a = a + 1
-|-= 		|a -= b 		|a = a – b
+|-= 			|a -= b 			|a = a – b
 |*= 		|a *= b 		|a = a * b
 |/= 		|a /= b 		|a = a / b
 |%= 		|a %= b 		|a = a % b

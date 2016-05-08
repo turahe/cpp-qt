@@ -1,5 +1,7 @@
 # What's New in Qt 5
 
+Qt 5 merupakan versi terbaru dari Qt Creator yang memungkinkan seoarang pengembang aplikasi mengembagkan aplikasi dengan user interface yang intuitif untuk beberapa platform yang lebih cepat dari yang lainya. 
+
 Qt 5 is the latest version of Qt. It enables developers to develop applications with intuitive user interfaces for multiple targets, faster than ever before. Qt 5 makes it easier to address the latest UI paradigm shifts that touch screens and tablets require.
 
 Developers can be more productive and flexible with the improved support for JavaScript and QML in Qt 5, while still having the C++ foundation and Qt Widget support. HTML5 developers will feel at home with the Web offering that includes Chromium-based Qt WebEngine and Qt [WebChannel](http://doc.qt.io/qt-5/qml-qtwebchannel-webchannel.html).

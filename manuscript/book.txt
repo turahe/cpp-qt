@@ -1,3 +1,8 @@
-chapter1.txt
-chapter2.md
-chapter3.md
+01-pengenalan.md
+02-tipedata.md
+03-array-string.md
+04-fuction.md
+05-pointer-referensi.md
+06-class-object.md
+07-penurunan.md
+08-polymorphism.md

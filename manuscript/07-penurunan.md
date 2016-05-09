@@ -3,36 +3,23 @@
 
 ## Pewarisan (Inheritance)
 
-Pemrograman Berorientasi Objek mempunyai fitur penting yang memudahkan pemrogram dalam
-membuat program yaitu pewarisan (inheritance). Aspek penting pewarisan dalam pemrograman
-berorientasi objek adalah pemakaian kode program yang sudah ada (code reuse), yang akan dibahas
-pada bab ini dan polimorfisme (polymorhism) yang akan dibahas pada bab berikutnya.
-Kelas yang sudah ada dapat digunakan lagi untuk dikembangkan menjadi kelas yang baru, dalam hal ini
-kelas yang sudah ada dinamakan kelas dasar (base class) sedang kelas baru yang akan dibuat dinamakan
-kelas turunan (derived class). Dengan demikian, semua anggota kelas dasar yang tidak bersifat privat
-akan diwarisi oleh kelas turunannya dan pemrogram tinggal menambahkan anggota-anggota baru
-untuk menambahkan fungsionalitas kelas tersebut.
+Pemrograman Berorientasi Objek mempunyai fitur penting yang memudahkan pemrogram dalam membuat program yaitu pewarisan (inheritance). Aspek penting pewarisan dalam pemrograman berorientasi objek adalah pemakaian kode program yang sudah ada (code reuse), yang akan dibahas pada bab ini dan polimorfisme (polymorhism) yang akan dibahas pada bab berikutnya. Kelas yang sudah ada dapat digunakan lagi untuk dikembangkan menjadi kelas yang baru, dalam hal ini kelas yang sudah ada dinamakan kelas dasar (base class) sedang kelas baru yang akan dibuat dinamakan kelas turunan (derived class). Dengan demikian, semua anggota kelas dasar yang tidak bersifat privat akan diwarisi oleh kelas turunannya dan pemrogram tinggal menambahkan anggota-anggota baru untuk menambahkan fungsionalitas kelas tersebut.
 
 ## Penulisan Penurunan
 
-Untuk membuat kelas turunan dapat dilakukan dengan cara sama seperti mendeklarasikan kelas biasa
-dengan menambahkan titik dua (:) setelah nama kelas dan diikuti dengan jenis penurunan (public dsb.)
-dan nama kelas dasar yang akan diturunkan, bentuk umum adalah seperti berikut:
+Untuk membuat kelas turunan dapat dilakukan dengan cara sama seperti mendeklarasikan kelas biasa dengan menambahkan titik dua (:) setelah nama kelas dan diikuti dengan jenis penurunan (public dsb.) dan nama kelas dasar yang akan diturunkan, bentuk umum adalah seperti berikut:
 
 	class <kelas_turunan> : <jenis_penurunan> <kelas_dasar>
 
-Sebagai contoh misalnya akan dibuat kelas turunan Silinder dari kelas dasar Lingkaran, maka dapat
-dituliskan :
+Sebagai contoh misalnya akan dibuat kelas turunan Silinder dari kelas dasar Lingkaran, maka dapat dituliskan :
 
 	class Silinder : public Lingkaran
 
-Mengenai jenis akses public ini akan dibahas nanti, sekarang kita akan memakai public. Kelas dasar
-yang akan diturunkan harus sudah dideklarasikan lebih dahulu, jika tidak maka kita akan menjumpai
-pesan kesalahan kompiler.
+Mengenai jenis akses public ini akan dibahas nanti, sekarang kita akan memakai public. Kelas dasar yang akan diturunkan harus sudah dideklarasikan lebih dahulu, jika tidak maka kita akan menjumpai pesan kesalahan kompiler.
 
 Labs.1 Contoh Pewarisan (Inheritance).
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs1, kemudian
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs1, kemudian
 tulis kode berikut.
 
 	#include <QtCore/QCoreApplication>
@@ -79,41 +66,23 @@ tulis kode berikut.
 	return a.exec();
 	}
 
-2. Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai
-berikut.
+Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 Analisa Program :
 
-- Pada program diatas sudah dibuat kelas Lingkaran, dengan variabel anggota radius bertipe
-float dan fungsi anggota getLuas() yang mengemalikan nilai float.
-- Kelas kedua adalah Silinder yang merupakan turunan dari kelas Laingkaran, oleh karena itu
-deklarasi dituliskan : class Silinder : Lingkaran, dengan demikian kelas Silinder akan
-mewarisi anggota kelas Lingkaran yang tidak private, yaitu : variabel anggota radius bertipe
-float dan fungsi anggota getLuas() yang mengemalikan nilai float.
-
-- Tampak pada kelas Silinder ditambahkan variabel anggota tinggi bertipe float dan fungsi
-anggota getVolume() yang mengembalikan nilai float. Ini memberikan contoh penambahan
-fungsionalitas dari kelas yang sudah ada.
-- Pada fungsi anggota getVolume() pada kelas Silinder, nilai kembalian dirumuskan return
-getLuas() * tinggi, ini menjelaskan bahwa fungsi getLuas() tersebut sekarang juga
-menjadi milik kelas Silinder (mendapat warisan).
-- Pada hasil eksekusi, tampak bahwa fungsi getVolume() menghitung (3.14 * 50 * 50 )* 125
-dan menghasilkan nilai 981250. Ini berarti perhitungan getLuas() memakai fungsi anggota
-milik kelas Lingkaran yang diwariskan kepada kelas Silinder.
+- Pada program diatas sudah dibuat kelas Lingkaran, dengan variabel anggota radius bertipe float dan fungsi anggota getLuas() yang mengemalikan nilai float.
+- Kelas kedua adalah Silinder yang merupakan turunan dari kelas Laingkaran, oleh karena itu deklarasi dituliskan : class Silinder : Lingkaran, dengan demikian kelas Silinder akan mewarisi anggota kelas Lingkaran yang tidak private, yaitu : variabel anggota radius bertipe float dan fungsi anggota getLuas() yang mengemalikan nilai float.
+- Tampak pada kelas Silinder ditambahkan variabel anggota tinggi bertipe float dan fungsi anggota getVolume() yang mengembalikan nilai float. Ini memberikan contoh penambahan fungsionalitas dari kelas yang sudah ada.
+- Pada fungsi anggota getVolume() pada kelas Silinder, nilai kembalian dirumuskan return getLuas() * tinggi, ini menjelaskan bahwa fungsi getLuas() tersebut sekarang juga menjadi milik kelas Silinder (mendapat warisan).
+- Pada hasil eksekusi, tampak bahwa fungsi getVolume() menghitung (3.14 * 50 * 50 )* 125 dan menghasilkan nilai 981250. Ini berarti perhitungan getLuas() memakai fungsi anggota milik kelas Lingkaran yang diwariskan kepada kelas Silinder.
 
 ## Jenis Akses Penurunan Kelas
 
-Deklarasi kelas Silinder di atas adalah : class Silinder : public Lingkaran, ini berarti semua
-anggota yang bersifat public dan protected dari kelas Lingkaran akan diwariskan kepada kelas
-Silinder dan pada kelas Silinder anggota-anggota warisan tersebut akan tetap mempunyai jenis
-akses seperti itu. Namun jika modifier akses public dihilangkan maka berarti pewarisan memakai jenis
-akses private, sebab secara default C++ memakai jenis akses private jika modifer akses
-tidak dituliskan. Jika ini terjadi, maka akan terjadi perubahan modifier akses terhadap anggotaanggota warisan tersebut di dalam kelas Silinder, yaitu semua anggota yang diwariskan (baik berjenis
-public maupun protected) akan berubah menjadi private di dalam kelas Silinder.
+Deklarasi kelas Silinder di atas adalah : class Silinder : public Lingkaran, ini berarti semua anggota yang bersifat public dan protected dari kelas Lingkaran akan diwariskan kepada kelas Silinder dan pada kelas Silinder anggota-anggota warisan tersebut akan tetap mempunyai jenis akses seperti itu. Namun jika modifier akses public dihilangkan maka berarti pewarisan memakai jenis akses private, sebab secara default C++ memakai jenis akses private jika modifer akses tidak dituliskan. Jika ini terjadi, maka akan terjadi perubahan modifier akses terhadap anggotaanggota warisan tersebut di dalam kelas Silinder, yaitu semua anggota yang diwariskan (baik berjenis public maupun protected) akan berubah menjadi private di dalam kelas Silinder.
 
 Labs.2 Jenis Akses Public Pada Penurunan
 
-1. Buka project Labs1 di atas, kemudian tambahkan (edit) kode berikut pada fungsi main() :
+Buka project Labs1 di atas, kemudian tambahkan (edit) kode berikut pada fungsi main() :
 
 	cout << "Milik Base Class --> " << drum.getLuas() << endl;
 	int main(int argc, char *argv[])
@@ -125,17 +94,13 @@ Labs.2 Jenis Akses Public Pada Penurunan
 	return a.exec();
 	}
 
-2. Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai
-berikut.
+Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 Analisa Program :
 
-- Tampak pada program dapat mengakses metode warisan kelas Lingkaran dari dalam
-program utama (main()). Ini menunjukkan bahwa metode tersebut diwariskan ke kelas
-Silinder dan jenis aksesnya masih tetap sama yaitu public.
+- Tampak pada program dapat mengakses metode warisan kelas Lingkaran dari dalam program utama (main()). Ini menunjukkan bahwa metode tersebut diwariskan ke kelas Silinder dan jenis aksesnya masih tetap sama yaitu public.
 
-3. Kemudian hapuslah jenis akses penurunan public (atau gantilah dengan private) pada
-deklarasi kelas Silinder yang tadinya:
+Kemudian hapuslah jenis akses penurunan public (atau gantilah dengan private) pada deklarasi kelas Silinder yang tadinya:
 
 	class Silinder : public Lingkaran
 
@@ -143,38 +108,24 @@ Sehingga menjadi:
 
 	class Silinder : Lingkaran
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka tidak akan ada output
-karena terjadi kesalahan kompilasi sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka tidak akan ada output karena terjadi kesalahan kompilasi sebagai berikut.
 
 Analisa Program :
 
-- Tampak pada program metode warisan kelas Lingkaran bernama getLuas() tidak dapat
-diakses dari dalam program utama (main()). Hal ini disebabkan karena metode tersebut
-ketika diwariskan ke kelas Silinder jenis aksesnya berubah menjadi private, yang berarti
-diwariskan akan tetapi hanya dapat diakses dari dalam kelas Silinder, akibatnya ketika akan
-diakses dari program utama (main()), terjadi kesalahan kompilasi seperti di atas.
+- Tampak pada program metode warisan kelas Lingkaran bernama getLuas() tidak dapat diakses dari dalam program utama (main()). Hal ini disebabkan karena metode tersebut ketika diwariskan ke kelas Silinder jenis aksesnya berubah menjadi private, yang berarti diwariskan akan tetapi hanya dapat diakses dari dalam kelas Silinder, akibatnya ketika akan diakses dari program utama (main()), terjadi kesalahan kompilasi seperti di atas.
 
 Berikut ini adalah perubahan jenis akses anggota dari kelas dasar ke kelas turunan berdasarkan jenis
 akses penurunan:
 
-
-
 TIPS
 
-Pada umumnya jenis akses penurunan adalah public, oleh karena itu biasakan menuliskan jenis akses
-public ketika akan menurunakan suatu kelas.
+Pada umumnya jenis akses penurunan adalah public, oleh karena itu biasakan menuliskan jenis akses public ketika akan menurunakan suatu kelas.
 
 ## Warisan
 
 Anggota-anggota kelas (member variable dan member function) mempunyai jenis akses private,
 
-protected dan public, jika tidak dituliskan pada deklarasi anggota tersebut maka akan digunakan jenis
-akses private. Dalam hal pewarisan (inheritance) pada pemrograman berorientasi objek, seperti sudah
-dijelaskan di atas bahwa anggota yang diwariskan adalah anggota dengan jenis akses public atau
-protected. Jenis akses public pada suatu anggota artinya bahwa anggota tersebut dapat diakses dari
-manapun dan akan diwariskan jika kelas tersebut diturunkan, sedangkan jenis akses protected berarti
-anggota tersebut diwariskan kepada kelas turunannya dan hanya bisa diakses dari dalam kelas turunan
-tersebut. Berikut ini adalah tabel yang menjelaskan jenis akses dan aksesibilitas suatu anggota:
+protected dan public, jika tidak dituliskan pada deklarasi anggota tersebut maka akan digunakan jenis akses private. Dalam hal pewarisan (inheritance) pada pemrograman berorientasi objek, seperti sudah dijelaskan di atas bahwa anggota yang diwariskan adalah anggota dengan jenis akses public atau protected. Jenis akses public pada suatu anggota artinya bahwa anggota tersebut dapat diakses dari manapun dan akan diwariskan jika kelas tersebut diturunkan, sedangkan jenis akses protected berarti anggota tersebut diwariskan kepada kelas turunannya dan hanya bisa diakses dari dalam kelas turunan tersebut. Berikut ini adalah tabel yang menjelaskan jenis akses dan aksesibilitas suatu anggota:
 
 Aksesibilitas 						|public |protected |private
 ------------------------------------|----------------
@@ -182,31 +133,19 @@ Dari dalam kelas itu sendiri		|Ya 	Ya 		|Ya
 Dari kelas beda turunan 			|Ya 	Ya 		|Tidak
 Dari kelas beda tetapi bukan turunan |Ya 	Tidak 	|Tidak
 
-Perlu diketahui bahwa konstruktor dan destruktor tidak diwariskan. Hal ini bisa dimaklumi, sebab
-konstruktor bekerja spesifik untuk kelas tersebut. Pada C++ jelas bahwa nama konstruktor sama dengan
-nama kelasnya, karena nama kelas turunan tidak mungkin sama dengan nama kelas dasar, maka tidak
-mungkin konstruktor kelas dasar juga merupakan konstruktor kelas turunan.
+Perlu diketahui bahwa konstruktor dan destruktor tidak diwariskan. Hal ini bisa dimaklumi, sebab konstruktor bekerja spesifik untuk kelas tersebut. Pada C++ jelas bahwa nama konstruktor sama dengan nama kelasnya, karena nama kelas turunan tidak mungkin sama dengan nama kelas dasar, maka tidak mungkin konstruktor kelas dasar juga merupakan konstruktor kelas turunan.
 
-Namun demikian, pada konteks pewarisan, perlu diketahui bahwa itu tidak berarti konstruktor kelas
-dasar dapat diabaikan, sebab bagaimanapun juga dalam pembentukan objek konstruktor suatu kelas
-pasti bekerja (oleh karena itu diberi nama “konstruktor” yang artinya pembentuk). Berikut ini hal-hal
-yang perlu diperhatikan pada pewarisan mengenai konstruktor:
+Namun demikian, pada konteks pewarisan, perlu diketahui bahwa itu tidak berarti konstruktor kelas dasar dapat diabaikan, sebab bagaimanapun juga dalam pembentukan objek konstruktor suatu kelas pasti bekerja (oleh karena itu diberi nama “konstruktor” yang artinya pembentuk). Berikut ini hal-hal yang perlu diperhatikan pada pewarisan mengenai konstruktor:
 
 ### Tiap Kelas Mempunyai Konstruktor
 
-Tidak ada kelas yang tidak mempunyai konstruktor. Adalah benar bahwa secara eksplisit kita bisa
-menuliskan sebuah kelas tanpa mendeklarasikan konstruktor sama sekali, namun itu tidak berarti bahwa
-kelas tersebut tidak mempunyai kontruktor, sebab sebenarnya yang dieksekusi oleh komputer bukan
-kode program yang kita tulis tersebut, melainkan hasil kompilasi dari kode program tersebut. Pada
-waktu dikompilasi, kompiler akan menambahkan konstruktor tanpa parameter yang tidak melakukan
-apa-apa seperti berikut:
+Tidak ada kelas yang tidak mempunyai konstruktor. Adalah benar bahwa secara eksplisit kita bisa menuliskan sebuah kelas tanpa mendeklarasikan konstruktor sama sekali, namun itu tidak berarti bahwa kelas tersebut tidak mempunyai kontruktor, sebab sebenarnya yang dieksekusi oleh komputer bukan kode program yang kita tulis tersebut, melainkan hasil kompilasi dari kode program tersebut. Pada waktu dikompilasi, kompiler akan menambahkan konstruktor tanpa parameter yang tidak melakukan apa-apa seperti berikut:
 
 	<nama_kelas>(){}
 
 Labs.3 Konstruktor default
 
-1. Buka Qt Creator, buat project Qt Console Application dengan nama Labs3. Kemudian tulis kode
-berikut.
+Buka Qt Creator, buat project Qt Console Application dengan nama Labs3. Kemudian tulis kode berikut.
 
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
@@ -234,26 +173,13 @@ di atas, outputnya adalah sebagai berikut.
 
 Analisa Program:
 
-- Pada contoh program ini tampak bahwa ada konstruktor maupun tidak ada konstruktor
-program di atas tetap bisa dijalankan dan tidak ada perbedaan sama sekali. Hal ini
-disebabkan oleh karena jika suatu kelas tidak mempunyai kontruktor, maka secara otomatis
-kompiler akan menambahkan konstruktor default (yaitu konstruktor tanpa parameter dan
-tanpa program apapun) pada hasil kompilasi, jadi pada contoh program di atas hasil
-kompilasi dengan atau tanpa konstruktor adalah tetap sama
-.
+- Pada contoh program ini tampak bahwa ada konstruktor maupun tidak ada konstruktor program di atas tetap bisa dijalankan dan tidak ada perbedaan sama sekali. Hal ini disebabkan oleh karena jika suatu kelas tidak mempunyai kontruktor, maka secara otomatis kompiler akan menambahkan konstruktor default (yaitu konstruktor tanpa parameter dan tanpa program apapun) pada hasil kompilasi, jadi pada contoh program di atas hasil kompilasi dengan atau tanpa konstruktor adalah tetap sama.
+
 ### Konstruktor Kelas Turunan Pasti Memanggil Konstruktor Kelas Dasar
 
-Seperti dijelaskan di atas bahwa tidak ada kelas yang tidak mempunyai konstruktor, demikian juga
-dengan kelas turunan. Pada waktu ada pembentukan suatu objek dari suatu kelas turunan, secara
-otomatis ada terlebih dahulu pembentukan objek kelas dasarnya karena harus ada anggota-anggota
-yang diwariskan, dengan demikian bisa dimengerti bahwa konstruktor kelas turunan pasti memanggil
-konstruktor kelas dasarnya.
+Seperti dijelaskan di atas bahwa tidak ada kelas yang tidak mempunyai konstruktor, demikian juga dengan kelas turunan. Pada waktu ada pembentukan suatu objek dari suatu kelas turunan, secara otomatis ada terlebih dahulu pembentukan objek kelas dasarnya karena harus ada anggota-anggota yang diwariskan, dengan demikian bisa dimengerti bahwa konstruktor kelas turunan pasti memanggil konstruktor kelas dasarnya.
 
-Sama seperti pada penulisan kelas biasa, pada kelas turunan juga bisa tidak dituliskan konstruktor
-secara eksplisit dan pada kasus ini pada saat kompilasi kompiler akan menambahkan konstruktor kosong
-tanpa parameter. Namun bentuk konstruktor kosong pada kelas turunan berbeda dengan konstruktor
-kosong kelas biasa, karena pada konstruktor kosong kelas turunan akan memanggil konstruktor kosong
-kelas dasarnya.
+Sama seperti pada penulisan kelas biasa, pada kelas turunan juga bisa tidak dituliskan konstruktor secara eksplisit dan pada kasus ini pada saat kompilasi kompiler akan menambahkan konstruktor kosong tanpa parameter. Namun bentuk konstruktor kosong pada kelas turunan berbeda dengan konstruktor kosong kelas biasa, karena pada konstruktor kosong kelas turunan akan memanggil konstruktor kosong kelas dasarnya.
 
 Labs.4 Konstruktor default kelas turunan
 
@@ -285,21 +211,13 @@ isi konstruktor kelas Kelasku dan tambahkan kelas Turunan berikut.
 2. Tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai berikut.
 Analisa Program:
 
-- Pada contoh program ini tampak bahwa tidak ada objek yang dibuat dari kelas dasar, namun
-jika dilihat hasil eksekusinya, konstruktor yang dijalankan adalah konstruktor kelas dasar. Ini
-berarti bahwa ada pemanggilan kontruktor kelas dasar, yaitu pada waktu pembentukan
-objek kelas Turunan.
-- Berdasarkan kenyataan bahwa tiap kelas pasti punya kontruktor, maka ini berarti kelas
-Turunan juga mempunyai kontruktor namun konstruktor tersebut di dalamnya ada
-pemanggilan kontruktor kelas dasarnya.
-- Dari percobaan ini, bisa disimpulkan bahwa pada saat dikompilasi, karena kelas turunan
-secara eksplisit tidak dituliskan konstruktor, maka kompiler akan menambahakan konstukor
-kosong tanpa parameter yang memanggil konstruktor kelas dasarnya seperti berikut :
+- Pada contoh program ini tampak bahwa tidak ada objek yang dibuat dari kelas dasar, namun jika dilihat hasil eksekusinya, konstruktor yang dijalankan adalah konstruktor kelas dasar. Ini berarti bahwa ada pemanggilan kontruktor kelas dasar, yaitu pada waktu pembentukan objek kelas Turunan.
+- Berdasarkan kenyataan bahwa tiap kelas pasti punya kontruktor, maka ini berarti kelas Turunan juga mempunyai kontruktor namun konstruktor tersebut di dalamnya ada pemanggilan kontruktor kelas dasarnya.
+- Dari percobaan ini, bisa disimpulkan bahwa pada saat dikompilasi, karena kelas turunan secara eksplisit tidak dituliskan konstruktor, maka kompiler akan menambahakan konstukor kosong tanpa parameter yang memanggil konstruktor kelas dasarnya seperti berikut :
 
 	Turunan():Kelasku(){} //<-- Konstruktor default kelas Turunan
 
-Karakteristik konstruktor kelas turunan ini penting untuk dipahami, karena kadang-kadang kita lupa
-bahwa pada pembuatan kelas turunan pasti di dalamnya ada pemanggilan konstruktor kelas dasarnya.
+Karakteristik konstruktor kelas turunan ini penting untuk dipahami, karena kadang-kadang kita lupa bahwa pada pembuatan kelas turunan pasti di dalamnya ada pemanggilan konstruktor kelas dasarnya.
 
 Labs.5 Konstruktor default kelas turunan memanggil konstruktor kelas dasar
 
@@ -392,19 +310,9 @@ dengan pesan kesalahan kompilasi sebagai berikut.
 
 Analisa Program:
 
-- Pada program ini mencoba untuk menghindari pemanggilan kontruktor kelas dasar dengan
-cara membuat sendiri konstruktor pada kelas Turunan yang tidak memanggil konstuktor
-kelas dasar. Namun tetap saja kompiler memberikan pesan kesalahan yang sama, yaitu :
-no maching function call to ‘Kelasku::Kelasku()’
-Padahal jelas pada konstruktor yang ditulis pada kelas Turunan sama sekali tidak pernah
-memanggil konstruktor tanpa kelas dasar parameter tersebut. Percobaan ini membuktikan
-bahwa bagaimanapun juga pada kelas turunan, konstruktor kelas dasar pasti dipanggil, dan
-jika secara eksplisit tidak dituliskan pemanggilan konstruktor kelas dasar, maka kompiler
-akan menambahkan pemanggilan konstruktor default (konstruktor tanpa parameter) pada
-kelas dasar.
+- Pada program ini mencoba untuk menghindari pemanggilan kontruktor kelas dasar dengan cara membuat sendiri konstruktor pada kelas Turunan yang tidak memanggil konstuktor kelas dasar. Namun tetap saja kompiler memberikan pesan kesalahan yang sama, yaitu : no maching function call to ‘Kelasku::Kelasku()’ Padahal jelas pada konstruktor yang ditulis pada kelas Turunan sama sekali tidak pernah memanggil konstruktor tanpa kelas dasar parameter tersebut. Percobaan ini membuktikan bahwa bagaimanapun juga pada kelas turunan, konstruktor kelas dasar pasti dipanggil, dan jika secara eksplisit tidak dituliskan pemanggilan konstruktor kelas dasar, maka kompiler akan menambahkan pemanggilan konstruktor default (konstruktor tanpa parameter) pada kelas dasar.
 
-3. Sekarang ubahlah konstruktor kelas Turunan, agar secara eksplisit memanggil konstuktor yang
-ada pada kelas dasar seperti berkut :
+Sekarang ubahlah konstruktor kelas Turunan, agar secara eksplisit memanggil konstuktor yang ada pada kelas dasar seperti berkut :
 	
 	class Turunan : public Kelasku{
 	public:
@@ -412,39 +320,21 @@ ada pada kelas dasar seperti berkut :
 	Turunan():Kelasku("Hallo.. :-)"){}
 	};
 
-Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output karena ada kesalahan
-dengan pesan kesalahan kompilasi sebagai berikut.
+Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
 
 Analisa Program:
 
-- Pada program ini sekarang kelas Turunan mempunyai konstruktor yang memanggil
-konstruktor kelas dasar. Karena pada kelas dasar hanya mempunyai sebuah konstruktor
-dengan satu parameter bertipe string yang tanpa nilai default, maka yang dipanggil adalah
-konstruktor dengan sebuah parameter bertipe string.
-- Dengan demikian perlu selalu diingat, bahwa konstuktor kelas turunan harus memanggil
-salah satu konstruktor kelas dasar, jika tidak dilakukan maka kompiler akan menambahkan
-pemanggilan konstruktor default kelas dasar.
-Mengganti Metode Kelas Dasar Pada Kelas Turunan (Overriding)
-Ada kalanya kelas turunan mempunyai implementasi lain untuk nama metode yang sama dengan kelas
-dasarnya. Sebagai contoh misalnya, kelas Lingkaran mempunyai implementasi (rumus) menghitung luas
-pada metode getLuas() adalah : 3.14 * radius * radius, sedangkan kelas turunannya, mislanya Silinder
-mempunyai luas pada metode getLuas() yang terdiri dari dua luas tutup dan luas selimut dengan rumus
-2 * (3.14 * radius * radius) + (2 * 3.14 * radius) * tinggi seperti gambar ilustrasi berikut:
+- Pada program ini sekarang kelas Turunan mempunyai konstruktor yang memanggil konstruktor kelas dasar. Karena pada kelas dasar hanya mempunyai sebuah konstruktor dengan satu parameter bertipe string yang tanpa nilai default, maka yang dipanggil adalah konstruktor dengan sebuah parameter bertipe string.
+- Dengan demikian perlu selalu diingat, bahwa konstuktor kelas turunan harus memanggil salah satu konstruktor kelas dasar, jika tidak dilakukan maka kompiler akan menambahkan pemanggilan konstruktor default kelas dasar.
+Mengganti Metode Kelas Dasar Pada Kelas Turunan (Overriding) Ada kalanya kelas turunan mempunyai implementasi lain untuk nama metode yang sama dengan kelas dasarnya. Sebagai contoh misalnya, kelas Lingkaran mempunyai implementasi (rumus) menghitung luas pada metode getLuas() adalah : 3.14 * radius * radius, sedangkan kelas turunannya, mislanya Silinder mempunyai luas pada metode getLuas() yang terdiri dari dua luas tutup dan luas selimut dengan rumus 2 * (3.14 * radius * radius) + (2 * 3.14 * radius) * tinggi seperti gambar ilustrasi berikut:
 
-Dengan demikian kelas turunan Silinder harus membuat implementasi yang berbeda untuk metode
-getLuas() supaya hasil dari metode tersebut sesuai dengan objek Silinder. Membuat metode yang sama
-dengan metode milik kelas dasarnya dinamakan Overriding (override artinya mengesampingkan, atau
-boleh juga dikatakan menimpa) dengan demikian metode yang dipanggil untuk objek dari kelas Silinder
-adalah metode yang baru yang ditulis pada kelas Silinder.
+Dengan demikian kelas turunan Silinder harus membuat implementasi yang berbeda untuk metode getLuas() supaya hasil dari metode tersebut sesuai dengan objek Silinder. Membuat metode yang sama dengan metode milik kelas dasarnya dinamakan Overriding (override artinya mengesampingkan, atau boleh juga dikatakan menimpa) dengan demikian metode yang dipanggil untuk objek dari kelas Silinder adalah metode yang baru yang ditulis pada kelas Silinder.
 
-Suatu metode bisa dikatakan override dari metode kelas dasarnya jika memenuhi 2 syarat, yaitu nama
-metode dan signature dari metode tersebut sama. Signature artinya daftar parameter yang ada pada
-metode, yaitu banyaknya parameter maupun tipe data dari masing-masing parameter tersebut.
+Suatu metode bisa dikatakan override dari metode kelas dasarnya jika memenuhi 2 syarat, yaitu nama metode dan signature dari metode tersebut sama. Signature artinya daftar parameter yang ada pada metode, yaitu banyaknya parameter maupun tipe data dari masing-masing parameter tersebut.
 
 Labs.7 Melakukan Overriding
 
-1. Buka project Qt Console Application projek Labs.1 yang tadi sudah dibuat, kemudian ubah kode
-menjadi seperti berikut
+Buka project Qt Console Application projek Labs.1 yang tadi sudah dibuat, kemudian ubah kode menjadi seperti berikut
 
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
@@ -511,31 +401,14 @@ Bandingkan dengan hasil keluaan pada program di Lab.1. seperti berikut :
 
 Analisa:
 
-- Pada program ini, pembuatan objek dilakukan dengan memberikan nilai radius=50 dan
-tinggi = 125, ini tampak pada program utama (main()) : Silinder drum(50,125), sama
-dengan ketika membuat objek pada Lab.1. Namun tampak pada hasil eksekusi, Luas Silinder
-
-adalah 54950 Cm2 karena menggunakan rumus baru, tetapi pada keluaran Milik Base Class
-nilainya juga sama yaitu 54950, dan akibatnya volume drum yang seharusnya 981250 Cm3
-manjadi 6.86875e+006 Cm3. Ini semua terjadi karena pada kelas Silinder tidak lagi memakai
-rumus getLuas() milik kelas dasarnya. Pada satu sisi getLuas() pada kelas Silinder sudah
-benar, sesuai dengan yang diharapkan, namun ketika metode getVolume() menghitung
-volume memakai metode getLuas(), ternyata sudah berubah menjadi rumus luas Silinder
-yang akibatnya perhitungan volume menjadi sangat besar (salah).
-- Walaupun pada kasus ini menimbulkan masalah, tetapi percobaan ini memperlihatkan
-adanya overriding terhadap metode milik kelas dasar.
+- Pada program ini, pembuatan objek dilakukan dengan memberikan nilai radius=50 dan tinggi = 125, ini tampak pada program utama (main()) : Silinder drum(50,125), sama dengan ketika membuat objek pada Lab.1. Namun tampak pada hasil eksekusi, Luas Silinder adalah 54950 Cm2 karena menggunakan rumus baru, tetapi pada keluaran Milik Base Class nilainya juga sama yaitu 54950, dan akibatnya volume drum yang seharusnya 981250 Cm3 manjadi 6.86875e+006 Cm3. Ini semua terjadi karena pada kelas Silinder tidak lagi memakai rumus getLuas() milik kelas dasarnya. Pada satu sisi getLuas() pada kelas Silinder sudah benar, sesuai dengan yang diharapkan, namun ketika metode getVolume() menghitung volume memakai metode getLuas(), ternyata sudah berubah menjadi rumus luas Silinder yang akibatnya perhitungan volume menjadi sangat besar (salah).
+- Walaupun pada kasus ini menimbulkan masalah, tetapi percobaan ini memperlihatkan adanya overriding terhadap metode milik kelas dasar.
 
 ## Memanggil Metode Kelas Dasar
 
-Pada kasus Lab.7 di atas sebenarnya metode getLuas() masih dibutuhkan pada kelas Silinder untuk
-menghitung volume (getVolume()), bahkan sebenarnya untuk menghitung luas tutup, yang sebenarnya
-juga luas lingkaran, masih membutuhkan metode getLuas() milik kelas dasar Lingkaran. Namun karena
-adanya kebutuhan yang berbeda pada kelas Silinder untuk menghitung luasnya maka dilakukan
-overriding terhadap metode getLuas(). Untuk mengatasi hal ini diperlukan suatu cara untuk tetap dapat
-mengakses anggota milik kelas dasar, yaitu dengan cara menyebutkan nama kelas dasar kemudian
-diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
+Pada kasus Lab.7 di atas sebenarnya metode getLuas() masih dibutuhkan pada kelas Silinder untuk menghitung volume (getVolume()), bahkan sebenarnya untuk menghitung luas tutup, yang sebenarnya juga luas lingkaran, masih membutuhkan metode getLuas() milik kelas dasar Lingkaran. Namun karena adanya kebutuhan yang berbeda pada kelas Silinder untuk menghitung luasnya maka dilakukan overriding terhadap metode getLuas(). Untuk mengatasi hal ini diperlukan suatu cara untuk tetap dapat mengakses anggota milik kelas dasar, yaitu dengan cara menyebutkan nama kelas dasar kemudian diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
 
-<kelas_dasar>::<anggota>
+	<kelas_dasar>::<anggota>
 
 Labs.8 Mengakses metode kelas dasar
 
@@ -568,24 +441,13 @@ program yang mengalami perubahan saja:
 Bagian yang diubah
 
 Analisa:
-- Sekarang keluaran “Luas Silinder” dengan “Milik Base Class” berbeda, yaitu 54950
-sedangkan “Milik Base Class” yang menghitung luas lingkaran adalah 7850. Walaupun
-keduanya sama-sama memanggil metode getLuas(), namun metode yang dipanggil pada
-“Milik Base Class” adalah metode milik kelas Lingkaran, yaitu dengan cara penulisan nama
+- Sekarang keluaran “Luas Silinder” dengan “Milik Base Class” berbeda, yaitu 54950 sedangkan “Milik Base Class” yang menghitung luas lingkaran adalah 7850. Walaupun keduanya sama-sama memanggil metode getLuas(), namun metode yang dipanggil pada “Milik Base Class” adalah metode milik kelas Lingkaran, yaitu dengan cara penulisan nama
 metode ditambahkan nama kelas dasar dan dua titik dua (::) didepannya seperti berikut:
 drum.Lingkaran::getLuas()
-- Pada waktu mengitung getLuas() pada kelas Silinder, bisa memanfaatkan metode getLuas()
-milik kelas dasar dengan cara memanggil metode milik kelas dasar, sehingga dengan
-demikian metode getLuas() ini seperti tampak pada kode program di atas, bisa menjadi
-lebih ringkas.
-- Demikian juga pada metode getVolume(), sekarang tidak ada kesalahan seperti tadi, karena
-rumus getLuas() yang digunakan sudah benar, yaitu metode getLuas() milik kelas dasar.
-- Dari percobaan Lab.7 ini tampak cara melakukan overriding dan cara memanggil anggota
-milik kelas dasar.
-Penyembunyian Metode Kelas Dasar
-Ketika terjadi overriding terhadap suatu metode kelas dasar, maka semua metode milik kelas dasar yang
-bernama sama, yaitu metode-metode yang dioverloading pada kelas dasar, akan disembunyikan (tidak
-diwariskan) kepada kelas turunan.
+- Pada waktu mengitung getLuas() pada kelas Silinder, bisa memanfaatkan metode getLuas() milik kelas dasar dengan cara memanggil metode milik kelas dasar, sehingga dengan demikian metode getLuas() ini seperti tampak pada kode program di atas, bisa menjadi lebih ringkas.
+- Demikian juga pada metode getVolume(), sekarang tidak ada kesalahan seperti tadi, karena rumus getLuas() yang digunakan sudah benar, yaitu metode getLuas() milik kelas dasar.
+- Dari percobaan Lab.7 ini tampak cara melakukan overriding dan cara memanggil anggota milik kelas dasar.
+Penyembunyian Metode Kelas Dasar Ketika terjadi overriding terhadap suatu metode kelas dasar, maka semua metode milik kelas dasar yang bernama sama, yaitu metode-metode yang dioverloading pada kelas dasar, akan disembunyikan (tidak diwariskan) kepada kelas turunan.
 
 Labs.9 Penyembunyian metode kelas dasar
 
@@ -655,15 +517,7 @@ pada kelas dasar, akan disembunyikan (tidak diwariskan) kepada kelas turunan.
 
 ## Metode Virtual
 
-Metode Virtual adalah metode yang seharusnya dioverride oleh kelas turunannya, dengan tujuan jika
-ada variabel pointer bertipe kelas dasarnya yang berisi objek bertipe kelas turunan tersebut, maka
-metode yang menanggapi adalah metode milik kelas turunan hasil override tersebut. Ini sebenarnya
-bagian yang sangat penting yang diperlukan pada polimorfisme yang akan dibahas pada bab berikutnya.
-Jika suatu metode pada kelas dasar tidak virtual, kemudian pada kelas turunan melakukan override
-terhadap metode tersebut, maka jika ada suatu variabel pointer bertipe kelas dasar yang berisi objek
-bertipe kelas turunan memanggil metode tersebut, yang menanggapi adalah metode milik kelas dasar.
-Percobaan berikut ini merupakan penyederhanaan dari kelas Lingkaran sebagai kelas dasardan kelas
-Silinder sebagai kelas turunan untuk memahami metode virtual.
+Metode Virtual adalah metode yang seharusnya dioverride oleh kelas turunannya, dengan tujuan jika ada variabel pointer bertipe kelas dasarnya yang berisi objek bertipe kelas turunan tersebut, maka metode yang menanggapi adalah metode milik kelas turunan hasil override tersebut. Ini sebenarnya bagian yang sangat penting yang diperlukan pada polimorfisme yang akan dibahas pada bab berikutnya. Jika suatu metode pada kelas dasar tidak virtual, kemudian pada kelas turunan melakukan override terhadap metode tersebut, maka jika ada suatu variabel pointer bertipe kelas dasar yang berisi objek bertipe kelas turunan memanggil metode tersebut, yang menanggapi adalah metode milik kelas dasar. Percobaan berikut ini merupakan penyederhanaan dari kelas Lingkaran sebagai kelas dasardan kelas Silinder sebagai kelas turunan untuk memahami metode virtual.
 
 Labs.10 Metode virtual dan non virtual
 

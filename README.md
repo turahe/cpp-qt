@@ -5,9 +5,9 @@ Buku Pemrograman C++ merupakan buku kompilasi ddari beberapa ebook gratis yang t
 **Bab:**
 
 1. Pengenalan
-2. Tipedata
+2. Tipe Data, Identifier, Operator dan Control Statement
 3. Array dan String
-4. Fuction
+4. Fungsi
 5. Pointer dan Referensi
 6. Class dan Object
 7. Penurunan

@@ -16,20 +16,25 @@ Pada chapter ini kita akan membahas beberapa topik tentang penggunaan Operator T
 
 Pada bab awal kita sudah mempelajari berbagai macam operator (+, -, /, >, <) yang dapat digunakan pada tipe data yang sudah ada di C++ seperti `int`, `float`, `bool`, dll. Namun jika anda ingin menggunakan operator tersebut pada tipe data yang anda definisikan sendiri seperti tipe data Class, maka anda dapat menggunakan keyword operator .
 
+{linenos=off}
 	return_type operator operator_symbol (...parameter list...);
+
 
 Penggunaan keyword operator sebenarnya mirip dengan penggunaan fungsi , hanya anda dapat menggunakan operator symbol seperti (+, -, >,< , =, dll). Mungkin anda bertanya kenapa harus menggunakan keyword operator jika anda dapat menggunakan fungsi ? Ilustrasi dibawah ini akan menunjukan kenapa kita membutuhkan operator.
 
+{linenos=off}
 	CKataString strKata1(“Hello”);
 	CKataString strKata2(“World”);
 
 Jika anda menginginkan untuk menggabungkan kedua kata tersebut anda dapat membuat function `Concatenate` seperti berikut:
 
+{linenos=off}
 	CKataString strGabung;
 	strGabung = strKata1.Concatenate(strKata2);
 
 Selain cara seperti diatas akan lebih natural jika anda menulis kode sebagai berikut:
 
+{linenos=off}
 	CKataString strGabung;
 	strGabung = strKata1 + strKata2;
 
@@ -41,6 +46,7 @@ Ada 2 macam operator yang terdapat di C++ yaitu unary dan binary.
 
 Unary operator hanya mempunyai single operand saja, cara penulisan unary operator adalah sebagai berikut.
 
+{linenos=off}
 	return_type operator operator_type (parameter_type)
 	{
 	// ... implementation
@@ -63,10 +69,11 @@ Tipe dari unary operator yang dapat digunakan adalah
 
 Pada Labs1 akan ditunjukan penggunaan operator increment. Pada contoh dibawah ini kita akan membuat Class Kalender yang mempunyai tiga class member yang merepresentasikan hari, bulan, dan tahun (tipe integer), anda dapat menggunakan operator ++ untuk menambahkan hari.
 
-Contoh 1. Menggunakan Increment Operator (Notasi prefix)
+{title="Contoh 1. Menggunakan Increment Operator (Notasi prefix)"}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs1, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 1, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -125,15 +132,16 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs1, 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-**Keterangan:**
-
-- Class Kalender berisi tiga member variabel yaitu `_hari`, `_bulan`, dan `_tahun` yang merepresentasikan waktu tertentu.
-- operator `++` digunakan untuk menambahkan 1 hari kedalam objek Kalender, dengan menggunakan operator `++` penulisan menjadi lebih intuitif dan mudah dipahami, misal untuk menambahkan 1 hari kedalam objek Kalender anda dapat menuliskan `++objKal`.
-- Untuk memanggil operator `++` pada program diatas digunakan notasi prefix (tanda ++ dituliskan sebelum nama objek).
-- Karena kode diatas menggunakan notasi prefix maka pada operator ++ akan mengakses objek by reference.
+A> **Keterangan:**
+A> 
+A> - Class Kalender berisi tiga member variabel yaitu `_hari`, `_bulan`, dan `_tahun` yang merepresentasikan waktu tertentu.
+A> - operator `++` digunakan untuk menambahkan 1 hari kedalam objek Kalender, dengan menggunakan operator `++` penulisan menjadi lebih intuitif dan mudah dipahami, misal untuk menambahkan 1 hari kedalam objek Kalender anda dapat menuliskan `++objKal`.
+A> - Untuk memanggil operator `++` pada program diatas digunakan notasi prefix (tanda ++ dituliskan sebelum nama objek).
+A> - Karena kode diatas menggunakan notasi prefix maka pada operator ++ akan mengakses objek by reference.
 
 Ada perbedaan penulisan notasi prefix dan postfix, sebagai contoh anda dapat melihat kode dibawah ini.
 
+{linenos=off}
 	int bil1 = 22;
 	int bil2 = bil1++;
 	//mengcopy nilai lama dari bil1
@@ -145,10 +153,11 @@ Nilai `bil2` adalah `22`, karena yang dimasukan kedalam `bil2` adalah nilai lama
 
 Untuk contoh dibawah ini kita akan mencoba menggunakan notasi `postfix`, dengan notasi `postfix` yang dilakukan adalah menduplikat objek yang diinputkan, melakukan increment dan mengembalikan objek tersebut by value.
 
-Contoh 2. Menggunakan Operator Increment (notasi postfix)
+{title="Contoh 2. Menggunakan Operator Increment (notasi postfix)"}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs2, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -213,10 +222,10 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs2, 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-**Keterangan:**
-
-- Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja penulisan operator ++ menggunakan notasi postfix.
-- Karena menggunakan postfix maka yang dilakukan pada operator ++ adalah mengkopi objek yang lama, menambahkan data, kemudian mengembalikan objek tersebut by value.
+A> **Keterangan:**
+A> 
+A> - Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja penulisan operator ++ menggunakan notasi postfix.
+A> - Karena menggunakan postfix maka yang dilakukan pada operator ++ adalah mengkopi objek yang lama, menambahkan data, kemudian mengembalikan objek tersebut by value.
 
 ## Conversion Operator
 
@@ -224,10 +233,12 @@ Bagaimana jika anda menginginkan statement `int bil = Kalender(23,10,2010)` memi
 
 Anda dapat melakukan konversi diatas dengan menggunakan conversion operator yang mempunyai syntax sebagai berikut:
 
+{linenos=off}
 	operator conversion_type();
 
 Jadi jika anda menghendaki mengkonversi tipe Kalender menjadi int anda dapat menggunakan operator berikut.
 
+{linenos=off}
 	operator int()
 	{
 	// implementation
@@ -236,10 +247,11 @@ Jadi jika anda menghendaki mengkonversi tipe Kalender menjadi int anda dapat men
 
 Contoh dibawah ini akan menunjukan bagaimana penggunaan conversion operator untuk mengkonversi tipe Kalender menjadi int.
 
-Contoh 3. Conversion Operator untuk konversi class Kalender ke integer
+{title="Contoh 3. Conversion Operator untuk konversi class Kalender ke integer"}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs3, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 3, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -273,16 +285,17 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs3, 
 	return a.exec();
 	}
 
-**Keterangan:**
-
-- Pada operator `int()`, `variabel` `_tahun`, `_bulan`, dan `_hari` dikalikan dengan bilangan tertentu sehingga menghasilkan kembalian berupa `int`.
-- Statement int `nData = objKal` akan menjalankan operator `int` dan mengembalikan nilai integer dari objek Kalender.
-- Dengan menggunakan operator int akan lebih mudah membandingkan dua objek Kalender, karena objek tersebut dapat mengembalikan satu nilai integer.
+A> **Keterangan:**
+A> 
+A> - Pada operator `int()`, `variabel` `_tahun`, `_bulan`, dan `_hari` dikalikan dengan bilangan tertentu sehingga menghasilkan kembalian berupa `int`.
+A> - Statement int `nData = objKal` akan menjalankan operator `int` dan mengembalikan nilai integer dari objek Kalender.
+A> - Dengan menggunakan operator int akan lebih mudah membandingkan dua objek Kalender, karena objek tersebut dapat mengembalikan satu nilai integer.
 
 ### Binary Operator
 
 Operator yang mengoperasikan dua operand disebut dengan binary operator, cara penulisan binary operator sama dengan penulisan oprator yang sebelumnya.
 
+{linenos=off}
 	return_type operator_type (parameter);
 
 Ada beberapa macam binary operator yang dapat digunakan pada C++, diantaranya :
@@ -302,10 +315,11 @@ Ada beberapa macam binary operator yang dapat digunakan pada C++, diantaranya :
 
 Contoh program dibawah ini menggunakan operator Addition (+) untuk menambahkan hari pada objek kalender, anda dapat menambahkan beberapa hari kedepan, misal 5 atau 10 hari dari tanggal sekarang.
 
-Contoh 4. Menggunakan Binary Addition Operator
+{title="Contoh 4. Menggunakan Binary Addition Operator"}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs3, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 4, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -369,19 +383,20 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs3, 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-**Keterangan:**
-
-- Dengan menggunakan operator + anda dapat menambahkan hari pada objek Kalender, jumlah hari yang ditambahkan tergantung dari nilai yang diinputkan pada parameter.
-- Anda dapat menambah hari dengan menggunakan operator + pada objek Kalender, misal: objKal = objKal + 25 atau dengan membuat objek baru untuk menampung nilai hasil penambahan Kalender objKalBaru(objKal+20)
+A> **Keterangan:**
+A> 
+A> - Dengan menggunakan operator + anda dapat menambahkan hari pada objek Kalender, jumlah hari yang ditambahkan tergantung dari nilai yang diinputkan pada parameter.
+A> - Anda dapat menambah hari dengan menggunakan operator + pada objek Kalender, misal: objKal = objKal + 25 atau dengan membuat objek baru untuk menampung nilai hasil penambahan Kalender objKalBaru(objKal+20)
 
 ## Addition-Assignment Operator
 
 Dengan menggunakan Addition-Assignment operator anda dapat menuliskan sintaks a += b, yang sama artinya dengan a = a + b. Pada contoh program dibawah ini operator Addition-Assignment akan digunakan untuk menambahkan hari pada objek Kalender.
 
-Labs.5 Menggunakan Addition Assigment Operator dan Substraction Assigment Operator
+{title="Contoh 5 Menggunakan Addition Assigment Operator dan Substraction Assigment Operator"}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs5, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 5, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -440,14 +455,15 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs5, 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-**Keterangan:**
-
-- Pada kode diatas anda dapat menggunakan operator Addition-Assignment pada objek Kalender, misal anda ingin menambahkan 25 hari pada objek Kalender, anda dapat menuliskan kode objKal += 25;
+A> **Keterangan:**
+A> 
+A> Pada kode diatas anda dapat menggunakan operator Addition-Assignment pada objek Kalender, misal anda ingin menambahkan 25 hari pada objek Kalender, anda dapat menuliskan kode objKal += 25;
 
 ## Comparison Operator
 
 Pada kasus tertentu dimana anda ingin membandingkan dua objek bertipe Kalender ada dapat menggunakan comparison operator.
 
+{linenos=off}
 	if (objKal1 == objKal2)
 	{
 	// Do something
@@ -459,10 +475,11 @@ Pada kasus tertentu dimana anda ingin membandingkan dua objek bertipe Kalender a
 
 Anda dapat menggunakan equality operator (==) atau inequality operator (!=). Anda juga dapat membuat lebih dari satu equality atau inequality operator yang mempunyai return value atau parameter yang berbeda, ini disebut dengan overloading operator.
 
-Contoh 6. Overloading Comparison Operator (Equality dan Inequality)
+{title="Contoh 6. Overloading Comparison Operator (Equality dan Inequality)"}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs6, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 6, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -565,20 +582,21 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs6, 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-**Keterangan:**
-
-- Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun masing-masing ada 2 inequality dan equality operator namun parameternya berbeda ini disebut sebagai overloading operator.
-- Pada operator equality (==) yang pertama membandingkan dua objek Kalender dengan cara membandingkan member variabel hari, bulan, tahun pada masing-masing objek yang dibandingkan, sedangkan operator == yang kedua membandingkan objek Kalender yang terlebih dahulu sudah dikonversi menjadi int.
-- Anda dapat melihat bahwa kedua operator comparison diatas sama-sama dapat membandingkan isi dari 2 objek Kalender, baik dengan cara membandingkan member variabel maupun membandingkan nilai int (hasil konversi dari objek Kalender).
+A> **Keterangan:**
+A> 
+A> - Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun masing-masing ada 2 inequality dan equality operator namun parameternya berbeda ini disebut sebagai overloading operator.
+A> - Pada operator equality (==) yang pertama membandingkan dua objek Kalender dengan cara membandingkan member variabel hari, bulan, tahun pada masing-masing objek yang dibandingkan, sedangkan operator == yang kedua membandingkan objek Kalender yang terlebih dahulu sudah dikonversi menjadi int.
+A> - Anda dapat melihat bahwa kedua operator comparison diatas sama-sama dapat membandingkan isi dari 2 objek Kalender, baik dengan cara membandingkan member variabel maupun membandingkan nilai int (hasil konversi dari objek Kalender).
 
 ## Overloading Operator <, >, <=, >=
 
 Seperti pada contoh sebelumnya anda juga dapat menggunakan operator <, >, <=, >= untuk membandingkan objek Kalender. Agar mudah untuk dibandingkan maka objek Kalender dikonversi terlebih dahulu menjadi tipe int.
 
-Contoh 7. Menggunakan Operator <. >, <=, >=
+{title="Contoh 7. Menggunakan Operator <. >, <=, >="}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs7, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 7, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -656,19 +674,20 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs7, 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-**Keterangan**
-
-- Pada program diatas penggunaan operator <, >, <=, >= digunakan untuk membandingkan dua objek Kalender yang berbeda.
-- Untuk mempermudah membandingkan dua objek Kalender maka objek Kalender tersebut dikonversi terlebih dahulu menjadi int.
+A> **Keterangan**
+A> 
+A> - Pada program diatas penggunaan operator <, >, <=, >= digunakan untuk membandingkan dua objek Kalender yang berbeda.
+A> - Untuk mempermudah membandingkan dua objek Kalender maka objek Kalender tersebut dikonversi terlebih dahulu menjadi int.
 
 ## Subscript Operator
 
 Subscript operator dapat digunakan jika anda ingin mengakses class seperti ketika anda mengakses array, anda dapat menambahkan operator [] pada objek yang anda buat untuk mengakses nilai dengan index tertentu dari objek. Contoh dibawah ini akan menjelaskan penggunaan subscript operator untuk membuat array yang dinamis.
 
-Contoh 8 Subscript Operator untuk Dynamic Array
+{title="Contoh 8. Subscript Operator untuk Dynamic Array"}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs8, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 8, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -715,18 +734,19 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs8, 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-**Keterangan**
-
-- Dengan menggunakan subscript operator anda dapat mengakses member variable yang bertipe array pada class dengan menggunakan array-like syntax (nama objek diikuti dengan tanda []), misal: `namaObjek[index]`.
+A> **Keterangan**
+A> 
+A> Dengan menggunakan subscript operator anda dapat mengakses member variable yang bertipe array pada class dengan menggunakan array-like syntax (nama objek diikuti dengan tanda []), misal: `namaObjek[index]`.
 
 ## Function operator()
 
 Function operator digunakan jika anda ingin membuat objek bekerja seperti function. Untuk lebih jelasnya penggunaan function operator() anda dapat mencoba program dibawah ini.
 
-Labs.9 Menggunakan operator() untuk membuat function object
+{title="Contoh 9. Menggunakan operator() untuk membuat function object"}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs9, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 9, kemudian tulis kode berikut.
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -749,7 +769,7 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs9, 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-**Analisis**
-
-- Dengan membuat function operator maka anda dapat menggunakan objek seperti ketika anda menggunakan function.
-- Pada program diatas objek objTampil dapat dipanggil seperti function.
+A> **Analisis**
+A> 
+A> - Dengan membuat function operator maka anda dapat menggunakan objek seperti ketika anda menggunakan function.
+A> - Pada program diatas objek objTampil dapat dipanggil seperti function.

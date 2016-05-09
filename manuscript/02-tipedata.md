@@ -62,7 +62,7 @@ Konstanta simbolik adalah konstanta yang direpresentasikan dengan suatu nama, sa
 Perhatikan bahwa `kapasitas` tidak mempunyai tipe data tertentu (int, char dsb.). Preprosessor akan melakukan substitusi berupa teks, setiap ada akses terhadap kata `kapasitas`, akan digantikan dengan teks 15. Karena preprosesor bekerja sebelum kompiler, kompiler tidak mengenal konstanta `kapasitas`, yang dikenal hanyalah bilangan 15.
 
 T> **TIPS**
-
+T>
 T> Walaupun dengan memakai preprocessor directive `#define` tampak mudah, namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang pada standard C++ .
 
 Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan memakai kata kunci const seperti berikut :
@@ -271,8 +271,7 @@ Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai ‘a’ maka ungkapa
 {linenos=off}
 	A < B || B == 7 && C > ‘z’
 
-Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari langkah-langkah sebagai
-berikut:
+Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari langkah-langkah sebagai berikut:
 
 1. Jenjang operator hubungan lebih tinggi dibandingkan dengan operator logika, jadi operator hubungan dikerjakan terlebih dahulu.
 2. Operator logika “&&” mempunyai jenjang lebih tinggi dari operator “||”, sehingga operator “&&” dikerjakan terlebih dahulu.

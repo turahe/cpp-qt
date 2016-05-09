@@ -6,7 +6,7 @@ Secara teknis polimorfisme merupakan suatu konsep untuk merelasikan diatara kela
 
 Berbeda dengan tipe data standard (int, float, double, bool, dsb.) yang jenisnya terbatas dan sudah pasti dikenal dalam pemrograman C++, kelas adalah tipe data terstruktur yang bisa dibuat sendiri oleh programer, sehingga tidak terbatas ada berapa macam kelas dalam C++. Namun di sisi lain, dalam pemrograman kita pasti perlu untuk dapat berhubungan antara kelas satu dengan yang lain, sehingga diperlukan suatu kerangka yang dapat memberikan arahan mengenai bentuk dan fitur dari suatu kelas sehingga dengan demikian ada suatu pointer atau referensi yang dapat menerima berbagai macam bentuk yang dinamakan polimorfisme.
 
-Mekanisme untuk dapat terjadi polimorfisme adalah pewarisan (inheritance), oleh karena itu polimorfisme hanya bisa terjadi diantara kelas-kelas yang mempunyai hubungan kekerabatan, tepatnya pointer atau referensi bertipe kelas dasar hanya dapat menerima berbagai macam bentuk objek yang bertipe kelas-kelas turunannya, sehingga pointer atau referensi tersebut dapat mengeksekusi fitur-fitur yang serupa dengannya. Contoh sederhana dari polimorfisme adalah seperti sudah dibahas pada bab 7 yaitu mengenai metode vitual pada percobaan Lab.10.
+Mekanisme untuk dapat terjadi polimorfisme adalah pewarisan (inheritance), oleh karena itu polimorfisme hanya bisa terjadi diantara kelas-kelas yang mempunyai hubungan kekerabatan, tepatnya pointer atau referensi bertipe kelas dasar hanya dapat menerima berbagai macam bentuk objek yang bertipe kelas-kelas turunannya, sehingga pointer atau referensi tersebut dapat mengeksekusi fitur-fitur yang serupa dengannya. Contoh sederhana dari polimorfisme adalah seperti sudah dibahas pada bab 7 yaitu mengenai metode vitual pada percobaan Contoh 10.
 
 Berikut ini akan dibahas secara lebih mendalam mengenai berbagai aspek polimorfisme dari problem pada `single inheritance`, `multiple inheritance` hingga `abstract data type`.
 
@@ -34,9 +34,9 @@ Tapi ini menjadikan terbatas, bagaimana jika nanti ternyata Kuda_terbang bisa `m
 
 Solusi lainnya untuk membahas keterbatasan *single inheritance* ini adalah membuat metode `terbang()` pada kelas Kuda dan pada kelas ini tidak melakukan `terbang()`, baru nanti kalau berupa objek Kuda_terbang, barulah `terbang()` yang sesungguhnya dikerjakan. Marilah kita melakukan percobaan berikut ini.
 
-Lab.1 Meletakkan metode kelas turunan di kelas dasar.
+Contoh 1 Meletakkan metode kelas turunan di kelas dasar.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Lab1, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
 
 	#include <QtCore/QCoreApplication>
@@ -117,13 +117,13 @@ i> **Catatan:**
 i> 
 i>  Hati-hati dalam menggunakan RTTI dalam program. Kebutuhan untuk memakai RTTI bisa menjadi pertanda adanya desain hirarki pewarisan yang kurang baik. Untuk itu sebaiknya gunakan metode virtual, template atau multiple inheritance daripada memakai RTTI.
 
-Pada percobaan Lab.1 di atas, kita menunjuk baik Kuda maupun `Kuda_terbang `dengan array Kuda (kandang). Semuanya dimasukkan sebagai Kuda. Dengan RTTI, kita akan memeriksa tiap-tiap elemen array apakah objek yang ditunjuk berupa Kuda atau sebenarnya `Kuda_terbang`.
+Pada percobaan Contoh 1 di atas, kita menunjuk baik Kuda maupun `Kuda_terbang `dengan array Kuda (kandang). Semuanya dimasukkan sebagai Kuda. Dengan RTTI, kita akan memeriksa tiap-tiap elemen array apakah objek yang ditunjuk berupa Kuda atau sebenarnya `Kuda_terbang`.
 
 Pada percobaan ini kita tidak melakukan “percolating upward”, yaitu menuliskan metode `terbang()` ke dalam kelas Kuda melainkan melakukan “down casting” untuk memanggil metode `terbang()`. Untuk memanggil metode `terbang()` tersebut harus dipastikan bahwa pointer sedang menunjuk objek bertipe Kuda_terbang, bukan Kuda. C++ mendukung “down casting” (RTTI) memakai operator `dynamic_cast`. Cara kerja `dynamic_cast` adalah demikian, jika kita memiliki pointer bertipe kelas dasar seperti Kuda dan digunakan untuk menunjuk objek bertipe kelas turunan misalnya `Kuda_Terbang`, maka pointer tersebut bisa langsung dipergunakan secara polimorfisme. Kemudian jika kita ingin mengambil objek `Kuda_terbang` yang sudah ditunjuk oleh pointer bertipe Kuda itu dapat dilakukan dengan cara membuat pointer bertipe `Kuda_terbang` kemudian gunakan operator `dynamic_cast` untuk mengkonversikannya. Pada saat eksekusi (runtime), pointer dasar akan diperiksa, jika sesuai maka pointer `Kuda_terbang` bekerja dengan baik, jika tidak sesuai maka sebenarnya bukan objek `Kuda_terbang` yang ditunjuk meliankan pointer kosong (null). Lakukan percobaan berikut ini.
 
-Lab.2 Melakukan Down Casting.
+Contoh 2. Melakukan Down Casting.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Lab2, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
@@ -163,8 +163,7 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Lab2, k
 	return a.exec();
 	}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai
-berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 Analisa Program :
 
@@ -186,9 +185,9 @@ Dengan C++ dimungkinkan untuk menurunkan kelas baru yang berasal dari lebih dari
 
 Percobaan berikut ini memberikan ilustrasi cara deklarasi kelas `Kuda_terbang` yang mewarisi kelas dasar Kuda dan Burung, kemudian program menambahkan objek Kuda_terbang ini di kedua jenis daftar objek tersebut.
 
-Lab.3 Multiple Inheritance.
+Contoh 3. Multiple Inheritance.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Lab3, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
@@ -257,7 +256,7 @@ Kemudian kelas ini melakukan override terhadap metode `berkicau()`, metode `berk
 
 	void berkicau() const { meringkik(); }
 
-- Tampak pada percobaan Lab.3 ini ketika diciptakan objek bertipe Kuda maka yang bekerja adalah konstruktor `Kuda`, demikian juga ketika diciptakan objek `Burung` yang bekerja adalah konstruktor `Burung`, namun ketika diciptakan `Kuda_terbang` yang bekerja tiga konstruktor sekaligus, yaitu : konstruktor `Kuda`, konstruktor `Burung` dan konstruktor `Kuda_terbang`. Ini mempelihatkan bahwa kelas `Kuda_terbang` merupakan turunan dari kelas Kuda sekaligus turunan kelas `Burung`. Dengan kata lain objek `Kuda_terbang` adalah objek yang di dalamnya
+- Tampak pada percobaan Contoh 3 ini ketika diciptakan objek bertipe Kuda maka yang bekerja adalah konstruktor `Kuda`, demikian juga ketika diciptakan objek `Burung` yang bekerja adalah konstruktor `Burung`, namun ketika diciptakan `Kuda_terbang` yang bekerja tiga konstruktor sekaligus, yaitu : konstruktor `Kuda`, konstruktor `Burung` dan konstruktor `Kuda_terbang`. Ini mempelihatkan bahwa kelas `Kuda_terbang` merupakan turunan dari kelas Kuda sekaligus turunan kelas `Burung`. Dengan kata lain objek `Kuda_terbang` adalah objek yang di dalamnya
 
 Kuda_terbang
 Kuda_terbang
@@ -321,9 +320,9 @@ dasar yang sebenarnya tidak ada sehingga menimbulkan kesalahan kompilasi.
 Supaya bisa fokus pada pokok permasalahan, yaitu konstruktor, percobaan berikut ini menghilangkan
 berbagai macam anggota yang lain supaya terlihat sederhana dan mudah dipahami.
 
-Lab.4 Konstruktor Kelas Multiple Inheritance.
+Contoh 4. Konstruktor Kelas Multiple Inheritance.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Lab4, kemudian
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4, kemudian
 tulis kode berikut.
 	
 	#include <QtCore/QCoreApplication>
@@ -425,9 +424,9 @@ Untuk penurunan pada umumnya (Common base class) ada kemungkinan kelas Kuda maup
 
 Supaya lebih jelas, lakukan pecobaan berikut ini.
 
-Lab.5 Penurunan pada umumnya (Common Base Class).
+Contoh 5 Penurunan pada umumnya (Common Base Class).
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Lab5, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
 
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
@@ -508,9 +507,10 @@ Berbeda dengan penurunan biasa (Common Base Class), penurunan virtual pada kedua
 (Kuda dan Burung) menyebabkan kelas turunan multi inheritance Kuda_terbang dapat langsung
 memanggil konstruktor kelas dasar paling atas (Binatang), sehingga terbentuklah objek dengan bentuk
 Diamond Inheritance seperti gambar tadi. Supaya lebih jelas, lakukan pecobaan berikut ini.
-Lab.6 Penurunan pada umumnya (Common Base Class).
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Lab6, kemudian
+Contoh 6. Penurunan pada umumnya (Common Base Class).
+
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian
 tulis kode berikut.
 
 	#include <QtCore/QCoreApplication>
@@ -553,18 +553,12 @@ tulis kode berikut.
 	return a.exec();
 	}
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai
-berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 Analisa Program :
 
-- Pada program Utama, sama seperti percobaan Lab5, hanya menciptakan objek bertipe
-Kuda_terbang. Tampak pada hasil keluaran, dilihat dari konstruktornya maka bisa
-disimpulkan bahwa terbentuk objek Binatang, objek Kuda, objek Binatang, objek Burung
-baru kemudian objek Kuda_terbang. Ini menunjukkan bahwa ada 2 hanya 1 objek Binatang
-yang masing-masing merupakan bagian Kuda, dan Burung dan Kuda_terbang.
-- Walaupun Kuda_terbang adalah turunan dari Kuda dan Burung, namun saat instansiasi
-kelas Kuda_terbang memanggil langsung konstruktor Binatang seperti berikut:
+- Pada program Utama, sama seperti percobaan Contoh 5, hanya menciptakan objek bertipe Kuda_terbang. Tampak pada hasil keluaran, dilihat dari konstruktornya maka bisa disimpulkan bahwa terbentuk objek Binatang, objek Kuda, objek Binatang, objek Burung baru kemudian objek Kuda_terbang. Ini menunjukkan bahwa ada 2 hanya 1 objek Binatang yang masing-masing merupakan bagian Kuda, dan Burung dan Kuda_terbang.
+- Walaupun Kuda_terbang adalah turunan dari Kuda dan Burung, namun saat instansiasi kelas Kuda_terbang memanggil langsung konstruktor Binatang seperti berikut:
 
 	Kuda_terbang():Kuda(),Burung(),Binatang()
 
@@ -577,10 +571,8 @@ sehingga dimungkinkan konstruktor `Kuda_terbang()` memanggil langsung konstrukto
 - Tampak pada hasil pemanggilan metode getUmur() tersebut pada kelas Kuda_terbang: dari Binatang...Umur : 5
 Ini menunjukkan bahwa metode yang dipanggil adalah metode warisan dari kelas Binatang secara langsung.
 - Sekali lagi pada saat objek dihapus (delete), destruktor yang dijalankan adalah untuk objek
-Kuda_terbang, Burung, Binatang, Kuda dan Binatang ini menunjukkan bahwa ada 2 hanya
-ada 1 objek Binatang.
-- Jika dibayangkan, maka “silsilah kekerabatan” penurunan virtual ini adalah seperti gambar
-Daimond Inheritance di atas.
+Kuda_terbang, Burung, Binatang, Kuda dan Binatang ini menunjukkan bahwa ada 2 hanya ada 1 objek Binatang.
+- Jika dibayangkan, maka “silsilah kekerabatan” penurunan virtual ini adalah seperti gambar Daimond Inheritance di atas.
 
 Catatan:
 - Untuk memastikan kelas turunan hanya mempunyai sebuah kelas dasar bersama, deklarasikan kelas-kelas turunan secara virtual dari kelas dasar. Contoh:

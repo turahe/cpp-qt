@@ -139,6 +139,11 @@ code {
     padding: 1px 5px;
 }
 
+p > code {
+    padding: 1px 5px;
+    background-color: #f9f2f4;
+}
+
 pre {
     padding: 8px 12px;
     overflow-x: auto;

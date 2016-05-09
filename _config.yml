@@ -6,8 +6,8 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: C++ Programming
+email: wachid@outlook.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -19,3 +19,11 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+permalink: /:categories/:title
+excerpt_separator: <!--more--> 
+
+source:           docs
+destination:      _gh_pages
+host:             0.0.0.0
+port:             9001
+encoding:         UTF-8

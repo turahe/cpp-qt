@@ -400,7 +400,11 @@ Kita tidak akan membahas lebih lanjut tentang basisdata. Pada basis data kita ju
 
 ### Koneksi Qt dengan Basisdata
 
-Untuk melakukan koneksi pada basis data, Qt menyediakan dukungan pada beberapa basis data yang terkenal, misalnya Sqlite, Oracle, MySQL, Db2, ODBC, dan Postgresql. Secara default basis data yang didukung adalah Sqlite dan ODBC saja, sedangkan untuk basis data lainnya harus menggunakan driver yang biasanya harus didownload pada situsnya secara langsung.
+Untuk melakukan koneksi pada basis data, Qt menyediakan dukungan pada beberapa basis data yang terkenal, misalnya [Sqlite](https://www.sqlite.org/about.html), [Oracle](https://en.wikipedia.org/wiki/Oracle_Database), [MySQL](https://www.mysql.com/about/), Db2[^db2], ODBC[^odbc], dan [Postgresql](https://id.wikipedia.org/wiki/PostgreSQL). Secara default basis data yang didukung adalah Sqlite dan ODBC saja, sedangkan untuk basis data lainnya harus menggunakan driver yang biasanya harus didownload pada situsnya secara langsung.
+
+[^db2]:[IBM DB2](https://en.wikipedia.org/wiki/IBM_DB2) adalah produk database server yang dikembangkan oleh IBM. Produk-produk ini mendukung sistem manajemen basis data relasional (relational DBMS), namun belakangan ini sudah mendukung pula sistem manajemen basis data berbasis object-relational (object-relational DBMS) dan juga non-relational seperti XML.
+
+[^odbc]: Open Database Connectivity (ODBC) adalah Application Programming interface (API) database yang khusus digunakan untuk mengakses database relasional. ODBC terdapat dalam setiap komputer yang menggunakan sistem operasi windows, karena ODBC merupakan bagian dari Windows Open System Architecture (WOSA). Dalam ODBC disediakan berbagai Application Programming Interface (API) yang berguna untuk menyediaan dan memberikan stkitar bagi berbagai kegiatan pemrograman. Keuntungan utama menggunakan ODBC ini adalah fleksibilitas, fleksibel disini artinya pengubahan jenis database yang dipergunakan oleh sebuah aplikasi tidak akan mempengaruhi kode program aplikasi tersebut.
 
 
 Pada Qt kita dapat membuat aplikasi console yang terkoneksi dengan basis data. Koneksi terhadap kedua database tersebut tidak perlu melakukan konfigurasi dan mendownload driver tertentu. Pada tulisan ini kita akan menggunakan basis data Sqlite.
@@ -408,7 +412,7 @@ Pada Qt kita dapat membuat aplikasi console yang terkoneksi dengan basis data. K
 
 ### Koneksi Qt dengan MySQL dan menampilkan datanya
 
-MySQL merupakan database yang sudah disupport oleh Qt. Untuk membuat database MySQL, kita membutuhkan tool yang dapat digunakan untuk mengelola databasenya dengan mudah, silahkan gunakan heidisql yang berbasis desktop yang dapat didownload pada: http://heidisql.net
+[MySQL](https://www.mysql.com/) merupakan database yang sudah disupport oleh Qt. Untuk membuat database MySQL.
 
 Untuk melakukan koneksi QtConsole dengan MySQL, maka lakukan Contoh berikut:
 
@@ -683,7 +687,7 @@ dilihat pada tabel berikut:
 
 ### Mengedit data pada tabel SQLITE
 
-Cara mengedit data pada tabel Sqlite adalah dengan menggunakan perintah query SQL UPDATE. Sintaksnya adalah UPDATE <namatabel> SET <kolom1>=<nilaikolom1>,<kolom2>=<nilaikolom2>, dst WHERE <kriteria> Perintah diatas tidak menghasilkan record sama sekali, namun dapat menghasilkan berapa jumlah record yang terpengaruh (affected rows) dan juga mengembalikan nilai bool yang akan bernilai true atau false. Nilai true jika pengeditan data berhasil, nilai false jika pengeditan data gagal.
+Cara mengedit data pada tabel Sqlite adalah dengan menggunakan perintah query SQL UPDATE. Sintaksnya adalah `UPDATE <namatabel> SET <kolom1>=<nilaikolom1>,<kolom2>=<nilaikolom2>`, dst `WHERE <kriteria>` Perintah diatas tidak menghasilkan record sama sekali, namun dapat menghasilkan berapa jumlah record yang terpengaruh (affected rows) dan juga mengembalikan nilai bool yang akan bernilai true atau false. Nilai true jika pengeditan data berhasil, nilai false jika pengeditan data gagal.
 
 Pada Qt cara yang digunakan untuk mengedit data adalah dengan menggunakan class QSqlQuery dan method query seperti berikut ini:
 

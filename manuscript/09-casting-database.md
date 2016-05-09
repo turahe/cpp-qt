@@ -216,7 +216,7 @@ Casting ini tidak boleh menghasilkan kembalian NULL. Sintaksnya:
 	pb = dynamic_cast<CBase*>(&d); // ok: derived-to-base
 	pd = dynamic_cast<CDerived*>(&b); // wrong: base-to-derived
 
-Labs 2. Contoh Dynamic Casting
+Contoh 2. Contoh Dynamic Casting
 
 Buatlah program berikut:
 
@@ -410,9 +410,9 @@ Pada Qt kita dapat membuat aplikasi console yang terkoneksi dengan basis data. K
 
 MySQL merupakan database yang sudah disupport oleh Qt. Untuk membuat database MySQL, kita membutuhkan tool yang dapat digunakan untuk mengelola databasenya dengan mudah, silahkan gunakan heidisql yang berbasis desktop yang dapat didownload pada: http://heidisql.net
 
-Untuk melakukan koneksi QtConsole dengan MySQL, maka lakukan labs berikut:
+Untuk melakukan koneksi QtConsole dengan MySQL, maka lakukan Contoh berikut:
 
-Labs 3. Percobaan koneksi MySQL dengan QtConsole
+Contoh 3. Percobaan koneksi MySQL dengan QtConsole
 
 1. Buatlah sebuah database pada MySQL dengan nama: testmhs
 2. Gunakan HeidiSQL untuk membuatnya:
@@ -421,8 +421,12 @@ NIM Nama IPK
 22001234 Anton 3.5
 22003241 Rudi 2.68
 22003456 Katon 2.9
+
 Hasil:
+
 4. Tulis kode berikut ini:
+
+X> Koneksi Qt dengan Mysql ddan menampilkan datanya
 
 	#include <QtCore/QCoreApplication>
 	#include <QtSql/QtSql>
@@ -455,11 +459,11 @@ Hasil:
 	return a.exec();
 	}
 
-Pada file project yang berekstensi .pro, tambahkan linking ke library sql sebagai berikut:
+5. Pada file project yang berekstensi .pro, tambahkan linking ke library sql sebagai berikut:
 
-Kemudian run dan hasilnya adalah sebagai berikut:
+6. Kemudian run dan hasilnya adalah sebagai berikut:
 
-Tambahkan bagian ini
+7. Tambahkan bagian ini
 
 
 **Keterangan:**
@@ -479,9 +483,9 @@ Yang perlu diperhatikan ketika kita membuat koneksi dengan basisdata SQLite adal
 2. Jika kita sudah memiliki file database SQLite, maka file tersebut harus diletakkan (dikopikan) ke folder simulator atau simulator\debug
 3. File SQLite yang dibuat harus berjenis SQLite 3 agar bisa diakses.
 
-Untuk melakukan koneksi QtConsole dengan SQLite, maka lakukan labs berikut:
+Untuk melakukan koneksi QtConsole dengan SQLite, maka lakukan Contoh berikut:
 
-Labs 4. Percobaan koneksi SQLite dengan QtConsole
+Contoh 4. Percobaan koneksi SQLite dengan QtConsole
 
 1. Buatlah sebuah database pada Sqlite dengan nama: testmhs.db, ingat harus berjenis SQLite3.
 2. Gunakan SQLiteadmin untuk membuatnya
@@ -507,6 +511,8 @@ Field:
 
 7. Setelah itu buatlah project baru pada QtConsole application, dan tulislah kode program berikut:
 
+X> Koneksi Qt ke Database
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QtSql/QtSql>
@@ -527,6 +533,7 @@ Field:
 	}
 
 8. Pada project, pilihlah file berekstensi .pro, kemudian bukalah file tersebut dan tambahkanlah bagian kode berikut:
+
 9. Build dan run
 
 **Hasil:**
@@ -561,9 +568,9 @@ Kita ingat bahwa tabel mahasiswa memiliki 3 kolom: NIM, Nama, dan IPK.
 
 Perintah diatas menggunakan QsqlQuery yang menerima parameter Qstring. Setelah query dijalankan maka akan dilakukan proses looping untuk mengambil data-data per baris record dengan menggunakan method next() dari query. Di dalam looping kita mengambil variabel nim pada kolom pertama (dalam hal ini digunakan indeks 0). Untuk mengambil field tertentu pada tabel, misalnya ipk, maka hanya perlu mengganti indeksnya menjadi 2 saja.
 
-Labs 5. Membaca data pada Sqlite
+Contoh 5. Membaca data pada Sqlite
 
-Tulislah program berikut:
+X> Tulislah program berikut:
 	
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
@@ -615,9 +622,9 @@ Pada Qt cara yang digunakan untuk menambah data adalah dengan menggunakan class 
 
 Perintah diatas menggunakan QsqlQuery yang menerima parameter sql dalam tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil dari akibat penambahan datanya. Jika berhasil maka akan mengembalikan nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-Labs 6. Menambahkan data pada SQLite
+Contoh 6. Menambahkan data pada SQLite
 
-Buatlah program berikut:
+X> Buatlah program berikut:
 
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
@@ -651,7 +658,8 @@ Buatlah program berikut:
 - Cara menambahkan record pada SQLite sangat mudah, yaitu dengan menggunakan SQL insert into yang harus disesuaikan dengan jumlah field yang ada pada tabel. Setelah itu query akan dijalankan dengan method exec dari obyek QsqlQuery.
 - Hasil kembalian dari method exec ini adalah bool yang menghasilkan nilai true atau false. Jika menghasilkan nilai true maka record berhasil ditambahkan, jika false maka record tidak berhasil ditambahkan!
 - Jika program diatas dieksekusi sekali lagi (diulangi) maka akan menampilkan tulisan Gagal ditambahkan. Hal ini dikarenakan kita menambahkan record yang sama persis dengan ebelumnya padahal kita sudah menset bahwa field nim bersifat primary, yang artinya tidak boleh ada data nim yang kembar. Hal inilah yang menyebabkan data Gagal ditambahkan.
-- Jika kita hendak membaca data pada SQLite, maka tambahkan kode berikut:
+
+X> Jika kita hendak membaca data pada SQLite, maka tambahkan kode berikut:
 
 	QsqlQuery query.exec("select nim,nama,ipk from mahasiswa order by nim desc");
 	QString nim,nama;
@@ -664,7 +672,7 @@ Buatlah program berikut:
 	qDebug() << nim << " " << nama << " " << ipk;
 	}
 
-- Sehingga akan dihasilkan:
+X> Sehingga akan dihasilkan:
 
 T> **TIPS**
 T>
@@ -686,13 +694,13 @@ Pada Qt cara yang digunakan untuk mengedit data adalah dengan menggunakan class 
 
 Perintah diatas menggunakan QsqlQuery yang menerima parameter sql dalam tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil dari akibat pengeditan datanya. Jika berhasil maka akan mengembalikan nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-Labs 7. Mengedit data pada SQLite
+Contoh 7. Mengedit data pada SQLite
 
 Kondisi awal tabel:
 
 Kita akan mengedit nim 22002529 menjadi bernama Antonius Rachmat C
 
-Buatlah program berikut:
+X> Buatlah program berikut:
 
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
@@ -726,7 +734,7 @@ Kondisi akhir tabel:
 
 **Keterangan:**
 
-- Program diatas masih sama menggunakan obyek QsqlQuery dan method exec(). Hanya SQL query nya saja yang berbeda dengan labs sebelumnya saat penambahan data. SQL query pada saat pengeditan menggunakan SQL UPDATE SET.
+- Program diatas masih sama menggunakan obyek QsqlQuery dan method exec(). Hanya SQL query nya saja yang berbeda dengan Contoh sebelumnya saat penambahan data. SQL query pada saat pengeditan menggunakan SQL UPDATE SET.
 - Untuk mengetahui berapa jumlah record yang terupdate digunakan method numRowsAffected() dari obyek QsqlQuery.
 
 ### Menghapus data pada tabel SQLITE
@@ -741,13 +749,13 @@ Pada Qt cara yang digunakan untuk menghapus data adalah dengan menggunakan class
 
 Perintah diatas menggunakan QsqlQuery yang menerima parameter sql dalam tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil dari akibat penghapusan datanya. Jika berhasil maka akan mengembalikan nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-Labs 8. Menghapus data pada SQLite
+Contoh 8. Menghapus data pada SQLite
 
 Kondisi awal tabel:
 
 Kita akan menghapus data “mhs baru”.
 
-Buatlah program sebagai berikut:
+X> Buatlah program sebagai berikut:
 
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
@@ -780,7 +788,7 @@ Kondisi akhir tabel:
 
 **Keterangan:**
 
-- Program diatas mampu menghapus data pada suatu record tertentu dengan menggunakan perintah SQL DELETE FROM. Program diatas tidak ada perubahan dari labs sebelumnya kecuali bagian perintah SQL nya.
+- Program diatas mampu menghapus data pada suatu record tertentu dengan menggunakan perintah SQL DELETE FROM. Program diatas tidak ada perubahan dari Contoh sebelumnya kecuali bagian perintah SQL nya.
 
 Demikianlah kita sudah berlatih sejumlah manipulasi data pada tabel SQLite dengan menggunakan QtSql. Pada databse lain misalnya MySQL semua perintah –perintah yang sudah dipelajari dapat digunakan dan hanya perlu disesuaikan pada bagian koneksi pada databasenya. Pemrograman basis data pada Qt termasuk mudah.
 
@@ -801,13 +809,13 @@ Penjelasan:
 - Menu 4 akan digunakan untuk mencari data seorang mahasiswa berdasarkan nimnya
 - Menu 5 akan digunakan untuk mengedit data seorang mahasiswa berdasarkan nimnya
 
-Cara yang digunakan adalah dengan membuat sebuah class yang akan digunakan untuk mengakses semua fungsi yang berhubungan dengan manipulasi data pada basis data SQLite. Method pada class adalah connect untuk koneksi database, sebuah konstruktor dan method untuk mengambil nama tabel serta nama database SQLitenya. Kemudian akan dibuat fungsi-fungsi lain diluar class yang digunakan untuk melakukan fungsi-fungsi sesuai dengan 5 fungsi yang didefinisikan pada menu. Untuk lebih
-jelasnya silahkan dicoba pada labs berikut ini.
+Cara yang digunakan adalah dengan membuat sebuah class yang akan digunakan untuk mengakses semua fungsi yang berhubungan dengan manipulasi data pada basis data SQLite. Method pada class adalah connect untuk koneksi database, sebuah konstruktor dan method untuk mengambil nama tabel serta nama database SQLitenya. Kemudian akan dibuat fungsi-fungsi lain diluar class yang digunakan untuk melakukan fungsi-fungsi sesuai dengan 5 fungsi yang didefinisikan pada menu. Untuk lebih jelasnya silahkan dicoba pada Contoh berikut ini.
 
-Labs 9. Pembuatan manipulasi data pada SQLite dengan menggunakan menu
+Contoh 9. Pembuatan manipulasi data pada SQLite dengan menggunakan menu
 
-Tulislah program berikut:
+1. Tulislah program berikut:
 
+{:lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QtSql/QtSql>
@@ -988,6 +996,7 @@ T> **TIPS:**
 T> 
 T> Untuk mengkonversi dari tipe data string menuju ke Qstring, digunakan `<variabel string biasa>.c_str()` Perintah cin tidak bisa digunakan setelah fungsi getline, karena akan membuat inputan menjadi bertumpuk seperti pada contoh ini:
 
+{:lang="c++"}
 	int main(){
 	int id, age;
 	string name, address;
@@ -999,12 +1008,14 @@ T> Untuk mengkonversi dari tipe data string menuju ke Qstring, digunakan `<varia
 
 **Hasil:**
 
+{:lang="sh"}
 	Enter ID: 23
 	Enter Name: Enter Address : Yogyakarta
 	Enter Age : 45
 
 Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu. Untuk mencegahnya kita bisa menukar posisi bahwa cin diletakkan dibawah getline, seperti berikut:
 
+{lang="c++"}
 	int main(){
 	int id, age;
 	string name, address;
@@ -1016,6 +1027,7 @@ Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu. Untuk me
 
 **Sehingga tampilan:**
 
+{:lang="sh"}
 	Enter Name: Yanuar Adi
 	Enter Address : Yogyakarta
 	Enter ID: 23
@@ -1023,6 +1035,7 @@ Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu. Untuk me
 
 Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan dengan cara:
 
+{:lang="c++"}
 	int main(){
 	int id, age;
 	string name, address;
@@ -1035,6 +1048,7 @@ Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan dengan car
 
 **Sehingga tampilan:**
 
+{:lang="sh"}
 	Enter ID : 23
 	Enter Name : Yanuar Adi
 	Enter Address : Yogyakarta

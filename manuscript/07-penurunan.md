@@ -98,6 +98,8 @@ Buka project Contoh 1 di atas, kemudian tambahkan (edit) kode berikut pada fungs
 
 Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
+{lang="sh", linenos=off}
+
 A> **Keterangan Program :**
 A>
 A> Tampak pada program dapat mengakses metode warisan kelas Lingkaran dari dalam program utama (main()). Ini menunjukkan bahwa metode tersebut diwariskan ke kelas Silinder dan jenis aksesnya masih tetap sama yaitu public.
@@ -423,8 +425,9 @@ Pada kasus Lab.7 di atas sebenarnya metode getLuas() masih dibutuhkan pada kelas
 
 {title="Contoh 8. Mengakses metode kelas dasar"}
 
-1. Buka project Qt Console Application projek Contoh .1 yang baru saja dibuat, kemudian ubah kode pada metode : getLuas(), getVolume() dan program utama. Berikut ini adalah potongan program yang mengalami perubahan saja:
+1. Buka project Qt Console Application projek Contoh 1 yang baru saja dibuat, kemudian ubah kode pada metode : getLuas(), getVolume() dan program utama. Berikut ini adalah potongan program yang mengalami perubahan saja:
 
+lang{="c++"}
 	public:
 	float getLuas(){ //<-- Overriding
 	float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;

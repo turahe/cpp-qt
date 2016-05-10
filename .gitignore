@@ -2,3 +2,6 @@ _site
 .sass-cache
 .jekyll-metadata
 _gh_pages
+
+# file to ignore
+*.tex

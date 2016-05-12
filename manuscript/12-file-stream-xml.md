@@ -54,12 +54,12 @@ Program dibawah ini akan menunjukan cara penggunaan QDir untuk mengambil informa
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
-A> **Keterangan:**:
-A> 
-A> - Static method QDir::drives() akan mengembalikan collection berupa QList<FileInfo> yang berisi semua drive yang ada pada komputer.
-A> - Untuk membaca semua drive beserta semua folder /direktori didalamnya anda dapat menggunakan foreach.
-A> - Method setFilter(QDir::Dirs) artinya yang akan ditampilkan hanya direktori saja, tidak file atau symbolic link, untuk menampilkan semua (drive, direktori, file) anda dapat menggunakan QDir::AllEntries.
-A> - Output dari program tersebut adalah daftar drive pada komputer anda beserta dengan folder yang ada didalamnya.
+ **Keterangan:**:
+ 
+ - Static method QDir::drives() akan mengembalikan collection berupa QList<FileInfo> yang berisi semua drive yang ada pada komputer.
+ - Untuk membaca semua drive beserta semua folder /direktori didalamnya anda dapat menggunakan foreach.
+ - Method setFilter(QDir::Dirs) artinya yang akan ditampilkan hanya direktori saja, tidak file atau symbolic link, untuk menampilkan semua (drive, direktori, file) anda dapat menggunakan QDir::AllEntries.
+ - Output dari program tersebut adalah daftar drive pada komputer anda beserta dengan folder yang ada didalamnya.
 
 Dibawah ini adalah daftar kriteria yang dapat digunakan untuk melakukan filter.
 
@@ -116,10 +116,10 @@ Agar lebih jelas bagaimana cara menggunakan QFile untuk membuka file, anda dapat
 
 3. Output diatas mempunyai arti bahwa anda belum membuat file dengan nama “testfile.txt”, agar program diatas berhasil dijalankan buat file “testfile.txt” didalam folder Contoh 2-build-simulator. Kemudian jalankan kembali programnya, maka akan tampil output berikut.
 
-A> **Keterangan:**
-A> 
-A> - Method exists() digunakan untuk mengecek apakah file yang ada atau tidak. Jika file tidak ditemukan maka program akan keluar dan menampilkan output program tidak ditemukan.
-A> - Method open() digunakan untuk membuka file, permision yang digunakan pada program diatas adalah WriteOnly. Jika file tidak dapat dibuka maka akan keluar pesan tidak dapat membuka file.
+ **Keterangan:**
+ 
+ - Method exists() digunakan untuk mengecek apakah file yang ada atau tidak. Jika file tidak ditemukan maka program akan keluar dan menampilkan output program tidak ditemukan.
+ - Method open() digunakan untuk membuka file, permision yang digunakan pada program diatas adalah WriteOnly. Jika file tidak dapat dibuka maka akan keluar pesan tidak dapat membuka file.
 
 ## Bekerja dengan Stream
 
@@ -171,11 +171,11 @@ Untuk membuat text stream pada file, buat objek QFile dan buka file seperti bias
 3. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
-A> **Keterangan:**
-A> 
-A> - Objek QTextStream digunakan jika anda ingin menggunakan stream untuk mengakses file text.
-A> - Untuk membaca semua data yang ada pada file text gunakan method readAll().
-A> - Untuk membaca file baris demi baris dapat digunakan method readLine() yang dijalankan didalam loop, method atEnd() digunakan untuk memeriksa apakah sudah sampai akhir file.
+ **Keterangan:**
+ 
+ - Objek QTextStream digunakan jika anda ingin menggunakan stream untuk mengakses file text.
+ - Untuk membaca semua data yang ada pada file text gunakan method readAll().
+ - Untuk membaca file baris demi baris dapat digunakan method readLine() yang dijalankan didalam loop, method atEnd() digunakan untuk memeriksa apakah sudah sampai akhir file.
 
 ### Data Stream
 
@@ -229,7 +229,7 @@ Untuk membaca file biner anda dapat menggunakan objek QDataStream. Program dibaw
 	}
 	void saveList()
 	{
-	QList<Warna> list;
+	QList<Warn list;
 	Warna data;
 	data.text = "Merah";
 	data.color = Qt::red;
@@ -253,7 +253,7 @@ Untuk membaca file biner anda dapat menggunakan objek QDataStream. Program dibaw
 	}
 	void loadList()
 	{
-	QList<Warna> list;
+	QList<Warn list;
 	QFile file( "datastream.dat" );
 	if( !file.open( QIODevice::ReadOnly ) )
 	return;
@@ -277,13 +277,13 @@ Untuk membaca file biner anda dapat menggunakan objek QDataStream. Program dibaw
 
 4. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Pada program diatas struct Warna adalah user define type yang dibuat sendiri, struct Warna memiliki dua member variabel yaitu text yang bertipe QString dan color yang bertipe QColor.
-A> - Untuk memasukan data biner (dengan tipe data Warna) kedalam stream buat operator <<
-A> - Untuk mengambil data biner dari stream buat operator >>
-A> - Method saveList() digunakan untuk membuat objek warna , memasukan objek tersebut kedalam list dan menuliskannya kedalam file datastream.dat.
-A> - Method loadList() digunakan untuk mengambil data stream dari file datastream.dat dan menampilkan data tersebut dengan cara membaca dari list.
+ **Keterangan:**
+ 
+ - Pada program diatas struct Warna adalah user define type yang dibuat sendiri, struct Warna memiliki dua member variabel yaitu text yang bertipe QString dan color yang bertipe QColor.
+ - Untuk memasukan data biner (dengan tipe data Warna) kedalam stream buat operator <<
+ - Untuk mengambil data biner dari stream buat operator >>
+ - Method saveList() digunakan untuk membuat objek warna , memasukan objek tersebut kedalam list dan menuliskannya kedalam file datastream.dat.
+ - Method loadList() digunakan untuk mengambil data stream dari file datastream.dat dan menampilkan data tersebut dengan cara membaca dari list.
 
 ## XML
 
@@ -376,16 +376,16 @@ Hasil dari file XML “simple.xml” yang berhasil dibuat adalah :
 	<Mahasiswa Jurusan="TI">
 	<Nim>22002321</Nim>
 	<Ipk>3.5</Ipk>
-	</Mahasiswa>
+	</Mahasisw
 
 
-A> **Keterangan:**
-A> 
-A> - Untuk membuat dokumen XML menggunakan DOM, pertama buat objek QDomDocument .
-A> - Langkah selanjutnya adalah membuat objek QDomElement untuk membuat element Nim dan Ipk.
-A> - Untuk menambahkan text pada element tambahkan objek QDomText.
-A> - Setelah element dan text selesai dibuat, anda dapat memasangkan element dan teks menjadi child node dengan menggunakan method appendChild().
-A> - Setelah dokumen XML selesai dibuat, anda dapat menuliskan dokumen tersebut ke file teks dengan menggunakan objek QTextStream, pada contoh program diatas dokumen XML disimpan dalam file “simple.xml”
+ **Keterangan:**
+ 
+ - Untuk membuat dokumen XML menggunakan DOM, pertama buat objek QDomDocument .
+ - Langkah selanjutnya adalah membuat objek QDomElement untuk membuat element Nim dan Ipk.
+ - Untuk menambahkan text pada element tambahkan objek QDomText.
+ - Setelah element dan text selesai dibuat, anda dapat memasangkan element dan teks menjadi child node dengan menggunakan method appendChild().
+ - Setelah dokumen XML selesai dibuat, anda dapat menuliskan dokumen tersebut ke file teks dengan menggunakan objek QTextStream, pada contoh program diatas dokumen XML disimpan dalam file “simple.xml”
 
 ### Membaca XML file
 
@@ -448,15 +448,15 @@ Pada contoh dibawah ini kita akan membaca dan memasukan file kedalam QDomDocumen
 
 6. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Untuk membaca data dari file, seperti biasa gunakan objek QFile dan jalankan method open().
-A> - Untuk mengambil data yang ada file untuk dimasukan kedalam objek QDomDocument gunakan method setContent().
-A> - Untuk mengakses data elemen pada QDomDocument, buat objek QDomElement.
-A> - Untuk mengambil node dari QDomElement, buat objek QDomNode. Method firstChild() digunakan untuk mengambil node awal pada QDomElement.
-A> - Kemudian jika node yang dibaca tidak null, cek apakah node tersebut berupa elemen, jika node tersebut element lakukan konversi ke objek QDomElement dan gunakan method tagName() untuk menampilkan nama element dan method attribute() untuk menampilkan atribut jika ada.
-A> - Cek juga apakah node bertipe teks dengan method isText(), jika teks konversi node kedalam objek QDomText kemudian tampilkan isi dari teks dengan menggunakan method toText().
-A> - Untuk berpindah ke node selanjutnya gunakan method nextSibling().
+ **Keterangan:**
+ 
+ - Untuk membaca data dari file, seperti biasa gunakan objek QFile dan jalankan method open().
+ - Untuk mengambil data yang ada file untuk dimasukan kedalam objek QDomDocument gunakan method setContent().
+ - Untuk mengakses data elemen pada QDomDocument, buat objek QDomElement.
+ - Untuk mengambil node dari QDomElement, buat objek QDomNode. Method firstChild() digunakan untuk mengambil node awal pada QDomElement.
+ - Kemudian jika node yang dibaca tidak null, cek apakah node tersebut berupa elemen, jika node tersebut element lakukan konversi ke objek QDomElement dan gunakan method tagName() untuk menampilkan nama element dan method attribute() untuk menampilkan atribut jika ada.
+ - Cek juga apakah node bertipe teks dengan method isText(), jika teks konversi node kedalam objek QDomText kemudian tampilkan isi dari teks dengan menggunakan method toText().
+ - Untuk berpindah ke node selanjutnya gunakan method nextSibling().
 
 ### Memodifikasi File XML
 
@@ -472,11 +472,11 @@ Pada topik sebelumnya kita sudah membahas bagaimana cara menulis dan membaca dat
 	<Mahasiswa Jurusan="TI">
 	<Nim nama="Erick">22002321</Nim>
 	<Ipk>3.5</Ipk>
-	</Mahasiswa>
+	</Mahasisw
 	<Mahasiswa Jurusan="SI">
 	<Nim nama="Katon">23002333</Nim>
 	<Ipk>3.6</Ipk>
-	</Mahasiswa>
+	</Mahasisw
 	</dokumen>
 
 
@@ -553,21 +553,21 @@ Pada topik sebelumnya kita sudah membahas bagaimana cara menulis dan membaca dat
 	<Mahasiswa Jurusan="TI">
 	<Nim nama="Erick">22002321</Nim>
 	<Ipk>3.5</Ipk>
-	<Nama>Erick Kurniawan</Nama>
-	</Mahasiswa>
+	<NamErick Kurniawan</Nam
+	</Mahasisw
 	<Mahasiswa Jurusan="SI">
 	<Nim nama="Katon">23002333</Nim>
 	<Ipk>3.6</Ipk>
-	</Mahasiswa>
+	</Mahasisw
 	</dokumen>
 
-A> **Keterangan:**
-A> 
-A> - Langkah pertama baca file simple.xml yang akan dimodifikasi, kemudian masukan isinya kedalam QDomDocument.
-A> - Ambil root element dari dokumen menggunakan method documentElement() dan masukan kedalam objek bertipe QDomElement.
-A> - Kode QDomNodeList elemen = elemenDokumen.elementsByTagName("Mahasiswa"); digunakan untuk mengambil semua element yg mempunyai tag <Mahasiswa> dan memasukannya kedalam variabel elemen yang bertipe QDomNodeList.
-A> - Kode if(elemen.size() == 0) digunakan untuk memeriksa apakah elemen dengan tag <Mahasiswa> ditemukan, jika tidak ditemukan maka buat elemen <Mahasiswa>, jika ditemukan ambil elemen <Mahasiswa> pertama kemudian tambahkan elemen baru <Nama> beserta teks di dalam elemen <Mahasiswa> tersebut.
-A> - Langkah terakhir adalah membuat QTextStream dan menyimpan dokumen XML yang sudah dimodifikasi kedalam file simplemodif.xml.
+ **Keterangan:**
+ 
+ - Langkah pertama baca file simple.xml yang akan dimodifikasi, kemudian masukan isinya kedalam QDomDocument.
+ - Ambil root element dari dokumen menggunakan method documentElement() dan masukan kedalam objek bertipe QDomElement.
+ - Kode QDomNodeList elemen = elemenDokumen.elementsByTagName("Mahasiswa"); digunakan untuk mengambil semua element yg mempunyai tag <Mahasisw dan memasukannya kedalam variabel elemen yang bertipe QDomNodeList.
+ - Kode if(elemen.size() == 0) digunakan untuk memeriksa apakah elemen dengan tag <Mahasisw ditemukan, jika tidak ditemukan maka buat elemen <Mahasisw, jika ditemukan ambil elemen <Mahasisw pertama kemudian tambahkan elemen baru <Nam beserta teks di dalam elemen <Mahasisw tersebut.
+ - Langkah terakhir adalah membuat QTextStream dan menyimpan dokumen XML yang sudah dimodifikasi kedalam file simplemodif.xml.
 
 ## QXMLStream Reader
 
@@ -621,14 +621,14 @@ Setelah memanggil method readNext(), anda dapat mengecek token yang sedang aktif
 
 {lang="xml"}
 	<Mahasiswas>
-	<Mahasiswa>
+	<Mahasisw
 	<Nim nama="Erick">22002321</Nim>
 	<Ipk>3.5</Ipk>
-	</Mahasiswa>
-	<Mahasiswa>
+	</Mahasisw
+	<Mahasisw
 	<Nim nama="Katon">23002333</Nim>
 	<Ipk>3.6</Ipk>
-	</Mahasiswa>
+	</Mahasisw
 	</Mahasiswas>
 
 3. Kemudian ketikan kode berikut pada main.cpp untuk membaca data dari dokumen XML.
@@ -669,12 +669,12 @@ Setelah memanggil method readNext(), anda dapat mengecek token yang sedang aktif
 4. Jalankan aplikasi tersebut, maka akan ditampikan output sebagai berikut.
 
 
-A> **Keterangan:**
-A> 
-A> - Untuk membaca dokumen XML menggunakan QXMLStreamReader anda dapat melakukan looping dengan memeriksa apakah sudah sampai pada akhir dokumen while(!reader.atEnd()).
-A> - Method reader.readNext(); digunakan untuk berpindah token.
-A> - Method reader.isStartElement() digunakan untuk mengecek apakah token yg sekarang aktif adalah elemen awal.
-A> - Kode if(reader.name() == "Nim") digunakan untuk mengecek apakah nama elemen adalah “Nim” jika ya baca attribute dan teks pada elemen tersebut untuk ditampilkan.
+ **Keterangan:**
+ 
+ - Untuk membaca dokumen XML menggunakan QXMLStreamReader anda dapat melakukan looping dengan memeriksa apakah sudah sampai pada akhir dokumen while(!reader.atEnd()).
+ - Method reader.readNext(); digunakan untuk berpindah token.
+ - Method reader.isStartElement() digunakan untuk mengecek apakah token yg sekarang aktif adalah elemen awal.
+ - Kode if(reader.name() == "Nim") digunakan untuk mengecek apakah nama elemen adalah “Nim” jika ya baca attribute dan teks pada elemen tersebut untuk ditampilkan.
 
 {title="Contoh 9. Membuat dokumen XML dengan QXMLStreamWriter"}
 
@@ -722,12 +722,12 @@ A> - Kode if(reader.name() == "Nim") digunakan untuk mengecek apakah nama elemen
 	</Book>
 	</Books>
 
-A> **Keterangan:**
-A> 
-A> - Anda dapat menggunakan QXMLStreamWriter untuk membuat dokumen XML.
-A> - Kode writer.setAutoFormatting(true); digunakan untuk memformat secara otomatis dokumen XML yang akan dibuat, misal menambahkan line break dan indentation pada bagian yang kosong pada elemen. Tujuan utamanya adalah memisahkan data menjadi beberapa baris sehingga membantu dalam pembacaan dokumen.
-A> - Kode writer.writeStartDocument(); digunakan pada saat pertama kali dokumen akan dibuat.
-A> - Kode writer.writeStartElement("Books"); digunakan untuk menuliskan elemen Books.
-A> - Kode writer.writeAttribute("Name","Erick Kurniawan"); digunakan untuk
+ **Keterangan:**
+ 
+ - Anda dapat menggunakan QXMLStreamWriter untuk membuat dokumen XML.
+ - Kode writer.setAutoFormatting(true); digunakan untuk memformat secara otomatis dokumen XML yang akan dibuat, misal menambahkan line break dan indentation pada bagian yang kosong pada elemen. Tujuan utamanya adalah memisahkan data menjadi beberapa baris sehingga membantu dalam pembacaan dokumen.
+ - Kode writer.writeStartDocument(); digunakan pada saat pertama kali dokumen akan dibuat.
+ - Kode writer.writeStartElement("Books"); digunakan untuk menuliskan elemen Books.
+ - Kode writer.writeAttribute("Name","Erick Kurniawan"); digunakan untuk
 menambahkan attribute pada elemen tertentu.
-A> - Kode writer.writeEndDocument(); digunakan untuk menutup semua start element yang sebelumnya dibuat dengan method writeStartElement().
+ - Kode writer.writeEndDocument(); digunakan untuk menutup semua start element yang sebelumnya dibuat dengan method writeStartElement().

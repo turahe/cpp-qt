@@ -54,10 +54,10 @@ bil1 = 20 address = 0x28fe96
 bil2 = 200000 address = 0x28fe90
 bil3 = -670000 address = 0x28fe8c
 
-A> **Analisa Program :**
-A> 
-A> - Pada program diatas operator address of (&) digunakan untuk mengetahui alamat memory tempat variabel bil disimpan.
-A> - Ketika anda mendeklarasikan variabel dengan tipe tertentu maka compiler akan menentukan ukuran dari memory yang diperlukan untuk menyimpan data dan secara otomatis menetapkan alamat memory dimana variabel tersebut akan disimpan.
+ **Analisa Program :**
+ 
+ - Pada program diatas operator address of (&) digunakan untuk mengetahui alamat memory tempat variabel bil disimpan.
+ - Ketika anda mendeklarasikan variabel dengan tipe tertentu maka compiler akan menentukan ukuran dari memory yang diperlukan untuk menyimpan data dan secara otomatis menetapkan alamat memory dimana variabel tersebut akan disimpan.
 
 ## Menyimpan Alamat Variabel pada Pointer
 
@@ -150,12 +150,12 @@ Merubah nilai umur..
 Umur : 30
 pUmur : 30
 
-A> **Analisa Program:**
-A> 
-A> - Pada program diatas pointer pUmur mereferensi/menunjuk ke alamat dimana nilai variabel umur disimpan.
-A> - Untuk mengakses nilai dari variabel umur lewat pointer dapat menggunakan dereference operator (*).
-A> - Ketika nilai dereference pointer `*pUmur` diubah menjadi 28, maka akan mempengaruhi nilai pada variabel umur yang akan menjadi 28 juga.
-A> - Ketika nilai variabel umur diubah menjadi 30, dan anda mengakses nilainya dengan menggunakan pointer `*pUmur` maka nilainya juga akan berubah menjadi 30.
+ **Analisa Program:**
+ 
+ - Pada program diatas pointer pUmur mereferensi/menunjuk ke alamat dimana nilai variabel umur disimpan.
+ - Untuk mengakses nilai dari variabel umur lewat pointer dapat menggunakan dereference operator (*).
+ - Ketika nilai dereference pointer `*pUmur` diubah menjadi 28, maka akan mempengaruhi nilai pada variabel umur yang akan menjadi 28 juga.
+ - Ketika nilai variabel umur diubah menjadi 30, dan anda mengakses nilainya dengan menggunakan pointer `*pUmur` maka nilainya juga akan berubah menjadi 30.
 
 ## Mengganti alamat yang direferensi oleh Pointer
 
@@ -193,10 +193,10 @@ umur2 : 28 alamat : 0x28fe90
 pUmur : 28 alamat : 0x28fe90
 
 
-A> **Analisa:**
-A> 
-A> - Pada program diatas dapat dilihat bahwa pertama kali pointer pUmur mereferensi pada alamat variabel `umur1`, sehingga ketika dicetak nilai dari `*pUmur` sama dengan nilai variabel `umur1`.
-A> - Anda dapat mengganti referensi dari `pUmur` yang tadinya menunjuk ke alamat variabel `umur1` menjadi menunjuk ke alamat variabel `umur2`, sehingga ketika `*pUmur` dicetak menghasilkan nilai yang sama dengan variabel `umur2`.
+ **Analisa:**
+ 
+ - Pada program diatas dapat dilihat bahwa pertama kali pointer pUmur mereferensi pada alamat variabel `umur1`, sehingga ketika dicetak nilai dari `*pUmur` sama dengan nilai variabel `umur1`.
+ - Anda dapat mengganti referensi dari `pUmur` yang tadinya menunjuk ke alamat variabel `umur1` menjadi menunjuk ke alamat variabel `umur2`, sehingga ketika `*pUmur` dicetak menghasilkan nilai yang sama dengan variabel `umur2`.
 
 ## Pointer dan Array
 
@@ -254,9 +254,9 @@ numbers[2] = 222
 numbers[3] = 111
 numbers[4] = 777
 
-A> **Analisa :**
-A> 
-A> Nama dari array numbers merupakan konstan pointer yang menunjuk alamat element pertama pada array (`numbers[0]`), jadi jika anda ingin mengetahui nilai dari elemen pertama array anda dapat menggunakan dereference operator `*numbers`.
+ **Analisa :**
+ 
+ Nama dari array numbers merupakan konstan pointer yang menunjuk alamat element pertama pada array (`numbers[0]`), jadi jika anda ingin mengetahui nilai dari elemen pertama array anda dapat menggunakan dereference operator `*numbers`.
 
 Anda dapat menggunakan nama array `numbers+4` untuk menunjuk ke alamat elemen `numbers[4]`, untuk menampilkan nilai `numbers[4]` anda dapat menuliskan `*(numbers+4)`.
 
@@ -327,10 +327,10 @@ pBil : 20
 Nilai pHeap : 19
 Nilai pHeap : 100
 
-A> **Analisa:**
-A> 
-A> - `pHeap` adalah pointer yang menunjuk ke alamat memory yang sudah dialokasikan dengan keyword ‘new’, anda dapat menyimpan nilai kedalam memory yang dialokasikan dengan `*pHeap=19`
-A> - Setelah selesai digunakan anda harus membersihkan memory dengan menggunakan keyword ‘delete’, jangan lupa menginisialisasi pointer dengan null (0) agar tidak terus menunjuk ke alamat memory yang sudah dihapus.
+ **Analisa:**
+ 
+ - `pHeap` adalah pointer yang menunjuk ke alamat memory yang sudah dialokasikan dengan keyword ‘new’, anda dapat menyimpan nilai kedalam memory yang dialokasikan dengan `*pHeap=19`
+ - Setelah selesai digunakan anda harus membersihkan memory dengan menggunakan keyword ‘delete’, jangan lupa menginisialisasi pointer dengan null (0) agar tidak terus menunjuk ke alamat memory yang sudah dihapus.
 
 T> **TIPS**
 T> 
@@ -397,12 +397,12 @@ Konstruktor dipanggil..
 Delete objek di memory 
 Destruktor dipanggil..
 
-A> **Analisa :**
-A> 
-A> - Pada program diatas kita membuat class Mahasiswa yang mempunyai objek konstruktor dan destruktor.
-A> - Pertama kali kita mendeklarasikan object mhs1 pada local variable (stack), pembuatan object ini menyebabkan konstruktor dipanggil.
-A> - Kemudian dibuat pointer yang menunjuk ke objek di heap dengan nama mhs2, ketika objek mhs2 dibuat, objek konstruktor dipanggil. Ketika anda menghapus objek di heap menggunakan delete maka objek destruktor akan dipanggil.
-A> - Objek desktruktor untuk mhs1 akan dipanggil ketika fungsi main berakhir.
+ **Analisa :**
+ 
+ - Pada program diatas kita membuat class Mahasiswa yang mempunyai objek konstruktor dan destruktor.
+ - Pertama kali kita mendeklarasikan object mhs1 pada local variable (stack), pembuatan object ini menyebabkan konstruktor dipanggil.
+ - Kemudian dibuat pointer yang menunjuk ke objek di heap dengan nama mhs2, ketika objek mhs2 dibuat, objek konstruktor dipanggil. Ketika anda menghapus objek di heap menggunakan delete maka objek destruktor akan dipanggil.
+ - Objek desktruktor untuk mhs1 akan dipanggil ketika fungsi main berakhir.
 
 ## Menggunakan const Pointer
 
@@ -478,12 +478,12 @@ Menampilkan alamat memory :
 &bil1 : 0x28fe90
 &rBil : 0x28fe90
 
-A> **Analisa:**
-A> 
-A> - Pertama kita mendeklarasikan referensi `rBil=bil1`, maka ketika dicetak nilai `rBil` sama dengan nilai variabel `bil1` karena `rBil` merupakan reference / alias dari `bil1`.
-A> - Ketika variabel `bil1` nilainya dirubah menjadi `19`, maka otomatis nilai dari `rBil` juga berubah menjadi `19`.
-A> - Demikian pula ketika `rBil` nilainya dirubah menjadi `33`, maka nilai dari `bil1` juga ikut berubah.
-A> - Anda juga dapat menampilkan alamat memory dari variabel dan variabel reference dengan menambahkan keyword (&) didepan variabel.
+ **Analisa:**
+ 
+ - Pertama kita mendeklarasikan referensi `rBil=bil1`, maka ketika dicetak nilai `rBil` sama dengan nilai variabel `bil1` karena `rBil` merupakan reference / alias dari `bil1`.
+ - Ketika variabel `bil1` nilainya dirubah menjadi `19`, maka otomatis nilai dari `rBil` juga berubah menjadi `19`.
+ - Demikian pula ketika `rBil` nilainya dirubah menjadi `33`, maka nilai dari `bil1` juga ikut berubah.
+ - Anda juga dapat menampilkan alamat memory dari variabel dan variabel reference dengan menambahkan keyword (&) didepan variabel.
 
 ### Re-assign Reference Variable
 
@@ -519,9 +519,9 @@ rBil : 14
 rBil : 19
 bil : 19
 
-A> **Analisa:**
-A> 
-A> Variabel reference `rBil` yang sudah diinisialisasi dengan `bil1` coba di re-assign dengan `bil2` dan gagal, karena `rBil=bil2` tidak menjadikan referensinya berubah tetapi nilai `bil2` yang mengganti nilai `rBil` dan `bil1`.
+ **Analisa:**
+ 
+ Variabel reference `rBil` yang sudah diinisialisasi dengan `bil1` coba di re-assign dengan `bil2` dan gagal, karena `rBil=bil2` tidak menjadikan referensinya berubah tetapi nilai `bil2` yang mengganti nilai `rBil` dan `bil1`.
 
 ## Passing function argument dengan reference
 
@@ -567,9 +567,9 @@ Pada fungsi, sebelum ditukar, x=12, y=21
 Pada fungsi, Setelah ditukar, x=21, y=12
 Pada main, setelah ditukar x=12, y=21
 
-A> **Keterangan:**
-A> 
-A> - Pada kode diatas dapat dilihat bahwa _passing by value_ ke fungsi `Tukar()` tidak akan mempengaruhi variabel `x` dan `y` yang ada pada fungsi main, dan hanya berpengaruh pada scope fungsi `Tukar()`.
+ **Keterangan:**
+ 
+ - Pada kode diatas dapat dilihat bahwa _passing by value_ ke fungsi `Tukar()` tidak akan mempengaruhi variabel `x` dan `y` yang ada pada fungsi main, dan hanya berpengaruh pada scope fungsi `Tukar()`.
 saja.
 
 Contoh 10. Passing by reference dengan pointer
@@ -610,9 +610,9 @@ Pada fungsi, sebelum ditukar x=12,y=21
 Pada fungsi, sesudah ditukar x=21,y=12
 main func, x=21, y=11
 
-A> **Analisa:**
-A> 
-A> Pada kode diatas kita melakukan passing by reference untuk passing parameter ke fungsi `Tukar()` menggunakan pointer, dapat anda lihat bahwa setelah fungsi `Tukar()` dijalankan variabel `x` dan `y` di main function nilainya sudah berhasil ditukar.
+ **Analisa:**
+ 
+ Pada kode diatas kita melakukan passing by reference untuk passing parameter ke fungsi `Tukar()` menggunakan pointer, dapat anda lihat bahwa setelah fungsi `Tukar()` dijalankan variabel `x` dan `y` di main function nilainya sudah berhasil ditukar.
 
 Contoh 11. Menjalankan fungsi Tukar() dengan reference
 
@@ -652,9 +652,9 @@ Pada function, sebelum ditukar x=12, y=21
 Sesudah function, sebelum ditukar x=21, y=12
 main func, setelah ditukar x=21, y=11
 
-A> **Analisa:**
-A> 
-A> Pada kode diatas kita juga berhasil menukar nilai x dan y menggunakan fungsi tukar sama dengan kode sebelumnya. Ini karena passing parameter menggunakan variabel reference.
+ **Analisa:**
+ 
+ Pada kode diatas kita juga berhasil menukar nilai x dan y menggunakan fungsi tukar sama dengan kode sebelumnya. Ini karena passing parameter menggunakan variabel reference.
 
 ## Function yang mengembalikan beberapa nilai
 
@@ -714,11 +714,11 @@ pLuasPersegi : 25
 pVolumeKubus : 125
 
 
-A> **Analisa:**
-A> 
-A> - Inputan untuk variabel number harus lebih besar dari 0, jika tidak program akan menghasilkan pesan error.
-A> - Dapat dilihat bahwa function `Hitung()` mengembalikan 3 nilai yaitu : nilai kembalian dari `function` itu sendiri yang bertipe `integer`, `pLuasPersegi`, dan `pVolumeKubus` yang merupakan parameter bertipe pointer.
-A> - `pLuasPersegi` dan `pVolumeKubus` nilainya dapat bukan karena nilai kembalian dari function, tapi karena parameter by reference dari function yang berupa pointer, sehingga ketika nilai `pLuasPersegi` dan `pVolumeKubus` diubah di dalam function nilai variabel asli di main function juga berubah.
+ **Analisa:**
+ 
+ - Inputan untuk variabel number harus lebih besar dari 0, jika tidak program akan menghasilkan pesan error.
+ - Dapat dilihat bahwa function `Hitung()` mengembalikan 3 nilai yaitu : nilai kembalian dari `function` itu sendiri yang bertipe `integer`, `pLuasPersegi`, dan `pVolumeKubus` yang merupakan parameter bertipe pointer.
+ - `pLuasPersegi` dan `pVolumeKubus` nilainya dapat bukan karena nilai kembalian dari function, tapi karena parameter by reference dari function yang berupa pointer, sehingga ketika nilai `pLuasPersegi` dan `pVolumeKubus` diubah di dalam function nilai variabel asli di main function juga berubah.
 
 Contoh 13. Mengembalikan beberapa nilai dengan reference variabel
 
@@ -770,10 +770,10 @@ Number : 5
 pLuasPersegi : 25
 pVolumeKubus : 125
 
-A> **Analisa:**
-A> 
-A> - Hasil program diatas sama dengan Contoh 12 sebelumnya, namun perbedaannya adalah program diatas menggunakan parameter reference pada function `Hitung()` sehingga ketika variabel `rLuasPersegi` dan `rVolumeKubus` pada function diubah nilainya maka variabel di function main juga ikut berubah.
-A> - Keyword enum digunakan untuk membuat objek enumerasi untuk mempermudah pembacaan program.
+ **Analisa:**
+ 
+ - Hasil program diatas sama dengan Contoh 12 sebelumnya, namun perbedaannya adalah program diatas menggunakan parameter reference pada function `Hitung()` sehingga ketika variabel `rLuasPersegi` dan `rVolumeKubus` pada function diubah nilainya maka variabel di function main juga ikut berubah.
+ - Keyword enum digunakan untuk membuat objek enumerasi untuk mempermudah pembacaan program.
 
 ## Passing By Reference untuk Efisiensi
 
@@ -834,11 +834,11 @@ Memanggil Copy Konstruktor
 Memanggil Mahasiswa Destruktor 
 Memanggil Mahasiswa Destruktor 
 
-A> **Analisa:**
-A> 
-A> - Dapat kita lihat diatas bahwa _passing object by value_ tidak efisien karena setiap kali function dipanggil dan mengembalikan nilai harus melakukan copy terhadap objek objMhs1.
-A> - Hal ini dapat dilihat dari output yang dihasilkan, copy konstruktor dipanggil sebanyak 2 kali, saat pemanggilan function dan pengembalian nilai function.
-A> - Cara yang lebih efisien akan dibahas pada contoh program selanjutnya.
+ **Analisa:**
+ 
+ - Dapat kita lihat diatas bahwa _passing object by value_ tidak efisien karena setiap kali function dipanggil dan mengembalikan nilai harus melakukan copy terhadap objek objMhs1.
+ - Hal ini dapat dilihat dari output yang dihasilkan, copy konstruktor dipanggil sebanyak 2 kali, saat pemanggilan function dan pengembalian nilai function.
+ - Cara yang lebih efisien akan dibahas pada contoh program selanjutnya.
 
 Contoh 15. Passing Object By Reference
 
@@ -889,7 +889,7 @@ Membuat object mahasiswa
 Memanggil Mahasiswa Konstruktor 
 Mengembalikan FunctionMhs ..
 
-A> **Analisa:**
-A> 
-A> - Dengan menambahkan reference pada function dan parameter yang dikirimkan, performa aplikasi anda dapat lebih efektif karena objek tidak perlu dicopy ketika function dijalankan dan saat function tersebut mengembalikan nilai.
-A> - Output yang dihasilkan lebih sedikit karena tidak perlu memanggil copy objek konstruktor.
+ **Analisa:**
+ 
+ - Dengan menambahkan reference pada function dan parameter yang dikirimkan, performa aplikasi anda dapat lebih efektif karena objek tidak perlu dicopy ketika function dijalankan dan saat function tersebut mengembalikan nilai.
+ - Output yang dihasilkan lebih sedikit karena tidak perlu memanggil copy objek konstruktor.

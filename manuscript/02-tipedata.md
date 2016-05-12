@@ -74,7 +74,6 @@ Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku bertipe i
 
 Contoh 1. Tipe data dan Identifier.
 
----------------------------------------------------
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
@@ -100,11 +99,11 @@ Contoh 1. Tipe data dan Identifier.
 	Panjang		=15
 	lebar		=12
 
-A> **Keterangan:**
-A> 
-A> - Pada program di atas variabel panjang dan lebar dideklarasikan bertipe int.
-A> - Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat diubah.
-A> - Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak ke layar.
+ **Keterangan:**
+ 
+ - Pada program di atas variabel panjang dan lebar dideklarasikan bertipe int.
+ - Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat diubah.
+ - Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak ke layar.
 
 ## Statement
 
@@ -149,14 +148,14 @@ Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari
 	lebar = 12;
 	luas = panjang * lebar ;
 
-A> **Keterangan :**
-A> 
-A> * Pada baris pertama dan kedua di atas digunakan hanya sebuah operator “`= `“ (yaitu jenjang ke 14), arah proses dari kanan ke kiri, sehingga yang dilakukan :
-A> * Ekspresi : `15`, diberikan kepada variabel `panjang` (dibaca dari kanan ke kiri).
-A> * Ekspresi : `12`, diberikan kepada variabel `lebar` (dibaca dari kanan ke kiri).
-A> * Pada baris ketiga terdapat 2 operator, yaitu operator “= “ (jenjang ke 14) dan “`*`” operator “= “ (yaitu jenjang ke 3). Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu, jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator. Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator “`*`” baru kemudian operator “=”, sehingga yang dilakukan:
-A> 		- Ekspresi : `panjang * lebar` , berarti `panjang` dikalikan `lebar` (dibaca dari kiri ke kanan), menghasilkan nilai integer `180`.
-A> 		- Berikutnya operator “=” mengoperasikan hasil ekspresi tersebut, yaitu nilai integer `180` diberikan kepada variabel `luas` (dibaca dari kanan ke kiri).
+ **Keterangan :**
+ 
+ * Pada baris pertama dan kedua di atas digunakan hanya sebuah operator “`= `“ (yaitu jenjang ke 14), arah proses dari kanan ke kiri, sehingga yang dilakukan :
+ * Ekspresi : `15`, diberikan kepada variabel `panjang` (dibaca dari kanan ke kiri).
+ * Ekspresi : `12`, diberikan kepada variabel `lebar` (dibaca dari kanan ke kiri).
+ * Pada baris ketiga terdapat 2 operator, yaitu operator “= “ (jenjang ke 14) dan “`*`” operator “= “ (yaitu jenjang ke 3). Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu, jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator. Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator “`*`” baru kemudian operator “=”, sehingga yang dilakukan:
+ 		- Ekspresi : `panjang * lebar` , berarti `panjang` dikalikan `lebar` (dibaca dari kiri ke kanan), menghasilkan nilai integer `180`.
+ 		- Berikutnya operator “=” mengoperasikan hasil ekspresi tersebut, yaitu nilai integer `180` diberikan kepada variabel `luas` (dibaca dari kanan ke kiri).
 
 T> **TIPS**
 T>
@@ -295,14 +294,14 @@ Adalah perintah yang memungkinkan pemilihan atas perintah yang akan dijalankan s
 
 Sintaks penulisannya sebagai berikut:
 
-A> {lang="c++", linenos=off}
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~
-A> if (<ekspresi_boolean>)
-A> {
-A> <statements>
-A> }
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~
-A> 
+ {lang="c++", linenos=off}
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ if (<ekspresi_boolean>)
+ {
+ <statements>
+ }
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
 
 ![](images/capture2-1.png)
 
@@ -314,18 +313,18 @@ Flowchart untuk statment ini adalah :
 
 Sintaks penulisannya sebagai berikut :
 
-A> {lang="c++", linenos=off}
-A> ~~~~~~~~~~~~~~~~~~
-A> if (<ekspresi_boolean>)
-A> {
-A> <dijalankan jika ekspresi_boolean benar>
-A> }
-A> else
-A> {
-A> < dijalankan jika ekspresi_boolean salah>
-A> }
-A> ~~~~~~~~~~~~~~~~~~~
-A> 
+ {lang="c++", linenos=off}
+ ~~~~~~~~~~~~~~~~~~
+ if (<ekspresi_boolean>)
+ {
+ <dijalankan jika ekspresi_boolean benar>
+ }
+ else
+ {
+ < dijalankan jika ekspresi_boolean salah>
+ }
+ ~~~~~~~~~~~~~~~~~~~
+ 
 
 Flowchart untuk statment ini adalah :
 
@@ -344,20 +343,20 @@ Flowchart untuk statment if bersarang ini adalah :
 
 Perintah ini digunakan sebagai alternatif pengganti dari statment `if … else` dengan `else` lebih dari satu. Dengan perintah ini percabangan dapat diarahkan pada beberapa alternatif pilihan berdasarkan nilai ekspresi. Berbeda dengan `if`, `switch` tidak dapat medeteksi *operator pembanding* (>, <, dsb.), karena ekspresi degan operator ini menghasilkan nilai *boolean*, melainkan hanya dapat mengalihkan alur program ke suatu nilai yang sama, pada statement ini ekspresi yang diminta harus menghasilkan bilangan *bulat*.
 
-A> {lang="c++", linenos=off}
-A> ~~~~~~~~~
-A> switch (<ekspresi>)
-A> {
-A> case <konst_1>: <pernyataan_1>;
-A> break;
-A> case <konst_2>: <pernyataan_2>;
-A> break;
-A> case <konst_n>: <pernyataan_n>;
-A> break;
-A> default : <pernyataan_default>;
-A> }
-A> ~~~~~~~~~~~~~~~~~~
-A>
+ {lang="c++", linenos=off}
+ ~~~~~~~~~
+ switch (<ekspresi>)
+ {
+ case <konst_1>: <pernyataan_1>;
+ break;
+ case <konst_2>: <pernyataan_2>;
+ break;
+ case <konst_n>: <pernyataan_n>;
+ break;
+ default : <pernyataan_default>;
+ }
+ ~~~~~~~~~~~~~~~~~~
+
 
 Perintah `switch` akan membaca nilai dari `<ekspresi>` kemudian membandingkan hasilnya dengan konstanta-konstanta (`<konst_1>`, `<konst_2>`, `<konst_n>`) yang berada di case. Pembandingan akan dimulai dari `<konst_1>` sampai konstanta `<konst_n>`. Jika hasil dari kondisi sama dengan nilai konstanta tertentu, misalnya `<konst_1>`, maka pernyataan 1 akan dijalankan sampai ditemukan `break`. Pernyataan `break` akan membawa proses keluar dari perintah `switch`. Jika hasil dari kondisi tidak ada yang sama dengan konstanta-konstanta yang diberikan, maka pernyataan pada *default* yang akan dijalankan.
 
@@ -405,10 +404,10 @@ Contoh.2 Tipe data dan Identifier.
 	sabtu
 
 
-A> Analisa Program :
-A> 
-A> - Pada program di atas variabel `hari` dideklarasikan bertipe `int` dan diinisialisasi dengan nilai `6`.
-A> - Kemudian pada bagian ekspresi di dalam `switch` di isi variabel `hari`, hasil ekspresi tersebut di evaluasi, karena menghasilkan nilai 6, maka yang dicetak ke layar adalah “**Sabtu**”.
+ Analisa Program :
+ 
+ - Pada program di atas variabel `hari` dideklarasikan bertipe `int` dan diinisialisasi dengan nilai `6`.
+ - Kemudian pada bagian ekspresi di dalam `switch` di isi variabel `hari`, hasil ekspresi tersebut di evaluasi, karena menghasilkan nilai 6, maka yang dicetak ke layar adalah “**Sabtu**”.
 
 ### Perulangan
 
@@ -420,15 +419,15 @@ Digunakan untuk mengulangi perintah dengan jumlah perulangan yang sudah diketahu
 
 Bentuk umum penulisannya sebagai berikut :
 
-A>
-A> {lang="c++", linenos=off}
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A> for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
-A> {
-A> <statmemnts>
-A> }
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A> 
+
+ {lang="c++", linenos=off}
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
+ {
+ <statmemnts>
+ }
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
 
 ![](images/capture2-8.png)
 
@@ -438,15 +437,15 @@ Perintah ini digunakan untuk mengulangi suatu perintah sampai kondisi tertentu. 
 
 Sintaks penulisannya sebagai berikut :
 
-A>
-A> {linenos=off}
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A>	for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
-A>	{
-A>	<statmemnts>
-A>	}
-A>	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A>
+
+ {linenos=off}
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
+	{
+	<statmemnts>
+	}
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 ![](images/capture2-9.png)
 
@@ -456,16 +455,16 @@ Proses perulangan akan berjalan jika kondisi yang diperiksa di `while` masih ber
 
 Sintaks penulisannya sebagai berikut :
 
-A>
-A> {linenos=off}
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A> do
-A> {
-A> <statements>
-A> }
-A> while(<expresi_boolean>)
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A>
+
+ {linenos=off}
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ do
+ {
+ <statements>
+ }
+ while(<expresi_boolean>)
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 ![](images/capture2-10.png)
 
@@ -477,15 +476,15 @@ Kata kunci `break` digunakan untuk keluar dari suatu blok programn sebelum ekspr
 
 Sintaks penulisan `break` dan `continue` adalah sebagai berikut :
 
-A> 
-A> {lang="c++" linenos=off}
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A> while(<expresi_boolean1>)
-A> {
-A> <statements>
-A> if(<expresi_boolean2>)
-A> continue;
-A> <statements>
-A> }
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A> 
+ 
+ {lang="c++" linenos=off}
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ while(<expresi_boolean1>)
+ {
+ <statements>
+ if(<expresi_boolean2>)
+ continue;
+ <statements>
+ }
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 

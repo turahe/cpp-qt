@@ -123,22 +123,22 @@ Tulislah kode berikut:
 **Hasil:**
 
 
-A> **Keterangan:**
-A> 
-A> Mari kita Keterangan: perbaris.
-A> 
-A> - Integer dibagi integer dan dimasukkan ke dalam variabel integer akan menjadi integer, walaupun ada koma dibelakangnya, yaitu 0.5 tapi akan dipotong, karena tipe data integer tidak mampu menerima koma, sehingga akan dipotong.
-A> - Walaupun kita casting ke dalam float, namun kenyataannya tidak berhasil, karena tipe data integer lebih kecil lebar datanya daripada tipe data float, sehingga ketika kita casting dalam float, datanya sudah terlanjur terpotong, sehingga tidak ada perubahan
-A> - Perintah ketiga sama Keterangan:nya dengan no 2.
-A> - C bertipe integer, sehingga walaupun x dan y float dan ada koma, namun ketika disimpan didalam integer akan terpotong menjadi bilangan bulat
-A> - Sudah jelas, karena x dicasting ke integer dan y juga, berarti semua menjadi integer
-A> - Keterangan: sama dengan alasan no 2
-A> - D bertipe float namun karena aa dan bb bertipe integer, maka hasilnya integer juga dan nilainya sudah terpotong, sehingga ketika disimpan kedalam tipe float sudah terlanjur terpotong nilainya.
-A> - Variabel aa dan bb yang bertipe integer dipaksa menjadi float, dan karena disimpan dalam variabel d yang bertipe float, maka hasilnya float
-A> - Variabel aa dan bb yang bertipe integer dipaksa menjadi float masing-masing sehingga akan menjadi float, dan disimpan didalam variabel float d.
-A> - Sudah jelas, float dibagi float dan disimpan dalam tipe float sehingga sudah benar tampil sebagai float
-A> - Variabel x dan y yang bertipe float dipaksa menjadi tipe data yang lebih kecil, yaitu integer, kemudian baru disimpan dalam tipe data integer sehingga hasil akhirnya integer.
-A> - Variabel yang dicasting hanya variabel x sehingga variabel y dan d masih float. Tipe data x (integer) dibagi float makan akan tetap menjadi float, karena float tipe datanya lebih besar lebar datanya daripada integer.
+ **Keterangan:**
+ 
+ Mari kita Keterangan: perbaris.
+ 
+ - Integer dibagi integer dan dimasukkan ke dalam variabel integer akan menjadi integer, walaupun ada koma dibelakangnya, yaitu 0.5 tapi akan dipotong, karena tipe data integer tidak mampu menerima koma, sehingga akan dipotong.
+ - Walaupun kita casting ke dalam float, namun kenyataannya tidak berhasil, karena tipe data integer lebih kecil lebar datanya daripada tipe data float, sehingga ketika kita casting dalam float, datanya sudah terlanjur terpotong, sehingga tidak ada perubahan
+ - Perintah ketiga sama Keterangan:nya dengan no 2.
+ - C bertipe integer, sehingga walaupun x dan y float dan ada koma, namun ketika disimpan didalam integer akan terpotong menjadi bilangan bulat
+ - Sudah jelas, karena x dicasting ke integer dan y juga, berarti semua menjadi integer
+ - Keterangan: sama dengan alasan no 2
+ - D bertipe float namun karena aa dan bb bertipe integer, maka hasilnya integer juga dan nilainya sudah terpotong, sehingga ketika disimpan kedalam tipe float sudah terlanjur terpotong nilainya.
+ - Variabel aa dan bb yang bertipe integer dipaksa menjadi float, dan karena disimpan dalam variabel d yang bertipe float, maka hasilnya float
+ - Variabel aa dan bb yang bertipe integer dipaksa menjadi float masing-masing sehingga akan menjadi float, dan disimpan didalam variabel float d.
+ - Sudah jelas, float dibagi float dan disimpan dalam tipe float sehingga sudah benar tampil sebagai float
+ - Variabel x dan y yang bertipe float dipaksa menjadi tipe data yang lebih kecil, yaitu integer, kemudian baru disimpan dalam tipe data integer sehingga hasil akhirnya integer.
+ - Variabel yang dicasting hanya variabel x sehingga variabel y dan d masih float. Tipe data x (integer) dibagi float makan akan tetap menjadi float, karena float tipe datanya lebih besar lebar datanya daripada integer.
 
 T> **TIPS**
 T>
@@ -172,11 +172,11 @@ Static_cast adalah mekanisme yang dapat digunakan untuk mengkonversi pointer dia
 	CTdkAdaHubungan* pTdkHub = static_cast<CTdkAdaHubungan*>(pInduk); // Error
 	//karena casting tidak diperbolehkan, tidak ada hubungan class!
 
-A> **Keterangan:**
-A> 
-A> - Pada contoh diatas terlihat bahwa class anak dapat dibuat dari class induk karena ada hubungan pewarisan. Konsep ini merupakan konsep polimorfisme. Kemudian untuk memastikan agar tipe data pInduk benar/valid untuk dimasukkan ke pTurunan yang merupakan obyek CTurunan, maka dilakukan casting dengan static_casting.
-A> - Kemudian pada bagian kedua, terlihat bahwa jika kita membuat class yang tidak ada hubungan apapun dengan class Induk maka kita tidak bisa melakukan static_casting.
-A> - Dengan demikian, static_casting digunakan untuk meyakinkan validitas suatu obyek pointer bahwa obyek tersebut ada hubungan dengan obyek yang dicastingnya. Pengcastingan dilakukan dengan mengubah class Induk menjadi class Anak, bukan sebaliknya.
+ **Keterangan:**
+ 
+ - Pada contoh diatas terlihat bahwa class anak dapat dibuat dari class induk karena ada hubungan pewarisan. Konsep ini merupakan konsep polimorfisme. Kemudian untuk memastikan agar tipe data pInduk benar/valid untuk dimasukkan ke pTurunan yang merupakan obyek CTurunan, maka dilakukan casting dengan static_casting.
+ - Kemudian pada bagian kedua, terlihat bahwa jika kita membuat class yang tidak ada hubungan apapun dengan class Induk maka kita tidak bisa melakukan static_casting.
+ - Dengan demikian, static_casting digunakan untuk meyakinkan validitas suatu obyek pointer bahwa obyek tersebut ada hubungan dengan obyek yang dicastingnya. Pengcastingan dilakukan dengan mengubah class Induk menjadi class Anak, bukan sebaliknya.
 
 Bagi para programmer C yang beralih ke C++, static casting sangat mirip dengan C-style casting dan sangat disarankan untuk mengganti C-style casting karena static casting lebih aman dan tampak tertulis dengan jelas. Kita dapat melakukan static_casting pada tipe data biasa agar programmer dapat melihat
 
@@ -212,9 +212,9 @@ Fungsi dynamic_cast merupakan kebalikan dari static_cast, hal ini karena proses 
 	if (pTurunan) // cek apakah sukses?
 	pTurunan->CallFungsiClassTurunan ();
 
-A> **Keterangan:**
-A> 
-A> Pada contoh diatas, kita membuat obyek class Turunan dari class Induk, kemudian kita melakukan casting ke class Turunan untuk memastikan validitas obyeknya, kemudian karena sifat pengecekan compiler bersifat runtime, maka kita bisa memeriksa apakah proses castingnya telah berjalan dengan sukses atau tidak.
+ **Keterangan:**
+ 
+ Pada contoh diatas, kita membuat obyek class Turunan dari class Induk, kemudian kita melakukan casting ke class Turunan untuk memastikan validitas obyeknya, kemudian karena sifat pengecekan compiler bersifat runtime, maka kita bisa memeriksa apakah proses castingnya telah berjalan dengan sukses atau tidak.
 
 Dynamic_cast juga dapat digunakan untuk referensi pointer. Caranya dengan menggunakan tanda &.
 
@@ -304,9 +304,9 @@ Buatlah program berikut:
 
 **Hasil:**
 
-A> **Keterangan:**
-A> 
-A> Kelas abstrak Canimal diturunkan pada dua class, yaitu CDog dan CCat sehingga memiliki function Berbicara() dimana Dog menggunakannya untuk menggonggong dan Cat menggunakannya untuk mengeong. Fungsi yang digunakan adalah dynamic_cast yang akan menentukan mana method Berbicara() yang diimplementasikan. Dog akan mengimplementasikan menggonggong, sedangkan Cat akan mengimplementasikan mengeong. Setelah mengetahui fungsi mana yang diimplementasikan, method TentukanTipe juga dapat menggunakan pointernya untuk memanggil method pada class turunannya sesuai dengan jenis classnya. Untuk class Dog memanggil method KibasEkor(), sedangkan class Cat memanggil method TangkapTikus().
+ **Keterangan:**
+ 
+ Kelas abstrak Canimal diturunkan pada dua class, yaitu CDog dan CCat sehingga memiliki function Berbicara() dimana Dog menggunakannya untuk menggonggong dan Cat menggunakannya untuk mengeong. Fungsi yang digunakan adalah dynamic_cast yang akan menentukan mana method Berbicara() yang diimplementasikan. Dog akan mengimplementasikan menggonggong, sedangkan Cat akan mengimplementasikan mengeong. Setelah mengetahui fungsi mana yang diimplementasikan, method TentukanTipe juga dapat menggunakan pointernya untuk memanggil method pada class turunannya sesuai dengan jenis classnya. Untuk class Dog memanggil method KibasEkor(), sedangkan class Cat memanggil method TangkapTikus().
 
 ### Penggunaan reinterpret_cast
 
@@ -493,12 +493,12 @@ Koneksi Qt dengan Mysql ddan menampilkan datanya
 7. Tambahkan bagian ini
 
 
-A> **Keterangan:**
-A> 
-A> - Program diatas dapat menampilkan driver database yang terinstall dan dapat dikenali oleh system Qt, yaitu QSQLITE, QMYSQL, QODBC3, dan QODBC. Berarti sistem QT dapat mendukung basisdata Sqlite, MySQL, dan ODBC dari Microsoft.
-A> - Kemudian langkah pertama yang harus dilakukan adalah membuat QsqlDatabase yang akan meload basis data yang dipilih beserta dengan drivernya. Setelah itu kita harus menentukan nama database yang akan diakses, user, password, dan host lokasi MySQL server.
-A> - Kemudian akan diperiksa apakah database yang terpilih dapat dibuka atau tidak dengan method open(). Jika berhasil maka akan dilanjutkan, jika tidak maka akan ditampilkan error yang terjadi dengan menggunakan method dari database, yaitu lastError().
-A> - Langkah berikutnya adalah melakukan query dengan menggunakan method query(<string SQL>). Setelah perintah SQL dijalankan maka record-record yang dihasilkan dari perintah select tersebut akan diloop satu persatu dengan method next() dari query, dan ditampilkan hasilnya dilayar.
+ **Keterangan:**
+ 
+ - Program diatas dapat menampilkan driver database yang terinstall dan dapat dikenali oleh system Qt, yaitu QSQLITE, QMYSQL, QODBC3, dan QODBC. Berarti sistem QT dapat mendukung basisdata Sqlite, MySQL, dan ODBC dari Microsoft.
+ - Kemudian langkah pertama yang harus dilakukan adalah membuat QsqlDatabase yang akan meload basis data yang dipilih beserta dengan drivernya. Setelah itu kita harus menentukan nama database yang akan diakses, user, password, dan host lokasi MySQL server.
+ - Kemudian akan diperiksa apakah database yang terpilih dapat dibuka atau tidak dengan method open(). Jika berhasil maka akan dilanjutkan, jika tidak maka akan ditampilkan error yang terjadi dengan menggunakan method dari database, yaitu lastError().
+ - Langkah berikutnya adalah melakukan query dengan menggunakan method query(<string SQL>). Setelah perintah SQL dijalankan maka record-record yang dihasilkan dari perintah select tersebut akan diloop satu persatu dengan method next() dari query, dan ditampilkan hasilnya dilayar.
 
 ### Koneksi Qt dengan SQLite
 
@@ -629,11 +629,11 @@ Tulislah program berikut:
 
 **Hasil:**
 
-A> **Keterangan:**
-A> 
-A> - Program diatas melakukan koneksi ke SQLite dan kemudian mengirimkan query untuk mengambil data-data dari tabel mahasiswa dengan menggunakan query SQL select.
-A> - Untuk mendapatkan hasil dari query kita gunakan perulangan dari variabel query dan method next(). Didalam perulangan kita ambil masing-masing nilai dari tiap-tiap kolom untuk setiap recordnya dengan menggunakan query.value(<index>).toString()
-A> - Perintah diatas berarti kita mengambil indeks sesuai dengan kolom yang diambil dari SQL, yaitu kolom 0 untuk nim, 1 untuk nama dan seterusnya.
+ **Keterangan:**
+ 
+ - Program diatas melakukan koneksi ke SQLite dan kemudian mengirimkan query untuk mengambil data-data dari tabel mahasiswa dengan menggunakan query SQL select.
+ - Untuk mendapatkan hasil dari query kita gunakan perulangan dari variabel query dan method next(). Didalam perulangan kita ambil masing-masing nilai dari tiap-tiap kolom untuk setiap recordnya dengan menggunakan query.value(<index>).toString()
+ - Perintah diatas berarti kita mengambil indeks sesuai dengan kolom yang diambil dari SQL, yaitu kolom 0 untuk nim, 1 untuk nama dan seterusnya.
 
 ### Menambah data pada tabel SQLITE
 
@@ -678,14 +678,14 @@ Buatlah program berikut:
 
 **Hasil:**
 
-A> **Keterangan:**
-A> 
-A> - Pada awalnya data pada tabel mahasiswa hanya berjumlah 3 buah data, ketika program dijalankan maka data baru bernama “mhs baru” berhasil ditambahkan dan mengubah jumlah record pada tabel sehingga menjadi 4 buah. Tampilan perubahan adalah sebagai berikut:
-A> 
-A> 
-A> - Cara menambahkan record pada SQLite sangat mudah, yaitu dengan menggunakan SQL insert into yang harus disesuaikan dengan jumlah field yang ada pada tabel. Setelah itu query akan dijalankan dengan method exec dari obyek QsqlQuery.
-A> - Hasil kembalian dari method exec ini adalah bool yang menghasilkan nilai true atau false. Jika menghasilkan nilai true maka record berhasil ditambahkan, jika false maka record tidak berhasil ditambahkan!
-A> - Jika program diatas dieksekusi sekali lagi (diulangi) maka akan menampilkan tulisan Gagal ditambahkan. Hal ini dikarenakan kita menambahkan record yang sama persis dengan ebelumnya padahal kita sudah menset bahwa field nim bersifat primary, yang artinya tidak boleh ada data nim yang kembar. Hal inilah yang menyebabkan data Gagal ditambahkan.
+ **Keterangan:**
+ 
+ - Pada awalnya data pada tabel mahasiswa hanya berjumlah 3 buah data, ketika program dijalankan maka data baru bernama “mhs baru” berhasil ditambahkan dan mengubah jumlah record pada tabel sehingga menjadi 4 buah. Tampilan perubahan adalah sebagai berikut:
+ 
+ 
+ - Cara menambahkan record pada SQLite sangat mudah, yaitu dengan menggunakan SQL insert into yang harus disesuaikan dengan jumlah field yang ada pada tabel. Setelah itu query akan dijalankan dengan method exec dari obyek QsqlQuery.
+ - Hasil kembalian dari method exec ini adalah bool yang menghasilkan nilai true atau false. Jika menghasilkan nilai true maka record berhasil ditambahkan, jika false maka record tidak berhasil ditambahkan!
+ - Jika program diatas dieksekusi sekali lagi (diulangi) maka akan menampilkan tulisan Gagal ditambahkan. Hal ini dikarenakan kita menambahkan record yang sama persis dengan ebelumnya padahal kita sudah menset bahwa field nim bersifat primary, yang artinya tidak boleh ada data nim yang kembar. Hal inilah yang menyebabkan data Gagal ditambahkan.
 
 Jika kita hendak membaca data pada SQLite, maka tambahkan kode berikut:
 
@@ -712,7 +712,7 @@ dilihat pada tabel berikut:
 
 ### Mengedit data pada tabel SQLITE
 
-Cara mengedit data pada tabel Sqlite adalah dengan menggunakan perintah query SQL UPDATE. Sintaksnya adalah `UPDATE <namatabel> SET <kolom1>=<nilaikolom1>,<kolom2>=<nilaikolom2>`, dst `WHERE <kriteria>` Perintah diatas tidak menghasilkan record sama sekali, namun dapat menghasilkan berapa jumlah record yang terpengaruh (affected rows) dan juga mengembalikan nilai bool yang akan bernilai true atau false. Nilai true jika pengeditan data berhasil, nilai false jika pengeditan data gagal.
+Cara mengedit data pada tabel Sqlite adalah dengan menggunakan perintah query SQL UPDATE. Sintaksnya adalah `UPDATE <namatabel> SET <kolom1>=<nilaikolom1>,<kolom2>=<nilaikolom2>`, dst `WHERE <kriteri` Perintah diatas tidak menghasilkan record sama sekali, namun dapat menghasilkan berapa jumlah record yang terpengaruh (affected rows) dan juga mengembalikan nilai bool yang akan bernilai true atau false. Nilai true jika pengeditan data berhasil, nilai false jika pengeditan data gagal.
 
 Pada Qt cara yang digunakan untuk mengedit data adalah dengan menggunakan class QSqlQuery dan method query seperti berikut ini:
 
@@ -761,14 +761,14 @@ Buatlah program berikut:
 
 Kondisi akhir tabel:
 
-A> **Keterangan:**
-A> 
-A> - Program diatas masih sama menggunakan obyek QsqlQuery dan method exec(). Hanya SQL query nya saja yang berbeda dengan Contoh sebelumnya saat penambahan data. SQL query pada saat pengeditan menggunakan SQL UPDATE SET.
-A> - Untuk mengetahui berapa jumlah record yang terupdate digunakan method numRowsAffected() dari obyek QsqlQuery.
+ **Keterangan:**
+ 
+ - Program diatas masih sama menggunakan obyek QsqlQuery dan method exec(). Hanya SQL query nya saja yang berbeda dengan Contoh sebelumnya saat penambahan data. SQL query pada saat pengeditan menggunakan SQL UPDATE SET.
+ - Untuk mengetahui berapa jumlah record yang terupdate digunakan method numRowsAffected() dari obyek QsqlQuery.
 
 ### Menghapus data pada tabel SQLITE
 
-Cara menghapus data pada tabel Sqlite adalah dengan menggunakan perintah query SQL UPDATE. Sintaksnya adalah DELETE FROM <namatabel> WHERE <kriteria> Perintah diatas tidak menghasilkan record sama sekali, namun dapat menghasilkan berapa jumlah record yang terpengaruh (affected rows) dan juga mengembalikan nilai bool yang akan bernilai true atau false. Nilai true jika penghapusan data berhasil, nilai false jika penghapusan data gagal.
+Cara menghapus data pada tabel Sqlite adalah dengan menggunakan perintah query SQL UPDATE. Sintaksnya adalah DELETE FROM <namatabel> WHERE <kriteri Perintah diatas tidak menghasilkan record sama sekali, namun dapat menghasilkan berapa jumlah record yang terpengaruh (affected rows) dan juga mengembalikan nilai bool yang akan bernilai true atau false. Nilai true jika penghapusan data berhasil, nilai false jika penghapusan data gagal.
 
 Pada Qt cara yang digunakan untuk menghapus data adalah dengan menggunakan class QSqlQuery dan method query seperti berikut ini:
 
@@ -817,9 +817,9 @@ Buatlah program sebagai berikut:
 Kondisi akhir tabel:
 
 
-A> **Keterangan:**
-A> 
-A> Program diatas mampu menghapus data pada suatu record tertentu dengan menggunakan perintah SQL DELETE FROM. Program diatas tidak ada perubahan dari Contoh sebelumnya kecuali bagian perintah SQL nya.
+ **Keterangan:**
+ 
+ Program diatas mampu menghapus data pada suatu record tertentu dengan menggunakan perintah SQL DELETE FROM. Program diatas tidak ada perubahan dari Contoh sebelumnya kecuali bagian perintah SQL nya.
 
 Demikianlah kita sudah berlatih sejumlah manipulasi data pada tabel SQLite dengan menggunakan QtSql. Pada databse lain misalnya MySQL semua perintah –perintah yang sudah dipelajari dapat digunakan dan hanya perlu disesuaikan pada bagian koneksi pada databasenya. Pemrograman basis data pada Qt termasuk mudah.
 
@@ -1005,21 +1005,21 @@ Mengedit 22031235 menjadi bernama Johan W dan IPK menjadi 1.9
 5. Menu cari data:
 6. Menu Exit
 
-A> **Keterangan:**
-A> 
-A> - Program diatas merupakan program yang cukup banyak dan kompleks. Program ini dibuat dengan prinsip perulangan. Kita akan mengulang terus menerus bagian menu 1-6 sampai pengguna menginputkan angka yang bukan diantara 1-5. Jika pengguna memasukkan angka 1 maka dipanggil menu pertama, dan seterusnya. Jika pengguna memasukkan angka 6 maka program akan menampilkan Good Bye.
-A> - Pada awal program kita membuat sebuah class bernama Tabel yang digunakan untuk mengelola data-data pada tabel mahasiswa. Class Tabel harus diinisialisasi terlebih dahulu pada method int main() dengan mengiputkan nama database dan nama tabelnya. Setelah diinisialisai maka class Tabel harus melakukan method connect agar database SQLite terbuka (open).
-A> - Ketika menu penambahan data dipilih, maka method tambahData akan dipanggil dan membutuhkan parameter Tabel yang sudah dibuat dan diinisialisasi terlebih dahulu sebelumnya. Setelah itu berdasarkan obyek Tabel yang sudah dibuat, kita akan menggunakannya untuk memasukkan data.
-A> - Pada menu tambah, program akan meminta inputan nim, nama, dan ipk kepada pengguna. Setelah pengguna mengiputkan data dengan lengkap, maka method tambahData() akan dipanggil sehingga data dapat masuk ke tabel. Proses memasukkan data dilakukan dengan menggunakan query INSERT.
-A> - Demikian pula dengan menu tampil data, method yang digunakan sama pada contoh-contoh sebelumnya, namun ditambah dengan cara membaca kolom-kolom pada tabel dan
+ **Keterangan:**
+ 
+ - Program diatas merupakan program yang cukup banyak dan kompleks. Program ini dibuat dengan prinsip perulangan. Kita akan mengulang terus menerus bagian menu 1-6 sampai pengguna menginputkan angka yang bukan diantara 1-5. Jika pengguna memasukkan angka 1 maka dipanggil menu pertama, dan seterusnya. Jika pengguna memasukkan angka 6 maka program akan menampilkan Good Bye.
+ - Pada awal program kita membuat sebuah class bernama Tabel yang digunakan untuk mengelola data-data pada tabel mahasiswa. Class Tabel harus diinisialisasi terlebih dahulu pada method int main() dengan mengiputkan nama database dan nama tabelnya. Setelah diinisialisai maka class Tabel harus melakukan method connect agar database SQLite terbuka (open).
+ - Ketika menu penambahan data dipilih, maka method tambahData akan dipanggil dan membutuhkan parameter Tabel yang sudah dibuat dan diinisialisasi terlebih dahulu sebelumnya. Setelah itu berdasarkan obyek Tabel yang sudah dibuat, kita akan menggunakannya untuk memasukkan data.
+ - Pada menu tambah, program akan meminta inputan nim, nama, dan ipk kepada pengguna. Setelah pengguna mengiputkan data dengan lengkap, maka method tambahData() akan dipanggil sehingga data dapat masuk ke tabel. Proses memasukkan data dilakukan dengan menggunakan query INSERT.
+ - Demikian pula dengan menu tampil data, method yang digunakan sama pada contoh-contoh sebelumnya, namun ditambah dengan cara membaca kolom-kolom pada tabel dan
 menampilkan semua recordnya satu persatu dengan perulangan.
-A> - Pada menu hapus data, perintah yang digunakan juga hanya mengubah query SQLnya.
-A> - Pada menu cari data, kita juga menggunakan SQL select seperti pada menampilkan data. Perbedaannya hanyalah kondisi where yang digunakan. Pada menu pencarian data, kita mencari satu buah record mahasiswa saja berdasarkan nimnya.
-A> - Pada menu edit data, kita juga menggunakan SQL update yang dapat digunakan untuk mengubah data pada tabel. Pada menu edit ini, kita mencari terlebih dahulu nim mahasiswa yang akan diedit baru mengeditnya.
+ - Pada menu hapus data, perintah yang digunakan juga hanya mengubah query SQLnya.
+ - Pada menu cari data, kita juga menggunakan SQL select seperti pada menampilkan data. Perbedaannya hanyalah kondisi where yang digunakan. Pada menu pencarian data, kita mencari satu buah record mahasiswa saja berdasarkan nimnya.
+ - Pada menu edit data, kita juga menggunakan SQL update yang dapat digunakan untuk mengubah data pada tabel. Pada menu edit ini, kita mencari terlebih dahulu nim mahasiswa yang akan diedit baru mengeditnya.
 
 T> **TIPS:**
 T> 
-T> Untuk mengkonversi dari tipe data string menuju ke Qstring, digunakan `<variabel string biasa>.c_str()` Perintah cin tidak bisa digunakan setelah fungsi getline, karena akan membuat inputan menjadi bertumpuk seperti pada contoh ini:
+T> Untuk mengkonversi dari tipe data string menuju ke Qstring, digunakan `<variabel string bias.c_str()` Perintah cin tidak bisa digunakan setelah fungsi getline, karena akan membuat inputan menjadi bertumpuk seperti pada contoh ini:
 
 {:lang="c++"}
 	int main(){

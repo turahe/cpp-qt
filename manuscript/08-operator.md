@@ -132,12 +132,12 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Class Kalender berisi tiga member variabel yaitu `_hari`, `_bulan`, dan `_tahun` yang merepresentasikan waktu tertentu.
-A> - operator `++` digunakan untuk menambahkan 1 hari kedalam objek Kalender, dengan menggunakan operator `++` penulisan menjadi lebih intuitif dan mudah dipahami, misal untuk menambahkan 1 hari kedalam objek Kalender anda dapat menuliskan `++objKal`.
-A> - Untuk memanggil operator `++` pada program diatas digunakan notasi prefix (tanda ++ dituliskan sebelum nama objek).
-A> - Karena kode diatas menggunakan notasi prefix maka pada operator ++ akan mengakses objek by reference.
+ **Keterangan:**
+ 
+ - Class Kalender berisi tiga member variabel yaitu `_hari`, `_bulan`, dan `_tahun` yang merepresentasikan waktu tertentu.
+ - operator `++` digunakan untuk menambahkan 1 hari kedalam objek Kalender, dengan menggunakan operator `++` penulisan menjadi lebih intuitif dan mudah dipahami, misal untuk menambahkan 1 hari kedalam objek Kalender anda dapat menuliskan `++objKal`.
+ - Untuk memanggil operator `++` pada program diatas digunakan notasi prefix (tanda ++ dituliskan sebelum nama objek).
+ - Karena kode diatas menggunakan notasi prefix maka pada operator ++ akan mengakses objek by reference.
 
 Ada perbedaan penulisan notasi prefix dan postfix, sebagai contoh anda dapat melihat kode dibawah ini.
 
@@ -222,10 +222,10 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja penulisan operator ++ menggunakan notasi postfix.
-A> - Karena menggunakan postfix maka yang dilakukan pada operator ++ adalah mengkopi objek yang lama, menambahkan data, kemudian mengembalikan objek tersebut by value.
+ **Keterangan:**
+ 
+ - Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja penulisan operator ++ menggunakan notasi postfix.
+ - Karena menggunakan postfix maka yang dilakukan pada operator ++ adalah mengkopi objek yang lama, menambahkan data, kemudian mengembalikan objek tersebut by value.
 
 ## Conversion Operator
 
@@ -285,11 +285,11 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 	return a.exec();
 	}
 
-A> **Keterangan:**
-A> 
-A> - Pada operator `int()`, `variabel` `_tahun`, `_bulan`, dan `_hari` dikalikan dengan bilangan tertentu sehingga menghasilkan kembalian berupa `int`.
-A> - Statement int `nData = objKal` akan menjalankan operator `int` dan mengembalikan nilai integer dari objek Kalender.
-A> - Dengan menggunakan operator int akan lebih mudah membandingkan dua objek Kalender, karena objek tersebut dapat mengembalikan satu nilai integer.
+ **Keterangan:**
+ 
+ - Pada operator `int()`, `variabel` `_tahun`, `_bulan`, dan `_hari` dikalikan dengan bilangan tertentu sehingga menghasilkan kembalian berupa `int`.
+ - Statement int `nData = objKal` akan menjalankan operator `int` dan mengembalikan nilai integer dari objek Kalender.
+ - Dengan menggunakan operator int akan lebih mudah membandingkan dua objek Kalender, karena objek tersebut dapat mengembalikan satu nilai integer.
 
 ### Binary Operator
 
@@ -383,10 +383,10 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Dengan menggunakan operator + anda dapat menambahkan hari pada objek Kalender, jumlah hari yang ditambahkan tergantung dari nilai yang diinputkan pada parameter.
-A> - Anda dapat menambah hari dengan menggunakan operator + pada objek Kalender, misal: objKal = objKal + 25 atau dengan membuat objek baru untuk menampung nilai hasil penambahan Kalender objKalBaru(objKal+20)
+ **Keterangan:**
+ 
+ - Dengan menggunakan operator + anda dapat menambahkan hari pada objek Kalender, jumlah hari yang ditambahkan tergantung dari nilai yang diinputkan pada parameter.
+ - Anda dapat menambah hari dengan menggunakan operator + pada objek Kalender, misal: objKal = objKal + 25 atau dengan membuat objek baru untuk menampung nilai hasil penambahan Kalender objKalBaru(objKal+20)
 
 ## Addition-Assignment Operator
 
@@ -455,9 +455,9 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> Pada kode diatas anda dapat menggunakan operator Addition-Assignment pada objek Kalender, misal anda ingin menambahkan 25 hari pada objek Kalender, anda dapat menuliskan kode objKal += 25;
+ **Keterangan:**
+ 
+ Pada kode diatas anda dapat menggunakan operator Addition-Assignment pada objek Kalender, misal anda ingin menambahkan 25 hari pada objek Kalender, anda dapat menuliskan kode objKal += 25;
 
 ## Comparison Operator
 
@@ -582,11 +582,11 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun masing-masing ada 2 inequality dan equality operator namun parameternya berbeda ini disebut sebagai overloading operator.
-A> - Pada operator equality (==) yang pertama membandingkan dua objek Kalender dengan cara membandingkan member variabel hari, bulan, tahun pada masing-masing objek yang dibandingkan, sedangkan operator == yang kedua membandingkan objek Kalender yang terlebih dahulu sudah dikonversi menjadi int.
-A> - Anda dapat melihat bahwa kedua operator comparison diatas sama-sama dapat membandingkan isi dari 2 objek Kalender, baik dengan cara membandingkan member variabel maupun membandingkan nilai int (hasil konversi dari objek Kalender).
+ **Keterangan:**
+ 
+ - Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun masing-masing ada 2 inequality dan equality operator namun parameternya berbeda ini disebut sebagai overloading operator.
+ - Pada operator equality (==) yang pertama membandingkan dua objek Kalender dengan cara membandingkan member variabel hari, bulan, tahun pada masing-masing objek yang dibandingkan, sedangkan operator == yang kedua membandingkan objek Kalender yang terlebih dahulu sudah dikonversi menjadi int.
+ - Anda dapat melihat bahwa kedua operator comparison diatas sama-sama dapat membandingkan isi dari 2 objek Kalender, baik dengan cara membandingkan member variabel maupun membandingkan nilai int (hasil konversi dari objek Kalender).
 
 ## Overloading Operator <, >, <=, >=
 
@@ -674,10 +674,10 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> **Keterangan**
-A> 
-A> - Pada program diatas penggunaan operator <, >, <=, >= digunakan untuk membandingkan dua objek Kalender yang berbeda.
-A> - Untuk mempermudah membandingkan dua objek Kalender maka objek Kalender tersebut dikonversi terlebih dahulu menjadi int.
+ **Keterangan**
+ 
+ - Pada program diatas penggunaan operator <, >, <=, >= digunakan untuk membandingkan dua objek Kalender yang berbeda.
+ - Untuk mempermudah membandingkan dua objek Kalender maka objek Kalender tersebut dikonversi terlebih dahulu menjadi int.
 
 ## Subscript Operator
 
@@ -734,9 +734,9 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> **Keterangan**
-A> 
-A> Dengan menggunakan subscript operator anda dapat mengakses member variable yang bertipe array pada class dengan menggunakan array-like syntax (nama objek diikuti dengan tanda []), misal: `namaObjek[index]`.
+ **Keterangan**
+ 
+ Dengan menggunakan subscript operator anda dapat mengakses member variable yang bertipe array pada class dengan menggunakan array-like syntax (nama objek diikuti dengan tanda []), misal: `namaObjek[index]`.
 
 ## Function operator()
 
@@ -769,7 +769,7 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> **Analisis**
-A> 
-A> - Dengan membuat function operator maka anda dapat menggunakan objek seperti ketika anda menggunakan function.
-A> - Pada program diatas objek objTampil dapat dipanggil seperti function.
+ **Analisis**
+ 
+ - Dengan membuat function operator maka anda dapat menggunakan objek seperti ketika anda menggunakan function.
+ - Pada program diatas objek objTampil dapat dipanggil seperti function.

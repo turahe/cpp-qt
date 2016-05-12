@@ -109,14 +109,14 @@ Contoh 1. Membuat Fungsi yang mengembalikan nilai.
 Bilangan : -10
 Dimutlakkan menjadi : 10
 
-A> **Analisa Program :**  
-A> 
-A> - Pada program diatas baris ketiga tertulis : `int absolut(int bil);` inilah yang disebut  sebagai prototype, ditulis sebelum fungsi yang memakainya, yaitu `main()`.  
-A> 
-A> - Pada tubuh pogram, terdapat pemanggilan fungsi :  
-A>  `cout << "Dimutlakkan menjadi  : " << absolut(bilangan) << endl;`  
-A>  Tampak pada hasil eksekusi bahwa nama fungsi tersebut digantikan dengan nilai 10, yaitu   nilai kembalian fungsi, ini menunjukkan bahwa fungsi `absolut()`mengembalikan nilai.  
-A> - Di bawah fungsi `main()` terdapat sebuah blok program dengan nama `absolut()`, inilah yang  
+ **Analisa Program :**  
+ 
+ - Pada program diatas baris ketiga tertulis : `int absolut(int bil);` inilah yang disebut  sebagai prototype, ditulis sebelum fungsi yang memakainya, yaitu `main()`.  
+ 
+ - Pada tubuh pogram, terdapat pemanggilan fungsi :  
+  `cout << "Dimutlakkan menjadi  : " << absolut(bilangan) << endl;`  
+  Tampak pada hasil eksekusi bahwa nama fungsi tersebut digantikan dengan nilai 10, yaitu   nilai kembalian fungsi, ini menunjukkan bahwa fungsi `absolut()`mengembalikan nilai.  
+ - Di bawah fungsi `main()` terdapat sebuah blok program dengan nama `absolut()`, inilah yang  
   dinamakan definisi fungsi.  
 
 i> **Catatan :**  
@@ -162,15 +162,15 @@ Hello World!
 Hello World!
 Hello World!  
 
-A> **Analisa Program :**
-A> 
-A> - Pada program diatas baris ketiga tertulis : `void hello(int kali)`; tampak tipe dari fungsi ini adalah void, berarti tidak mengembalikan nilai.  
-A>  
-A> - Pada tubuh pogram, terdapat pemanggilan fungsi :
-A> `hello(3);` 
-A> Tampak pada hasil eksekusi bahwa nama fungsi ini dieksekusi bukan diakses nilainya (dicetak dengan cout), ini menunjukkan bahwa fungsi `hello()` tersebut tidak mengembalikan nilai.  
-A> 
-A> - Di bawah fungsi `main()` terdapat sebuah blok program dengan nama `hello()`, pada tubuh fungsi ini tidak ada perintah `return` sama sekali, karena memang tidak mengembalikan nilai.  
+ **Analisa Program :**
+ 
+ - Pada program diatas baris ketiga tertulis : `void hello(int kali)`; tampak tipe dari fungsi ini adalah void, berarti tidak mengembalikan nilai.  
+  
+ - Pada tubuh pogram, terdapat pemanggilan fungsi :
+ `hello(3);` 
+ Tampak pada hasil eksekusi bahwa nama fungsi ini dieksekusi bukan diakses nilainya (dicetak dengan cout), ini menunjukkan bahwa fungsi `hello()` tersebut tidak mengembalikan nilai.  
+ 
+ - Di bawah fungsi `main()` terdapat sebuah blok program dengan nama `hello()`, pada tubuh fungsi ini tidak ada perintah `return` sama sekali, karena memang tidak mengembalikan nilai.  
 
 Jika suatu fungsi memberikan nilai kembalian, maka nilai kembalian yang diberikan oleh fungsi  dapat  dilakukan oleh statemen return yang diikuti oleh nilai hasil baliknya. Contoh fungsi yang mengembalikan  nilai adalah seperti contoh pada Lab1 di atas.  
 
@@ -214,11 +214,11 @@ Contoh 3. Variabel Lokal.
 {lang="sh", linenos=off}
 Hasil = 28
 
-A> **Analisa Program:** 
-A> 
-A> - Variable a, b dan c merupakan variabel lokal pada fungsi `kali()`. Variabel ini tidak dikenal pada fungsi utama sehingga variabel ini tidak dapat digunakan pada fungsi `main()` di atas, sebaliknya variabel hasil adalah variabel yang sifatnya lokal pada fungsi `main()`, sehingga  tidak dikenal pada fungsi `kali()`.   
-A> - Jika variabel a atau b atau c dibaca pada fungsi `main()` maka akan terjadi kesalahan, yaitu  bahwa variabel-variabel tersebut tidak dikenal (tidak dideklarasikan), demikian juga jika variabel hasil diakses di dalam fungsi `kali()`, maka variabel tersebut juga tidak akan dikenal.  
-A> - Variabel lokal sifat kerjanya hanya sekali. Jadi ketika fungsi `kali()` selesai dieksekusi, maka variabel a, b dan c dibebaskan dari memori, ketika fungsi ini dipanggil kembali di waktu lain, maka akan terjadi deklarasi (pemesanan tempat) lagi dan dianggap sebagai variabel baru.   
+ **Analisa Program:** 
+ 
+ - Variable a, b dan c merupakan variabel lokal pada fungsi `kali()`. Variabel ini tidak dikenal pada fungsi utama sehingga variabel ini tidak dapat digunakan pada fungsi `main()` di atas, sebaliknya variabel hasil adalah variabel yang sifatnya lokal pada fungsi `main()`, sehingga  tidak dikenal pada fungsi `kali()`.   
+ - Jika variabel a atau b atau c dibaca pada fungsi `main()` maka akan terjadi kesalahan, yaitu  bahwa variabel-variabel tersebut tidak dikenal (tidak dideklarasikan), demikian juga jika variabel hasil diakses di dalam fungsi `kali()`, maka variabel tersebut juga tidak akan dikenal.  
+ - Variabel lokal sifat kerjanya hanya sekali. Jadi ketika fungsi `kali()` selesai dieksekusi, maka variabel a, b dan c dibebaskan dari memori, ketika fungsi ini dipanggil kembali di waktu lain, maka akan terjadi deklarasi (pemesanan tempat) lagi dan dianggap sebagai variabel baru.   
 
 ### 2. Variable Global  
 
@@ -253,11 +253,11 @@ Contoh 4. Variabel Global.
 {lang="sh", linenos=off}
 Variabel global hasil = 28
 
-A> **Analisa Program:** 
-A> 
-A> - Variabel hasil dideklarasikan di luar blok program (di luar kurung kurawal), maka variabel hasil merupakan variabel global yang dikenal di blok manapun.  
-A> - Ketika variabel hasil mengalami manipulasi di dalam fungsi `kali()`, maka sebenarnya yang diubah adalah variabel hasil yang sama, sehingga ketika ditampilkan dengan cout variabel ini menghasilkan nilai perkalian antara a dan b seperti apa yang dilakukan di dalam fungsi `kali()`.   
-A> - Perlu diperhatikan bahwa variabel hasil bersifat global bagi fungsi `main()` maupun fungsi `kali()` karena deklarasi variabel hasil tersebut diletakkan di atas kedua fungsi-fungsi tersebut. Jadi letak deklarasi suatu vaiabel yang diluar blok, menentukan cakupan  sifat global variabel tersebut.  
+ **Analisa Program:** 
+ 
+ - Variabel hasil dideklarasikan di luar blok program (di luar kurung kurawal), maka variabel hasil merupakan variabel global yang dikenal di blok manapun.  
+ - Ketika variabel hasil mengalami manipulasi di dalam fungsi `kali()`, maka sebenarnya yang diubah adalah variabel hasil yang sama, sehingga ketika ditampilkan dengan cout variabel ini menghasilkan nilai perkalian antara a dan b seperti apa yang dilakukan di dalam fungsi `kali()`.   
+ - Perlu diperhatikan bahwa variabel hasil bersifat global bagi fungsi `main()` maupun fungsi `kali()` karena deklarasi variabel hasil tersebut diletakkan di atas kedua fungsi-fungsi tersebut. Jadi letak deklarasi suatu vaiabel yang diluar blok, menentukan cakupan  sifat global variabel tersebut.  
 
 ### 3. Variabel statik  
 
@@ -304,11 +304,11 @@ Contoh 5. Variabel Statik.
 {lang="sh", linenos=off}
 5 Faktorial = 120
 
-A> **Analisa Program:**  
-A> 
-A> - Dari contoh program ini, variable `f` di fungsi `kali ()` merupakan variable lokal yang bersifat  statik yang mempunyai nilai awal `1`. Pada fungsi ini nilai variabel `f` yang lama akan dikalikan dengan nilai variable i untuk mendapatkan nialai `f` yang baru.   
-A> - Pada fungsi utama, fungsi `kali()`  akan dipanggil sebanyak n kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan nilai `n` (pada contoh ini `n = 5`), sehingga akan dihasilkan suatu niali n!.   
-A> - Supaya nilai variable `f` yang lama masih tetap dipertahankan, maka variable ini perlu dibuat menjadi variable statik. Jika variabel ini tidak bersifat static, maka setiap kali fungsi `kali()`  dipanggil, nilai variable `f` akan mempunyai nilai awal 1 lagi.   
+ **Analisa Program:**  
+ 
+ - Dari contoh program ini, variable `f` di fungsi `kali ()` merupakan variable lokal yang bersifat  statik yang mempunyai nilai awal `1`. Pada fungsi ini nilai variabel `f` yang lama akan dikalikan dengan nilai variable i untuk mendapatkan nialai `f` yang baru.   
+ - Pada fungsi utama, fungsi `kali()`  akan dipanggil sebanyak n kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan nilai `n` (pada contoh ini `n = 5`), sehingga akan dihasilkan suatu niali n!.   
+ - Supaya nilai variable `f` yang lama masih tetap dipertahankan, maka variable ini perlu dibuat menjadi variable statik. Jika variabel ini tidak bersifat static, maka setiap kali fungsi `kali()`  dipanggil, nilai variable `f` akan mempunyai nilai awal 1 lagi.   
 
 Penggunaan variabel lokal lebih disarankan, karena penggunaan variabel global akan memnyebabkan  dampak-dampak sebagai berikut :  
 
@@ -408,8 +408,8 @@ Volume 2 --> 150
 Volume 3 --> 10
 
 
-A> Analisa Program:  
-A> 
-A> - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 25 karena semua parameter formal menerima nilai, maka hasilnya 3750.  
-A> - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 1 karena parameter formal ketiga tidak menerima nilai, maka hasilnya 150.  
-A> - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 1 x 1 karena parameter formal kedua dan ketiga tidak menerima nilai, maka hasilnya 10.  
+ Analisa Program:  
+ 
+ - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 25 karena semua parameter formal menerima nilai, maka hasilnya 3750.  
+ - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 1 karena parameter formal ketiga tidak menerima nilai, maka hasilnya 150.  
+ - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 1 x 1 karena parameter formal kedua dan ketiga tidak menerima nilai, maka hasilnya 10.  

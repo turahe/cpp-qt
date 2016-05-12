@@ -99,10 +99,10 @@ Dengan menurunkan class dari QObject anda dapat melakukan automatic memory manag
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
-A> **Keterangan:**:
-A> 
-A> - Class Mahasiswa yang kita buat diatas tidak diturunkan dari class QObject, sehingga kita harus menghapus memory di heap yang sudah tidak digunakan kembali secara manual untuk menghindari memory leak.
-A> - Penanganan secara manual menuntut programmer untuk lebih teliti dan akan menyulitkan bila membangun aplikasi yang kompleks dan memiliki banyak objek.
+ **Keterangan:**:
+ 
+ - Class Mahasiswa yang kita buat diatas tidak diturunkan dari class QObject, sehingga kita harus menghapus memory di heap yang sudah tidak digunakan kembali secara manual untuk menghindari memory leak.
+ - Penanganan secara manual menuntut programmer untuk lebih teliti dan akan menyulitkan bila membangun aplikasi yang kompleks dan memiliki banyak objek.
 
 {title="Contoh 2. Alokasi memory dinamis dengan QObject"}
 
@@ -158,12 +158,12 @@ A> - Penanganan secara manual menuntut programmer untuk lebih teliti dan akan me
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**:
-A> 
-A> - Untuk menggunakan QObject anda harus menambahkan header file <QObject>.
+ **Keterangan:**:
+ 
+ - Untuk menggunakan QObject anda harus menambahkan header file <QObject>.
 - Karena class Mahasiswa diturunkan dari class QObject, maka secara otomatis class Mahasiswa dapat menggunakan fitur automatic memory management.
-A> - Dengan menggunakan class QObject dalam aplikasi, anda tidak perlu mendelete satu-persatu object yang anda buat, karena QObject akan secara otomatis melakukannya untuk anda.
-A> - Method qDebug() lebih disarankan untuk menampilkan input dibandingkan dengan cout, hasil output dari qDebug() lebih kompatibel disemua platform. Dan dengan qDebug() anda tidak perlu menambahkan stl untuk menambahkan enter.
+ - Dengan menggunakan class QObject dalam aplikasi, anda tidak perlu mendelete satu-persatu object yang anda buat, karena QObject akan secara otomatis melakukannya untuk anda.
+ - Method qDebug() lebih disarankan untuk menampilkan input dibandingkan dengan cout, hasil output dari qDebug() lebih kompatibel disemua platform. Dan dengan qDebug() anda tidak perlu menambahkan stl untuk menambahkan enter.
 
 QObject akan disimpan pada stack memory sebagai parent, ketika QObject di hapus semua child dari QObject akan ikut dihapus juga.
 
@@ -214,11 +214,11 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**:
-A> 
-A> - Class QString memiliki method size untuk mengetahui ukuran panjang string.
-A> - Method isNull() dapat digunakan untuk memeriksa apakah string masih belum diinisialisasi.
-A> - Method isEmpty() dapat digunakan untuk memeriksa apakah string kosong.
+ **Keterangan:**:
+ 
+ - Class QString memiliki method size untuk mengetahui ukuran panjang string.
+ - Method isNull() dapat digunakan untuk memeriksa apakah string masih belum diinisialisasi.
+ - Method isEmpty() dapat digunakan untuk memeriksa apakah string kosong.
 
 {title="Contoh 4. Menggunakan Fungsi Left, Mid, Right"}
 
@@ -243,11 +243,11 @@ A> - Method isEmpty() dapat digunakan untuk memeriksa apakah string kosong.
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**:
-A> 
-A> - Class QString memiliki fungsi left() untuk mengambil sejumlah karakter tertentu dari kiri.
-A> - Fungsi right() digunakan untuk mengambil sejumlah karakter tertentu dari kanan.
-A> - Fungsi mid() digunakan untuk mengambil sejumlah karakter tertentu dari tengah.
+ **Keterangan:**:
+ 
+ - Class QString memiliki fungsi left() untuk mengambil sejumlah karakter tertentu dari kiri.
+ - Fungsi right() digunakan untuk mengambil sejumlah karakter tertentu dari kanan.
+ - Fungsi mid() digunakan untuk mengambil sejumlah karakter tertentu dari tengah.
 
 {title="Contoh 5. Menggabungkan String"}
 
@@ -273,11 +273,11 @@ A> - Fungsi mid() digunakan untuk mengambil sejumlah karakter tertentu dari teng
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
-A> **Keterangan:**:
-A> 
-A> - Fungsi append() dapat digunakan untuk menambahkan katrakter di akhir string.
-A> - Fungsi prepend() dapat digunakan untuk menambahkan karakter di awal string.
-A> - Fungsi insert() dapat digunakan untuk menyisipkan karakter dengan index tertentu pada string.
+ **Keterangan:**:
+ 
+ - Fungsi append() dapat digunakan untuk menambahkan katrakter di akhir string.
+ - Fungsi prepend() dapat digunakan untuk menambahkan karakter di awal string.
+ - Fungsi insert() dapat digunakan untuk menyisipkan karakter dengan index tertentu pada string.
 
 {title="Contoh 6. Membalik String"}
 
@@ -301,9 +301,9 @@ A> - Fungsi insert() dapat digunakan untuk menyisipkan karakter dengan index ter
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**:
-A> 
-A> - Karena QString adalah array of QChar anda dapat mengambil karakter dari QString menggunakan index array, misal pada contoh diatas nama[i] akan menghasilkan karakter pada index ke-i.
+ **Keterangan:**:
+ 
+ - Karena QString adalah array of QChar anda dapat mengambil karakter dari QString menggunakan index array, misal pada contoh diatas nama[i] akan menghasilkan karakter pada index ke-i.
 
 T> TIPS
 T>
@@ -343,10 +343,10 @@ Class QList dapat digunakan untuk membuat type safe object list untuk menyimpan 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
-A> **Keterangan:**
-A> 
-A> - Pertama kita mendeklarasikan objek lstNama yang bertipe QList<QString>, kemudian objek lstNama diberi beberapa data.
-A> - Untuk mengakses data yang ada pada lstNama anda dapat menggunakan keyword foreach Iterators
+ **Keterangan:**
+ 
+ - Pertama kita mendeklarasikan objek lstNama yang bertipe QList<QString>, kemudian objek lstNama diberi beberapa data.
+ - Untuk mengakses data yang ada pada lstNama anda dapat menggunakan keyword foreach Iterators
 
 Selain menggunakan keyword foreach untuk mengakses data pada list anda juga dapat menggunakan iterator. Pada program dibawah ini ditunjukan penggunaan iterator dengan QListIterator untuk mengakses data yang ada pada QList.
 
@@ -380,11 +380,11 @@ Selain menggunakan keyword foreach untuk mengakses data pada list anda juga dapa
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
-A> **Keterangan:**
-A> 
-A> - QListIterator digunakan untuk mengakses data yang ada pada QList.
-A> - Method hasNext() pada iterator digunakan untuk mendeteksi apakah masih ada data di dalam QList dan method next() pada iterator digunakan untuk berpindah data.
-A> - Cara kedua untuk membaca data pada QList adalah dengan menggunakan const iterator
+ **Keterangan:**
+ 
+ - QListIterator digunakan untuk mengakses data yang ada pada QList.
+ - Method hasNext() pada iterator digunakan untuk mendeteksi apakah masih ada data di dalam QList dan method next() pada iterator digunakan untuk berpindah data.
+ - Cara kedua untuk membaca data pada QList adalah dengan menggunakan const iterator
 
 QList<int>::const_iterator
 
@@ -419,11 +419,11 @@ Selain untuk membaca data pada list, iterator juga dapat digunakan untuk memodif
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Dengan menggunakan QMutableListIterator<QString> anda dapat memodifikasi data yang anda akses dengan menggunakan iterator.
-A> - Pada program diatas list akan dibaca dan akan dicari data yang mengandung kata “rick”, kemudian data yang mengandung kata tersebut akan diganti dengan kata “update data..”.
-A> - Setelah selesai dimodifikasi dengan iterator data akan dibaca kembali menggunakan foreach, dan anda dapat melihat bahwa ada 2 data yang sudah berubah isinya.
+ **Keterangan:**
+ 
+ - Dengan menggunakan QMutableListIterator<QString> anda dapat memodifikasi data yang anda akses dengan menggunakan iterator.
+ - Pada program diatas list akan dibaca dan akan dicari data yang mengandung kata “rick”, kemudian data yang mengandung kata tersebut akan diganti dengan kata “update data..”.
+ - Setelah selesai dimodifikasi dengan iterator data akan dibaca kembali menggunakan foreach, dan anda dapat melihat bahwa ada 2 data yang sudah berubah isinya.
 
 ### Menambahkan Data pada List
 
@@ -456,11 +456,11 @@ Ada beberapa cara yang dapat digunakan untuk menambahkan data ke list. Anda dapa
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Keyword << dan method append digunakan untuk manambahkan data di akhir list.
-A> - Method prepend digunakan untuk menambahkan data di awal list.
-A> - Method insert digunakan untuk menambahkan data pada index tertentu di list.
+ **Keterangan:**
+ 
+ - Keyword << dan method append digunakan untuk manambahkan data di akhir list.
+ - Method prepend digunakan untuk menambahkan data di awal list.
+ - Method insert digunakan untuk menambahkan data pada index tertentu di list.
 
 ## Tipe List yang Lain
 
@@ -505,13 +505,13 @@ Class QStringList diturunkan dari QList<QString> dan mempunyai banyak tambahan f
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
-A> **Keterangan:**
-A> 
-A> - Dengan menggunakan list QStringList anda akan lebih mudah untuk memanipulasi list yang bertipe string, misalnya anda ingin menggabungkan semua data di dalam list tersebut dengan karakter tertentu menjadi satu string, atau sebaliknya memecah string berdasarkan karakter tententu kemudian datanya dimasukan kedalam list.
-A> - Untuk memecah string berdasarkan karakter tertentu untuk dimasukan kedalam list anda dapat menggunakan method split().
-A> - Untuk menggabungkan data yang ada di dalam list dengan karakter tertentu menjadi sebuah string anda dapat menggunakan method join().
-A> - Pada kode diatas data pada lstKota digabungkan dengan menggunakan karakter ‘,’ menjadi string gabung.
-A> - Pada kode diatas list lstSplit diisi data hasil pemecahan string gabung, pemecahan string berdasarkan karakter ‘,’
+ **Keterangan:**
+ 
+ - Dengan menggunakan list QStringList anda akan lebih mudah untuk memanipulasi list yang bertipe string, misalnya anda ingin menggabungkan semua data di dalam list tersebut dengan karakter tertentu menjadi satu string, atau sebaliknya memecah string berdasarkan karakter tententu kemudian datanya dimasukan kedalam list.
+ - Untuk memecah string berdasarkan karakter tertentu untuk dimasukan kedalam list anda dapat menggunakan method split().
+ - Untuk menggabungkan data yang ada di dalam list dengan karakter tertentu menjadi sebuah string anda dapat menggunakan method join().
+ - Pada kode diatas data pada lstKota digabungkan dengan menggunakan karakter ‘,’ menjadi string gabung.
+ - Pada kode diatas list lstSplit diisi data hasil pemecahan string gabung, pemecahan string berdasarkan karakter ‘,’
 
 ## Stack dan Queue
 
@@ -556,12 +556,12 @@ Jika anda ingin menyimpan data pada collection dengan metode FIFO (first in firs
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
-A> **Keterangan:**
-A> 
-A> - Untuk menyimpan data dengan metode LIFO (Last In First Out) anda dapat menggunakan QStack.
-A> - Untuk menambahkan data kedalam QStack digunakan method push() sedangkan untuk mengambil data dari QStack dapat menggunakan method pop().
-A> - Untuk menyimpan data dengan metode FIFO (First In First Out) anda dapat menggunakan QQueue.
-A> - Untuk menambahkan data kedalam QQueue anda dapat menggunakan method enqueue, dan untuk mengambil data dari QQueue anda dapat menggunakan method dequeue.
+ **Keterangan:**
+ 
+ - Untuk menyimpan data dengan metode LIFO (Last In First Out) anda dapat menggunakan QStack.
+ - Untuk menambahkan data kedalam QStack digunakan method push() sedangkan untuk mengambil data dari QStack dapat menggunakan method pop().
+ - Untuk menyimpan data dengan metode FIFO (First In First Out) anda dapat menggunakan QQueue.
+ - Untuk menambahkan data kedalam QQueue anda dapat menggunakan method enqueue, dan untuk mengambil data dari QQueue anda dapat menggunakan method dequeue.
 
 ## Mapping
 
@@ -598,7 +598,7 @@ Untuk membuat object map dan hash Qt menyediakan class QMap. Dengan QMap anda da
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
-A> **Keterangan:**
-A> 
-A> - Dengan menggunakan QMap anda dapat membuat collection yang index-nya tidak berupa bilangan. Misal anda dapat menggunakan index yang tipenya QString, pada contoh diatas anda dapat menuliskan lstAge[“erick”].
-A> - Untuk mengambil semua data pada lstAge anda dapat menggunakan foreach atau menggunakan ConstIterator.
+ **Keterangan:**
+ 
+ - Dengan menggunakan QMap anda dapat membuat collection yang index-nya tidak berupa bilangan. Misal anda dapat menggunakan index yang tipenya QString, pada contoh diatas anda dapat menuliskan lstAge[“erick”].
+ - Untuk mengambil semua data pada lstAge anda dapat menggunakan foreach atau menggunakan ConstIterator.

@@ -1,3 +1,7 @@
+# Mukadimah
+
+## Pengenalan Bahasa C++
+
 Bahasa C merupakan bahasa pemrograman tingkat menengah. Pada tahun 1972 bahasa C
 pertama kali dirancang oleh [Dennis M Ritchie](https://id.wikipedia.org/wiki/Dennis_Ritchie) di Bell aboratories. Kemudian tahun 1978 Dennis dan [Brian W. Kernighan](https://id.wikipedia.org/wiki/Brian_Kernighan) empublikasikan bahasa C melalui [The C Programming Language](https://id.wikipedia.org/wiki/The_C_Programming_Language) sehingga bahasa C dikenal banyak orang. Selanjutnya pada tahun 1989, akhirnya bahasa C distandardisasi [ANSI](https://id.wikipedia.org/wiki/ANSI_C)(American National Standard Institute) sehingga bahasa C menjadi bahasa pemrograman standar hingga saat ini dan bisa dibuat kompilernya pada beberapa platform yang berbeda-beda.
 
@@ -146,6 +150,7 @@ Bila anda pengguna Windows 8.1 seperti saya dengan Amazing Flat Designnya, maka 
 Semua standar komponen untuk aplikasi seperti button, textarea, menu dan lain – lain terdapat pada QtWidget ini. Sehingga sangat cocok sekali untuk anda yang gemar membuat aplikasi tradisional standar.
 
 Bila kita membuat aplikasi dengan QtWidget, maka saat memulai project, akan muncul pemilihan Base Class, ada tiga yaitu Class QWidget, Class QMainWindow, dan Class Qdialog.
+
 Lihat gambar 1:
 
 
@@ -166,3 +171,97 @@ Lalu kenapa tidak digunakan dalam pemrograman desktop? Ya, dengan menggunakan Us
 Teknologi QtWebkit menampilkan web content melalui QML, sedangkan C++ API digunakan untuk interaksi dengan web content tersebut.
 
 Perlu diperhatikan bersama bahwa pemilihan teknologi adalah biasa, so, tetaplah berkreasi, berikut kita kutipkan beberapa perbandingan antar tiga teknologi UI dari Qt Help Documentation.
+
+## Install Qt Creator
+
+This is a tutorial for installation of Qt 5.0.2 to Ubuntu 12.10. It may be used also for newer versions of Qt and Ubuntu. A difference for OpenGL has been found and added as a note below.
+
+### Installation Guide
+
+####    Download
+
+Visit Qt downloads page an download a 32-bit or 64-bit Linux installation depending your version of Ubuntu. The installation file can be also downloaded through the command line using wget.
+
+Example:
+
+wget http://download.qt.io/official_releases/qt/5.0/5.0.2/qt-linux-opensource-5.0.2-x86-offline.run
+
+####  Install
+
+Adjust permission, run the installer and follow the instruction to complete the installation.
+
+chmod +x qt-linux-opensource-5.0.2-x86-offline.run
+./qt-linux-opensource-5.0.2-x86-offline.run
+
+####    Install g++
+
+Open a terminal and execute the following command to install g+:
+
+sudo apt-get install build-essential
+
+Configure a compiler
+
+Launch Qt Creator. Go to Tools > Options. Click Build & Run and select tab Kit. Configure a compiler if it is not automatically detected.
+
+####    Install OpenGL libraries
+
+Execute the following command to install OpenGL libraries:
+
+sudo apt-get install mesa-common-dev
+
+Note: Just installing the above-mentioned mesa-common-dev kit is not sufficient for more recent Ubuntu versions. Based on this comment in the forum an additional package needs installation. Execute following command:
+
+sudo apt-get install libglu1-mesa-dev -y
+
+Tested with Qt5.3.1 and Ubuntu 14.04 and it solved the problem with missing -lGL.
+
+####    Set file association with pro files
+
+When installing from the on-line source the file association is not done automatically. It also not show up when you try to associate it with file explorer. Create a file named “Qt-Creator.desktop” and fill the file with the following.
+
+	[Desktop Entry]
+	Version=1.0
+	Encoding=UTF-8
+	Type=Application
+	Name=QtCreator
+	Comment=QtCreator
+	NoDsiplay=true
+	Exec=(Install folder of QT)/Tools/QtCreator/bin/qtcreator %f
+	Icon=(Install folder of QT)/5.4/Src/qtdoc/doc/images/landing/icon_QtCreator_78x78px.png
+	Name[en_US]=Qt-Creator
+
+Place this file in home .local/share/applications .
+
+Edit a file named “defaults.list” in the same directory . Add the following line.
+
+	text/qtcreator=Qt-Creator.desktop;
+
+open file mimeapps.list and check if the following line is present.
+
+	application/vnd.nokia.qt.qmakeprofile=qtcreator.desktop
+
+if not add it under [added Associations].
+
+Run the following command.
+
+	sudo update-mime-database /usr/share/mime
+
+now Qt has been added to the list of file associations.
+
+### Troubleshooting
+
+####    Qt Creator needs a compiler set up to build
+
+Follow the instruction from the previous section to configure compiler for Qt Creator.
+
+####    error: g++: Command not found
+
+Solution:
+
+	sudo apt-get install build-essential
+
+####    error: GL/gl.h: No such file or directory
+
+Solution:
+
+	sudo apt-get install mesa-common-dev

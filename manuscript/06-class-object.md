@@ -121,7 +121,7 @@ Sedangkan cara untuk mengakses member function dari suatu class adalah dengan ju
 	katty.Bersuara();
 	katty.tampilkanUmur();
 
-{title="Contoh  1. Pembuatan class Sepeda"}
+Contoh  1. Pembuatan class Sepeda
 
 1. Buatlah project baru dan tulis kode berikut:
 
@@ -186,7 +186,7 @@ Contoh :
 	Sepeda::kecepatan = kec;
 	}
 
-{title="Contoh  2. Pembuatan obyek Sepeda."}
+Contoh  2. Pembuatan obyek Sepeda.
 
 1. Buatlah project baru dan tulis kode berikut:
 
@@ -245,7 +245,7 @@ Contoh :
  - Terlihat bahwa masing-masing obyek sepeda yang terbuat memiliki data yang berbeda-beda satu sama lain.
  - Artinya class hanyalah merupakan template / blueprint saja, dimana data-data dan tingkah laku dari kelas haruslah dilakukan oleh obyeknya. Jadi obyek adalah bentuk nyata dari sebuah kelas yang memiliki data dan method yang berbeda-beda satu sama lain.
 
-{title="Contoh  3. Pembuatan Obyek Array Sepeda"}
+Contoh  3. Pembuatan Obyek Array Sepeda
 
 Buatlah program beikut ini:
 
@@ -335,7 +335,7 @@ Demikian pula pada class, class juga memiliki dua bagian: member variabel dan me
 
 Class pada C++ memiliki cara melindungi dirinya yaitu dengan menggunakan keyword private, protected dan public. Keyword private atau protected biasanya digunakan pada semua variabel member sedangkan keyword protected atau public digunakan pada semua variabel method. Dengan menggunakan keyword private, maka bagian private tersebut tidak akan bisa diakses dari luar class, harus dari dalam class tersebut atau berada dalam method class tersebut, sedangkan jika public maka bisa akses dari luar class.
 
-{title="Contoh  4. Perbedaan private dan public pada member variabel"}
+Contoh  4. Perbedaan private dan public pada member variabel
 
 1. Buatlah program berikut:
 
@@ -427,7 +427,7 @@ Seperti yang sudah dijelaskan, member method merupakan bagian yang harus didekla
 
 Di dalam pemrograman beriorientasi obyek pada umumnya member function minimal selalu mewakili semua member variabelnya. Misal kita memiliki 1 buah member variabel bernama umur, maka minimal kita akan memiliki satu buah member function, misalnya bernama ubahUmur(int u).
 
-{title="Contoh  5. Member function dan implementasinya"}
+Contoh  5. Member function dan implementasinya.
 
 1. Buatlah program berikut ini:
 
@@ -528,7 +528,7 @@ Contoh:
 {linenos=off}
 	void setUmur(int u);
 
-{title="Contoh  6. Penggunaan accessor dan mutator method"}
+Contoh  6. Penggunaan accessor dan mutator method
 
 1. Tulislah program berikut ini:
 
@@ -644,7 +644,7 @@ Maka pada saat instansiasi kita menggunakan cara sebagai berikut:
 
 Arti instasiasi diatas adalah kita memanggil konstruktor yang berparameter dua buah, string dan integer.
 
-{title="Contoh  7. Menggunakan Constructor dan Destructor"}
+Contoh  7. Menggunakan Constructor dan Destructor.
 
 1. Buatlah program berikut:
 
@@ -732,7 +732,7 @@ Ketika dilakukan kompilasi akan menghasilkan error sebagai berikut:
 
 Error diatas mengatakan bahwa class Kucing tidak memiliki function yang bernama `Kucing::Kucing()`, yang artinya method constructor defaultnya sudah hilang. Agar kita dapat menggunakan baris `Kucing kucingku2;` maka kita harus menambah method constructor lagi yang tidak berparameter.
 
-{title="Contoh  8. Percobaan Menambah Constructor Method"}
+Contoh  8. Percobaan Menambah Constructor Method.
 
 1. Buatlah program berikut:
 
@@ -817,7 +817,7 @@ Error diatas mengatakan bahwa class Kucing tidak memiliki function yang bernama 
 
 Constructor dapat memiliki nilai default sehingga jika konstruktor yang dipanggil tidak diisi nilai, maka nilai-nilai lainnya akan tetap diinisialisasi dengan nilai defaultnya. Hal ini diperlukan untuk mempermudah menginisialisasi data variabel member. Penggunaan nilai default ini juga memungkinkan kita untuk tidak memasukkan semua parameter pada pemanggilan konstruktor.
 
-{title="Contoh 9. Penggunaan Constructor dengan Nilai Default"}
+Contoh 9. Penggunaan Constructor dengan Nilai Default
 
 Buatlah program berikut:
 

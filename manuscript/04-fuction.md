@@ -82,7 +82,7 @@ Contoh 1. Membuat Fungsi yang mengembalikan nilai.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
 
-{lang="c++"}
+
      #include <QtCore/QCoreApplication>
     #include <iostream>
     int absolut(int bil);
@@ -139,7 +139,7 @@ Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
-{lang="c++"}
+
     #include <QtCore/QCoreApplication>
     #include <iostream>
     void hello(int kali);
@@ -189,7 +189,7 @@ Contoh 3. Variabel Lokal.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	float kali(float a, float b); /*prototype fungsi*/
@@ -230,7 +230,7 @@ Contoh 4. Variabel Global.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
-{lang="c++"}
+
     #include <QtCore/QCoreApplication>
     #include <iostream>
     void kali(float a, float b); /*prototype fungsi*/
@@ -270,7 +270,7 @@ Contoh 5. Variabel Statik.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	long int kali(long int i); /*prototype*/
@@ -376,7 +376,7 @@ Contoh 6 Default Parameter.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	int volume(int,int=1,int=1); /*prototype*/

@@ -41,7 +41,7 @@ Dengan menurunkan class dari QObject anda dapat melakukan automatic memory manag
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -108,7 +108,7 @@ Dengan menurunkan class dari QObject anda dapat melakukan automatic memory manag
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QObject>
 	#include <QDebug>
@@ -180,7 +180,7 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])
@@ -224,7 +224,7 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])
@@ -253,7 +253,7 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])
@@ -283,7 +283,7 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])
@@ -321,7 +321,7 @@ Class QList dapat digunakan untuk membuat type safe object list untuk menyimpan 
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 7, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])
@@ -354,7 +354,7 @@ Selain menggunakan keyword foreach untuk mengakses data pada list anda juga dapa
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 8, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])
@@ -394,7 +394,7 @@ Selain untuk membaca data pada list, iterator juga dapat digunakan untuk memodif
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 9, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])
@@ -433,7 +433,7 @@ Ada beberapa cara yang dapat digunakan untuk menambahkan data ke list. Anda dapa
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 10, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])
@@ -477,7 +477,7 @@ Class QStringList diturunkan dari QList<QString> dan mempunyai banyak tambahan f
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 11, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QStringList>
@@ -521,7 +521,7 @@ Jika anda ingin menyimpan data pada collection dengan metode FIFO (first in firs
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 12, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QStack>
@@ -571,7 +571,7 @@ Untuk membuat object map dan hash Qt menyediakan class QMap. Dengan QMap anda da
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 13, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	int main(int argc, char *argv[])

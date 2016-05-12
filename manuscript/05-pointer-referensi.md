@@ -31,7 +31,7 @@ Contoh 1. Menampilkan alamat memory menggunakan address-of operator.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	int main(int argc, char *argv[])
@@ -114,7 +114,7 @@ Contoh 2. Memanipulasi data menggunakan Pointer
 
 1. Buka Qt Creator, buat project Qt Console Application dengan nama Contoh 2. Kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	int main(int argc, char *argv[])
@@ -167,7 +167,7 @@ Contoh 3. Mengganti alamat yang di referensi oleh pointer
 
 1. Buat project Qt Console Application baru, beri nama Contoh 3, kemudian tulis kode berikut
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	int main(int argc, char *argv[])
@@ -215,7 +215,7 @@ Contoh 4. Pointer dan Array
 
 1. Buat project Qt Console Application dengan nama Contoh 4, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	int main(int argc, char *argv[])
@@ -292,7 +292,7 @@ Contoh 5. Mengalokasikan, menggunakan, dan mendelete Pointer
 
 1. Buat project Qt Console Application dengan nama Contoh 5, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	int main(int argc, char *argv[])
@@ -353,7 +353,7 @@ Contoh 6. Membuat dan menghapus objek dari Heap
 
 1. Buat project Qt Console Application dengan nama Contoh 6, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -442,7 +442,7 @@ Contoh 7. Membuat dan Menggunakan Reference.
 
 1. Buat project Qt Console Application dengan nama Contoh 7, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -495,7 +495,7 @@ Contoh 8. Re-assign Reference Value
 
 1. Buat project Qt Console Application dengan nama Contoh 8, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	int main(int argc, char *argv[])
@@ -535,7 +535,7 @@ Contoh 9. Passing by Value
 
 1. Buat project Qt Console Application dengan nama Contoh 9, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -578,7 +578,7 @@ Contoh 10. Passing by reference dengan pointer
 
 1. Buat project Qt Console Application dengan nama Contoh 10, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -620,7 +620,7 @@ Contoh 11. Menjalankan fungsi Tukar() dengan reference
 
 Buat project Qt Console Application dengan nama Contoh 11, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -666,7 +666,7 @@ Contoh 12. Mengembalikan beberapa nilai dengan pointer
  
 Buat project Qt Console Application dengan nama Contoh 12, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -724,7 +724,7 @@ Contoh 13. Mengembalikan beberapa nilai dengan reference variabel
 
 1. Buat project Qt Console Application dengan nama Contoh 13, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -785,7 +785,7 @@ Contoh 14. Passing Object By Value
 
 1. Buat project Qt Console Application dengan nama Contoh 14, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -844,7 +844,7 @@ Contoh 15. Passing Object By Reference
 
 1. Buat project Qt Console Application dengan nama Contoh 15, kemudian tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;

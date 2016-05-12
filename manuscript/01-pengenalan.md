@@ -60,7 +60,7 @@ Qt Creator merupakan cross-platform C++ integrated development environment yang 
 Project Qt Creator menggunakan format cross platform project (.pro) untuk mengizinkan tim developer untuk share project yang mempunyai platform-platform yang berbeda-beda dan menggunakan common tool untuk implementasi dan
 debugging program. Sebuah project dapat meliputi: file-file yang digroup secara bersama-sama, langkah-langkah build program, form-form dan file-file resource, dan pengaturan untuk menjalankan aplikasi. Projek dapat dibuat secara manual atau diimport dari file projek yang sudah ada. Jika projeknya dibuat secara manual, maka sebuah file-file akan digenerate oleh Qt Creator, tergantung dari tipe file yang dimiliki. Seperti Jika filenya adalah sebuah GUI application, maka Qt Creator men-generate sebuah file kosong yang berektensikan `.ui` yang akan imodifikasikan melalui Qt Designer. Qt Creator diinterrasikan dengan sistem cross-platform untuk mem-build secara automatis: qmake dan CMake. Projek yang tidak menggunakan qmake atau CMake dapat diimport-kan, dan Qt Creator dapat meng-ignore sistem build.
 
-![Gambar Projek pada Qt Creator]()
+![Gambar Projek pada Qt Creator](images/capture1-1.png)
 
 Editor Qt Creator mempunyai sebuah code editor dan mengintegrasikan Nokia's Qt Designer untuk mendesain dan
 membangun aplikasi GUI dari Qt widgets. Karena Qt Creator adalah sebuah Integrated Development Enviroment (IDE), maka Qt Creator memisahkan antara text editor untuk build dan editor untuk menjalankan (run) aplikasi-aplikasi. Qt Creator bukan hanya bisa membaca text file biasa, akan tetapi juga bisa membaca file C++ dan bahasa QML.
@@ -75,16 +75,17 @@ Keunggulan Code Editor
 - Me-rename symbol-symbol dengan langkah intelligent, sehingga simbol-simbol yang lain dengan nama yang sama tidak ter-rename.
 - Menampilkan lokasi function, class yang dideklarasikan atau yang dipanggil
 
-Gambar Code Editor
+[Gambar Code Editor](images/capture1-2.png)
 
 ### UI Designer
 
 Qt Creator menyajikan dua buah editor visual: Qt Designer dan Qt Quick Designer. Qt Designer merupakan sebuah tool untuk mendesain dan membangun aplikasi GUI dari Qt widgets. Widgets dan forms yang dibentuk dengan Qt Designer terintegrasi dengan code program, Qt signals and mekanisme slots, sehingga kita dengan mudah memberikan nilai-nilai dan properti-properti pada pada elemen-elemen grafik. Semua properti-properti yang diatur pada Qt Designer dapat diubah secara dinamik melalui/di dalam code.
 
-Qt Quick Designer digunakan untuk membangun secara mudah animasi-animasi dengan menggunakan sebuah bahasa pemograman yang dikenal dengan Qt Meta-Object Language (QML). Dalam QML, sebuah user interface dispesifikasikan sebagai sebuah pohon (tree) dari objects dengan properti-properti. Kamu menggunaan teks editor visual untuk menciptakan items, screens, dan aplikasi, serta mendefinisikan perubahan action-acton pada komponennya.
+Qt Quick Designer digunakan untuk membangun secara mudah animasi-animasi dengan menggunakan sebuah bahasa pemograman yang dikenal dengan [Qt Meta-Object Language (QML)](https://en.wikipedia.org/wiki/QML). Dalam QML, sebuah user interface dispesifikasikan sebagai sebuah pohon (tree) dari objects dengan properti-properti. Kamu menggunaan teks editor visual untuk menciptakan items, screens, dan aplikasi, serta mendefinisikan perubahan action-acton pada komponennya.
 • Dapat digunakan Qt atau JavaScript untuk mengimplementasikan logik aplikasi.
 
-Gambar UI Designers
+![Gambar UI Designers](images/capture1-3.png)
+
 Pilih File -> New File or Project
 
 ### Bahasa yang di dukung
@@ -98,9 +99,10 @@ Kamu dapat menggunakan code editor menulis code dalam Qt C++ atau bahasa pemogra
 ### Tools
 
 Qt Creator diintegrasikan dengan kumpulan tool-tool yang bermanfaat dan membantu, seperti version control systems
-dan Qt Simulator. Qt Creator menggunakan command line client version control system untuk mengakses repositories (Git, subversion, Perfoce, CVS, Mercurial).
+dan Qt Simulator. Qt Creator menggunakan command line client version control system untuk mengakses repositories ([Git](https://git-scm.com/), [subversion](https://subversion.apache.org/), [Perfoce](https://www.perforce.com), [CVS](www.nongnu.org/cvs/), [Mercurial](https://www.mercurial-scm.org)).
 
 ### Debuggers
+
  Qt Creator tidak mempunyai debugger. Qt Creator mempunyai plugin debugger yang bekerja sebagai interface antara Qt Creator core dan external native debuggers
 
 • Debuggers adalah:
@@ -125,7 +127,6 @@ Qt Creator menggunakan teknologi QtWidget sebagai User Interface pada menu dan k
 
 Yup, perhatikan Help Documentation nya, wow, ini seperti halaman web yang menyatu dengan softwarenya bukan? Ya, teknologi QtWebKit digunakan dalam pembangunan Help Documentation ini.
 
-Mari kita lanjut....
 
 ### A.Teknologi User Interface QtQuick
 
@@ -139,8 +140,6 @@ Jadi jangan heran, saat anda install ulang komputer (bahkan Windows 8.1 sekalipu
 
 Animation, Transition, Visual Effect, Shader Effect dan lain – lain merupakan fasilitas yang dapat anda kembangkan saat menggunakan QtQuick sebagai User Interface (UI) aplikasi anda.
 
-Amazing bukan?
-
 ### B.Teknologi User Interface QtWidget
 
 QtWidget merupakan tradisional User Interface element yang biasanya terdapat dalam dekstop environment. Bila anda pengguna linux, maka UI ini merupakan bagian dari KDE. Tapi jangan salah, QtWidget sangat dinamis untuk Windows dan Mac OS. Sehingga bila anda menggunakan QtWidget sebagai UI anda maka tampilannya mirip sekali dengan UI pada OS anda.
@@ -150,8 +149,6 @@ Bila anda pengguna Windows 8.1 seperti saya dengan Amazing Flat Designnya, maka 
 Semua standar komponen untuk aplikasi seperti button, textarea, menu dan lain – lain terdapat pada QtWidget ini. Sehingga sangat cocok sekali untuk anda yang gemar membuat aplikasi tradisional standar.
 
 Bila kita membuat aplikasi dengan QtWidget, maka saat memulai project, akan muncul pemilihan Base Class, ada tiga yaitu Class QWidget, Class QMainWindow, dan Class Qdialog.
-
-Lihat gambar 1:
 
 
 Perbedaan dari ketiga Base Class di atas adalah berikut ini:
@@ -174,44 +171,50 @@ Perlu diperhatikan bersama bahwa pemilihan teknologi adalah biasa, so, tetaplah 
 
 ## Install Qt Creator
 
+Pada tutorial ini kita akan menginstall Qt pada ubuntu 14.04  dengan menggunakan versi terbaru dari Qt Creator yang dapat di unduh di [halaman](http://www.qt.io/download) Qt cCreator. 
 This is a tutorial for installation of Qt 5.0.2 to Ubuntu 12.10. It may be used also for newer versions of Qt and Ubuntu. A difference for OpenGL has been found and added as a note below.
 
 ### Installation Guide
 
 ####    Download
 
-Visit Qt downloads page an download a 32-bit or 64-bit Linux installation depending your version of Ubuntu. The installation file can be also downloaded through the command line using wget.
+Kunjungi website Qt untuk mendowload Qt Crator sesui dengan versi sisem operasi yang di gunakan baik itu 64-bit atau 32 bit. atau juga dapat di download dengan menggunakan command line di linux dengan mengetikan.
 
-Example:
+Contoh:
 
-wget http://download.qt.io/official_releases/qt/5.0/5.0.2/qt-linux-opensource-5.0.2-x86-offline.run
+wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x86-online.run
+
+jika menggunakan sistem operasi beberbasis 64 bit
+
+wget http://download.qt.io/official_releases/qt/5.6/5.6.0/qt-opensource-linux-x64-5.6.0.run
 
 ####  Install
 
 Adjust permission, run the installer and follow the instruction to complete the installation.
 
-chmod +x qt-linux-opensource-5.0.2-x86-offline.run
-./qt-linux-opensource-5.0.2-x86-offline.run
+	chmod +x qt-opensource-linux-x64-5.6.0.run
+	./qt-opensource-linux-x64-5.6.0.run
 
 ####    Install g++
 
-Open a terminal and execute the following command to install g+:
+Buka terminal untuk menginstal g++: 
 
-sudo apt-get install build-essential
+	sudo apt-get install build-essential
 
-Configure a compiler
+#### KOnfigurasi Kompiler
 
+Buka Qt Creator klik tool > Options. Klik build & run dan pilih tab Kit. Konfigurasi 
 Launch Qt Creator. Go to Tools > Options. Click Build & Run and select tab Kit. Configure a compiler if it is not automatically detected.
 
 ####    Install OpenGL libraries
 
 Execute the following command to install OpenGL libraries:
 
-sudo apt-get install mesa-common-dev
+	sudo apt-get install mesa-common-dev
 
 Note: Just installing the above-mentioned mesa-common-dev kit is not sufficient for more recent Ubuntu versions. Based on this comment in the forum an additional package needs installation. Execute following command:
 
-sudo apt-get install libglu1-mesa-dev -y
+	sudo apt-get install libglu1-mesa-dev -y
 
 Tested with Qt5.3.1 and Ubuntu 14.04 and it solved the problem with missing -lGL.
 

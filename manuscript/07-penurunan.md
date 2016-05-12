@@ -24,7 +24,7 @@ Mengenai jenis akses public ini akan dibahas nanti, sekarang kita akan memakai p
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -153,7 +153,7 @@ Tidak ada kelas yang tidak mempunyai konstruktor. Adalah benar bahwa secara eksp
 
 1. Buka Qt Creator, buat project Qt Console Application dengan nama Contoh 3. Kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -191,7 +191,7 @@ Sama seperti pada penulisan kelas biasa, pada kelas turunan juga bisa tidak ditu
 
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian ubah isi konstruktor kelas Kelasku dan tambahkan kelas Turunan berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -231,7 +231,7 @@ Karakteristik konstruktor kelas turunan ini penting untuk dipahami, karena kadan
 
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti berikut.
 
-{lang="c++"}	
+	
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -281,7 +281,7 @@ Dengan demikian jelas bahwa konstruktor kelas dasar pasti dipanggil oleh konstru
 
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian tambahkan konstruktor pada kelas Turunan seperti berikut.
 
-{lang="c++"}	
+	
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -348,7 +348,7 @@ Suatu metode bisa dikatakan override dari metode kelas dasarnya jika memenuhi 2 
 
 Buka project Qt Console Application projek Contoh .1 yang tadi sudah dibuat, kemudian ubah kode menjadi seperti berikut
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -471,7 +471,7 @@ Ketika terjadi overriding terhadap suatu metode kelas dasar, maka semua metode m
 
 1. Jalankan Qt Console Application projek, buat projek bernama Contoh 9 seperti berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -507,7 +507,7 @@ Ketika terjadi overriding terhadap suatu metode kelas dasar, maka semua metode m
 
 3. Hilangkan tanda comment pada pemanggilan metode hallo pada dua baris di progam utama menjadi seperti berikut:
 
-{lang="c++"}
+
 	int main(int argc, char *argv[])
 	{
 	QCoreApplication a(argc, argv);
@@ -532,7 +532,7 @@ Metode Virtual adalah metode yang seharusnya dioverride oleh kelas turunannya, d
 
 1. Jalankan Qt Console Application projek, buat projek bernama Contoh 10 seperti berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -563,7 +563,7 @@ Metode Virtual adalah metode yang seharusnya dioverride oleh kelas turunannya, d
 
 3. Sekarang hapuslah kata kunci virtual metode getLuas() pada kelas Lingkaran seperti berikut.
 
-{lang="c++"}
+
 	class Lingkaran{
 	public:
 	float getLuas(){
@@ -599,7 +599,7 @@ Pada konversi dari suatu variabel ke variabel lain, bisa terjadi Pemotongan (Sil
 
 1. Jalankan Qt Console Application projek, buka projek bernama contoh 10 yang dibuat tadi, kemudian ubah kode progam pada bagian program utama seperti berikut:
 
-{lang="c++"}	
+	
 	int main(int argc, char *argv[])
 	{
 	QCoreApplication a(argc, argv);
@@ -642,7 +642,7 @@ Maka tipe data variabel tersebut bisa di-“down-casted” menjadi tipe data kel
 
 1. Jalankan Qt Console Application projek, buka projek bernama contoh 10 di atas, ubah pada bagian program utama (main()) menjadi seperti berikut:
 
-{lang="c++"}
+
 	int main(int argc, char *argv[])
 	{
 	QCoreApplication a(argc, argv);

@@ -125,7 +125,7 @@ Sedangkan cara untuk mengakses member function dari suatu class adalah dengan ju
 
 1. Buatlah project baru dan tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -190,7 +190,7 @@ Contoh :
 
 1. Buatlah project baru dan tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -249,7 +249,7 @@ Contoh :
 
 Buatlah program beikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -339,7 +339,7 @@ Class pada C++ memiliki cara melindungi dirinya yaitu dengan menggunakan keyword
 
 1. Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -375,7 +375,7 @@ Class pada C++ memiliki cara melindungi dirinya yaitu dengan menggunakan keyword
 
 3. Ubahlah program pada Contoh  5 diatas menjadi seperti berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -431,7 +431,7 @@ Di dalam pemrograman beriorientasi obyek pada umumnya member function minimal se
 
 1. Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -532,7 +532,7 @@ Contoh:
 
 1. Tulislah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -648,7 +648,7 @@ Arti instasiasi diatas adalah kita memanggil konstruktor yang berparameter dua b
 
 1. Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -736,7 +736,7 @@ Error diatas mengatakan bahwa class Kucing tidak memiliki function yang bernama 
 
 1. Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -821,7 +821,7 @@ Constructor dapat memiliki nilai default sehingga jika konstruktor yang dipanggi
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -869,7 +869,7 @@ Buatlah program berikut:
 T> TIPS
 T> Kita juga dapat memberi nilai default dengan cara lain, perhatikan contoh berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -915,7 +915,7 @@ Kita menggunakan kata kunci const untuk membuat suatu identifier konstanta. Kons
 
 1. Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -992,7 +992,7 @@ Hasil:
  - Program diatas hasilnya sama dengan program sebelumnya karena kita hanya mengubah bagian asesor method dengan cara menambah kata const dibelakangnya. Bagian implementasi method tersebut juga harus disesuaikan.
  - Dengan cara ini method asesor tersebut sudah bersifat read-only. Ubahlah bagian method `void getUmur() const`; Kita coba tambahkan baris program berikut sebelum return:
  
- {lang="c++"}
+ 
  ~~~~~~~~~~~~~~~~~~~~~~~~
  	this->umur = 5.
  	Kode lengkapnya adalah:
@@ -1032,7 +1032,7 @@ Pada contoh diatas terlihat bahwa pada class Manusia implementasi kode method se
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -1102,7 +1102,7 @@ Sangatlah mungkin kita membentuk class yang kompleks. Di dalam class tersebut me
 
 1. Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -1218,7 +1218,7 @@ Sangatlah mungkin kita membentuk class yang kompleks. Di dalam class tersebut me
 
 1. Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <math.h>

@@ -82,7 +82,7 @@ Cara kedua adalah menggunakan *functional notation* dimana kita bisa memaksa var
 
 Tulislah kode berikut:
 
-{:lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -237,7 +237,7 @@ Casting ini tidak boleh menghasilkan kembalian NULL. Sintaksnya:
 
 Buatlah program berikut:
 
-{:lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -456,7 +456,7 @@ Hasil:
 
 Koneksi Qt dengan Mysql ddan menampilkan datanya
 
-{:lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QtSql/QtSql>
 	#include <QtDebug>
@@ -540,7 +540,7 @@ Field:
 
 Koneksi Qt ke Database
 
-{:lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QtSql/QtSql>
@@ -599,7 +599,7 @@ Perintah diatas menggunakan QsqlQuery yang menerima parameter Qstring. Setelah q
 
 Tulislah program berikut:
 
-{:lang="c++"}	
+	
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QtSql/QtSql>
@@ -653,7 +653,7 @@ Perintah diatas menggunakan QsqlQuery yang menerima parameter sql dalam tipe dat
 
 Buatlah program berikut:
 
-{:lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QtSql/QtSql>
@@ -732,7 +732,7 @@ Kita akan mengedit nim 22002529 menjadi bernama Antonius Rachmat C
 
 Buatlah program berikut:
 
-{:lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QtSql/QtSql>
@@ -787,7 +787,7 @@ Kita akan menghapus data “mhs baru”.
 
 Buatlah program sebagai berikut:
 
-{:lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QtSql/QtSql>
@@ -846,7 +846,7 @@ Cara yang digunakan adalah dengan membuat sebuah class yang akan digunakan untuk
 
 1. Tulislah program berikut:
 
-{:lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QtSql/QtSql>
@@ -1021,7 +1021,7 @@ T> **TIPS:**
 T> 
 T> Untuk mengkonversi dari tipe data string menuju ke Qstring, digunakan `<variabel string bias.c_str()` Perintah cin tidak bisa digunakan setelah fungsi getline, karena akan membuat inputan menjadi bertumpuk seperti pada contoh ini:
 
-{:lang="c++"}
+
 	int main(){
 	int id, age;
 	string name, address;
@@ -1060,7 +1060,7 @@ Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu. Untuk me
 
 Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan dengan cara:
 
-{:lang="c++"}
+
 	int main(){
 	int id, age;
 	string name, address;

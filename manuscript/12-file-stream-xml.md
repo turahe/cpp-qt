@@ -32,7 +32,7 @@ Program dibawah ini akan menunjukan cara penggunaan QDir untuk mengambil informa
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QDir>
@@ -88,7 +88,7 @@ Agar lebih jelas bagaimana cara menggunakan QFile untuk membuka file, anda dapat
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QFile>
 	#include <QDebug>
@@ -134,7 +134,7 @@ Untuk membuat text stream pada file, buat objek QFile dan buka file seperti bias
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QFile>
@@ -188,7 +188,7 @@ Untuk membaca file biner anda dapat menggunakan objek QDataStream. Program dibaw
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4
 2. Buka file Contoh 4.pro untuk menambahkan library GUI karena pada controh program ini digunakan class QColor.
 
-{lang="c++"}
+
 	#-------------------------------------------------
 	#
 	# Project created by QtCreator 2011-01-03T19:58:33
@@ -204,7 +204,7 @@ Untuk membaca file biner anda dapat menggunakan objek QDataStream. Program dibaw
 
 3. Kemudian tambahkan kode berikut pada file main.cpp.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QDataStream>
@@ -304,7 +304,7 @@ Qt mendukung tiga cara untuk memanipulasi dokumen XML yaitu QStreamReader, DOM, 
 
 Untuk menggunakan library XML pada Qt anda harus menambahkan library XML pada Qt project file.
 
-{lang="c++"}
+
 	#-------------------------------------------------
 	#
 	# Project created by QtCreator 2011-01-03T21:43:04
@@ -331,7 +331,7 @@ Pertama kita akan mulai dengan membuat file XML menggunakan DOM, adapun tahapan 
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QFile>
@@ -401,7 +401,7 @@ Pada contoh dibawah ini kita akan membaca dan memasukan file kedalam QDomDocumen
 4. Kopikan file “simple.xml” yang akan dibaca kedalam folder Contoh 6-build-simulator.
 5. Kemudian buka file main.cp, tulis kode untuk membaca file XML berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QFile>
 	#include <QTextStream>
@@ -482,7 +482,7 @@ Pada topik sebelumnya kita sudah membahas bagaimana cara menulis dan membaca dat
 
 3. Kemudian pada file main.cpp tambahkan kode berikut untuk melakukan modifikasi file xml yang sudah kita buat sebelumnya.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QFile>
@@ -633,7 +633,7 @@ Setelah memanggil method readNext(), anda dapat mengecek token yang sedang aktif
 
 3. Kemudian ketikan kode berikut pada main.cpp untuk membaca data dari dokumen XML.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QFile>
@@ -680,7 +680,7 @@ Setelah memanggil method readNext(), anda dapat mengecek token yang sedang aktif
 
 1. Buat aplikasi console dengan nama Contoh 9, kemudian tulis kode berikut
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <QDebug>
 	#include <QFile>

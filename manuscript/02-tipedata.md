@@ -77,7 +77,7 @@ Contoh 1. Tipe data dan Identifier.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <iostream>
 	int main(int argc, char *argv[])
 	{
@@ -370,7 +370,7 @@ Contoh.2 Tipe data dan Identifier.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	int main(int argc, char *argv[])

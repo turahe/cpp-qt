@@ -73,7 +73,7 @@ Pada Labs1 akan ditunjukan penggunaan operator increment. Pada contoh dibawah in
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 1, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -157,7 +157,7 @@ Untuk contoh dibawah ini kita akan mencoba menggunakan notasi `postfix`, dengan 
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -251,7 +251,7 @@ Contoh dibawah ini akan menunjukan bagaimana penggunaan conversion operator untu
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 3, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -319,7 +319,7 @@ Contoh program dibawah ini menggunakan operator Addition (+) untuk menambahkan h
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 4, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -396,7 +396,7 @@ Dengan menggunakan Addition-Assignment operator anda dapat menuliskan sintaks a 
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 5, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -479,7 +479,7 @@ Anda dapat menggunakan equality operator (==) atau inequality operator (!=). And
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 6, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -596,7 +596,7 @@ Seperti pada contoh sebelumnya anda juga dapat menggunakan operator <, >, <=, >=
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 7, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -687,7 +687,7 @@ Subscript operator dapat digunakan jika anda ingin mengakses class seperti ketik
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 8, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -746,7 +746,7 @@ Function operator digunakan jika anda ingin membuat objek bekerja seperti functi
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 9, kemudian tulis kode berikut.
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;

@@ -64,7 +64,7 @@ Contoh 1. Contoh Input dan Output Array
 
 Buatlah project baru dan tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -116,7 +116,7 @@ Contoh 2. Contoh Manipulasi Array
 
 1. Buatlah project baru dan tulis kode berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -165,7 +165,7 @@ Contoh 3. Penanganan Batas Indeks Elemen Array
 
 Buatlah program beikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -214,7 +214,7 @@ Contoh 4. Inisialisasi Array dengan nilai 0
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -249,7 +249,7 @@ Contoh 5. Inisialisasi Array dua nilai elemen pertama
 
 Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -309,7 +309,7 @@ Contoh 6. Tanpa inisialisasi, array langsung ditampilkan
 
 Tulislah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -346,7 +346,7 @@ Contoh 7. Penggunaan tipe data enum pada Array satu dimensi
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -389,7 +389,7 @@ Contoh 8. Percobaan Penyalinan Array 1 dimensi
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -416,7 +416,7 @@ Contoh 9. Penyalinan Array 1 dimensi dengan Perulangan
 
 Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -607,7 +607,7 @@ Contoh 10. Deklarasi dan Menampilkan Array 2 Dimensi
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -647,7 +647,7 @@ Misalkan terdapat array 2 dimensi sebagai berikut matriks`[3][5]`
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -685,7 +685,7 @@ Contoh 12. Penyalinan array 2 dimensi ke dalam array 1 dimensi.
 
 Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -739,7 +739,7 @@ Cara ini menelusuri elemen array dua dimensi per dimulai dari baris pertama lalu
 
 Berikut adalah contohnya:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -768,7 +768,7 @@ Cara ini menelusuri elemen array dua dimensi per dimulai dari kolom pertama lalu
 
 **Contoh:**
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -824,7 +824,7 @@ Contoh 13. Penggunaan karakter \0
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -853,7 +853,7 @@ Contoh 14. String tanpa karakter \0
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -881,7 +881,7 @@ Contoh 15. Mengisi Array of Character
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -918,7 +918,7 @@ Contoh 16. Pengisian variabel array of character dengan maksimum jumlah karakter
 
 Tulislah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -967,7 +967,7 @@ Contoh 17. Penggunaan fungsi strlen()
 
 Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -997,7 +997,7 @@ Contoh 17. Penggunaan fungsi length pada tipe data string C++
 
 Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1039,7 +1039,7 @@ Contoh 18. Penggunaan fungsi strcpy()
 
 Buatlah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1078,7 +1078,7 @@ Contoh 19. Penggunaan fungsi strncpy()
 
 Buatlah program beriku:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1117,7 +1117,7 @@ Contoh 20. Penggunaan fungsi strcat()
 
 Buatlah program beriku:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1146,7 +1146,7 @@ Contoh 21. Penggunaan fungsi strcat()
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1241,7 +1241,7 @@ Contoh 22. Pembuatan variabel string C++, penyalinan string, dan penggabungan st
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1291,7 +1291,7 @@ Contoh 23. Penggunaan class string untuk manipulasi data
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1334,7 +1334,7 @@ Contoh 24. Penggabungan string dengan menggunakan class string
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1368,7 +1368,7 @@ Contoh 25. Pengaksesan isi nilai class string
 
 Buatlah program berikut:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1415,7 +1415,7 @@ Contoh 26. Menemukan substring pada sebuah string besar
 
 Tulislah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1494,7 +1494,7 @@ layar.
 
 Tulislah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>
@@ -1529,7 +1529,7 @@ Tulislah program berikut ini:
 
 Tulislah program berikut ini:
 
-{lang="c++"}
+
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	#include <string>

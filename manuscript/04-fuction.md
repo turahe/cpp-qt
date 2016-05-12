@@ -19,17 +19,17 @@ Fungsi sebenarnya mirip dengan prosedur (pada bhs. Pascal), dan kedua hal ini di
 
 Kita memerlukan subrutin, karena dalam program yang besar akan lebih baik jika tugas tertentu dilakukan oleh subrutin tertentu, dengan demikian program akan menjadi  lebih mudah dibaca dan  dipelihara.  
 
-I> Catatan :  
+I> **Catatan :**  
 I> 
 I> Fungsi bisa dikatakan sebagai bentuk lain dari instruksi yang dapat memberikan sebuah nilai apabila  diberi masukan yang dibutuhkan. Masukan tersebut dikenal dengan istiah Parameter.   
 
 Fungsi-fungsi merupakan elemen utama dari program bahasa C++. Program dari bahasa C++  dibentuk dari kumpulan fungsi, mulai dari fungsi utama dengan nama `main()`, fungsi-fungsi pustaka (standar) dan  fungsi-fungsi yang dibuat sendiri oleh pemrogram (UDF = *User Defined Function*). Fungsi-fungsi banyak  digunakan dengan dua alasan utama, yaitu:  
 
-1. Fungsi-fungsi   menjadikan   program   C++   mempunyai   struktur   yang   jelas.   Dengan   memisahkan langkah–langkah detail ke satu atau lebih  fungsi–fungsi, maka fungsi utama (main()) akan menjadi lebih pendek, jelas dan mudah dimengerti. Hal seperti ini menunjukan suatu struktur program yang baik.  
+1. Fungsi-fungsi   menjadikan   program   C++   mempunyai   struktur   yang   jelas.   Dengan   memisahkan langkah–langkah detail ke satu atau lebih  fungsi–fungsi, maka fungsi utama (`main()`) akan menjadi lebih pendek, jelas dan mudah dimengerti. Hal seperti ini menunjukan suatu struktur program yang baik.  
 
-2. Fungsi-fungsi  dapat  digunakan  untuk  menghindari  penulisan  program  yang  sama  ditulis  secara berulang-ulang. Selanjutnya bagian program yang membutuhkan langkah-langkah yang sama tidak perlu selalu dituliskan, melainkan cukup memanggil fungsi – fungsi tersebut.  
+2. Fungsi-fungsi  dapat  digunakan  untuk  menghindari  penulisan  program  yang  sama  ditulis  secara berulang-ulang. Selanjutnya bagian program yang membutuhkan langkah-langkah yang sama tidak perlu selalu dituliskan, melainkan cukup memanggil fungsi-fungsi tersebut.  
 
-Suatu fungsi harus diberi nama supaya dapat dipanggil dari bagian program yang membutuhkannya.  Tugas yang dilakukan oleh suatu fungsi dapat berupa tugas input/output, penyeleksian atau tugas-tugas  perhitungan dan sebagainya.  
+Suatu fungsi harus diberi nama supaya dapat dipanggil dari bagian program yang membutuhkannya.  Tugas yang dilakukan oleh suatu fungsi dapat berupa tugas input/output, penyeleksian atau tugas-tugas  perhitungan dan sebagainya.
 
 ## Mendefinisikan Fungsi  
 
@@ -76,7 +76,9 @@ Compiler C++ dapat memeriksa tipe data melalui parameter-parameter (actual param
 
 Prototype fungsi standard berada di file-file judulnya, dalam fungsi pustaka sebagai contoh, fungsi  pustaka `printf()`, prototypenya berada di dalam file judul `stdio.h`. Pencantuman prototype fungsi dapat  menggunakan preprocessor directive `#include`.   
 
-{title="Contoh 1. Membuat Fungsi yang mengembalikan nilai."}
+Contoh 1. Membuat Fungsi yang mengembalikan nilai.
+
+--------------------------------------------------
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
 
@@ -103,6 +105,10 @@ Prototype fungsi standard berada di file-file judulnya, dalam fungsi pustaka seb
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
+{lang="sh", linenos=off}
+Bilangan : -10
+Dimutlakkan menjadi : 10
+
 A> **Analisa Program :**  
 A> 
 A> - Pada program diatas baris ketiga tertulis : `int absolut(int bil);` inilah yang disebut  sebagai prototype, ditulis sebelum fungsi yang memakainya, yaitu `main()`.  
@@ -121,16 +127,17 @@ i> `int absolut(int x);`
 i> 
 i> Nama parameter pada prototype tidak harus disebutkan, oleh karena itu prototype tersebut di atas  boleh juga dituliskan seperti berikut :  
 i> 
-i> int absolut(int);  
+i> `int absolut(int);` 
 
 ## Hasil Balik Fungsi  
 
 Suatu fungsi dalam menyelesaikan tugasnya, dapat hanya melakukan suatu tugas tanpa memberikan  suatu nilai kembalian atau melakukan suatu tugas yang kemudian memberikan suatu nilai kembalian.  Fungsi yang hanya menampilkan hasil di layar merupakan suatu fungsi yang hanya melakukan tugasnya  saja tanpa memberikan hasil balik. Untuk membuat fungsi yang tidak mempunyai nilai kembalian  digunakan tipe data void untuk tipe fungsi tersebut dan pada tubuh definisi fungsi tidak ada satmenet  return.  
 
-{title="Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai."}   
+Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.
 
+----------------------------------------------------------------
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs2, kemudian tulis kode berikut.  
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 {lang="c++"}
     #include <QtCore/QCoreApplication>
@@ -148,9 +155,14 @@ Suatu fungsi dalam menyelesaikan tugasnya, dapat hanya melakukan suatu tugas tan
     cout << "Hello World!" << endl;
     }      
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> Analisa Program :
+{lang="sh", linenos=off}
+Hello World!
+Hello World!
+Hello World!  
+
+A> **Analisa Program :**
 A> 
 A> - Pada program diatas baris ketiga tertulis : `void hello(int kali)`; tampak tipe dari fungsi ini adalah void, berarti tidak mengembalikan nilai.  
 A>  
@@ -170,10 +182,12 @@ Variabel-variabel memiliki ruang lingkup yang berbeda-beda, sesuai dengan ruang 
 
 Variable lokal merupakan variable yang hanya berlaku untuk pernyataan di dalam satu blok statemen  saja, tidak dapat dipergunakan oleh blok lain, pendeklarasianya variabel lokal berada di dalam blok  statement (dalam kurung kurawal) yang bersangkutan. Variabel lokal akan dihapus dari memori jika  proses sudah meninggalkan blok statemen letak variable lokalnya.  
 
-{title="Contoh 3 Variabel Lokal."}   
+Contoh 3. Variabel Lokal.
+
+---------------------------------   
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs2, kemudian tulis kode berikut.  
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
 {lang="c++"}
 	#include <QtCore/QCoreApplication>
@@ -197,19 +211,24 @@ Variable lokal merupakan variable yang hanya berlaku untuk pernyataan di dalam s
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
-A> **Analisa Program: ** 
+{lang="sh", linenos=off}
+Hasil = 28
+
+A> **Analisa Program:** 
 A> 
-A> - Variable a, b dan c merupakan variabel lokal pada fungsi kali(). Variabel ini tidak dikenal pada fungsi utama sehingga variabel ini tidak dapat digunakan pada fungsi main() di atas, sebaliknya variabel hasil adalah variabel yang sifatnya lokal pada fungsi main(), sehingga  tidak dikenal pada fungsi kali().   
-A> - Jika variabel a atau b atau c dibaca pada fungsi main() maka akan terjadi kesalahan, yaitu  bahwa variabel-variabel tersebut tidak dikenal (tidak dideklarasikan), demikian juga jika variabel hasil diakses di dalam fungsi kali(), maka variabel tersebut juga tidak akan dikenal.  
-A> - Variabel lokal sifat kerjanya hanya sekali. Jadi ketika fungsi kali() selesai dieksekusi, maka variabel a, b dan c dibebaskan dari memori, ketika fungsi ini dipanggil kembali di waktu lain, maka akan terjadi deklarasi (pemesanan tempat) lagi dan dianggap sebagai variabel baru.   
+A> - Variable a, b dan c merupakan variabel lokal pada fungsi `kali()`. Variabel ini tidak dikenal pada fungsi utama sehingga variabel ini tidak dapat digunakan pada fungsi `main()` di atas, sebaliknya variabel hasil adalah variabel yang sifatnya lokal pada fungsi `main()`, sehingga  tidak dikenal pada fungsi `kali()`.   
+A> - Jika variabel a atau b atau c dibaca pada fungsi `main()` maka akan terjadi kesalahan, yaitu  bahwa variabel-variabel tersebut tidak dikenal (tidak dideklarasikan), demikian juga jika variabel hasil diakses di dalam fungsi `kali()`, maka variabel tersebut juga tidak akan dikenal.  
+A> - Variabel lokal sifat kerjanya hanya sekali. Jadi ketika fungsi `kali()` selesai dieksekusi, maka variabel a, b dan c dibebaskan dari memori, ketika fungsi ini dipanggil kembali di waktu lain, maka akan terjadi deklarasi (pemesanan tempat) lagi dan dianggap sebagai variabel baru.   
 
 ### 2. Variable Global  
 
 Sesuai dengan namanya, variable global maksudnya adalah suatu variable yang dapat dikenali oleh  semua bagian dari program, tidak hanya terbatas pada satu blok statemen saja. Supaya menjadi variabel  global, maka variabel global ini dideklarasikan di luar suatu blok ataupun di luar fungsi-fungsi yang  mengguanakanya.  
 
-{title="Contoh 4 Variabel Global."}   
+Contoh 4. Variabel Global.   
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs2, kemudian tulis kode berikut.  
+-------------------------------
+
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
 {lang="c++"}
     #include <QtCore/QCoreApplication>
@@ -231,20 +250,25 @@ Sesuai dengan namanya, variable global maksudnya adalah suatu variable yang dapa
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
-A> **Analisa Program: ** 
+{lang="sh", linenos=off}
+Variabel global hasil = 28
+
+A> **Analisa Program:** 
 A> 
 A> - Variabel hasil dideklarasikan di luar blok program (di luar kurung kurawal), maka variabel hasil merupakan variabel global yang dikenal di blok manapun.  
-A> - Ketika variabel hasil mengalami manipulasi di dalam fungsi kali(), maka sebenarnya yang diubah adalah variabel hasil yang sama, sehingga ketika ditampilkan dengan cout variabel ini menghasilkan nilai perkalian antara a dan b seperti apa yang dilakukan di dalam fungsi kali().   
-A> - Perlu diperhatikan bahwa variabel hasil bersifat global bagi fungsi main() maupun fungsi kali() karena deklarasi variabel hasil tersebut diletakkan di atas kedua fungsi-fungsi tersebut. Jadi letak deklarasi suatu vaiabel yang diluar blok, menentukan cakupan  sifat global variabel tersebut.  
+A> - Ketika variabel hasil mengalami manipulasi di dalam fungsi `kali()`, maka sebenarnya yang diubah adalah variabel hasil yang sama, sehingga ketika ditampilkan dengan cout variabel ini menghasilkan nilai perkalian antara a dan b seperti apa yang dilakukan di dalam fungsi `kali()`.   
+A> - Perlu diperhatikan bahwa variabel hasil bersifat global bagi fungsi `main()` maupun fungsi `kali()` karena deklarasi variabel hasil tersebut diletakkan di atas kedua fungsi-fungsi tersebut. Jadi letak deklarasi suatu vaiabel yang diluar blok, menentukan cakupan  sifat global variabel tersebut.  
 
 ### 3. Variabel statik  
 
 Jika dilihat dari prinsip kerjanya, variabel statik bertentangan dengan variable lokal, variable lokal tidak  lagi digunakan setelah suatu proses dalam blok selesai, namun variable static adalah jenis variabel yang  masih tetap ada nilainya dan akan tetap dipertahankan nilainya walaupun sudah keluar dari proses.  Sebenarnya variabel statik ini merupakan pengubah (modifer) dari variable lokal atau global, sehingga  variabel statik dapat bersifat statik lokal atau statik global tergantung dari letak pendeklarasianya.   
 
-{title="Contoh 5 Variabel Statik."}   
+Contoh 5. Variabel Statik.
+
+--------------------------------   
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs2, kemudian tulis kode berikut.  
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 {lang="c++"}
 	#include <QtCore/QCoreApplication>
@@ -277,11 +301,14 @@ Jika dilihat dari prinsip kerjanya, variabel statik bertentangan dengan variable
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
+{lang="sh", linenos=off}
+5 Faktorial = 120
+
 A> **Analisa Program:**  
 A> 
-A> - Dari contoh program ini, variable f di fungsi kali () merupakan variable lokal yang bersifat  statik yang mempunyai nilai awal 1. Pada fungsi ini nilai variabel f yang lama akan dikalikan dengan nilai variable i untuk mendapatkan nialai f yang baru.   
-A> - Pada fungsi utama, fungsi kali()  akan dipanggil sebanyak n kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan nilai n (pada contoh ini n = 5), sehingga akan dihasilkan suatu niali n!.   
-A> - Supaya nilai variable f yang lama masih tetap dipertahankan, maka variable ini perlu dibuat menjadi variable statik. Jika variabel ini tidak bersifat static, maka setiap kali fungsi kali()  dipanggil, nilai variable f akan mempunyai nilai awal 1 lagi.   
+A> - Dari contoh program ini, variable `f` di fungsi `kali ()` merupakan variable lokal yang bersifat  statik yang mempunyai nilai awal `1`. Pada fungsi ini nilai variabel `f` yang lama akan dikalikan dengan nilai variable i untuk mendapatkan nialai `f` yang baru.   
+A> - Pada fungsi utama, fungsi `kali()`  akan dipanggil sebanyak n kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan nilai `n` (pada contoh ini `n = 5`), sehingga akan dihasilkan suatu niali n!.   
+A> - Supaya nilai variable `f` yang lama masih tetap dipertahankan, maka variable ini perlu dibuat menjadi variable statik. Jika variabel ini tidak bersifat static, maka setiap kali fungsi `kali()`  dipanggil, nilai variable `f` akan mempunyai nilai awal 1 lagi.   
 
 Penggunaan variabel lokal lebih disarankan, karena penggunaan variabel global akan memnyebabkan  dampak-dampak sebagai berikut :  
 
@@ -292,7 +319,7 @@ Penggunaan variabel lokal lebih disarankan, karena penggunaan variabel global ak
 
 ## Pengiriman Parameter  
 
-Seperti contoh program-program di atas, fungsi dapat menerima nilai melalui parameter formal dan  dapat mengembalikan nilai melalui statment `return`. Ketika fungsi dipanggil, fungsi tersebut akan  melakukan suatu pekerjaan dan mengirimkan suatu nilai hasil suatu pekerjaan tersebut yang dinamakan  nilai kembalian (return value). Jika kita mendeklarasikan seperti berikut:  
+Seperti contoh program-program di atas, fungsi dapat menerima nilai melalui parameter formal dan  dapat mengembalikan nilai melalui statment `return`. Ketika fungsi dipanggil, fungsi tersebut akan  melakukan suatu pekerjaan dan mengirimkan suatu nilai hasil suatu pekerjaan tersebut yang dinamakan  nilai kembalian (`return value`). Jika kita mendeklarasikan seperti berikut:  
 
 {linenos=off}
 	int fungsiku();  
@@ -309,7 +336,7 @@ Ketika kita mengirimka nilai ke dalam suatu fungsi, yaitu ketika memanggil fungs
 {linenos=off}
 	Hasil = fungsiku(10, 12.5);  
 
-Tampak bahwa nilai 10 (bertipe int) dan nilai 12.5 (bertipe float) dikirim sebagai parameter aktual atau  argumen, tipe-tipe data dari parameter aktual ini harus sesuai dengan tipe-tipe data yang dideklarasikan  pada parameter formal. Pada contoh ini nilai 10 dikirim ke parameter formal pertama dan nilai 12.5  dikirim ke parameter formal kedua dan keduanya sudah sesuai dengan tipe data yang dideklarasikan  pada fungsi fungsiku().  
+Tampak bahwa nilai 10 (bertipe int) dan nilai 12.5 (bertipe float) dikirim sebagai parameter aktual atau  argumen, tipe-tipe data dari parameter aktual ini harus sesuai dengan tipe-tipe data yang dideklarasikan  pada parameter formal. Pada contoh ini nilai 10 dikirim ke parameter formal pertama dan nilai 12.5  dikirim ke parameter formal kedua dan keduanya sudah sesuai dengan tipe data yang dideklarasikan  pada fungsi `fungsiku()`.  
 
 Pengiriman parameter ke suatu fungsi dapat dilakukan dengan dua cara, yaitu yang disebut pengiriman  secara nilai (by value) atau pengiriman secara acuan (by reference). Pada pengiriman secara nilai, yang  dikirimkan adalah nilai (value) dari parameter tersebut, jadi pada waktu memanggil fungsi, parameter  dapat langsung diisi suatu nilai tidak harus menggunakan suatu variabel, sedangkan pengiriman secara  acuan yang dikirimkan adalah alamat dari variabel yang menyimpan nilai yang dikirmkan tersebut.  
 
@@ -324,7 +351,7 @@ Sebenarnya dengan memberikan nilai default yang dinamakan default parameter, sua
 {linenos=off}
 	int fungsiku(int nilaiInt = 10);  
 
-Ini berarti, fungsiku() akan mengembalikan suatu nilai bertipe int dan menerima nilai parameter bertipe  int, jika tidak ada nilai yang diterima maka akan digunakan nilai default yaitu 10. Karena nama  parameter tidak diwajibkan pada prototype, maka prototype tersebut juga boleh ditulis :  
+Ini berarti, `fungsiku()` akan mengembalikan suatu nilai bertipe int dan menerima nilai parameter bertipe  int, jika tidak ada nilai yang diterima maka akan digunakan nilai default yaitu 10. Karena nama  parameter tidak diwajibkan pada prototype, maka prototype tersebut juga boleh ditulis :  
 
 {linenos=off}
 	int fungsiku(int = 10);  
@@ -334,7 +361,7 @@ Pemakaian parameter default ini tidak mengubah definisi fungsi, header dari defi
 {linenos=off}
 	int fungsiku(int x);  
 
-Jika pemanggilan fungsi fungsiku() tidak disertai parameter aktual maka kompiler akan memberikan nilai  default 10 pada x. Seperti sudah dijelaskan pada Lab.1, nama dari default parameter tidak harus sama  dengan nama pada header definisi fungsi, nilai default dikerjakan berdasarkan posisi parameter bukan  nama parameter.  
+Jika pemanggilan fungsi `fungsiku()` tidak disertai parameter aktual maka kompiler akan memberikan nilai  default 10 pada x. Seperti sudah dijelaskan pada contph 1, nama dari default parameter tidak harus sama  dengan nama pada header definisi fungsi, nilai default dikerjakan berdasarkan posisi parameter bukan  nama parameter.  
 
 Semua parameter fungsi dapat diberikan nilai default, dengan syarat jika tidak ada nilai default untuk  parameter di kanannya maka parameter tersebut tidak boleh diberikan nilai default. Misalnya jika  prototype suatu fungsi adalah sepoerti berikut:  
 
@@ -343,9 +370,11 @@ Semua parameter fungsi dapat diberikan nilai default, dengan syarat jika tidak a
 
 Berarti kita hanya boleh memberikan nilai default untuk b jika kita telah memberikan nilai default untuk  c. Nilai default untuk a hanya boleh diberikan jika kita telah memberikan nilai default untuk b dan c.  
 
-{title="Contoh 6 Default Parameter."}   
+Contoh 6 Default Parameter.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Labs2, kemudian tulis kode berikut.  
+---------------------------------
+
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 {lang="c++"}
 	#include <QtCore/QCoreApplication>
@@ -372,6 +401,12 @@ Berarti kita hanya boleh memberikan nilai default untuk b jika kita telah member
 	}
        
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut. 
+
+{lang="sh", linenos=off}
+Volume 1 --> 3750
+Volume 2 --> 150
+Volume 3 --> 10
+
 
 A> Analisa Program:  
 A> 

@@ -23,11 +23,11 @@ Bentuk umum deklarasi array satu dimensi:
 
 **Dimana:**
 
-tipe_data 		: menyatakan jenis tipe data elemen larik (int, char, float, dll)
+`tipe_data` 		: menyatakan jenis tipe data elemen larik (int, char, float, dll)
 
-nama_var_array 	: menyatakan nama variabel yang dipakai.
+`nama_var_array` 	: menyatakan nama variabel yang dipakai.
 
-ukuran 			: menunjukkan jumlah maksimal elemen larik.
+`ukuran` 			: menunjukkan jumlah maksimal elemen larik.
 
 Contoh:
 
@@ -39,26 +39,28 @@ Contoh:
 
 Artinya:
 
-char huruf[9]
+`char huruf[9]`
 
 : berarti akan memesan tempat di memori komputer sebanyak 9 tempat dengan indeks dari 0-8, dimana semua elemennya bertipe data karakter semuanya. Kalau satu karakter berukuran 1 byte, berarti membutuhkan memori sebesar 9 byte.
 
-int umur[10]
+`int umur[10]`
 
 : berarti akan memesan tempat di memori komputer sebanyak 10 tempat dengan indeks dari 0-9, dimana semua elemennya bertipe data integer semuanya. Kalau satu integer berukuran 4 bytes, berarti membutuhkan memori sebesar 4 x 10 = 20 bytes.
 
-int kondisi[2]
+`int kondisi[2]`
 
 : berarti akan memesan tempat di memori komputer sebanyak 2 tempat dengan indeks 0-1, dimana semua elemennya bertipe data integer semuanya. Dan pada contoh di atas isi elemen-elemennya yang sebanyak 2 buah diisi sekaligus
 (diinisialisasi) yaitu pada elemen kondisi[0] bernilai 0, dan elemen kondisi[1] bernilai 1.
 
-int arr_dinamis[]
+`int arr_dinamis[]`
 
 : berarti mendeklarasikan array dengan ukuran maksimum array tidak diketahui, namun ukuran tersebut diketahui berdasarkan inisialisasi yaitu sebanyak 3 elemen, yang isinya 1,2, dan 3. Ingat bahwa array dinamis tidak bisa dibuat tanpa inisialisasi.
 
-Tanda [] disebut juga “elemen yang ke- “. Misalnya “`kondisi[0]`“ berarti elemen yang ke nol. Array yang sudah dipesan, misalnya 10 tempat tidak harus diisi semuanya, bisa saja hanya diisi 5 elemen saja, baik secara berurutan maupun tidak. Namun pada kondisi yang tidak sepenuhnya terisi tersebut, tempat pemesanan di memori tetap sebanyak 10 tempat, jadi tempat yang tidak terisi tetap akan terpesan dan dibiarkan kosong.
+Tanda `[]` disebut juga “elemen yang ke- “. Misalnya “`kondisi[0]`“ berarti elemen yang ke nol. Array yang sudah dipesan, misalnya 10 tempat tidak harus diisi semuanya, bisa saja hanya diisi 5 elemen saja, baik secara berurutan maupun tidak. Namun pada kondisi yang tidak sepenuhnya terisi tersebut, tempat pemesanan di memori tetap sebanyak 10 tempat, jadi tempat yang tidak terisi tetap akan terpesan dan dibiarkan kosong.
 
-{title="Contoh 1. Contoh Input dan Output Array"}
+Contoh 1. Contoh Input dan Output Array
+
+--------------------------------------------------
 
 Buatlah project baru dan tulis kode berikut:
 
@@ -102,13 +104,15 @@ Buatlah project baru dan tulis kode berikut:
 	Nilai Angka : 4
 	Nilai Angka : 5
 
-A> Keterangan
+A> **Keterangan:**
 A> 
-A> - Pada program diatas, kita membuat sebuah variabel array bernama nilai yang berisi 5 elemen bertipe integer. Kemudian untuk memasukkan nilai ke masing-masing elemen, digunakan perintah perulangan untuk mengakses indeksnya yang dimulai dari indeks ke 0. Perulangan dilakukan dari indeks ke 0 sampai dengan indeks ke 4 (dalam hal ini x < 5). Mengapa sampai dengan indeks ke 4? Hal ini karena 5 elemen array yang kita deklarasikan dimulai dari indeks ke 0. Terdapat 5 elemen array, berarti indeks ke 0, 1, 2, 3, dan 4.
+A> - Pada program diatas, kita membuat sebuah variabel array bernama `nilai` yang berisi `5` elemen bertipe `integer`. Kemudian untuk memasukkan nilai ke masing-masing elemen, digunakan perintah perulangan untuk mengakses indeksnya yang dimulai dari indeks ke `0`. Perulangan dilakukan dari indeks ke `0` sampai dengan indeks ke `4` (dalam hal ini `x < 5`). Mengapa sampai dengan indeks ke `4`? Hal ini karena `5` elemen array yang kita deklarasikan dimulai dari indeks ke `0`. Terdapat `5` elemen array, berarti indeks ke `0`, `1`, `2`, `3`, dan `4`.
 A> 
-A> - Setelah kita masukkan nilai ke masing-masing elemen, maka kita hanya perlu membaca datanya lagi, yaitu dengan melakukan perulangan kembali dengan cara mengakses indeks elemenelemennya seperti pada saat kita memasukkan elemen-elemen tersebut kedalam array. Perulangan untuk membaca isi elemen array juga diulang dari 0 sampai 4, yang artinya juga 5 elemen. Pada masing-masing perulangan tersebut, ditampilkan isi elemen ke layar dengan perintah `cout<<`.
+A> - Setelah kita masukkan nilai ke masing-masing elemen, maka kita hanya perlu membaca datanya lagi, yaitu dengan melakukan perulangan kembali dengan cara mengakses indeks elemen-elemennya seperti pada saat kita memasukkan elemen-elemen tersebut kedalam _array_. Perulangan untuk membaca isi elemen array juga diulang dari 0 sampai 4, yang artinya juga 5 elemen. Pada masing-masing perulangan tersebut, ditampilkan isi elemen ke layar dengan perintah `cout<<`.
 
-{title="Contoh 2. Contoh Manipulasi Array"}
+Contoh 2. Contoh Manipulasi Array
+
+-------------------------------------
 
 1. Buatlah project baru dan tulis kode berikut:
 
@@ -155,7 +159,9 @@ T> **TIPS**
 T> 
 T> Dalam bahasa C++, tidak terdapat *error handling* terhadap batasan nilai indeks, apakah indeks tersebut berada di dalam indeks array yang sudah didefinisikan atau belum. Hal ini merupakan tanggung jawab programmer. Sehingga jika programmer mengakses indeks yang salah, maka nilai yang dihasilkan akan berbeda atau rusak karena mengakses alamat memori yang tidak sesuai.
 
-{title="Contoh 3. Penanganan Batas Indeks Elemen Array"}
+Contoh 3. Penanganan Batas Indeks Elemen Array
+
+------------------------------------------------
 
 Buatlah program beikut ini:
 
@@ -202,10 +208,13 @@ Nah, bagaimana jika kita ingin menginisialisasi elemen terakhirnya saja? Kita ti
 
 Pada contoh diatas, elemen terakhir diinilisasi dengan nilai 6. Kita tidak bisa langsung mengisi dengan cara `int IntegerArray[5] = {6}`, karena jika di isi dengan cara demikian, maka isi elemen indeks ke-0 bernilai 6, sedangkan elemen lainnya bernilai 0.
 
-{title="Contoh 4. Inisialisasi Array dengan nilai 0"}
+Contoh 4. Inisialisasi Array dengan nilai 0
+
+---------------------------------------------------
 
 Buatlah program berikut:
 
+{lang="c++"}
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
 	using namespace std;
@@ -232,9 +241,11 @@ Buatlah program berikut:
 
 A> **Keterangan**
 A> 
-A> Pada program diatas elemen array bernama bil yang dipesan sebanyak 7 elemen, diinisialisasi dengan nilai 0. Setelah diinisialisasi dengan nilai 0, maka semua elemen array tersebut juga akan berisi dengan nilai 0. Hal ini dibuktikan dengan cara perulangan semua elemen array dan ditampilkan dengan cout.
+A> Pada program diatas elemen array bernama bil yang dipesan sebanyak 7 elemen, di inisialisasi dengan nilai 0. Setelah di inisialisasi dengan nilai 0, maka semua elemen array tersebut juga akan berisi dengan nilai 0. Hal ini dibuktikan dengan cara perulangan semua elemen array dan ditampilkan dengan `cout`.
 
-{title="Contoh 5. Inisialisasi Array dua nilai elemen pertama"}
+Contoh 5. Inisialisasi Array dua nilai elemen pertama
+
+----------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -265,20 +276,21 @@ Buatlah program berikut ini:
 
 A> **Keterangan**
 A> 
-A> Inisialisasi elemen array dapat dilakukan hanya pada dua elemen pertama saja, hal ini dilakukan dengan cara memberikan dua nilai pertama, selanjutnya semua elemen lainnya yang tidak diinisialisasi secara otomatis bernilai 0.
+A> Inisialisasi elemen array dapat dilakukan hanya pada dua elemen pertama saja, hal ini dilakukan dengan cara memberikan dua nilai pertama, selanjutnya semua elemen lainnya yang tidak di inisialisasi secara otomatis bernilai 0.
 
-T> {icon=edit} **TIPS**
+T> **TIPS**
+T>
 T> Untuk semua array pada C++, inisialisasi satu buah elemen saja pada array akan membuat semua elemen array lainnya berisi nilai 0.
 T>
 T> **Contoh:**
-T> ~~~~~~~~~~~~~~~~~~~~~~~~
-T> int angka[100] = {1};
+T> ~~~~~~~~~~~~~~~~~~~~~~
+T> 	int angka[100] = {1};
 T> ~~~~~~~~~~~~~~~~~~~~~~
 T>
 T> Maka hasilnya adalah:
-T> ~~~~~~~~~~~~~~~~~~~~~~~~
-T> angka[0] = 1,
-T> angka[1] s/d angka[99] = 0
+T> ~~~~~~~~~~~~~~~~~~~~~~
+T> 	angka[0] = 1,
+T> 	angka[1] s/d angka[99] = 0
 T> ~~~~~~~~~~~~~~~~~~~~~~
 
 Pada array satu dimensi, kita tidak dapat melakukan inisialisasi pada array melebihi batas jumlah elemen array yang dipesan.
@@ -291,7 +303,9 @@ Contoh:
 	int data[5] = {1,2,3,4,5,6}; //error
 	int data2[] = {10,20}; //terpesan 2 tempat dimemory
 
-{title="Contoh 6. Tanpa inisialisasi, array langsung ditampilkan"}
+Contoh 6. Tanpa inisialisasi, array langsung ditampilkan
+
+------------------------------------------------------------------
 
 Tulislah program berikut ini:
 
@@ -324,9 +338,11 @@ A> Pada program C++, elemen array yang sudah dipesan dimemory pasti sudah berisi
 
 T> **TIPS**
 T>
-T> Inisialisasi pada elemen array yang dideklarsikan SANGATLAH PENTING untuk menghindari nilai ACAK!
+T> Inisialisasi pada elemen array yang dideklarsikan **SANGATLAH PENTING** untuk menghindari nilai **ACAK**!
 
-{title="Contoh 7. Penggunaan tipe data enum pada Array satu dimensi"}
+Contoh 7. Penggunaan tipe data enum pada Array satu dimensi
+
+-------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -350,9 +366,9 @@ Buatlah program berikut:
 
 A> **Keterangan:**
 A> 
-A> Pada program diatas, kita membuat sebuah tipe data enum bernama Hari yang memiliki 7 elemen. Masing-masing elemen enum sama saja seperti indeks array yaitu 0-6. Kemudian kita membuat sebuah array bernama `ArrayHari` yang berisi 7 elemen juga dan berisi nilai 10-70. Karena kita memanggil `ArrayHari[Selasa]` berarti sama artinya dengan `ArrayHari[2]`. Mengapa 2? Karena indeks Selasa adalah 2. Sehingga muncullah output berupa 30, karena 30 berada pada indeks ke-2 dari ArrayHari.
+A> Pada program diatas, kita membuat sebuah tipe data enum bernama Hari yang memiliki 7 elemen. Masing-masing elemen `enum` sama saja seperti indeks array yaitu `0-6`. Kemudian kita membuat sebuah array bernama `ArrayHari` yang berisi 7 elemen juga dan berisi nilai `10-70`. Karena kita memanggil `ArrayHari[Selasa]` berarti sama artinya dengan `ArrayHari[2]`. Mengapa 2? Karena indeks Selasa adalah 2. Sehingga muncullah output berupa 30, karena 30 berada pada indeks ke-2 dari `ArrayHari`.
 A> 
-A> Arti dari program diatas menunjukkan kita dapat mengakses indeks *array* dengan menggunakan `tipe data enum`, karena tipe data enum pada kenyataannya akan dikonversikan kedalam nilai integer, mulai dari 0.
+A> Arti dari program diatas menunjukkan kita dapat mengakses indeks *array* dengan menggunakan `tipe data enum`, karena tipe data `enum` pada kenyataannya akan dikonversikan kedalam nilai `integer`, mulai dari `0`.
 
 ### Pengalamatan dan Pengkopian Array 1 Dimensi
 
@@ -363,11 +379,13 @@ Contoh:
 {linenos=off}
 	int data[5] = {1,2,3,4,5};
 
-Maka variabel array data tersebut akan dicatat alamat elemen `data[0]` pada memory. Jika kita mengakses elemen keduanya, yaitu `data[1]`, maka compiler akan melakukan kalkulasi untuk mendapatkan alamat `data[1]`, yaitu dengan cara menambahkan alamat `data[0]` dengan lebar tipe data array yang kita deklarasikan. Pada contoh diatas, kita membuat array bertipe integer. Karena integer berukuran 4 byte, maka jika d`ata[0]` beralamat di alamat `1000`, maka `data[1]` beralamat di `1000 + 4 = 1004` dan seterusnya.
+Maka variabel array data tersebut akan dicatat alamat elemen `data[0]` pada memory. Jika kita mengakses elemen keduanya, yaitu `data[1]`, maka compiler akan melakukan kalkulasi untuk mendapatkan alamat `data[1]`, yaitu dengan cara menambahkan alamat `data[0]` dengan lebar tipe data array yang kita deklarasikan. Pada contoh diatas, kita membuat array bertipe integer. Karena integer berukuran 4 byte, maka jika `data[0]` beralamat di alamat `1000`, maka `data[1]` beralamat di `1000 + 4 = 1004` dan seterusnya.
 
 Lalu bagaimana cara mengkopikan isi elemen array dari satu variabel ke variable array 1 dimensi lainnya? Kita harus menggunakan cara manual, yaitu mengkopikan masing-masing elemennya satu persatu dengan perulangan manual sesuai dengan jumlah elemen array yang dibuat.
 
-{title="Contoh 8. Percobaan Penyalinan Array 1 dimensi"}
+Contoh 8. Percobaan Penyalinan Array 1 dimensi
+
+---------------------------------------------------
 
 Buatlah program berikut:
 
@@ -388,11 +406,13 @@ Hasil:
 
 ![](images/capture3-8.png)
 
-Keterangan:
+A> **Keterangan:**
+A> 
+A> Program tidak bisa dijalankan karena terdapat **error**, bahwa array tidak bisa dilakukan operasi assigment. Artinya kita tidak bisa mengkopi antar array begitu saja.
 
-Program tidak bisa dijalankan karena terdapat error, bahwa array tidak bisa dilakukan operasi assigment. Artinya kita tidak bisa mengkopi antar array begitu saja.
+Contoh 9. Penyalinan Array 1 dimensi dengan Perulangan
 
-{title="Contoh 9. Penyalinan Array 1 dimensi dengan Perulangan"}
+-----------------------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -414,7 +434,7 @@ Buatlah program berikut ini:
 	return a.exec();
 	}
 
-Hasil:
+**Hasil:**
 
 {lang="sh", linenos=off}
 	1
@@ -424,7 +444,7 @@ Hasil:
 	5
 	6
 
-A> Keterangan:
+A> **Keterangan:**
 A> 
 A> - Cara penyalinan array adalah dengan melakukan perulangan sebanyak elemen array yang akan disalin dan menyalinnya secara manual satu-persatu pada indeks yang sama.
 A> - Kemudian ditampilkan sesuai dengan indeksnya. Elemen array yang dikopikan masih tetap memiliki array yang asli. Untuk menghapusnya, maka harus dilakukan secara manual.
@@ -531,17 +551,9 @@ Jika jumlah nilai character lebih banyak daripada deklarasi
 {linenos=off}
 	char matriks2[2][2] = {'a','b','c','d','e'};
 
-{icon=exclamation-triangle} Akan terjadi ERROR!
+E> Akan terjadi ERROR!
 
-E> {icon=exclamation-triangle} missing brances around initializer for 'char [2]'
-E> 
-E> {icon=exclamation-triangle} missing brances around initializer for 'char [2]
-E> 
-E> {icon=exclamation-circle} too many initializer for 'char [2][2]'
-E> 
-E> C:\User\Wachid\Documents\kodeku\Array
-E> 
-E> {icon=exclamation-triangle} unused variable 'matriks'
+![](images/capture3-10.png)
 
 Jika data array character yang diinputkan kurang dari deklarasi
 
@@ -559,15 +571,9 @@ Jika data array integer yang diinputkan lebih dari deklarasi
 	{15,6,25,2,19},
 	{4,9,20,22,11,14,19 }}; //lebih 2 angka
 
-{icon=exclamation-triangle} Matriks yang jumlah datanya lebih akan menyebabkan ERROR
+E> Matriks yang jumlah datanya lebih akan menyebabkan ERROR
 
-E> {icon=exclamation-triangle} in fuction 'int main(int char**)';
-E>
-E> {icon=exclamation-circle} too many initilizer for 'int[5]'
-E> 
-E> C:\User\Wachid\Documents\kodeku\Array
-E> 
-E> {icon=exclamation-triangle} unused variable 'matriks'
+![](images/capture3-9.png)
 
 Array 2 dimensi juga dapat dideklarasikan secara dinamis. Dinamis bisa dilakukan pada baris array 2 dimensi. Namun kita tidak bisa mendeklarasikan array 2 dimensi secara dinamis pada kolom. Contoh pendeklarasian baris dinamis adalah :
 
@@ -595,7 +601,9 @@ Pada contoh diatas, jika kita hitung jumlah datanya adalah 18 buah, padahal jika
 
 Pengaksesan elemen-elemen array 2 dimensi dilakukan dengan cara perulangan. Perulangan yang dilakukan harus disesuaikan dengan jumlah dimensinya. Maka array 2 dimensi berarti perulangan yang dilakukan harus dua kali. Terdapat outer loop yang digunakan untuk mengakses baris array 2 dimensi, dan inner loop yang digunakan untuk mengakses kolom array 2 dimensi.
 
-{title="Contoh 10. Deklarasi dan Menampilkan Array 2 Dimensi"}
+Contoh 10. Deklarasi dan Menampilkan Array 2 Dimensi
+
+------------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -629,9 +637,11 @@ A> **Keterangan:**
 A> 
 A> Program diatas mendeklarasikan sebuah variabel array 2 dimensi bernama matriks berukuran 3 baris dan 5 kolom. Kemudian matriks tersebut langsung diinisialisasi dengan data integer sejumlah 15 data. Setelah diinisialisasi kemudian dilakukan pengaksesan terhadap array 2 dimensi tersebut dengan cara melakukan dua buah perulangan. Perulangan pertama disebut outer loop yang digunakan untuk mengakses indeks baris variabel matriks, sedangkan perulangan kedua disebut inner loop yang digunakan untuk mengakses indeks kolom variabel matriks. Kemudian untuk menampilkan data nya digunakan perintah cout dan untuk setiap data elemen array diberikan karakter tab yang digunakan untuk memberi jarak antar output data. Karakter tab pada bahasa C menggunakan escape character ‘\t’.
 
-{title="Contoh 11. Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya"}
+Contoh 11. Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya
 
-Misalkan terdapat array 2 dimensi sebagai berikut matriks[3][5]
+-----------------------------------------------------------------
+
+Misalkan terdapat array 2 dimensi sebagai berikut matriks`[3][5]`
 
 ![](images/capture3-18.png)
 
@@ -669,9 +679,9 @@ Buatlah program berikut:
 
 A> **Keterangan:** 
 A>
-A> Program diatas menyalin data dari matriks 2 dimensi ke matriks 2 dimensi lainnya dengan menggunakan perulangan bertingkat. Perulangan bertingkat memiliki 2 buah loop, yang pertama (outer loop) digunakan untuk mengakses baris matriks, dan inner loop digunakan untuk mengakses kolom matriks. Kemudian untuk masing-masing elemen matriks dimasukkan kedalam variabel array matrikshasil tepat pada baris dan kolom yang sesuai.
+A> Program diatas menyalin data dari matriks 2 dimensi ke matriks 2 dimensi lainnya dengan menggunakan perulangan bertingkat. Perulangan bertingkat memiliki 2 buah loop, yang pertama (_outer loop_) digunakan untuk mengakses baris matriks, dan inner loop digunakan untuk mengakses kolom matriks. Kemudian untuk masing-masing elemen matriks dimasukkan kedalam variabel array matrikshasil tepat pada baris dan kolom yang sesuai.
 
-{title="Contoh 12. Penyalinan array 2 dimensi ke dalam array 1 dimensi"}
+Contoh 12. Penyalinan array 2 dimensi ke dalam array 1 dimensi.
 
 Buatlah program berikut ini:
 
@@ -723,7 +733,7 @@ A> * Kemudian untuk mengkopikan dari array 2 dimensi matriks ke array 1 dimensi 
 
 ### Cara Pengaksesan Array dapat dilakukan dengan 2 cara:
 
-1. Pengaksesan Baris demi Baris
+#### 1. Pengaksesan Baris demi Baris
 
 Cara ini menelusuri elemen array dua dimensi per dimulai dari baris pertama lalu kekanan sesuai dengan jumlah kolomnya. Setelah eleman dalam baris tersebut habis, maka penelusuran akan berganti baris ke baris berikutnya dan demikian seterusnya. Cara ini membutuhkan 2 buah loop, dimana outer loop digunakan untuk mengakses indeks baris, dan inner loop digunakan untuk mengakses indeks kolom.
 
@@ -752,7 +762,7 @@ Berikut adalah contohnya:
 	1	2	3
 	4	5	6
 
-2. Pengaksesan Kolom demi Kolom
+#### 2. Pengaksesan Kolom demi Kolom
 
 Cara ini menelusuri elemen array dua dimensi per dimulai dari kolom pertama lalu kebawah sesuai dengan jumlah barisnya. Setelah eleman dalam kolom tersebut habis, maka penelusuran akan berganti kolom ke kolom berikutnya dan demikian seterusnya. Cara ini membutuhkan 2 buah loop, dimana outer loop digunakan untuk mengakses indeks kolom, dan inner loop digunakan untuk mengakses indeks baris.
 
@@ -801,14 +811,16 @@ Cara menggunakan array of character sama seperti mendeklarasikan variabel bertip
 
 Contoh pendeklarasian array of character
 
+{linenos=off}
 	char nama[6]; //tanpa inisialisasi
 	char nama2[6] = “anton”; //langsung diinisialisasi
 	char nama2[6] = {‘a’,’n’,’t’,’o’,’n’}; //langsung diinisialisasi
 
-Pada sebuah string, terdapat karakter \0 yang dapat digunakan untuk mengetahui kapan berakhirnya
-suatu string. Berikut adalah contoh penggunaaanya.
+Pada sebuah string, terdapat karakter `\0` yang dapat digunakan untuk mengetahui kapan berakhirnya suatu string. Berikut adalah contoh penggunaaanya.
 
-{title="Contoh 13. Penggunaan karakter \0"}
+Contoh 13. Penggunaan karakter \0
+
+------------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -835,7 +847,9 @@ A> **Keterangan:**
 A> 
 A> Program diatas dapat mengetahui kapan berakhirnya suatu string, dalam arti kita dapat mengetahui panjang suatu string dengan melakukan perulangan untuk setiap karakter yang ada pada array sampai ditemukannya katakter ‘\0’.
 
-{title="Contoh 14. String tanpa karakter \0"}
+Contoh 14. String tanpa karakter \0
+
+---------------------------------------------
 
 Buatlah program berikut:
 
@@ -855,17 +869,15 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{icon=exclamation-triangle} In function 'int main(int, char**)';
+![](images/capture2-7.png)
 
-initializer-string for array of chars is to long
-
-C:\User\Wachid\Documents\kodeku\String
-
-A> Keterangan:
+A> **Keterangan:**
 A> 
-A> Terlihat bahwa kita tidak bisa membuat array ofa character tepat sesuai dengan jumlah karakter yang kita inisialisasikan. Jika dilihat kata “String” berjumlah 6 huruf, sedangkan kita sudah mendeklarasikan variabel string[6] namun ternyata jumlah elemennya masih dianggap terlalu sedikit. Hal ini terjadi karena minimal kita harus mengalokasikan sejumlah 7 buah elemen. Elemen ke-7 digunakan untuk menyimpan tanda akhir string atau karakter \0 tersebut.
+A> Terlihat bahwa kita tidak bisa membuat array fa character tepat sesuai dengan jumlah karakter yang kita inisialisasikan. Jika dilihat kata “String” berjumlah 6 huruf, sedangkan kita sudah mendeklarasikan variabel `string[6]` namun ternyata jumlah elemennya masih dianggap terlalu sedikit. Hal ini terjadi karena minimal kita harus mengalokasikan sejumlah 7 buah elemen. Elemen ke-7 digunakan untuk menyimpan tanda akhir string atau karakter \0 tersebut.
 
-{title="Contoh 15. Mengisi Array of Character"}
+Contoh 15. Mengisi Array of Character
+
+---------------------------------------------------
 
 Buatlah program berikut:
 
@@ -894,13 +906,15 @@ A>
 A> * Pada program diatas kita mendeklarasikan variabel array of string bernama buffer yang berukuran 6 elemen. Variabel buffer diatas merupakan variabel berjenis string C-style yang diinisialisasi dengan karakter \0 atau karakter NULL.
 A> * Problem lainnya adalah jika kita menginputkan data string yang mengandung spasi, maka cin hanya akan membaca data string sebelum spasi saja.
 
-Contoh:
+**Contoh:**
 
 {lang="sh", linenos=off}
 	Isi data string: Ahmad Baehaki
 	hasil data string: Ahmad
 
-{title="Contoh 16. Pengisian variabel array of character dengan maksimum jumlah karakter"}
+Contoh 16. Pengisian variabel array of character dengan maksimum jumlah karakter.
+
+---------------------------------------------------------------------
 
 Tulislah program berikut:
 
@@ -926,25 +940,30 @@ Tulislah program berikut:
 
 A> **Keterangan:**
 A> 
-A> Pada contoh program diatas, kita menggunakan perintah cin.get(buffer,49). Perintah diatas “memaksa” agar perintah cin mengambil semua data inputan ke dalam variabel buffer sampai sejumlah 49 karakter. Jika karakter yang diinputkan lebih dari 50 karakter, maka otomatis karakter yang disimpan kedalam variabel buffer hanyalah berjumlah 50 karakter pertama saja.
+A> Pada contoh program diatas, kita menggunakan perintah `cin.get(buffer,49)`. Perintah diatas “memaksa” agar perintah `cin` mengambil semua data inputan ke dalam variabel buffer sampai sejumlah 49 karakter. Jika karakter yang diinputkan lebih dari 50 karakter, maka otomatis karakter yang disimpan kedalam variabel buffer hanyalah berjumlah 50 karakter pertama saja.
 
 ## Fungsi-fungsi String
 
 Bahasa C++ menggunakan fungsi-fungsi pustaka yang disediakan untuk mengoperasikan suatu nilai string yang dimasukkan dalam file header string.h. Beberapa fungsi string yang terdapat pada header string.h adalah sebagai berikut:
 
+{linenos=off}
 	strlen()
+
 
 Berfungsi untuk menentukkan panjang suatu nilai string.
 
-Bentuk umum: int strlen(<identifier string>);
+Bentuk umum: `int strlen(<identifier string>);`
 
+{linenos=off}
 	length()
 
 Berfungsi untuk menentukan panjang suatu nilai tipe data class string
 
-Bentuk umum method: <nama_var_string>.length();
+Bentuk umum method: `<nama_var_string>.length();`
 
-{title="Contoh 17. Penggunaan fungsi strlen()"}
+Contoh 17. Penggunaan fungsi strlen()
+
+-------------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -972,7 +991,9 @@ A> **Keterangan:**
 A> 
 A> Fungsi strlen menerima satu parameter yang hanya bertipe array of character. Fungsi ini tidak bisa menerima parameter berupa tipe data C++ string.
 
-{title="Contoh 17. Penggunaan fungsi length pada tipe data string C++"}
+Contoh 17. Penggunaan fungsi length pada tipe data string C++
+
+----------------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -999,20 +1020,22 @@ Buatlah program berikut ini:
 
 A> **Keterangan**
 A> 
-A> * Program diatas tidak menggunakan array of character, melainkan menggunakan tipe data C++ class string. Tipe data ini spesial karena berupa tipe data object oriented. Untuk menggunakan tipe data ini kita harus menginclude-kan #include <string> pada bagian preprocessor directive.
-A> * Kemudian untuk mengakses panjang karakternya digunakan method (fungsi) dari object string bernama length(). Fungsi length sama dengan fungsi strlen yaitu mengambil jumlah karakter dalam string tersebut.
+A> * Program diatas tidak menggunakan array of character, melainkan menggunakan tipe data C++ `class string`. Tipe data ini spesial karena berupa tipe data object oriented. Untuk menggunakan tipe data ini kita harus menginclude-kan `#include <string>` pada bagian _preprocessor directive_.
+A> * Kemudian untuk mengakses panjang karakternya digunakan method (fungsi) dari object string bernama `length()`. Fungsi `length` sama dengan fungsi `strlen` yaitu mengambil jumlah karakter dalam string tersebut.
 
 
 #### strcpy() dan strncpy()
 
 
-Dalam bahasa C++, untuk menyalin nilai suatu string tidak dapat langsung menuliskannya seperti halnya kompiler lain, sehingga proses menyalin atau mengerjakan suatu nilai string ke variabel string yang lain diperlukan suatu fungsi pustaka yang bernama strcpy().
+Dalam bahasa C++, untuk menyalin nilai suatu string tidak dapat langsung menuliskannya seperti halnya kompiler lain, sehingga proses menyalin atau mengerjakan suatu nilai string ke variabel string yang lain diperlukan suatu fungsi pustaka yang bernama `strcpy()`.
 
-Bentuk umum: void strcpy(<stringhasil>,<stringsumber>);
+1. Bentuk umum: `void strcpy(<stringhasil>,<stringsumber>);`
 
-Bentuk umum: void strncpy(<stringhasil>,<stringsumber>);
+2. Bentuk umum: `void strncpy(<stringhasil>,<stringsumber>);`
 
-{title="Contoh 18. Penggunaan fungsi strcpy()"}
+Contoh 18. Penggunaan fungsi strcpy()
+
+----------------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -1040,17 +1063,18 @@ Buatlah program berikut ini:
 
 A> **Keterangan:**
 A> 
-A> * Program diatas digunakan untuk mengkopikan nilai dari array of character data ke data2 dengan menggunakan perintah strcpy. Hal itu terbukti dengan hasil akhir dimana string pertama dan kedua bernilai sama, yaitu “STRING”.
-A> * Jika variabel sesumber lebih besar daripada variabel hasil, strcpy () akan error karena melebihi buffer. Untuk melindungi hal ini, digunakan fungsi strncpy (). Fungsi ini dapat memberikan parameter jumlah maksimum karakter untuk penyalinan. strncpy () akan menyalin sampai karakter null pertama atau jumlah maksimum.
+A> * Program diatas digunakan untuk mengkopikan nilai dari array of character data ke data2 dengan menggunakan perintah `strcpy`. Hal itu terbukti dengan hasil akhir dimana string pertama dan kedua bernilai sama, yaitu “STRING”.
+A> * Jika variabel sesumber lebih besar daripada variabel hasil, `trcpy ()` akan error karena melebihi buffer. Untuk melindungi hal ini, digunakan fungsi `strncpy ()` Fungsi ini dapat memberikan parameter jumlah maksimum karakter untuk penyalinan. `strncpy ()` akan menyalin sampai karakter null pertama atau jumlah maksimum.
 Contoh Error:
 A> 
 A> 	- char data[5] = {'\0'};
 A> 	- char data2[]="STRING";
 A> 
-A> * Hal ini terjadi karena data2 berjumlah 6 karakter, sedangkan data berjumlah 5 karakter. Jadi
-ketika data2 dikopikan ke data, maka akan terjadi error karena tempatnya kurang.
+A> * Hal ini terjadi karena data2 berjumlah 6 karakter, sedangkan data berjumlah 5 karakter. Jadi ketika data2 dikopikan ke data, maka akan terjadi error karena tempatnya kurang.
 
-{title="Contoh 19. Penggunaan fungsi strncpy()"}
+Contoh 19. Penggunaan fungsi strncpy()
+
+----------------------------------------
 
 Buatlah program beriku:
 
@@ -1078,7 +1102,7 @@ Buatlah program beriku:
 
 A> **Keterangan:**
 A>
-A> * Fungsi strncpy dapat digunakan untuk menyalin dari satu array of character ke array of character lainnya dengan memberikan penanda batas maksimal penyalinan. Pada contoh diatas, string “STRINGKU” hendak disalin ke variabel data yang hanya berisi 6 elemen. Karena fungsi strncpy hanya dibatasi menyalin 5 karakter saja, maka yang tersalin adalah STRIN saja.
+A> * Fungsi `strncpy` dapat digunakan untuk menyalin dari satu array of character ke array of character lainnya dengan memberikan penanda batas maksimal penyalinan. Pada contoh diatas, string “STRINGKU” hendak disalin ke variabel data yang hanya berisi 6 elemen. Karena fungsi `strncpy` hanya dibatasi menyalin 5 karakter saja, maka yang tersalin adalah `STRIN` saja.
 A> * Karakter ke-6 pada variabel data digunakan untuk menyimpan karakter NULL atau \0.
 
 #### strcat()
@@ -1088,6 +1112,8 @@ __Bentuk umum__: `strcat(<string hasil>, <string sumber>);`
 String dalam C++ tidak bisa digabungkan begitu saja dengan menggunakan operator + seperti pada bahasa pemrograman Pascal. Jika dipaksakan menggunakan operator + akan ditampilkan pesan kesalahan sebagai berikut ini.
 
 Contoh 20. Penggunaan fungsi strcat()
+
+----------------------------------------
 
 Buatlah program beriku:
 
@@ -1108,17 +1134,15 @@ Buatlah program beriku:
 
 **Hasil:**
 
-E> In function 'int main(int, char**)';
-E> 
-E> {icon=exclamation-triangle} invalid operands of types 'char [6]' and char [7] to binary 'operator +'
-E> 
-E> C:\Users\Wachid\Documents\Arrayku\main.cpp
+![](images/capture3-6.png)
 
 A> **Keterangan:**
 A> 
-A> Opearator + tidak bisa digunakan untuk menggabungkan dua buah string. Untuk menggabungkan dua string, digunakan fungsi strcat().
+A> Opearator + tidak bisa digunakan untuk menggabungkan dua buah string. Untuk menggabungkan dua string, digunakan fungsi `strcat()`.
 
-{title="Contoh 21. Penggunaan fungsi strcat()"}
+Contoh 21. Penggunaan fungsi strcat()
+
+---------------------------------------
 
 Buatlah program berikut:
 
@@ -1144,70 +1168,76 @@ Buatlah program berikut:
 
 A> **Keterangan:**
 A> 
-A> * Program diatas menggunakan fungsi strcat dimana fungsi tersebut akan menggabungkan dua buah string. Parameter string pertama juga digunakan untuk menampung string gabungan kedua string tersebut. Sehingga pada akhirnya variabel string1 lah yang ditampilkan ke layar.
-A> * Variabel string1 diberi ukuran 100 karena jika tidak diberi ukuran elemen maka string1 tidak bisa memperbesar ukurannya di memory komputer sehingga akan menyebabkan program HANG.
+A> * Program diatas menggunakan fungsi `strcat` dimana fungsi tersebut akan menggabungkan dua buah string. Parameter string pertama juga digunakan untuk menampung string gabungan kedua string tersebut. Sehingga pada akhirnya variabel string1 lah yang ditampilkan ke layar.
+A> * Variabel `string1` diberi ukuran 100 karena jika tidak diberi ukuran elemen maka `string1` tidak bisa memperbesar ukurannya di memory komputer sehingga akan menyebabkan program **HANG**.
 
-A> {icon=edit} TIPS
+-------------------------------------------
+
+A> **TIPS**
 A> 
-A> Beberapa fungsi yang include string.h dan dapat digunakan untuk memanipulasi array of character adalah:
+A> Beberapa fungsi yang `#include string.h` dan dapat digunakan untuk memanipulasi _array of character_ adalah:
 A>
-A> strrev()
+A> _strrev()_
 A> 
-A> Bentuk umum: strrev(string)
+A> Bentuk umum: `strrev(string)`
 A> 
 A> Digunakan untuk membalik susunan string, misal: anton menjadi notna
 A> 
-A> strlwr()
+A> _strlwr()_
 A> 
-A> Bentuk umum: strlwr(string)
+A> Bentuk umum: `strlwr(string)`
 A> 
 A> Digunakan untuk mengubah string menjadi huruf kecil semua
 A> 
-A> Strupr
+A> _strupr_
 A> 
-A> Bentuk umum: strupr(string)
+A> Bentuk umum: `strupr(string)`
 A> 
 A> Digunakan untuk mengubah string menjadi huruf besar semua
 A> 
-A> strchr()
+A> _strchr()_
 A> 
-A> Bentuk umum: strchr(stringsumber,karakter yang dicari)
+A> Bentuk umum: `strchr(stringsumber,karakter yang dicari)`
 A> 
-A> Dalam bahasa C++ disediakan suatu fungsi pustaka yaitu strchr() untuk mencari nilai suatu karakter yang ada di suatu string. Hasil dari fungsi ini adalah alamat letak dari karakter pertama di nilai string yang sama dengan karakter yang dicari.
+A> Dalam bahasa C++ disediakan suatu fungsi pustaka yaitu `strchr()` untuk mencari nilai suatu karakter yang ada di suatu string. Hasil dari fungsi ini adalah alamat letak dari karakter pertama di nilai string yang sama dengan karakter yang dicari.
 A> 
-A> strcmp()
+A> _strcmp()_
 A> 
-A> Bentuk umum: strcmp(string1,string2);
+A> Bentuk umum: `strcmp(string1,string2);`
 A> 
-A> Untuk membandingkan dua nilai string tidak bisa menggunakan operator hubungan, karena operator tersebut tidak untuk operasi string. Untuk membandingkan dua nilai string kita gunakan fungsi pustaka strcmp() dengan hasil sebagai berikut:
+A> Untuk membandingkan dua nilai string tidak bisa menggunakan operator hubungan, karena operator tersebut tidak untuk operasi string. Untuk membandingkan dua nilai string kita gunakan fungsi pustaka `strcmp()` dengan hasil sebagai berikut:
 A> 
 A> - Hasil < 0, Jika string1 < string2
 A> - Hasil = 0, Jika string1 = string2
 A> - Hasil > 0, Jika string1 > string2
 A> 
 
-##Fungsi mengubah string menjadi numerik dan sebaliknya
+## Fungsi mengubah string menjadi numerik dan sebaliknya
 
-Pada bahasa C++ tipe data array of character bisa dikonversi menjadi numerik dan sebaliknya numerik bisa dikonversi menjadi array of character. Caranya adalah include <stdlib>. Fungsi-fungsi konversi dari string ke numerik adalah:
+Pada bahasa C++ tipe data _array of character_ bisa dikonversi menjadi `numerik` dan sebaliknya numerik bisa dikonversi menjadi `array of character`. Caranya adalah `#include <stdlib>`. Fungsi-fungsi konversi dari string ke numerik adalah:
 
+{lang="c++", linenos=off}
 	atoi() //untuk mengubah string menjadi int
 	atof() //untuk mengubah string menjadi float
 	atol() //untuk mengubah string menjadi long int
 
 Sedangkan kebalikannya, fungsi untuk mengubah numerik menjadi string adalah:
 
+{lang="c++", linenos=off}
 	itoa() //untuk mengubah int menjadi string
 	ltoa() //untuk mengubah long int menjadi string
 	ultoa() //untuk mengubah unsigned long menjadi string
 
-Fungsi diatas menerima parameter <var numerik>, <var array of character>, dan <basis bilangan>
+Fungsi diatas menerima parameter `<var numerik>`, `<var array of character>`, dan `<basis bilangan>`
 
 
 ## Class string pada C++
 
-C++ library standar memiliki kelas string yang membuat bekerja dengan string lebih mudah dengan menyediakan satu set encapsulasi dari data, dan fungsi untuk memanipulasi data string. Kelas ini dikenal dengan std:: string yang dapat menangani rincian alokasi memori dan membuat kopi string, atau menempatkan mereka di memory dengan lebih mudah.
+C++ library standar memiliki kelas string yang membuat bekerja dengan string lebih mudah dengan menyediakan satu set encapsulasi dari data, dan fungsi untuk memanipulasi data string. Kelas ini dikenal dengan `std::` string yang dapat menangani rincian alokasi memori dan membuat kopi string, atau menempatkan mereka di memory dengan lebih mudah.
 
-{title="Contoh 22. Pembuatan variabel string C++, penyalinan string, dan penggabungan string"}
+Contoh 22. Pembuatan variabel string C++, penyalinan string, dan penggabungan string
+
+--------------------------------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -1243,8 +1273,10 @@ Buatlah program berikut:
 
 A> **Keterangan:**
 A> 
-A> * Tanpa perlu dipelajari lebih dalam, kita dapat melihat bahwa class string pada C++ jelas jauh lebih cepat penggunaannya dan mudah dalam pembuatan serta penyalinan seperti semudah mengoperasikan variabel bertipe integer saja. Demikian pula, concatenating (penggabungan) dua string dapat dilakukan dengan hanya menambahkan mereka, sama juga seperti kita akan melakukan penjumlahan dengan integer apapun.
-A> * Syarat untuk dapat menggunakan class string adalah harus mengincludekan #include <string>, seperti yang dapat dilihat pada kode program diatas.
+A> * Tanpa perlu dipelajari lebih dalam, kita dapat melihat bahwa class string pada C++ jelas jauh lebih cepat penggunaannya dan mudah dalam pembuatan serta penyalinan seperti semudah mengoperasikan variabel bertipe integer saja. Demikian pula, _concatenating_ (penggabungan) dua string dapat dilakukan dengan hanya menambahkan mereka, sama juga seperti kita akan melakukan penjumlahan dengan integer apapun.
+A> * Syarat untuk dapat menggunakan class string adalah harus mengincludekan `#include <string>`, seperti yang dapat dilihat pada kode program diatas.
+
+---------------------------------------------------------------
 
 T> **TIPS**
 T>
@@ -1255,7 +1287,7 @@ T> - Meningkatkan stabilitas aplikasi yang sedang diprogram dalam pengelolaan da
 T> - Mudah dalam menyalin, memotong, menemukan, dan penghapusan string
 T> - Memberikan kesempatan pada programmer untuk lebih fokus pada pengembangan aplikasi daripada kesulitan dalam manipulasi string
 
-{title="Contoh 23. Penggunaan class string untuk manipulasi data"}
+Contoh 23. Penggunaan class string untuk manipulasi data
 
 Buatlah program berikut:
 
@@ -1296,7 +1328,9 @@ A> **Keterangan:**
 A>
 A> Dapat dilihat langsung pada baris komentar program diatas.
 
-{title="Contoh 24. Penggabungan string dengan menggunakan class string"}
+Contoh 24. Penggabungan string dengan menggunakan class string
+
+------------------------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -1327,10 +1361,10 @@ Buatlah program berikut:
 
 A> **Keterangan:**
 A>
-A> * Pada program diatas, terdapat dua buah variabel bertipe string, yaitu satu dan dua. Tipe data string tidak mendukung penggabungan string dengan mudah yaitu dengan menggunakan operator +. Pada contoh diatas, variabel satu ditambah isinya dengan variabel dua dan disimpan kembali pada variabel satu. Sehingga variabel satu berisi string gabungan “Percobaan 1 Percobaan 2”.
-A> * Kemudian dibuat suatu variabel tampung yang kemudian juga digabungkan kedalam variabel satu. Cara penggabungan (concatenation) string dapat dilakukan juga dengan cara kedua, yaitu dengan menggunakan method append. Method append ini dimiliki oleh semua variabel bertipe class string dan dapat langsung digunakan dengan memasukkan parameter bertipe string juga.
+A> * Pada program diatas, terdapat dua buah variabel bertipe string, yaitu `satu` dan `dua`. Tipe data string tidak mendukung penggabungan string dengan mudah yaitu dengan menggunakan operator +. Pada contoh diatas, variabel satu ditambah isinya dengan variabel dua dan disimpan kembali pada variabel satu. Sehingga variabel satu berisi string gabungan “Percobaan 1 Percobaan 2”.
+A> * Kemudian dibuat suatu variabel tampung yang kemudian juga digabungkan kedalam variabel satu. Cara penggabungan (concatenation) string dapat dilakukan juga dengan cara kedua, yaitu dengan menggunakan `method append`. `Method append` ini dimiliki oleh semua variabel bertipe class string dan dapat langsung digunakan dengan memasukkan parameter bertipe string juga.
 
-{title="Contoh 25. Pengaksesan isi nilai class string"}
+Contoh 25. Pengaksesan isi nilai class string
 
 Buatlah program berikut:
 
@@ -1373,9 +1407,11 @@ Buatlah program berikut:
 A> **Keterangan:**
 A>
 A> * Variabel string yang bertipe class string juga memiliki sifat yang sama dengan variabel string dengan model C-string style. Keduanya merupakan gabungan dari karakter-karakter yang berbentuk array berdimensi satu. Sehingga jika kita memiliki variabel string satu seperti pada program, kita dapat mengakses semua elemen-elemen karakter penyusun string tersebut dengan menggunakan perulangan dan kemudian kita akses indeks dari masing-masing elemen array characternya.
-A> * Pada bagian kedua, kita juga bisa mengkonversi dari tipe data class string menjadi tipe data array of character atau tipe data C-style string dengan menggunakan method dari class string, yaitu c_str().
+A> * Pada bagian kedua, kita juga bisa mengkonversi dari tipe data class string menjadi tipe data array of character atau tipe data C-style string dengan menggunakan method dari class string, yaitu `c_str()`.
 
-{title="Contoh 26. Menemukan substring pada sebuah string besar"}
+Contoh 26. Menemukan substring pada sebuah string besar
+
+---------------------------------------------------------
 
 Tulislah program berikut ini:
 

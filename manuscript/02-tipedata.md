@@ -72,7 +72,9 @@ Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan memakai ka
 
 Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku bertipe int dan diinisialisasi dengan nilai 42. Setelah baris ini simbol (identifier) bernama usiaku tidak dapat diubah-ubah nilainya. Keuntungan pembuatan konstanta dengan cara ini adalah lebih mudah dipelihara dan mencegah adanya kesalahan dan yang paling penting adalah bahwa konstanta ini mempunyai tipe data dan kompiler dapat mengharuskan konstanta ini diperlakukan sebagai tipe data tersebut.
 
-{title="Contoh 1. Tipe data dan Identifier."}
+Contoh 1. Tipe data dan Identifier.
+
+---------------------------------------------------
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
@@ -119,7 +121,7 @@ I> Operator pengerjaan “=“ akan mengambil nilai apapun yang ada disebelah ka
 
 ## Operator dan Ekspresi
 
-Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Operator mempunyai beberapa kategori, antara lain : Aritmatika, Pengerjaan, Hubungan dan Logika. Operator Aritmatika adalah operator yang digunakan untuk melakukan operasi aritmatika seperti misalnya penjumlahan, pengurangan, perkalian dan pembagian. Simbol untuk operator aritmatika ini adalah : +, -, *, / dan %. Berikut ini adalah operator-operator yang dikenal pada bahasa pemrograman C++:
+Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Operator mempunyai beberapa kategori, antara lain : Aritmatika, Pengerjaan, Hubungan dan Logika. Operator Aritmatika adalah operator yang digunakan untuk melakukan operasi aritmatika seperti misalnya penjumlahan, pengurangan, perkalian dan pembagian. Simbol untuk operator aritmatika ini adalah : +, -, *, / dan %. Berikut ini adalah operator-operator yang dikenal pada bahasa pemrograman C++.
 
 |Kategori 													|Operator 			|Arah Proses 	|Jenjang
 |-----------------------------------------------------------|-------------------|---------------|----------
@@ -132,12 +134,12 @@ Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Opera
 |Operator Hubungan Kesamaan dan Ketidaksamaan 				|== != 				|Kiri – Kanan 	|7
 |Operator Bitwise AND 										|& 					|Kiri – Kanan 	|8
 |Operator Bitwise XOR 										|^ 					|Kiri – Kanan 	|9
-|Operator Bitwise OR 										|\| 				|Kiri – Kanan 	|10
+|Operator Bitwise OR 										|`|`				|Kiri – Kanan 	|10
 |Operator Kondisi AND 										|&& 				|Kiri – Kanan 	|11
-|Operator Kondisi OR 										|\|\| 				|Kiri – Kanan 	|12
-|Operator Ternary ? 										|\| 				|Kanan – Kiri 	|13
+|Operator Kondisi OR 										| `||` 				|Kiri – Kanan 	|12
+|Operator Ternary ? 										| `| `				|Kanan – Kiri 	|13
 |Operator Pengerjaan Aritmatika 							|= += -= *= /= %= 	|Kanan – Kiri 	|14
-|Operator Pengerjaan Bitwise 								|&= ^= |= <<= >>= 	|Kanan – Kiri 	|15
+|Operator Pengerjaan Bitwise 								|`&= ^= |= <<= >>=`	|Kanan – Kiri 	|15
 |Operator Koma 												|, 					|Kiri – Kanan 	|16
 
 Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari sebuah variabel maupun kumpulan variabel-variabel yang dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi adalah suatu nilai yang mempunyai besaran dan tipe data tertentu. Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan “panjang * lebar” yang menghasilkan nilai 15, 12 dan 180:
@@ -178,13 +180,12 @@ Operator ini dipakai untuk memberi nilai minus suatu nilai numerik (bukan pengur
 
 ### Operator Unary ++ dan --
 
-Operator unary “++“ dan “--“ merupakan operator khusus yang ada di bahasa C. Operator “++“ akan menambahkan nilai 1 ke pengenal yang menggunakannya sedangkan operator “--“ akan mengurangi dengan nilai numerik 1. Operator unary tersebut jika dituliskan sebelum operand disebut *pre increment* sedangkan jika ditulis setelah operand disebut *post increment*. Perhatikan perbedaannya pada contoh dibawah ini :
+Operator unary “++“ dan “--“ merupakan operator khusus yang ada di bahasa C. Operator “++“ akan menambahkan nilai 1 ke pengenal yang menggunakannya sedangkan operator “--“ akan mengurangi dengan nilai numerik 1. Operator unary tersebut jika dituliskan sebelum operand disebut _pre increment_ sedangkan jika ditulis setelah operand disebut _post increment_. Perhatikan perbedaannya pada contoh dibawah ini :
 
 |Post Increment 	|Pre Increment
 |-------------------|---------------
 |x = 5;				|x = 5;
 |a = x++;			|a = ++x;
-|					|
 |-----------------------------------
 |Hasil:				|Hasil:
 |x = 6 dan a = 5	|x = 6 dan a = 6
@@ -199,7 +200,7 @@ Operator pengerjaan atau disebut assignment operator, digunakan untuk menempatka
 |-----------|---------------|---------------------------------
 |= 			|a = b + c 		|Mengerjakan b+c ke a
 |+= 		|a += 1 		|a = a + 1
-|-= 			|a -= b 			|a = a – b
+|-= 		|a -= b 		|a = a – b
 |*= 		|a *= b 		|a = a * b
 |/= 		|a /= b 		|a = a / b
 |%= 		|a %= b 		|a = a % b
@@ -207,9 +208,9 @@ Operator pengerjaan atau disebut assignment operator, digunakan untuk menempatka
 Tabel berikut ini memberikan contoh pemakaian operator-operator di atas, misalnya variabel a dan b bernilai 10.
 
 |Statement 	|Ekuivalen dengan 	|Hasil Ungkapan
-|-----------|-------------------|------------------------------------
+|-----------|-------------------|---------------------
 |a += 3 	|a = a + 3 			|a = 10 + 3 = 13
-|a -= 2 		|a = a - 2 			|a = 10 – 2 = 8
+|a -= 2 	|a = a - 2 			|a = 10 – 2 = 8
 |a *= b/2 	|a = a * (b/2) 		|a = 10 * (10/2) = 50
 |a /= b – 8 |a = a / (j – 8) 	|a = 10 / (10-8) = 5
 
@@ -255,7 +256,7 @@ Jika operator hubungan membandingkan hubungan antara dua buah operand, maka oper
 |Operator	|Jenjang|Arti
 |-----------|-------|---------------------
 |&& 		|11 	|Logika DAN (AND)
-||| 		|12 	|Logika ATAU (OR)
+|`||` 		|12 	|Logika ATAU (OR)
 
 Selain dua operator logika ini, operator unary “!” (logika NOT) dapat digunakan untuk operasi logika.
 
@@ -264,7 +265,7 @@ Selain dua operator logika ini, operator unary “!” (logika NOT) dapat diguna
 |TRUE	|TRUE	|TRUE	|TRUE		|FALSE
 |TRUE	|FALSE	|FALSE	|TRUE		|FALSE
 |FALSE	|TRUE	|FALSE	|TRUE		|TRUE
-|FALSE	|FALSE	||FALSE	|FALSE		|TRUE
+|FALSE	|FALSE	|FALSE	|FALSE		|TRUE
 
 Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai ‘a’ maka ungkapan dibawah ini mempunyai hasil akhir benar (True).
 
@@ -364,7 +365,9 @@ Perintah `switch` akan membaca nilai dari `<ekspresi>` kemudian membandingkan ha
 
 Flowchart untuk statement ini adalah :
 
-{title="Contoh.2 Tipe data dan Identifier."} 
+Contoh.2 Tipe data dan Identifier.
+
+--------------------------------------
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
@@ -417,6 +420,7 @@ Digunakan untuk mengulangi perintah dengan jumlah perulangan yang sudah diketahu
 
 Bentuk umum penulisannya sebagai berikut :
 
+A>
 A> {lang="c++", linenos=off}
 A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A> for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
@@ -448,7 +452,7 @@ A>
 
 #### Perulangan dengan do … while
 
-Proses perulangan akan berjalan jika kondisi yang diperiksa di while masih bernilai benar dan perulangan akan dihentikan jika kondisinya sudah bernilai salah. 
+Proses perulangan akan berjalan jika kondisi yang diperiksa di `while` masih bernilai benar dan perulangan akan dihentikan jika kondisinya sudah bernilai salah. 
 
 Sintaks penulisannya sebagai berikut :
 
@@ -469,12 +473,12 @@ Perbedaan antara perintah `while` dengan `do … while` adalah terletak dari kon
 
 #### Kata kunci continue dan break
 
-Kata kunci `break` digunakan untuk keluar dari suatu blok programn sebelum ekspresi *boloean* yang ada pada statement tersebut menghentikan, sedangkan kata kunci `continue` dugunakan untuk mengabaikan baris perintah suatu perintah di bawahnya dan melanjutkan ke perulangan selanjutnya.
+Kata kunci `break` digunakan untuk keluar dari suatu blok programn sebelum ekspresi _boloean_ yang ada pada statement tersebut menghentikan, sedangkan kata kunci `continue` dugunakan untuk mengabaikan baris perintah suatu perintah di bawahnya dan melanjutkan ke perulangan selanjutnya.
 
-Sintaks penulisan break dan continue adalah sebagai berikut :
+Sintaks penulisan `break` dan `continue` adalah sebagai berikut :
 
 A> 
-A> {linenos=off}
+A> {lang="c++" linenos=off}
 A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A> while(<expresi_boolean1>)
 A> {
@@ -483,5 +487,5 @@ A> if(<expresi_boolean2>)
 A> continue;
 A> <statements>
 A> }
-A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+A> ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A> 

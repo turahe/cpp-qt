@@ -184,7 +184,7 @@ Operator unary “++“ dan “--“ merupakan operator khusus yang ada di bahas
 |-------------------|---------------
 |x = 5;				|x = 5;
 |a = x++;			|a = ++x;
-|-----------------------------------
+|-------------------|----------------
 |Hasil:				|Hasil:
 |x = 6 dan a = 5	|x = 6 dan a = 6
 

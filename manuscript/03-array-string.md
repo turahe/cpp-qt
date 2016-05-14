@@ -87,19 +87,30 @@ Buatlah project baru dan tulis kode berikut:
 
 **Hasil:**
 
-	Memasukan nilai
-	Nilai Angka ke - 1 : 1
-	Nilai Angka ke - 2 : 2
-	Nilai Angka ke - 3 : 3
-	Nilai Angka ke - 4 : 4
-	Nilai Angka ke - 5 : 5
-
-	Membaca nilai:
-	Nilai Angka : 1
-	Nilai Angka : 2
-	Nilai Angka : 3
-	Nilai Angka : 4
-	Nilai Angka : 5
+A>	Memasukan nilai
+A>
+A>	Nilai Angka ke - 1 : 1
+A>
+A>	Nilai Angka ke - 2 : 2
+A>
+A>	Nilai Angka ke - 3 : 3
+A>
+A>	Nilai Angka ke - 4 : 4
+A>
+A>	Nilai Angka ke - 5 : 5
+A>
+A>
+A>	Membaca nilai:
+A>
+A>	Nilai Angka : 1
+A>
+A>	Nilai Angka : 2
+A>
+A>	Nilai Angka : 3
+A>
+A>	Nilai Angka : 4
+A>
+A>	Nilai Angka : 5
 
 
 **Keterangan:**
@@ -134,14 +145,21 @@ Buatlah project baru dan tulis kode berikut:
 **Hasil:**
 
 
-	elemen ke-1 ? 1
-	bil[0] = 1 dan alamatnya: 0x28fe68
-	bil[1] = 5 dan alamatnya: 0x28fe6c
-	bil[2] = 25 dan alamatnya: 0x28fe70
-	bil[3] = 50 dan alamatnya: 0x28fe74
-	bil[4] = 40 dan alamatnya: 0x28fe78
-	bil[5] = 50 dan alamatnya: 0x28fe7c
-	bil[6] = 60 dan alamatnya: 0x28fe80
+A>	elemen ke-1 ? 1
+A>
+A>	bil[0] = 1 dan alamatnya: 0x28fe68
+A>
+A>	bil[1] = 5 dan alamatnya: 0x28fe6c
+A>
+A>	bil[2] = 25 dan alamatnya: 0x28fe70
+A>
+A>	bil[3] = 50 dan alamatnya: 0x28fe74
+A>
+A>	bil[4] = 40 dan alamatnya: 0x28fe78
+A>
+A>	bil[5] = 50 dan alamatnya: 0x28fe7c
+A>
+A>	bil[6] = 60 dan alamatnya: 0x28fe80
 
 
 **Keterangan:**
@@ -225,15 +243,21 @@ Buatlah program berikut:
 **Hasil:**
 
 
-	Elemen ke-0: 0
-	Elemen ke-1: 1
-	Elemen ke-2: 2
-	Elemen ke-3: 3
-	Elemen ke-4: 4
-	Elemen ke-5: 5
-	Elemen ke-6: 6
+A>	Elemen ke-0: 0
+A>
+A>	Elemen ke-1: 1
+A>
+A>	Elemen ke-2: 2
+A>
+A>	Elemen ke-3: 3
+A>
+A>	Elemen ke-4: 4
+A>
+A>	Elemen ke-5: 5
+A>
+A>	Elemen ke-6: 6
 
- **Keterangan**
+**Keterangan**
  
  Pada program diatas elemen array bernama bil yang dipesan sebanyak 7 elemen, di inisialisasi dengan nilai 0. Setelah di inisialisasi dengan nilai 0, maka semua elemen array tersebut juga akan berisi dengan nilai 0. Hal ini dibuktikan dengan cara perulangan semua elemen array dan ditampilkan dengan `cout`.
 
@@ -258,13 +282,19 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-	Elemen ke-0: 2
-	Elemen ke-1: 5
-	Elemen ke-2: 0
-	Elemen ke-3: 0
-	Elemen ke-4: 0
-	Elemen ke-5: 0
-	Elemen ke-6: 0
+A>	Elemen ke-0: 2
+A>
+A>	Elemen ke-1: 5
+A>
+A>	Elemen ke-2: 0
+A>
+A>	Elemen ke-3: 0
+A>
+A>	Elemen ke-4: 0
+A>
+A>	Elemen ke-5: 0
+A>
+A>	Elemen ke-6: 0
 
 **Keterangan**
  
@@ -313,11 +343,15 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
-	Elemen ke-0: 2
-	Elemen ke-1: 5
-	Elemen ke-2: 0
-	Elemen ke-3: 0
-	Elemen ke-4: v
+A>	Elemen ke-0: 2
+A>
+A>	Elemen ke-1: 5
+A>
+A>	Elemen ke-2: 0
+A>
+A>	Elemen ke-3: 0
+A>
+A>	Elemen ke-4: v
 
 **Keterangan**
  
@@ -347,7 +381,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-	Nilai hari selasa adalah = 30
+A>	Nilai hari selasa adalah = 30
 
 **Keterangan:**
  
@@ -417,14 +451,19 @@ Buatlah program berikut ini:
 **Hasil:**
 
 
-	1
-	2
-	3
-	4
-	5
-	6
+A>	1
+A>
+A>	2
+A>
+A>	3
+A>
+A>	4
+A>
+A>	5
+A>
+A>	6
 
- **Keterangan:**
+**Keterangan:**
  
  - Cara penyalinan array adalah dengan melakukan perulangan sebanyak elemen array yang akan disalin dan menyalinnya secara manual satu-persatu pada indeks yang sama.
  - Kemudian ditampilkan sesuai dengan indeksnya. Elemen array yang dikopikan masih tetap memiliki array yang asli. Untuk menghapusnya, maka harus dilakukan secara manual.
@@ -606,9 +645,11 @@ Buatlah program berikut:
 
 **Hasil:**
 
-	5	12	17	10	7
-	15	6	25	2	19
-	4	9	1	5	2
+A>	5	12	17	10	7
+A>
+A>	15	6	25	2	19
+A>
+A>	4	9	1	5	2
 
 **Keterangan:**
  
@@ -648,9 +689,11 @@ Buatlah program berikut:
 **Hasil:**
 
 
-	1	2	3	4	5
-	6	7	8	9	10
-	11	12	13	14	15
+A>	1	2	3	4	5
+A>
+A>	6	7	8	9	10
+A>
+A>	11	12	13	14	15
 
 **Keterangan:** 
 
@@ -734,8 +777,9 @@ Berikut adalah contohnya:
 **Hasil:**
 
 
-	1	2	3
-	4	5	6
+A>	1	2	3
+A>
+A>	4	5	6
 
 #### 2. Pengaksesan Kolom demi Kolom
 
@@ -762,9 +806,11 @@ Cara ini menelusuri elemen array dua dimensi per dimulai dari kolom pertama lalu
 
 **Hasil:**
 
-	1	4
-	2	5
-	3	6
+A>	1	4
+A>
+A>	2	5
+A>
+A>	3	6
 
 ## String
 
@@ -814,7 +860,7 @@ Buatlah program berikut:
 **Hasil:**
 
 
-	String
+A>	String
 
 **Keterangan:**
  
@@ -867,8 +913,9 @@ Buatlah program berikut:
 **Hasil:**
 
 
-	Isi data string: Baehaki
-	hasil data string: Baehaki
+A>	Isi data string: Baehaki
+A>
+A>	hasil data string: Baehaki
 
 **Keterangan:**
  
@@ -949,8 +996,9 @@ Buatlah program berikut ini:
 **Hasil:**
 
 
-	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
-	panjang huruf adalah: 10 karakter
+A>	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
+A>
+A>	panjang huruf adalah: 10 karakter
 
 **Keterangan:**
  
@@ -978,8 +1026,9 @@ Buatlah program berikut ini:
 **Hasil:**
 
 
-	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
-	panjang huruf adalah: 10 karakter
+A>	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
+A>
+A>	panjang huruf adalah: 10 karakter
 
 **Keterangan**
  
@@ -1019,8 +1068,9 @@ Buatlah program berikut ini:
 **Hasil:**
 
 
-	String pertama : STRING
-	String Kedua : STRING
+A>	String pertama : STRING
+A>
+A>	String Kedua : STRING
 
 **Keterangan:**
  
@@ -1056,8 +1106,9 @@ Buatlah program beriku:
 **Hasil:**
 
 
-	String pertama : STRING
-	String Kedua : STRINGKU
+A>	String pertama : STRING
+A>
+A>	String Kedua : STRINGKU
 
 **Keterangan:**
 
@@ -1219,9 +1270,13 @@ Buatlah program berikut:
 **Hasil:**
 
 
-	Isi str1 : Ini string C++
-	Isi str1 : Ini string C++
-	Halo, Ini string C++
+A>	Isi str1 : Ini string C++
+A>
+A>	Isi str1 : Ini string C++
+A>
+A>	Isi str1 : Ini string C++
+A>
+A>	Halo, Ini string C++
 
  **Keterangan:**
  
@@ -1269,9 +1324,11 @@ Buatlah program berikut:
 
 **Hasil:**
 
-	Halooooooo
-	saya belajar
-	C
+A>	Halooooooo
+A>
+A>	saya belajar
+A>
+A>	C
 
 **Keterangan:**
 
@@ -1303,10 +1360,11 @@ Buatlah program berikut:
 **Hasil:**
 
 
-	Percobaan 1		Percobaan 2
-	Percobaan 1		Percobaan 2 	Percobaan 3 	Percebaan tampung
+A>	Percobaan 1		Percobaan 2
+A>
+A>	Percobaan 1		Percobaan 2 	Percobaan 3 	Percebaan tampung
 
- **Keterangan:**
+**Keterangan:**
 
  * Pada program diatas, terdapat dua buah variabel bertipe string, yaitu `satu` dan `dua`. Tipe data string tidak mendukung penggabungan string dengan mudah yaitu dengan menggunakan operator +. Pada contoh diatas, variabel satu ditambah isinya dengan variabel dua dan disimpan kembali pada variabel satu. Sehingga variabel satu berisi string gabungan “Percobaan 1 Percobaan 2”.
  * Kemudian dibuat suatu variabel tampung yang kemudian juga digabungkan kedalam variabel satu. Cara penggabungan (concatenation) string dapat dilakukan juga dengan cara kedua, yaitu dengan menggunakan `method append`. `Method append` ini dimiliki oleh semua variabel bertipe class string dan dapat langsung digunakan dengan memasukkan parameter bertipe string juga.

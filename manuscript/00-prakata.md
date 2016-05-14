@@ -1,4 +1,4 @@
-{frontmatter}
+{mainmatter} 
 Bahasa pemrograman C/C++ merupakan bahasa yang popular didalam
 pengajaran pada computer sains maupun pada kalangan programmer yang
 mengembangkan system software maupun aplikasi.
@@ -24,4 +24,3 @@ mempelajari bahasa modern seperti Java maupun C# (dibaca C sharp).
 Akhirnya penulis mengucapkan selamat belajar dan semoga buku ini
 dapat memberi manfaat yang sebesarnya dalam pembelajaran mata kuliah
 C/C++ Programming.
-{mainmatter} 

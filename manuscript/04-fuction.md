@@ -120,15 +120,15 @@ Tampak pada hasil eksekusi bahwa nama fungsi tersebut digantikan dengan nilai 10
 - Di bawah fungsi `main()` terdapat sebuah blok program dengan nama `absolut()`, inilah yang  
   dinamakan definisi fungsi.  
 
-i> **Catatan :**  
-i>
-i> Nama parameter pada prototype tidak harus sama dengan nama parameter pada definisi fungsi, oleh karena itu prototype tersebut di atas boleh juga dituliskan seperti berikut :  
-i> 
-i> `int absolut(int x);`  
-i> 
-i> Nama parameter pada prototype tidak harus disebutkan, oleh karena itu prototype tersebut di atas  boleh juga dituliskan seperti berikut :  
-i> 
-i> `int absolut(int);` 
+I> **Catatan :**  
+I> 
+I> Nama parameter pada prototype tidak harus sama dengan nama parameter pada definisi fungsi, oleh karena itu prototype tersebut di atas boleh juga dituliskan seperti berikut :  
+I> 
+I>  `int absolut(int x);`  
+I>  
+I>  Nama parameter pada prototype tidak harus disebutkan, oleh karena itu prototype tersebut di atas  boleh juga dituliskan seperti berikut :  
+I>  
+I>  `int absolut(int);` 
 
 ## Hasil Balik Fungsi  
 

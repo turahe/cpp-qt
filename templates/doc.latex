@@ -64,7 +64,7 @@ encmap = {
 \begin{document}
 
 \begin{textblock*}{297mm}(0mm,0mm)
-\ThisTileWallPaper{\paperwidth}{\paperheight}{images/cover.jpg}
+\ThisTileWallPaper{\paperwidth}{\paperheight}{images/title_page.jpg}
 \end{textblock*}
 \cleardoublepage
 

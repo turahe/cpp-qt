@@ -20,7 +20,7 @@ Sebagai contoh misalnya akan dibuat kelas turunan Silinder dari kelas dasar Ling
 
 Mengenai jenis akses public ini akan dibahas nanti, sekarang kita akan memakai public. Kelas dasar yang akan diturunkan harus sudah dideklarasikan lebih dahulu, jika tidak maka kita akan menjumpai pesan kesalahan kompiler.
 
-Contoh 1 Contoh Pewarisan (Inheritance).
+Contoh 1. Pewarisan (Inheritance).
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
@@ -70,6 +70,8 @@ Contoh 1 Contoh Pewarisan (Inheritance).
 
 2. Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
+A> Volume drum = 981250 Cm2
+
  **Keterangan Program :**
  
  - Pada program diatas sudah dibuat kelas `Lingkaran`, dengan variabel anggota `radius` bertipe `float` dan fungsi anggota `getLuas()` yang mengembalikan nilai `float`.
@@ -82,7 +84,7 @@ Contoh 1 Contoh Pewarisan (Inheritance).
 
 Deklarasi kelas Silinder di atas adalah : `class Silinder : public Lingkaran`, ini berarti semua anggota yang bersifat `public` dan `protected` dari kelas `Lingkaran` akan diwariskan kepada kelas `Silinder` dan pada kelas `Silinder` anggota-anggota warisan tersebut akan tetap mempunyai jenis akses seperti itu. Namun jika modifier akses public dihilangkan maka berarti pewarisan memakai jenis akses private, sebab secara default C++ memakai jenis akses private jika modifer akses tidak dituliskan. Jika ini terjadi, maka akan terjadi perubahan modifier akses terhadap anggota-anggota warisan tersebut di dalam kelas Silinder, yaitu semua anggota yang diwariskan (baik berjenis public maupun protected) akan berubah menjadi private di dalam kelas Silinder.
 
-{title="Contoh 2. Jenis Akses Public Pada Penurunan"}
+Contoh 2. Jenis Akses Public Pada Penurunan.
 
 Buka project Contoh 1 di atas, kemudian tambahkan (edit) kode berikut pada fungsi `main() : cout << "Milik Base Class --> " << drum.getLuas() << endl;`
 
@@ -98,6 +100,9 @@ Buka project Contoh 1 di atas, kemudian tambahkan (edit) kode berikut pada fungs
 
 Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
+A> Volume drum = 981250 Cm2
+A>
+A> Milik Base Class --> 7850
 
 
  **Keterangan Program :**
@@ -116,6 +121,8 @@ Sehingga menjadi:
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka tidak akan ada output karena terjadi kesalahan kompilasi sebagai berikut.
 
+![](images/capture7-1.png)
+
  **Keterangan Program :**
  
  Tampak pada program metode warisan kelas Lingkaran bernama getLuas() tidak dapat diakses dari dalam program utama (main()). Hal ini disebabkan karena metode tersebut ketika diwariskan ke kelas Silinder jenis aksesnya berubah menjadi private, yang berarti diwariskan akan tetapi hanya dapat diakses dari dalam kelas Silinder, akibatnya ketika akan diakses dari program utama (main()), terjadi kesalahan kompilasi seperti di atas.
@@ -124,13 +131,11 @@ Berikut ini adalah perubahan jenis akses anggota dari kelas dasar ke kelas turun
 
 T> **TIPS**
 T> 
-T> Pada umumnya jenis akses penurunan adalah public, oleh karena itu biasakan menuliskan jenis akses public ketika akan menurunakan suatu kelas.
+T> Pada umumnya jenis akses penurunan adalah *public*, oleh karena itu biasakan menuliskan jenis akses public ketika akan menurunakan suatu kelas.
 
 ## Warisan
 
-Anggota-anggota kelas (member variable dan member function) mempunyai jenis akses private,
-
-protected dan public, jika tidak dituliskan pada deklarasi anggota tersebut maka akan digunakan jenis akses private. Dalam hal pewarisan (inheritance) pada pemrograman berorientasi objek, seperti sudah dijelaskan di atas bahwa anggota yang diwariskan adalah anggota dengan jenis akses public atau protected. Jenis akses public pada suatu anggota artinya bahwa anggota tersebut dapat diakses dari manapun dan akan diwariskan jika kelas tersebut diturunkan, sedangkan jenis akses protected berarti anggota tersebut diwariskan kepada kelas turunannya dan hanya bisa diakses dari dalam kelas turunan tersebut. Berikut ini adalah tabel yang menjelaskan jenis akses dan aksesibilitas suatu anggota:
+Anggota-anggota kelas (member variable dan member function) mempunyai jenis akses private, protected dan public, jika tidak dituliskan pada deklarasi anggota tersebut maka akan digunakan jenis akses private. Dalam hal pewarisan (inheritance) pada pemrograman berorientasi objek, seperti sudah dijelaskan di atas bahwa anggota yang diwariskan adalah anggota dengan jenis akses public atau protected. Jenis akses public pada suatu anggota artinya bahwa anggota tersebut dapat diakses dari manapun dan akan diwariskan jika kelas tersebut diturunkan, sedangkan jenis akses protected berarti anggota tersebut diwariskan kepada kelas turunannya dan hanya bisa diakses dari dalam kelas turunan tersebut. Berikut ini adalah tabel yang menjelaskan jenis akses dan aksesibilitas suatu anggota:
 
 |Aksesibilitas 							|public |protected 	|private
 |---------------------------------------|-------|-----------|---
@@ -153,35 +158,42 @@ Contoh 3. Konstruktor default.
 
 1. Buka Qt Creator, buat project Qt Console Application dengan nama Contoh 3. Kemudian tulis kode berikut.
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kelasku{
-	public:
-	Kelasku(){} //<-- konstruktor ini boleh tidak ditulis
-	public:
-		void hai(){
-	cout << "Hai, apa khabar...?" << endl;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kelasku test;
-	test.hai();
-	return a.exec();
-	}
+	
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kelasku{
+		public:
+		Kelasku(){} //<-- konstruktor ini boleh tidak ditulis
+		public:
+			void hai(){
+		cout << "Hai, apa khabar...?" << endl;
+		}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kelasku test;
+		test.hai();
+		return a.exec();
+		}
 
 7. Tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai berikut.
-8. 
-8. Kemudian hapuslah konstruktor Kelasku(){}, kemudan tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai berikut.
+
+A> Hai, apa khabar...?
+
+ 
+8. Kemudian hapuslah konstruktor `Kelasku(){}`, kemudian tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai berikut.
+
+
+A> Hai, apa khabar...?
+
 
  **Keterangan Program:**
  
  Pada contoh program ini tampak bahwa ada konstruktor maupun tidak ada konstruktor program di atas tetap bisa dijalankan dan tidak ada perbedaan sama sekali. Hal ini disebabkan oleh karena jika suatu kelas tidak mempunyai kontruktor, maka secara otomatis kompiler akan menambahkan konstruktor default (yaitu konstruktor tanpa parameter dan tanpa program apapun) pada hasil kompilasi, jadi pada contoh program di atas hasil kompilasi dengan atau tanpa konstruktor adalah tetap sama.
 
-## Konstruktor Kelas Turunan Pasti Memanggil Konstruktor Kelas Dasar
+### Konstruktor Kelas Turunan Pasti Memanggil Konstruktor Kelas Dasar
 
 Seperti dijelaskan di atas bahwa tidak ada kelas yang tidak mempunyai konstruktor, demikian juga dengan kelas turunan. Pada waktu ada pembentukan suatu objek dari suatu kelas turunan, secara otomatis ada terlebih dahulu pembentukan objek kelas dasarnya karena harus ada anggota-anggota yang diwariskan, dengan demikian bisa dimengerti bahwa konstruktor kelas turunan pasti memanggil konstruktor kelas dasarnya.
 
@@ -192,29 +204,31 @@ Contoh 4. Konstruktor default kelas turunan.
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian ubah isi konstruktor kelas Kelasku dan tambahkan kelas Turunan berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kelasku{
-	public:
-	Kelasku(){
-	cout << "Konstruktor Kelas Dasar dijalankan..." << endl;
-	}
-	public:
-	void hai(){
-	cout << "Hai, apa khabar...?" << endl;
-	}
-	};
-	class Turunan : public Kelasku{
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Turunan test; //<-- membuat objek dari kelas Turunan saja
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kelasku{
+		public:
+		Kelasku(){
+		cout << "Konstruktor Kelas Dasar dijalankan..." << endl;
+		}
+		public:
+		void hai(){
+		cout << "Hai, apa khabar...?" << endl;
+		}
+		};
+		class Turunan : public Kelasku{
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Turunan test; //<-- membuat objek dari kelas Turunan saja
+		return a.exec();
+		}
 
 2. Tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai berikut.
+
+A> Konstruktor Kelas Dasar dijalankan...
 
  **Keterangan Program:**
  
@@ -232,43 +246,45 @@ Contoh .5 Konstruktor default kelas turunan memanggil konstruktor kelas dasar.
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti berikut.
 
 	
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kelasku{
-	public:
-	Kelasku(string kata){
-	cout << "Konstruktor Kelas Dasar" << endl;
-	cout << "Mengucapkan : " << kata << endl;
-	}
-	public:
-	void hai(){
-	cout << "Hai, apa khabar...?" << endl;
-	}
-	};
-	class Turunan : public Kelasku{
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Turunan test; //<-- membuat objek dari kelas Turunan saja
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kelasku{
+		public:
+		Kelasku(string kata){
+		cout << "Konstruktor Kelas Dasar" << endl;
+		cout << "Mengucapkan : " << kata << endl;
+		}
+		public:
+		void hai(){
+		cout << "Hai, apa khabar...?" << endl;
+		}
+		};
+		class Turunan : public Kelasku{
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Turunan test; //<-- membuat objek dari kelas Turunan saja
+		return a.exec();
+		}
 
 2. Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
 
+![](images/capture7-2.png)
+
  **Keterangan Program:**
  
- Seperti pada percobaan Lab.4, kelas Turunan tidak mempunyai konstruktor secara eksplisit, sehingga dibuatkan konstruktor oleh kompiler berupa :
+ Seperti pada percobaan contoh 4, kelas Turunan tidak mempunyai konstruktor secara eksplisit, sehingga dibuatkan konstruktor oleh kompiler berupa :
  
 
- 	Turunan():Kelasku(){} //<-- Konstruktor default kelas Turunan
+	Turunan():Kelasku(){} //<-- Konstruktor default kelas Turunan
 
  
  Namun masalahnya sekarang pada kelas dasar tidak mempunyai konstruktor tanpa parameter seperti itu, sehingga kompiler manampilkan pesan :
  
 
- 	no maching function call to ‘Kelasku::Kelasku()’
+	no maching function call to ‘Kelasku::Kelasku()’
 
  
  Maksud pesan ini adalah bahwa pada kelas Kelasku tidak terdapat konstruktor Kelasku() dengan tanpa parameter. Ini juga membuktikan bahwa konstruktor default mempunyai bentuk seperti yang sudah dijelaskan pada Keterangan percobaan contoh 4.
@@ -414,12 +430,12 @@ Bandingkan dengan hasil keluaan pada program di contoh 1. seperti berikut :
 
  **Keterangan:**
  
- - Pada program ini, pembuatan objek dilakukan dengan memberikan nilai radius=50 dan tinggi = 125, ini tampak pada program utama (main()) : Silinder drum(50,125), sama dengan ketika membuat objek pada Lab.1. Namun tampak pada hasil eksekusi, Luas Silinder adalah 54950 Cm2 karena menggunakan rumus baru, tetapi pada keluaran Milik Base Class nilainya juga sama yaitu 54950, dan akibatnya volume drum yang seharusnya 981250 Cm3 manjadi 6.86875e+006 Cm3. Ini semua terjadi karena pada kelas Silinder tidak lagi memakai rumus getLuas() milik kelas dasarnya. Pada satu sisi getLuas() pada kelas Silinder sudah benar, sesuai dengan yang diharapkan, namun ketika metode getVolume() menghitung volume memakai metode getLuas(), ternyata sudah berubah menjadi rumus luas Silinder yang akibatnya perhitungan volume menjadi sangat besar (salah).
+ - Pada program ini, pembuatan objek dilakukan dengan memberikan nilai radius=50 dan tinggi = 125, ini tampak pada program utama (main()) : Silinder drum(50,125), sama dengan ketika membuat objek pada contoh 1. Namun tampak pada hasil eksekusi, Luas Silinder adalah 54950 Cm2 karena menggunakan rumus baru, tetapi pada keluaran Milik Base Class nilainya juga sama yaitu 54950, dan akibatnya volume drum yang seharusnya 981250 Cm3 manjadi 6.86875e+006 Cm3. Ini semua terjadi karena pada kelas Silinder tidak lagi memakai rumus getLuas() milik kelas dasarnya. Pada satu sisi getLuas() pada kelas Silinder sudah benar, sesuai dengan yang diharapkan, namun ketika metode getVolume() menghitung volume memakai metode getLuas(), ternyata sudah berubah menjadi rumus luas Silinder yang akibatnya perhitungan volume menjadi sangat besar (salah).
  - Walaupun pada kasus ini menimbulkan masalah, tetapi percobaan ini memperlihatkan adanya overriding terhadap metode milik kelas dasar.
 
 ## Memanggil Metode Kelas Dasar
 
-Pada kasus Lab.7 di atas sebenarnya metode getLuas() masih dibutuhkan pada kelas Silinder untuk menghitung volume (getVolume()), bahkan sebenarnya untuk menghitung luas tutup, yang sebenarnya juga luas lingkaran, masih membutuhkan metode getLuas() milik kelas dasar Lingkaran. Namun karena adanya kebutuhan yang berbeda pada kelas Silinder untuk menghitung luasnya maka dilakukan overriding terhadap metode getLuas(). Untuk mengatasi hal ini diperlukan suatu cara untuk tetap dapat mengakses anggota milik kelas dasar, yaitu dengan cara menyebutkan nama kelas dasar kemudian diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
+Pada kasus contoh 7 di atas sebenarnya metode getLuas() masih dibutuhkan pada kelas Silinder untuk menghitung volume (getVolume()), bahkan sebenarnya untuk menghitung luas tutup, yang sebenarnya juga luas lingkaran, masih membutuhkan metode getLuas() milik kelas dasar Lingkaran. Namun karena adanya kebutuhan yang berbeda pada kelas Silinder untuk menghitung luasnya maka dilakukan overriding terhadap metode getLuas(). Untuk mengatasi hal ini diperlukan suatu cara untuk tetap dapat mengakses anggota milik kelas dasar, yaitu dengan cara menyebutkan nama kelas dasar kemudian diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
 
 	<kelas_dasar>::<anggot
 
@@ -461,7 +477,7 @@ Bagian yang diubah
  
  - Pada waktu mengitung getLuas() pada kelas Silinder, bisa memanfaatkan metode getLuas() milik kelas dasar dengan cara memanggil metode milik kelas dasar, sehingga dengan demikian metode getLuas() ini seperti tampak pada kode program di atas, bisa menjadi lebih ringkas.
  - Demikian juga pada metode getVolume(), sekarang tidak ada kesalahan seperti tadi, karena rumus getLuas() yang digunakan sudah benar, yaitu metode getLuas() milik kelas dasar.
- - Dari percobaan Lab.7 ini tampak cara melakukan overriding dan cara memanggil anggota milik kelas dasar.
+ - Dari percobaan contoh 7 ini tampak cara melakukan overriding dan cara memanggil anggota milik kelas dasar.
 
 ## Penyembunyian Metode Kelas Dasar 
 
@@ -591,7 +607,7 @@ I> - Variabel pointer bertipe kelas dasar jika digunakan untuk menunjuk objek be
 
 Perlu diperhatikan bahwa kemampuan untuk memanggil metode kelas turunan dari variabel bertipe kelas dasar hanya berlaku untuk variabel pointer dan variabel referensi, sedangkan variabel nilai (value variable) tidak dapat mengakses metode virtual seperti itu.
 
-Ketika kita membuat objek bertipe kelas turunan, sebenarnya sebelumnya sudah dibuat objek bertipe kelas dasarnya, seperti sudah dibahas secara tidak langsung pada bagian yang membicarakan konstruktor di atas. Jadi ada bagian yang merupakan anggota kelas dasar dan ada bagaian yang merupakan anggota kelas turunan. Sebagai contoh misalnya berikut ini ilustrasi mengenai objek bertipe Silinder yang merupakan turunan dari kelas Lingkaran yang dibahas pada Lab.10 di atas.
+Ketika kita membuat objek bertipe kelas turunan, sebenarnya sebelumnya sudah dibuat objek bertipe kelas dasarnya, seperti sudah dibahas secara tidak langsung pada bagian yang membicarakan konstruktor di atas. Jadi ada bagian yang merupakan anggota kelas dasar dan ada bagaian yang merupakan anggota kelas turunan. Sebagai contoh misalnya berikut ini ilustrasi mengenai objek bertipe Silinder yang merupakan turunan dari kelas Lingkaran yang dibahas pada contoh 10 di atas.
 
 Pada konversi dari suatu variabel ke variabel lain, bisa terjadi Pemotongan (Silicing). Supaya lebih jelas lakukan percobaan berikut ini.
 

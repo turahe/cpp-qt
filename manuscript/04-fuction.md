@@ -79,7 +79,8 @@ Prototype fungsi standard berada di file-file judulnya, dalam fungsi pustaka seb
 Contoh 1. Membuat Fungsi yang mengembalikan nilai.
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
+
      #include <QtCore/QCoreApplication>
     #include <iostream>
     int absolut(int bil);
@@ -100,20 +101,23 @@ Contoh 1. Membuat Fungsi yang mengembalikan nilai.
     }
 
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 
-Bilangan : -10
-Dimutlakkan menjadi : 10
+A> Bilangan : -10
+A> 
+A> Dimutlakkan menjadi : 10
 
- **Analisa Program :**  
+**Analisa Program :**  
  
- - Pada program diatas baris ketiga tertulis : `int absolut(int bil);` inilah yang disebut  sebagai prototype, ditulis sebelum fungsi yang memakainya, yaitu `main()`.  
- 
- - Pada tubuh pogram, terdapat pemanggilan fungsi :  
-  `cout << "Dimutlakkan menjadi  : " << absolut(bilangan) << endl;`  
-  Tampak pada hasil eksekusi bahwa nama fungsi tersebut digantikan dengan nilai 10, yaitu   nilai kembalian fungsi, ini menunjukkan bahwa fungsi `absolut()`mengembalikan nilai.  
- - Di bawah fungsi `main()` terdapat sebuah blok program dengan nama `absolut()`, inilah yang  
+- Pada program diatas baris ketiga tertulis : `int absolut(int bil);` inilah yang disebut  sebagai prototype, ditulis sebelum fungsi yang memakainya, yaitu `main()`.  
+- Pada tubuh pogram, terdapat pemanggilan fungsi :
+
+ `cout << "Dimutlakkan menjadi  : " << absolut(bilangan) << endl;`  
+
+Tampak pada hasil eksekusi bahwa nama fungsi tersebut digantikan dengan nilai 10, yaitu   nilai kembalian fungsi, ini menunjukkan bahwa fungsi `absolut()`mengembalikan nilai.  
+
+- Di bawah fungsi `main()` terdapat sebuah blok program dengan nama `absolut()`, inilah yang  
   dinamakan definisi fungsi.  
 
 i> **Catatan :**  
@@ -132,7 +136,7 @@ Suatu fungsi dalam menyelesaikan tugasnya, dapat hanya melakukan suatu tugas tan
 
 Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 
     #include <QtCore/QCoreApplication>
@@ -150,20 +154,24 @@ Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.
     cout << "Hello World!" << endl;
     }      
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 
-Hello World!
-Hello World!
-Hello World!  
+A> Hello World!
+A> 
+A> Hello World!
+A> 
+A> Hello World!  
 
- **Analisa Program :**
+**Analisa Program :**
  
  - Pada program diatas baris ketiga tertulis : `void hello(int kali)`; tampak tipe dari fungsi ini adalah void, berarti tidak mengembalikan nilai.  
   
- - Pada tubuh pogram, terdapat pemanggilan fungsi :
+ - Pada tubuh pogram, terdapat pemanggilan fungsi : 
+
  `hello(3);` 
- Tampak pada hasil eksekusi bahwa nama fungsi ini dieksekusi bukan diakses nilainya (dicetak dengan cout), ini menunjukkan bahwa fungsi `hello()` tersebut tidak mengembalikan nilai.  
+
+  Tampak pada hasil eksekusi bahwa nama fungsi ini dieksekusi bukan diakses nilainya (dicetak dengan cout), ini menunjukkan bahwa fungsi `hello()` tersebut tidak mengembalikan nilai.  
  
  - Di bawah fungsi `main()` terdapat sebuah blok program dengan nama `hello()`, pada tubuh fungsi ini tidak ada perintah `return` sama sekali, karena memang tidak mengembalikan nilai.  
 
@@ -180,7 +188,7 @@ Variable lokal merupakan variable yang hanya berlaku untuk pernyataan di dalam s
 Contoh 3. Variabel Lokal.
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
 
 	#include <QtCore/QCoreApplication>
@@ -202,7 +210,7 @@ Contoh 3. Variabel Lokal.
 	return c;
 	}
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
 
 A>  Hasil = 28
@@ -220,7 +228,7 @@ Sesuai dengan namanya, variable global maksudnya adalah suatu variable yang dapa
 Contoh 4. Variabel Global.   
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
 
     #include <QtCore/QCoreApplication>
@@ -240,7 +248,7 @@ Contoh 4. Variabel Global.
       hasil = a * b;
     }
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
 
 A> Variabel global hasil = 28
@@ -258,7 +266,7 @@ Jika dilihat dari prinsip kerjanya, variabel statik bertentangan dengan variable
 Contoh 5. Variabel Statik.
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 
 	#include <QtCore/QCoreApplication>
@@ -289,16 +297,16 @@ Contoh 5. Variabel Statik.
 
 
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
 
 A> 5 Faktorial = 120
 
- **Analisa Program:**  
+**Analisa Program:**  
  
- - Dari contoh program ini, variable `f` di fungsi `kali ()` merupakan variable lokal yang bersifat  statik yang mempunyai nilai awal `1`. Pada fungsi ini nilai variabel `f` yang lama akan dikalikan dengan nilai variable i untuk mendapatkan nialai `f` yang baru.   
- - Pada fungsi utama, fungsi `kali()`  akan dipanggil sebanyak n kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan nilai `n` (pada contoh ini `n = 5`), sehingga akan dihasilkan suatu niali n!.   
- - Supaya nilai variable `f` yang lama masih tetap dipertahankan, maka variable ini perlu dibuat menjadi variable statik. Jika variabel ini tidak bersifat static, maka setiap kali fungsi `kali()`  dipanggil, nilai variable `f` akan mempunyai nilai awal 1 lagi.   
+- Dari contoh program ini, variable `f` di fungsi `kali ()` merupakan variable lokal yang bersifat  statik yang mempunyai nilai awal `1`. Pada fungsi ini nilai variabel `f` yang lama akan dikalikan dengan nilai variable i untuk mendapatkan nialai `f` yang baru.   
+- Pada fungsi utama, fungsi `kali()`  akan dipanggil sebanyak n kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan nilai `n` (pada contoh ini `n = 5`), sehingga akan dihasilkan suatu niali n!.   
+- Supaya nilai variable `f` yang lama masih tetap dipertahankan, maka variable ini perlu dibuat menjadi variable statik. Jika variabel ini tidak bersifat static, maka setiap kali fungsi `kali()`  dipanggil, nilai variable `f` akan mempunyai nilai awal 1 lagi.   
 
 Penggunaan variabel lokal lebih disarankan, karena penggunaan variabel global akan memnyebabkan  dampak-dampak sebagai berikut :  
 
@@ -363,7 +371,7 @@ Berarti kita hanya boleh memberikan nilai default untuk b jika kita telah member
 Contoh 6. Default Parameter.
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 
 	#include <QtCore/QCoreApplication>
@@ -389,16 +397,18 @@ Contoh 6. Default Parameter.
 	return p * l * t;
 	}
        
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut. 
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut. 
 
 
 A>  Volume 1 --> 3750
+A> 
 A>  Volume 2 --> 150
+A> 
 A>  Volume 3 --> 10
 
 
- **Analisa Program:**  
+**Analisa Program:**  
  
- - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 25 karena semua parameter formal menerima nilai, maka hasilnya 3750.  
- - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 1 karena parameter formal ketiga tidak menerima nilai, maka hasilnya 150.  
- - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 1 x 1 karena parameter formal kedua dan ketiga tidak menerima nilai, maka hasilnya 10.  
+- Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 25 karena semua parameter formal menerima nilai, maka hasilnya 3750.  
+- Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 1 karena parameter formal ketiga tidak menerima nilai, maka hasilnya 150.  
+- Dari contoh program ini, Volume 1 dihasilkan dari 10 x 1 x 1 karena parameter formal kedua dan ketiga tidak menerima nilai, maka hasilnya 10.  

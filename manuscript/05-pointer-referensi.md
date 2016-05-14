@@ -29,7 +29,7 @@ Contoh 1. Menampilkan alamat memory menggunakan address-of operator.
 
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
 
 	#include <QtCore/QCoreApplication>
@@ -47,17 +47,19 @@ Contoh 1. Menampilkan alamat memory menggunakan address-of operator.
 	return a.exec();
 	}
 
-2. Kemudian jalankan kode diatas dengan menekan tombol <kbd>Ctrl+R</kbd>, outputnya adalah sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol <kbd>Ctrl+R</kbd>, outputnya adalah sebagai berikut.
 
 
-bil1 = 20 address = 0x28fe96
-bil2 = 200000 address = 0x28fe90
-bil3 = -670000 address = 0x28fe8c
+A> bil1 = 20 address = 0x28fe96
+A> 
+A> bil2 = 200000 address = 0x28fe90
+A> 
+A> bil3 = -670000 address = 0x28fe8c
 
- **Analisa Program :**
+**Analisa Program :**
  
- - Pada program diatas operator address of (&) digunakan untuk mengetahui alamat memory tempat variabel bil disimpan.
- - Ketika anda mendeklarasikan variabel dengan tipe tertentu maka compiler akan menentukan ukuran dari memory yang diperlukan untuk menyimpan data dan secara otomatis menetapkan alamat memory dimana variabel tersebut akan disimpan.
+- Pada program diatas operator address of (&) digunakan untuk mengetahui alamat memory tempat variabel bil disimpan.
+- Ketika anda mendeklarasikan variabel dengan tipe tertentu maka compiler akan menentukan ukuran dari memory yang diperlukan untuk menyimpan data dan secara otomatis menetapkan alamat memory dimana variabel tersebut akan disimpan.
 
 ## Menyimpan Alamat Variabel pada Pointer
 
@@ -111,7 +113,7 @@ Pada kode diatas nilai dari variabel bil akan berubah menjadi 20, karena variabe
 Contoh 2. Memanipulasi data menggunakan Pointer
 
 
-1. Buka Qt Creator, buat project Qt Console Application dengan nama Contoh 2. Kemudian tulis kode berikut.
+Buka Qt Creator, buat project Qt Console Application dengan nama Contoh 2. Kemudian tulis kode berikut.
 
 
 	#include <QtCore/QCoreApplication>
@@ -137,7 +139,7 @@ Contoh 2. Memanipulasi data menggunakan Pointer
 	return a.exec();
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan kode diatas, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan kode diatas, outputnya adalah sebagai berikut.
 
 
 Umur : 17
@@ -149,12 +151,12 @@ Merubah nilai umur..
 Umur : 30
 pUmur : 30
 
- **Analisa Program:**
+**Analisa Program:**
  
- - Pada program diatas pointer pUmur mereferensi/menunjuk ke alamat dimana nilai variabel umur disimpan.
- - Untuk mengakses nilai dari variabel umur lewat pointer dapat menggunakan dereference operator (*).
- - Ketika nilai dereference pointer `*pUmur` diubah menjadi 28, maka akan mempengaruhi nilai pada variabel umur yang akan menjadi 28 juga.
- - Ketika nilai variabel umur diubah menjadi 30, dan anda mengakses nilainya dengan menggunakan pointer `*pUmur` maka nilainya juga akan berubah menjadi 30.
+- Pada program diatas pointer `pUmur` mereferensi/menunjuk ke alamat dimana nilai variabel umur disimpan.
+- Untuk mengakses nilai dari variabel umur lewat pointer dapat menggunakan dereference operator (*).
+- Ketika nilai dereference pointer `*pUmur` diubah menjadi 28, maka akan mempengaruhi nilai pada variabel umur yang akan menjadi 28 juga.
+- Ketika nilai variabel umur diubah menjadi 30, dan anda mengakses nilainya dengan menggunakan pointer `*pUmur` maka nilainya juga akan berubah menjadi 30.
 
 ## Mengganti alamat yang direferensi oleh Pointer
 
@@ -163,7 +165,7 @@ Anda juga dapat mengganti alamat variabel yang direferensi oleh pointer tertentu
 Contoh 3. Mengganti alamat yang di referensi oleh pointer
 
 
-1. Buat project Qt Console Application baru, beri nama Contoh 3, kemudian tulis kode berikut
+Buat project Qt Console Application baru, beri nama Contoh 3, kemudian tulis kode berikut
 
 
 	#include <QtCore/QCoreApplication>
@@ -210,7 +212,7 @@ Anda dapat menggunakan nama array sebagai konstan pointer, misalnya Numbers+3 ad
 Contoh 4. Pointer dan Array
 
 
-1. Buat project Qt Console Application dengan nama Contoh 4, kemudian tulis kode berikut.
+Buat project Qt Console Application dengan nama Contoh 4, kemudian tulis kode berikut.
 
 
 	#include <QtCore/QCoreApplication>
@@ -238,9 +240,9 @@ Contoh 4. Pointer dan Array
 	return a.exec();
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
-{lang="sh", linenos}
+
 Alamat numbers[0] : 0x28fe78
 Nilai numbers[0] : 100
 Alamat numbers[4] : 0x28fe88
@@ -251,9 +253,9 @@ numbers[2] = 222
 numbers[3] = 111
 numbers[4] = 777
 
- **Analisa :**
+**Keterangan:**
  
- Nama dari array numbers merupakan konstan pointer yang menunjuk alamat element pertama pada array (`numbers[0]`), jadi jika anda ingin mengetahui nilai dari elemen pertama array anda dapat menggunakan dereference operator `*numbers`.
+Nama dari array numbers merupakan konstan pointer yang menunjuk alamat element pertama pada array (`numbers[0]`), jadi jika anda ingin mengetahui nilai dari elemen pertama array anda dapat menggunakan dereference operator `*numbers`.
 
 Anda dapat menggunakan nama array `numbers+4` untuk menunjuk ke alamat elemen `numbers[4]`, untuk menampilkan nilai `numbers[4]` anda dapat menuliskan `*(numbers+4)`.
 
@@ -286,7 +288,7 @@ Ketika anda menghapus memory maka pointer tetap menunjuk ke alamat memory yang s
 Contoh 5. Mengalokasikan, menggunakan, dan mendelete Pointer
 
 
-1. Buat project Qt Console Application dengan nama Contoh 5, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 5, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -318,10 +320,10 @@ Contoh 5. Mengalokasikan, menggunakan, dan mendelete Pointer
 Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-bil : 20
-pBil : 20
-Nilai pHeap : 19
-Nilai pHeap : 100
+	bil : 20
+	pBil : 20
+	Nilai pHeap : 19
+	Nilai pHeap : 100
 
  **Analisa:**
  
@@ -346,7 +348,7 @@ Ketika anda menghapus pointer yang menunjuk ke objek dengan keyword ‘delete’
 Contoh 6. Membuat dan menghapus objek dari Heap
 
 
-1. Buat project Qt Console Application dengan nama Contoh 6, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 6, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -382,22 +384,22 @@ Contoh 6. Membuat dan menghapus objek dari Heap
 	return a.exec();
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-Deklarasi object tanpa pointer 
-Konstruktor dipanggil..
-Mengalokasikan heap memory untuk menyimpan objek 
-Konstruktor dipanggil..
-Delete objek di memory 
-Destruktor dipanggil..
+	Deklarasi object tanpa pointer 
+	Konstruktor dipanggil..
+	Mengalokasikan heap memory untuk menyimpan objek 
+	Konstruktor dipanggil..
+	Delete objek di memory 
+	Destruktor dipanggil..
 
- **Analisa :**
+**Analisa :**
  
- - Pada program diatas kita membuat class Mahasiswa yang mempunyai objek konstruktor dan destruktor.
- - Pertama kali kita mendeklarasikan object mhs1 pada local variable (stack), pembuatan object ini menyebabkan konstruktor dipanggil.
- - Kemudian dibuat pointer yang menunjuk ke objek di heap dengan nama mhs2, ketika objek mhs2 dibuat, objek konstruktor dipanggil. Ketika anda menghapus objek di heap menggunakan delete maka objek destruktor akan dipanggil.
- - Objek desktruktor untuk mhs1 akan dipanggil ketika fungsi main berakhir.
+- Pada program diatas kita membuat class Mahasiswa yang mempunyai objek konstruktor dan destruktor.
+- Pertama kali kita mendeklarasikan object mhs1 pada local variable (stack), pembuatan object ini menyebabkan konstruktor dipanggil.
+- Kemudian dibuat pointer yang menunjuk ke objek di heap dengan nama mhs2, ketika objek mhs2 dibuat, objek konstruktor dipanggil. Ketika anda menghapus objek di heap menggunakan delete maka objek destruktor akan dipanggil.
+- Objek desktruktor untuk mhs1 akan dipanggil ketika fungsi main berakhir.
 
 ## Menggunakan const Pointer
 
@@ -434,7 +436,7 @@ Statement diatas dapat diartikan “rBil adalah referensi dari variabel intBil�
 Contoh 7. Membuat dan Menggunakan Reference.
 
 
-1. Buat project Qt Console Application dengan nama Contoh 7, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 7, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -459,25 +461,25 @@ Contoh 7. Membuat dan Menggunakan Reference.
 	return a.exec();
 	}
 
-2. T ekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-Nilai bil1 : 18
-Nilai &rBil : 18
-Nilai bil1 : 19
-Nilai &rBil : 19
-Nilai bil1 : 33
-Nilai &rBil : 33
-Menampilkan alamat memory :
-&bil1 : 0x28fe90
-&rBil : 0x28fe90
+	Nilai bil1 : 18
+	Nilai &rBil : 18
+	Nilai bil1 : 19
+	Nilai &rBil : 19
+	Nilai bil1 : 33
+	Nilai &rBil : 33
+	Menampilkan alamat memory :
+	&bil1 : 0x28fe90
+	&rBil : 0x28fe90
 
- **Analisa:**
+**Analisa:**
  
- - Pertama kita mendeklarasikan referensi `rBil=bil1`, maka ketika dicetak nilai `rBil` sama dengan nilai variabel `bil1` karena `rBil` merupakan reference / alias dari `bil1`.
- - Ketika variabel `bil1` nilainya dirubah menjadi `19`, maka otomatis nilai dari `rBil` juga berubah menjadi `19`.
- - Demikian pula ketika `rBil` nilainya dirubah menjadi `33`, maka nilai dari `bil1` juga ikut berubah.
- - Anda juga dapat menampilkan alamat memory dari variabel dan variabel reference dengan menambahkan keyword (&) didepan variabel.
+- Pertama kita mendeklarasikan referensi `rBil=bil1`, maka ketika dicetak nilai `rBil` sama dengan nilai variabel `bil1` karena `rBil` merupakan reference / alias dari `bil1`.
+- Ketika variabel `bil1` nilainya dirubah menjadi `19`, maka otomatis nilai dari `rBil` juga berubah menjadi `19`.
+- Demikian pula ketika `rBil` nilainya dirubah menjadi `33`, maka nilai dari `bil1` juga ikut berubah.
+- Anda juga dapat menampilkan alamat memory dari variabel dan variabel reference dengan menambahkan keyword (&) didepan variabel.
 
 ### Re-assign Reference Variable
 
@@ -486,7 +488,7 @@ Variabel reference tidak dapat di re-assign (ditetapkan ulang). Agar lebih jelas
 Contoh 8. Re-assign Reference Value
 
 
-1. Buat project Qt Console Application dengan nama Contoh 8, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 8, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -505,16 +507,16 @@ Contoh 8. Re-assign Reference Value
 	return a.exec();
 	}
 
-2. T ekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-rBil : 14
-rBil : 19
-bil : 19
+	rBil : 14
+	rBil : 19
+	bil : 19
 
- **Analisa:**
+**Analisa:**
  
- Variabel reference `rBil` yang sudah diinisialisasi dengan `bil1` coba di re-assign dengan `bil2` dan gagal, karena `rBil=bil2` tidak menjadikan referensinya berubah tetapi nilai `bil2` yang mengganti nilai `rBil` dan `bil1`.
+Variabel reference `rBil` yang sudah diinisialisasi dengan `bil1` coba di re-assign dengan `bil2` dan gagal, karena `rBil=bil2` tidak menjadikan referensinya berubah tetapi nilai `bil2` yang mengganti nilai `rBil` dan `bil1`.
 
 ## Passing function argument dengan reference
 
@@ -522,10 +524,10 @@ Pada chapter sebelumnya tentang `function`, kita sudah membahas beberapa keterba
 
 _Passing reference value_ pada `function` dapat mengatasi masalah diatas. Contoh dibawah ini akan menunjukan perbedaan penggunaan passing by value dan passing by reference (dengan pointer dan variaabel reference).
 
-Contoh 9. Passing by Value
+Contoh 9. Passing by Value.
 
 
-1. Buat project Qt Console Application dengan nama Contoh 9, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 9, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -551,23 +553,23 @@ Contoh 9. Passing by Value
 	cout << "Pada fungsi, Setelah ditukar, x=" << x << ", y=" << y << endl;
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-Pada main, sebelum ditukar x=12, y=21
-Pada fungsi, sebelum ditukar, x=12, y=21
-Pada fungsi, Setelah ditukar, x=21, y=12
-Pada main, setelah ditukar x=12, y=21
+	Pada main, sebelum ditukar x=12, y=21
+	Pada fungsi, sebelum ditukar, x=12, y=21
+	Pada fungsi, Setelah ditukar, x=21, y=12
+	Pada main, setelah ditukar x=12, y=21
 
- **Keterangan:**
+**Keterangan:**
  
- - Pada kode diatas dapat dilihat bahwa _passing by value_ ke fungsi `Tukar()` tidak akan mempengaruhi variabel `x` dan `y` yang ada pada fungsi main, dan hanya berpengaruh pada scope fungsi `Tukar()`.
+Pada kode diatas dapat dilihat bahwa _passing by value_ ke fungsi `Tukar()` tidak akan mempengaruhi variabel `x` dan `y` yang ada pada fungsi main, dan hanya berpengaruh pada scope fungsi `Tukar()`.
 saja.
 
 Contoh 10. Passing by reference dengan pointer
 
 
-1. Buat project Qt Console Application dengan nama Contoh 10, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 10, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -593,17 +595,17 @@ Contoh 10. Passing by reference dengan pointer
 	cout << "Pada fungsi, sesudah ditukar x=" << *x << ",y=" << *y << endl;
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-main func, x=12, y=21
-Pada fungsi, sebelum ditukar x=12,y=21
-Pada fungsi, sesudah ditukar x=21,y=12
-main func, x=21, y=11
+	main func, x=12, y=21
+	Pada fungsi, sebelum ditukar x=12,y=21
+	Pada fungsi, sesudah ditukar x=21,y=12
+	main func, x=21, y=11
 
- **Analisa:**
+**Analisa:**
  
- Pada kode diatas kita melakukan passing by reference untuk passing parameter ke fungsi `Tukar()` menggunakan pointer, dapat anda lihat bahwa setelah fungsi `Tukar()` dijalankan variabel `x` dan `y` di main function nilainya sudah berhasil ditukar.
+Pada kode diatas kita melakukan passing by reference untuk passing parameter ke fungsi `Tukar()` menggunakan pointer, dapat anda lihat bahwa setelah fungsi `Tukar()` dijalankan variabel `x` dan `y` di main function nilainya sudah berhasil ditukar.
 
 Contoh 11. Menjalankan fungsi Tukar() dengan reference
 
@@ -636,14 +638,14 @@ Buat project Qt Console Application dengan nama Contoh 11, kemudian tulis kode b
 Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-main func, sebelum ditukar x=12, y=21
-Pada function, sebelum ditukar x=12, y=21
-Sesudah function, sebelum ditukar x=21, y=12
-main func, setelah ditukar x=21, y=11
+	main func, sebelum ditukar x=12, y=21
+	Pada function, sebelum ditukar x=12, y=21
+	Sesudah function, sebelum ditukar x=21, y=12
+	main func, setelah ditukar x=21, y=11
 
- **Analisa:**
+**Analisa:**
  
- Pada kode diatas kita juga berhasil menukar nilai x dan y menggunakan fungsi tukar sama dengan kode sebelumnya. Ini karena passing parameter menggunakan variabel reference.
+Pada kode diatas kita juga berhasil menukar nilai x dan y menggunakan fungsi tukar sama dengan kode sebelumnya. Ini karena passing parameter menggunakan variabel reference.
 
 ## Function yang mengembalikan beberapa nilai
 
@@ -692,24 +694,23 @@ Buat project Qt Console Application dengan nama Contoh 12, kemudian tulis kode b
 		return status;
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+
+	Masukan number : 5
+	Number : 5
+	pLuasPersegi : 25
+	pVolumeKubus : 125
 
 
-Masukan number : 5
-Number : 5
-pLuasPersegi : 25
-pVolumeKubus : 125
-
-
- **Analisa:**
+**Analisa:**
  
- - Inputan untuk variabel number harus lebih besar dari 0, jika tidak program akan menghasilkan pesan error.
- - Dapat dilihat bahwa function `Hitung()` mengembalikan 3 nilai yaitu : nilai kembalian dari `function` itu sendiri yang bertipe `integer`, `pLuasPersegi`, dan `pVolumeKubus` yang merupakan parameter bertipe pointer.
- - `pLuasPersegi` dan `pVolumeKubus` nilainya dapat bukan karena nilai kembalian dari function, tapi karena parameter by reference dari function yang berupa pointer, sehingga ketika nilai `pLuasPersegi` dan `pVolumeKubus` diubah di dalam function nilai variabel asli di main function juga berubah.
+- Inputan untuk variabel number harus lebih besar dari 0, jika tidak program akan menghasilkan pesan error.
+- Dapat dilihat bahwa function `Hitung()` mengembalikan 3 nilai yaitu : nilai kembalian dari `function` itu sendiri yang bertipe `integer`, `pLuasPersegi`, dan `pVolumeKubus` yang merupakan parameter bertipe pointer.
+- `pLuasPersegi` dan `pVolumeKubus` nilainya dapat bukan karena nilai kembalian dari function, tapi karena parameter by reference dari function yang berupa pointer, sehingga ketika nilai `pLuasPersegi` dan `pVolumeKubus` diubah di dalam function nilai variabel asli di main function juga berubah.
 
 Contoh 13. Mengembalikan beberapa nilai dengan reference variabel
 
-1. Buat project Qt Console Application dengan nama Contoh 13, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 13, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -749,18 +750,18 @@ Contoh 13. Mengembalikan beberapa nilai dengan reference variabel
 		return status;
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-Masukan number : 5
-Number : 5
-pLuasPersegi : 25
-pVolumeKubus : 125
+	Masukan number : 5
+	Number : 5
+	pLuasPersegi : 25
+	pVolumeKubus : 125
 
- **Analisa:**
+**Analisa:**
  
- - Hasil program diatas sama dengan Contoh 12 sebelumnya, namun perbedaannya adalah program diatas menggunakan parameter reference pada function `Hitung()` sehingga ketika variabel `rLuasPersegi` dan `rVolumeKubus` pada function diubah nilainya maka variabel di function main juga ikut berubah.
- - Keyword enum digunakan untuk membuat objek enumerasi untuk mempermudah pembacaan program.
+- Hasil program diatas sama dengan Contoh 12 sebelumnya, namun perbedaannya adalah program diatas menggunakan parameter reference pada function `Hitung()` sehingga ketika variabel `rLuasPersegi` dan `rVolumeKubus` pada function diubah nilainya maka variabel di function main juga ikut berubah.
+- Keyword enum digunakan untuk membuat objek enumerasi untuk mempermudah pembacaan program.
 
 ## Passing By Reference untuk Efisiensi
 
@@ -769,7 +770,7 @@ Setiap kali anda melakukan passing objek by value, copy dari objek tersebut akan
 Contoh 14. Passing Object By Value
 
 
-1. Buat project Qt Console Application dengan nama Contoh 14, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 14, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -809,26 +810,26 @@ Contoh 14. Passing Object By Value
 		return objMhs;
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
 
-Membuat object mahasiswa 
-Memanggil Mahasiswa Konstruktor 
-Memanggil Copy Konstruktor 
-Mengembalikan FunctionMhs ..
-Memanggil Copy Konstruktor 
-Memanggil Mahasiswa Destruktor 
-Memanggil Mahasiswa Destruktor 
+	Membuat object mahasiswa 
+	Memanggil Mahasiswa Konstruktor 
+	Memanggil Copy Konstruktor 
+	Mengembalikan FunctionMhs ..
+	Memanggil Copy Konstruktor 
+	Memanggil Mahasiswa Destruktor 
+	Memanggil Mahasiswa Destruktor 
 
- **Analisa:**
+**Analisa:**
  
- - Dapat kita lihat diatas bahwa _passing object by value_ tidak efisien karena setiap kali function dipanggil dan mengembalikan nilai harus melakukan copy terhadap objek objMhs1.
- - Hal ini dapat dilihat dari output yang dihasilkan, copy konstruktor dipanggil sebanyak 2 kali, saat pemanggilan function dan pengembalian nilai function.
- - Cara yang lebih efisien akan dibahas pada contoh program selanjutnya.
+- Dapat kita lihat diatas bahwa _passing object by value_ tidak efisien karena setiap kali function dipanggil dan mengembalikan nilai harus melakukan copy terhadap objek objMhs1.
+- Hal ini dapat dilihat dari output yang dihasilkan, copy konstruktor dipanggil sebanyak 2 kali, saat pemanggilan function dan pengembalian nilai function.
+- Cara yang lebih efisien akan dibahas pada contoh program selanjutnya.
 
 Contoh 15. Passing Object By Reference
 
-1. Buat project Qt Console Application dengan nama Contoh 15, kemudian tulis kode berikut:
+Buat project Qt Console Application dengan nama Contoh 15, kemudian tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -868,14 +869,13 @@ Contoh 15. Passing Object By Reference
 	return objMhs;
 	}
 
-2. Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
-{lang="off", linenos}
-Membuat object mahasiswa 
-Memanggil Mahasiswa Konstruktor 
-Mengembalikan FunctionMhs ..
+	Membuat object mahasiswa 
+	Memanggil Mahasiswa Konstruktor 
+	Mengembalikan FunctionMhs ..
 
- **Analisa:**
+**Analisa:**
  
- - Dengan menambahkan reference pada function dan parameter yang dikirimkan, performa aplikasi anda dapat lebih efektif karena objek tidak perlu dicopy ketika function dijalankan dan saat function tersebut mengembalikan nilai.
- - Output yang dihasilkan lebih sedikit karena tidak perlu memanggil copy objek konstruktor.
+- Dengan menambahkan reference pada function dan parameter yang dikirimkan, performa aplikasi anda dapat lebih efektif karena objek tidak perlu dicopy ketika function dijalankan dan saat function tersebut mengembalikan nilai.
+- Output yang dihasilkan lebih sedikit karena tidak perlu memanggil copy objek konstruktor.

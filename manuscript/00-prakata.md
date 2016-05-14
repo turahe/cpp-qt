@@ -19,7 +19,7 @@ programmer dapat melakukan manipulasi memori secara langsung.
 Dewasa ini beberapa bahasa yang memiliki syntax penulisan yang
 menyerupai C/C++ adalah Java, Javascript dan PHP, yang artinya bahwa
 kemampuan pemrograman dengan C/C++ akan mempermudah anda untuk
-mempelajari bahasa modern seperti Java maupun C\# (dibaca C sharp).
+mempelajari bahasa modern seperti Java maupun C# (dibaca C sharp).
 
 Akhirnya penulis mengucapkan selamat belajar dan semoga buku ini
 dapat memberi manfaat yang sebesarnya dalam pembelajaran mata kuliah

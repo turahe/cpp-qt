@@ -88,28 +88,17 @@ Buatlah project baru dan tulis kode berikut:
 **Hasil:**
 
 A>	Memasukan nilai
-A>
 A>	Nilai Angka ke - 1 : 1
-A>
 A>	Nilai Angka ke - 2 : 2
-A>
 A>	Nilai Angka ke - 3 : 3
-A>
 A>	Nilai Angka ke - 4 : 4
-A>
 A>	Nilai Angka ke - 5 : 5
 A>
-A>
 A>	Membaca nilai:
-A>
 A>	Nilai Angka : 1
-A>
 A>	Nilai Angka : 2
-A>
 A>	Nilai Angka : 3
-A>
 A>	Nilai Angka : 4
-A>
 A>	Nilai Angka : 5
 
 
@@ -146,19 +135,12 @@ Buatlah project baru dan tulis kode berikut:
 
 
 A>	elemen ke-1 ? 1
-A>
 A>	bil[0] = 1 dan alamatnya: 0x28fe68
-A>
 A>	bil[1] = 5 dan alamatnya: 0x28fe6c
-A>
 A>	bil[2] = 25 dan alamatnya: 0x28fe70
-A>
 A>	bil[3] = 50 dan alamatnya: 0x28fe74
-A>
 A>	bil[4] = 40 dan alamatnya: 0x28fe78
-A>
 A>	bil[5] = 50 dan alamatnya: 0x28fe7c
-A>
 A>	bil[6] = 60 dan alamatnya: 0x28fe80
 
 
@@ -244,17 +226,11 @@ Buatlah program berikut:
 
 
 A>	Elemen ke-0: 0
-A>
 A>	Elemen ke-1: 1
-A>
 A>	Elemen ke-2: 2
-A>
 A>	Elemen ke-3: 3
-A>
 A>	Elemen ke-4: 4
-A>
 A>	Elemen ke-5: 5
-A>
 A>	Elemen ke-6: 6
 
 **Keterangan**
@@ -283,17 +259,11 @@ Buatlah program berikut ini:
 **Hasil:**
 
 A>	Elemen ke-0: 2
-A>
 A>	Elemen ke-1: 5
-A>
 A>	Elemen ke-2: 0
-A>
 A>	Elemen ke-3: 0
-A>
 A>	Elemen ke-4: 0
-A>
 A>	Elemen ke-5: 0
-A>
 A>	Elemen ke-6: 0
 
 **Keterangan**
@@ -344,13 +314,9 @@ Tulislah program berikut ini:
 **Hasil:**
 
 A>	Elemen ke-0: 2
-A>
 A>	Elemen ke-1: 5
-A>
 A>	Elemen ke-2: 0
-A>
 A>	Elemen ke-3: 0
-A>
 A>	Elemen ke-4: v
 
 **Keterangan**
@@ -452,15 +418,10 @@ Buatlah program berikut ini:
 
 
 A>	1
-A>
 A>	2
-A>
 A>	3
-A>
 A>	4
-A>
 A>	5
-A>
 A>	6
 
 **Keterangan:**
@@ -646,9 +607,7 @@ Buatlah program berikut:
 **Hasil:**
 
 A>	5	12	17	10	7
-A>
 A>	15	6	25	2	19
-A>
 A>	4	9	1	5	2
 
 **Keterangan:**
@@ -690,9 +649,7 @@ Buatlah program berikut:
 
 
 A>	1	2	3	4	5
-A>
 A>	6	7	8	9	10
-A>
 A>	11	12	13	14	15
 
 **Keterangan:** 
@@ -727,22 +684,22 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-
-	1
-	2
-	3
-	4
-	5
-	6
-	7
-	8
-	9
-	10
-	11
-	12
-	13
-	14
-	15
+A> {linenos=off}
+A>	1
+A>	2
+A>	3
+A>	4
+A>	5
+A>	6
+A>	7
+A>	8
+A>	9
+A>	10
+A>	11
+A>	12
+A>	13
+A>	14
+A>	15
 
 **Keterangan:**
  
@@ -778,7 +735,6 @@ Berikut adalah contohnya:
 
 
 A>	1	2	3
-A>
 A>	4	5	6
 
 #### 2. Pengaksesan Kolom demi Kolom
@@ -807,9 +763,7 @@ Cara ini menelusuri elemen array dua dimensi per dimulai dari kolom pertama lalu
 **Hasil:**
 
 A>	1	4
-A>
 A>	2	5
-A>
 A>	3	6
 
 ## String
@@ -914,7 +868,6 @@ Buatlah program berikut:
 
 
 A>	Isi data string: Baehaki
-A>
 A>	hasil data string: Baehaki
 
 **Keterangan:**
@@ -997,7 +950,6 @@ Buatlah program berikut ini:
 
 
 A>	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
-A>
 A>	panjang huruf adalah: 10 karakter
 
 **Keterangan:**
@@ -1027,7 +979,6 @@ Buatlah program berikut ini:
 
 
 A>	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
-A>
 A>	panjang huruf adalah: 10 karakter
 
 **Keterangan**
@@ -1069,7 +1020,6 @@ Buatlah program berikut ini:
 
 
 A>	String pertama : STRING
-A>
 A>	String Kedua : STRING
 
 **Keterangan:**
@@ -1107,7 +1057,6 @@ Buatlah program beriku:
 
 
 A>	String pertama : STRING
-A>
 A>	String Kedua : STRINGKU
 
 **Keterangan:**
@@ -1170,7 +1119,7 @@ Buatlah program berikut:
 **Hasil:**
 
 
-	Jadi gabungannya adalah: Kami kelompok  belajar Qt C++
+A>	Jadi gabungannya adalah: Kami kelompok  belajar Qt C++
 
 **Keterangan:**
  
@@ -1271,11 +1220,8 @@ Buatlah program berikut:
 
 
 A>	Isi str1 : Ini string C++
-A>
 A>	Isi str1 : Ini string C++
-A>
 A>	Isi str1 : Ini string C++
-A>
 A>	Halo, Ini string C++
 
  **Keterangan:**
@@ -1325,9 +1271,7 @@ Buatlah program berikut:
 **Hasil:**
 
 A>	Halooooooo
-A>
 A>	saya belajar
-A>
 A>	C
 
 **Keterangan:**
@@ -1361,7 +1305,6 @@ Buatlah program berikut:
 
 
 A>	Percobaan 1		Percobaan 2
-A>
 A>	Percobaan 1		Percobaan 2 	Percobaan 3 	Percebaan tampung
 
 **Keterangan:**
@@ -1392,22 +1335,22 @@ Buatlah program berikut:
 
 **Hasil:**
 
-
-	I
-	n
-	d
-	o
-	n
-	e
-	s
-	i
-	a
-	 
-	R
-	a
-	y
-	a
-	C-style: Indonesia Raya
+A> {linenos=off}
+A>	I
+A>	n
+A>	d
+A>	o
+A>	n
+A>	e
+A>	s
+A>	i
+A>	a
+A>	 
+A>	R
+A>	a
+A>	y
+A>	a
+A>	C-style: Indonesia Raya
 
  **Keterangan:**
 
@@ -1463,27 +1406,27 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
-
-	Contoh string adalah: 
-	Kata pak Hari, "hari ini matahari cerah sekali!"
-
-	Ketemu pertama kata "hari" pada offset 16
-
-	Mencari semua kata substring "hari"
-	Kata "hari" ada di offset 16
-	Kata "hari" ada di offset 29
-
-	Mencari semua karakter 'a'
-	'a' ditemukan pada posisi 1
-	'a' ditemukan pada posisi 3
-	'a' ditemukan pada posisi 6
-	'a' ditemukan pada posisi 10
-	'a' ditemukan pada posisi 17
-	'a' ditemukan pada posisi 26
-	'a' ditemukan pada posisi 28
-	'a' ditemukan pada posisi 30
-	'a' ditemukan pada posisi 37
-	'a' ditemukan pada posisi 43
+A> {linenos=off}
+A>	Contoh string adalah: 
+A>	Kata pak Hari, "hari ini matahari cerah sekali!"
+A>
+A>	Ketemu pertama kata "hari" pada offset 16
+A>
+A>	Mencari semua kata substring "hari"
+A>	Kata "hari" ada di offset 16
+A>	Kata "hari" ada di offset 29
+A>
+A>	Mencari semua karakter 'a'
+A>	'a' ditemukan pada posisi 1
+A>	'a' ditemukan pada posisi 3
+A>	'a' ditemukan pada posisi 6
+A>	'a' ditemukan pada posisi 10
+A>	'a' ditemukan pada posisi 17
+A>	'a' ditemukan pada posisi 26
+A>	'a' ditemukan pada posisi 28
+A>	'a' ditemukan pada posisi 30
+A>	'a' ditemukan pada posisi 37
+A>	'a' ditemukan pada posisi 43
 
 **Keterangan:**
  
@@ -1518,11 +1461,11 @@ Tulislah program berikut ini:
 **Hasil:**
 
 
-	String asli: 
-	String ini akan dibalik!
-
-	Setelah dibalik:
-	!kilabid naka ini gnirtS
+A>	String asli: 
+A>	String ini akan dibalik!
+A>
+A>	Setelah dibalik:
+A>	!kilabid naka ini gnirtS
 
 **Keterangan:**
  
@@ -1557,13 +1500,13 @@ Tulislah program berikut ini:
 **Hasil:**
 
 
-	Masukkan sebuah string:
-	Ini KoK tulisaNya AlaY BaNGet yA!
-	Hasil konversi ke huruf besar:
-	INI KOK TULISANYA ALAY BANGET YA!
-
-	Hasil konversi ke huruf kecil:
-	ini kok tulisanya alay banget ya!
+A>	Masukkan sebuah string:
+A>	Ini KoK tulisaNya AlaY BaNGet yA!
+A>	Hasil konversi ke huruf besar:
+A>	INI KOK TULISANYA ALAY BANGET YA!
+A>
+A>	Hasil konversi ke huruf kecil:
+A>	ini kok tulisanya alay banget ya!
 
  **Keterangan:**
  

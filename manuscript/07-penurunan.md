@@ -22,7 +22,7 @@ Mengenai jenis akses public ini akan dibahas nanti, sekarang kita akan memakai p
 
 Contoh 1. Pewarisan (Inheritance).
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
 
 	#include <QtCore/QCoreApplication>
@@ -68,9 +68,9 @@ Contoh 1. Pewarisan (Inheritance).
 	return a.exec();
 	}
 
-2. Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> Volume drum = 981250 Cm2
+A>	Volume drum = 981250 Cm2
 
  **Keterangan Program :**
  
@@ -100,9 +100,8 @@ Buka project Contoh 1 di atas, kemudian tambahkan (edit) kode berikut pada fungs
 
 Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A> Volume drum = 981250 Cm2
-A>
-A> Milik Base Class --> 7850
+A>	Volume drum = 981250 Cm2
+A>	Milik Base Class --> 7850
 
 
  **Keterangan Program :**
@@ -239,6 +238,7 @@ A> Konstruktor Kelas Dasar dijalankan...
 
 	Turunan():Kelasku(){} //<-- Konstruktor default kelas Turunan
 
+
 Karakteristik konstruktor kelas turunan ini penting untuk dipahami, karena kadang-kadang kita lupa bahwa pada pembuatan kelas turunan pasti di dalamnya ada pemanggilan konstruktor kelas dasarnya.
 
 Contoh .5 Konstruktor default kelas turunan memanggil konstruktor kelas dasar.
@@ -298,39 +298,42 @@ Contoh 6. Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian tambahkan konstruktor pada kelas Turunan seperti berikut.
 
 	
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kelasku{
-	public:
-	Kelasku(string kata){
-	cout << "Konstruktor Kelas Dasar" << endl;
-	cout << "Mengucapkan : " << kata << endl;
-	}
-	public:
-	void hai(){
-	cout << "Hai, apa khabar...?" << endl;
-	}
-	};
-	class Turunan : public Kelasku{
-	Turunan(){} //<-- membuat konstruktor pada kelas turunan
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Turunan test; //<-- membuat objek dari kelas Turunan saja
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kelasku{
+		public:
+		Kelasku(string kata){
+		cout << "Konstruktor Kelas Dasar" << endl;
+		cout << "Mengucapkan : " << kata << endl;
+		}
+		public:
+		void hai(){
+		cout << "Hai, apa khabar...?" << endl;
+		}
+		};
+		class Turunan : public Kelasku{
+		Turunan(){} //<-- membuat konstruktor pada kelas turunan
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Turunan test; //<-- membuat objek dari kelas Turunan saja
+		return a.exec();
+		}
+
+
 
 2. Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
 
+![](images/capture7-3.png)
 
  **Keterangan Program:**
  
- Pada program ini mencoba untuk menghindari pemanggilan kontruktor kelas dasar dengan cara membuat sendiri konstruktor pada kelas Turunan yang tidak memanggil konstuktor kelas dasar. Namun tetap saja kompiler memberikan pesan kesalahan yang sama, yaitu : 
+Pada program ini mencoba untuk menghindari pemanggilan kontruktor kelas dasar dengan cara membuat sendiri konstruktor pada kelas Turunan yang tidak memanggil konstuktor kelas dasar. Namun tetap saja kompiler memberikan pesan kesalahan yang sama, yaitu : 
  
 
- 		no maching function call to ‘Kelasku::Kelasku()’ 
+		no maching function call to ‘Kelasku::Kelasku()’ 
 
  
  Padahal jelas pada konstruktor yang ditulis pada kelas Turunan sama sekali tidak pernah memanggil konstruktor tanpa kelas dasar parameter tersebut. Percobaan ini membuktikan bahwa bagaimanapun juga pada kelas turunan, konstruktor kelas dasar pasti dipanggil, dan jika secara eksplisit tidak dituliskan pemanggilan konstruktor kelas dasar, maka kompiler akan menambahkan pemanggilan konstruktor default (konstruktor tanpa parameter) pada kelas dasar.
@@ -347,6 +350,9 @@ Contoh 6. Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas
 
 Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
 
+A>	Konstruktor Kelas Dasar
+A>	Mengucapkan : Hallo.. :-)
+
  **Keterangan Program:**
  
  - Pada program ini sekarang kelas Turunan mempunyai konstruktor yang memanggil konstruktor kelas dasar. Karena pada kelas dasar hanya mempunyai sebuah konstruktor dengan satu parameter bertipe string yang tanpa nilai default, maka yang dipanggil adalah konstruktor dengan sebuah parameter bertipe string.
@@ -354,11 +360,13 @@ Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output karena ada ke
 
 ## Mengganti Metode Kelas Dasar Pada Kelas Turunan (Overriding) 
 
-Ada kalanya kelas turunan mempunyai implementasi lain untuk nama metode yang sama dengan kelas dasarnya. Sebagai contoh misalnya, kelas Lingkaran mempunyai implementasi (rumus) menghitung luas pada metode getLuas() adalah : 3.14 * radius * radius, sedangkan kelas turunannya, mislanya Silinder mempunyai luas pada metode getLuas() yang terdiri dari dua luas tutup dan luas selimut dengan rumus 2 * (3.14 * radius * radius) + (2 * 3.14 * radius) * tinggi seperti gambar ilustrasi berikut:
+Ada kalanya kelas turunan mempunyai implementasi lain untuk nama metode yang sama dengan kelas dasarnya. Sebagai contoh misalnya, kelas Lingkaran mempunyai implementasi (rumus) menghitung luas pada metode `getLuas()` adalah : `3.14 * radius * radius`, sedangkan kelas turunannya, mislanya Silinder mempunyai luas pada metode `getLuas()` yang terdiri dari dua luas tutup dan luas selimut dengan rumus `2 * (3.14 * radius * radius) + (2 * 3.14 * radius) * tinggi` seperti gambar ilustrasi berikut:
 
-Dengan demikian kelas turunan Silinder harus membuat implementasi yang berbeda untuk metode getLuas() supaya hasil dari metode tersebut sesuai dengan objek Silinder. Membuat metode yang sama dengan metode milik kelas dasarnya dinamakan Overriding (override artinya mengesampingkan, atau boleh juga dikatakan menimpa) dengan demikian metode yang dipanggil untuk objek dari kelas Silinder adalah metode yang baru yang ditulis pada kelas Silinder.
+![](images/capture7-4.png)
 
-Suatu metode bisa dikatakan override dari metode kelas dasarnya jika memenuhi 2 syarat, yaitu nama metode dan signature dari metode tersebut sama. Signature artinya daftar parameter yang ada pada metode, yaitu banyaknya parameter maupun tipe data dari masing-masing parameter tersebut.
+Dengan demikian kelas turunan Silinder harus membuat implementasi yang berbeda untuk metode `getLuas()` supaya hasil dari metode tersebut sesuai dengan objek Silinder. Membuat metode yang sama dengan metode milik kelas dasarnya dinamakan Overriding (override artinya mengesampingkan, atau boleh juga dikatakan menimpa) dengan demikian metode yang dipanggil untuk objek dari kelas Silinder adalah metode yang baru yang ditulis pada kelas Silinder.
+
+Suatu metode bisa dikatakan override dari metode kelas dasarnya jika memenuhi 2 syarat, yaitu *nama metode* dan *signature* dari metode tersebut sama. Signature artinya daftar parameter yang ada pada metode, yaitu banyaknya parameter maupun tipe data dari masing-masing parameter tersebut.
 
 Contoh 7. Melakukan Overriding.
 
@@ -385,85 +393,86 @@ Buka project Qt Console Application projek Contoh .1 yang tadi sudah dibuat, kem
 	};
 	class Silinder : public Lingkaran{
 	public:
-	radius
-	tinggi
-	radius
-	keliling
-	keliling
-	tinggi
-	Luas selimut = keliling lingkaran * tinggi
-	Lingkaran Silinder Selimut Silinder
-		//Konstruktor
-	Silinder(float radius, float tinggi){
-	Silinder::radius = radius; //<-- warisan
-	Silinder::tinggi = tinggi; //<-- anggota baru
-	}
-	//Destruktor
-	~Silinder(){}
-	private:
-	float tinggi; //<-- anggota baru
-	public:
-	float getLuas(){ //<-- Overriding
-	float luasTutup = 3.14 * this->radius * this->radius;
-	float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;
-	float luasSilinder = 2 * luasTutup + luasSelimut;
-	return luasSilinder;
-	}
-	float getVolume(){ //<-- anggota baru
-	//getLuas() sebenarnya sudah ditimpa
-	return getLuas() * tinggi;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Silinder drum(50,125);
-	cout << "Luas Silinder = " << drum.getLuas() << " Cm2" << endl;
-	cout << "Milik Base Class --> " << drum.getLuas() << endl;
-	cout << "Volume drum = " << drum.getVolume() << " Cm3" << endl;
-	return a.exec();
-	}
+	    //Konstruktor
+	    Silinder(float radius, float tinggi){
+	    Silinder::radius = radius; //<-- warisan
+	    Silinder::tinggi = tinggi; //<-- anggota baru
+	    }
+	    //Destruktor
+	    ~Silinder(){}
+	    private:
+	    float tinggi; //<-- anggota baru
+	    public:
+	    float getLuas(){ //<-- Overriding
+	    float luasTutup = 3.14 * this->radius * this->radius;
+	    float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;
+	    float luasSilinder = 2 * luasTutup + luasSelimut;
+	    return luasSilinder;
+	    }
+	    float getVolume(){ //<-- anggota baru
+	    //getLuas() sebenarnya sudah ditimpa
+	    return getLuas() * tinggi;
+	    }
+	    };
+	    int main(int argc, char *argv[])
+	    {
+	    QCoreApplication a(argc, argv);
+	    Silinder drum(50,125);
+	    cout << "Luas Silinder = " << drum.getLuas() << " Cm2" << endl;
+	    cout << "Milik Base Class --> " << drum.getLuas() << endl;
+	    cout << "Volume drum = " << drum.getVolume() << " Cm3" << endl;
+	    return a.exec();
+	    }
+
 
 2. Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai berikut.
 
-Bandingkan dengan hasil keluaan pada program di contoh 1. seperti berikut :
+A>	Luas Silinder = 54950 Cm2
+A>	Milik Base Class --> 54950
+A>	Volume drum = 6.86875e+006 Cm3
+
+Bandingkan dengan hasil keluaan pada program di contoh 2 seperti berikut :
+
+A>	Volume drum = 981250 Cm2
+A>	Milik Base Class --> 7850
 
  **Keterangan:**
  
- - Pada program ini, pembuatan objek dilakukan dengan memberikan nilai radius=50 dan tinggi = 125, ini tampak pada program utama (main()) : Silinder drum(50,125), sama dengan ketika membuat objek pada contoh 1. Namun tampak pada hasil eksekusi, Luas Silinder adalah 54950 Cm2 karena menggunakan rumus baru, tetapi pada keluaran Milik Base Class nilainya juga sama yaitu 54950, dan akibatnya volume drum yang seharusnya 981250 Cm3 manjadi 6.86875e+006 Cm3. Ini semua terjadi karena pada kelas Silinder tidak lagi memakai rumus getLuas() milik kelas dasarnya. Pada satu sisi getLuas() pada kelas Silinder sudah benar, sesuai dengan yang diharapkan, namun ketika metode getVolume() menghitung volume memakai metode getLuas(), ternyata sudah berubah menjadi rumus luas Silinder yang akibatnya perhitungan volume menjadi sangat besar (salah).
+ - Pada program ini, pembuatan objek dilakukan dengan memberikan nilai radius=50 dan tinggi = 125, ini tampak pada program utama (main()) : `Silinder drum(50,125)`, sama dengan ketika membuat objek pada contoh 1. Namun tampak pada hasil eksekusi, Luas Silinder adalah `54950 Cm2` karena menggunakan rumus baru, tetapi pada keluaran Milik Base Class nilainya juga sama yaitu `54950`, dan akibatnya volume drum yang seharusnya `981250 Cm3` manjadi `6.86875e+006 Cm3`. Ini semua terjadi karena pada kelas Silinder tidak lagi memakai rumus `getLuas()` milik kelas dasarnya. Pada satu sisi `getLuas()` pada kelas Silinder sudah benar, sesuai dengan yang diharapkan, namun ketika metode `getVolume()` menghitung volume memakai metode `getLuas()`, ternyata sudah berubah menjadi rumus luas Silinder yang akibatnya perhitungan volume menjadi sangat besar (salah).
  - Walaupun pada kasus ini menimbulkan masalah, tetapi percobaan ini memperlihatkan adanya overriding terhadap metode milik kelas dasar.
 
 ## Memanggil Metode Kelas Dasar
 
-Pada kasus contoh 7 di atas sebenarnya metode getLuas() masih dibutuhkan pada kelas Silinder untuk menghitung volume (getVolume()), bahkan sebenarnya untuk menghitung luas tutup, yang sebenarnya juga luas lingkaran, masih membutuhkan metode getLuas() milik kelas dasar Lingkaran. Namun karena adanya kebutuhan yang berbeda pada kelas Silinder untuk menghitung luasnya maka dilakukan overriding terhadap metode getLuas(). Untuk mengatasi hal ini diperlukan suatu cara untuk tetap dapat mengakses anggota milik kelas dasar, yaitu dengan cara menyebutkan nama kelas dasar kemudian diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
+Pada kasus contoh 7 di atas sebenarnya metode `getLuas()` masih dibutuhkan pada kelas Silinder untuk menghitung volume (`getVolume()`), bahkan sebenarnya untuk menghitung luas tutup, yang sebenarnya juga luas lingkaran, masih membutuhkan metode `getLuas()` milik kelas dasar Lingkaran. Namun karena adanya kebutuhan yang berbeda pada kelas Silinder untuk menghitung luasnya maka dilakukan overriding terhadap metode `getLuas()`. Untuk mengatasi hal ini diperlukan suatu cara untuk tetap dapat mengakses anggota milik kelas dasar, yaitu dengan cara menyebutkan nama kelas dasar kemudian diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
 
 	<kelas_dasar>::<anggot
 
 Contoh 8. Mengakses metode kelas dasar.
 
-1. Buka project Qt Console Application projek Contoh 1 yang baru saja dibuat, kemudian ubah kode pada metode : getLuas(), getVolume() dan program utama. Berikut ini adalah potongan program yang mengalami perubahan saja:
+1. Buka project Qt Console Application projek Contoh 1 yang baru saja dibuat, kemudian ubah kode pada metode : `getLuas()`, `getVolume()` dan program utama. Berikut ini adalah potongan program yang mengalami perubahan saja:
 
 
-	public:
-	float getLuas(){ //<-- Overriding
-	float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;
-	float luasSilinder = 2 * Lingkaran::getLuas() + luasSelimut;
-	return luasSilinder;
-	}
-	float getVolume(){ //<-- anggota baru
-	//getLuas() milik kelas dasar
-	return Lingkaran::getLuas() * tinggi;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Silinder drum(50,125);
-	cout << "Luas Silinder = " << drum.getLuas() << " Cm2" << endl;
-	cout << "Milik Base Class --> " << drum.Lingkaran::getLuas() << endl;
-	cout << "Volume drum = " << drum.getVolume() << " Cm3" << endl;
-	return a.exec();
-	}
+		public:
+		float getLuas(){ //<-- Overriding
+		float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;
+		float luasSilinder = 2 * Lingkaran::getLuas() + luasSelimut;
+		return luasSilinder;
+		}
+		float getVolume(){ //<-- anggota baru
+		//getLuas() milik kelas dasar
+		return Lingkaran::getLuas() * tinggi;
+		}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Silinder drum(50,125);
+		cout << "Luas Silinder = " << drum.getLuas() << " Cm2" << endl;
+		cout << "Milik Base Class --> " << drum.Lingkaran::getLuas() << endl;
+		cout << "Volume drum = " << drum.getVolume() << " Cm3" << endl;
+		return a.exec();
+		}
+
 
 2. Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai berikut.
 
@@ -488,51 +497,54 @@ Contoh 9 Penyembunyian metode kelas dasar.
 1. Jalankan Qt Console Application projek, buat projek bernama Contoh 9 seperti berikut:
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Dasar{
-	public:
-	void hallo() const{
-	cout << "Hallo" << endl;
-	}
-	void hallo(string kata) const{
-	cout << "Hallo " << kata << endl;
-	}
-	void hallo (string kata, string nama) const{
-	cout << "Hallo " << kata << " nama saya " << nama << endl;
-	}
-	};
-		class Turunan : public Dasar{
-	public:
-	void hallo() const{ //<-- override terhadap salah satu metode
-	cout << "Ni hao ma" << endl;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Turunan agus;
-	agus.hallo();
-	//agus.hallo("apa kahabar");
-	//agus.hallo("apa kahabar","Agus");
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Dasar{
+		public:
+		void hallo() const{
+		cout << "Hallo" << endl;
+		}
+		void hallo(string kata) const{
+		cout << "Hallo " << kata << endl;
+		}
+		void hallo (string kata, string nama) const{
+		cout << "Hallo " << kata << " nama saya " << nama << endl;
+		}
+		};
+			class Turunan : public Dasar{
+		public:
+		void hallo() const{ //<-- override terhadap salah satu metode
+		cout << "Ni hao ma" << endl;
+		}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Turunan agus;
+		agus.hallo();
+		//agus.hallo("apa kahabar");
+		//agus.hallo("apa kahabar","Agus");
+		return a.exec();
+		}
+
 
 2. Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai berikut.
 
 3. Hilangkan tanda comment pada pemanggilan metode hallo pada dua baris di progam utama menjadi seperti berikut:
 
 
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Turunan agus;
-	agus.hallo();
-	agus.hallo("apa kahabar");
-	agus.hallo("apa kahabar","Agus");
-	return a.exec();
-	}
+
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Turunan agus;
+		agus.hallo();
+		agus.hallo("apa kahabar");
+		agus.hallo("apa kahabar","Agus");
+		return a.exec();
+		}
+
 
 4. Tekan Ctrl+R untuk menjalankan program diatas, maka tidak akan ada output dan menucul pesan kesalahan saat kompilasi sepeti berikut.
 
@@ -549,44 +561,45 @@ Contoh 10. Metode virtual dan non virtual.
 1. Jalankan Qt Console Application projek, buat projek bernama Contoh 10 seperti berikut:
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Lingkaran{
-	public:
-	virtual float getLuas(){
-	cout << "Luas Lingkaran" << endl;
-	return 0;
-	}
-	};
-	class Silinder : public Lingkaran{
-	public:
-	float getLuas(){
-	cout << "Luas Silinder" << endl;
-	return 0;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Lingkaran *objek1; //<-- variabel pointer bertipe kelas dasar
-	objek1 = new Silinder(); //<-- objek bertipe kelas turunan
-	objek1->getLuas(); //<-- memanggil metode yang dioverride
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Lingkaran{
+		public:
+		virtual float getLuas(){
+		cout << "Luas Lingkaran" << endl;
+		return 0;
+		}
+		};
+		class Silinder : public Lingkaran{
+		public:
+		float getLuas(){
+		cout << "Luas Silinder" << endl;
+		return 0;
+		}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Lingkaran *objek1; //<-- variabel pointer bertipe kelas dasar
+		objek1 = new Silinder(); //<-- objek bertipe kelas turunan
+		objek1->getLuas(); //<-- memanggil metode yang dioverride
+		return a.exec();
+		}
 
 2. Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
 
 3. Sekarang hapuslah kata kunci virtual metode getLuas() pada kelas Lingkaran seperti berikut.
 
 
-	class Lingkaran{
-	public:
-	float getLuas(){
-	cout << "Luas Lingkaran" << endl;
-	return 0;
-	}
-	};
+		class Lingkaran{
+		public:
+		float getLuas(){
+		cout << "Luas Lingkaran" << endl;
+		return 0;
+		}
+		};
+
 
 4. Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
 
@@ -668,6 +681,7 @@ Jalankan Qt Console Application projek, buka projek bernama contoh 10 di atas, u
 	static_cast<Silinder*>(objek1)->getVolume(); //<-- casting mjd Silinder
 	return a.exec();
 	}
+
 
 Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
 

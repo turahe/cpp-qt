@@ -28,7 +28,6 @@ encmap = {
 <% end %>
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{libertine}
 
 \usepackage[english, bahasa]{babel}
 \usepackage{xcolor}
@@ -48,21 +47,6 @@ encmap = {
   keywordstyle=\color{bluekeywords},
   stringstyle=\color{redstrings},
   basicstyle=\ttfamily
-}
-
-\usepackage[pdfpagelabels]{hyperref}
-\hypersetup{
-  pdftitle=Koding C++: Belajar pemrograman C++ dengan Qt Creator,
-  pdfauthor=turahe,
-  pdfsubject=,
-  pdfkeywords=laravel,
-  bookmarksnumbered=true,     
-  bookmarksopen=true,         
-  bookmarksopenlevel=1,       
-  colorlinks=true,            
-  pdfstartview=Fit,           
-  pdfpagemode=UseOutlines,    % this is the option you were lookin for
-  pdfpagelayout=TwoPageRight
 }
 
 <% @converter.data[:packages].each {|pkg| %>\usepackage{<%= pkg %>}

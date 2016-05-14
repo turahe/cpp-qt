@@ -51,7 +51,7 @@ Class pada C++ bisa dianggap sebagai tipe data baru. Selain tipe data yang sudah
 
 Struktur sederhana sebuah class pada C++:
 
-{linenos=off}
+
 	class <namaclass>{
 	//bagian member variabel / property class
 	<tipedat <namavariabel>;
@@ -63,7 +63,7 @@ Struktur sederhana sebuah class pada C++:
 
 Contoh class:
 
-{linenos=off}
+
 	class Kucing{
 	//bagian member variabel yang bersifat private
 	private:
@@ -87,7 +87,7 @@ T> - Untuk membuat nama member function, gunakanlah cara penulisan yang tepat un
 
 Setelah kita selesai membuat class baru, maka kita bisa menggunakan class tersebut adalah dengan menginisialisasinya (dengan membuat sebuah atau beberapa obyek) dari class tersebut. Membuat obyek bisa dianggap seperti membuat variabel yang bertipe class yang kita buat. Contoh:
 
-{linenos=off}
+
 	Kucing kucingku;
 	Orang anton;
 	Mobil kijang;
@@ -98,17 +98,17 @@ Class dan obyek adalah berbeda. Class merupakan template dari member variabel da
 
 Setelah kita membuat obyek seperti:
 
-{linenos=off}
+
 	Kucing katty;
 
 Cara mengakses member variabel adalah dengan menggunakan tanda titik (.). Contoh jika kita hendak mengisi data berat badan katty dengan nilai 8 kg, maka yang harus dilakukan adalah:
 
-{linenos=off}
+
 	Katty.berat = 8;
 
 Demikian juga dengan nama, umur, dan jenis kelamin.
 
-{linenos=off}
+
 	Katty.nama = “Katty”;
 	Katty.jenis_kelamin = “jantan”;
 	Katty.umur = 2;
@@ -117,7 +117,7 @@ Demikian juga dengan nama, umur, dan jenis kelamin.
 
 Sedangkan cara untuk mengakses member function dari suatu class adalah dengan juga menggunakan tanda titik pada obyeknya. Contoh:
 
-{linenos=off}
+
 	katty.Bersuara();
 	katty.tampilkanUmur();
 
@@ -181,7 +181,7 @@ T> Keyword this pada class Sepeda merupakan kata kunci untuk mengakses class yan
 
 Contoh :
 
-{linenos=off}
+
 	void Sepeda::ubahKecepatan(int kec){
 	Sepeda::kecepatan = kec;
 	}
@@ -413,7 +413,7 @@ Contoh  4. Perbedaan private dan public pada member variabel
 
 Seperti yang sudah dijelaskan, member method merupakan bagian yang harus dideklarasikan sebagai bagian public. Salah satu kegunaan member function adalah mengakses semua member variabel dan tetap mendukung enkapsulasi. Cara untuk membuat member method adalah dengan mendeklarasikannya pada bagian public, sedangkan implementasi kodingnya berada diluar kelas. Berikut adalah contohya.
 
-{linenos=off}
+
 	class Sepeda{
 	private:
 	int kecepatan;
@@ -506,12 +506,12 @@ Member method yang berkaitan dengan member variabel ada 2 jenis, yaitu member me
 
 method ini berfungsi untuk mengambil nilai dari sebuah member variabel. Asesor method biasanya dinamai :
 
-{linenos=off}
+
 	<tipedataMemberVariabel> get<NamaMemberVariabel>();
 
 Contoh:
 
-{linenos=off}
+
 	int getUmur();
 
 ### Mutator method
@@ -520,12 +520,12 @@ method ini berfungsi untuk mengisi / mengeset nilai kepada sebuah member variabe
 
 Mutator method biasanya dinamai :
 
-{linenos=off}
+
 	void set<NamaMemberVariabel>(<tipedataMemberVariabel> <namavariabel>);
 
 Contoh:
 
-{linenos=off}
+
 	void setUmur(int u);
 
 Contoh  6. Penggunaan accessor dan mutator method
@@ -601,7 +601,7 @@ Contoh  6. Penggunaan accessor dan mutator method
 
 Kita dapat mendeklarasikan variabel biasa dan kemudian melakukan inisialisasi terhadap variabel tersebut dengan mudah. Contoh:
 
-{linenos=off}
+
 	int umur = 5;
 
 Inisialisasi variabel berfungsi untuk mengisi suatu nilai awal terhadap suatu variabel yang kita deklarasikan. Variabel tersebut masih bisa kita ubah-ubah lagi nilainya dikemudian waktu. Nah bagaimana untuk menginisialisasi variabel member pada suatu class? Caranya dengan membuat method yang berjenis constructor method. Sedangkan untuk mendealokasi dan melakukan finalisasi sebuah class kita gunakan destructor method. Constructor berfungsi untuk menginisialisasi obyek dari class dan mempersiapkan ruang memory, sedangkan destructor menghapus dan membersihkan obyek ketika sudah tidak terpakai dan membebaskan memory yang tadinya terpakai.
@@ -612,7 +612,7 @@ Desktruktor method merupakan method kebalikan dari constructor yang juga bernama
 
 Contoh jika kita memiliki class bernama Sepeda, maka kita dapat membuat constructor dengan nama Sepeda() juga. Sedangkan destructor method sama dengan constructor namun diawali dengan tanda `~` didepannya. Contoh:
 
-{linenos=off}
+
 	class Sepeda{
 	private:
 	//member variabel
@@ -629,17 +629,17 @@ Pada bahasa C++ semua class yang telah dibuat PASTI memiliki constructor walaupu
 
 Contoh:
 
-{linenos=off}
+
 	Sepeda sepedaku;
 
 Berarti kita memanggil default konstruktor bernama Sepeda() tanpa parameter apapun. Jika kita membuat konsruktor dengan menggunakan parameter seperti misalnya:
 
-{linenos=off}
+
 	Sepeda(string merk, int berat);
 
 Maka pada saat instansiasi kita menggunakan cara sebagai berikut:
 
-{linenos=off}
+
 	Sepeda sepedaku(“Federal”,2);
 
 Arti instasiasi diatas adalah kita memanggil konstruktor yang berparameter dua buah, string dan integer.
@@ -724,7 +724,7 @@ T> Jika kita sudah membuat konstruktor yang memiliki parameter pada class kita, 
 
 Contoh, tambahkan satu baris berikut ini pada bagian akhir kode pada Contoh  7 sebelum `return a.exec()`.
 
-{linenos=off}
+
 	Kucing kucingku2;
 
 
@@ -899,13 +899,13 @@ Hasil:
  
  Terlihat bahwa kita bisa menginisialisasi isi dari variabel member yang kita miliki dengan cara menuliskannya pada bagian header method member seperti pada contoh diatas. Dan ketika class diinstasiasi maka otomatis konstruktor dipanggil dan semua nilai variabel member telah diinisialisasi seperti yang sudah dituliskan.
 
-{linenos=off}
+
 	const member method
 
 
 Kita menggunakan kata kunci const untuk membuat suatu identifier konstanta. Konstanta berarti suatu variabel yang tidak bisa diganti / diubah nilainya pada saat program berjalan (runtime). Konstanta juga dapat digunakan pada method member Dengan memberikan kata kunci const setelah nama method, maka method tersebut juga tidak akan bisa diubah nilainya pada saat class dijalankan. Kegunaan method const adalah pada asesor method. Mengapa? Karena pada asesor method kita menggunakan method tersebut untuk mengambil nilai dari member variabel, bukan untuk mengubah nilainya. Sedangkan pada mutator method, method tersebut tidak boleh dibuat const method karena method tersebut digunakan khusus untuk mengubah nilai dari member function. Sehingga cara yang tepat untuk mendeklarasikan asesor method adalah dengan cara memberi kata kunci const pada akhir nama method tersebut. Contoh:
 
-{linenos=off}
+
 	//mutator
 	void setUmur(int u);
 	//asesor
@@ -993,14 +993,12 @@ Hasil:
  - Dengan cara ini method asesor tersebut sudah bersifat read-only. Ubahlah bagian method `void getUmur() const`; Kita coba tambahkan baris program berikut sebelum return:
  
  
- ~~~~~~~~~~~~~~~~~~~~~~~~
  	this->umur = 5.
  	Kode lengkapnya adalah:
  	int Kucing::getUmur() const{
  	this->umur = 5;
  	return this->umur;
  	}
- ~~~~~~~~~~~~~~~~~~~~~~~~~~
  
  
  Jika kita kompilasi program diatas, maka akan terjadi error sebagai berikut:
@@ -1013,7 +1011,7 @@ Mengapa hal ini terjadi? Karena method getUmur sudah dibuat menjadi konstan, yan
 
 Selama ini kita mendefinisikan method member pada luar class. Selain cara diatas, kita juga bisa mendefinsikan method di dalam class itu sendiri secara langsung. Hal tersebut dinamakan inline implementation. Contoh inline implementation adalah:
 
-{linenos=off}
+
 	class Manusia{
 	private:
 	string nama;
@@ -1206,7 +1204,7 @@ Sangatlah mungkin kita membentuk class yang kompleks. Di dalam class tersebut me
 
 2. Hasil:
 
- **Keterangan:**:
+ **Keterangan:**
  
  - Program diatas mendemonstrasikan kepada kita bahwa kita dapat membuat class yang memiliki variabel member yang bertipe class lain.
  - Cara mendeklarasikan variabel member bertipe class sama seperti cara mendefinisikan variabel member bertipe data biasa
@@ -1349,7 +1347,7 @@ T> Pada bahasa C++ kita tidak dapat memanggil konstruktor dari dalam konstruktor
 
 Contoh:
 
-{linenos=off}
+
 	class Halaman{
 	private:
 	int nohal;

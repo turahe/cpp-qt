@@ -9,7 +9,7 @@ membutuhkan operator casting. Namun kenyataannya pada dunia nyata yang kita hada
 
 Contoh nyatanya terdapat pada bahasa C dan C++. Pada bahasa C tidak terdapat tipe data bool (boolean) sehingga kita harus menggunakan kata kunci typedef.
 
-{linenos=off}
+
 	typedef unsigned int BOOL;
 	BOOL mybool = 0;
 	BOOL isTrue(){
@@ -18,7 +18,7 @@ Contoh nyatanya terdapat pada bahasa C dan C++. Pada bahasa C tidak terdapat tip
 
 Pada contoh diatas maka kita harus membuat tipe data baru bertipe unsigned int yang kita definisikan sebagai BOOL. Nah setelah kita mendefinisikan tipe data baru BOOL pada C, bagaimana jika kemudian dikembangkan dengan bahasa C++? Kita harus melakukan konversi BOOL pada bahasa C ke bahasa C++, dimana bahasa C++ sudah ada tipe data bool yang tentunya berbeda “persepsi” dengan BOOL dari bahasa C. Maka dari itu dilakukan casting. Berikut adalah contoh castingnya:
 
-{linenos=off}
+
 	bool hasilku = (bool) isTrue(); // C-Style cast
 
 ## Data Type Casting (Conversion)
@@ -31,14 +31,14 @@ Jenis ini tidak membutuhkan operator khusus. Tipe data yang jangkauannya besar b
 
 **Contoh:**
 
-{linenos=off}
+
 	short a=2000;
 	int b;
 	b=a;
 
 Pada contoh diatas, tipe data `short` yang berjarak jangkau kecil dapat ditampung oleh tipe data `int` yang jarak jangkaunya lebih besar, walaupun tipe datanya berbeda. Hal ini karena keduanya sama-sama data numerik dan memang termasuk dalam konversi implisit. *Implisit conversion* juga dapat diterpakan pada *constrctor* sebuah *class*, sehingga ketika kita memanggil konstruktor tersebut, maka konversi akan dilakukan. Contoh:
 
-{linenos=off}
+
 	class A {
 	};
 	class B {
@@ -50,7 +50,7 @@ Pada contoh diatas, tipe data `short` yang berjarak jangkau kecil dapat ditampun
 
 Proses instansiasi adalah:
 
-{linenos=off}
+
 	A a;
 	B b=a;
 
@@ -62,12 +62,12 @@ Konversi tipe ini harus dituliskan pada kode program dengan menggunakan tanda ku
 
 **Sintaks:**
 
-{linenos=off}
+
 	(<type>)<value>
 
 **Contoh:**
 
-{linenos=off}
+
 	short a=2000;
 	int b;
 	b = (int) a; // c-like cast notation
@@ -78,7 +78,7 @@ Cara pertama dengan menegunakan *C-cast like notation*. Pada contoh diatas, kita
 
 Cara kedua adalah menggunakan *functional notation* dimana kita bisa memaksa variabel a yang bertipe `short` diperlakukan menjadi `integer` dengan cara menuliskan kata `int` kemudian diberi tanda kurung pada variabel a sehingga variabel a bisa di assign ke dalam variabel b yang bertipe integer.
 
-{title="Contoh 1. Contoh Explicit Casting pada Tipe Data Numerik"} 
+Contoh 1. Contoh Explicit Casting pada Tipe Data Numerik.
 
 Tulislah kode berikut:
 
@@ -156,16 +156,16 @@ C++ memiliki cara pengcastingan yang baru, yaitu:
 
 Bentuk umum untuk semuanya adalah:
 
-{linenos=off}
+
 	tipe_tujuan hasil = tipe_casting <tipe_tujuan> (obyek_yg_mau_dicasting);
 
 
 
 ### Pengunaan static_cast
 
-Static_cast adalah mekanisme yang dapat digunakan untuk mengkonversi pointer diantara tipe data/class terkait dan melakukan konversi tipe data tersebut secara eksplisit untuk tipe data standar yang jika tidak dilakukan konversi akan terjadi secara otomatis (implisit). Dengan menggunakan konsep pointer, static_cast menerapkan pengecekan casting pada saat compile-time dengan melakukan pemeriksaan untuk memastikan bahwa pointer dicasting ke tipe yang benar/sesuai. Hal Ini merupakan perbaikan dari casting yang berjenis C-style, dimana memungkinkan casting ke obyek yang tidak ada relasinya sama sekali. Dengan menggunakan static_cast, pointer bisa dicaskting ke class induknya atau dapat down-case menjadi class turunannya. Berikut contohnya:
+*Static_cast* adalah mekanisme yang dapat digunakan untuk mengkonversi pointer diantara tipe data/class terkait dan melakukan konversi tipe data tersebut secara eksplisit untuk tipe data standar yang jika tidak dilakukan konversi akan terjadi secara otomatis (implisit). Dengan menggunakan konsep pointer, `static_cast` menerapkan pengecekan casting pada saat compile-time dengan melakukan pemeriksaan untuk memastikan bahwa pointer dicasting ke tipe yang benar/sesuai. Hal Ini merupakan perbaikan dari casting yang berjenis C-style, dimana memungkinkan casting ke obyek yang tidak ada relasinya sama sekali. Dengan menggunakan `static_cast`, pointer bisa dicaskting ke class induknya atau dapat down-case menjadi class turunannya. Berikut contohnya:
 
-{linenos=off}
+
 	CInduk* pInduk = new CTurunan (); // membuat obyek Cturunan dari Cinduk (polymorfisme)
 	CTurunan* pTurunan = static_cast<CTurunan*>(pInduk); // mengcasting pInduk menjadi Cturunan, valid!
 	// CTdkAdaHubungan merupakan class yang tidak ada hubungannya dengan CInduk melalui inheritance
@@ -178,17 +178,17 @@ Static_cast adalah mekanisme yang dapat digunakan untuk mengkonversi pointer dia
  - Kemudian pada bagian kedua, terlihat bahwa jika kita membuat class yang tidak ada hubungan apapun dengan class Induk maka kita tidak bisa melakukan static_casting.
  - Dengan demikian, static_casting digunakan untuk meyakinkan validitas suatu obyek pointer bahwa obyek tersebut ada hubungan dengan obyek yang dicastingnya. Pengcastingan dilakukan dengan mengubah class Induk menjadi class Anak, bukan sebaliknya.
 
-Bagi para programmer C yang beralih ke C++, static casting sangat mirip dengan C-style casting dan sangat disarankan untuk mengganti C-style casting karena static casting lebih aman dan tampak tertulis dengan jelas. Kita dapat melakukan static_casting pada tipe data biasa agar programmer dapat melihat
+Bagi para programmer C yang beralih ke C++, static casting sangat mirip dengan C-style casting dan sangat disarankan untuk mengganti C-style casting karena static casting lebih aman dan tampak tertulis dengan jelas. Kita dapat melakukan `static_casting` pada tipe data biasa agar programmer dapat melihat
 
 
 secara eksplisit tipe data yang dicastingnya. Sintaks umunya adalah:
 
-{linenos=off}
+
 	static_cast<<type>>(<value>);
 
 **Berikut contohnya:**
 
-{linenos=off}
+
 	double myphi = 3.14;
 	int angka = static_cast<int>(myphi);
 
@@ -198,14 +198,14 @@ Fungsi dynamic_cast merupakan kebalikan dari static_cast, hal ini karena proses 
 
 **Bentuk umumnya adalah:**
 
-{linenos=off}
+
 	tipe_tujuan* pTujuan = dynamic_cast <tipe_class*> (pSumber);
 	if (pTujuan) // apakah proses casting sukses?
 	pTujuan->CallFunc ();
 
 **Contoh penggunaan:**
 
-{linenos=off}
+
 	CInduk* pInduk = new CTurunan();
 	// Melakukan down casting
 	CTurunan* pTurunan = dynamic_cast <CTurunan*> (pInduk);
@@ -220,12 +220,12 @@ Dynamic_cast juga dapat digunakan untuk referensi pointer. Caranya dengan menggu
 
 Casting ini tidak boleh menghasilkan kembalian NULL. Sintaksnya:
 
-{linenos=off}
+
 	<type> subclass = dynamic_cast<<type> &>( ref_obj );
 
 **Contoh:**
 
-{linenos=off}
+
 	class CBase { };
 	class CDerived: public CBase { };
 	CBase b; CBase* pb;
@@ -233,7 +233,7 @@ Casting ini tidak boleh menghasilkan kembalian NULL. Sintaksnya:
 	pb = dynamic_cast<CBase*>(&d); // ok: derived-to-base
 	pd = dynamic_cast<CDerived*>(&b); // wrong: base-to-derived
 
-{title="Contoh 2. Contoh Dynamic Casting"}
+Contoh 2. Contoh Dynamic Casting.
 
 Buatlah program berikut:
 
@@ -312,31 +312,31 @@ Buatlah program berikut:
 
 Penggunaan casting ini benar-benar tidak memungkinkan programmer untuk mengcasting dari satu obyek ke jenis obyek lain, terlepas dari apakah jenis obyeknya berhubungan atau tidak. Casting ini tidak boleh digunakan untuk melakukan down casting pada hierarki kelas atau untuk menghapus const volatile. Sintaks:
 
-{linenos=off}
+
 	reinterpret_cast<<type>>( <val> );
 
 **Contoh:**
 
-{linenos=off}
+
 	reinterpret_cast<int*>(100);
 
 Reinterpret_cast pada class menggunakan syntax sebagai berikut:
 
-{linenos=off}
+
 	CInduk * pInduk = new CInduk ();
 	CTdkAdaHubungan * pTdkHubung = reinterpret_cast<CTdkAdaHubungan*>(pInduk);
 	// program diatas bisa dikompile tapi sangat tidak disarankan karena class CtdkAdaHubungan bukanlah turunan dari Cinduk.
 
 Casting model ini sebenarnya memaksa compiler untuk menerima situasi dimana pada static_cast tidak diijinkan. Casting model ini biasanya ditemukan pada pemrograman aplikasi tingkat rendah tertentu (seperti driver) dimana harus dilakukan konversi ke tipe sederhana dimana API dapat menerimanya.
 
-{linenos=off}
+
 	CSomeClass* pObject = new CSomeClass ();
 	// harus dikirimkan dalam bentuk byte (unsigned char)
 	unsigned char* pBytes = reinterpret_cast <unsigned char*>(pObject);
 
 **Contoh lain:**
 
-{linenos=off}
+
 	class A {};
 	class B {};
 	A * a = new A;
@@ -352,19 +352,19 @@ Const_cast digunakan untuk menghilangkan sifat const-ness atau sifat volatile-an
 
 **Sintaks:**
 
-{linenos=off}
+
 	const_cast<<type>>(<value>);
 
 **Contoh:**
 
-{linenos=off}
+
 	void func(char *);
 	const char *x = "abcd";
 	func(const_cast<char *>(x));
 
 const_cast juga memungkinkan kita untuk menonaktifkan method const pada suatu objek. Mengapa diperlukan? Karena kadang-kadang programmer melupakan penggunaan const pada method yang seharusnya berjenis const method. Contoh:
 
-{linenos=off}
+
 	ContohClass
 	{
 	public:
@@ -379,7 +379,7 @@ const_cast juga memungkinkan kita untuk menonaktifkan method const pada suatu ob
 
 Kita dapat menggunakan const_cast untuk mengubah a adalah:
 
-{linenos=off}
+
 	void tampilkanData (const ContohClass& mData)
 	{
 	ContohClass& refData = const_cast <ContohClass&>(mData);
@@ -388,7 +388,7 @@ Kita dapat menggunakan const_cast untuk mengubah a adalah:
 
 Kita juga dapat menggunakan pointer:
 
-{linenos=off}
+
 	void tampilkanData (const ContohClass* pData)
 	{
 	// pData->DisplayMembers(); Error: attempt to invoke a non-const function!
@@ -398,7 +398,7 @@ Kita juga dapat menggunakan pointer:
 
 Contoh lain:
 
-{linenos=off}
+
 	// const_cast
 	#include <iostream>
 	using namespace std;
@@ -584,7 +584,7 @@ Cara membaca data pada tabel Sqlite adalah dengan menggunakan perintah query SQL
 
 Pada Qt cara yang digunakan untuk membaca data adalah dengan menggunakan class QSqlQuery dan method query seperti berikut ini:
 
-{linenos=off}
+
 	QSqlQuery query("SELECT * FROM mahasiswa");
 	while (query.next()) {
 	QString nim = query.value(0).toString();
@@ -595,7 +595,7 @@ Kita ingat bahwa tabel mahasiswa memiliki 3 kolom: NIM, Nama, dan IPK.
 
 Perintah diatas menggunakan QsqlQuery yang menerima parameter Qstring. Setelah query dijalankan maka akan dilakukan proses looping untuk mengambil data-data per baris record dengan menggunakan method next() dari query. Di dalam looping kita mengambil variabel nim pada kolom pertama (dalam hal ini digunakan indeks 0). Untuk mengambil field tertentu pada tabel, misalnya ipk, maka hanya perlu mengganti indeksnya menjadi 2 saja.
 
-{title="Contoh 5. Membaca data pada Sqlite"}
+Contoh 5. Membaca data pada Sqlite.
 
 Tulislah program berikut:
 
@@ -641,7 +641,7 @@ Cara menambah data pada tabel Sqlite adalah dengan menggunakan perintah query SQ
 
 Pada Qt cara yang digunakan untuk menambah data adalah dengan menggunakan class QSqlQuery dan method query seperti berikut ini:
 
-{linenos=off}
+
 	QSqlQuery query;
 	bool hasil = query.exec("INSERT INTO mahasiswa (nim, nama,ipk) VALUES
 	(‘22113344’,’anton’, 3.4)");
@@ -649,7 +649,7 @@ Pada Qt cara yang digunakan untuk menambah data adalah dengan menggunakan class 
 
 Perintah diatas menggunakan QsqlQuery yang menerima parameter sql dalam tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil dari akibat penambahan datanya. Jika berhasil maka akan mengembalikan nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-{title="Contoh 6. Menambahkan data pada SQLite"}
+Contoh 6. Menambahkan data pada SQLite.
 
 Buatlah program berikut:
 
@@ -689,7 +689,7 @@ Buatlah program berikut:
 
 Jika kita hendak membaca data pada SQLite, maka tambahkan kode berikut:
 
-{linenos=off}
+
 	QsqlQuery query.exec("select nim,nama,ipk from mahasiswa order by nim desc");
 	QString nim,nama;
 	float ipk;
@@ -716,7 +716,7 @@ Cara mengedit data pada tabel Sqlite adalah dengan menggunakan perintah query SQ
 
 Pada Qt cara yang digunakan untuk mengedit data adalah dengan menggunakan class QSqlQuery dan method query seperti berikut ini:
 
-{linenos=off}
+
 	QSqlQuery query;
 	bool hasil = query.exec("UPDATE mahasiswa SET nama=’Antonius Rachmat C’ WHERE
 	nim=’2200259’);
@@ -724,7 +724,7 @@ Pada Qt cara yang digunakan untuk mengedit data adalah dengan menggunakan class 
 
 Perintah diatas menggunakan QsqlQuery yang menerima parameter sql dalam tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil dari akibat pengeditan datanya. Jika berhasil maka akan mengembalikan nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-{title="Contoh 7. Mengedit data pada SQLite"}
+Contoh 7. Mengedit data pada SQLite.
 
 Kondisi awal tabel:
 
@@ -772,14 +772,14 @@ Cara menghapus data pada tabel Sqlite adalah dengan menggunakan perintah query S
 
 Pada Qt cara yang digunakan untuk menghapus data adalah dengan menggunakan class QSqlQuery dan method query seperti berikut ini:
 
-{linenos=off}
+
 	QSqlQuery query;
 	bool hasil = query.exec("DELETE FROM mahasiswa WHERE nim=’22334455’);
 	if(hasil) qDebug() << “Berhasil”; else qDebug << “gagal”;
 
 Perintah diatas menggunakan QsqlQuery yang menerima parameter sql dalam tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil dari akibat penghapusan datanya. Jika berhasil maka akan mengembalikan nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-{title="Contoh 8. Menghapus data pada SQLite"}
+Contoh 8. Menghapus data pada SQLite.
 
 Kondisi awal tabel:
 
@@ -842,7 +842,7 @@ Penjelasan:
 
 Cara yang digunakan adalah dengan membuat sebuah class yang akan digunakan untuk mengakses semua fungsi yang berhubungan dengan manipulasi data pada basis data SQLite. Method pada class adalah connect untuk koneksi database, sebuah konstruktor dan method untuk mengambil nama tabel serta nama database SQLitenya. Kemudian akan dibuat fungsi-fungsi lain diluar class yang digunakan untuk melakukan fungsi-fungsi sesuai dengan 5 fungsi yang didefinisikan pada menu. Untuk lebih jelasnya silahkan dicoba pada Contoh berikut ini.
 
-{title="Contoh 9. Pembuatan manipulasi data pada SQLite dengan menggunakan menu"}
+Contoh 9. Pembuatan manipulasi data pada SQLite dengan menggunakan menu
 
 1. Tulislah program berikut:
 
@@ -1033,7 +1033,7 @@ T> Untuk mengkonversi dari tipe data string menuju ke Qstring, digunakan `<varia
 
 **Hasil:**
 
-{:lang="sh", linenos=off}
+
 	Enter ID: 23
 	Enter Name: Enter Address : Yogyakarta
 	Enter Age : 45
@@ -1052,7 +1052,7 @@ Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu. Untuk me
 
 **Sehingga tampilan:**
 
-{:lang="sh", linenos=off}
+
 	Enter Name: Yanuar Adi
 	Enter Address : Yogyakarta
 	Enter ID: 23
@@ -1073,7 +1073,7 @@ Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan dengan car
 
 **Sehingga tampilan:**
 
-{:lang="sh", linenos=off}
+
 	Enter ID : 23
 	Enter Name : Yanuar Adi
 	Enter Address : Yogyakarta

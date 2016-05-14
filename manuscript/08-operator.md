@@ -16,25 +16,25 @@ Pada chapter ini kita akan membahas beberapa topik tentang penggunaan Operator T
 
 Pada bab awal kita sudah mempelajari berbagai macam operator (+, -, /, >, <) yang dapat digunakan pada tipe data yang sudah ada di C++ seperti `int`, `float`, `bool`, dll. Namun jika anda ingin menggunakan operator tersebut pada tipe data yang anda definisikan sendiri seperti tipe data Class, maka anda dapat menggunakan keyword operator .
 
-{linenos=off}
+
 	return_type operator operator_symbol (...parameter list...);
 
 
 Penggunaan keyword operator sebenarnya mirip dengan penggunaan fungsi , hanya anda dapat menggunakan operator symbol seperti (+, -, >,< , =, dll). Mungkin anda bertanya kenapa harus menggunakan keyword operator jika anda dapat menggunakan fungsi ? Ilustrasi dibawah ini akan menunjukan kenapa kita membutuhkan operator.
 
-{linenos=off}
+
 	CKataString strKata1(“Hello”);
 	CKataString strKata2(“World”);
 
 Jika anda menginginkan untuk menggabungkan kedua kata tersebut anda dapat membuat function `Concatenate` seperti berikut:
 
-{linenos=off}
+
 	CKataString strGabung;
 	strGabung = strKata1.Concatenate(strKata2);
 
 Selain cara seperti diatas akan lebih natural jika anda menulis kode sebagai berikut:
 
-{linenos=off}
+
 	CKataString strGabung;
 	strGabung = strKata1 + strKata2;
 
@@ -46,7 +46,7 @@ Ada 2 macam operator yang terdapat di C++ yaitu unary dan binary.
 
 Unary operator hanya mempunyai single operand saja, cara penulisan unary operator adalah sebagai berikut.
 
-{linenos=off}
+
 	return_type operator operator_type (parameter_type)
 	{
 	// ... implementation
@@ -69,7 +69,7 @@ Tipe dari unary operator yang dapat digunakan adalah
 
 Pada Labs1 akan ditunjukan penggunaan operator increment. Pada contoh dibawah ini kita akan membuat Class Kalender yang mempunyai tiga class member yang merepresentasikan hari, bulan, dan tahun (tipe integer), anda dapat menggunakan operator ++ untuk menambahkan hari.
 
-{title="Contoh 1. Menggunakan Increment Operator (Notasi prefix)"}
+Contoh 1. Menggunakan Increment Operator (Notasi prefix).
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 1, kemudian tulis kode berikut.
 
@@ -141,7 +141,7 @@ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah seb
 
 Ada perbedaan penulisan notasi prefix dan postfix, sebagai contoh anda dapat melihat kode dibawah ini.
 
-{linenos=off}
+
 	int bil1 = 22;
 	int bil2 = bil1++;
 	//mengcopy nilai lama dari bil1
@@ -153,7 +153,7 @@ Nilai `bil2` adalah `22`, karena yang dimasukan kedalam `bil2` adalah nilai lama
 
 Untuk contoh dibawah ini kita akan mencoba menggunakan notasi `postfix`, dengan notasi `postfix` yang dilakukan adalah menduplikat objek yang diinputkan, melakukan increment dan mengembalikan objek tersebut by value.
 
-{title="Contoh 2. Menggunakan Operator Increment (notasi postfix)"}
+Contoh 2. Menggunakan Operator Increment (notasi postfix).
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.
 
@@ -233,12 +233,12 @@ Bagaimana jika anda menginginkan statement `int bil = Kalender(23,10,2010)` memi
 
 Anda dapat melakukan konversi diatas dengan menggunakan conversion operator yang mempunyai syntax sebagai berikut:
 
-{linenos=off}
+
 	operator conversion_type();
 
 Jadi jika anda menghendaki mengkonversi tipe Kalender menjadi int anda dapat menggunakan operator berikut.
 
-{linenos=off}
+
 	operator int()
 	{
 	// implementation
@@ -247,7 +247,7 @@ Jadi jika anda menghendaki mengkonversi tipe Kalender menjadi int anda dapat men
 
 Contoh dibawah ini akan menunjukan bagaimana penggunaan conversion operator untuk mengkonversi tipe Kalender menjadi int.
 
-{title="Contoh 3. Conversion Operator untuk konversi class Kalender ke integer"}
+Contoh 3. Conversion Operator untuk konversi class Kalender ke integer.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 3, kemudian tulis kode berikut.
 
@@ -295,7 +295,7 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Operator yang mengoperasikan dua operand disebut dengan binary operator, cara penulisan binary operator sama dengan penulisan oprator yang sebelumnya.
 
-{linenos=off}
+
 	return_type operator_type (parameter);
 
 Ada beberapa macam binary operator yang dapat digunakan pada C++, diantaranya :
@@ -315,7 +315,7 @@ Ada beberapa macam binary operator yang dapat digunakan pada C++, diantaranya :
 
 Contoh program dibawah ini menggunakan operator Addition (+) untuk menambahkan hari pada objek kalender, anda dapat menambahkan beberapa hari kedepan, misal 5 atau 10 hari dari tanggal sekarang.
 
-{title="Contoh 4. Menggunakan Binary Addition Operator"}
+Contoh 4. Menggunakan Binary Addition Operator.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 4, kemudian tulis kode berikut.
 
@@ -392,7 +392,7 @@ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah seb
 
 Dengan menggunakan Addition-Assignment operator anda dapat menuliskan sintaks a += b, yang sama artinya dengan a = a + b. Pada contoh program dibawah ini operator Addition-Assignment akan digunakan untuk menambahkan hari pada objek Kalender.
 
-{title="Contoh 5 Menggunakan Addition Assigment Operator dan Substraction Assigment Operator"}
+Contoh 5. Menggunakan Addition Assigment Operator dan Substraction Assigment Operator.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 5, kemudian tulis kode berikut.
 
@@ -463,7 +463,7 @@ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah seb
 
 Pada kasus tertentu dimana anda ingin membandingkan dua objek bertipe Kalender ada dapat menggunakan comparison operator.
 
-{linenos=off}
+
 	if (objKal1 == objKal2)
 	{
 	// Do something
@@ -475,7 +475,7 @@ Pada kasus tertentu dimana anda ingin membandingkan dua objek bertipe Kalender a
 
 Anda dapat menggunakan equality operator (==) atau inequality operator (!=). Anda juga dapat membuat lebih dari satu equality atau inequality operator yang mempunyai return value atau parameter yang berbeda, ini disebut dengan overloading operator.
 
-{title="Contoh 6. Overloading Comparison Operator (Equality dan Inequality)"}
+Contoh 6. Overloading Comparison Operator (Equality dan Inequality).
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 6, kemudian tulis kode berikut.
 
@@ -592,7 +592,7 @@ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah seb
 
 Seperti pada contoh sebelumnya anda juga dapat menggunakan operator <, >, <=, >= untuk membandingkan objek Kalender. Agar mudah untuk dibandingkan maka objek Kalender dikonversi terlebih dahulu menjadi tipe int.
 
-{title="Contoh 7. Menggunakan Operator <. >, <=, >="}
+Contoh 7. Menggunakan Operator <. >, <=, >=.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 7, kemudian tulis kode berikut.
 
@@ -683,7 +683,7 @@ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah seb
 
 Subscript operator dapat digunakan jika anda ingin mengakses class seperti ketika anda mengakses array, anda dapat menambahkan operator [] pada objek yang anda buat untuk mengakses nilai dengan index tertentu dari objek. Contoh dibawah ini akan menjelaskan penggunaan subscript operator untuk membuat array yang dinamis.
 
-{title="Contoh 8. Subscript Operator untuk Dynamic Array"}
+Contoh 8. Subscript Operator untuk Dynamic Array.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 8, kemudian tulis kode berikut.
 
@@ -742,7 +742,7 @@ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah seb
 
 Function operator digunakan jika anda ingin membuat objek bekerja seperti function. Untuk lebih jelasnya penggunaan function operator() anda dapat mencoba program dibawah ini.
 
-{title="Contoh 9. Menggunakan operator() untuk membuat function object"}
+Contoh 9. Menggunakan operator() untuk membuat function object.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 9, kemudian tulis kode berikut.
 

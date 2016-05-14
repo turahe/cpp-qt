@@ -34,7 +34,7 @@ Tapi ini menjadikan terbatas, bagaimana jika nanti ternyata Kuda_terbang bisa `m
 
 Solusi lainnya untuk membahas keterbatasan *single inheritance* ini adalah membuat metode `terbang()` pada kelas Kuda dan pada kelas ini tidak melakukan `terbang()`, baru nanti kalau berupa objek Kuda_terbang, barulah `terbang()` yang sesungguhnya dikerjakan. Marilah kita melakukan percobaan berikut ini.
 
-Contoh 1 Meletakkan metode kelas turunan di kelas dasar.
+Contoh 1. Meletakkan metode kelas turunan di kelas dasar.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
@@ -322,8 +322,7 @@ berbagai macam anggota yang lain supaya terlihat sederhana dan mudah dipahami.
 
 Contoh 4. Konstruktor Kelas Multiple Inheritance.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4, kemudian
-tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4, kemudian tulis kode berikut.
 	
 	#include <QtCore/QCoreApplication>
 	#include <iostream>
@@ -353,8 +352,7 @@ tulis kode berikut.
 	return a.exec();
 	}
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai
-berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 Analisa Program :
 
@@ -510,8 +508,7 @@ Diamond Inheritance seperti gambar tadi. Supaya lebih jelas, lakukan pecobaan be
 
 Contoh 6. Penurunan pada umumnya (Common Base Class).
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian
-tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian tulis kode berikut.
 
 	#include <QtCore/QCoreApplication>
 	#include <iostream>

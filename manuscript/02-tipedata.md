@@ -1,5 +1,3 @@
-
-
 # Tipe Data, Identifier, Operator dan Control Statement
 
 ## Tipe Data dan Identifier
@@ -15,7 +13,7 @@ Identifier (pengenal) adalah suatu nama yang digunakan program untuk merujuk ke 
 Data yang dapat dikelola oleh program bisa bermacam-macam, seperti misalnya bilangan bulat (*integer*), bilangan dengan desimal (*floating point*), huruf (*character*), dan sebagainya. Oleh sebab itu ketika kita akan memakai suatu lokasi memori tertentu untuk menyimpan nilai diperlukan 2 hal, yaitu `identifier` sebagai pengenal (label) lokasi memori yang digunakan dan `tipe data`, yaitu besaran yang menentukan ukuran memori yang dialokasikan. Sekali suatu identifier sudah dialokasikan dengan tipe data tertentu besarnya ruang yang digunakan tidak bisa diubah. Bahasa C++ mengenal tipe-tipe data berikut ini :
 
 |Tipe Data 				|Ukuran 	|Jangkauan Nilai Yang dapat Ditampung
-|-----------------------|-----------|-------------------------------------------------
+|-----------------------|-----------|----------------------------------------
 |bool 					|1 byte 	|True or false
 |unsigned short int 	|2 bytes 	|0 to 65,535
 |short int 				|2 bytes 	|–32,768 to 32,767
@@ -44,19 +42,19 @@ Walaupun demikian, sebaiknya memberikan nama pengenal variabel sesuai dengan isi
 
 Konstanta mirip dengan variabel, hanya saja nilainya konstan, tidak dapat diubah-ubah. Untuk dapat membuat konstanta diperlukan inisialisasi ketika konstanta dibuat dan setelah itu nilainya tidak dapat diubah. C++ mempunyai 2 macam konstanta, yaitu konstanta literal dan konstanta simbolik. Berikut ini adalah contoh deklarasi variabel:
 
-{linenos=off}
+
 	int harga;
 
 Yang dimaksud dengan konstanta literal adalah suatu nilai yang ditulis pada kode program. Sebagai contoh misalnya :
 
-{linenos=off}
+
 	int usiaku = 42;
 
 Nilai 42 tidak dapat menerima nilai lain dan nilai tersebut bersifat tetap. Perhatikan dalam hal ini identifier “usiaku” adalah variabel (bukan konstanta), yang dinamakan konstanta literal adalah nilai “42” tersebut.
 
 Konstanta simbolik adalah konstanta yang direpresentasikan dengan suatu nama, sama seperti variabel, namun berbeda dengan variabel setelah suatu konstanta diinisialisasi dengan suatu nilai maka nilainya tidak dapat diubah. Ada 2 cara untuk mendeklarasikan konstanta simbolik, yaitu dengan menggunakan preprocessor directive `#define` dan yang kedua adalah dengan memakai kata kunci `const`. Berikut ini contoh mendeklarasikan dan menginisialisasi konstanta :
 
-{linenos=off}
+
 	#define kapasitas 15
 
 Perhatikan bahwa `kapasitas` tidak mempunyai tipe data tertentu (int, char dsb.). Preprosessor akan melakukan substitusi berupa teks, setiap ada akses terhadap kata `kapasitas`, akan digantikan dengan teks 15. Karena preprosesor bekerja sebelum kompiler, kompiler tidak mengenal konstanta `kapasitas`, yang dikenal hanyalah bilangan 15.
@@ -67,7 +65,7 @@ T> Walaupun dengan memakai preprocessor directive `#define` tampak mudah, namun 
 
 Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan memakai kata kunci const seperti berikut :
 
-{linenos=off}
+
 	const int usiaku = 42;
 
 Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku bertipe int dan diinisialisasi dengan nilai 42. Setelah baris ini simbol (identifier) bernama usiaku tidak dapat diubah-ubah nilainya. Keuntungan pembuatan konstanta dengan cara ini adalah lebih mudah dipelihara dan mencegah adanya kesalahan dan yang paling penting adalah bahwa konstanta ini mempunyai tipe data dan kompiler dapat mengharuskan konstanta ini diperlakukan sebagai tipe data tersebut.
@@ -78,26 +76,26 @@ Contoh 1. Tipe data dan Identifier.
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
 
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
-	using namespace std;
-	QCoreApplication a(argc, argv);
-	int panjang, lebar;
-	panjang = 15; //<-- nilai diubah menjadi 15
-	lebar = 12; //<-- nilai diubah menjadi 12
-	cout << "Panjang = " << panjang << endl;
-	
-	
-	cout << "Lebar = " << lebar << endl;
-	return a.exec();
-	}
+		#include <iostream>
+		int main(int argc, char *argv[])
+		{
+		using namespace std;
+		QCoreApplication a(argc, argv);
+		int panjang, lebar;
+		panjang = 15; //<-- nilai diubah menjadi 15
+		lebar = 12; //<-- nilai diubah menjadi 12
+		cout << "Panjang = " << panjang << endl;
+		
+		
+		cout << "Lebar = " << lebar << endl;
+		return a.exec();
+		}
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-{lang="sh", linenos=off }
-	Panjang		=15
-	lebar		=12
+
+A>	Panjang		=15
+A>	lebar		=12
 
  **Keterangan:**
  
@@ -109,7 +107,7 @@ Contoh 1. Tipe data dan Identifier.
 
 Dalam bahasa C++, sebuah statement mengontrol urutan pengerjaan eksekusi, mengevaluasi ekspresi atau tidak mengejakan apapun (*null statement*). Semua statement C++ diakhiri dengan titik koma (;), sebagai contoh misalnya :
 
-{linenos=off}
+
 	x = a + b;
 
 Pernyataan tersebut bukanlah suatu pernyataan persamaan aljabar dalam matematika yang artinya x sama dengan a + b, melainkan memberi nilai x dengan hasil penjumlahan a dengan b. Pada statement ini terjadi 2 urutan pengerjaan, yaitu pertama menambahkan a dengan b, kemudian yang kedua memberikan hasil perhitungan tersebut ke variabel x dengan operator pengerjaan (=). Walaupun pada pernyataan tersebut terdapat 2 pekerjaan, namun merupakan sebuah statement dan oleh karena itu diakhiri hanya dengan sebuah titik koma (;) saja. Hasil penjumlahan a dengan b ini disebut ekspresi, sedangkan sama dengan (=) dan plus (+) dinamakan operator yang akan dibahas berikut ini.
@@ -143,7 +141,7 @@ Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Opera
 
 Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari sebuah variabel maupun kumpulan variabel-variabel yang dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi adalah suatu nilai yang mempunyai besaran dan tipe data tertentu. Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan “panjang * lebar” yang menghasilkan nilai 15, 12 dan 180:
 
-{linenos=off}
+
 	panjang = 15;
 	lebar = 12;
 	luas = panjang * lebar ;
@@ -217,7 +215,7 @@ Dari contoh di atas terlihat bahwa operator pengerjaan mempunyai jenjang yang le
 
  C++ mengijinkan operator pengerjaan ditulis lebih dari satu kali pada sebuah statement, misalnya :
 
-{linenos=off}
+
 	x = y = a * b;
 
 Dalam hal ini yang dikerjakan adalah a dikalikan b terlebih dahulu meudian hasilnya diberikan kepada variabel y dan hasil ekspresi y = a * b diberikan kepada variabel x. sehingga misalnya a bernilai 8 dan b bernilai 7, maka baik variabel x maupun y keduanya bernilai 15.
@@ -268,7 +266,7 @@ Selain dua operator logika ini, operator unary “!” (logika NOT) dapat diguna
 
 Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai ‘a’ maka ungkapan dibawah ini mempunyai hasil akhir benar (True).
 
-{linenos=off}
+
 	A < B || B == 7 && C > ‘z’
 
 Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari langkah-langkah sebagai berikut:
@@ -294,14 +292,11 @@ Adalah perintah yang memungkinkan pemilihan atas perintah yang akan dijalankan s
 
 Sintaks penulisannya sebagai berikut:
 
- {lang="c++", linenos=off}
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- if (<ekspresi_boolean>)
- {
- <statements>
- }
- ~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
+	 if (<ekspresi_boolean>)
+	 {
+	 <statements>
+	 }
+
 
 ![](images/capture2-1.png)
 
@@ -313,17 +308,16 @@ Flowchart untuk statment ini adalah :
 
 Sintaks penulisannya sebagai berikut :
 
- {lang="c++", linenos=off}
- ~~~~~~~~~~~~~~~~~~
- if (<ekspresi_boolean>)
- {
- <dijalankan jika ekspresi_boolean benar>
- }
- else
- {
- < dijalankan jika ekspresi_boolean salah>
- }
- ~~~~~~~~~~~~~~~~~~~
+
+	 if (<ekspresi_boolean>)
+	 {
+	 <dijalankan jika ekspresi_boolean benar>
+	 }
+	 else
+	 {
+	 < dijalankan jika ekspresi_boolean salah>
+	 }
+
  
 
 Flowchart untuk statment ini adalah :
@@ -343,19 +337,17 @@ Flowchart untuk statment if bersarang ini adalah :
 
 Perintah ini digunakan sebagai alternatif pengganti dari statment `if … else` dengan `else` lebih dari satu. Dengan perintah ini percabangan dapat diarahkan pada beberapa alternatif pilihan berdasarkan nilai ekspresi. Berbeda dengan `if`, `switch` tidak dapat medeteksi *operator pembanding* (>, <, dsb.), karena ekspresi degan operator ini menghasilkan nilai *boolean*, melainkan hanya dapat mengalihkan alur program ke suatu nilai yang sama, pada statement ini ekspresi yang diminta harus menghasilkan bilangan *bulat*.
 
- {lang="c++", linenos=off}
- ~~~~~~~~~
- switch (<ekspresi>)
- {
- case <konst_1>: <pernyataan_1>;
- break;
- case <konst_2>: <pernyataan_2>;
- break;
- case <konst_n>: <pernyataan_n>;
- break;
- default : <pernyataan_default>;
- }
- ~~~~~~~~~~~~~~~~~~
+
+	 switch (<ekspresi>)
+	 {
+	 case <konst_1>: <pernyataan_1>;
+	 break;
+	 case <konst_2>: <pernyataan_2>;
+	 break;
+	 case <konst_n>: <pernyataan_n>;
+	 break;
+	 default : <pernyataan_default>;
+	 }
 
 
 Perintah `switch` akan membaca nilai dari `<ekspresi>` kemudian membandingkan hasilnya dengan konstanta-konstanta (`<konst_1>`, `<konst_2>`, `<konst_n>`) yang berada di case. Pembandingan akan dimulai dari `<konst_1>` sampai konstanta `<konst_n>`. Jika hasil dari kondisi sama dengan nilai konstanta tertentu, misalnya `<konst_1>`, maka pernyataan 1 akan dijalankan sampai ditemukan `break`. Pernyataan `break` akan membawa proses keluar dari perintah `switch`. Jika hasil dari kondisi tidak ada yang sama dengan konstanta-konstanta yang diberikan, maka pernyataan pada *default* yang akan dijalankan.
@@ -366,42 +358,41 @@ Flowchart untuk statement ini adalah :
 
 Contoh.2 Tipe data dan Identifier.
 
---------------------------------------
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
-	using namespace std;
-	QCoreApplication a(argc, argv);
-	int hari = 6;
-	switch(hari){
-	case 1 : cout << "Senin" << endl;
-	break;
-	case 2 : cout << "Selasa" << endl;
-	break;
-	case 3 : cout << "Rabu" << endl;
-	break;
-	case 4 : cout << "Kamis" << endl;
-	break;
-	case 5 : cout << "Jumat" << endl;
-	break;
-	case 6 : cout << "Sabtu" << endl;
-	break;
-	case 7 : cout << "Minggu" << endl;
-	break;
-	default: cout << "Tidak ada..." << endl;
-	}
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		int main(int argc, char *argv[])
+		{
+		using namespace std;
+		QCoreApplication a(argc, argv);
+		int hari = 6;
+		switch(hari){
+		case 1 : cout << "Senin" << endl;
+		break;
+		case 2 : cout << "Selasa" << endl;
+		break;
+		case 3 : cout << "Rabu" << endl;
+		break;
+		case 4 : cout << "Kamis" << endl;
+		break;
+		case 5 : cout << "Jumat" << endl;
+		break;
+		case 6 : cout << "Sabtu" << endl;
+		break;
+		case 7 : cout << "Minggu" << endl;
+		break;
+		default: cout << "Tidak ada..." << endl;
+		}
+		return a.exec();
+		}
 
 3. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-{lang="sh", linenos=off }
-	sabtu
+
+A>	sabtu
 
 
  Analisa Program :
@@ -420,13 +411,12 @@ Digunakan untuk mengulangi perintah dengan jumlah perulangan yang sudah diketahu
 Bentuk umum penulisannya sebagai berikut :
 
 
- {lang="c++", linenos=off}
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
- {
- <statmemnts>
- }
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	 for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
+	 {
+	 <statmemnts>
+	 }
+
  
 
 ![](images/capture2-8.png)
@@ -438,13 +428,11 @@ Perintah ini digunakan untuk mengulangi suatu perintah sampai kondisi tertentu. 
 Sintaks penulisannya sebagai berikut :
 
 
- {linenos=off}
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
 	{
 	<statmemnts>
 	}
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 ![](images/capture2-9.png)
@@ -456,14 +444,12 @@ Proses perulangan akan berjalan jika kondisi yang diperiksa di `while` masih ber
 Sintaks penulisannya sebagai berikut :
 
 
- {linenos=off}
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- do
- {
- <statements>
- }
- while(<expresi_boolean>)
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 do
+	 {
+	 <statements>
+	 }
+	 while(<expresi_boolean>)
+
 
 
 ![](images/capture2-10.png)
@@ -477,14 +463,11 @@ Kata kunci `break` digunakan untuk keluar dari suatu blok programn sebelum ekspr
 Sintaks penulisan `break` dan `continue` adalah sebagai berikut :
 
  
- {lang="c++" linenos=off}
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~
- while(<expresi_boolean1>)
- {
- <statements>
- if(<expresi_boolean2>)
- continue;
- <statements>
- }
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	 while(<expresi_boolean1>)
+	 {
+	 <statements>
+	 if(<expresi_boolean2>)
+	 continue;
+	 <statements>
+	 }
  

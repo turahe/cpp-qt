@@ -14,21 +14,21 @@ Pada chapter ini kita akan membahas tentang beberapa class khusus pada Qt Framew
 
 ## Bekerja dengan Paths
 
-QDir digunakan untuk bekerja dengan paths dan drives pada aplikasi Qt. QDir memiliki beberapa static method yang memudahkan anda bekerja dengan file sistem. Misal QDir::current() dapat digunakan untuk mengembalikan QDir dari direktori kerja anda, QDir::home() akan mengembalikan QDir dari home direktori pengguna, QDir::root() akan mengembalikan root direktori, dan QDir::drives() akan mengembalikan objek QList<QFileInfo> yang mewakili root dari semua drive yang ada. Objek QFileInfo menyimpan informasi tentang file dan direktori, ada beberapa method penting yang sering digunakan yaitu:
+QDir digunakan untuk bekerja dengan paths dan drives pada aplikasi Qt. QDir memiliki beberapa static method yang memudahkan anda bekerja dengan file sistem. Misal `QDir::current()` dapat digunakan untuk mengembalikan QDir dari direktori kerja anda, `QDir::home()` akan mengembalikan QDir dari home direktori pengguna, `QDir::root()` akan mengembalikan root direktori, dan `QDir::drives()` akan mengembalikan objek `QList<QFileInfo>` yang mewakili root dari semua drive yang ada. Objek QFileInfo menyimpan informasi tentang file dan direktori, ada beberapa method penting yang sering digunakan yaitu:
 
-- isDir(), isFile(), dan isSymLink() akan mengembalikan nilai true jika objek yang dicek berupa direktori, file, atau symbolic link (shortcut pada window).
-- dir() dan absoluteDir() akan mengembalikan QDir yang mengandung informasi dari objek file. Method dir() akan mengembalikan direktori relatif dari direktori aktif, dan method absoluteDir() mengembalikan path direktori yang dimulai dari root.
-- exists() akan menghasilkan nilai true jika objek tersebut ada.
-- isHidden(), isReadable(), isWritable(), dan isExecutable() mengembalikan status hak akses dari file.
-- fileName() akan mengembalikan QString berupa nama file tanpa path.
+- `isDir()`, `isFile()`, dan `isSymLink()` akan mengembalikan nilai true jika objek yang dicek berupa direktori, file, atau symbolic link (shortcut pada window).
+- `dir()` dan `absoluteDir()` akan mengembalikan `QDir` yang mengandung informasi dari objek file. Method `dir()` akan mengembalikan direktori relatif dari direktori aktif, dan method `absoluteDir()` mengembalikan path direktori yang dimulai dari root.
+- `exists()` akan menghasilkan nilai true jika objek tersebut ada.
+- `isHidden()`, `isReadable()`, `isWritable()`, dan `isExecutable()` mengembalikan status hak akses dari file.
+- `fileName()` akan mengembalikan QString berupa nama file tanpa path.
 - filePath() akan mengembalikan QString berupa nama file beserta path, path dapat bersifat relatif terhadap direktori aktif.
-- absoluteFilePath() akan mengembalikan QString berupa nama file beserta path, path diawali dari drive root.
-- completeBaseName() and completeSuffix() akan mengembalikan QString berupa nama file dan ekstensi (suffix).
+- `absoluteFilePath()` akan mengembalikan QString berupa nama file beserta path, path diawali dari drive root.
+- `completeBaseName()` and `completeSuffix()` akan mengembalikan QString berupa nama file dan ekstensi (suffix).
 
 
 Program dibawah ini akan menunjukan cara penggunaan QDir untuk mengambil informasi direktori yang ada di komputer anda.
 
-{title="Contoh 1. Menampilkan daftar drives dari root directories"}
+Contoh 1. Menampilkan daftar drives dari root directories.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
@@ -56,9 +56,9 @@ Program dibawah ini akan menunjukan cara penggunaan QDir untuk mengambil informa
 
  **Keterangan:**:
  
- - Static method QDir::drives() akan mengembalikan collection berupa QList<FileInfo> yang berisi semua drive yang ada pada komputer.
+ - Static method `QDir::drives()` akan mengembalikan collection berupa `QList<FileInfo>` yang berisi semua drive yang ada pada komputer.
  - Untuk membaca semua drive beserta semua folder /direktori didalamnya anda dapat menggunakan foreach.
- - Method setFilter(QDir::Dirs) artinya yang akan ditampilkan hanya direktori saja, tidak file atau symbolic link, untuk menampilkan semua (drive, direktori, file) anda dapat menggunakan QDir::AllEntries.
+ - Method `setFilter(QDir::Dirs)` artinya yang akan ditampilkan hanya direktori saja, tidak file atau symbolic link, untuk menampilkan semua (drive, direktori, file) anda dapat menggunakan `QDir::AllEntries`.
  - Output dari program tersebut adalah daftar drive pada komputer anda beserta dengan folder yang ada didalamnya.
 
 Dibawah ini adalah daftar kriteria yang dapat digunakan untuk melakukan filter.
@@ -84,7 +84,7 @@ Anda dapat menggunakan QDir untuk mengambil informasi file dan QFileInfo untuk m
 
 Agar lebih jelas bagaimana cara menggunakan QFile untuk membuka file, anda dapat mengerjakan Contoh  dibawah ini.
 
-{title="Contoh 2 Memeriksa apakah file ada dan bisa diakses"}
+Contoh 2. Memeriksa apakah file ada dan bisa diakses.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
@@ -118,19 +118,19 @@ Agar lebih jelas bagaimana cara menggunakan QFile untuk membuka file, anda dapat
 
  **Keterangan:**
  
- - Method exists() digunakan untuk mengecek apakah file yang ada atau tidak. Jika file tidak ditemukan maka program akan keluar dan menampilkan output program tidak ditemukan.
- - Method open() digunakan untuk membuka file, permision yang digunakan pada program diatas adalah WriteOnly. Jika file tidak dapat dibuka maka akan keluar pesan tidak dapat membuka file.
+ - `Method exists()` digunakan untuk mengecek apakah file yang ada atau tidak. Jika file tidak ditemukan maka program akan keluar dan menampilkan output program tidak ditemukan.
+ - Method `open()` digunakan untuk membuka file, permision yang digunakan pada program diatas adalah WriteOnly. Jika file tidak dapat dibuka maka akan keluar pesan tidak dapat membuka file.
 
 ## Bekerja dengan Stream
 
-Setelah anda membuka file akan lebih mudah untuk mengakses file tersebut menggunakan stream class. Qt hadir dengan 2 macam stream class, satu untuk teks file dan satu lagi untuk binary file. Dengan menggunakan stream untuk mengakses file anda dapat menggunakan operator << dan >>untuk menulis dan membaca data dari file.
+Setelah anda membuka file akan lebih mudah untuk mengakses file tersebut menggunakan stream class. Qt hadir dengan 2 macam stream class, satu untuk teks file dan satu lagi untuk binary file. Dengan menggunakan stream untuk mengakses file anda dapat menggunakan operator `<<` dan `>>` untuk menulis dan membaca data dari file.
 
 
 ### Text Stream
 
-Untuk membuat text stream pada file, buat objek QFile dan buka file seperti biasa, disarankan jika anda menggunakan parameter QIODevice::Text dan hak akses QIODevice::ReadOnly. Agar lebih jelas bagaimana penggunaan stream buatlah contoh program pada Contoh 3 dibawah ini.
+Untuk membuat text stream pada file, buat objek QFile dan buka file seperti biasa, disarankan jika anda menggunakan parameter `QIODevice::Text` dan hak akses `QIODevice::ReadOnly`. Agar lebih jelas bagaimana penggunaan stream buatlah contoh program pada Contoh 3 dibawah ini.
 
-{title="Contoh 3 Menggunakan Stream untuk membaca file"}
+Contoh 3 Menggunakan Stream untuk membaca file.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
@@ -166,14 +166,14 @@ Untuk membuat text stream pada file, buat objek QFile dan buka file seperti bias
 	return a.exec();
 	}
 
-2. Buat file teks pada alamat tertentu (pada contoh diatas di drive D:\sample.txt), masukan sembarang teks kedalam file tersebut.
+2. Buat file teks pada alamat tertentu (pada contoh diatas di drive `D:\sample.txt`), masukan sembarang teks kedalam file tersebut.
 
 3. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
  **Keterangan:**
  
- - Objek QTextStream digunakan jika anda ingin menggunakan stream untuk mengakses file text.
+ - Objek `QTextStream` digunakan jika anda ingin menggunakan stream untuk mengakses file text.
  - Untuk membaca semua data yang ada pada file text gunakan method readAll().
  - Untuk membaca file baris demi baris dapat digunakan method readLine() yang dijalankan didalam loop, method atEnd() digunakan untuk memeriksa apakah sudah sampai akhir file.
 
@@ -183,7 +183,7 @@ Pada beberapa kasus tertentu mungkin anda tidak dapat menggunakan file text untu
 
 Untuk membaca file biner anda dapat menggunakan objek QDataStream. Program dibawah ini menunjukan penggunaan objek QDataStream untuk mengakses file biner.
 
-{title="Contoh 4. Menggunakan Data Stream"}
+Contoh 4. Menggunakan Data Stream.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4
 2. Buka file Contoh 4.pro untuk menambahkan library GUI karena pada controh program ini digunakan class QColor.
@@ -327,7 +327,7 @@ DOM (Document Object Model) bekerja dengan cara merepresentasikan semua dokumen 
 
 Pertama kita akan mulai dengan membuat file XML menggunakan DOM, adapun tahapan yang akan kita kerjakan adalah membuat node, menyambungkan node, dan terakhir menulis dokumen XML. Agar lebih jelas mari kita coba buat program dibawah ini.
 
-{title="Contoh 5. Membuat Nodes untuk membuat simple XML Document"}
+Contoh 5. Membuat Nodes untuk membuat simple XML Document.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
 
@@ -393,7 +393,7 @@ Pada contoh sebelumnya anda telah bisa membuat dokumen XML dengan DOM, sekarang 
 
 Pada contoh dibawah ini kita akan membaca dan memasukan file kedalam QDomDocument dan kita juga akan mempelajari bagaimana cara menemukan elemen dan teks yang terkandung dalam dokumen. Agar dokumen XML pada file dapat diload kedalam QDomDocument maka dokumen XML tersebut harus valid.
 
-{title="Contoh 6. Membaca DOM dari dokumen XML"}
+Contoh 6. Membaca DOM dari dokumen XML.
 
 1. Untuk dokumen XML yang akan digunakan pada contoh program ini adalah dokumen XML yang sudah kita buat sebelumnya yaitu ”simple.xml”.
 2. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5.
@@ -462,7 +462,7 @@ Pada contoh dibawah ini kita akan membaca dan memasukan file kedalam QDomDocumen
 
 Pada topik sebelumnya kita sudah membahas bagaimana cara menulis dan membaca data dari dokumen XML. Pada topik kali ini akan dibahas bagaimana cara memodifikasi dokumen XML yang sudah anda load kedalam objek QDomDocument.
 
-{title="Contoh 7. Modifikasi data dokumen XML"}
+Contoh 7. Modifikasi data dokumen XML.
 
 1. Buat project console aplication baru dengan nama Contoh 7, pilih Qt Simulator sebagai simulator yang digunakan. Jalankan program sehingga akan dibuat folder Contoh 7-build-simulator.
 2. Pada folder Contoh 7-build-simulator buat file dengan nama “simple.xml”, kemudian tulis dokumen XML berikut.
@@ -676,7 +676,7 @@ Setelah memanggil method readNext(), anda dapat mengecek token yang sedang aktif
  - Method reader.isStartElement() digunakan untuk mengecek apakah token yg sekarang aktif adalah elemen awal.
  - Kode if(reader.name() == "Nim") digunakan untuk mengecek apakah nama elemen adalah “Nim” jika ya baca attribute dan teks pada elemen tersebut untuk ditampilkan.
 
-{title="Contoh 9. Membuat dokumen XML dengan QXMLStreamWriter"}
+Contoh 9. Membuat dokumen XML dengan QXMLStreamWriter.
 
 1. Buat aplikasi console dengan nama Contoh 9, kemudian tulis kode berikut
 

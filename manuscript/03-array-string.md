@@ -18,7 +18,7 @@ Elemen-elemen array dapat diakses oleh program menggunakan suatu indeks tertentu
 
 Bentuk umum deklarasi array satu dimensi:
 
-{linenos=off}
+
 	tipe_data nama_var_array;
 
 **Dimana:**
@@ -31,7 +31,7 @@ Bentuk umum deklarasi array satu dimensi:
 
 Contoh:
 
-{linenos=off}
+
 	char huruf[9];
 	int umur[10];
 	int kondisi[2] = {0,1};
@@ -60,8 +60,6 @@ Tanda `[]` disebut juga “elemen yang ke- “. Misalnya “`kondisi[0]`“ bera
 
 Contoh 1. Contoh Input dan Output Array
 
---------------------------------------------------
-
 Buatlah project baru dan tulis kode berikut:
 
 
@@ -89,7 +87,6 @@ Buatlah project baru dan tulis kode berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
 	Memasukan nilai
 	Nilai Angka ke - 1 : 1
 	Nilai Angka ke - 2 : 2
@@ -104,7 +101,8 @@ Buatlah project baru dan tulis kode berikut:
 	Nilai Angka : 4
 	Nilai Angka : 5
 
- **Keterangan:**
+
+**Keterangan:**
  
  - Pada program diatas, kita membuat sebuah variabel array bernama `nilai` yang berisi `5` elemen bertipe `integer`. Kemudian untuk memasukkan nilai ke masing-masing elemen, digunakan perintah perulangan untuk mengakses indeksnya yang dimulai dari indeks ke `0`. Perulangan dilakukan dari indeks ke `0` sampai dengan indeks ke `4` (dalam hal ini `x < 5`). Mengapa sampai dengan indeks ke `4`? Hal ini karena `5` elemen array yang kita deklarasikan dimulai dari indeks ke `0`. Terdapat `5` elemen array, berarti indeks ke `0`, `1`, `2`, `3`, dan `4`.
  
@@ -112,9 +110,7 @@ Buatlah project baru dan tulis kode berikut:
 
 Contoh 2. Contoh Manipulasi Array
 
--------------------------------------
-
-1. Buatlah project baru dan tulis kode berikut:
+Buatlah project baru dan tulis kode berikut:
 
 
 	#include <QtCore/QCoreApplication>
@@ -137,7 +133,7 @@ Contoh 2. Contoh Manipulasi Array
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	elemen ke-1 ? 1
 	bil[0] = 1 dan alamatnya: 0x28fe68
 	bil[1] = 5 dan alamatnya: 0x28fe6c
@@ -147,7 +143,8 @@ Contoh 2. Contoh Manipulasi Array
 	bil[5] = 50 dan alamatnya: 0x28fe7c
 	bil[6] = 60 dan alamatnya: 0x28fe80
 
- **Keterangan**
+
+ **Keterangan:**
  
  - Program diatas memasukkan nilai-nilai integer kedalam array bernama bil yang berisi `7` elemen (dari indeks `0-6`).
  - Dalam array satu dimensi, suatu elemen array dapat diisi dengan isi elemen array pada indeks tertentu seperti pada contoh `bil[2] = bil[1] + 20;`. Pada contoh diatas, `bil[2]` diisi dengan `bil[1]` yang berisi `25` ditambah dengan `20`, yaitu `55`.
@@ -160,8 +157,6 @@ T>
 T> Dalam bahasa C++, tidak terdapat *error handling* terhadap batasan nilai indeks, apakah indeks tersebut berada di dalam indeks array yang sudah didefinisikan atau belum. Hal ini merupakan tanggung jawab programmer. Sehingga jika programmer mengakses indeks yang salah, maka nilai yang dihasilkan akan berbeda atau rusak karena mengakses alamat memori yang tidak sesuai.
 
 Contoh 3. Penanganan Batas Indeks Elemen Array
-
-------------------------------------------------
 
 Buatlah program beikut ini:
 
@@ -190,19 +185,19 @@ Buatlah program beikut ini:
 
 Array satu dimensi dapat diisi secara langsung ditulis pada program. Pengisian data seperti itu sering disebut dengan inisialisasi data array. Cara menginisialisasi data pada array adalah dengan menuliskannya secara langsung pada source code program. Berikut contohnya:
 
-{linenos=off}
+
 	// An array of 5 integers, all elements initialized to 0
 	int IntegerArray[5] = {0};
 
 Pada contoh diatas, semua elemen array bertipe integer yang berjumlah 5 buah tersebut diisi dengan nilai 0 semuanya. Cara lain menginisialisasi array satu dimensi adalah sebagai berikut:
 
-{linenos=off}
+
 	// An array of 5 integers initialized to zero
 	int IntegerArray[5] = { 0, 0, 0, 0, 0 };
 
 Nah, bagaimana jika kita ingin menginisialisasi elemen terakhirnya saja? Kita tidak bisa melakukannya secara langsung. Yang harus dilakukan adalah dengan menginisialisasinya satu-persatu seperti contoh berikut:
 
-{linenos=off}
+
 	// An array of 5 integers initialized to zero
 	int IntegerArray[5] = { 0, 0, 0, 0, 6 };
 
@@ -210,7 +205,6 @@ Pada contoh diatas, elemen terakhir diinilisasi dengan nilai 6. Kita tidak bisa 
 
 Contoh 4. Inisialisasi Array dengan nilai 0
 
----------------------------------------------------
 
 Buatlah program berikut:
 
@@ -230,7 +224,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Elemen ke-0: 0
 	Elemen ke-1: 1
 	Elemen ke-2: 2
@@ -245,7 +239,6 @@ Buatlah program berikut:
 
 Contoh 5. Inisialisasi Array dua nilai elemen pertama
 
-----------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -265,7 +258,6 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
 	Elemen ke-0: 2
 	Elemen ke-1: 5
 	Elemen ke-2: 0
@@ -299,13 +291,11 @@ Pada array satu dimensi, kita juga dapat membuat array 1 dimensi tanpa menyebutk
 
 Contoh:
 
-{linenos=off}
+
 	int data[5] = {1,2,3,4,5,6}; //error
 	int data2[] = {10,20}; //terpesan 2 tempat dimemory
 
 Contoh 6. Tanpa inisialisasi, array langsung ditampilkan
-
-------------------------------------------------------------------
 
 Tulislah program berikut ini:
 
@@ -325,7 +315,6 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
 	Elemen ke-0: 2
 	Elemen ke-1: 5
 	Elemen ke-2: 0
@@ -342,7 +331,6 @@ T> Inisialisasi pada elemen array yang dideklarsikan **SANGATLAH PENTING** untuk
 
 Contoh 7. Penggunaan tipe data enum pada Array satu dimensi
 
--------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -361,7 +349,6 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
 	Nilai hari selasa adalah = 30
 
  **Keterangan:**
@@ -376,7 +363,6 @@ Array tidak bisa disalin begitu saja antara array satu yang ada nilainya ke arra
 
 Contoh:
 
-{linenos=off}
 	int data[5] = {1,2,3,4,5};
 
 Maka variabel array data tersebut akan dicatat alamat elemen `data[0]` pada memory. Jika kita mengakses elemen keduanya, yaitu `data[1]`, maka compiler akan melakukan kalkulasi untuk mendapatkan alamat `data[1]`, yaitu dengan cara menambahkan alamat `data[0]` dengan lebar tipe data array yang kita deklarasikan. Pada contoh diatas, kita membuat array bertipe integer. Karena integer berukuran 4 byte, maka jika `data[0]` beralamat di alamat `1000`, maka `data[1]` beralamat di `1000 + 4 = 1004` dan seterusnya.
@@ -384,8 +370,6 @@ Maka variabel array data tersebut akan dicatat alamat elemen `data[0]` pada memo
 Lalu bagaimana cara mengkopikan isi elemen array dari satu variabel ke variable array 1 dimensi lainnya? Kita harus menggunakan cara manual, yaitu mengkopikan masing-masing elemennya satu persatu dengan perulangan manual sesuai dengan jumlah elemen array yang dibuat.
 
 Contoh 8. Percobaan Penyalinan Array 1 dimensi
-
----------------------------------------------------
 
 Buatlah program berikut:
 
@@ -412,8 +396,6 @@ Hasil:
 
 Contoh 9. Penyalinan Array 1 dimensi dengan Perulangan
 
------------------------------------------------------------------------
-
 Buatlah program berikut ini:
 
 
@@ -436,7 +418,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	1
 	2
 	3
@@ -455,7 +437,7 @@ Array multi dimensi berarti array yang kita deklasaikan dapat dikembangkan ke ar
 
 Contoh deklarasi array dua dimensi yang menggambarkan papan catur adalah:
 
-{linenos=off}
+
 	int papan[8][8];
 
 yang digambarkan dalam bentuk:
@@ -470,12 +452,12 @@ Berikut adalah gambar array berdimensi (baris x kolom = 3 x 4)
 
 ### Deklarasi Array Dua Dimensi
 
-{linenos=off}
+
 	tipe_data nama_var_array[batas_baris][batas_kolom];
 
 Contoh:
 
-{linenos=off}
+
 	int matriks[3][4];
 	int matriks2[3][4] = { {5,20,1,11}, {4,7,67,-9}, {9,0,45,3} };
 
@@ -485,17 +467,17 @@ Array dua dimensi dapat mewakili bentuk suatu matriks, contoh matriks:
 
 selanjutnya dapat dideklarasikan sebagai berikut:
 
-{linenos=off}
+
 	int x[2][4];
 
 atau diklarasikan dengan langsung menginisialisasi nilai elemen-elemen-nya sebagai berikut:
 
-{linenos=off}
+
 	int x[2][4]= {{8, 5, 9, 8},{8, 2, 1, 0}}
 
 Selanjutnya larik dua dimensi x dapat digambarkan sebagai berikut:
 
-{linenos=off}
+
 	x[0][0]=8 x[0][1]=5 x[0][2]=9 x[0][3]=8
 	x[1][0]=8 x[1][1]=2 x[1][2]=1 x[1][3]=0
 
@@ -505,14 +487,14 @@ Berikut adalah berbagai bentuk pembuatan array dua dimensi dengan tipe data nume
 
 Array dua dimensi bertipe data numerik
 
-{linenos=off}
+
 	int matriks[3][5] = {{5,12,17,10,7},
 	{15,6,25,2,19},
 	{4,9,20,22,11}};
 
 Jika data array integer yang diinputkan kurang dari deklarasi
 
-{linenos=off}
+
 	int matriks[3][5] = {{5,12,17,10,7},
 	{15,6,25,2,19},
 	{4,9 }}; //kurang 3 angka
@@ -521,7 +503,7 @@ Maka tiga data yang kurang akan diisi dengan angka 0
 
 Array 2 dimensi dapat juga digunakan untuk menyimpan data karakter (character). Pendeklarasian array 2 dimensi character adalah sebagai berikut:
 
-{linenos=off}
+
 	char matriks[3][5] = {{’A’,’B’,’C’,’D’,’E’},
 	{’F’,’G’,’H’,’I’,’J’},
 	{’K’,’L’,’M’,’N’,’O’}};
@@ -535,7 +517,7 @@ Akan ditampilkan sebagai:
 
 Array 2 dimensi juga dapat dideklarasikan sebagai berikut:
 
-{linenos=off}
+
 	char matriks[5][12] = {“Jakarta“,
 	“Bandung“,
 	“Surabaya“,
@@ -548,7 +530,7 @@ Array diatas akan ditampilkan sebagai:
 
 Jika jumlah nilai character lebih banyak daripada deklarasi
 
-{linenos=off}
+
 	char matriks2[2][2] = {'a','b','c','d','e'};
 
 E> Akan terjadi ERROR!
@@ -557,7 +539,7 @@ E> Akan terjadi ERROR!
 
 Jika data array character yang diinputkan kurang dari deklarasi
 
-{linenos=off}
+
 	char matriks[3][5] = {{‘a’,’b’,’c’,’d’,’e’},
 	{‘f’,’g’,’h’,’i’,’j’},
 	{‘k’,’l’ }}; //kurang 3 karakter
@@ -566,7 +548,7 @@ Maka tiga data yang kurang akan diisi dengan karakter NULL atau ‘\0’
 
 Jika data array integer yang diinputkan lebih dari deklarasi
 
-{linenos=off}
+
 	int matriks[3][5] = {{5,12,17,10,7},
 	{15,6,25,2,19},
 	{4,9,20,22,11,14,19 }}; //lebih 2 angka
@@ -577,7 +559,7 @@ E> Matriks yang jumlah datanya lebih akan menyebabkan ERROR
 
 Array 2 dimensi juga dapat dideklarasikan secara dinamis. Dinamis bisa dilakukan pada baris array 2 dimensi. Namun kita tidak bisa mendeklarasikan array 2 dimensi secara dinamis pada kolom. Contoh pendeklarasian baris dinamis adalah :
 
-{linenos=off}
+
 	int matriks[][5] = {{5,12,17,10,7},
 	{15,6,25,2,19},
 	{4,9,20,22,11}};
@@ -588,7 +570,7 @@ Akan ditampilkan sebagai:
 
 Contoh matriks dengan deklarasi baris dinamis lainnya:
 
-{linenos=off}
+
 	int matriks[][5] = {5,12,17,10,7,
 	15,6,25,2,19,
 	4,9,20,22,11,77,88,99};
@@ -602,8 +584,6 @@ Pada contoh diatas, jika kita hitung jumlah datanya adalah 18 buah, padahal jika
 Pengaksesan elemen-elemen array 2 dimensi dilakukan dengan cara perulangan. Perulangan yang dilakukan harus disesuaikan dengan jumlah dimensinya. Maka array 2 dimensi berarti perulangan yang dilakukan harus dua kali. Terdapat outer loop yang digunakan untuk mengakses baris array 2 dimensi, dan inner loop yang digunakan untuk mengakses kolom array 2 dimensi.
 
 Contoh 10. Deklarasi dan Menampilkan Array 2 Dimensi
-
-------------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -628,7 +608,6 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
 	5	12	17	10	7
 	15	6	25	2	19
 	4	9	1	5	2
@@ -638,8 +617,6 @@ Buatlah program berikut:
  Program diatas mendeklarasikan sebuah variabel array 2 dimensi bernama matriks berukuran 3 baris dan 5 kolom. Kemudian matriks tersebut langsung diinisialisasi dengan data integer sejumlah 15 data. Setelah diinisialisasi kemudian dilakukan pengaksesan terhadap array 2 dimensi tersebut dengan cara melakukan dua buah perulangan. Perulangan pertama disebut outer loop yang digunakan untuk mengakses indeks baris variabel matriks, sedangkan perulangan kedua disebut inner loop yang digunakan untuk mengakses indeks kolom variabel matriks. Kemudian untuk menampilkan data nya digunakan perintah cout dan untuk setiap data elemen array diberikan karakter tab yang digunakan untuk memberi jarak antar output data. Karakter tab pada bahasa C menggunakan escape character ‘\t’.
 
 Contoh 11. Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya
-
------------------------------------------------------------------
 
 Misalkan terdapat array 2 dimensi sebagai berikut matriks`[3][5]`
 
@@ -672,7 +649,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	1	2	3	4	5
 	6	7	8	9	10
 	11	12	13	14	15
@@ -709,7 +686,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	1
 	2
 	3
@@ -758,7 +735,7 @@ Berikut adalah contohnya:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	1	2	3
 	4	5	6
 
@@ -787,7 +764,6 @@ Cara ini menelusuri elemen array dua dimensi per dimulai dari kolom pertama lalu
 
 **Hasil:**
 
-{lang="sh", linenos=off}
 	1	4
 	2	5
 	3	6
@@ -811,7 +787,7 @@ Cara menggunakan array of character sama seperti mendeklarasikan variabel bertip
 
 Contoh pendeklarasian array of character
 
-{linenos=off}
+
 	char nama[6]; //tanpa inisialisasi
 	char nama2[6] = “anton”; //langsung diinisialisasi
 	char nama2[6] = {‘a’,’n’,’t’,’o’,’n’}; //langsung diinisialisasi
@@ -820,7 +796,6 @@ Pada sebuah string, terdapat karakter `\0` yang dapat digunakan untuk mengetahui
 
 Contoh 13. Penggunaan karakter \0
 
-------------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -840,7 +815,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	String
 
  **Keterangan:**
@@ -848,8 +823,6 @@ Buatlah program berikut:
  Program diatas dapat mengetahui kapan berakhirnya suatu string, dalam arti kita dapat mengetahui panjang suatu string dengan melakukan perulangan untuk setiap karakter yang ada pada array sampai ditemukannya katakter ‘\0’.
 
 Contoh 14. String tanpa karakter \0
-
----------------------------------------------
 
 Buatlah program berikut:
 
@@ -877,8 +850,6 @@ Buatlah program berikut:
 
 Contoh 15. Mengisi Array of Character
 
----------------------------------------------------
-
 Buatlah program berikut:
 
 
@@ -897,7 +868,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Isi data string: Baehaki
 	hasil data string: Baehaki
 
@@ -908,13 +879,11 @@ Buatlah program berikut:
 
 **Contoh:**
 
-{lang="sh", linenos=off}
+
 	Isi data string: Ahmad Baehaki
 	hasil data string: Ahmad
 
 Contoh 16. Pengisian variabel array of character dengan maksimum jumlah karakter.
-
----------------------------------------------------------------------
 
 Tulislah program berikut:
 
@@ -934,7 +903,6 @@ Tulislah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
 	Isi data string: Ahmad Baehaki
 	hasil data string: Ahmad Baehaki
 
@@ -946,7 +914,7 @@ Tulislah program berikut:
 
 Bahasa C++ menggunakan fungsi-fungsi pustaka yang disediakan untuk mengoperasikan suatu nilai string yang dimasukkan dalam file header string.h. Beberapa fungsi string yang terdapat pada header string.h adalah sebagai berikut:
 
-{linenos=off}
+
 	strlen()
 
 
@@ -963,7 +931,6 @@ Bentuk umum method: `<nama_var_string>.length();`
 
 Contoh 17. Penggunaan fungsi strlen()
 
--------------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -983,7 +950,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
 	panjang huruf adalah: 10 karakter
 
@@ -992,8 +959,6 @@ Buatlah program berikut ini:
  Fungsi strlen menerima satu parameter yang hanya bertipe array of character. Fungsi ini tidak bisa menerima parameter berupa tipe data C++ string.
 
 Contoh 17. Penggunaan fungsi length pada tipe data string C++
-
-----------------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -1014,7 +979,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
 	panjang huruf adalah: 10 karakter
 
@@ -1034,8 +999,6 @@ Dalam bahasa C++, untuk menyalin nilai suatu string tidak dapat langsung menulis
 2. Bentuk umum: `void strncpy(<stringhasil>,<stringsumber>);`
 
 Contoh 18. Penggunaan fungsi strcpy()
-
-----------------------------------------------------------------
 
 Buatlah program berikut ini:
 
@@ -1057,7 +1020,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	String pertama : STRING
 	String Kedua : STRING
 
@@ -1073,8 +1036,6 @@ Contoh Error:
  * Hal ini terjadi karena data2 berjumlah 6 karakter, sedangkan data berjumlah 5 karakter. Jadi ketika data2 dikopikan ke data, maka akan terjadi error karena tempatnya kurang.
 
 Contoh 19. Penggunaan fungsi strncpy()
-
-----------------------------------------
 
 Buatlah program beriku:
 
@@ -1096,7 +1057,7 @@ Buatlah program beriku:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	String pertama : STRING
 	String Kedua : STRINGKU
 
@@ -1112,8 +1073,6 @@ __Bentuk umum__: `strcat(<string hasil>, <string sumber>);`
 String dalam C++ tidak bisa digabungkan begitu saja dengan menggunakan operator + seperti pada bahasa pemrograman Pascal. Jika dipaksakan menggunakan operator + akan ditampilkan pesan kesalahan sebagai berikut ini.
 
 Contoh 20. Penggunaan fungsi strcat()
-
-----------------------------------------
 
 Buatlah program beriku:
 
@@ -1142,8 +1101,6 @@ Buatlah program beriku:
 
 Contoh 21. Penggunaan fungsi strcat()
 
----------------------------------------
-
 Buatlah program berikut:
 
 
@@ -1163,7 +1120,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Jadi gabungannya adalah: Kami kelompok  belajar Qt C++
 
  **Keterangan:**
@@ -1171,7 +1128,6 @@ Buatlah program berikut:
  * Program diatas menggunakan fungsi `strcat` dimana fungsi tersebut akan menggabungkan dua buah string. Parameter string pertama juga digunakan untuk menampung string gabungan kedua string tersebut. Sehingga pada akhirnya variabel string1 lah yang ditampilkan ke layar.
  * Variabel `string1` diberi ukuran 100 karena jika tidak diberi ukuran elemen maka `string1` tidak bisa memperbesar ukurannya di memory komputer sehingga akan menyebabkan program **HANG**.
 
--------------------------------------------
 
  **TIPS**
  
@@ -1216,14 +1172,14 @@ Buatlah program berikut:
 
 Pada bahasa C++ tipe data _array of character_ bisa dikonversi menjadi `numerik` dan sebaliknya numerik bisa dikonversi menjadi `array of character`. Caranya adalah `#include <stdlib>`. Fungsi-fungsi konversi dari string ke numerik adalah:
 
-{lang="c++", linenos=off}
+
 	atoi() //untuk mengubah string menjadi int
 	atof() //untuk mengubah string menjadi float
 	atol() //untuk mengubah string menjadi long int
 
 Sedangkan kebalikannya, fungsi untuk mengubah numerik menjadi string adalah:
 
-{lang="c++", linenos=off}
+
 	itoa() //untuk mengubah int menjadi string
 	ltoa() //untuk mengubah long int menjadi string
 	ultoa() //untuk mengubah unsigned long menjadi string
@@ -1236,8 +1192,6 @@ Fungsi diatas menerima parameter `<var numerik>`, `<var array of character>`, da
 C++ library standar memiliki kelas string yang membuat bekerja dengan string lebih mudah dengan menyediakan satu set encapsulasi dari data, dan fungsi untuk memanipulasi data string. Kelas ini dikenal dengan `std::` string yang dapat menangani rincian alokasi memori dan membuat kopi string, atau menempatkan mereka di memory dengan lebih mudah.
 
 Contoh 22. Pembuatan variabel string C++, penyalinan string, dan penggabungan string
-
---------------------------------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -1266,7 +1220,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Isi str1 : Ini string C++
 	Isi str1 : Ini string C++
 	Halo, Ini string C++
@@ -1275,8 +1229,6 @@ Buatlah program berikut:
  
  * Tanpa perlu dipelajari lebih dalam, kita dapat melihat bahwa class string pada C++ jelas jauh lebih cepat penggunaannya dan mudah dalam pembuatan serta penyalinan seperti semudah mengoperasikan variabel bertipe integer saja. Demikian pula, _concatenating_ (penggabungan) dua string dapat dilakukan dengan hanya menambahkan mereka, sama juga seperti kita akan melakukan penjumlahan dengan integer apapun.
  * Syarat untuk dapat menggunakan class string adalah harus mengincludekan `#include <string>`, seperti yang dapat dilihat pada kode program diatas.
-
----------------------------------------------------------------
 
 T> **TIPS**
 T>
@@ -1319,7 +1271,6 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
 	Halooooooo
 	saya belajar
 	C
@@ -1329,8 +1280,6 @@ Buatlah program berikut:
  Dapat dilihat langsung pada baris komentar program diatas.
 
 Contoh 24. Penggabungan string dengan menggunakan class string
-
-------------------------------------------------------------------------------
 
 Buatlah program berikut:
 
@@ -1355,9 +1304,9 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Percobaan 1		Percobaan 2
-	Percobaan 1		Percobaan 2 Percobaan 	3 Percebaan tampung
+	Percobaan 1		Percobaan 2 	Percobaan 3 	Percebaan tampung
 
  **Keterangan:**
 
@@ -1387,7 +1336,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	I
 	n
 	d
@@ -1410,8 +1359,6 @@ Buatlah program berikut:
  * Pada bagian kedua, kita juga bisa mengkonversi dari tipe data class string menjadi tipe data array of character atau tipe data C-style string dengan menggunakan method dari class string, yaitu `c_str()`.
 
 Contoh 26. Menemukan substring pada sebuah string besar
-
----------------------------------------------------------
 
 Tulislah program berikut ini:
 
@@ -1460,7 +1407,7 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Contoh string adalah: 
 	Kata pak Hari, "hari ini matahari cerah sekali!"
 
@@ -1490,7 +1437,7 @@ besar.
 layar.
  * Selain dapat menerima parameter berupa substring, method find juga dapat menerima parameter berupa character dengan proses pencarian yang sama dengan proses pencarian dengan parameter substring.
 
-{title="Contoh 27. Membalik kata / kalimat"}
+Contoh 27. Membalik kata / kalimat.
 
 Tulislah program berikut ini:
 
@@ -1514,7 +1461,7 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	String asli: 
 	String ini akan dibalik!
 
@@ -1525,7 +1472,7 @@ Tulislah program berikut ini:
  
  Untuk membalik kalimat bertipe string, kita harus menggunakan library header algoritm, sehingga kita harus mengincludekan library tersebut #include <algorithm>. Setelah itu untuk menggunakannya kita gunakan perintah reverse(<indeks string pertam,<indeks string terakhir>). Perintah reverse tersebut akan benar-benar mengganti string asli menjadi terbalik, sehingga variable string kita akan berubah berisi kalimat yang sudah terbalik.
 
-{title="Contoh 28. Konversi huruf besar dan kecil"}
+Contoh 28. Konversi huruf besar dan kecil.
 
 Tulislah program berikut ini:
 
@@ -1553,7 +1500,7 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
-{lang="sh", linenos=off}
+
 	Masukkan sebuah string:
 	Ini KoK tulisaNya AlaY BaNGet yA!
 	Hasil konversi ke huruf besar:

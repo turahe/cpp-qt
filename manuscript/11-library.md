@@ -37,7 +37,7 @@ Gambar dibawah ini menunjukan contoh beberapa class yang diturunkan dari QObject
 
 Dengan menurunkan class dari QObject anda dapat melakukan automatic memory management pada program anda, sehingga kemungkinan terjadi memory leak dapat dihindari. Pada contoh dibawah ini kita akan membuat dua program yang berbeda, program pertama tidak menggunakan QObject dan program kedua menggunakan QObject.
 
-{title="Contoh 1 Alokasi memory dinamis tanpa QObject"}
+Contoh 1 Alokasi memory dinamis tanpa QObject.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
@@ -104,7 +104,7 @@ Dengan menurunkan class dari QObject anda dapat melakukan automatic memory manag
  - Class Mahasiswa yang kita buat diatas tidak diturunkan dari class QObject, sehingga kita harus menghapus memory di heap yang sudah tidak digunakan kembali secara manual untuk menghindari memory leak.
  - Penanganan secara manual menuntut programmer untuk lebih teliti dan akan menyulitkan bila membangun aplikasi yang kompleks dan memiliki banyak objek.
 
-{title="Contoh 2. Alokasi memory dinamis dengan QObject"}
+Contoh 2. Alokasi memory dinamis dengan QObject.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
@@ -158,7 +158,7 @@ Dengan menurunkan class dari QObject anda dapat melakukan automatic memory manag
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
- **Keterangan:**:
+ **Keterangan:**
  
  - Untuk menggunakan QObject anda harus menambahkan header file <QObject>.
 - Karena class Mahasiswa diturunkan dari class QObject, maka secara otomatis class Mahasiswa dapat menggunakan fitur automatic memory management.
@@ -176,7 +176,7 @@ STL C++ yang paling sering digunakan adalah string, pada Qt anda dapat menggunak
 
 Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh program dibawah ini.
 
-{title="Contoh 3. Cek apakah nilai QString Null atau Empty"}
+Contoh 3. Cek apakah nilai QString Null atau Empty
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
@@ -220,7 +220,7 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
  - Method isNull() dapat digunakan untuk memeriksa apakah string masih belum diinisialisasi.
  - Method isEmpty() dapat digunakan untuk memeriksa apakah string kosong.
 
-{title="Contoh 4. Menggunakan Fungsi Left, Mid, Right"}
+Contoh 4. Menggunakan Fungsi Left, Mid, Right.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4, kemudian tulis kode berikut.
 
@@ -249,7 +249,7 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
  - Fungsi right() digunakan untuk mengambil sejumlah karakter tertentu dari kanan.
  - Fungsi mid() digunakan untuk mengambil sejumlah karakter tertentu dari tengah.
 
-{title="Contoh 5. Menggabungkan String"}
+Contoh 5. Menggabungkan String.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
 
@@ -273,13 +273,13 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
- **Keterangan:**:
+ **Keterangan:**
  
  - Fungsi append() dapat digunakan untuk menambahkan katrakter di akhir string.
  - Fungsi prepend() dapat digunakan untuk menambahkan karakter di awal string.
  - Fungsi insert() dapat digunakan untuk menyisipkan karakter dengan index tertentu pada string.
 
-{title="Contoh 6. Membalik String"}
+Contoh 6. Membalik String.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian tulis kode berikut.
 
@@ -317,7 +317,7 @@ Qt Core Module juga memiliki class-class collection seperti : list, stack, queue
 
 Class QList dapat digunakan untuk membuat type safe object list untuk menyimpan data collection. Untuk mempermudah mengakses semua data pada list anda dapat menggunakan keywor foreach. Dengan QList anda dapat menambahkan data secara dinamis dan anda juga dapat menentukan tipe data ketika mendeklatasikan QList (type safe object) sehingga bila nanti objek yang anda buat diberi nilai yang tipenya berbeda dengan tipe data yang ditentukan program dapat mendeteksi kesalahan tersebut pada saat compile time. Misal jika anda medeklarasikan QList dengan tipe data QString (QList<QString>) maka anda tidak dapat memasukan nilai bertipe int kedalam list tersebut.
 
-{title="Contoh 7 Menggunakan QList"}
+Contoh 7 Menggunakan QList.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 7, kemudian tulis kode berikut.
 
@@ -350,7 +350,7 @@ Class QList dapat digunakan untuk membuat type safe object list untuk menyimpan 
 
 Selain menggunakan keyword foreach untuk mengakses data pada list anda juga dapat menggunakan iterator. Pada program dibawah ini ditunjukan penggunaan iterator dengan QListIterator untuk mengakses data yang ada pada QList.
 
-{title="Contoh 8. Menggunakan object Iterator"}
+Contoh 8. Menggunakan object Iterator.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 8, kemudian tulis kode berikut.
 
@@ -390,7 +390,7 @@ QList<int>::const_iterator
 
 Selain untuk membaca data pada list, iterator juga dapat digunakan untuk memodifikasi data di list, caranya yaitu dengan menggunakan objek QMutableListIterator. Contoh penggunaan QMutableListIterator dapat dilihat pada kode dibawah ini.
 
-{title="Contoh 9. Menggunakan Iterator untuk memodifikasi data di list"}
+Contoh 9. Menggunakan Iterator untuk memodifikasi data di list.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 9, kemudian tulis kode berikut.
 
@@ -429,7 +429,7 @@ Selain untuk membaca data pada list, iterator juga dapat digunakan untuk memodif
 
 Ada beberapa cara yang dapat digunakan untuk menambahkan data ke list. Anda dapat menambahkan data diawal, diakhir, atau ditengah list. Beberapa cara penulisan kode untuk menambahkan list adalah sebagai berikut.
 
-{title="Contoh 10. Beberapa cara menambahkan data ke list"}
+Contoh 10. Beberapa cara menambahkan data ke list
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 10, kemudian tulis kode berikut.
 
@@ -473,7 +473,7 @@ Selain untuk tipe data yang umum Qt juga menyediakan collection untuk tipe data 
 
 Class QStringList diturunkan dari QList<QString> dan mempunyai banyak tambahan fungsi yang berguna untuk memanipulasi data di dalam QStringList.
 
-{title="Contoh 11. Menggunakan QStringList"}
+Contoh 11. Menggunakan QStringList
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 11, kemudian tulis kode berikut.
 
@@ -517,7 +517,7 @@ Class QStringList diturunkan dari QList<QString> dan mempunyai banyak tambahan f
 
 Jika anda ingin menyimpan data pada collection dengan metode FIFO (first in first out) atau LIFO (last in first out) maka anda dapat menggunakan class QStack dan QQueue. Untuk FIFO anda dapat menggunakan QQueue dan untuk LIFO anda dapat menggunakan QStack.
 
-{title="Contoh 12. Menggunakan Stack dan Queue"}
+Contoh 12. Menggunakan Stack dan Queue.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 12, kemudian tulis kode berikut.
 
@@ -567,7 +567,7 @@ Jika anda ingin menyimpan data pada collection dengan metode FIFO (first in firs
 
 Untuk membuat object map dan hash Qt menyediakan class QMap. Dengan QMap anda dapat membuat collection yang index-nya bukan berupa number (key-value pair).
 
-{title="Contoh 13. Menggunakan QMap"}
+Contoh 13. Menggunakan QMap.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 13, kemudian tulis kode berikut.
 

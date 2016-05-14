@@ -35,7 +35,7 @@ Suatu fungsi harus diberi nama supaya dapat dipanggil dari bagian program yang m
 
 Secara umum, fungsi terdiri dari dua komponen yaitu definisi fungsi dan tubuh fungsi. Isi dari definisi  fungsi adalah : tipe dari fungsi, nama dari suatu fungsi dan paramter-parameter yang digunakan. Tubuh  dari fungsi berisikan statemen-statemen yang akan melakukan tugas yang diberikan oleh fungsi  tersebut. Tubuh suatu fungsi diawali dengan tanda kurung kurawal buka dan diakhiri dengan tanda  kurung kurawal tutup. Beikut ini adalah bentuk umum dari suatu fungsi:  
 
-{linenos=off}
+
     <tipe> <nama_fungsi>([<paramter1>, <paramter2> ,...])
     {
     <tubuh fungsi>
@@ -45,7 +45,7 @@ Secara umum, fungsi terdiri dari dua komponen yaitu definisi fungsi dan tubuh fu
 
 Definisi fungsi ditulis sebelum dituliskan tubuh fungsi dan tidak diakhiri dengan tanda titik koma. Tipe  dari definisi fungsi sesuai dengan tipe data dari nilai yang dikembalikan jika fungsi itu mempunyai  statment `return`, jika tidak terdapat statement `return` tipe ini diberi tipe `void`. Nama suatu fungsi  dibentuk sendiri oleh pemrogram sesuai dengan syarat penamaan identifier yang telah dibahas pada  bab 2 dan nama fungsi yang baik mencerminkan pekerjaan dari fungsi tersebut. Parameter suatu fungsi  dapat dituliskan dengan dipisahkan oleh tanda koma, bisa mempunyai beberapa parameter namun  dapat juga tidak mempunyai parameter sama sekali. Parameter dibutuhkan jika dalam tubuh fungsi  memerlukan nilai dari luar fungsi. Parameter ini dinamakan parameter formal. Berikut ini adalah contoh  cara mendefinisikan fungsi.  
 
-{linenos=off}
+
     int terbesar(int bil1, int bil2)
     {
     int hasil;
@@ -78,11 +78,8 @@ Prototype fungsi standard berada di file-file judulnya, dalam fungsi pustaka seb
 
 Contoh 1. Membuat Fungsi yang mengembalikan nilai.
 
---------------------------------------------------
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
-
-
      #include <QtCore/QCoreApplication>
     #include <iostream>
     int absolut(int bil);
@@ -105,7 +102,7 @@ Contoh 1. Membuat Fungsi yang mengembalikan nilai.
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-{lang="sh", linenos=off}
+
 Bilangan : -10
 Dimutlakkan menjadi : 10
 
@@ -135,8 +132,6 @@ Suatu fungsi dalam menyelesaikan tugasnya, dapat hanya melakukan suatu tugas tan
 
 Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.
 
-----------------------------------------------------------------
-
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 
@@ -157,7 +152,7 @@ Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-{lang="sh", linenos=off}
+
 Hello World!
 Hello World!
 Hello World!  
@@ -184,8 +179,6 @@ Variable lokal merupakan variable yang hanya berlaku untuk pernyataan di dalam s
 
 Contoh 3. Variabel Lokal.
 
----------------------------------   
-
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
@@ -211,8 +204,8 @@ Contoh 3. Variabel Lokal.
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
-{lang="sh", linenos=off}
-Hasil = 28
+
+A>  Hasil = 28
 
  **Analisa Program:** 
  
@@ -226,7 +219,6 @@ Sesuai dengan namanya, variable global maksudnya adalah suatu variable yang dapa
 
 Contoh 4. Variabel Global.   
 
--------------------------------
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
@@ -250,8 +242,8 @@ Contoh 4. Variabel Global.
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
-{lang="sh", linenos=off}
-Variabel global hasil = 28
+
+A> Variabel global hasil = 28
 
  **Analisa Program:** 
  
@@ -264,8 +256,6 @@ Variabel global hasil = 28
 Jika dilihat dari prinsip kerjanya, variabel statik bertentangan dengan variable lokal, variable lokal tidak  lagi digunakan setelah suatu proses dalam blok selesai, namun variable static adalah jenis variabel yang  masih tetap ada nilainya dan akan tetap dipertahankan nilainya walaupun sudah keluar dari proses.  Sebenarnya variabel statik ini merupakan pengubah (modifer) dari variable lokal atau global, sehingga  variabel statik dapat bersifat statik lokal atau statik global tergantung dari letak pendeklarasianya.   
 
 Contoh 5. Variabel Statik.
-
---------------------------------   
 
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
@@ -301,8 +291,8 @@ Contoh 5. Variabel Statik.
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
-{lang="sh", linenos=off}
-5 Faktorial = 120
+
+A> 5 Faktorial = 120
 
  **Analisa Program:**  
  
@@ -321,26 +311,26 @@ Penggunaan variabel lokal lebih disarankan, karena penggunaan variabel global ak
 
 Seperti contoh program-program di atas, fungsi dapat menerima nilai melalui parameter formal dan  dapat mengembalikan nilai melalui statment `return`. Ketika fungsi dipanggil, fungsi tersebut akan  melakukan suatu pekerjaan dan mengirimkan suatu nilai hasil suatu pekerjaan tersebut yang dinamakan  nilai kembalian (`return value`). Jika kita mendeklarasikan seperti berikut:  
 
-{linenos=off}
+
 	int fungsiku();  
 
 Ini berarti kita mendeklarasikan fungsi bernama fungsiku yang akan mengembalikan nilai bertipe  integer. Jika kita mendeklarasikan seperti berikut:  
 
-{linenos=off}
+
 	int fungsiku(int nilaiInt, float nilaiFloat);  
 
 Ini berarti kita mendeklarasikan fungsi bernama fungsiku yang juga akan mengembalikan nilai bertipe  integer dan selain itu juga menerima 2 buah nilai yang satu bernama nilaiInt bertipe int dan yang  lainnya adalah bernama nilaiFloat bertipe float. Variabel-variabel penerima nilai ini disebut parameter  formal, daftar nilai-nilai yang diterima oleh fungsi ini dinamakan parameter list. Pada contoh di atas,  paremeter list tersebut adalah : nilaiInt yaitu sebuah variabel bertipe int dan nilaiFloat yaitu sebuah  variabel bertipe float.   
 
 Ketika kita mengirimka nilai ke dalam suatu fungsi, yaitu ketika memanggil fungsi sambil menuliskan nilai  yang dikirim di dalam tanda kurung, parameter ini dinamakan parameter aktual atau argumen. Sebagai  contoh misalnya :  
 
-{linenos=off}
+
 	Hasil = fungsiku(10, 12.5);  
 
 Tampak bahwa nilai 10 (bertipe int) dan nilai 12.5 (bertipe float) dikirim sebagai parameter aktual atau  argumen, tipe-tipe data dari parameter aktual ini harus sesuai dengan tipe-tipe data yang dideklarasikan  pada parameter formal. Pada contoh ini nilai 10 dikirim ke parameter formal pertama dan nilai 12.5  dikirim ke parameter formal kedua dan keduanya sudah sesuai dengan tipe data yang dideklarasikan  pada fungsi `fungsiku()`.  
 
 Pengiriman parameter ke suatu fungsi dapat dilakukan dengan dua cara, yaitu yang disebut pengiriman  secara nilai (by value) atau pengiriman secara acuan (by reference). Pada pengiriman secara nilai, yang  dikirimkan adalah nilai (value) dari parameter tersebut, jadi pada waktu memanggil fungsi, parameter  dapat langsung diisi suatu nilai tidak harus menggunakan suatu variabel, sedangkan pengiriman secara  acuan yang dikirimkan adalah alamat dari variabel yang menyimpan nilai yang dikirmkan tersebut.  
 
-Hasil dari suatu fungsi dapat diperoleh dari nilai kembaliannya (return) atau dengan variabel global.  Seperti contoh pada Lab.4, hasil proses dari suatu fungsi tersebut dapat diperoleh karena variabel yang  dipakai dalam fungsi bersifat global. Selain dengan cara tersebut di atas, hasil dari suatu fungsi dapat  juga diperoleh dari parameter aktual yang dikirimkan ke parameter formal, karena parameter formal  seolah-olah akan mengirimkan kembali nilai hasil proses dalam fungsi. Pengiriman parameter yang  seolah-olah akan mengirimkan kembali nilai hasil proses dalam fungsi ini dinamakan pengiriman  parameter secara acuan (pass by reference). Lebih jauh mengenai pengiriman parameter secara acuan  ini akan dibahas pada Bab 5 yaitu mengenai Pointer dan References.  
+Hasil dari suatu fungsi dapat diperoleh dari nilai kembaliannya (return) atau dengan variabel global.  Seperti contoh pada Contoh 4, hasil proses dari suatu fungsi tersebut dapat diperoleh karena variabel yang  dipakai dalam fungsi bersifat global. Selain dengan cara tersebut di atas, hasil dari suatu fungsi dapat  juga diperoleh dari parameter aktual yang dikirimkan ke parameter formal, karena parameter formal  seolah-olah akan mengirimkan kembali nilai hasil proses dalam fungsi. Pengiriman parameter yang  seolah-olah akan mengirimkan kembali nilai hasil proses dalam fungsi ini dinamakan pengiriman  parameter secara acuan (pass by reference). Lebih jauh mengenai pengiriman parameter secara acuan  ini akan dibahas pada Bab 5 yaitu mengenai Pointer dan References.  
 
 ## Parameter Default  
 
@@ -348,31 +338,30 @@ Pada pembahasan sebelumnya, sudah dijelaskan bahwa untuk setiap parameter formal
 
 Sebenarnya dengan memberikan nilai default yang dinamakan default parameter, suatu parameter  formal bisa mempunyai suatu nilai default ketika tidak ada nilai yang diterima dari parameter aktual.  Misalnya deklarasi prototype seperti berikut :  
 
-{linenos=off}
+
 	int fungsiku(int nilaiInt = 10);  
 
 Ini berarti, `fungsiku()` akan mengembalikan suatu nilai bertipe int dan menerima nilai parameter bertipe  int, jika tidak ada nilai yang diterima maka akan digunakan nilai default yaitu 10. Karena nama  parameter tidak diwajibkan pada prototype, maka prototype tersebut juga boleh ditulis :  
 
-{linenos=off}
+
 	int fungsiku(int = 10);  
 
 Pemakaian parameter default ini tidak mengubah definisi fungsi, header dari definisi fungsi tersebut  tetap seperti berikut:  
 
-{linenos=off}
+
 	int fungsiku(int x);  
 
 Jika pemanggilan fungsi `fungsiku()` tidak disertai parameter aktual maka kompiler akan memberikan nilai  default 10 pada x. Seperti sudah dijelaskan pada contph 1, nama dari default parameter tidak harus sama  dengan nama pada header definisi fungsi, nilai default dikerjakan berdasarkan posisi parameter bukan  nama parameter.  
 
 Semua parameter fungsi dapat diberikan nilai default, dengan syarat jika tidak ada nilai default untuk  parameter di kanannya maka parameter tersebut tidak boleh diberikan nilai default. Misalnya jika  prototype suatu fungsi adalah sepoerti berikut:  
 
-{linenos=off}
+
 	int fungsiku(int a, int b, int c);  
 
 Berarti kita hanya boleh memberikan nilai default untuk b jika kita telah memberikan nilai default untuk  c. Nilai default untuk a hanya boleh diberikan jika kita telah memberikan nilai default untuk b dan c.  
 
-Contoh 6 Default Parameter.
+Contoh 6. Default Parameter.
 
----------------------------------
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
@@ -402,13 +391,13 @@ Contoh 6 Default Parameter.
        
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut. 
 
-{lang="sh", linenos=off}
-Volume 1 --> 3750
-Volume 2 --> 150
-Volume 3 --> 10
+
+A>  Volume 1 --> 3750
+A>  Volume 2 --> 150
+A>  Volume 3 --> 10
 
 
- Analisa Program:  
+ **Analisa Program:**  
  
  - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 25 karena semua parameter formal menerima nilai, maka hasilnya 3750.  
  - Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 1 karena parameter formal ketiga tidak menerima nilai, maka hasilnya 150.  

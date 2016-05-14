@@ -62,39 +62,38 @@ debugging program. Sebuah project dapat meliputi: file-file yang digroup secara 
 
 ![Gambar Projek pada Qt Creator](images/capture1-1.png)
 
-Editor Qt Creator mempunyai sebuah code editor dan mengintegrasikan Nokia's Qt Designer untuk mendesain dan
+Editor Qt Creator mempunyai sebuah code editor yang telah terintegrasi dengan Qt Designer untuk mendesain dan
 membangun aplikasi GUI dari Qt widgets. Karena Qt Creator adalah sebuah Integrated Development Enviroment (IDE), maka Qt Creator memisahkan antara text editor untuk build dan editor untuk menjalankan (run) aplikasi-aplikasi. Qt Creator bukan hanya bisa membaca text file biasa, akan tetapi juga bisa membaca file C++ dan bahasa QML.
 
 Keunggulan Code Editor
 
 - Dapat menulis code dengan format yang benar.
-- engantisipasikan apa yang akan programer tulis dan code yang komplit.
+- Mengantisipasikan apa yang akan programer tulis dan code yang komplit.
 - Menampilkan baris-baris yang error dan pesan-pesan warning.
 - Memandu programer secara semantik untuk menulis classes, functions, dan symbols.
 - Menyediakan fasilitas bantuan context-sensitive pada classes, functions, dan symbols.
 - Me-rename symbol-symbol dengan langkah intelligent, sehingga simbol-simbol yang lain dengan nama yang sama tidak ter-rename.
 - Menampilkan lokasi function, class yang dideklarasikan atau yang dipanggil
 
-[Gambar Code Editor](images/capture1-2.png)
+![Gambar Code Editor](images/capture1-2.png)
 
 ### UI Designer
 
-Qt Creator menyajikan dua buah editor visual: Qt Designer dan Qt Quick Designer. Qt Designer merupakan sebuah tool untuk mendesain dan membangun aplikasi GUI dari Qt widgets. Widgets dan forms yang dibentuk dengan Qt Designer terintegrasi dengan code program, Qt signals and mekanisme slots, sehingga kita dengan mudah memberikan nilai-nilai dan properti-properti pada pada elemen-elemen grafik. Semua properti-properti yang diatur pada Qt Designer dapat diubah secara dinamik melalui/di dalam code.
+Qt Creator menyajikan dua buah editor visual: Qt Designer dan Qt Quick Designer. Qt Designer merupakan sebuah tool untuk mendesain dan membangun aplikasi GUI dari Qt widgets. Widgets dan forms yang dibentuk dengan Qt Designer terintegrasi dengan code program, Qt signals dan mekanisme slots, sehingga kita dengan mudah memberikan nilai-nilai dan properti-properti pada pada elemen-elemen grafik. Semua properti-properti yang diatur pada Qt Designer dapat diubah secara dinamik melalui/di dalam code.
 
-Qt Quick Designer digunakan untuk membangun secara mudah animasi-animasi dengan menggunakan sebuah bahasa pemograman yang dikenal dengan [Qt Meta-Object Language (QML)](https://en.wikipedia.org/wiki/QML). Dalam QML, sebuah user interface dispesifikasikan sebagai sebuah pohon (tree) dari objects dengan properti-properti. Kamu menggunaan teks editor visual untuk menciptakan items, screens, dan aplikasi, serta mendefinisikan perubahan action-acton pada komponennya.
-• Dapat digunakan Qt atau JavaScript untuk mengimplementasikan logik aplikasi.
+Qt Quick Designer digunakan untuk membangun secara mudah animasi-animasi dengan menggunakan sebuah bahasa pemograman yang dikenal dengan [Qt Meta-Object Language (QML)](https://en.wikipedia.org/wiki/QML). Dalam QML, sebuah user interface dispesifikasikan sebagai sebuah pohon (tree) dari objects dengan properti-properti. Kamu menggunaan teks editor visual untuk menciptakan items, screens, dan aplikasi, serta mendefinisikan perubahan action-acton pada komponennya. Dapat digunakan Qt atau JavaScript untuk mengimplementasikan logik aplikasi.
 
 ![Gambar UI Designers](images/capture1-3.png)
 
-Pilih File -> New File or Project
+
 
 ### Bahasa yang di dukung
 
-Kamu dapat menggunakan code editor menulis code dalam Qt C++ atau bahasa pemograman QML, javascript bahkan HTML5 . Syntax highlighting juga disajikan untuk banyak bahasa pemograman yang lain.
+Kamu dapat menggunakan code editor menulis code dalam Qt C++ atau bahasa pemograman QML, javascript bahkan HTML5. Syntax highlighting juga disajikan untuk banyak bahasa pemograman yang lain.
 
 ### Platform
 
-• Qt Creator men-support untuk membangun dan menjalankanaplikasi-aplikasi Qt untuk desktop environments (Seperti Windows, Linux, FreeBSD dan Mac OS) Selain itu juga bisa dijalankan pada mobile devices (seperti Symbian, Maemo, andMeeGo). Ketika sebuah aplikasi dibangun untuk mobile device yang bisa mengkoneksi ke Personal Computer (PC), maka Qt Creator men-generate sebuah package instalasi, menginstall package tersebut pada device, dan meneksekusikannya. 
+Qt Creator men-support untuk membangun dan menjalankan aplikasi-aplikasi Qt untuk desktop environments (Seperti Windows, Linux, FreeBSD dan Mac OS) Selain itu juga bisa dijalankan pada mobile devices (seperti Android, windows 8 dan iOS). Ketika sebuah aplikasi dibangun untuk mobile device yang bisa mengkoneksi ke Personal Computer (PC), maka Qt Creator men-generate sebuah package instalasi, menginstall package tersebut pada device, dan meneksekusikannya. 
 
 ### Tools
 
@@ -105,7 +104,7 @@ dan Qt Simulator. Qt Creator menggunakan command line client version control sys
 
  Qt Creator tidak mempunyai debugger. Qt Creator mempunyai plugin debugger yang bekerja sebagai interface antara Qt Creator core dan external native debuggers
 
-• Debuggers adalah:
+Debuggers adalah:
 
 - GNU Symbolic Debugger (gdb)
 - Microsoft Console Debugger (CDB)
@@ -171,100 +170,184 @@ Perlu diperhatikan bersama bahwa pemilihan teknologi adalah biasa, so, tetaplah 
 
 ## Install Qt Creator
 
-Pada tutorial ini kita akan menginstall Qt pada ubuntu 14.04  dengan menggunakan versi terbaru dari Qt Creator yang dapat di unduh di [halaman](http://www.qt.io/download) Qt cCreator. 
-This is a tutorial for installation of Qt 5.0.2 to Ubuntu 12.10. It may be used also for newer versions of Qt and Ubuntu. A difference for OpenGL has been found and added as a note below.
+Pada tutorial ini kita akan menginstall Qt pada ubuntu 14.04 atau Windows 8 dengan menggunakan versi terbaru dari Qt Creator yang dapat di unduh di [halaman](http://www.qt.io/download) Qt cCreator. 
 
-### Installation Guide
+![Halaman web Downlaod Qt Creator](images/qt-downloads.png)
 
-####    Download
+
+### Install Qt Creator di Ubuntu 14.04
+
+####  1.  Download
 
 Kunjungi website Qt untuk mendowload Qt Crator sesui dengan versi sisem operasi yang di gunakan baik itu 64-bit atau 32 bit. atau juga dapat di download dengan menggunakan command line di linux dengan mengetikan.
 
 Contoh:
 
-wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x86-online.run
+	wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x86-online.run
 
 jika menggunakan sistem operasi beberbasis 64 bit
 
-wget http://download.qt.io/official_releases/qt/5.6/5.6.0/qt-opensource-linux-x64-5.6.0.run
+	wget http://download.qt.io/official_releases/qt/5.6/5.6.0/qt-opensource-linux-x64-5.6.0.run
 
-####  Install
+#### 2. Install
 
-Adjust permission, run the installer and follow the instruction to complete the installation.
+Atur permisi, jalankan installer dan ikuti perintah berikut ini untuk mnginstall Qt Creator secara lengkap.
 
 	chmod +x qt-opensource-linux-x64-5.6.0.run
 	./qt-opensource-linux-x64-5.6.0.run
 
-####    Install g++
+####  3.  Install g++
 
 Buka terminal untuk menginstal g++: 
 
 	sudo apt-get install build-essential
 
-#### KOnfigurasi Kompiler
+#### 4. K0nfigurasi Kompiler
 
-Buka Qt Creator klik tool > Options. Klik build & run dan pilih tab Kit. Konfigurasi 
-Launch Qt Creator. Go to Tools > Options. Click Build & Run and select tab Kit. Configure a compiler if it is not automatically detected.
+Buka Qt Creator klik tool > Options. Klik build & run dan pilih tab Kit. Konfigurasikan kompiler jka belum terdeteksi secara otomatis.
 
-####    Install OpenGL libraries
+####  5.  Install Pustaka  OpenGL
 
-Execute the following command to install OpenGL libraries:
-
-	sudo apt-get install mesa-common-dev
-
-Note: Just installing the above-mentioned mesa-common-dev kit is not sufficient for more recent Ubuntu versions. Based on this comment in the forum an additional package needs installation. Execute following command:
-
-	sudo apt-get install libglu1-mesa-dev -y
-
-Tested with Qt5.3.1 and Ubuntu 14.04 and it solved the problem with missing -lGL.
-
-####    Set file association with pro files
-
-When installing from the on-line source the file association is not done automatically. It also not show up when you try to associate it with file explorer. Create a file named “Qt-Creator.desktop” and fill the file with the following.
-
-	[Desktop Entry]
-	Version=1.0
-	Encoding=UTF-8
-	Type=Application
-	Name=QtCreator
-	Comment=QtCreator
-	NoDsiplay=true
-	Exec=(Install folder of QT)/Tools/QtCreator/bin/qtcreator %f
-	Icon=(Install folder of QT)/5.4/Src/qtdoc/doc/images/landing/icon_QtCreator_78x78px.png
-	Name[en_US]=Qt-Creator
-
-Place this file in home .local/share/applications .
-
-Edit a file named “defaults.list” in the same directory . Add the following line.
-
-	text/qtcreator=Qt-Creator.desktop;
-
-open file mimeapps.list and check if the following line is present.
-
-	application/vnd.nokia.qt.qmakeprofile=qtcreator.desktop
-
-if not add it under [added Associations].
-
-Run the following command.
-
-	sudo update-mime-database /usr/share/mime
-
-now Qt has been added to the list of file associations.
-
-### Troubleshooting
-
-####    Qt Creator needs a compiler set up to build
-
-Follow the instruction from the previous section to configure compiler for Qt Creator.
-
-####    error: g++: Command not found
-
-Solution:
-
-	sudo apt-get install build-essential
-
-####    error: GL/gl.h: No such file or directory
-
-Solution:
+Jalankan Perintah berikut ini mengintall Pustaka OpenGL:
 
 	sudo apt-get install mesa-common-dev
+
+
+### Install Qt di Windows
+
+####  Downlaod
+
+Anda bisa mendownload di halaman downlod Qt creator dan memlilih versi dari Aplikasi yang Anda butuhkan baik 64 bit atau 32 bit. Sesuikan dengan sistem operasi yang Anda miliki.
+
+1. Jika Anda telah mendownlaod Qt creator maka qt-opensource-windows-x86-mingw492-5.5.0.exe. Disin penulis menggunakan versi 32 bit jika sistem oeprasi Anda 64 bit maka gunakanlah 64 bit walaupun dapat menggunakan versi 32 bit.
+
+![](images/install-qt-1.png)
+
+
+2. Pilih **Next** dan akan muncul halaman Qt Acount jika anda tidak ingin mendatarkan diri dapat di lewati dengan memilih **skip**.
+
+![](images/install-qt-2.png)
+
+3. Masuk ke halaman Setup terus **next** saja.
+
+![](images/install-qt-3.png)
+
+4. Installer akan menginstall aplikasi sampai selesai apabila telah selesai maka klik finish untuk mengakhiri proses pemasangan aplikasi.
+
+![](images/install-qt-4.png)
+
+## Program Console Pertama dengan Qt Creator
+
+1. Untuk mencoba membuat aplikasi dengan Qt Creator maka kita perlu dengan membuat menu file > new Project dan pilih project aplication > Qt console aplication
+
+![](images/qt-console-aplication.png)
+
+2. kemudian beri nama dengan Program yang akan kita buat dan direktori tempat aplikasi yang kita buat.
+
+![](images/qt-console-aplication-2.png)
+
+3. Klik Next, kemudian pilih compiler yang akan kita gunakan. Disini penulis menggunakan MinGW sebagai compilernya.
+
+T> **Tips**
+T>
+T> Simulator atau compiler yang lengkap teridir dari
+ 
+- Qt Simulator MingGW 4.4
+- Qt Simulator VS 2008, 2010, 2011, 2012 2013, 2014
+- Android SDK dan NDK
+
+
+![](images/qt-console-aplication-3.png)
+
+4. Kemudian pilih jenis sub version yang akan kita gunakan, jika Anda tidak mengunakan sub version maka pilih none pada add to subversion.
+
+![](images/qt-console-aplication-4.png) 
+
+
+5. Apabila di lakukan dengan benar maka akan muncul Qt Editor sebagai berikut ini.
+
+![](images/qt-creator.jpg)
+
+
+Program Bahasa C/C++ tidak mengenal aturan penulisan di kolom/baris tertentu, jadi bisa dimulai dari kolom/baris manapun. Namun demikian, untuk mempermudah pembacaan program dan untukkeperluan dokumentasi, sebaiknya penulisan program di bahasa C/C++ diatur sedemikian rupa sehingga mudah dan enak dibaca.
+Berikut adalah struktur dasar program yang dibuat dengan bahasa C++:
+
+	#include <header>  
+	using namespace std;    
+	int main(int argc, char *argv[]) 
+	{  
+	deklarasi variabel;   
+	deklarasi konstanta;  
+	perintah âperintah;  
+	//komentar  
+	return 0;  
+	}  
+
+**Penjelasan :** 
+
+#### 1. &#35; include &#60;header&#62;
+ 
+`#include` adalah salah satu pengarah preprocessor directive yang tersedia pada C++. Preprocessor selalu dijalankan terlebih dahulu pada saat proses kompilasi terjadi. Bentuk umumnya:
+
+	# include <nama_file>
+
+Bagian tersebut tidak diakhiri dengan tanda semicolon, karena bentuk tersebut bukanlah suatu bentuk pernyataan, tetapi merupakan preprocessor directive. Baris tersebut menginstruksikan kepada kompiler untuk menyisipkan file lain dalam hal ini file yang berakhiran .h (file header) yaitu file yang berisi C++ standard library. Pada C++ ekstensi .h tidak dituliskan.
+
+Beberap contoh pengikutsertaan berkas adalah:
+
+- `#include <iostream>` : diperlukan pada program yang melibatkan objek `cout` dan `cin`
+- `#include <conio>`: diperlukan bila melibatkan `clrscr()`, yaitu perintah untuk membersihkan layar dan fungsi `getch()` untuk menerima sembarang input keyboard dari user.
+- `#include <iomanip>` : diperlukan bila melibatkan `setw()` yang bermanfaat untuk mengatur lebar dari suatu tampilan data.
+- `#include <math>` : diperlukan pada program yang menggunakan operasi `sqrt()` yang bermanfaat untuk operasi matematika kuadrat.
+	
+#### 2.	using namespace std;
+
+Semua elemen standard C++ library dinyatakan dalam apa yang disebut namespace, namespace tersebut bernama std. Jadi artinya untuk mengakses semua fungsionalitas std kita menuliskan bahwa kita menggunakan namespace std.
+
+#### 3.	int main ()
+
+Program C++ terdiri dari satu atau lebih fungsi, dan di antara salah satunya harus ada fungsi main dan hanya boleh ada satu main pada tiap program C++. Setiap program C++ akan dan pasti akan memulai eksekusi programnya pada fungsi main ini, meskipun main bukan fungsi yang pertama ditulis di program.
+Melihat bentuk seperti itu dapat kita ambil kesimpulan bahwa batang tubuh program utama berada didalam fungsi main(). Berarti dalam setiap pembuatan program utama, maka dapat dipastikan seorangpemrogram menggunakan minimal sebuah fungsi.
+
+Tanda { dan pada akhir program terdapat tanda }. Tanda { harus ada pada setiap awal dari sebuah fungsi dan tentu saja harus diakhiri dengan tanda }. Tanda ini digunakan untuk menunjukkan cakupan(scope) dari sebuah fungsi,dimana untukmenunjukkan fungsi ini dimulai danberakhir.
+
+#### 4.	Komentar
+
+Komentar tidak pernah dicompile oleh compiler. Dalam C++ terdapat 2 jenis komentar, yaitu:
+
+1.	/* Komentar anda diletakkan di dalam ini bisa mengapit lebih dari satu baris */
+2.	// Komentar anda diletakkan disini ( hanya bisa sebaris )
+	
+Programmer sering sekali memasukkan komentar di dalam code agar program lebih mudah dibaca. Komentar juga membantu orang lain untuk membaca dan mengerti isi dari code. Komentar tidak menyebabkan komputer melakukan suatu instruksi ketika program dijalankan.
+
+#### 5.	Tanda Semicolon (;)
+Tanda semicolon “ `;` ” digunakan untuk mengakhiri sebuah pernyataan. Setiap pernyataan harus diakhiri dengan sebuah tanda semicolon.
+
+#### 9.	return 0
+Pernyataan return menyebabkan fungsi utama untuk menyelesaikan kegiatannya lalu mengembalikanhasil dari fungsi utama. Kode kembalian biasanya angka 0 atau 1. Jika angka yang dikembalikan 0 berartiprogram berakhir dengan tidak ada error, sedangkan jika 1 maka program berakhir dengan error.
+
+Contoh 1.	Structur program C++
+
+Untuk lebih jelasnya silahkan coba ketik program berikut pada project baru.
+
+	#include <QtCore/QCoreApplication>  
+	#include <iostream>  
+	using namespace std;  
+	int main (int argc, char *argv [])  
+	{  
+	QCoreApplication a (argc, argv);  
+	cout<<"Hello World"<<endl;  
+	cout<<"Selamat Belajar C/C++ ";  
+	cout<<"enter my World";  
+	return a.exec ();  
+	} 
+
+Kemudian jalankan dengan menekan tombol Run (CTRL + R)
+
+	Hello world
+	
+	Selamat belajar C/C++ enter my world
+
+Tampilan Hello World diakhiri dengan tanda enter baru kemudian dilanjutkan dengan tulisan berikutnya yaitu Selamat Belajar C/C++ enter my World. Artinya perintah `endl` merupakan perintah untuk memberi tanda enter.
+Sedangkan untuk tulisan Selamat Belajar C/C++ dan tulisan enter my World yang pada source code terpisah dengan perintah `cout`, pada tampilan hasil program tetap sama dan tidak ada enter diantaranya. Hal ini karena tidak ada perintah untuk menampilkan enter diantara kedua kalimat tersebut. Penulisan pada kode tidak akan mempengaruhi hasil output program.
+

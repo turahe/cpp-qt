@@ -9,18 +9,18 @@ Pemrograman Berorientasi Objek mempunyai fitur penting yang memudahkan pemrogram
 
 Untuk membuat kelas turunan dapat dilakukan dengan cara sama seperti mendeklarasikan kelas biasa dengan menambahkan titik dua (:) setelah nama kelas dan diikuti dengan jenis penurunan (public dsb.) dan nama kelas dasar yang akan diturunkan, bentuk umum adalah seperti berikut:
 
-{linenos=off}
+
 	class <kelas_turunan> : <jenis_penurunan> <kelas_dasar>
 
 
 Sebagai contoh misalnya akan dibuat kelas turunan Silinder dari kelas dasar Lingkaran, maka dapat dituliskan :
 
-{linenos=off}
+
 	class Silinder : public Lingkaran
 
 Mengenai jenis akses public ini akan dibahas nanti, sekarang kita akan memakai public. Kelas dasar yang akan diturunkan harus sudah dideklarasikan lebih dahulu, jika tidak maka kita akan menjumpai pesan kesalahan kompiler.
 
-{title="Contoh 1 Contoh Pewarisan (Inheritance)."}
+Contoh 1 Contoh Pewarisan (Inheritance).
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
@@ -86,7 +86,7 @@ Deklarasi kelas Silinder di atas adalah : `class Silinder : public Lingkaran`, i
 
 Buka project Contoh 1 di atas, kemudian tambahkan (edit) kode berikut pada fungsi `main() : cout << "Milik Base Class --> " << drum.getLuas() << endl;`
 
-{linenos=off}
+
 	int main(int argc, char *argv[])
 	{
 	QCoreApplication a(argc, argv);
@@ -98,7 +98,7 @@ Buka project Contoh 1 di atas, kemudian tambahkan (edit) kode berikut pada fungs
 
 Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-{lang="sh", linenos=off}
+
 
  **Keterangan Program :**
 
@@ -106,12 +106,12 @@ Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah se
 
 Kemudian hapuslah jenis akses penurunan public (atau gantilah dengan private) pada deklarasi kelas Silinder yang tadinya:
 
-{linenos=off}
+
 	class Silinder : public Lingkaran
 
 Sehingga menjadi:
 
-{linenos=off}
+
 	class Silinder : Lingkaran
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka tidak akan ada output karena terjadi kesalahan kompilasi sebagai berikut.
@@ -146,10 +146,10 @@ Namun demikian, pada konteks pewarisan, perlu diketahui bahwa itu tidak berarti 
 
 Tidak ada kelas yang tidak mempunyai konstruktor. Adalah benar bahwa secara eksplisit kita bisa menuliskan sebuah kelas tanpa mendeklarasikan konstruktor sama sekali, namun itu tidak berarti bahwa kelas tersebut tidak mempunyai kontruktor, sebab sebenarnya yang dieksekusi oleh komputer bukan kode program yang kita tulis tersebut, melainkan hasil kompilasi dari kode program tersebut. Pada waktu dikompilasi, kompiler akan menambahkan konstruktor tanpa parameter yang tidak melakukan apa-apa seperti berikut:
 
-{linenos=off}
+
 	<nama_kelas>(){}
 
-{title="Contoh 3. Konstruktor default"}
+Contoh 3. Konstruktor default.
 
 1. Buka Qt Creator, buat project Qt Console Application dengan nama Contoh 3. Kemudian tulis kode berikut.
 
@@ -187,7 +187,7 @@ Seperti dijelaskan di atas bahwa tidak ada kelas yang tidak mempunyai konstrukto
 
 Sama seperti pada penulisan kelas biasa, pada kelas turunan juga bisa tidak dituliskan konstruktor secara eksplisit dan pada kasus ini pada saat kompilasi kompiler akan menambahkan konstruktor kosong tanpa parameter. Namun bentuk konstruktor kosong pada kelas turunan berbeda dengan konstruktor kosong kelas biasa, karena pada konstruktor kosong kelas turunan akan memanggil konstruktor kosong kelas dasarnya.
 
-{title="Contoh 4. Konstruktor default kelas turunan"}
+Contoh 4. Konstruktor default kelas turunan.
 
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian ubah isi konstruktor kelas Kelasku dan tambahkan kelas Turunan berikut.
 
@@ -222,12 +222,12 @@ Sama seperti pada penulisan kelas biasa, pada kelas turunan juga bisa tidak ditu
  - Berdasarkan kenyataan bahwa tiap kelas pasti punya kontruktor, maka ini berarti kelas Turunan juga mempunyai kontruktor namun konstruktor tersebut di dalamnya ada pemanggilan kontruktor kelas dasarnya.
  - Dari percobaan ini, bisa disimpulkan bahwa pada saat dikompilasi, karena kelas turunan secara eksplisit tidak dituliskan konstruktor, maka kompiler akan menambahakan konstukor kosong tanpa parameter yang memanggil konstruktor kelas dasarnya seperti berikut :
 
-{linenos=off}
+
 	Turunan():Kelasku(){} //<-- Konstruktor default kelas Turunan
 
 Karakteristik konstruktor kelas turunan ini penting untuk dipahami, karena kadang-kadang kita lupa bahwa pada pembuatan kelas turunan pasti di dalamnya ada pemanggilan konstruktor kelas dasarnya.
 
-{title="Contoh .5 Konstruktor default kelas turunan memanggil konstruktor kelas dasar"}
+Contoh .5 Konstruktor default kelas turunan memanggil konstruktor kelas dasar.
 
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti berikut.
 
@@ -261,15 +261,15 @@ Karakteristik konstruktor kelas turunan ini penting untuk dipahami, karena kadan
  
  Seperti pada percobaan Lab.4, kelas Turunan tidak mempunyai konstruktor secara eksplisit, sehingga dibuatkan konstruktor oleh kompiler berupa :
  
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
  	Turunan():Kelasku(){} //<-- Konstruktor default kelas Turunan
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
  
  Namun masalahnya sekarang pada kelas dasar tidak mempunyai konstruktor tanpa parameter seperti itu, sehingga kompiler manampilkan pesan :
  
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
  	no maching function call to ‘Kelasku::Kelasku()’
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
  
  Maksud pesan ini adalah bahwa pada kelas Kelasku tidak terdapat konstruktor Kelasku() dengan tanpa parameter. Ini juga membuktikan bahwa konstruktor default mempunyai bentuk seperti yang sudah dijelaskan pada Keterangan percobaan contoh 4.
 
@@ -277,7 +277,7 @@ Karakteristik konstruktor kelas turunan ini penting untuk dipahami, karena kadan
 
 Dengan demikian jelas bahwa konstruktor kelas dasar pasti dipanggil oleh konstruktor default kelas turunan. Akan tetapi bagaimanakah jika pada kelas turunan mempunyai konstruktor sendiri? Bisakah kita membuat konstruktor sendiri pada kelas turunan tanpa memanggil konstruktor kelas dasar? Tentu saja secara eksplisit bisa kita menuliskan konstruktor pada kelas turunan tanpa memanggil konstruktor kelas dasar, namun tetap saja kompiler nantinya akan menambahkan pemanggilan konstruktor default kelas dasar (tanpa parameter) jika pada konstruktor kelas turunan tidak memanggil salah satu kontuktor kelas dasarnya. Untuk meneliti mengenai hal ini, tambahkan konstuktor yang ditulis secara eksplisit pada kelas Turunan seperti berikut.
 
-{title="Contoh 6. Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar"}
+Contoh 6. Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar.
 
 1. Buka Qt Creator, buka project Qt Console Application dengan nama Contoh 3 tadi. Kemudian tambahkan konstruktor pada kelas Turunan seperti berikut.
 
@@ -313,16 +313,16 @@ Dengan demikian jelas bahwa konstruktor kelas dasar pasti dipanggil oleh konstru
  
  Pada program ini mencoba untuk menghindari pemanggilan kontruktor kelas dasar dengan cara membuat sendiri konstruktor pada kelas Turunan yang tidak memanggil konstuktor kelas dasar. Namun tetap saja kompiler memberikan pesan kesalahan yang sama, yaitu : 
  
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
  		no maching function call to ‘Kelasku::Kelasku()’ 
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
  
  Padahal jelas pada konstruktor yang ditulis pada kelas Turunan sama sekali tidak pernah memanggil konstruktor tanpa kelas dasar parameter tersebut. Percobaan ini membuktikan bahwa bagaimanapun juga pada kelas turunan, konstruktor kelas dasar pasti dipanggil, dan jika secara eksplisit tidak dituliskan pemanggilan konstruktor kelas dasar, maka kompiler akan menambahkan pemanggilan konstruktor default (konstruktor tanpa parameter) pada kelas dasar.
 
 3. Sekarang ubahlah konstruktor kelas Turunan, agar secara eksplisit memanggil konstuktor yang ada pada kelas dasar seperti berkut :
 
 
-{linenos=off}	
+	
 	class Turunan : public Kelasku{
 	public:
 	//memanggil konstruktor kelas dasar dng sebuah parameter
@@ -344,7 +344,7 @@ Dengan demikian kelas turunan Silinder harus membuat implementasi yang berbeda u
 
 Suatu metode bisa dikatakan override dari metode kelas dasarnya jika memenuhi 2 syarat, yaitu nama metode dan signature dari metode tersebut sama. Signature artinya daftar parameter yang ada pada metode, yaitu banyaknya parameter maupun tipe data dari masing-masing parameter tersebut.
 
-{title="Contoh 7. Melakukan Overriding"}
+Contoh 7. Melakukan Overriding.
 
 Buka project Qt Console Application projek Contoh .1 yang tadi sudah dibuat, kemudian ubah kode menjadi seperti berikut
 
@@ -423,11 +423,11 @@ Pada kasus Lab.7 di atas sebenarnya metode getLuas() masih dibutuhkan pada kelas
 
 	<kelas_dasar>::<anggot
 
-{title="Contoh 8. Mengakses metode kelas dasar"}
+Contoh 8. Mengakses metode kelas dasar.
 
 1. Buka project Qt Console Application projek Contoh 1 yang baru saja dibuat, kemudian ubah kode pada metode : getLuas(), getVolume() dan program utama. Berikut ini adalah potongan program yang mengalami perubahan saja:
 
-lang{="c++"}
+
 	public:
 	float getLuas(){ //<-- Overriding
 	float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;
@@ -467,7 +467,7 @@ Bagian yang diubah
 
 Ketika terjadi overriding terhadap suatu metode kelas dasar, maka semua metode milik kelas dasar yang bernama sama, yaitu metode-metode yang dioverloading pada kelas dasar, akan disembunyikan (tidak diwariskan) kepada kelas turunan.
 
-{title="Contoh 9 Penyembunyian metode kelas dasar."}
+Contoh 9 Penyembunyian metode kelas dasar.
 
 1. Jalankan Qt Console Application projek, buat projek bernama Contoh 9 seperti berikut:
 
@@ -528,7 +528,7 @@ Ketika terjadi overriding terhadap suatu metode kelas dasar, maka semua metode m
 
 Metode Virtual adalah metode yang seharusnya dioverride oleh kelas turunannya, dengan tujuan jika ada variabel pointer bertipe kelas dasarnya yang berisi objek bertipe kelas turunan tersebut, maka metode yang menanggapi adalah metode milik kelas turunan hasil override tersebut. Ini sebenarnya bagian yang sangat penting yang diperlukan pada polimorfisme yang akan dibahas pada bab berikutnya. Jika suatu metode pada kelas dasar tidak virtual, kemudian pada kelas turunan melakukan override terhadap metode tersebut, maka jika ada suatu variabel pointer bertipe kelas dasar yang berisi objek bertipe kelas turunan memanggil metode tersebut, yang menanggapi adalah metode milik kelas dasar. Percobaan berikut ini merupakan penyederhanaan dari kelas Lingkaran sebagai kelas dasardan kelas Silinder sebagai kelas turunan untuk memahami metode virtual.
 
-{title="Contoh 10. Metode virtual dan non virtual"}
+Contoh 10. Metode virtual dan non virtual.
 
 1. Jalankan Qt Console Application projek, buat projek bernama Contoh 10 seperti berikut:
 
@@ -595,9 +595,9 @@ Ketika kita membuat objek bertipe kelas turunan, sebenarnya sebelumnya sudah dib
 
 Pada konversi dari suatu variabel ke variabel lain, bisa terjadi Pemotongan (Silicing). Supaya lebih jelas lakukan percobaan berikut ini.
 
-{title="Contoh 11. Metode virtual dan non virtual"}
+Contoh 11. Metode virtual dan non virtual.
 
-1. Jalankan Qt Console Application projek, buka projek bernama contoh 10 yang dibuat tadi, kemudian ubah kode progam pada bagian program utama seperti berikut:
+Jalankan Qt Console Application projek, buka projek bernama contoh 10 yang dibuat tadi, kemudian ubah kode progam pada bagian program utama seperti berikut:
 
 	
 	int main(int argc, char *argv[])
@@ -616,7 +616,7 @@ Pada konversi dari suatu variabel ke variabel lain, bisa terjadi Pemotongan (Sil
 	return a.exec();
 	}
 
-2. Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
+Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
 
  **Keterangan:**
  
@@ -629,18 +629,18 @@ Seperti tertulis pada catatan di atas, pointer bertipe kelas dasar yang menunjuk
 
 Casting adalah mekanisme yang digunakan untuk mengubah tipe variabel dari tipe data ke tipe data yang lain. `static_cast` adalah mekanisme yang dapat digunakan untuk mengkonversikan pointer ke tipe pointer lain yang mempunyai hubungan kekerabatan (inheritance) dan melakukan konversi secara ekplisit tipe data standar. `static_cast` pada saat kompilasi melakukan pemeriksaan untuk memastikan bahwa pointer yang akan di-“cast” mempunyai hubungan yang benar. Dengan static_cast sebuah pointer dapat di-“up-casted” menjadi tipe kelas dasar, atau bisa pula di-“down-casted” menjadi bertipe kelas turunan. Jika suatu variabel bertipe kelas dasar diberi nilai objek bertipe kelas turunan sebagai berikut:
 
-{linenos=off}
+
 	Kelas_dasar* variabel1 = new Kelas_turunan();
 
 
 Maka tipe data variabel tersebut bisa di-“down-casted” menjadi tipe data kelas turunan dengan cara:
 
-{linenos=off}
+
 	Kelas_turunan* variabel2 = static_cast<Kelas_turunan*>(variabel1);
 
-{title="Contoh 11. Memakai static_cast"}
+Contoh 11. Memakai static_cast.
 
-1. Jalankan Qt Console Application projek, buka projek bernama contoh 10 di atas, ubah pada bagian program utama (main()) menjadi seperti berikut:
+Jalankan Qt Console Application projek, buka projek bernama contoh 10 di atas, ubah pada bagian program utama (main()) menjadi seperti berikut:
 
 
 	int main(int argc, char *argv[])
@@ -653,7 +653,7 @@ Maka tipe data variabel tersebut bisa di-“down-casted” menjadi tipe data kel
 	return a.exec();
 	}
 
-2. Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
+Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
 
  **Keterangan:**
  

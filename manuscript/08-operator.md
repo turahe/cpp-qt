@@ -71,66 +71,73 @@ Pada Labs1 akan ditunjukan penggunaan operator increment. Pada contoh dibawah in
 
 Contoh 1. Menggunakan Increment Operator (Notasi prefix).
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 1, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 1, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kalender
-	{
-	private:
-	int _hari;
-	int _bulan;
-	int _tahun;
-	void AddHari(int hari)
-	{
-	_hari += hari;
-	if(_hari > 30)
-	{
-	AddBulan(_hari/30);
-	_hari %= 30;
-	}
-	}
-	void AddBulan(int bulan)
-	{
-	_bulan += bulan;
-	if(_bulan > 12)
-	{
-	AddTahun(_bulan/12);
-	_bulan %= 12;
-	}
-	}
-	void AddTahun(int tahun)
-	{
-	_tahun += tahun;
-	}
-	public:
-	Kalender(int hari,int bulan, int tahun):_hari(hari),_bulan(bulan),_tahun(tahun){ }
-	Kalender &operator ++ ()
-	{
-	AddHari(1);
-	return *this;
-	}
-	void TampilData()
-	{
-	cout << _hari << " / " << _bulan << " / " << _tahun << endl;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kalender objKal(23,10,2010);
-	cout << "Membuat object kalender dan memberi inisialisasi" << endl;
-	objKal.TampilData();
-	cout << endl;
-	++objKal;
-	cout << "Tanggal setelah notasi prefik dijalankan " << endl;
-	objKal.TampilData();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kalender
+		{
+		private:
+		int _hari;
+		int _bulan;
+		int _tahun;
+		void AddHari(int hari)
+		{
+		_hari += hari;
+		if(_hari > 30)
+		{
+		AddBulan(_hari/30);
+		_hari %= 30;
+		}
+		}
+		void AddBulan(int bulan)
+		{
+		_bulan += bulan;
+		if(_bulan > 12)
+		{
+		AddTahun(_bulan/12);
+		_bulan %= 12;
+		}
+		}
+		void AddTahun(int tahun)
+		{
+		_tahun += tahun;
+		}
+		public:
+		Kalender(int hari,int bulan, int tahun):_hari(hari),_bulan(bulan),_tahun(tahun){ }
+		Kalender &operator ++ ()
+		{
+		AddHari(1);
+		return *this;
+		}
+		void TampilData()
+		{
+		cout << _hari << " / " << _bulan << " / " << _tahun << endl;
+		}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kalender objKal(23,10,2010);
+		cout << "Membuat object kalender dan memberi inisialisasi" << endl;
+		objKal.TampilData();
+		cout << endl;
+		++objKal;
+		cout << "Tanggal setelah notasi prefik dijalankan " << endl;
+		objKal.TampilData();
+		return a.exec();
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
+A>		Membuat object kalender dan memberi inisialisasi
+A>		23 / 10 / 2010
+A>		
+A>		Tanggal setelah notasi prefik dijalankan 
+A>		24 / 10 / 2010
 
  **Keterangan:**
  
@@ -155,77 +162,85 @@ Untuk contoh dibawah ini kita akan mencoba menggunakan notasi `postfix`, dengan 
 
 Contoh 2. Menggunakan Operator Increment (notasi postfix).
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kalender
-	{
-	private:
-	int _hari;
-	int _bulan;
-	int _tahun;
-	void AddHari(int hari)
-	{
-	_hari += hari;
-	if(_hari > 30)
-	{
-	AddBulan(_hari/30);
-	_hari %= 30;
-	}
-	}
-	void AddBulan(int bulan)
-	{
-	_bulan += bulan;
-	if(_bulan > 12)
-	{
-	AddTahun(_bulan/12);
-	_bulan %= 12;
-	}
-	}
-	void AddTahun(int tahun)
-	{
-	_tahun += tahun;
-	}
-	public:
-	Kalender(int hari,int bulan, int tahun):_hari(hari),_bulan(bulan),_tahun(tahun){ }
-	Kalender operator ++ (int)
-	{
-	Kalender objKal(_hari,_bulan,_tahun);
-	AddHari(1);
-	return objKal;
-	}
-	void TampilData()
-	{
-	cout << _hari << " / " << _bulan << " / " << _tahun << endl;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kalender objKal(23,10,2010);
-	cout << "Membuat object kalender dan memberi inisialisasi" << endl;
-	objKal.TampilData();
-	cout << endl;
-	cout << "Menggunakan notasi postfix" << endl;
-	//menggunakan notasi postfix
-	Kalender objLama(objKal++);
-	cout << "objLama : ";
-	objLama.TampilData();
-	cout << "objKal : ";
-	objKal.TampilData();
-	return a.exec();
-	
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kalender
+		{
+		private:
+		int _hari;
+		int _bulan;
+		int _tahun;
+		void AddHari(int hari)
+		{
+		_hari += hari;
+		if(_hari > 30)
+		{
+		AddBulan(_hari/30);
+		_hari %= 30;
+		}
+		}
+		void AddBulan(int bulan)
+		{
+		_bulan += bulan;
+		if(_bulan > 12)
+		{
+		AddTahun(_bulan/12);
+		_bulan %= 12;
+		}
+		}
+		void AddTahun(int tahun)
+		{
+		_tahun += tahun;
+		}
+		public:
+		Kalender(int hari,int bulan, int tahun):_hari(hari),_bulan(bulan),_tahun(tahun){ }
+		Kalender operator ++ (int)
+		{
+		Kalender objKal(_hari,_bulan,_tahun);
+		AddHari(1);
+		return objKal;
+		}
+		void TampilData()
+		{
+		cout << _hari << " / " << _bulan << " / " << _tahun << endl;
+		}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kalender objKal(23,10,2010);
+		cout << "Membuat object kalender dan memberi inisialisasi" << endl;
+		objKal.TampilData();
+		cout << endl;
+		cout << "Menggunakan notasi postfix" << endl;
+		//menggunakan notasi postfix
+		Kalender objLama(objKal++);
+		cout << "objLama : ";
+		objLama.TampilData();
+		cout << "objKal : ";
+		objKal.TampilData();
+		return a.exec();
+		
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
+A>		Membuat object kalender dan memberi inisialisasi
+A>		23 / 10 / 2010
+A>		
+A>		Menggunakan notasi postfix
+A>		objLama : 23 / 10 / 2010
+A>		objKal : 24 / 10 / 2010
 
  **Keterangan:**
  
- - Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja penulisan operator ++ menggunakan notasi postfix.
- - Karena menggunakan postfix maka yang dilakukan pada operator ++ adalah mengkopi objek yang lama, menambahkan data, kemudian mengembalikan objek tersebut by value.
+ - Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja penulisan operator `++` menggunakan notasi `postfix`.
+ - Karena menggunakan `postfix` maka yang dilakukan pada operator `++` adalah mengkopi objek yang lama, menambahkan data, kemudian mengembalikan objek tersebut by value.
 
 ## Conversion Operator
 
@@ -285,6 +300,15 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 	return a.exec();
 	}
 
+**Hasilnya**
+
+A> {linenos=off}
+A>	Inisialisasi data : 
+A>	23 / 10 / 2010
+A>	
+A>	
+A>	Integer yang sesuai dengan data 2011023
+
  **Keterangan:**
  
  - Pada operator `int()`, `variabel` `_tahun`, `_bulan`, dan `_hari` dikalikan dengan bilangan tertentu sehingga menghasilkan kembalian berupa `int`.
@@ -300,164 +324,180 @@ Operator yang mengoperasikan dua operand disebut dengan binary operator, cara pe
 
 Ada beberapa macam binary operator yang dapat digunakan pada C++, diantaranya :
 
-|Operator |Name
-|----------|---------------------------
-|+ 		|Addition
-|+= 	|Addition/Assigment
-|- 		|Substraction
-|-= 	|Substraction/Assigment
-|< 		|Less Than
-|> 		|Greater Than
-|<= 	|Less thar or equal to
-|>= 	|Greater than or equal to
-|== 	|Equal to
-|!= 	|Inequality
+|Operator 	|Name
+|-----------|---------------------------
+|+ 			|Addition
+|+= 		|Addition/Assigment
+|- 			|Substraction
+|-= 		|Substraction/Assigment
+|< 			|Less Than
+|> 			|Greater Than
+|<= 		|Less thar or equal to
+|>= 		|Greater than or equal to
+|== 		|Equal to
+|!= 		|Inequality
 
 Contoh program dibawah ini menggunakan operator Addition (+) untuk menambahkan hari pada objek kalender, anda dapat menambahkan beberapa hari kedepan, misal 5 atau 10 hari dari tanggal sekarang.
 
 Contoh 4. Menggunakan Binary Addition Operator.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 4, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 4, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kalender
-	{
-	private:
-	int _hari;
-	int _bulan;
-	int _tahun;
-	void TambahHari(int hari)
-	{
-	_hari += hari;
-	if(_hari>30)
-	{
-	TambahBulan(_hari/30);
-	_hari %= 30;
-	}
-	}
-	void TambahBulan(int bulan)
-	{
-	_bulan += bulan;
-	if(_bulan>12)
-	{
-	TambahTahun(_bulan/12);
-	_bulan %= 12;
-	}
-	}
-	void TambahTahun(int tahun)
-	{
-	_tahun += tahun;
-	}
-	public:
-	Kalender(int hari, int bulan, int tahun) : _hari(hari), _bulan(bulan),
-	_tahun(tahun) {}
-	Kalender operator + (int hari)
-	{
-	Kalender objKal(_hari,_bulan,_tahun);
-	objKal.TambahHari(hari);
-	return objKal;
-	}
-	void TampilTanggal()
-	{
-	cout << _hari << " / " << _bulan << " / " << _tahun << endl;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kalender objKal(23,10,2011);
-	cout << "Inisialisasi Data " << endl;
-	objKal.TampilTanggal();
-	cout << "Menambahkan 25 hari kedepan " << endl;
-	Kalender objKalBaru(objKal + 25);
-	cout << "Hasil setelah ditambahkan 25 hari " << endl;
-	objKalBaru.TampilTanggal();
-	//cara penulisan yang lain
-	objKal=objKal+20;
-	objKal.TampilTanggal();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kalender
+		{
+		private:
+		int _hari;
+		int _bulan;
+		int _tahun;
+		void TambahHari(int hari)
+		{
+		_hari += hari;
+		if(_hari>30)
+		{
+		TambahBulan(_hari/30);
+		_hari %= 30;
+		}
+		}
+		void TambahBulan(int bulan)
+		{
+		_bulan += bulan;
+		if(_bulan>12)
+		{
+		TambahTahun(_bulan/12);
+		_bulan %= 12;
+		}
+		}
+		void TambahTahun(int tahun)
+		{
+		_tahun += tahun;
+		}
+		public:
+		Kalender(int hari, int bulan, int tahun) : _hari(hari), _bulan(bulan),
+		_tahun(tahun) {}
+		Kalender operator + (int hari)
+		{
+		Kalender objKal(_hari,_bulan,_tahun);
+		objKal.TambahHari(hari);
+		return objKal;
+		}
+		void TampilTanggal()
+		{
+		cout << _hari << " / " << _bulan << " / " << _tahun << endl;
+		}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kalender objKal(23,10,2011);
+		cout << "Inisialisasi Data " << endl;
+		objKal.TampilTanggal();
+		cout << "Menambahkan 25 hari kedepan " << endl;
+		Kalender objKalBaru(objKal + 25);
+		cout << "Hasil setelah ditambahkan 25 hari " << endl;
+		objKalBaru.TampilTanggal();
+		//cara penulisan yang lain
+		objKal=objKal+20;
+		objKal.TampilTanggal();
+		return a.exec();
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
+A>		Inisialisasi Data 
+A		23 / 10 / 2011
+A>		Menambahkan 25 hari kedepan 
+A>		Hasil setelah ditambahkan 25 hari 
+A>		18 / 11 / 2011
+A>		13 / 11 / 2011
 
  **Keterangan:**
  
  - Dengan menggunakan operator + anda dapat menambahkan hari pada objek Kalender, jumlah hari yang ditambahkan tergantung dari nilai yang diinputkan pada parameter.
- - Anda dapat menambah hari dengan menggunakan operator + pada objek Kalender, misal: objKal = objKal + 25 atau dengan membuat objek baru untuk menampung nilai hasil penambahan Kalender objKalBaru(objKal+20)
+ - Anda dapat menambah hari dengan menggunakan operator + pada objek Kalender, misal: `objKal = objKal + 25` atau dengan membuat objek baru untuk menampung nilai hasil penambahan Kalender `objKalBaru(objKal+20)`
 
 ## Addition-Assignment Operator
 
-Dengan menggunakan Addition-Assignment operator anda dapat menuliskan sintaks a += b, yang sama artinya dengan a = a + b. Pada contoh program dibawah ini operator Addition-Assignment akan digunakan untuk menambahkan hari pada objek Kalender.
+Dengan menggunakan Addition-Assignment operator anda dapat menuliskan sintaks a += b, yang sama artinya dengan a = a + b. Pada contoh program dibawah ini operator *Addition-Assignment* akan digunakan untuk menambahkan hari pada objek Kalender.
 
 Contoh 5. Menggunakan Addition Assigment Operator dan Substraction Assigment Operator.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 5, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 5, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kalender
-	{
-	private:
-	int _hari;
-	int _bulan;
-	int _tahun;
-	void TambahHari(int hari)
-	{
-	_hari += hari;
-	if(_hari>30)
-	{
-	TambahBulan(_hari/30);
-	_hari %= 30;
-	}
-	}
-	void TambahBulan(int bulan)
-	{
-	_bulan += bulan;
-	if(_bulan>12)
-	{
-	TambahTahun(_bulan/12);
-	_bulan %= 12;
-	}
-	}
-	void TambahTahun(int tahun)
-	{
-	_tahun += tahun;
-	}
-	public:
-	Kalender(int hari, int bulan, int tahun) : _hari(hari), _bulan(bulan),
-	_tahun(tahun) {}
-	void operator += (int hari)
-	{
-	TambahHari(hari);
-	}
-	void TampilTanggal()
-	{
-	cout << _hari << “ / “ << _bulan << “ / “ << _tahun << endl;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kalender objKal(23,10,2011);
-	cout << “Inisialisasi Data “ << endl;
-	objKal.TampilTanggal();
-	cout << “Menambahkan 25 hari kedepan “ << endl;
-	objKal+=25;
-	cout << “Hasil setelah ditambahkan 25 hari “ << endl;
-	objKal.TampilTanggal();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+	    #include <iostream>
+	    using namespace std;
+	    class Kalender
+	    {
+	    private:
+	    int _hari;
+	    int _bulan;
+	    int _tahun;
+	    void TambahHari(int hari)
+	    {
+	    _hari += hari;
+	    if(_hari>30)
+	    {
+	    TambahBulan(_hari/30);
+	    _hari %= 30;
+	    }
+	    }
+	    void TambahBulan(int bulan)
+	    {
+	    _bulan += bulan;
+	    if(_bulan>12)
+	    {
+	    TambahTahun(_bulan/12);
+	    _bulan %= 12;
+	    }
+	    }
+	    void TambahTahun(int tahun)
+	    {
+	    _tahun += tahun;
+	    }
+	    public:
+	    Kalender(int hari, int bulan, int tahun) : _hari(hari), _bulan(bulan),
+	    _tahun(tahun) {}
+	    void operator += (int hari)
+	    {
+	    TambahHari(hari);
+	    }
+	    void TampilTanggal()
+	    {
+	    cout << _hari <<   "/" << _bulan << "/" << _tahun << endl;
+	    }
+	    };
+	    int main(int argc, char *argv[])
+	    {
+	    QCoreApplication a(argc, argv);
+	    Kalender objKal(23,10,2011);
+	    cout << "Inisialisasi Data" << endl;
+	    objKal.TampilTanggal();
+	    cout << "Menambahkan 25 hari kedepan" << endl;
+	    objKal+=25;
+	    cout << "Hasil setelah ditambahkan 25 hari" << endl;
+	    objKal.TampilTanggal();
+	    return a.exec();
+	    }
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
+A>		Inisialisasi Data
+A>		23/10/2011
+A>		Menambahkan 25 hari kedepan
+A>		Hasil setelah ditambahkan 25 hari
+A>		18/11/2011
 
  **Keterangan:**
  
- Pada kode diatas anda dapat menggunakan operator Addition-Assignment pada objek Kalender, misal anda ingin menambahkan 25 hari pada objek Kalender, anda dapat menuliskan kode objKal += 25;
+ Pada kode diatas anda dapat menggunakan operator Addition-Assignment pada objek Kalender, misal anda ingin menambahkan 25 hari pada objek Kalender, anda dapat menuliskan kode `objKal += 25;`
 
 ## Comparison Operator
 
@@ -477,114 +517,130 @@ Anda dapat menggunakan equality operator (==) atau inequality operator (!=). And
 
 Contoh 6. Overloading Comparison Operator (Equality dan Inequality).
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 6, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 6, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kalender
-	{
-	private:
-	int _hari;
-	int _bulan;
-	int _tahun;
-	void TambahHari(int hari);
-	void TambahBulan(int bulan);
-	void TambahTahun(int tahun);
-	public:
-	Kalender(int hari,int bulan, int tahun) : _hari(hari), _bulan(bulan),
-	_tahun(tahun) {}
-	void TampilTanggal()
-	{
-	cout << _hari << " / " << _bulan << " / " << _tahun << endl;
-	}
-	operator int();
-	bool operator == (const Kalender &objKal);
-	bool operator == (int tglNumber);
-	bool operator != (const Kalender &objKal);
-	bool operator != (int tglNumber);
-	};
-	Kalender::operator int()
-	{
-	return ((_tahun*10000)+(_bulan*100)+_hari);
-	}
-	bool Kalender::operator ==(const Kalender &objKal)
-	{
-	return ((objKal._hari==_hari) && (objKal._bulan==_bulan) &&
-	(objKal._tahun==_tahun));
-	}
-	bool Kalender::operator ==(int tglNumber)
-	{
-	return tglNumber == (int)*this;
-	}
-	bool Kalender::operator !=(const Kalender &objKal)
-	{
-	return !(this->operator ==(objKal));
-	}
-	bool Kalender::operator !=(int tglNumber)
-	{
-	return !(this->operator ==(tglNumber));
-	}
-	void Kalender::TambahHari(int hari)
-	{
-	_hari += hari;
-	if(_hari>30)
-	{
-	TambahBulan(_hari/30);
-	_hari %= 30;
-	}
-	}
-	void Kalender::TambahBulan(int bulan)
-	{
-	_bulan += bulan;
-	if(_bulan>12)
-	{
-	TambahTahun(_bulan/12);
-	_bulan %= 12;
-	}
-	}
-	void Kalender::TambahTahun(int tahun)
-	{
-	_tahun += tahun;
-	}
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kalender objKal1(23,10,2010);
-	cout << "Inisialisasi Kalender 1" << endl;
-	objKal1.TampilTanggal();
-	cout << endl;
-	Kalender objKal2(23,10,2011);
-	cout << "Inisialisasi Kalender 2" << endl;
-	objKal2.TampilTanggal();
-	cout << endl;
-	//menggunakan operator tidak sama dengan
-	if(objKal1 != objKal2)
-	cout << "kalender1 dan kalender2 tidak sama !" << endl;
-	Kalender objKal3(23,10,2010);
-	cout << "Inisialisasi Kalender 3" << endl;
-	objKal3.TampilTanggal();
-	cout << endl;
-	//menggunakan operator sama dengan
-	if(objKal1==objKal3)
-	cout << "kalender1 dan kalender3 sama !" << endl;
-	int intKal3 = objKal3;
-	cout << "nilai integer yang ekuivalen dengan objKal3 adalah " << intKal3 << endl;
-	//menggunakan overloading operator sama dengan untuk membandingkan integer
-	if(objKal3 == intKal3)
-	cout << "Nilai integer dari objKal3 dan intKal3 sama" << endl;
-	//menggunakan overloading operator tidak sama dengan untuk membandingkan integer
-	if(objKal2 != intKal3)
-	cout << "Nilai integer dari objKal2 dan intKal3 tidak sama" << endl;
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kalender
+		{
+		private:
+		int _hari;
+		int _bulan;
+		int _tahun;
+		void TambahHari(int hari);
+		void TambahBulan(int bulan);
+		void TambahTahun(int tahun);
+		public:
+		Kalender(int hari,int bulan, int tahun) : _hari(hari), _bulan(bulan),
+		_tahun(tahun) {}
+		void TampilTanggal()
+		{
+		cout << _hari << " / " << _bulan << " / " << _tahun << endl;
+		}
+		operator int();
+		bool operator == (const Kalender &objKal);
+		bool operator == (int tglNumber);
+		bool operator != (const Kalender &objKal);
+		bool operator != (int tglNumber);
+		};
+		Kalender::operator int()
+		{
+		return ((_tahun*10000)+(_bulan*100)+_hari);
+		}
+		bool Kalender::operator ==(const Kalender &objKal)
+		{
+		return ((objKal._hari==_hari) && (objKal._bulan==_bulan) &&
+		(objKal._tahun==_tahun));
+		}
+		bool Kalender::operator ==(int tglNumber)
+		{
+		return tglNumber == (int)*this;
+		}
+		bool Kalender::operator !=(const Kalender &objKal)
+		{
+		return !(this->operator ==(objKal));
+		}
+		bool Kalender::operator !=(int tglNumber)
+		{
+		return !(this->operator ==(tglNumber));
+		}
+		void Kalender::TambahHari(int hari)
+		{
+		_hari += hari;
+		if(_hari>30)
+		{
+		TambahBulan(_hari/30);
+		_hari %= 30;
+		}
+		}
+		void Kalender::TambahBulan(int bulan)
+		{
+		_bulan += bulan;
+		if(_bulan>12)
+		{
+		TambahTahun(_bulan/12);
+		_bulan %= 12;
+		}
+		}
+		void Kalender::TambahTahun(int tahun)
+		{
+		_tahun += tahun;
+		}
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kalender objKal1(23,10,2010);
+		cout << "Inisialisasi Kalender 1" << endl;
+		objKal1.TampilTanggal();
+		cout << endl;
+		Kalender objKal2(23,10,2011);
+		cout << "Inisialisasi Kalender 2" << endl;
+		objKal2.TampilTanggal();
+		cout << endl;
+		//menggunakan operator tidak sama dengan
+		if(objKal1 != objKal2)
+		cout << "kalender1 dan kalender2 tidak sama !" << endl;
+		Kalender objKal3(23,10,2010);
+		cout << "Inisialisasi Kalender 3" << endl;
+		objKal3.TampilTanggal();
+		cout << endl;
+		//menggunakan operator sama dengan
+		if(objKal1==objKal3)
+		cout << "kalender1 dan kalender3 sama !" << endl;
+		int intKal3 = objKal3;
+		cout << "nilai integer yang ekuivalen dengan objKal3 adalah " << intKal3 << endl;
+		//menggunakan overloading operator sama dengan untuk membandingkan integer
+		if(objKal3 == intKal3)
+		cout << "Nilai integer dari objKal3 dan intKal3 sama" << endl;
+		//menggunakan overloading operator tidak sama dengan untuk membandingkan integer
+		if(objKal2 != intKal3)
+		cout << "Nilai integer dari objKal2 dan intKal3 tidak sama" << endl;
+		return a.exec();
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
+A>		Inisialisasi Kalender 1
+A>		23 / 10 / 2010
+A>		
+A>		Inisialisasi Kalender 2
+A>		23 / 10 / 2011
+A>		
+A>		kalender1 dan kalender2 tidak sama !
+A>		Inisialisasi Kalender 3
+A>		23 / 10 / 2010
+A>		
+A>		kalender1 dan kalender3 sama !
+A>		nilai integer yang ekuivalen dengan objKal3 adalah 20101023
+A>		Nilai integer dari objKal3 dan intKal3 sama
+A>		Nilai integer dari objKal2 dan intKal3 tidak sama
 
  **Keterangan:**
  
- - Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun masing-masing ada 2 inequality dan equality operator namun parameternya berbeda ini disebut sebagai overloading operator.
+ - Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun masing-masing ada 2 *inequality* dan *equality* operator namun parameternya berbeda ini disebut sebagai *overloading operator*.
  - Pada operator equality (==) yang pertama membandingkan dua objek Kalender dengan cara membandingkan member variabel hari, bulan, tahun pada masing-masing objek yang dibandingkan, sedangkan operator == yang kedua membandingkan objek Kalender yang terlebih dahulu sudah dikonversi menjadi int.
  - Anda dapat melihat bahwa kedua operator comparison diatas sama-sama dapat membandingkan isi dari 2 objek Kalender, baik dengan cara membandingkan member variabel maupun membandingkan nilai int (hasil konversi dari objek Kalender).
 
@@ -594,145 +650,163 @@ Seperti pada contoh sebelumnya anda juga dapat menggunakan operator <, >, <=, >=
 
 Contoh 7. Menggunakan Operator <. >, <=, >=.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 7, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 7, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kalender
-	{
-	private:
-	int _hari;
-	int _bulan;
-	int _tahun;
-	void TambahHari(int hari);
-	void TambahBulan(int bulan);
-	void TambahTahun(int tahun);
-	public:
-	Kalender(int hari,int bulan, int tahun) : _hari(hari), _bulan(bulan),
-	_tahun(tahun) {}
-	void TampilTanggal()
-	{
-	cout << _hari << " / " << _bulan << " / " << _tahun << endl;
-	}
-	operator int() const;
-	bool operator < (const Kalender &objKal) const;
-	bool operator <= (const Kalender &objKal) const;
-	bool operator > (const Kalender &objKal) const;
-	bool operator >= (const Kalender &objKal) const;
-	};
-	Kalender::operator int() const
-	{
-	return ((_tahun*10000)+(_bulan*100)+_hari);
-	}
-	bool Kalender::operator <(const Kalender &objKal) const
-	{
-	return (this->operator int() < objKal.operator int());
-	}
-	bool Kalender::operator >(const Kalender &objKal) const
-	{
-	return (this->operator int() > objKal.operator int());
-	}
-	bool Kalender::operator <=(const Kalender &objKal) const
-	{
-	return (this->operator int() <= objKal.operator int());
-	}
-	bool Kalender::operator >=(const Kalender &objKal) const
-	{
-	return (this->operator int() >= objKal.operator int());
-	}
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kalender objKal1(23,10,2010);
-	Kalender objKal2(16,10,1980);
-	Kalender objKal3(23,10,2010);
-	cout << "objKal1 berisi : " << endl;
-	objKal1.TampilTanggal();
-	cout << endl;
-	cout << "objKal2 berisi : " << endl;
-	objKal2.TampilTanggal();
-	cout << endl;
-	cout << "objKal3 berisi : " << endl;
-	objKal3.TampilTanggal();
-	cout << endl;
-	//menggunakan operator <
-	cout << "objKal1 < objKal2 = ";
-	cout << ((objKal1 < objKal2) ? "true" : "false") << endl;
-	//menggunakan operator >
-	cout << "objKal1 > objKal2 = ";
-	cout << ((objKal1 > objKal2) ? "true" : "false") << endl;
-	//menggunakan operator <=
-	cout << "objKal1 <= objKal3 = ";
-	cout << ((objKal1 <= objKal3) ? "true" : "false") << endl;
-	//menggunakan operator >=
-	cout << "objKal1 >= objKal3 = ";
-	cout << ((objKal1 >= objKal3) ? "true" : "false") << endl;
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kalender
+		{
+		private:
+		int _hari;
+		int _bulan;
+		int _tahun;
+		void TambahHari(int hari);
+		void TambahBulan(int bulan);
+		void TambahTahun(int tahun);
+		public:
+		Kalender(int hari,int bulan, int tahun) : _hari(hari), _bulan(bulan),
+		_tahun(tahun) {}
+		void TampilTanggal()
+		{
+		cout << _hari << " / " << _bulan << " / " << _tahun << endl;
+		}
+		operator int() const;
+		bool operator < (const Kalender &objKal) const;
+		bool operator <= (const Kalender &objKal) const;
+		bool operator > (const Kalender &objKal) const;
+		bool operator >= (const Kalender &objKal) const;
+		};
+		Kalender::operator int() const
+		{
+		return ((_tahun*10000)+(_bulan*100)+_hari);
+		}
+		bool Kalender::operator <(const Kalender &objKal) const
+		{
+		return (this->operator int() < objKal.operator int());
+		}
+		bool Kalender::operator >(const Kalender &objKal) const
+		{
+		return (this->operator int() > objKal.operator int());
+		}
+		bool Kalender::operator <=(const Kalender &objKal) const
+		{
+		return (this->operator int() <= objKal.operator int());
+		}
+		bool Kalender::operator >=(const Kalender &objKal) const
+		{
+		return (this->operator int() >= objKal.operator int());
+		}
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kalender objKal1(23,10,2010);
+		Kalender objKal2(16,10,1980);
+		Kalender objKal3(23,10,2010);
+		cout << "objKal1 berisi : " << endl;
+		objKal1.TampilTanggal();
+		cout << endl;
+		cout << "objKal2 berisi : " << endl;
+		objKal2.TampilTanggal();
+		cout << endl;
+		cout << "objKal3 berisi : " << endl;
+		objKal3.TampilTanggal();
+		cout << endl;
+		//menggunakan operator <
+		cout << "objKal1 < objKal2 = ";
+		cout << ((objKal1 < objKal2) ? "true" : "false") << endl;
+		//menggunakan operator >
+		cout << "objKal1 > objKal2 = ";
+		cout << ((objKal1 > objKal2) ? "true" : "false") << endl;
+		//menggunakan operator <=
+		cout << "objKal1 <= objKal3 = ";
+		cout << ((objKal1 <= objKal3) ? "true" : "false") << endl;
+		//menggunakan operator >=
+		cout << "objKal1 >= objKal3 = ";
+		cout << ((objKal1 >= objKal3) ? "true" : "false") << endl;
+		return a.exec();
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
+A>		objKal1 berisi : 
+A>		23 / 10 / 2010
+A>		
+A>		objKal2 berisi : 
+A>		16 / 10 / 1980
+A>		
+A>		objKal3 berisi : 
+A>		23 / 10 / 2010
+A>		
+A>		objKal1 < objKal2 = false
+A>		objKal1 > objKal2 = true
+A>		objKal1 <= objKal3 = true
+A>		objKal1 >= objKal3 = true
 
  **Keterangan**
  
  - Pada program diatas penggunaan operator <, >, <=, >= digunakan untuk membandingkan dua objek Kalender yang berbeda.
- - Untuk mempermudah membandingkan dua objek Kalender maka objek Kalender tersebut dikonversi terlebih dahulu menjadi int.
+ - Untuk mempermudah membandingkan dua objek Kalender maka objek Kalender tersebut dikonversi terlebih dahulu menjadi `int`.
 
 ## Subscript Operator
 
-Subscript operator dapat digunakan jika anda ingin mengakses class seperti ketika anda mengakses array, anda dapat menambahkan operator [] pada objek yang anda buat untuk mengakses nilai dengan index tertentu dari objek. Contoh dibawah ini akan menjelaskan penggunaan subscript operator untuk membuat array yang dinamis.
+Subscript operator dapat digunakan jika anda ingin mengakses class seperti ketika anda mengakses array, anda dapat menambahkan operator `[]` pada objek yang anda buat untuk mengakses nilai dengan index tertentu dari objek. Contoh dibawah ini akan menjelaskan penggunaan subscript operator untuk membuat array yang dinamis.
 
 Contoh 8. Subscript Operator untuk Dynamic Array.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 8, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 8, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class COpArray
-	{
-	private:
-	int *_myArray;
-	int _numElement;
-	public:
-	COpArray(int numElement);
-	~COpArray();
-	int& operator[](int index);
-	};
-	int& COpArray::operator [](int index)
-	{
-	return _myArray[index];
-	}
-	COpArray::COpArray(int numElement)
-	{
-	_myArray = new int[numElement];
-	_numElement = numElement;
-	}
-	COpArray::~COpArray()
-	{
-	delete [] _myArray;
-	}
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	COpArray arrOp(5);
-	arrOp[0]=23;
-	arrOp[1]=16;
-	arrOp[2]=9;
-	arrOp[3]=20;
-	arrOp[4]=55;
-	cout << "The content array are : " << "{";
-	for(int i=0;i<5;++i)
-	{
-	cout << arrOp[i] << " ";
-	}
-	cout << "}" << endl;
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class COpArray
+		{
+		private:
+		int *_myArray;
+		int _numElement;
+		public:
+		COpArray(int numElement);
+		~COpArray();
+		int& operator[](int index);
+		};
+		int& COpArray::operator [](int index)
+		{
+		return _myArray[index];
+		}
+		COpArray::COpArray(int numElement)
+		{
+		_myArray = new int[numElement];
+		_numElement = numElement;
+		}
+		COpArray::~COpArray()
+		{
+		delete [] _myArray;
+		}
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		COpArray arrOp(5);
+		arrOp[0]=23;
+		arrOp[1]=16;
+		arrOp[2]=9;
+		arrOp[3]=20;
+		arrOp[4]=55;
+		cout << "The content array are : " << "{";
+		for(int i=0;i<5;++i)
+		{
+		cout << arrOp[i] << " ";
+		}
+		cout << "}" << endl;
+		return a.exec();
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
+A>		The content array are : {23 16 9 20 55 }
 
  **Keterangan**
  
@@ -740,34 +814,37 @@ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah seb
 
 ## Function operator()
 
-Function operator digunakan jika anda ingin membuat objek bekerja seperti function. Untuk lebih jelasnya penggunaan function operator() anda dapat mencoba program dibawah ini.
+Function operator digunakan jika anda ingin membuat objek bekerja seperti function. Untuk lebih jelasnya penggunaan function `operator()` anda dapat mencoba program dibawah ini.
 
 Contoh 9. Menggunakan operator() untuk membuat function object.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 9, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 9, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class CTampil
-	{
-	public:
-	void operator()(string msg) const
-	{
-	cout << msg << endl;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	CTampil objTampil;
-	//penulisan ekuivalen dengan objTampil.operator ()("Hello Function Operator !");
-	objTampil("Hello Function Operator !");
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class CTampil
+		{
+		public:
+		void operator()(string msg) const
+		{
+		cout << msg << endl;
+		}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		CTampil objTampil;
+		//penulisan ekuivalen dengan objTampil.operator ()("Hello Function Operator !");
+		objTampil("Hello Function Operator !");
+		return a.exec();
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
+A>		Hello Function Operator !
 
  **Analisis**
  

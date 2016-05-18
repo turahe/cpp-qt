@@ -445,10 +445,12 @@ Contoh 3. Percobaan koneksi MySQL dengan QtConsole
 1. Buatlah sebuah database pada MySQL dengan nama: testmhs
 2. Gunakan HeidiSQL untuk membuatnya:
 3. Isilah datanya sebagai berikut:
-NIM Nama IPK
-22001234 Anton 3.5
-22003241 Rudi 2.68
-22003456 Katon 2.9
+
+|NIM 		|Nama 	|IPK
+|-----------|-------|------------
+|22001234 	|Anton 	|3.5
+|22003241 	|Rudi 	|2.68
+|22003456 	|Katon 	|2.9
 
 Hasil:
 

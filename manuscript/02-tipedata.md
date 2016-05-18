@@ -95,7 +95,6 @@ Contoh 1. Tipe data dan Identifier.
 
 
 A>	Panjang		=15
-A>
 A>	lebar		=12
 
  **Keterangan:**

@@ -33,23 +33,23 @@ Contoh 1. Menampilkan daftar drives dari root directories.
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QDebug>
-	#include <QDir>
-	#include <QFileInfo>
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	foreach (QFileInfo drive, QDir::drives()) {
-	qDebug() << "Drive : " << drive.absolutePath();
-	QDir dir = drive.dir();
-	dir.setFilter(QDir::Dirs);
-	foreach (QFileInfo rootDirs, dir.entryInfoList()) {
-	qDebug() << " " << rootDirs.fileName() ;
-	}
-	}
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <QDebug>
+		#include <QDir>
+		#include <QFileInfo>
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		foreach (QFileInfo drive, QDir::drives()) {
+		qDebug() << "Drive : " << drive.absolutePath();
+		QDir dir = drive.dir();
+		dir.setFilter(QDir::Dirs);
+		foreach (QFileInfo rootDirs, dir.entryInfoList()) {
+		qDebug() << " " << rootDirs.fileName() ;
+		}
+		}
+		return a.exec();
+		}
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -89,28 +89,28 @@ Contoh 2. Memeriksa apakah file ada dan bisa diakses.
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QFile>
-	#include <QDebug>
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	QFile file("testfile.txt");
-	if(!file.exists())
-	{
-	qDebug() << "File : " << file.fileName() << " tidak ditemukan";
-	return a.exec();
-	}
-	if(!file.open(QIODevice::WriteOnly))
-	{
-	qDebug() << "Tidak dapat membuka file " << file.fileName() << " untuk
-	ditulis";
-	return a.exec();
-	}
-	qDebug("File berhasil dibuka !");
-	file.close();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <QFile>
+		#include <QDebug>
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		QFile file("testfile.txt");
+		if(!file.exists())
+		{
+		qDebug() << "File : " << file.fileName() << " tidak ditemukan";
+		return a.exec();
+		}
+		if(!file.open(QIODevice::WriteOnly))
+		{
+		qDebug() << "Tidak dapat membuka file " << file.fileName() << " untuk
+		ditulis";
+		return a.exec();
+		}
+		qDebug("File berhasil dibuka !");
+		file.close();
+		return a.exec();
+		}
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -135,36 +135,36 @@ Contoh 3 Menggunakan Stream untuk membaca file.
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QDebug>
-	#include <QFile>
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	QFile file("D:\\sample.txt");
-	if(!file.exists())
-	{
-	qDebug() << "File " << file.fileName() << " tidak ditemukan !";
-	return a.exec();
-	}
-	if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
-	{
-	qDebug() << "File " << file.fileName() << " tidak dapat diakses !";
-	return a.exec();
-	}
-	QTextStream stream(&file);
-	//membaca semua teks yang ada dalam sample.txt
-	QString teks = stream.readAll();
-	qDebug() << teks;
-	//membaca teks per line
-	while(!stream.atEnd())
-	{
-	QString line = stream.readLine();
-	qDebug() << line;
-	}
-	file.close();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <QDebug>
+		#include <QFile>
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		QFile file("D:\\sample.txt");
+		if(!file.exists())
+		{
+		qDebug() << "File " << file.fileName() << " tidak ditemukan !";
+		return a.exec();
+		}
+		if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+		{
+		qDebug() << "File " << file.fileName() << " tidak dapat diakses !";
+		return a.exec();
+		}
+		QTextStream stream(&file);
+		//membaca semua teks yang ada dalam sample.txt
+		QString teks = stream.readAll();
+		qDebug() << teks;
+		//membaca teks per line
+		while(!stream.atEnd())
+		{
+		QString line = stream.readLine();
+		qDebug() << line;
+		}
+		file.close();
+		return a.exec();
+		}
 
 2. Buat file teks pada alamat tertentu (pada contoh diatas di drive `D:\sample.txt`), masukan sembarang teks kedalam file tersebut.
 
@@ -189,91 +189,91 @@ Contoh 4. Menggunakan Data Stream.
 2. Buka file Contoh 4.pro untuk menambahkan library GUI karena pada controh program ini digunakan class QColor.
 
 
-	#-------------------------------------------------
-	#
-	# Project created by QtCreator 2011-01-03T19:58:33
-	#
-	#-------------------------------------------------
-	QT += core
-	QT += gui
-	TARGET = Contoh 4
-	CONFIG += console
-	CONFIG -= app_bundle
-	TEMPLATE = app
-	SOURCES += main.cpp
+		#-------------------------------------------------
+		#
+		# Project created by QtCreator 2011-01-03T19:58:33
+		#
+		#-------------------------------------------------
+		QT += core
+		QT += gui
+		TARGET = Contoh 4
+		CONFIG += console
+		CONFIG -= app_bundle
+		TEMPLATE = app
+		SOURCES += main.cpp
 
 3. Kemudian tambahkan kode berikut pada file main.cpp.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QDebug>
-	#include <QDataStream>
-	#include <QList>
-	#include <QColor>
-	#include <QFile>
-	struct Warna
-	{
-	QString text;
-	QColor color;
-	};
-	QDataStream &operator << (QDataStream &stream, const Warna &data)
-	{
-	stream << data.text << data.color;
-	return stream;
-	}
-	QDataStream &operator >>(QDataStream &stream, Warna &data)
-	{
-	stream >> data.text;
-	stream >> data.color;
-	return stream;
-	}
-	void saveList()
-	{
-	QList<Warn list;
-	Warna data;
-	data.text = "Merah";
-	data.color = Qt::red;
-	list << data;
-	data.text = "Biru";
-	data.color = Qt::blue;
-	list << data;
-	data.text = "Kuning";
-	data.color = Qt::yellow;
-	list << data;
-	data.text = "Hijau";
-	data.color = Qt::green;
-	list << data;
-	QFile file( "datastream.dat" );
-	if( !file.open( QIODevice::WriteOnly ) )
-	return;
-	QDataStream stream( &file );
-	stream.setVersion( QDataStream::Qt_4_7);
-	stream << list;
-	file.close();
-	}
-	void loadList()
-	{
-	QList<Warn list;
-	QFile file( "datastream.dat" );
-	if( !file.open( QIODevice::ReadOnly ) )
-	return;
-	QDataStream stream(&file);
-	stream.setVersion(QDataStream::Qt_4_7);
-	stream >> list;
-	file.close();
-	foreach( Warna data, list )
-	qDebug() << data.text << "("
-	<< data.color.red() << ","
-	<< data.color.green() << ","
-	<< data.color.blue() << ")";
-	}
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	saveList();
-	loadList();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <QDebug>
+		#include <QDataStream>
+		#include <QList>
+		#include <QColor>
+		#include <QFile>
+		struct Warna
+		{
+		QString text;
+		QColor color;
+		};
+		QDataStream &operator << (QDataStream &stream, const Warna &data)
+		{
+		stream << data.text << data.color;
+		return stream;
+		}
+		QDataStream &operator >>(QDataStream &stream, Warna &data)
+		{
+		stream >> data.text;
+		stream >> data.color;
+		return stream;
+		}
+		void saveList()
+		{
+		QList<Warn list;
+		Warna data;
+		data.text = "Merah";
+		data.color = Qt::red;
+		list << data;
+		data.text = "Biru";
+		data.color = Qt::blue;
+		list << data;
+		data.text = "Kuning";
+		data.color = Qt::yellow;
+		list << data;
+		data.text = "Hijau";
+		data.color = Qt::green;
+		list << data;
+		QFile file( "datastream.dat" );
+		if( !file.open( QIODevice::WriteOnly ) )
+		return;
+		QDataStream stream( &file );
+		stream.setVersion( QDataStream::Qt_4_7);
+		stream << list;
+		file.close();
+		}
+		void loadList()
+		{
+		QList<Warn list;
+		QFile file( "datastream.dat" );
+		if( !file.open( QIODevice::ReadOnly ) )
+		return;
+		QDataStream stream(&file);
+		stream.setVersion(QDataStream::Qt_4_7);
+		stream >> list;
+		file.close();
+		foreach( Warna data, list )
+		qDebug() << data.text << "("
+		<< data.color.red() << ","
+		<< data.color.green() << ","
+		<< data.color.blue() << ")";
+		}
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		saveList();
+		loadList();
+		return a.exec();
+		}
 
 4. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -332,41 +332,41 @@ Contoh 5. Membuat Nodes untuk membuat simple XML Document.
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QDebug>
-	#include <QFile>
-	#include <QTextStream>
-	#include <QDomDocument>
-	#include <QDomElement>
-	#include <QDomText>
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	QDomDocument dokumen;
-	QDomElement mhs = dokumen.createElement("Mahasiswa");
-	mhs.setAttribute("Jurusan","TI");
-	QDomElement nim = dokumen.createElement("Nim");
-	QDomElement ipk = dokumen.createElement("Ipk");
-	QDomText nimtext = dokumen.createTextNode("22002321");
-	QDomText ipktext = dokumen.createTextNode("3.5");
-	dokumen.appendChild(mhs);
-	mhs.appendChild(nim);
-	nim.appendChild(nimtext);
-	mhs.appendChild(ipk);
-	ipk.appendChild(ipktext);
-	QFile file("simple.xml");
-	if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
-	{
-	qDebug() << "File tidak ditemukan !";
-	a.exit(-1);
-	return a.exec();
-	}
-	QTextStream stream(&file);
-	stream << dokumen.toString();
-	qDebug() << "File XML berhasil dibuat ..";
-	file.close();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <QDebug>
+		#include <QFile>
+		#include <QTextStream>
+		#include <QDomDocument>
+		#include <QDomElement>
+		#include <QDomText>
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		QDomDocument dokumen;
+		QDomElement mhs = dokumen.createElement("Mahasiswa");
+		mhs.setAttribute("Jurusan","TI");
+		QDomElement nim = dokumen.createElement("Nim");
+		QDomElement ipk = dokumen.createElement("Ipk");
+		QDomText nimtext = dokumen.createTextNode("22002321");
+		QDomText ipktext = dokumen.createTextNode("3.5");
+		dokumen.appendChild(mhs);
+		mhs.appendChild(nim);
+		nim.appendChild(nimtext);
+		mhs.appendChild(ipk);
+		ipk.appendChild(ipktext);
+		QFile file("simple.xml");
+		if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+		{
+		qDebug() << "File tidak ditemukan !";
+		a.exit(-1);
+		return a.exec();
+		}
+		QTextStream stream(&file);
+		stream << dokumen.toString();
+		qDebug() << "File XML berhasil dibuat ..";
+		file.close();
+		return a.exec();
+		}
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -402,49 +402,49 @@ Contoh 6. Membaca DOM dari dokumen XML.
 5. Kemudian buka file main.cp, tulis kode untuk membaca file XML berikut:
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QFile>
-	#include <QTextStream>
-	#include <QDomDocument>
-	#include <QDomElement>
-	#include <QDomText>
-	#include <QDebug>
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	QFile file("simple.xml");
-	if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
-	{
-	qDebug() << "File " << file.fileName() << " tidak ditemukan";
-	return a.exec();
-	}
-	QDomDocument dokumen;
-	if(!dokumen.setContent(&file))
-	{
-	qDebug() << "Gagal untuk parsing ke DOM tree";
-	file.close();
-	return a.exec();
-	}
-	QDomElement dokumenElemen = dokumen.documentElement();
-	QDomNode node = dokumenElemen.firstChild();
-	while(!node.isNull())
-	{
-	if(node.isElement())
-	{
-	QDomElement element = node.toElement();
-	qDebug() << "Element " << element.tagName();
-	qDebug() << "Atribut nama " << element.attribute("nama","tidak ada
-	attribute");
-	}
-	if(node.isText())
-	{
-	QDomText teks = node.toText();
-	qDebug() << teks.data();
-	}
-	node = node.nextSibling();
-	}
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <QFile>
+		#include <QTextStream>
+		#include <QDomDocument>
+		#include <QDomElement>
+		#include <QDomText>
+		#include <QDebug>
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		QFile file("simple.xml");
+		if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+		{
+		qDebug() << "File " << file.fileName() << " tidak ditemukan";
+		return a.exec();
+		}
+		QDomDocument dokumen;
+		if(!dokumen.setContent(&file))
+		{
+		qDebug() << "Gagal untuk parsing ke DOM tree";
+		file.close();
+		return a.exec();
+		}
+		QDomElement dokumenElemen = dokumen.documentElement();
+		QDomNode node = dokumenElemen.firstChild();
+		while(!node.isNull())
+		{
+		if(node.isElement())
+		{
+		QDomElement element = node.toElement();
+		qDebug() << "Element " << element.tagName();
+		qDebug() << "Atribut nama " << element.attribute("nama","tidak ada
+		attribute");
+		}
+		if(node.isText())
+		{
+		QDomText teks = node.toText();
+		qDebug() << teks.data();
+		}
+		node = node.nextSibling();
+		}
+		return a.exec();
+		}
 
 6. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -468,100 +468,100 @@ Contoh 7. Modifikasi data dokumen XML.
 2. Pada folder Contoh 7-build-simulator buat file dengan nama “simple.xml”, kemudian tulis dokumen XML berikut.
 
 {lang="xml"}
-	<dokumen nama="Data Mahasiswa">
-	<Mahasiswa Jurusan="TI">
-	<Nim nama="Erick">22002321</Nim>
-	<Ipk>3.5</Ipk>
-	</Mahasisw
-	<Mahasiswa Jurusan="SI">
-	<Nim nama="Katon">23002333</Nim>
-	<Ipk>3.6</Ipk>
-	</Mahasisw
-	</dokumen>
+		<dokumen nama="Data Mahasiswa">
+		<Mahasiswa Jurusan="TI">
+		<Nim nama="Erick">22002321</Nim>
+		<Ipk>3.5</Ipk>
+		</Mahasisw
+		<Mahasiswa Jurusan="SI">
+		<Nim nama="Katon">23002333</Nim>
+		<Ipk>3.6</Ipk>
+		</Mahasisw
+		</dokumen>
 
 
 3. Kemudian pada file main.cpp tambahkan kode berikut untuk melakukan modifikasi file xml yang sudah kita buat sebelumnya.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QDebug>
-	#include <QFile>
-	#include <QTextStream>
-	#include <QDomDocument>
-	#include <QDomElement>
-	#include <QDomText>
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	QFile fileAsli("simple.xml");
-	if(!fileAsli.open(QIODevice::ReadOnly | QIODevice::Text))
-	{
-	qDebug() << "File " << fileAsli.fileName() << " tidak ditemukan";
-	return a.exec();
-	}
-	QDomDocument dokumen;
-	if(!dokumen.setContent(&fileAsli))
-	{
-	qDebug() << "Gagal parsing file ke DOM tree";
-	fileAsli.close();
-	return a.exec();
-	}
-	fileAsli.close();
-	QDomElement elemenDokumen = dokumen.documentElement();
-	QDomNodeList elemen = elemenDokumen.elementsByTagName("Mahasiswa");
-	if(elemen.size() == 0)
-	{
-	QDomElement mhs = dokumen.createElement("Mahasiswa");
-	elemenDokumen.insertBefore(mhs,QDomNode());
-	}
-	else
-	{
-	QDomElement mhs = elemen.at(0).toElement();
-	QDomElement nama = dokumen.createElement("Nama");
-	QDomText textNama = dokumen.createTextNode("Erick Kurniawan");
-	nama.appendChild(textNama);
-	mhs.appendChild(nama);
-	}
-	QFile fileModif("simplemodif.xml");
-	if(!fileModif.open(QIODevice::WriteOnly | QIODevice::Text))
-	{
-	qDebug() << "Gagal untuk membaca file xml";
-	return a.exec();
-	}
-	QTextStream stream(&fileModif);
-	stream << dokumen.toString();
-	qDebug() << "File berhasil dimodifikasi dan disimpan pada file simplemodif.xml";
-	fileModif.close();
-	//membaca isi dari file simplemodif.xml
-	qDebug() << "Setelah dimodifikasi isi dari simplemodif.xml adalah";
-	if(!fileModif.open(QIODevice::ReadOnly | QIODevice::Text))
-	{
-	qDebug() << "Gagal membaca file xml";
-	return a.exec();
-	}
-	qDebug() << fileModif.readAll();
-	fileModif.close();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <QDebug>
+		#include <QFile>
+		#include <QTextStream>
+		#include <QDomDocument>
+		#include <QDomElement>
+		#include <QDomText>
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		QFile fileAsli("simple.xml");
+		if(!fileAsli.open(QIODevice::ReadOnly | QIODevice::Text))
+		{
+		qDebug() << "File " << fileAsli.fileName() << " tidak ditemukan";
+		return a.exec();
+		}
+		QDomDocument dokumen;
+		if(!dokumen.setContent(&fileAsli))
+		{
+		qDebug() << "Gagal parsing file ke DOM tree";
+		fileAsli.close();
+		return a.exec();
+		}
+		fileAsli.close();
+		QDomElement elemenDokumen = dokumen.documentElement();
+		QDomNodeList elemen = elemenDokumen.elementsByTagName("Mahasiswa");
+		if(elemen.size() == 0)
+		{
+		QDomElement mhs = dokumen.createElement("Mahasiswa");
+		elemenDokumen.insertBefore(mhs,QDomNode());
+		}
+		else
+		{
+		QDomElement mhs = elemen.at(0).toElement();
+		QDomElement nama = dokumen.createElement("Nama");
+		QDomText textNama = dokumen.createTextNode("Erick Kurniawan");
+		nama.appendChild(textNama);
+		mhs.appendChild(nama);
+		}
+		QFile fileModif("simplemodif.xml");
+		if(!fileModif.open(QIODevice::WriteOnly | QIODevice::Text))
+		{
+		qDebug() << "Gagal untuk membaca file xml";
+		return a.exec();
+		}
+		QTextStream stream(&fileModif);
+		stream << dokumen.toString();
+		qDebug() << "File berhasil dimodifikasi dan disimpan pada file simplemodif.xml";
+		fileModif.close();
+		//membaca isi dari file simplemodif.xml
+		qDebug() << "Setelah dimodifikasi isi dari simplemodif.xml adalah";
+		if(!fileModif.open(QIODevice::ReadOnly | QIODevice::Text))
+		{
+		qDebug() << "Gagal membaca file xml";
+		return a.exec();
+		}
+		qDebug() << fileModif.readAll();
+		fileModif.close();
+		return a.exec();
+		}
 
 4. Kemudian jalankan program diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 5. Untuk melihat hasil dari file xml yang sudah dimodifikasi, anda dapat membuka file “simplemodif.xml” yang ada pada folder Contoh 7-build-simulator.
 6. Isi dari file “simplemodif.xml” adalah sebagai berikut
 
 {lang="xml"}
-	<dokumen nama="Data Mahasiswa">
-	<Mahasiswa Jurusan="TI">
-	<Nim nama="Erick">22002321</Nim>
-	<Ipk>3.5</Ipk>
-	<NamErick Kurniawan</Nam
-	</Mahasisw
-	<Mahasiswa Jurusan="SI">
-	<Nim nama="Katon">23002333</Nim>
-	<Ipk>3.6</Ipk>
-	</Mahasisw
-	</dokumen>
+		<dokumen nama="Data Mahasiswa">
+		<Mahasiswa Jurusan="TI">
+		<Nim nama="Erick">22002321</Nim>
+		<Ipk>3.5</Ipk>
+		<NamErick Kurniawan</Nam
+		</Mahasisw
+		<Mahasiswa Jurusan="SI">
+		<Nim nama="Katon">23002333</Nim>
+		<Ipk>3.6</Ipk>
+		</Mahasisw
+		</dokumen>
 
- **Keterangan:**
+**Keterangan:**
  
  - Langkah pertama baca file simple.xml yang akan dimodifikasi, kemudian masukan isinya kedalam QDomDocument.
  - Ambil root element dari dokumen menggunakan method documentElement() dan masukan kedalam objek bertipe QDomElement.
@@ -573,98 +573,98 @@ Contoh 7. Modifikasi data dokumen XML.
 
 Selain menggunakan DOM untuk membaca dokumen XML, anda juga dapat menggunakan objek QXMLStreamReader. QXMLStreamReader adalah class parser XML tercepat dan termudah untuk digunakan, karena QXMLStreamReader parser bekerja secara incremental sehingga mempermudah pembacaan tag. QXMLStreamReader juga cocok digunakan untuk membaca file yang berukuran besar yang tidak cocok jika disimpan di memory. Beberapa token yang digunakan adalah sebagai berikut:
 
-Token Type Example Getter Functions
-StartDocument N/A isStandaloneDocument()
-EndDocument N/A isStandaloneDocument()
-StartElement <item>
-namespaceUri(), name(), attributes(),
-namespaceDeclarations()
-EndElement </item>
-namespaceUri(), name()
-Characters AT&amp;T text(), isWhitespace(), isCDATA()
-Comment <!-- fix --
->
-text()
-DTD <!DOCTYPE
-...>
-text(), notationDeclarations(),
-entityDeclarations()
-EntityReference &trade; name(), text()
-ProcessingInstruction <?alert?> processingInstructionTarget(),
+	Token Type Example Getter Functions
+	StartDocument N/A isStandaloneDocument()
+	EndDocument N/A isStandaloneDocument()
+	StartElement <item>
+	namespaceUri(), name(), attributes(),
+	namespaceDeclarations()
+	EndElement </item>
+	namespaceUri(), name()
+	Characters AT&amp;T text(), isWhitespace(), isCDATA()
+	Comment <!-- fix --
+	>
+	text()
+	DTD <!DOCTYPE
+	...>
+	text(), notationDeclarations(),
+	entityDeclarations()
+	EntityReference &trade; name(), text()
+	ProcessingInstruction <?alert?> processingInstructionTarget(),
 
 
-Token Type Example Getter Functions
-processingInstructionData()
-Invalid >&<!
-error(), errorString()
-Misal anda memiliki dokumen XML sebagai berikut
-<doc>
-<quote>Einmal ist keinmal</quote>
-</doc>
+	Token Type Example Getter Functions
+	processingInstructionData()
+	Invalid >&<!
+	error(), errorString()
+	Misal anda memiliki dokumen XML sebagai berikut
+	<doc>
+	<quote>Einmal ist keinmal</quote>
+	</doc>
 
 Setiap anda menggunakan method readNext() maka akan dibaca satu token. Untuk kode diatas kita dapat membaca pertoken.
 
-StartDocument
-StartElement (name() == "doc")
-StartElement (name() == "quote")
-Characters (text() == "Einmal ist keinmal")
-EndElement (name() == "quote")
-EndElement (name() == "doc")
-EndDocument
+	StartDocument
+	StartElement (name() == "doc")
+	StartElement (name() == "quote")
+	Characters (text() == "Einmal ist keinmal")
+	EndElement (name() == "quote")
+	EndElement (name() == "doc")
+	EndDocument
 
 Setelah memanggil method readNext(), anda dapat mengecek token yang sedang aktif dengan menggunakan isStartElement(), isCharacter(), atau menggunakan fungsi yang mirip seperti state().
 
-{title="Contoh 8. Menggunakan QXMLStream Reader untuk membaca XML"}
+Contoh 8. Menggunakan QXMLStream Reader untuk membaca XML.
 
 1. Buat aplikasi console baru dengan nama Contoh 8, pilih Qt Simulator untuk menampilkan outputnya.
 2. Buat file simple.xml dan buat dokumen XML sebagai berikut
 
 {lang="xml"}
-	<Mahasiswas>
-	<Mahasisw
-	<Nim nama="Erick">22002321</Nim>
-	<Ipk>3.5</Ipk>
-	</Mahasisw
-	<Mahasisw
-	<Nim nama="Katon">23002333</Nim>
-	<Ipk>3.6</Ipk>
-	</Mahasisw
-	</Mahasiswas>
+		<Mahasiswas>
+		<Mahasisw
+		<Nim nama="Erick">22002321</Nim>
+		<Ipk>3.5</Ipk>
+		</Mahasisw
+		<Mahasisw
+		<Nim nama="Katon">23002333</Nim>
+		<Ipk>3.6</Ipk>
+		</Mahasisw
+		</Mahasiswas>
 
 3. Kemudian ketikan kode berikut pada main.cpp untuk membaca data dari dokumen XML.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QDebug>
-	#include <QFile>
-	#include <QXmlStreamReader>
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	QFile file("simple.xml");
-	if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
-	{
-	qDebug() << "File tidak ditemukan ";
-	return a.exec();
-	}
-	QXmlStreamReader reader;
-	reader.setDevice(&file);
-	while(!reader.atEnd())
-	{
-	reader.readNext();
-	if(reader.isStartElement())
-	{
-	qDebug() << reader.name();
-	if(reader.name() == "Nim")
-	{
-	qDebug() << "Nama Attribute :" << reader.attributes().value("nama");
-	qDebug() << "Teks : " << reader.readElementText();
-	}
-	}
-	}
-	file.close();
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <QDebug>
+		#include <QFile>
+		#include <QXmlStreamReader>
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		QFile file("simple.xml");
+		if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+		{
+		qDebug() << "File tidak ditemukan ";
+		return a.exec();
+		}
+		QXmlStreamReader reader;
+		reader.setDevice(&file);
+		while(!reader.atEnd())
+		{
+		reader.readNext();
+		if(reader.isStartElement())
+		{
+		qDebug() << reader.name();
+		if(reader.name() == "Nim")
+		{
+		qDebug() << "Nama Attribute :" << reader.attributes().value("nama");
+		qDebug() << "Teks : " << reader.readElementText();
+		}
+		}
+		}
+		file.close();
+		return a.exec();
+		}
 
 4. Jalankan aplikasi tersebut, maka akan ditampikan output sebagai berikut.
 
@@ -681,46 +681,46 @@ Contoh 9. Membuat dokumen XML dengan QXMLStreamWriter.
 1. Buat aplikasi console dengan nama Contoh 9, kemudian tulis kode berikut
 
 
-	#include <QtCore/QCoreApplication>
-	#include <QDebug>
-	#include <QFile>
-	#include <QXmlStreamWriter>
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	QFile file("simple.xml");
-	if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
-	{
-	qDebug() << "File tidak ditemukan..";
-	return a.exec();
-	}
-	QXmlStreamWriter writer(&file);
-	writer.setAutoFormatting(true);
+		#include <QtCore/QCoreApplication>
+		#include <QDebug>
+		#include <QFile>
+		#include <QXmlStreamWriter>
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		QFile file("simple.xml");
+		if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+		{
+		qDebug() << "File tidak ditemukan..";
+		return a.exec();
+		}
+		QXmlStreamWriter writer(&file);
+		writer.setAutoFormatting(true);
 
 
-	writer.writeStartDocument();
-	writer.writeStartElement("Books");
-	writer.writeStartElement("Book");
-	writer.writeStartElement("Author");
-	writer.writeAttribute("Name","Erick Kurniawan");
-	writer.writeAttribute("Title","Qt Programming");
-	writer.writeEndDocument();
-	file.close();
-	qDebug() << "File sudah berhasil dibuat !";
-	return a.exec();
-	}
+		writer.writeStartDocument();
+		writer.writeStartElement("Books");
+		writer.writeStartElement("Book");
+		writer.writeStartElement("Author");
+		writer.writeAttribute("Name","Erick Kurniawan");
+		writer.writeAttribute("Title","Qt Programming");
+		writer.writeEndDocument();
+		file.close();
+		qDebug() << "File sudah berhasil dibuat !";
+		return a.exec();
+		}
 
 2. Jalankan program diatas untuk menggenerate dokumen XML dengan nama simple.xml.
 
 3. Isi dari dokumen XML yang barusan anda buat adalah sebagai berikut.
 
 {lang="xml"}
-	<?xml version="1.0" encoding="UTF-8"?>
-	<Books>
-	<Book>
-	<Author name="Erick Kurniawan" Title="ASP.NET 3.5"/>
-	</Book>
-	</Books>
+		<?xml version="1.0" encoding="UTF-8"?>
+		<Books>
+		<Book>
+		<Author name="Erick Kurniawan" Title="ASP.NET 3.5"/>
+		</Book>
+		</Books>
 
  **Keterangan:**
  

@@ -1,4 +1,4 @@
-
+﻿
 # Inheritance
 
 ## Pewarisan (Inheritance)
@@ -70,7 +70,7 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 
 
 Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-A>	Volume drum = 981250 Cm2
+A> Volume drum = 981250 Cm2
 
  **Keterangan Program :**
  
@@ -101,6 +101,7 @@ Buka project Contoh 1 di atas, kemudian tambahkan (edit) kode berikut pada fungs
 Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 A>	Volume drum = 981250 Cm2
+A>
 A>	Milik Base Class --> 7850
 
 
@@ -350,8 +351,9 @@ Pada program ini mencoba untuk menghindari pemanggilan kontruktor kelas dasar de
 
 Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
 
-A>	Konstruktor Kelas Dasar
-A>	Mengucapkan : Hallo.. :-)
+A> Konstruktor Kelas Dasar
+A>
+A> Mengucapkan : Hallo.. :-)
 
  **Keterangan Program:**
  
@@ -427,14 +429,16 @@ Buka project Qt Console Application projek Contoh .1 yang tadi sudah dibuat, kem
 
 2. Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai berikut.
 
+A> {linenos=off}
 A>	Luas Silinder = 54950 Cm2
 A>	Milik Base Class --> 54950
 A>	Volume drum = 6.86875e+006 Cm3
 
 Bandingkan dengan hasil keluaan pada program di contoh 2 seperti berikut :
 
-A>	Volume drum = 981250 Cm2
-A>	Milik Base Class --> 7850
+A> Volume drum = 981250 Cm2
+A>
+A> Milik Base Class --> 7850
 
  **Keterangan:**
  
@@ -476,16 +480,19 @@ Contoh 8. Mengakses metode kelas dasar.
 
 2. Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai berikut.
 
-Bagian yang diubah
+A> {linenos=off}
+A>	Luas Silinder = 54950 Cm2
+A>	Milik Base Class --> 54950
+A>	Volume drum = 981250 Cm3
 
  **Keterangan:**
  
- - Sekarang keluaran “Luas Silinder” dengan “Milik Base Class” berbeda, yaitu 54950 sedangkan “Milik Base Class” yang menghitung luas lingkaran adalah 7850. Walaupun keduanya sama-sama memanggil metode getLuas(), namun metode yang dipanggil pada “Milik Base Class” adalah metode milik kelas Lingkaran, yaitu dengan cara penulisan nama metode ditambahkan nama kelas dasar dan dua titik dua (::) didepannya seperti berikut:
+ - Sekarang keluaran “Luas Silinder” dengan “Milik Base Class” berbeda, yaitu 54950 sedangkan “Milik Base Class” yang menghitung luas lingkaran adalah 7850. Walaupun keduanya sama-sama memanggil metode `getLuas()`, namun metode yang dipanggil pada “Milik Base Class” adalah metode milik kelas Lingkaran, yaitu dengan cara penulisan nama metode ditambahkan nama kelas dasar dan dua titik dua (::) didepannya seperti berikut:
  
- `drum.Lingkaran::getLuas()`
+		drum.Lingkaran::getLuas()
  
- - Pada waktu mengitung getLuas() pada kelas Silinder, bisa memanfaatkan metode getLuas() milik kelas dasar dengan cara memanggil metode milik kelas dasar, sehingga dengan demikian metode getLuas() ini seperti tampak pada kode program di atas, bisa menjadi lebih ringkas.
- - Demikian juga pada metode getVolume(), sekarang tidak ada kesalahan seperti tadi, karena rumus getLuas() yang digunakan sudah benar, yaitu metode getLuas() milik kelas dasar.
+ - Pada waktu menghitung `getLuas()` pada kelas Silinder, bisa memanfaatkan metode `getLuas()` milik kelas dasar dengan cara memanggil metode milik kelas dasar, sehingga dengan demikian metode `getLuas()` ini seperti tampak pada kode program di atas, bisa menjadi lebih ringkas.
+ - Demikian juga pada metode `getVolume()`, sekarang tidak ada kesalahan seperti tadi, karena rumus `getLuas()` yang digunakan sudah benar, yaitu metode `getLuas()` milik kelas dasar.
  - Dari percobaan contoh 7 ini tampak cara melakukan overriding dan cara memanggil anggota milik kelas dasar.
 
 ## Penyembunyian Metode Kelas Dasar 
@@ -531,6 +538,8 @@ Contoh 9 Penyembunyian metode kelas dasar.
 
 2. Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai berikut.
 
+A> Ni hao ma
+
 3. Hilangkan tanda comment pada pemanggilan metode hallo pada dua baris di progam utama menjadi seperti berikut:
 
 
@@ -547,6 +556,8 @@ Contoh 9 Penyembunyian metode kelas dasar.
 
 
 4. Tekan Ctrl+R untuk menjalankan program diatas, maka tidak akan ada output dan menucul pesan kesalahan saat kompilasi sepeti berikut.
+
+![](images/capture7-5.png)
 
  **Keterangan:**
  
@@ -589,6 +600,8 @@ Contoh 10. Metode virtual dan non virtual.
 
 2. Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
 
+	A> Luas Silinder
+
 3. Sekarang hapuslah kata kunci virtual metode getLuas() pada kelas Lingkaran seperti berikut.
 
 
@@ -603,11 +616,13 @@ Contoh 10. Metode virtual dan non virtual.
 
 4. Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
 
+A> Luas Lingkaran
+
  **Keterangan:**
  
- - Tampak pada program utama, variabel pointer bertipe kelas dasar (Lingkaran) digunakan untuk menunjuk objek bertipe kelas turunan (Silinder). Ketika dipanggil metode getLuas() yang ada di kelas dasar maupun turunan, maka metode mana yang menanggapi tergantung apakah metode tersebut bersifat virtual pada kelas dasar atau tidak.
- - Pada percobaan pertama, metode getLuas() pada kelas Lingkaran dibuat virtual, ketika program utama dijalankan, tampak bahwa yang menanggapi adalah metode milik kelas turunan (metode yang ada pada objek), yaitu mencetak “Luas Silinder”.
- - Pada percobaan kedua, tidak ada perubahan kode program sama sekali kecuali menghilangkan kata kunci virtual pada metode getLuas() pada kelas Lingkaran, hasilnya tampak bahwa yang menanggapi adalah metode milik kelas dasar (metode yang ada pada kelas Lingkaran), yaitu mencetak “Luas Lingkaran”.
+ - Tampak pada program utama, variabel pointer bertipe kelas dasar (Lingkaran) digunakan untuk menunjuk objek bertipe kelas turunan (Silinder). Ketika dipanggil metode `getLuas()` yang ada di kelas dasar maupun turunan, maka metode mana yang menanggapi tergantung apakah metode tersebut bersifat virtual pada kelas dasar atau tidak.
+ - Pada percobaan pertama, metode `getLuas()` pada kelas Lingkaran dibuat virtual, ketika program utama dijalankan, tampak bahwa yang menanggapi adalah metode milik kelas turunan (metode yang ada pada objek), yaitu mencetak “Luas Silinder”.
+ - Pada percobaan kedua, tidak ada perubahan kode program sama sekali kecuali menghilangkan kata kunci virtual pada metode `getLuas()` pada kelas Lingkaran, hasilnya tampak bahwa yang menanggapi adalah metode milik kelas dasar (metode yang ada pada kelas Lingkaran), yaitu mencetak “Luas Lingkaran”.
  - Percobaan pertama, yaitu membuat metode virtual, adalah yang diperlukan pada proses polimorfisme yang akan dibahas pada bab berikutnya.
 
 I> **Catatan**
@@ -622,13 +637,16 @@ Perlu diperhatikan bahwa kemampuan untuk memanggil metode kelas turunan dari var
 
 Ketika kita membuat objek bertipe kelas turunan, sebenarnya sebelumnya sudah dibuat objek bertipe kelas dasarnya, seperti sudah dibahas secara tidak langsung pada bagian yang membicarakan konstruktor di atas. Jadi ada bagian yang merupakan anggota kelas dasar dan ada bagaian yang merupakan anggota kelas turunan. Sebagai contoh misalnya berikut ini ilustrasi mengenai objek bertipe Silinder yang merupakan turunan dari kelas Lingkaran yang dibahas pada contoh 10 di atas.
 
+![](images/capture7-6.png)
+
 Pada konversi dari suatu variabel ke variabel lain, bisa terjadi Pemotongan (Silicing). Supaya lebih jelas lakukan percobaan berikut ini.
 
 Contoh 11. Metode virtual dan non virtual.
 
 Jalankan Qt Console Application projek, buka projek bernama contoh 10 yang dibuat tadi, kemudian ubah kode progam pada bagian program utama seperti berikut:
 
-	
+{lang="c++"}
+
 	int main(int argc, char *argv[])
 	{
 	QCoreApplication a(argc, argv);
@@ -647,10 +665,16 @@ Jalankan Qt Console Application projek, buka projek bernama contoh 10 yang dibua
 
 Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
 
+A> Pointer : Luas Silinder
+A> 
+A> Referensi : Luas Silinder
+A> 
+A> Nilai : Luas Lingkaran
+
  **Keterangan:**
  
- - Tampak pada hasil percobaan, pointer dan referensi memanggil metode virtual, sehingga yang dieksekusi adalah metode getLuas() milik Silinder. Ini tampak pada 2 baris pertama hasil keluaran di atas. Sedangkan pada baris ke 3 metode yang dieksekusi adalah metode milik kelas dasar (Lingkaran) itu sendiri.
- - Variabel objek3 bertipe kelas dasar (Lingkaran), maka ketika menerima objek bertipe kelas turunan (Silinder) kompiler memotong (slices down) objek Silinder menjadi bentuk kelas dasar (Lingkaran) saja. Oleh karena itu ketika dipanggil metode getLuas() maka yang ada hanya anggota-anggota kelas dasar (Lingkaran). Potongan objek bertipe kelas turunan (Silinder) hilang, inilah efek dari variabel nilai yang diberi nilai objek kelas turunannya, efek ini disebut Pemotongan (Slicing) karena bagian kelas turunan (Silinder) dipotong keluar ketika dikonversikan menjadi kelas dasar (Lingkaran).
+ - Tampak pada hasil percobaan, pointer dan referensi memanggil metode virtual, sehingga yang dieksekusi adalah metode `getLuas()` milik Silinder. Ini tampak pada 2 baris pertama hasil keluaran di atas. Sedangkan pada baris ke 3 metode yang dieksekusi adalah metode milik kelas dasar (Lingkaran) itu sendiri.
+ - Variabel objek3 bertipe kelas dasar (Lingkaran), maka ketika menerima objek bertipe kelas turunan (Silinder) kompiler memotong (slices down) objek Silinder menjadi bentuk kelas dasar (Lingkaran) saja. Oleh karena itu ketika dipanggil metode `getLuas()` maka yang ada hanya anggota-anggota kelas dasar (Lingkaran). Potongan objek bertipe kelas turunan (Silinder) hilang, inilah efek dari variabel nilai yang diberi nilai objek kelas turunannya, efek ini disebut Pemotongan (Slicing) karena bagian kelas turunan (Silinder) dipotong keluar ketika dikonversikan menjadi kelas dasar (Lingkaran).
 
 ## Memakai static_cast
 
@@ -684,6 +708,10 @@ Jalankan Qt Console Application projek, buka projek bernama contoh 10 di atas, u
 
 
 Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah sepeti berikut.
+
+A> Luas Silinder
+A>
+A> Volume Silinder
 
  **Keterangan:**
  

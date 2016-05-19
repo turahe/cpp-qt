@@ -1,4 +1,4 @@
-
+﻿
 # Class dan Object
 
 ## Pemrograman Berorientasi Obyek
@@ -167,8 +167,8 @@ Buatlah project baru dan tulis kode berikut:
 
 **Hasil:**
 
+A> {linenos=off}
 A> Kecepatan: 30
-A>
 A> Merk: Federal
 
 **Keterangan:**
@@ -243,13 +243,14 @@ Buatlah project baru dan tulis kode berikut:
 
 **Hasil:**
 
-	Sepeda pertama:
-	Kecepatan: 30
-	Merk: Federal
-	Gigi: 2
-	Sepeda kedua:
-	Kecepatan: 45
-	Merk: Polygon
+A> {linenos=off}
+A>	Sepeda pertama:
+A>	Kecepatan: 30
+A>	Merk: Federal
+A>	Gigi: 2
+A>	Sepeda kedua:
+A>	Kecepatan: 45
+A>	Merk: Polygon
 
 **Keterangan:**
  
@@ -310,30 +311,31 @@ Buatlah program beikut ini:
 
 **Hasil:**
 
-	Sepeda pertama:
-	Tampilan Sepeda ke-1
-	Kecepatan: 30
-	Merk: Merk-
-	Gigi: 10
-	Tampilan Sepeda ke-2
-	Kecepatan: 31
-	Merk: erk-
-	Gigi: 11
-	Tampilan Sepeda ke-3
-	Kecepatan: 32
-	Merk: rk-
-	Gigi: 12
-	Tampilan Sepeda ke-4
-	Kecepatan: 33
-	Merk: k-
-	Gigi: 13
-	Tampilan Sepeda ke-5
-	Kecepatan: 34
-	Merk: -
-	Gigi: 14
+A> {linenos=off}
+A>	Sepeda pertama:
+A>	Tampilan Sepeda ke-1
+A>	Kecepatan: 30
+A>	Merk: Merk-
+A>	Gigi: 10
+A>	Tampilan Sepeda ke-2
+A>	Kecepatan: 31
+A>	Merk: erk-
+A>	Gigi: 11
+A>	Tampilan Sepeda ke-3
+A>	Kecepatan: 32
+A>	Merk: rk-
+A>	Gigi: 12
+A>	Tampilan Sepeda ke-4
+A>	Kecepatan: 33
+A>	Merk: k-
+A>	Gigi: 13
+A>	Tampilan Sepeda ke-5
+A>	Kecepatan: 34
+A>	Merk: -
+A>	Gigi: 14
 
 
-**Keterangan:**:
+**Keterangan:**
 
 - Program diatas merupakan pengembangan lagi dari Contoh  1.
 - Program diatas membuat obyek dari class Sepeda dalam bentuk Array 1 dimensi yang bertipe Sepeda.
@@ -527,8 +529,8 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
+A> {linenos=off}
 A> Kecepatan: 30
-A> 
 A> Merk: Federal
 
 **Keterangan:**
@@ -635,6 +637,7 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
+A> {linenos=off}
 A> Kucingku bernama Katty, dia berbobot 4 kg dan sudah berumur 2 tahun sekarang.
 
 **Keterangan:**
@@ -912,18 +915,19 @@ Buatlah program berikut:
 
 **Hasil:**
 
-	Judul: unknown
-	Pengarang: unknown
-	Jumlah halaman: 1
-	Judul: unknown
-	Pengarang: Antonius
-	Jumlah halaman: 1
-	Judul: Membuat aplikasi C++
-	Pengarang: Robert
-	Jumlah halaman: 1
-	Judul: Pemrograman C
-	Pengarang: Walter
-	Jumlah halaman: 100
+A> {linenos=off}
+A>	Judul: unknown
+A>	Pengarang: unknown
+A>	Jumlah halaman: 1
+A>	Judul: unknown
+A>	Pengarang: Antonius
+A>	Jumlah halaman: 1
+A>	Judul: Membuat aplikasi C++
+A>	Pengarang: Robert
+A>	Jumlah halaman: 1
+A>	Judul: Pemrograman C
+A>	Pengarang: Walter
+A>	Jumlah halaman: 100
 
 
 **Keterangan:**
@@ -1286,19 +1290,20 @@ Buatlah program berikut:
 
 **Hasil:**
 
-	Merk: Innova
-	Roda depan1:
-	Merk: Bridgestone
-	Diameter: 40
-	Roda depan2:
-	Merk: Bridgestone
-	Diameter: 40
-	Roda belakang1:
-	Merk: Bridgestone
-	Diameter: 40
-	Roda belakang2:
-	Merk: Bridgestone
-	Diameter: 40
+A> {linenos=off}
+A>	Merk: Innova
+A>	Roda depan1:
+A>	Merk: Bridgestone
+A>	Diameter: 40
+A>	Roda depan2:
+A>	Merk: Bridgestone
+A>	Diameter: 40
+A>	Roda belakang1:
+A>	Merk: Bridgestone
+A>	Diameter: 40
+A>	Roda belakang2:
+A>	Merk: Bridgestone
+A>	Diameter: 40
 
 **Keterangan:**
  
@@ -1430,24 +1435,25 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-	A (1 , 1)
-	B (5 , 1)
-	C (5 , 6)
-	D (1 , 6)
-	ab awal: (1 , 1)
-	akhir: (5 , 1)
-	Panjang garis ab: 4
-	bc awal: (5 , 1)
-	akhir: (5 , 6)
-	Panjang garis bc: 5
-	cd awal: (1 , 6)
-	akhir: (5 , 6)
-	Panjang garis cd: 4
-	da awal: (1 , 6)
-	akhir: (1 , 1)
-	Panjang garis da: 5
+A> {linenos=off}
+A>	A (1 , 1)
+A>	B (5 , 1)
+A>	C (5 , 6)
+A>	D (1 , 6)
+A>	ab awal: (1 , 1)
+A>	akhir: (5 , 1)
+A>	Panjang garis ab: 4
+A>	bc awal: (5 , 1)
+A>	akhir: (5 , 6)
+A>	Panjang garis bc: 5
+A>	cd awal: (1 , 6)
+A>	akhir: (5 , 6)
+A>	Panjang garis cd: 4
+A>	da awal: (1 , 6)
+A>	akhir: (1 , 1)
+A>	Panjang garis da: 5
 
-**Keterangan:**:
+**Keterangan:**
  
 - Program diatas juga menunjukkan contoh lain dari suatu class yang memiliki member variabel yang bertipe class lain. Pada contoh diatas class Garis memiliki variabel member yang berasal dari class Titik. Sehingga dari obyek Garis kita dapat mengakses semua method member class Titik.
 - Dengan menggunakan rumus matematis perhitungan jarak antara dua buah koordinat (titik), maka kita bisa menghitung panjang garis. Untuk perhitungan dibutuhkan function sqrt yang berarti akar kuadrat, sehingga kita harus memasukan  `header math.h`

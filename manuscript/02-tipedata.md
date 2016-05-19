@@ -2,11 +2,32 @@
 
 ## Tipe Data dan Identifier
 
-Program adalah kumpulan instruksi yang disusun sedemikian rupa sehingga mempunyai urutan nalar yang tepat untuk menyelesaikan suatu persoalan. Instruksi-instruksi yang digunakan dalam pemrograman mengacu pada suatu bahasa pemrograman tertentu, pada buku ini menggunakan bahasa pemrograman C++, sehingga penulisan program pada buku ini mengikuti tata bahasa C++.
+Program adalah kumpulan instruksi yang disusun sedemikian rupa
+sehingga mempunyai urutan nalar yang tepat untuk menyelesaikan
+suatu persoalan. Instruksi-instruksi yang digunakan dalam
+pemrograman mengacu pada suatu bahasa pemrograman tertentu,
+pada buku ini menggunakan bahasa pemrograman C++, sehingga
+penulisan program pada buku ini mengikuti tata bahasa C++.
 
-Segala sesuatu yang diproses oleh program adalah data. Dalam hal ini data adalah elemen-elemen yang digunakan untuk menjelaskan segala sesuatu yang mempunyai besaran (ukuran/ nilai), seperti misalnya **umur** besarannya bisa berupa biangan desimal **42.5** (maksudnya 42½ tahun), **golongan** seorang karyawan besarannya bisa berupa sebuah karakter A (maksudnya goongan A) dan sebagainya. Bahasa C++ menyimpan besaran-besaran tersebut di memori utama untuk dikelola oleh program, sehingga perlu dilakukan pengaturan pemakaian memori, oleh karena itu dalam bahasa pemrograman selalu terdapat istilah-istilah yang bernama **Tipe Data**, **Variabel** dan **Konstanta**.
+Segala sesuatu yang diproses oleh program adalah data.
+Dalam hal ini data adalah elemen-elemen yang digunakan
+untuk menjelaskan segala sesuatu yang mempunyai besaran
+(ukuran/ nilai), seperti misalnya **umur** besarannya
+bisa berupa biangan desimal **42.5** (maksudnya 42½ tahun),
+**golongan** seorang karyawan besarannya bisa berupa
+sebuah karakter A (maksudnya goongan A) dan sebagainya.
+Bahasa C++ menyimpan besaran-besaran tersebut di memori
+utama untuk dikelola oleh program, sehingga perlu dilakukan
+pengaturan pemakaian memori, oleh karena itu dalam bahasa
+pemrograman selalu terdapat istilah-istilah yang bernama
+**Tipe Data**, **Variabel** dan **Konstanta**.
 
-Identifier (pengenal) adalah suatu nama yang digunakan program untuk merujuk ke suatu lokasi memori tertentu agar nilai pada lokasi tersebut dapat diakses. Alamat lokasi memori sebenarnya berupa angka angka heksadesimal[^heks], namun pada bahasa pemrograman setingkat C++ (middle level programming language) dan di atasnya, telah mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf atau kata (label) sehingga kita tidak perlu mengetahu alamat yang sesungguhnya dan dengan identifier (label) akan lebih mudah untuk diingat.
+Identifier (pengenal) adalah suatu nama yang digunakan
+program untuk merujuk ke suatu lokasi memori tertentu
+agar nilai pada lokasi tersebut dapat diakses. Alamat
+lokasi memori sebenarnya berupa angka angka heksadesimal[^heks], namun pada bahasa pemrograman setingkat C++ (middle level programming language) dan di atasnya, telah mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf atau kata (label) sehingga kita tidak perlu mengetahu alamat yang sesungguhnya dan dengan identifier (label) akan lebih mudah untuk diingat.
+
+[^heks]:
 
 ## Tipe Data Bahasa C++
 
@@ -34,11 +55,11 @@ Nilai yang tersimpan di memori dan dikenal melalui identifier tersebut terdiri d
 Sebelum suatu variabel atau konstanta dapat digunakan, tempat pada memori harus dipesan terlebih dahulu, mekanisme ini dinamalan deklarasi. Deklarasi dilakukan dengan cara menuliskan tipe data (ukuran memori yang dibutuhkan) dan diikuti dengan nama pengenal (nama variabel), jika dikehendaki bisa juga suatu variabel langsung diinisialisasi dengan suatu nilai. Pengenal (identifier) bisa terdiri dari sebuah huruf atau kombinasi antara huruf dengan angka dengan syarat.
 
 - Harus diawali dengan huruf
-- Tidak boleh memakai karakter khusus kecuali \$ dan garis bawah (_)
+- Tidak boleh memakai karakter khusus kecuali \$ dan garis bawah (\_)
 - Tidak boleh sama dengan kata kunci yang digunakan pada C++
 - Bersifat case sensitif (huruf besar dan kecil dibedakan)
 
-Walaupun demikian, sebaiknya memberikan nama pengenal variabel sesuai dengan isi dari variabel tersebut, sebab walaupun nama variabel “**c21i8k**” untuk menyimpan nama mahasiswa adalah valid (diperbolehkan), namun akan lebih mudah dimengerti jika identifier yang dipilih adalah “**nama**”. 
+Walaupun demikian, sebaiknya memberikan nama pengenal variabel sesuai dengan isi dari variabel tersebut, sebab walaupun nama variabel “**c21i8k**” untuk menyimpan nama mahasiswa adalah valid (diperbolehkan), namun akan lebih mudah dimengerti jika identifier yang dipilih adalah “**nama**”.
 
 Konstanta mirip dengan variabel, hanya saja nilainya konstan, tidak dapat diubah-ubah. Untuk dapat membuat konstanta diperlukan inisialisasi ketika konstanta dibuat dan setelah itu nilainya tidak dapat diubah. C++ mempunyai 2 macam konstanta, yaitu konstanta literal dan konstanta simbolik. Berikut ini adalah contoh deklarasi variabel:
 
@@ -85,20 +106,20 @@ Contoh 1. Tipe data dan Identifier.
 		panjang = 15; //<-- nilai diubah menjadi 15
 		lebar = 12; //<-- nilai diubah menjadi 12
 		cout << "Panjang = " << panjang << endl;
-		
-		
+
+
 		cout << "Lebar = " << lebar << endl;
 		return a.exec();
 		}
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-
+A> {linenos=off}
 A>	Panjang		=15
 A>	lebar		=12
 
  **Keterangan:**
- 
+
  - Pada program di atas variabel panjang dan lebar dideklarasikan bertipe int.
  - Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat diubah.
  - Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak ke layar.
@@ -120,8 +141,8 @@ I> Operator pengerjaan “=“ akan mengambil nilai apapun yang ada disebelah ka
 
 Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Operator mempunyai beberapa kategori, antara lain : Aritmatika, Pengerjaan, Hubungan dan Logika. Operator Aritmatika adalah operator yang digunakan untuk melakukan operasi aritmatika seperti misalnya penjumlahan, pengurangan, perkalian dan pembagian. Simbol untuk operator aritmatika ini adalah : +, -, *, / dan %. Berikut ini adalah operator-operator yang dikenal pada bahasa pemrograman C++.
 
-|Kategori 													|Operator 			|Arah Proses 	|Jenjang
-|-----------------------------------------------------------|-------------------|---------------|----------
+|Kategori 													|Operator 			|Arah Proses |Jenjang
+|-----------------------------------------------------------|-------------------|---------------|-----
 |Kurung, indeks larik dan elemen struktur data 				|() [] . -> 		|Kiri - Kanan 	|1
 |Operator Unary 											|! ~ - ++ -- 		|Kanan – Kiri 	|2
 |Operator Aritmatika Perkalian, Pembagian dan Sisa Pembagian|* / % 				|Kiri – Kanan 	|3
@@ -147,7 +168,7 @@ Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari
 	luas = panjang * lebar ;
 
  **Keterangan :**
- 
+
  * Pada baris pertama dan kedua di atas digunakan hanya sebuah operator “`= `“ (yaitu jenjang ke 14), arah proses dari kanan ke kiri, sehingga yang dilakukan :
  * Ekspresi : `15`, diberikan kepada variabel `panjang` (dibaca dari kanan ke kiri).
  * Ekspresi : `12`, diberikan kepada variabel `lebar` (dibaca dari kanan ke kiri).
@@ -184,7 +205,7 @@ Operator unary “++“ dan “--“ merupakan operator khusus yang ada di bahas
 |x = 5;				|x = 5;
 |a = x++;			|a = ++x;
 |-------------------|----------------
-|Hasil:				|Hasil:
+|**Hasil:**			| **Hasil:**
 |x = 6 dan a = 5	|x = 6 dan a = 6
 
 
@@ -298,7 +319,6 @@ Sintaks penulisannya sebagai berikut:
 	 }
 
 
-![](images/capture2-1.png)
 
 Flowchart untuk statment ini adalah :
 
@@ -318,20 +338,22 @@ Sintaks penulisannya sebagai berikut :
 	 < dijalankan jika ekspresi_boolean salah>
 	 }
 
- 
+
 
 Flowchart untuk statment ini adalah :
 
 I> **CATATAN**
 I>
-I> Di dalam `if()` maupun di dalam else bisa diisi dengan perintah `if()` lagi. Bentuk `if()` dalam `if()` ini sering disebut dengan `nested if` (if bersarang).
+I> Di dalam `if()` maupun di dalam else bisa diisi dengan perintah
+I> `if()` lagi. Bentuk `if()` dalam `if()` ini sering disebut
+I> dengan `nested if` (if bersarang).
 
 
-
+![]()
 
 Flowchart untuk statment if bersarang ini adalah :
 
-![](images/capture2-7.png)
+
 
 #### Percabangan dengan switch
 
@@ -389,14 +411,15 @@ Contoh.2 Tipe data dan Identifier.
 		return a.exec();
 		}
 
+
 3. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-
+A> {linenos=off}
 A>	sabtu
 
 
- Analisa Program :
- 
+**Keterangan Program :**
+
  - Pada program di atas variabel `hari` dideklarasikan bertipe `int` dan diinisialisasi dengan nilai `6`.
  - Kemudian pada bagian ekspresi di dalam `switch` di isi variabel `hari`, hasil ekspresi tersebut di evaluasi, karena menghasilkan nilai 6, maka yang dicetak ke layar adalah “**Sabtu**”.
 
@@ -406,7 +429,7 @@ Perulangan digunakan untuk mengulang suatu perintah sebanyak yang diinginkan tan
 
 #### Perulangan dengan for
 
-Digunakan untuk mengulangi perintah dengan jumlah perulangan yang sudah diketahui. Pada statement for ini perlu dituliskan suatu kondisi untuk diuji yang berupa ekspresi boolean, nilai awal dan perintah yang dipakai untuk penghitung (counter). Nilai variabel penghitung akan secara otomatis bertambah atau berkurang tiap kali sebuah perulangan dilaksanakan tergantung perintah yang ditulis pada argumen ini. 
+Digunakan untuk mengulangi perintah dengan jumlah perulangan yang sudah diketahui. Pada statement for ini perlu dituliskan suatu kondisi untuk diuji yang berupa ekspresi boolean, nilai awal dan perintah yang dipakai untuk penghitung (counter). Nilai variabel penghitung akan secara otomatis bertambah atau berkurang tiap kali sebuah perulangan dilaksanakan tergantung perintah yang ditulis pada argumen ini.
 
 Bentuk umum penulisannya sebagai berikut :
 
@@ -417,13 +440,13 @@ Bentuk umum penulisannya sebagai berikut :
 	 <statmemnts>
 	 }
 
- 
+
 
 ![](images/capture2-8.png)
 
 #### Perulangan dengan while
 
-Perintah ini digunakan untuk mengulangi suatu perintah sampai kondisi tertentu. Perulangan akan terus berjalan selama kondisi masih bernilai benar. 
+Perintah ini digunakan untuk mengulangi suatu perintah sampai kondisi tertentu. Perulangan akan terus berjalan selama kondisi masih bernilai benar.
 
 Sintaks penulisannya sebagai berikut :
 
@@ -439,7 +462,7 @@ Sintaks penulisannya sebagai berikut :
 
 #### Perulangan dengan do … while
 
-Proses perulangan akan berjalan jika kondisi yang diperiksa di `while` masih bernilai benar dan perulangan akan dihentikan jika kondisinya sudah bernilai salah. 
+Proses perulangan akan berjalan jika kondisi yang diperiksa di `while` masih bernilai benar dan perulangan akan dihentikan jika kondisinya sudah bernilai salah.
 
 Sintaks penulisannya sebagai berikut :
 
@@ -462,7 +485,7 @@ Kata kunci `break` digunakan untuk keluar dari suatu blok programn sebelum ekspr
 
 Sintaks penulisan `break` dan `continue` adalah sebagai berikut :
 
- 
+
 	 while(<expresi_boolean1>)
 	 {
 	 <statements>
@@ -470,4 +493,3 @@ Sintaks penulisan `break` dan `continue` adalah sebagai berikut :
 	 continue;
 	 <statements>
 	 }
- 

@@ -87,6 +87,7 @@ Buatlah project baru dan tulis kode berikut:
 
 **Hasil:**
 
+A> {linenos=off}
 A>	Memasukan nilai
 A>	Nilai Angka ke - 1 : 1
 A>	Nilai Angka ke - 2 : 2
@@ -133,7 +134,7 @@ Buatlah project baru dan tulis kode berikut:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	elemen ke-1 ? 1
 A>	bil[0] = 1 dan alamatnya: 0x28fe68
 A>	bil[1] = 5 dan alamatnya: 0x28fe6c
@@ -224,7 +225,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	Elemen ke-0: 0
 A>	Elemen ke-1: 1
 A>	Elemen ke-2: 2
@@ -258,6 +259,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
+A> {linenos=off}
 A>	Elemen ke-0: 2
 A>	Elemen ke-1: 5
 A>	Elemen ke-2: 0
@@ -313,6 +315,7 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
+A> {linenos=off}
 A>	Elemen ke-0: 2
 A>	Elemen ke-1: 5
 A>	Elemen ke-2: 0
@@ -347,6 +350,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
+A> {linenos=off}
 A>	Nilai hari selasa adalah = 30
 
 **Keterangan:**
@@ -416,7 +420,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	1
 A>	2
 A>	3
@@ -733,7 +737,7 @@ Berikut adalah contohnya:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	1	2	3
 A>	4	5	6
 
@@ -762,6 +766,7 @@ Cara ini menelusuri elemen array dua dimensi per dimulai dari kolom pertama lalu
 
 **Hasil:**
 
+A> {linenos=off}
 A>	1	4
 A>	2	5
 A>	3	6
@@ -813,7 +818,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	String
 
 **Keterangan:**
@@ -866,7 +871,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	Isi data string: Baehaki
 A>	hasil data string: Baehaki
 
@@ -901,8 +906,9 @@ Tulislah program berikut:
 
 **Hasil:**
 
-	Isi data string: Ahmad Baehaki
-	hasil data string: Ahmad Baehaki
+A> {linenos=off}
+A>	Isi data string: Ahmad Baehaki
+A>	hasil data string: Ahmad Baehaki
 
 **Keterangan:**
  
@@ -948,7 +954,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
 A>	panjang huruf adalah: 10 karakter
 
@@ -977,7 +983,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	Masukkan kalimat apapun yang anda sukai (max 100 huruf): Nur Wachid
 A>	panjang huruf adalah: 10 karakter
 
@@ -1018,7 +1024,7 @@ Buatlah program berikut ini:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	String pertama : STRING
 A>	String Kedua : STRING
 
@@ -1055,7 +1061,7 @@ Buatlah program beriku:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	String pertama : STRING
 A>	String Kedua : STRINGKU
 
@@ -1118,7 +1124,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	Jadi gabungannya adalah: Kami kelompok  belajar Qt C++
 
 **Keterangan:**
@@ -1218,7 +1224,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	Isi str1 : Ini string C++
 A>	Isi str1 : Ini string C++
 A>	Isi str1 : Ini string C++
@@ -1270,6 +1276,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
+A> {linenos=off}
 A>	Halooooooo
 A>	saya belajar
 A>	C
@@ -1303,7 +1310,7 @@ Buatlah program berikut:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	Percobaan 1		Percobaan 2
 A>	Percobaan 1		Percobaan 2 	Percobaan 3 	Percebaan tampung
 
@@ -1460,7 +1467,7 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	String asli: 
 A>	String ini akan dibalik!
 A>
@@ -1499,7 +1506,7 @@ Tulislah program berikut ini:
 
 **Hasil:**
 
-
+A> {linenos=off}
 A>	Masukkan sebuah string:
 A>	Ini KoK tulisaNya AlaY BaNGet yA!
 A>	Hasil konversi ke huruf besar:

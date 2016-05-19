@@ -62,10 +62,17 @@ Contoh 1. Menampilkan daftar drives dari root directories.
 
  **Keterangan:**:
 
- - Static method `QDir::drives()` akan mengembalikan collection berupa `QList<FileInfo>` yang berisi semua drive yang ada pada komputer.
- - Untuk membaca semua drive beserta semua folder /direktori didalamnya anda dapat menggunakan foreach.
- - Method `setFilter(QDir::Dirs)` artinya yang akan ditampilkan hanya direktori saja, tidak file atau symbolic link, untuk menampilkan semua (drive, direktori, file) anda dapat menggunakan `QDir::AllEntries`.
- - Output dari program tersebut adalah daftar drive pada komputer anda beserta dengan folder yang ada didalamnya.
+ - Static method `QDir::drives()` akan mengembalikan collection
+  berupa `QList<FileInfo>` yang berisi semua drive yang ada pada
+	 komputer.
+ - Untuk membaca semua drive beserta semua folder /direktori
+  didalamnya anda dapat menggunakan foreach.
+ - Method `setFilter(QDir::Dirs)` artinya yang akan ditampilkan
+  hanya direktori saja, tidak file atau symbolic link, untuk
+	 menampilkan semua (drive, direktori, file) anda dapat
+	  menggunakan `QDir::AllEntries`.
+ - Output dari program tersebut adalah daftar drive pada komputer
+  anda beserta dengan folder yang ada didalamnya.
 
 Dibawah ini adalah daftar kriteria yang dapat digunakan untuk melakukan filter.
 

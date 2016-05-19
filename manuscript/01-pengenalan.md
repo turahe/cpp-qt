@@ -1,10 +1,9 @@
 # Mukadimah
 
-## Pengenalan Bahasa C++
+## 1.1 Pengenalan Bahasa C++
 
-Bahasa C merupakan bahasa pemrograman tingkat menengah. Pada tahun 1972 bahasa C
-pertama kali dirancang oleh [Dennis M Ritchie](https://id.wikipedia.org/wiki/Dennis_Ritchie)
-di Bell aboratories. Kemudian tahun 1978 Dennis dan [Brian W. Kernighan](https://id.wikipedia.org/wiki/Brian_Kernighan)
+Bahasa C merupakan bahasa pemrograman tingkat menengah. Pada tahun 1972 bahasa C pertama kali dirancang oleh [Dennis M Ritchie](https://id.wikipedia.org/wiki/Dennis_Ritchie) di Bell aboratories. Kemudian tahun 1978 Dennis dan 
+[Brian W. Kernighan](https://id.wikipedia.org/wiki/Brian_Kernighan)
 mempublikasikan bahasa C melalui [The C Programming Language](https://id.wikipedia.org/wiki/The_C_Programming_Language)
 sehingga bahasa C dikenal banyak orang. Selanjutnya pada tahun 1989, akhirnya
 bahasa C distandardisasi [ANSI](https://id.wikipedia.org/wiki/ANSI_C)
@@ -21,7 +20,7 @@ disuatu program, maka nama file header-nya harus dilibatkan dalam program
 menggunakan preprocessor directive `#include`.
 
 Kemudian bahasa C dikembangkan oleh Bjarne Stroustrup at Bell Labs menjadi
-bahasa C++. Pada bulan Oktober 1985 munculah buku The C++ Programming Language
+bahasa C++. Pada bulan Oktober 1985 munculah buku *The C++ Programming Language*
 yang membahas tentang bahasa pemrograman itu langsung dari penciptanya sendiri.
 Bahasa C++ mengalami dua tahap evolusi.
 
@@ -69,16 +68,16 @@ Speed
 dualitas bahwa dia mendukung bahasa tingkat tinggi dan bahasa tingkat rendah sehingga
 dapat mengurangi ukuran hasil kompiliasi dari bahasa itu.
 
-## Pengantar Qt Creator
+## 1.2 Pengantar Qt Creator
 
 Qt Creator merupakan cross-platform C++ integrated development environment
 yang merupakan bagian dari Qt SDK. Qt Creator mempunyai debugger dalam bentuk
 visual dan layout GUI serta tempat perancangan form. Teks editornya mempunyai
 fasilitas syntax highlighting dan autocompletion. Qt Creator menggunakan
 compiler C++ dari kumpulan compiler GNU pada Linux dan FreeBSD. Pada Windows
- Qt Creator dapat menggunakan MinGW[^mingw] atau
- [MSVC](https://id.wikipedia.org/wiki/Microsoft_Visual_Studio_Express)
- yang sudah build-in di dalam install.
+Qt Creator dapat menggunakan MinGW[^mingw] atau
+[MSVC](https://id.wikipedia.org/wiki/Microsoft_Visual_Studio_Express)
+yang sudah build-in di dalam install.
 
 
 [^mingw]: minGW adalah salah satu aplikasi yng digunakan untuk mengkompile
@@ -113,7 +112,7 @@ maka Qt Creator memisahkan antara text editor untuk build dan editor
 untuk menjalankan (run) aplikasi-aplikasi. Qt Creator bukan hanya bisa
 membaca text file biasa, akan tetapi juga bisa membaca file C++ dan bahasa QML.
 
-Keunggulan Code Editor
+Keunggulan Code Editor Qt Creator
 
 - Dapat menulis code dengan format yang benar.
 - Mengantisipasikan apa yang akan programer tulis dan code yang komplit.
@@ -151,7 +150,7 @@ aplikasi.
 
 ### Bahasa yang di dukung
 
-Kamu dapat menggunakan code editor menulis code dalam Qt C++ atau bahasa
+Anda dapat menggunakan code editor menulis code dalam Qt C++ atau bahasa
 pemograman QML, javascript bahkan HTML5. Syntax highlighting juga disajikan
 untuk banyak bahasa pemograman yang lain.
 
@@ -187,7 +186,7 @@ Debuggers adalah:
 Dapat menghubungkan mobile devices dengan PC dan memproses debug yang berjalan
 pada devices.
 
-## Mengenal macam - macam Teknologi User Interface (UI) pada QT
+## 1.3 Mengenal macam - macam Teknologi User Interface (UI) pada QT
 
 
 Interaksi antara pengguna dengan logic software dinamakan User Interface
@@ -206,41 +205,85 @@ UI yang dapat kita gunakan. Anda pun bisa menggabungkan ketiganya. :)
 Qt Creator, sebuah Editor Qt adalah contoh dari perpaduan multiple teknologi
 UI ini. Coba amati Qt Creator yang selalu anda gunakan tersebut.
 
-Qt Creator menggunakan teknologi QtWidget sebagai User Interface pada menu dan kotak dialog nya. Coba perhatikan kembali Welcome Screen dari Qt Creator, lihat, tampilannya berbeda bukan, bahkan button nya sangat berbeda dan tidak biasa, ini karena UI untuk Welcome Screen menggunakan teknologi QtQuick. Lalu dimana letak penggunaan QtWebkit?
+Qt Creator menggunakan teknologi QtWidget sebagai User Interface pada menu
+dan kotak dialog nya. Coba perhatikan kembali Welcome Screen dari Qt Creator,
+lihat, tampilannya berbeda bukan, bahkan button nya sangat berbeda dan
+tidak biasa, ini karena UI untuk Welcome Screen menggunakan teknologi
+QtQuick. Lalu dimana letak penggunaan QtWebkit?
 
-Yup, perhatikan Help Documentation nya, wow, ini seperti halaman web yang menyatu dengan softwarenya bukan? Ya, teknologi QtWebKit digunakan dalam pembangunan Help Documentation ini.
+Yup, perhatikan Help Documentation nya, wow, ini seperti halaman 
+web yang menyatu dengan softwarenya bukan? Ya, teknologi QtWebKit
+digunakan dalam pembangunan Help Documentation ini.
 
 
 ### A.Teknologi User Interface QtQuick
 
-QtQuick merupakan salah satu Teknologi UI dari Qt yang menggunakan QML dan JavaScript sebagai penyusun UI nya, kita sudah membahas ini pada tutorial sebelumnya [[C++ QT No.3: Apa itu Qt Quick Application?]]
+QtQuick merupakan salah satu Teknologi UI dari Qt yang menggunakan 
+QML dan JavaScript sebagai penyusun UI nya.Mirip seperti XAML yang
+dikembangkan Microsoft , QML merupakan teknologi binding dari Qt 
+yang memfasilitasi pengguna dengan visual canvas dan rendering 
+engine nya. Teknologi UI ini sangat cocok sekali untuk Hardware 
+Acceleration seperti OpenGL pada VGA driver kita.
 
-Mirip seperti XAML yang dikembangkan Microsoft , QML merupakan teknologi binding dari Qt yang memfasilitasi pengguna dengan visual canvas dan rendering engine nya. Teknologi UI ini sangat cocok sekali untuk Hardware Acceleration seperti OpenGL pada VGA driver kita.
+Jangan salah, bila anda menggunakan QtQuick versi 2, maka memang 
+butuh OpenGL yang disuport oleh VGA anda. OpenGL sekarang begitu 
+terkenal, banyak games – games yang mulai menargetkan OpenGL karena 
+begitu flexibel dan mudah. Tapi sayangnya, OpenGL ini tidak 
+terdapat pada VGA driver bawaan OS.
 
-Jangan salah, bila anda menggunakan QtQuick versi 2, maka memang butuh OpenGL yang disuport oleh VGA anda. OpenGL sekarang begitu terkenal, banyak games – games yang mulai menargetkan OpenGL karena begitu flexibel dan mudah. Tapi sayangnya, OpenGL ini tidak terdapat pada VGA driver bawaan OS.
+Jadi jangan heran, saat anda install ulang komputer (bahkan 
+Windows 8.1 sekalipun) anda akan menemukan bahwa tidak ada 
+OpenGL pada VGA driver anda. Cara terbaik adalah periksa 
+Motherboard anda dan cari driver VGA yang sesuai dengan 
+Motherboard anda. Biasanya gratis.
 
-Jadi jangan heran, saat anda install ulang komputer (bahkan Windows 8.1 sekalipun) anda akan menemukan bahwa tidak ada OpenGL pada VGA driver anda. Cara terbaik adalah periksa Motherboard anda dan cari driver VGA yang sesuai dengan Motherboard anda. Biasanya gratis.
-
-Animation, Transition, Visual Effect, Shader Effect dan lain – lain merupakan fasilitas yang dapat anda kembangkan saat menggunakan QtQuick sebagai User Interface (UI) aplikasi anda.
+Animation, Transition, Visual Effect, Shader Effect dan 
+lain – lain merupakan fasilitas yang dapat anda kembangkan 
+saat menggunakan QtQuick sebagai User Interface (UI) aplikasi anda.
 
 ### B.Teknologi User Interface QtWidget
 
-QtWidget merupakan tradisional User Interface element yang biasanya terdapat dalam dekstop environment. Bila anda pengguna linux, maka UI ini merupakan bagian dari KDE. Tapi jangan salah, QtWidget sangat dinamis untuk Windows dan Mac OS. Sehingga bila anda menggunakan QtWidget sebagai UI anda maka tampilannya mirip sekali dengan UI pada OS anda.
+QtWidget merupakan tradisional User Interface element yang 
+biasanya terdapat dalam dekstop environment. Bila anda pengguna 
+linux, maka UI ini merupakan bagian dari KDE. Tapi jangan salah, 
+QtWidget sangat dinamis untuk Windows dan Mac OS. Sehingga bila 
+anda menggunakan QtWidget sebagai UI anda maka tampilannya mirip 
+sekali dengan UI pada OS anda.
 
-Bila anda pengguna Windows 8.1 seperti saya dengan Amazing Flat Designnya, maka QtWidget ini menyesuaikan dengan UI OS.
+Bila anda pengguna Windows 8.1 seperti saya dengan Amazing 
+Flat Designnya, maka QtWidget ini menyesuaikan dengan UI OS.
 
-Semua standar komponen untuk aplikasi seperti button, textarea, menu dan lain – lain terdapat pada QtWidget ini. Sehingga sangat cocok sekali untuk anda yang gemar membuat aplikasi tradisional standar.
+Semua standar komponen untuk aplikasi seperti button, textarea, 
+menu dan lain – lain terdapat pada QtWidget ini. Sehingga 
+sangat cocok sekali untuk anda yang gemar membuat aplikasi 
+tradisional standar.
 
-Bila kita membuat aplikasi dengan QtWidget, maka saat memulai project, akan muncul pemilihan Base Class, ada tiga yaitu Class QWidget, Class QMainWindow, dan Class Qdialog.
+Bila kita membuat aplikasi dengan QtWidget, maka saat 
+memulai project, akan muncul pemilihan Base Class, 
+ada tiga yaitu Class QWidget, Class QMainWindow, dan 
+Class Qdialog.
 
 
 Perbedaan dari ketiga Base Class di atas adalah berikut ini:
 
-- `*QWidget` merupakan base class untuk semua GUI element pada QtWidget User Interface. Coba lah explorasi dan bedakan ketiganya :)
+- `*QWidget` merupakan base class untuk semua GUI 
+element pada QtWidget User Interface. Coba lah explorasi 
+dan bedakan ketiganya :)
 
-- `*QDialog` merupakan sebuah window yang biasanya digunakan untuk mengejutkan pengguna, seperti saat window dialog muncul ketika pengguna harus memasukan input dengan benar atau hal – hal yang lain, tampilan dari Qdialog tidak berbeda dengan Qwidget, anda bisa menggunakan salah satu.
+- `*QDialog` merupakan sebuah window yang biasanya 
+digunakan untuk mengejutkan pengguna, seperti saat 
+window dialog muncul ketika pengguna harus memasukan 
+input dengan benar atau hal – hal yang lain, 
+tampilan dari Qdialog tidak berbeda dengan Qwidget, 
+anda bisa menggunakan salah satu.
 
-- `*QMainWindow`, nah, ini adalah sebuah class yang sangat unik, karena menggunakan feature built in yang sangat populer seperti status bar, toolbar, dan menu bar. Cobalah membuat applikasi QtWidget dengan QmainWindow sebagai base class nya, pasti secara otomatis akan ditampilan menubar , toolbar, dan statusbar.
+- `*QMainWindow`, nah, ini adalah sebuah class yang 
+sangat unik, karena menggunakan feature *built in* 
+yang sangat populer seperti status bar, toolbar, 
+dan menu bar. Cobalah membuat applikasi QtWidget 
+dengan QmainWindow sebagai base class nya, pasti 
+secara otomatis akan ditampilan menubar , toolbar, 
+dan statusbar.
 
 ### C.Teknologi User Interface QtWebkit
 
@@ -305,30 +348,30 @@ Anda bisa mendownload di halaman downlod Qt creator dan memlilih versi dari Apli
 
 1. Jika Anda telah mendownlaod Qt creator maka qt-opensource-windows-x86-mingw492-5.5.0.exe. Disin penulis menggunakan versi 32 bit jika sistem oeprasi Anda 64 bit maka gunakanlah 64 bit walaupun dapat menggunakan versi 32 bit.
 
-![](images/install-qt-1.png)
+    ![](images/install-qt-1.png)
 
 
 2. Pilih **Next** dan akan muncul halaman Qt Acount jika anda tidak ingin mendatarkan diri dapat di lewati dengan memilih **skip**.
 
-![](images/install-qt-2.png)
+    ![](images/install-qt-2.png)
 
 3. Masuk ke halaman Setup terus **next** saja.
 
-![](images/install-qt-3.png)
+    ![](images/install-qt-3.png)
 
 4. Installer akan menginstall aplikasi sampai selesai apabila telah selesai maka klik finish untuk mengakhiri proses pemasangan aplikasi.
 
-![](images/install-qt-4.png)
+    ![](images/install-qt-4.png)
 
 ## Program Console Pertama dengan Qt Creator
 
 1. Untuk mencoba membuat aplikasi dengan Qt Creator maka kita perlu dengan membuat menu file > new Project dan pilih project aplication > Qt console aplication
 
-![](images/qt-console-aplication.png)
+    ![](images/qt-console-aplication.png)
 
 2. kemudian beri nama dengan Program yang akan kita buat dan direktori tempat aplikasi yang kita buat.
 
-![](images/qt-console-aplication-2.png)
+    ![](images/qt-console-aplication-2.png)
 
 3. Klik Next, kemudian pilih compiler yang akan kita gunakan. Disini penulis menggunakan MinGW sebagai compilernya.
 
@@ -369,7 +412,7 @@ Berikut adalah struktur dasar program yang dibuat dengan bahasa C++:
 
 **Penjelasan :**
 
-#### 1. &#35; include &#60;header&#62;
+#### 1. #include <header>
 
 `#include` adalah salah satu pengarah preprocessor directive yang tersedia pada C++. Preprocessor selalu dijalankan terlebih dahulu pada saat proses kompilasi terjadi. Bentuk umumnya:
 
@@ -428,9 +471,10 @@ Untuk lebih jelasnya silahkan coba ketik program berikut pada project baru.
 
 Kemudian jalankan dengan menekan tombol Run (CTRL + R)
 
-	Hello world
-
-	Selamat belajar C/C++ enter my world
+A> {linenos=off}
+A>	Hello world
+A>
+A>	Selamat belajar C/C++ enter my world
 
 Tampilan Hello World diakhiri dengan tanda enter baru kemudian dilanjutkan dengan tulisan berikutnya yaitu Selamat Belajar C/C++ enter my World. Artinya perintah `endl` merupakan perintah untuk memberi tanda enter.
 Sedangkan untuk tulisan Selamat Belajar C/C++ dan tulisan enter my World yang pada source code terpisah dengan perintah `cout`, pada tampilan hasil program tetap sama dan tidak ada enter diantaranya. Hal ini karena tidak ada perintah untuk menampilkan enter diantara kedua kalimat tersebut. Penulisan pada kode tidak akan mempengaruhi hasil output program.

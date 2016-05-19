@@ -27,8 +27,6 @@ Tiap komputer mempunyai skema yang berbeda untuk penomoran memory, sebagai progr
 
 Contoh 1. Menampilkan alamat memory menggunakan address-of operator.
 
-
-
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
 

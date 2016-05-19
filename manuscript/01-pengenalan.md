@@ -3,16 +3,35 @@
 ## Pengenalan Bahasa C++
 
 Bahasa C merupakan bahasa pemrograman tingkat menengah. Pada tahun 1972 bahasa C
-pertama kali dirancang oleh [Dennis M Ritchie](https://id.wikipedia.org/wiki/Dennis_Ritchie) di Bell aboratories. Kemudian tahun 1978 Dennis dan [Brian W. Kernighan](https://id.wikipedia.org/wiki/Brian_Kernighan) empublikasikan bahasa C melalui [The C Programming Language](https://id.wikipedia.org/wiki/The_C_Programming_Language) sehingga bahasa C dikenal banyak orang. Selanjutnya pada tahun 1989, akhirnya bahasa C distandardisasi [ANSI](https://id.wikipedia.org/wiki/ANSI_C)(American National Standard Institute) sehingga bahasa C menjadi bahasa pemrograman standar hingga saat ini dan bisa dibuat kompilernya pada beberapa platform yang berbeda-beda.
+pertama kali dirancang oleh [Dennis M Ritchie](https://id.wikipedia.org/wiki/Dennis_Ritchie)
+di Bell aboratories. Kemudian tahun 1978 Dennis dan [Brian W. Kernighan](https://id.wikipedia.org/wiki/Brian_Kernighan)
+mempublikasikan bahasa C melalui [The C Programming Language](https://id.wikipedia.org/wiki/The_C_Programming_Language)
+sehingga bahasa C dikenal banyak orang. Selanjutnya pada tahun 1989, akhirnya
+bahasa C distandardisasi [ANSI](https://id.wikipedia.org/wiki/ANSI_C)
+(American National Standard Institute) sehingga bahasa C menjadi bahasa
+pemrograman standar hingga saat ini dan bisa dibuat kompilernya pada beberapa
+platform yang berbeda-beda.
 
-Bahasa C dikatakan sebagai bahasa pemrograman terstruktur, fungsional karena strukturnya menggunakan fungsi-fungsi sebagai program-program bagian (subroutine/ module). Fungsifungsi selain fungsi utama disebut subroutine/ module dan ditulis setelah fungsi utama (main) atau diletakkan pada file pustaka (library). Jika fungsi-fungsi diletakkan pada file pustaka dan akan dipakai disuatu program, maka nama file header-nya harus dilibatkan dalam program menggunakan preprocessor directive `#include`.
+Bahasa C dikatakan sebagai bahasa pemrograman terstruktur, fungsional karena
+strukturnya menggunakan fungsi-fungsi sebagai program-program bagian (subroutine/
+module). Fungsifungsi selain fungsi utama disebut subroutine/ module dan
+ditulis setelah fungsi utama (main) atau diletakkan pada file pustaka
+(library). Jika fungsi-fungsi diletakkan pada file pustaka dan akan dipakai
+disuatu program, maka nama file header-nya harus dilibatkan dalam program
+menggunakan preprocessor directive `#include`.
 
-Kemudian bahasa C dikembangkan oleh Bjarne Stroustrup at Bell Labs menjadi bahasa C++. Pada bulan Oktober 1985 munculah buku The C++ Programming Language yang membahas tentang bahasa pemrograman itu langsung dari penciptanya sendiri. Bahasa C++ mengalami dua tahap evolusi.
+Kemudian bahasa C dikembangkan oleh Bjarne Stroustrup at Bell Labs menjadi
+bahasa C++. Pada bulan Oktober 1985 munculah buku The C++ Programming Language
+yang membahas tentang bahasa pemrograman itu langsung dari penciptanya sendiri.
+Bahasa C++ mengalami dua tahap evolusi.
 
-- Pertama, dirilis oleh [AT&T Laboratories](https://id.wikipedia.org/wiki/Bell_Laboratories), dinamakan [cfront](https://en.wikipedia.org/wiki/Cfront). C++ versi ini hanya berupa
-kompiler yang menterjemahkan bahasa C++ menjadi bahasa C untuk dieksekusi
-- Kedua, [Borland International Inc](https://en.wikipedia.org/wiki/Borland). mengembangkan kompiler C++ menjadi sebuah kompiler yang mampu mengubah C++ langsung menjadi bahasa mesin (assembly). Tahun
-1990, C++ mulai diarahkan ke pengembangan [Pemrograman Berorientasi Obyek](https://id.wikipedia.org/wiki/Pemrograman_berorientasi_objek).
+- Pertama, dirilis oleh [AT&T Laboratories](https://id.wikipedia.org/wiki/Bell_Laboratories),
+dinamakan [cfront](https://en.wikipedia.org/wiki/Cfront). C++ versi ini hanya
+berupa kompiler yang menterjemahkan bahasa C++ menjadi bahasa C untuk dieksekusi
+- Kedua, [Borland International Inc](https://en.wikipedia.org/wiki/Borland).
+mengembangkan kompiler C++ menjadi sebuah kompiler yang mampu mengubah C++
+langsung menjadi bahasa mesin (assembly). Tahun1990, C++ mulai diarahkan ke
+pengembangan [Pemrograman Berorientasi Obyek](https://id.wikipedia.org/wiki/Pemrograman_berorientasi_objek).
 
 Beberapa keunggulan C++ dibandingkan dengan bahasa C adalah sebagai berikut.
 
@@ -52,18 +71,47 @@ dapat mengurangi ukuran hasil kompiliasi dari bahasa itu.
 
 ## Pengantar Qt Creator
 
-Qt Creator merupakan cross-platform C++ integrated development environment yang merupakan bagian dari Qt SDK. Qt Creator mempunyai debugger dalam bentuk visual dan layout GUI serta tempat perancangan form. Teks editornya mempunyai fasilitas syntax highlighting dan autocompletion. Qt Creator menggunakan compiler C++ dari kumpulan compiler GNU pada Linux dan FreeBSD. Pada Windows Qt Creator dapat menggunakan MinGW[^mingw] atau [MSVC](https://id.wikipedia.org/wiki/Microsoft_Visual_Studio_Express) yang sudah build-in di dalam install.
+Qt Creator merupakan cross-platform C++ integrated development environment
+yang merupakan bagian dari Qt SDK. Qt Creator mempunyai debugger dalam bentuk
+visual dan layout GUI serta tempat perancangan form. Teks editornya mempunyai
+fasilitas syntax highlighting dan autocompletion. Qt Creator menggunakan
+compiler C++ dari kumpulan compiler GNU pada Linux dan FreeBSD. Pada Windows
+ Qt Creator dapat menggunakan MinGW[^mingw] atau
+ [MSVC](https://id.wikipedia.org/wiki/Microsoft_Visual_Studio_Express)
+ yang sudah build-in di dalam install.
 
 
-[^mingw]: minGW adalah salah satu aplikasi yng digunakan untuk mengkompile bahasa C agar dapat dipahami oleh bahasa mesin (asembler) pada komputer. Aplikasi ini dapat di unduh secara gratis.
+[^mingw]: minGW adalah salah satu aplikasi yng digunakan untuk mengkompile
+bahasa C agar dapat dipahami oleh bahasa mesin (asembler) pada komputer.
+Aplikasi ini dapat di unduh secara gratis.
 
-Project Qt Creator menggunakan format cross platform project (.pro) untuk mengizinkan tim developer untuk share project yang mempunyai platform-platform yang berbeda-beda dan menggunakan common tool untuk implementasi dan
-debugging program. Sebuah project dapat meliputi: file-file yang digroup secara bersama-sama, langkah-langkah build program, form-form dan file-file resource, dan pengaturan untuk menjalankan aplikasi. Projek dapat dibuat secara manual atau diimport dari file projek yang sudah ada. Jika projeknya dibuat secara manual, maka sebuah file-file akan digenerate oleh Qt Creator, tergantung dari tipe file yang dimiliki. Seperti Jika filenya adalah sebuah GUI application, maka Qt Creator men-generate sebuah file kosong yang berektensikan `.ui` yang akan imodifikasikan melalui Qt Designer. Qt Creator diinterrasikan dengan sistem cross-platform untuk mem-build secara automatis: qmake dan CMake. Projek yang tidak menggunakan qmake atau CMake dapat diimport-kan, dan Qt Creator dapat meng-ignore sistem build.
+Project Qt Creator menggunakan format cross platform project (.pro)
+untuk mengizinkan tim developer untuk share project yang mempunyai
+platform-platform yang berbeda-beda dan menggunakan common tool untuk
+implementasi dan debugging program. Sebuah project dapat meliputi:
+
+file-file yang digroup secara bersama-sama,
+langkah-langkah build program,
+form-form dan file-file resource,
+dan pengaturan untuk menjalankan aplikasi.
+
+Projek dapat dibuat secara manual atau diimport dari file projek yang sudah ada.
+Jika projeknya dibuat secara manual, maka sebuah file-file akan digenerate oleh
+Qt Creator, tergantung dari tipe file yang dimiliki. Seperti Jika filenya adalah
+sebuah GUI application, maka Qt Creator men-generate sebuah file kosong yang
+berektensikan `.ui` yang akan imodifikasikan melalui Qt Designer. Qt Creator
+diinterrasikan dengan sistem cross-platform untuk mem-build secara automatis:
+qmake dan CMake. Projek yang tidak menggunakan qmake atau CMake dapat
+diimport-kan, dan Qt Creator dapat meng-ignore sistem build.
 
 ![Gambar Projek pada Qt Creator](images/capture1-1.png)
 
-Editor Qt Creator mempunyai sebuah code editor yang telah terintegrasi dengan Qt Designer untuk mendesain dan
-membangun aplikasi GUI dari Qt widgets. Karena Qt Creator adalah sebuah Integrated Development Enviroment (IDE), maka Qt Creator memisahkan antara text editor untuk build dan editor untuk menjalankan (run) aplikasi-aplikasi. Qt Creator bukan hanya bisa membaca text file biasa, akan tetapi juga bisa membaca file C++ dan bahasa QML.
+Editor Qt Creator mempunyai sebuah code editor yang telah terintegrasi dengan
+Qt Designer untuk mendesain dan membangun aplikasi GUI dari Qt widgets.
+Karena Qt Creator adalah sebuah Integrated Development Enviroment (IDE),
+maka Qt Creator memisahkan antara text editor untuk build dan editor
+untuk menjalankan (run) aplikasi-aplikasi. Qt Creator bukan hanya bisa
+membaca text file biasa, akan tetapi juga bisa membaca file C++ dan bahasa QML.
 
 Keunggulan Code Editor
 
@@ -72,16 +120,30 @@ Keunggulan Code Editor
 - Menampilkan baris-baris yang error dan pesan-pesan warning.
 - Memandu programer secara semantik untuk menulis classes, functions, dan symbols.
 - Menyediakan fasilitas bantuan context-sensitive pada classes, functions, dan symbols.
-- Me-rename symbol-symbol dengan langkah intelligent, sehingga simbol-simbol yang lain dengan nama yang sama tidak ter-rename.
+- Me-rename symbol-symbol dengan langkah intelligent, sehingga simbol-simbol
+yang lain dengan nama yang sama tidak ter-rename.
 - Menampilkan lokasi function, class yang dideklarasikan atau yang dipanggil
 
 ![Gambar Code Editor](images/capture1-2.png)
 
 ### UI Designer
 
-Qt Creator menyajikan dua buah editor visual: Qt Designer dan Qt Quick Designer. Qt Designer merupakan sebuah tool untuk mendesain dan membangun aplikasi GUI dari Qt widgets. Widgets dan forms yang dibentuk dengan Qt Designer terintegrasi dengan code program, Qt signals dan mekanisme slots, sehingga kita dengan mudah memberikan nilai-nilai dan properti-properti pada pada elemen-elemen grafik. Semua properti-properti yang diatur pada Qt Designer dapat diubah secara dinamik melalui/di dalam code.
+Qt Creator menyajikan dua buah editor visual: Qt Designer dan Qt Quick Designer.
+Qt Designer merupakan sebuah tool untuk mendesain dan membangun aplikasi GUI
+dari Qt widgets. Widgets dan forms yang dibentuk dengan Qt Designer terintegrasi
+dengan code program, Qt signals dan mekanisme slots, sehingga kita dengan mudah
+memberikan nilai-nilai dan properti-properti pada pada elemen-elemen grafik.
+Semua properti-properti yang diatur pada Qt Designer dapat diubah secara dinamik
+melalui/di dalam code.
 
-Qt Quick Designer digunakan untuk membangun secara mudah animasi-animasi dengan menggunakan sebuah bahasa pemograman yang dikenal dengan [Qt Meta-Object Language (QML)](https://en.wikipedia.org/wiki/QML). Dalam QML, sebuah user interface dispesifikasikan sebagai sebuah pohon (tree) dari objects dengan properti-properti. Kamu menggunaan teks editor visual untuk menciptakan items, screens, dan aplikasi, serta mendefinisikan perubahan action-acton pada komponennya. Dapat digunakan Qt atau JavaScript untuk mengimplementasikan logik aplikasi.
+Qt Quick Designer digunakan untuk membangun secara mudah animasi-animasi dengan
+menggunakan sebuah bahasa pemograman yang dikenal dengan
+[Qt Meta-Object Language (QML)](https://en.wikipedia.org/wiki/QML). Dalam QML,
+sebuah user interface dispesifikasikan sebagai sebuah pohon (tree) dari objects
+dengan properti-properti. Kamu menggunaan teks editor visual untuk menciptakan
+items, screens, dan aplikasi, serta mendefinisikan perubahan action-acton pada
+komponennya. Dapat digunakan Qt atau JavaScript untuk mengimplementasikan logik
+aplikasi.
 
 ![Gambar UI Designers](images/capture1-3.png)
 
@@ -89,20 +151,32 @@ Qt Quick Designer digunakan untuk membangun secara mudah animasi-animasi dengan 
 
 ### Bahasa yang di dukung
 
-Kamu dapat menggunakan code editor menulis code dalam Qt C++ atau bahasa pemograman QML, javascript bahkan HTML5. Syntax highlighting juga disajikan untuk banyak bahasa pemograman yang lain.
+Kamu dapat menggunakan code editor menulis code dalam Qt C++ atau bahasa
+pemograman QML, javascript bahkan HTML5. Syntax highlighting juga disajikan
+untuk banyak bahasa pemograman yang lain.
 
 ### Platform
 
-Qt Creator men-support untuk membangun dan menjalankan aplikasi-aplikasi Qt untuk desktop environments (Seperti Windows, Linux, FreeBSD dan Mac OS) Selain itu juga bisa dijalankan pada mobile devices (seperti Android, windows 8 dan iOS). Ketika sebuah aplikasi dibangun untuk mobile device yang bisa mengkoneksi ke Personal Computer (PC), maka Qt Creator men-generate sebuah package instalasi, menginstall package tersebut pada device, dan meneksekusikannya. 
+Qt Creator men-support untuk membangun dan menjalankan aplikasi-aplikasi Qt
+untuk desktop environments (Seperti Windows, Linux, FreeBSD dan Mac OS) Selain
+itu juga bisa dijalankan pada mobile devices (seperti Android, windows 8 dan iOS).
+Ketika sebuah aplikasi dibangun untuk mobile device yang bisa mengkoneksi ke
+Personal Computer (PC), maka Qt Creator men-generate sebuah package instalasi,
+menginstall package tersebut pada device, dan meneksekusikannya.
 
 ### Tools
 
-Qt Creator diintegrasikan dengan kumpulan tool-tool yang bermanfaat dan membantu, seperti version control systems
-dan Qt Simulator. Qt Creator menggunakan command line client version control system untuk mengakses repositories ([Git](https://git-scm.com/), [subversion](https://subversion.apache.org/), [Perfoce](https://www.perforce.com), [CVS](www.nongnu.org/cvs/), [Mercurial](https://www.mercurial-scm.org)).
+Qt Creator diintegrasikan dengan kumpulan tool-tool yang bermanfaat dan membantu,
+seperti version control systems dan Qt Simulator. Qt Creator menggunakan
+command line client version control system untuk mengakses repositories
+([Git](https://git-scm.com/), [subversion](https://subversion.apache.org/),
+[Perfoce](https://www.perforce.com), [CVS](www.nongnu.org/cvs/),
+[Mercurial](https://www.mercurial-scm.org)).
 
 ### Debuggers
 
- Qt Creator tidak mempunyai debugger. Qt Creator mempunyai plugin debugger yang bekerja sebagai interface antara Qt Creator core dan external native debuggers
+ Qt Creator tidak mempunyai debugger. Qt Creator mempunyai plugin debugger
+ yang bekerja sebagai interface antara Qt Creator core dan external native debuggers
 
 Debuggers adalah:
 
@@ -110,17 +184,27 @@ Debuggers adalah:
 - Microsoft Console Debugger (CDB)
 - internal Java Script debugger
 
-Dapat menghubungkan mobile devices dengan PC dan memproses debug yang berjalan pada devices.
+Dapat menghubungkan mobile devices dengan PC dan memproses debug yang berjalan
+pada devices.
 
 ## Mengenal macam - macam Teknologi User Interface (UI) pada QT
 
 
-Interaksi antara pengguna dengan logic software dinamakan User Interface disingkat dengan UI. UI ini berwujud bisa sebuah window, bisa tombol, bisa sebuah textarea dan lain sebagainya. Inilah komponen User Interface. Sebagai seorang programmer (pembuat program aplikasi), terlebih programmer yang menggunakan Qt, maka anda akan disediakan beragam UI yang bisa anda pilih sesuai kebutuhan. Ada QtWitget, QtQuick dan QtWebKit. Ketiganya dapat anda pilih sesuai kebutuhan sebagai UI progam anda. Ingin tahu bedanya? Mari kita simak.
+Interaksi antara pengguna dengan logic software dinamakan User Interface
+disingkat dengan UI. UI ini berwujud bisa sebuah window, bisa tombol, bisa
+sebuah textarea dan lain sebagainya. Inilah komponen User Interface. Sebagai
+seorang programmer (pembuat program aplikasi), terlebih programmer yang
+menggunakan Qt, maka anda akan disediakan beragam UI yang bisa anda pilih
+sesuai kebutuhan. Ada QtWitget, QtQuick dan QtWebKit. Ketiganya dapat anda
+pilih sesuai kebutuhan sebagai UI progam anda. Ingin tahu bedanya? Mari kita simak.
 
 
-Sama seperti Visual Studio yang menyediakan beragam Amazing User Interface tingkat tinggi sampai pengguna bingung memilihnya, Qt menyediakan tiga UI yang dapat kita gunakan. Anda pun bisa menggabungkan ketiganya. :)
+Sama seperti Visual Studio yang menyediakan beragam Amazing User Interface
+tingkat tinggi sampai pengguna bingung memilihnya, Qt menyediakan tiga
+UI yang dapat kita gunakan. Anda pun bisa menggabungkan ketiganya. :)
 
-Qt Creator, sebuah Editor Qt adalah contoh dari perpaduan multiple teknologi UI ini. Coba amati Qt Creator yang selalu anda gunakan tersebut.
+Qt Creator, sebuah Editor Qt adalah contoh dari perpaduan multiple teknologi
+UI ini. Coba amati Qt Creator yang selalu anda gunakan tersebut.
 
 Qt Creator menggunakan teknologi QtWidget sebagai User Interface pada menu dan kotak dialog nya. Coba perhatikan kembali Welcome Screen dari Qt Creator, lihat, tampilannya berbeda bukan, bahkan button nya sangat berbeda dan tidak biasa, ini karena UI untuk Welcome Screen menggunakan teknologi QtQuick. Lalu dimana letak penggunaan QtWebkit?
 
@@ -153,9 +237,9 @@ Bila kita membuat aplikasi dengan QtWidget, maka saat memulai project, akan munc
 Perbedaan dari ketiga Base Class di atas adalah berikut ini:
 
 - `*QWidget` merupakan base class untuk semua GUI element pada QtWidget User Interface. Coba lah explorasi dan bedakan ketiganya :)
- 
+
 - `*QDialog` merupakan sebuah window yang biasanya digunakan untuk mengejutkan pengguna, seperti saat window dialog muncul ketika pengguna harus memasukan input dengan benar atau hal – hal yang lain, tampilan dari Qdialog tidak berbeda dengan Qwidget, anda bisa menggunakan salah satu.
- 
+
 - `*QMainWindow`, nah, ini adalah sebuah class yang sangat unik, karena menggunakan feature built in yang sangat populer seperti status bar, toolbar, dan menu bar. Cobalah membuat applikasi QtWidget dengan QmainWindow sebagai base class nya, pasti secara otomatis akan ditampilan menubar , toolbar, dan statusbar.
 
 ### C.Teknologi User Interface QtWebkit
@@ -170,7 +254,7 @@ Perlu diperhatikan bersama bahwa pemilihan teknologi adalah biasa, so, tetaplah 
 
 ## Install Qt Creator
 
-Pada tutorial ini kita akan menginstall Qt pada ubuntu 14.04 atau Windows 8 dengan menggunakan versi terbaru dari Qt Creator yang dapat di unduh di [halaman](http://www.qt.io/download) Qt cCreator. 
+Pada tutorial ini kita akan menginstall Qt pada ubuntu 14.04 atau Windows 8 dengan menggunakan versi terbaru dari Qt Creator yang dapat di unduh di [halaman](http://www.qt.io/download) Qt cCreator.
 
 ![Halaman web Downlaod Qt Creator](images/qt-downloads.png)
 
@@ -198,7 +282,7 @@ Atur permisi, jalankan installer dan ikuti perintah berikut ini untuk mnginstall
 
 ####  3.  Install g++
 
-Buka terminal untuk menginstal g++: 
+Buka terminal untuk menginstal g++:
 
 	sudo apt-get install build-essential
 
@@ -251,7 +335,7 @@ Anda bisa mendownload di halaman downlod Qt creator dan memlilih versi dari Apli
 T> **Tips**
 T>
 T> Simulator atau compiler yang lengkap teridir dari
- 
+
 - Qt Simulator MingGW 4.4
 - Qt Simulator VS 2008, 2010, 2011, 2012 2013, 2014
 - Android SDK dan NDK
@@ -261,7 +345,7 @@ T> Simulator atau compiler yang lengkap teridir dari
 
 4. Kemudian pilih jenis sub version yang akan kita gunakan, jika Anda tidak mengunakan sub version maka pilih none pada add to subversion.
 
-![](images/qt-console-aplication-4.png) 
+![](images/qt-console-aplication-4.png)
 
 
 5. Apabila di lakukan dengan benar maka akan muncul Qt Editor sebagai berikut ini.
@@ -274,7 +358,7 @@ Berikut adalah struktur dasar program yang dibuat dengan bahasa C++:
 
 	#include <header>  
 	using namespace std;    
-	int main(int argc, char *argv[]) 
+	int main(int argc, char *argv[])
 	{  
 	deklarasi variabel;   
 	deklarasi konstanta;  
@@ -283,10 +367,10 @@ Berikut adalah struktur dasar program yang dibuat dengan bahasa C++:
 	return 0;  
 	}  
 
-**Penjelasan :** 
+**Penjelasan :**
 
 #### 1. &#35; include &#60;header&#62;
- 
+
 `#include` adalah salah satu pengarah preprocessor directive yang tersedia pada C++. Preprocessor selalu dijalankan terlebih dahulu pada saat proses kompilasi terjadi. Bentuk umumnya:
 
 	# include <nama_file>
@@ -299,7 +383,7 @@ Beberap contoh pengikutsertaan berkas adalah:
 - `#include <conio>`: diperlukan bila melibatkan `clrscr()`, yaitu perintah untuk membersihkan layar dan fungsi `getch()` untuk menerima sembarang input keyboard dari user.
 - `#include <iomanip>` : diperlukan bila melibatkan `setw()` yang bermanfaat untuk mengatur lebar dari suatu tampilan data.
 - `#include <math>` : diperlukan pada program yang menggunakan operasi `sqrt()` yang bermanfaat untuk operasi matematika kuadrat.
-	
+
 #### 2.	using namespace std;
 
 Semua elemen standard C++ library dinyatakan dalam apa yang disebut namespace, namespace tersebut bernama std. Jadi artinya untuk mengakses semua fungsionalitas std kita menuliskan bahwa kita menggunakan namespace std.
@@ -317,7 +401,7 @@ Komentar tidak pernah dicompile oleh compiler. Dalam C++ terdapat 2 jenis koment
 
 1.	/* Komentar anda diletakkan di dalam ini bisa mengapit lebih dari satu baris */
 2.	// Komentar anda diletakkan disini ( hanya bisa sebaris )
-	
+
 Programmer sering sekali memasukkan komentar di dalam code agar program lebih mudah dibaca. Komentar juga membantu orang lain untuk membaca dan mengerti isi dari code. Komentar tidak menyebabkan komputer melakukan suatu instruksi ketika program dijalankan.
 
 #### 5.	Tanda Semicolon (;)
@@ -340,14 +424,13 @@ Untuk lebih jelasnya silahkan coba ketik program berikut pada project baru.
 	cout<<"Selamat Belajar C/C++ ";  
 	cout<<"enter my World";  
 	return a.exec ();  
-	} 
+	}
 
 Kemudian jalankan dengan menekan tombol Run (CTRL + R)
 
 	Hello world
-	
+
 	Selamat belajar C/C++ enter my world
 
 Tampilan Hello World diakhiri dengan tanda enter baru kemudian dilanjutkan dengan tulisan berikutnya yaitu Selamat Belajar C/C++ enter my World. Artinya perintah `endl` merupakan perintah untuk memberi tanda enter.
 Sedangkan untuk tulisan Selamat Belajar C/C++ dan tulisan enter my World yang pada source code terpisah dengan perintah `cout`, pada tampilan hasil program tetap sama dan tidak ada enter diantaranya. Hal ini karena tidak ada perintah untuk menampilkan enter diantara kedua kalimat tersebut. Penulisan pada kode tidak akan mempengaruhi hasil output program.
-

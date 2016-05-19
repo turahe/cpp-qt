@@ -4,7 +4,9 @@
 
 **Agenda**
 
-Pada chapter ini kita akan membahas tentang beberapa class khusus pada Qt Framework yang digunakan untuk bekerja dengan File dan dokumen XML. Adapun materi yang akan dibahas pada HOL ini adalah:
+Pada chapter ini kita akan membahas tentang beberapa class khusus
+pada Qt Framework yang digunakan untuk bekerja dengan File dan
+dokumen XML. Adapun materi yang akan dibahas pada HOL ini adalah:
 
 - Bekerja dengan QDir dan QFileInfo.
 - Bekerja dengan QFile dan QTextStream.
@@ -14,7 +16,11 @@ Pada chapter ini kita akan membahas tentang beberapa class khusus pada Qt Framew
 
 ## Bekerja dengan Paths
 
-QDir digunakan untuk bekerja dengan paths dan drives pada aplikasi Qt. QDir memiliki beberapa static method yang memudahkan anda bekerja dengan file sistem. Misal `QDir::current()` dapat digunakan untuk mengembalikan QDir dari direktori kerja anda, `QDir::home()` akan mengembalikan QDir dari home direktori pengguna, `QDir::root()` akan mengembalikan root direktori, dan `QDir::drives()` akan mengembalikan objek `QList<QFileInfo>` yang mewakili root dari semua drive yang ada. Objek QFileInfo menyimpan informasi tentang file dan direktori, ada beberapa method penting yang sering digunakan yaitu:
+QDir digunakan untuk bekerja dengan paths dan drives pada aplikasi
+Qt. QDir memiliki beberapa static method yang memudahkan anda
+bekerja dengan file sistem. Misal `QDir::current()` dapat digunakan
+untuk mengembalikan QDir dari direktori kerja anda, `QDir::home()`
+akan mengembalikan QDir dari home direktori pengguna, `QDir::root()` akan mengembalikan root direktori, dan `QDir::drives()` akan mengembalikan objek `QList<QFileInfo>` yang mewakili root dari semua drive yang ada. Objek QFileInfo menyimpan informasi tentang file dan direktori, ada beberapa method penting yang sering digunakan yaitu:
 
 - `isDir()`, `isFile()`, dan `isSymLink()` akan mengembalikan nilai true jika objek yang dicek berupa direktori, file, atau symbolic link (shortcut pada window).
 - `dir()` dan `absoluteDir()` akan mengembalikan `QDir` yang mengandung informasi dari objek file. Method `dir()` akan mengembalikan direktori relatif dari direktori aktif, dan method `absoluteDir()` mengembalikan path direktori yang dimulai dari root.
@@ -55,7 +61,7 @@ Contoh 1. Menampilkan daftar drives dari root directories.
 
 
  **Keterangan:**:
- 
+
  - Static method `QDir::drives()` akan mengembalikan collection berupa `QList<FileInfo>` yang berisi semua drive yang ada pada komputer.
  - Untuk membaca semua drive beserta semua folder /direktori didalamnya anda dapat menggunakan foreach.
  - Method `setFilter(QDir::Dirs)` artinya yang akan ditampilkan hanya direktori saja, tidak file atau symbolic link, untuk menampilkan semua (drive, direktori, file) anda dapat menggunakan `QDir::AllEntries`.
@@ -117,7 +123,7 @@ Contoh 2. Memeriksa apakah file ada dan bisa diakses.
 3. Output diatas mempunyai arti bahwa anda belum membuat file dengan nama “testfile.txt”, agar program diatas berhasil dijalankan buat file “testfile.txt” didalam folder Contoh 2-build-simulator. Kemudian jalankan kembali programnya, maka akan tampil output berikut.
 
  **Keterangan:**
- 
+
  - `Method exists()` digunakan untuk mengecek apakah file yang ada atau tidak. Jika file tidak ditemukan maka program akan keluar dan menampilkan output program tidak ditemukan.
  - Method `open()` digunakan untuk membuka file, permision yang digunakan pada program diatas adalah WriteOnly. Jika file tidak dapat dibuka maka akan keluar pesan tidak dapat membuka file.
 
@@ -172,7 +178,7 @@ Contoh 3 Menggunakan Stream untuk membaca file.
 
 
  **Keterangan:**
- 
+
  - Objek `QTextStream` digunakan jika anda ingin menggunakan stream untuk mengakses file text.
  - Untuk membaca semua data yang ada pada file text gunakan method readAll().
  - Untuk membaca file baris demi baris dapat digunakan method readLine() yang dijalankan didalam loop, method atEnd() digunakan untuk memeriksa apakah sudah sampai akhir file.
@@ -278,7 +284,7 @@ Contoh 4. Menggunakan Data Stream.
 4. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
  **Keterangan:**
- 
+
  - Pada program diatas struct Warna adalah user define type yang dibuat sendiri, struct Warna memiliki dua member variabel yaitu text yang bertipe QString dan color yang bertipe QColor.
  - Untuk memasukan data biner (dengan tipe data Warna) kedalam stream buat operator <<
  - Untuk mengambil data biner dari stream buat operator >>
@@ -300,7 +306,7 @@ Pada dokumen XML diatas document tag mengandung author tag dan teks . Tag docume
 
 Author tag tidak memiliki tag penutup karena tidak memiliki elemen lain didalamnya, cara penulisannya adalah <author />, ini sama dengan menuliskan <author></author>.
 
-Qt mendukung tiga cara untuk memanipulasi dokumen XML yaitu QStreamReader, DOM, dan SAX. 
+Qt mendukung tiga cara untuk memanipulasi dokumen XML yaitu QStreamReader, DOM, dan SAX.
 
 Untuk menggunakan library XML pada Qt anda harus menambahkan library XML pada Qt project file.
 
@@ -380,7 +386,7 @@ Hasil dari file XML “simple.xml” yang berhasil dibuat adalah :
 
 
  **Keterangan:**
- 
+
  - Untuk membuat dokumen XML menggunakan DOM, pertama buat objek QDomDocument .
  - Langkah selanjutnya adalah membuat objek QDomElement untuk membuat element Nim dan Ipk.
  - Untuk menambahkan text pada element tambahkan objek QDomText.
@@ -449,7 +455,7 @@ Contoh 6. Membaca DOM dari dokumen XML.
 6. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
  **Keterangan:**
- 
+
  - Untuk membaca data dari file, seperti biasa gunakan objek QFile dan jalankan method open().
  - Untuk mengambil data yang ada file untuk dimasukan kedalam objek QDomDocument gunakan method setContent().
  - Untuk mengakses data elemen pada QDomDocument, buat objek QDomElement.
@@ -562,7 +568,7 @@ Contoh 7. Modifikasi data dokumen XML.
 		</dokumen>
 
 **Keterangan:**
- 
+
  - Langkah pertama baca file simple.xml yang akan dimodifikasi, kemudian masukan isinya kedalam QDomDocument.
  - Ambil root element dari dokumen menggunakan method documentElement() dan masukan kedalam objek bertipe QDomElement.
  - Kode QDomNodeList elemen = elemenDokumen.elementsByTagName("Mahasiswa"); digunakan untuk mengambil semua element yg mempunyai tag <Mahasisw dan memasukannya kedalam variabel elemen yang bertipe QDomNodeList.
@@ -670,7 +676,7 @@ Contoh 8. Menggunakan QXMLStream Reader untuk membaca XML.
 
 
  **Keterangan:**
- 
+
  - Untuk membaca dokumen XML menggunakan QXMLStreamReader anda dapat melakukan looping dengan memeriksa apakah sudah sampai pada akhir dokumen while(!reader.atEnd()).
  - Method reader.readNext(); digunakan untuk berpindah token.
  - Method reader.isStartElement() digunakan untuk mengecek apakah token yg sekarang aktif adalah elemen awal.
@@ -723,7 +729,7 @@ Contoh 9. Membuat dokumen XML dengan QXMLStreamWriter.
 		</Books>
 
  **Keterangan:**
- 
+
  - Anda dapat menggunakan QXMLStreamWriter untuk membuat dokumen XML.
  - Kode writer.setAutoFormatting(true); digunakan untuk memformat secara otomatis dokumen XML yang akan dibuat, misal menambahkan line break dan indentation pada bagian yang kosong pada elemen. Tujuan utamanya adalah memisahkan data menjadi beberapa baris sehingga membantu dalam pembacaan dokumen.
  - Kode writer.writeStartDocument(); digunakan pada saat pertama kali dokumen akan dibuat.

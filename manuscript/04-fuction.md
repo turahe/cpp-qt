@@ -1,4 +1,4 @@
-# fungsi
+﻿# Fungsi
 
 
 Fungsi (Function) adalah sekumpulan program yang diberi nama, sehingga dengan demikian jika  program itu diperlukan dapat dipanggil kembali. Walaupun Pemrograman Berorientasi Objek telah  menggeser perhatian dari fungsi ini, namun fungsi tetap saja merupakan bagian paling inti dalam suatu  program. Fungsi global bisa berada di luar kelas maupun objek.   
@@ -79,31 +79,31 @@ Prototype fungsi standard berada di file-file judulnya, dalam fungsi pustaka seb
 Contoh 1. Membuat Fungsi yang mengembalikan nilai.
 
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
 
-     #include <QtCore/QCoreApplication>
-    #include <iostream>
-    int absolut(int bil);
-    int main(int argc, char *argv[])
-    {
-      using namespace std;
-      QCoreApplication a(argc, argv);
-      int bilangan = -10;
-        cout << "Bilangan : " << bilangan << endl;
-        cout << "Dimutlakkan menjadi : " << absolut(bilangan) << endl;
-      return a.exec();
-      }
-      int absolut(int bil){
-        if(bil<0)
-        return - bil;
-        else
-        return bil;
-    }
-
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+	    #include <QtCore/QCoreApplication>
+	    #include <iostream>
+	    int absolut(int bil);
+	    int main(int argc, char *argv[])
+	    {
+	      using namespace std;
+	      QCoreApplication a(argc, argv);
+	      int bilangan = -10;
+	        cout << "Bilangan : " << bilangan << endl;
+	        cout << "Dimutlakkan menjadi : " << absolut(bilangan) << endl;
+	      return a.exec();
+	      }
+	      int absolut(int bil){
+	        if(bil<0)
+	        return - bil;
+	        else
+	        return bil;
+	    }
 
 
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+
+A> {linenos=off}
 A> Bilangan : -10
 A> 
 A> Dimutlakkan menjadi : 10
@@ -136,34 +136,34 @@ Suatu fungsi dalam menyelesaikan tugasnya, dapat hanya melakukan suatu tugas tan
 
 Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 
-    #include <QtCore/QCoreApplication>
-    #include <iostream>
-    void hello(int kali);
-    int main(int argc, char *argv[])
-    {
-    QCoreApplication a(argc, argv);
-    hello(3);
-    return a.exec();
-    }
-    void hello(int kali){
-    using namespace std;
-    for(int x=0;x<kali;x++)
-    cout << "Hello World!" << endl;
-    }      
+	    #include <QtCore/QCoreApplication>
+	    #include <iostream>
+	    void hello(int kali);
+	    int main(int argc, char *argv[])
+	    {
+	    QCoreApplication a(argc, argv);
+	    hello(3);
+	    return a.exec();
+	    }
+	    void hello(int kali){
+	    using namespace std;
+	    for(int x=0;x<kali;x++)
+	    cout << "Hello World!" << endl;
+	    }      
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-
+A> {linenos=off}
 A> Hello World!
 A> 
 A> Hello World!
 A> 
 A> Hello World!  
 
-**Analisa Program :**
+**Keterangan Program :**
  
  - Pada program diatas baris ketiga tertulis : `void hello(int kali)`; tampak tipe dari fungsi ini adalah void, berarti tidak mengembalikan nilai.  
   
@@ -188,31 +188,31 @@ Variable lokal merupakan variable yang hanya berlaku untuk pernyataan di dalam s
 Contoh 3. Variabel Lokal.
 
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	float kali(float a, float b); /*prototype fungsi*/
-	int main(int argc, char *argv[])
-	{
-	using namespace std;
-	QCoreApplication a(argc, argv);
-	float hasil;
-	hasil = kali(4,7);
-	cout << "Hasil = " << hasil << endl;
-	return a.exec();
-	}
-	float kali(float a, float b)
-	{
-	float c;
-	c = a * b;
-	return c;
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		float kali(float a, float b); /*prototype fungsi*/
+		int main(int argc, char *argv[])
+		{
+		using namespace std;
+		QCoreApplication a(argc, argv);
+		float hasil;
+		hasil = kali(4,7);
+		cout << "Hasil = " << hasil << endl;
+		return a.exec();
+		}
+		float kali(float a, float b)
+		{
+		float c;
+		c = a * b;
+		return c;
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
-
+A> {linenos=off}
 A>  Hasil = 28
 
  **Analisa Program:** 
@@ -228,29 +228,29 @@ Sesuai dengan namanya, variable global maksudnya adalah suatu variable yang dapa
 Contoh 4. Variabel Global.   
 
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
 
-    #include <QtCore/QCoreApplication>
-    #include <iostream>
-    void kali(float a, float b); /*prototype fungsi*/
-    float hasil; /*variabel global*/
-    int main(int argc, char *argv[])
-    {
-      using namespace std;
-      QCoreApplication a(argc, argv);
-      kali(4,7);
-      cout << "Variabel global hasil = " << hasil << endl;
-      return a.exec();
-      }
-      void kali(float a, float b)
-      {
-      hasil = a * b;
-    }
+	    #include <QtCore/QCoreApplication>
+	    #include <iostream>
+	    void kali(float a, float b); /*prototype fungsi*/
+	    float hasil; /*variabel global*/
+	    int main(int argc, char *argv[])
+	    {
+	      using namespace std;
+	      QCoreApplication a(argc, argv);
+	      kali(4,7);
+	      cout << "Variabel global hasil = " << hasil << endl;
+	      return a.exec();
+	      }
+	      void kali(float a, float b)
+	      {
+	      hasil = a * b;
+	    }
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
-
+A> {linenos=off}
 A> Variabel global hasil = 28
 
  **Analisa Program:** 
@@ -299,7 +299,7 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
-
+A> {linenos=off}
 A> 5 Faktorial = 120
 
 **Analisa Program:**  
@@ -399,11 +399,9 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
        
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut. 
 
-
+A> {linenos=off}
 A>  Volume 1 --> 3750
-A> 
 A>  Volume 2 --> 150
-A> 
 A>  Volume 3 --> 10
 
 

@@ -1,4 +1,4 @@
-
+﻿
 # Pointer dan References
 
 **Agenda**
@@ -47,11 +47,9 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 
 
 Kemudian jalankan kode diatas dengan menekan tombol <kbd>Ctrl+R</kbd>, outputnya adalah sebagai berikut.
 
-
+A> {linenos=off}
 A> bil1 = 20 address = 0x28fe96
-A> 
 A> bil2 = 200000 address = 0x28fe90
-A> 
 A> bil3 = -670000 address = 0x28fe8c
 
 **Analisa Program :**
@@ -139,15 +137,15 @@ Buka Qt Creator, buat project Qt Console Application dengan nama Contoh 2. Kemud
 
 Tekan Ctrl+R untuk menjalankan kode diatas, outputnya adalah sebagai berikut.
 
-
-Umur : 17
-pUmur : 17
-Merubah nilai pUmur..
-Umur : 28
-pUmur : 28
-Merubah nilai umur..
-Umur : 30
-pUmur : 30
+A> {linenos=off}
+A>	Umur : 17
+A>	pUmur : 17
+A>	Merubah nilai pUmur..
+A>	Umur : 28
+A>	pUmur : 28
+A>	Merubah nilai umur..
+A>	Umur : 30
+A>	pUmur : 30
 
 **Analisa Program:**
  
@@ -182,13 +180,13 @@ Buat project Qt Console Application baru, beri nama Contoh 3, kemudian tulis kod
 	return a.exec();
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program diatas, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai berikut.
 
-
-umur1 : 17 alamat : 0x28fe92
-pUmur : 17 alamat : 0x28fe92
-umur2 : 28 alamat : 0x28fe90
-pUmur : 28 alamat : 0x28fe90
+A> {linenos=off}
+A>	umur1 : 17 alamat : 0x28fe92
+A>	pUmur : 17 alamat : 0x28fe92
+A>	umur2 : 28 alamat : 0x28fe90
+A>	pUmur : 28 alamat : 0x28fe90
 
 
  **Analisa:**
@@ -238,18 +236,18 @@ Buat project Qt Console Application dengan nama Contoh 4, kemudian tulis kode be
 	return a.exec();
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-Alamat numbers[0] : 0x28fe78
-Nilai numbers[0] : 100
-Alamat numbers[4] : 0x28fe88
-Nilai numbers[4] : 777
-numbers[0] = 100
-numbers[1] = 200
-numbers[2] = 222
-numbers[3] = 111
-numbers[4] = 777
+A> {linenos=off}
+A>	Alamat numbers[0] : 0x28fe78
+A>	Nilai numbers[0] : 100
+A>	Alamat numbers[4] : 0x28fe88
+A>	Nilai numbers[4] : 777
+A>	numbers[0] = 100
+A>	numbers[1] = 200
+A>	numbers[2] = 222
+A>	numbers[3] = 111
+A>	numbers[4] = 777
 
 **Keterangan:**
  
@@ -317,11 +315,11 @@ Buat project Qt Console Application dengan nama Contoh 5, kemudian tulis kode be
 
 Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	bil : 20
-	pBil : 20
-	Nilai pHeap : 19
-	Nilai pHeap : 100
+A> {linenos=off}
+A>	bil : 20
+A>	pBil : 20
+A>	Nilai pHeap : 19
+A>	Nilai pHeap : 100
 
  **Analisa:**
  
@@ -382,15 +380,15 @@ Buat project Qt Console Application dengan nama Contoh 6, kemudian tulis kode be
 	return a.exec();
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	Deklarasi object tanpa pointer 
-	Konstruktor dipanggil..
-	Mengalokasikan heap memory untuk menyimpan objek 
-	Konstruktor dipanggil..
-	Delete objek di memory 
-	Destruktor dipanggil..
+A> {linenos=off}
+A>	Deklarasi object tanpa pointer 
+A>	Konstruktor dipanggil..
+A>	Mengalokasikan heap memory untuk menyimpan objek 
+A>	Konstruktor dipanggil..
+A>	Delete objek di memory 
+A>	Destruktor dipanggil..
 
 **Analisa :**
  
@@ -459,18 +457,18 @@ Buat project Qt Console Application dengan nama Contoh 7, kemudian tulis kode be
 	return a.exec();
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	Nilai bil1 : 18
-	Nilai &rBil : 18
-	Nilai bil1 : 19
-	Nilai &rBil : 19
-	Nilai bil1 : 33
-	Nilai &rBil : 33
-	Menampilkan alamat memory :
-	&bil1 : 0x28fe90
-	&rBil : 0x28fe90
+A> {linenos=off}
+A>	Nilai bil1 : 18
+A>	Nilai &rBil : 18
+A>	Nilai bil1 : 19
+A>	Nilai &rBil : 19
+A>	Nilai bil1 : 33
+A>	Nilai &rBil : 33
+A>	Menampilkan alamat memory :
+A>	&bil1 : 0x28fe90
+A>	&rBil : 0x28fe90
 
 **Analisa:**
  
@@ -505,12 +503,12 @@ Buat project Qt Console Application dengan nama Contoh 8, kemudian tulis kode be
 	return a.exec();
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	rBil : 14
-	rBil : 19
-	bil : 19
+A> {linenos=off}
+A>	rBil : 14
+A>	rBil : 19
+A>	bil : 19
 
 **Analisa:**
  
@@ -551,13 +549,13 @@ Buat project Qt Console Application dengan nama Contoh 9, kemudian tulis kode be
 	cout << "Pada fungsi, Setelah ditukar, x=" << x << ", y=" << y << endl;
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	Pada main, sebelum ditukar x=12, y=21
-	Pada fungsi, sebelum ditukar, x=12, y=21
-	Pada fungsi, Setelah ditukar, x=21, y=12
-	Pada main, setelah ditukar x=12, y=21
+A> {linenos=off}
+A>	Pada main, sebelum ditukar x=12, y=21
+A>	Pada fungsi, sebelum ditukar, x=12, y=21
+A>	Pada fungsi, Setelah ditukar, x=21, y=12
+A>	Pada main, setelah ditukar x=12, y=21
 
 **Keterangan:**
  
@@ -593,13 +591,13 @@ Buat project Qt Console Application dengan nama Contoh 10, kemudian tulis kode b
 	cout << "Pada fungsi, sesudah ditukar x=" << *x << ",y=" << *y << endl;
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	main func, x=12, y=21
-	Pada fungsi, sebelum ditukar x=12,y=21
-	Pada fungsi, sesudah ditukar x=21,y=12
-	main func, x=21, y=11
+A> {linenos=off}
+A>	main func, x=12, y=21
+A>	Pada fungsi, sebelum ditukar x=12,y=21
+A>	Pada fungsi, sesudah ditukar x=21,y=12
+A>	main func, x=21, y=11
 
 **Analisa:**
  
@@ -633,13 +631,13 @@ Buat project Qt Console Application dengan nama Contoh 11, kemudian tulis kode b
 	cout << "Sesudah function, sebelum ditukar x=" << x << ", y=" << y << endl;
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	main func, sebelum ditukar x=12, y=21
-	Pada function, sebelum ditukar x=12, y=21
-	Sesudah function, sebelum ditukar x=21, y=12
-	main func, setelah ditukar x=21, y=11
+A> {linenos=off}
+A>	main func, sebelum ditukar x=12, y=21
+A>	Pada function, sebelum ditukar x=12, y=21
+A>	Sesudah function, sebelum ditukar x=21, y=12
+A>	main func, setelah ditukar x=21, y=11
 
 **Analisa:**
  
@@ -692,12 +690,13 @@ Buat project Qt Console Application dengan nama Contoh 12, kemudian tulis kode b
 		return status;
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-	Masukan number : 5
-	Number : 5
-	pLuasPersegi : 25
-	pVolumeKubus : 125
+A> {linenos=off}
+A>	Masukan number : 5
+A>	Number : 5
+A>	pLuasPersegi : 25
+A>	pVolumeKubus : 125
 
 
 **Analisa:**
@@ -748,13 +747,13 @@ Buat project Qt Console Application dengan nama Contoh 13, kemudian tulis kode b
 		return status;
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	Masukan number : 5
-	Number : 5
-	pLuasPersegi : 25
-	pVolumeKubus : 125
+A> {linenos=off}
+A>	Masukan number : 5
+A>	Number : 5
+A>	pLuasPersegi : 25
+A>	pVolumeKubus : 125
 
 **Analisa:**
  
@@ -808,16 +807,16 @@ Buat project Qt Console Application dengan nama Contoh 14, kemudian tulis kode b
 		return objMhs;
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-
-	Membuat object mahasiswa 
-	Memanggil Mahasiswa Konstruktor 
-	Memanggil Copy Konstruktor 
-	Mengembalikan FunctionMhs ..
-	Memanggil Copy Konstruktor 
-	Memanggil Mahasiswa Destruktor 
-	Memanggil Mahasiswa Destruktor 
+A> {linenos=off}
+A>	Membuat object mahasiswa 
+A>	Memanggil Mahasiswa Konstruktor 
+A>	Memanggil Copy Konstruktor 
+A>	Mengembalikan FunctionMhs ..
+A>	Memanggil Copy Konstruktor 
+A>	Memanggil Mahasiswa Destruktor 
+A>	Memanggil Mahasiswa Destruktor 
 
 **Analisa:**
  
@@ -867,11 +866,12 @@ Buat project Qt Console Application dengan nama Contoh 15, kemudian tulis kode b
 	return objMhs;
 	}
 
-Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
+Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
-	Membuat object mahasiswa 
-	Memanggil Mahasiswa Konstruktor 
-	Mengembalikan FunctionMhs ..
+A> {linenos=off}
+A>	Membuat object mahasiswa 
+A>	Memanggil Mahasiswa Konstruktor 
+A>	Mengembalikan FunctionMhs ..
 
 **Analisa:**
  

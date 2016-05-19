@@ -36,46 +36,46 @@ Solusi lainnya untuk membahas keterbatasan *single inheritance* ini adalah membu
 
 Contoh 1. Meletakkan metode kelas turunan di kelas dasar.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kuda{
-	public:
-	void melompat(){ cout << "Lompat!" << endl;}
-	virtual void terbang(){cout <<"kuda tidak bisa terbang" << endl;}
-	};
-	class Kuda_terbang : public Kuda{
-	public:
-	void terbang() {cout << "terbang..." << endl;}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kuda* kandang[5];
-	Kuda* kudanya;
-	int pilih;
-	for(int nomor=0; nomor<5; nomor++){
-	cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
-	cin >> pilih;
-	if(pilih==0)
-	kudanya = new Kuda();
-	else
-	kudanya = new Kuda_terbang();
-	kandang[nomor] = kudanya;
-	}
-	cout << endl;
-	for(int nomor=0; nomor<5; nomor++){
-	kandang[nomor]->terbang();
-	delete kandang[nomor];
-	}
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kuda{
+		public:
+		void melompat(){ cout << "Lompat!" << endl;}
+		virtual void terbang(){cout <<"kuda tidak bisa terbang" << endl;}
+		};
+		class Kuda_terbang : public Kuda{
+		public:
+		void terbang() {cout << "terbang..." << endl;}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kuda* kandang[5];
+		Kuda* kudanya;
+		int pilih;
+		for(int nomor=0; nomor<5; nomor++){
+		cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
+		cin >> pilih;
+		if(pilih==0)
+		kudanya = new Kuda();
+		else
+		kudanya = new Kuda_terbang();
+		kandang[nomor] = kudanya;
+		}
+		cout << endl;
+		for(int nomor=0; nomor<5; nomor++){
+		kandang[nomor]->terbang();
+		delete kandang[nomor];
+		}
+		return a.exec();
+		}
 
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 Analisa Program :
 
@@ -83,19 +83,19 @@ Analisa Program :
 - Pada program utama disediakan program untuk menentukan 5 jenis kuda, yang ditampung dalam pointer kudanya. Pointer ini bisa berpolimorfisme kaena memenuhi syarat bahwa dia bertipe kelas dasar (Kuda) dan memanggil metode virutual terbang().
 - Pada percobaan eksekusi di atas dipilih 0, 0, 1, 1, 0 yang berarti array kandang berisi :
 
-Kandang[0] <-- berisi objek Kuda <br>
-Kandang[1] <-- berisi objek Kuda <br>
-Kandang[2] <-- berisi objek Kuda_terbang <br>
-Kandang[3] <-- berisi objek Kuda_terbang <br>
-Kandang[4] <-- berisi objek Kuda <br>
+		Kandang[0] <-- berisi objek Kuda 
+		Kandang[1] <-- berisi objek Kuda 
+		Kandang[2] <-- berisi objek Kuda_terbang 
+		Kandang[3] <-- berisi objek Kuda_terbang 
+		Kandang[4] <-- berisi objek Kuda 
 
-Sehingga hasil keluaran berikutnya:
+	Sehingga hasil keluaran berikutnya:
 
-kuda tidak bisa terbang <br>
-kuda tidak bisa terbang <br>
-terbang... <br>
-terbang... <br>
-kuda tidak bisa terbang
+		kuda tidak bisa terbang 
+		kuda tidak bisa terbang 
+		terbang... 
+		terbang... 
+		kuda tidak bisa terbang
 
 - Dari percobaan ini tampak *polimorfisme* bisa berhasil dengan baik. Namun seperti sudah dijelaskan di atas, harga yang harus dibayar adalah sekarang ada metode `terbang()` pada kelas `Kuda_terbang` dan `Burung`, sehingga jika ada perubahan di salah satu metode `terbang()`, maka harus selalu diingat untuk merubah yang lainnya, ini sangat berisiko akan adanya ketidakkonsistenan program.
 
@@ -123,47 +123,47 @@ Pada percobaan ini kita tidak melakukan “percolating upward”, yaitu menulisk
 
 Contoh 2. Melakukan Down Casting.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kuda{
-	public:
-	virtual void melompat(){ cout << "Lompat!" << endl;}
-	};
-	class Kuda_terbang : public Kuda{
-	public:
-	virtual void terbang() {cout << "terbang..." << endl;}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kuda* kandang[5];
-	Kuda* kudanya;
-	int pilih;
-	for(int nomor=0; nomor<5; nomor++){
-	cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
-	cin >> pilih;
-	if(pilih==0)
-	kudanya = new Kuda();
-	else
-	kudanya = new Kuda_terbang();
-	kandang[nomor] = kudanya;
-	}
-	cout << endl;
-	for(int nomor=0; nomor<5; nomor++){
-	Kuda_terbang *pKterb = dynamic_cast<Kuda_terbang*> (kandang[nomor]);
-	if (pKterb != NULL)
-	pKterb->terbang();
-	else
-	cout << "Kuda biasa " << endl;
-	delete kandang[nomor];
-	}
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kuda{
+		public:
+		virtual void melompat(){ cout << "Lompat!" << endl;}
+		};
+		class Kuda_terbang : public Kuda{
+		public:
+		virtual void terbang() {cout << "terbang..." << endl;}
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kuda* kandang[5];
+		Kuda* kudanya;
+		int pilih;
+		for(int nomor=0; nomor<5; nomor++){
+		cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
+		cin >> pilih;
+		if(pilih==0)
+		kudanya = new Kuda();
+		else
+		kudanya = new Kuda_terbang();
+		kandang[nomor] = kudanya;
+		}
+		cout << endl;
+		for(int nomor=0; nomor<5; nomor++){
+		Kuda_terbang *pKterb = dynamic_cast<Kuda_terbang*> (kandang[nomor]);
+		if (pKterb != NULL)
+		pKterb->terbang();
+		else
+		cout << "Kuda biasa " << endl;
+		delete kandang[nomor];
+		}
+		return a.exec();
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 Analisa Program :
 
@@ -187,64 +187,64 @@ Percobaan berikut ini memberikan ilustrasi cara deklarasi kelas `Kuda_terbang` y
 
 Contoh 3. Multiple Inheritance.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
+1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kuda{
-	public:
-	Kuda() {cout << "Konstruktor Kuda ... ";}
-	virtual ~Kuda() {cout << "Destruktor Kuda ... \n";}
-	virtual void meringkik() const {cout << " Kikikikikkkk...";}
-	};
-	class Burung{
-	public:
-	Burung() { cout << "Konstruktor Burung ... "; }
-	virtual ~Burung() { cout << "Destruktor Burung ... "; }
-	virtual void berkicau() const { cout << " Cicit cuit... "; }
-	virtual void terbang() const { cout << " Terbang ... "; }
-	};
-	class Kuda_terbang : public Kuda, public Burung{
-	public:
-	void berkicau() const { meringkik(); }
-	Kuda_terbang() { cout << "Konstruktor Kuda_terbang ... "; }
-	~Kuda_terbang() { cout << "Destruktor Kuda_terbang ... "; }
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Kuda* daftar_kuda[2]; //<-- kumpulan Kuda
-	Burung* daftar_burung[2]; //<-- kumpulan Burung
-	cout << "Menciptakan objek Kuda:" << endl;
-	daftar_kuda[0] = new Kuda(); //<-- objek Kuda
-	cout << "\nMenciptakan objek Kuda_terbang:" << endl;
-	daftar_kuda[1] = new Kuda_terbang(); //<-- objek Kuda_terbang
-	cout << "\nMenciptakan objek Burung:" << endl;
-	daftar_burung[0] = new Burung(); //<-- objek Burung
-	cout << "\nMenciptakan objek Kuda_terbang:" << endl;
-	daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
-	cout << "\n\nTampilkan daftar_kuda :" << endl;
-	daftar_kuda[0]->meringkik(); //<-- berisi objek Kuda
-	cout << "\nHapus Kuda : ";
-	delete daftar_kuda[0];
-	daftar_kuda[1]->meringkik(); //<-- berisi objek Kuda_terbang
-	cout << "\nHapus Kuda_terbang : ";
-	delete daftar_kuda[1];
-	cout << "\nTampilkan daftar_burung :" << endl;
-	daftar_burung[0]->berkicau(); //<-- berisi objek Burung
-	daftar_burung[0]->terbang(); //<-- berisi objek Burung
-	cout << "\nHapus Burung : " ;
-	delete daftar_burung[0];
-	cout << endl;
-	daftar_burung[1]->berkicau(); //<-- berisi objek Kuda_terbang
-	daftar_burung[1]->terbang(); //<-- berisi objek Kuda_terbang
-	cout << "\nHapus Kuda_terbang : ";
-	delete daftar_burung[1];
-	return a.exec();
-	}
+		#include <QtCore/QCoreApplication>
+		#include <iostream>
+		using namespace std;
+		class Kuda{
+		public:
+		Kuda() {cout << "Konstruktor Kuda ... ";}
+		virtual ~Kuda() {cout << "Destruktor Kuda ... \n";}
+		virtual void meringkik() const {cout << " Kikikikikkkk...";}
+		};
+		class Burung{
+		public:
+		Burung() { cout << "Konstruktor Burung ... "; }
+		virtual ~Burung() { cout << "Destruktor Burung ... "; }
+		virtual void berkicau() const { cout << " Cicit cuit... "; }
+		virtual void terbang() const { cout << " Terbang ... "; }
+		};
+		class Kuda_terbang : public Kuda, public Burung{
+		public:
+		void berkicau() const { meringkik(); }
+		Kuda_terbang() { cout << "Konstruktor Kuda_terbang ... "; }
+		~Kuda_terbang() { cout << "Destruktor Kuda_terbang ... "; }
+		};
+		int main(int argc, char *argv[])
+		{
+		QCoreApplication a(argc, argv);
+		Kuda* daftar_kuda[2]; //<-- kumpulan Kuda
+		Burung* daftar_burung[2]; //<-- kumpulan Burung
+		cout << "Menciptakan objek Kuda:" << endl;
+		daftar_kuda[0] = new Kuda(); //<-- objek Kuda
+		cout << "\nMenciptakan objek Kuda_terbang:" << endl;
+		daftar_kuda[1] = new Kuda_terbang(); //<-- objek Kuda_terbang
+		cout << "\nMenciptakan objek Burung:" << endl;
+		daftar_burung[0] = new Burung(); //<-- objek Burung
+		cout << "\nMenciptakan objek Kuda_terbang:" << endl;
+		daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
+		cout << "\n\nTampilkan daftar_kuda :" << endl;
+		daftar_kuda[0]->meringkik(); //<-- berisi objek Kuda
+		cout << "\nHapus Kuda : ";
+		delete daftar_kuda[0];
+		daftar_kuda[1]->meringkik(); //<-- berisi objek Kuda_terbang
+		cout << "\nHapus Kuda_terbang : ";
+		delete daftar_kuda[1];
+		cout << "\nTampilkan daftar_burung :" << endl;
+		daftar_burung[0]->berkicau(); //<-- berisi objek Burung
+		daftar_burung[0]->terbang(); //<-- berisi objek Burung
+		cout << "\nHapus Burung : " ;
+		delete daftar_burung[0];
+		cout << endl;
+		daftar_burung[1]->berkicau(); //<-- berisi objek Kuda_terbang
+		daftar_burung[1]->terbang(); //<-- berisi objek Kuda_terbang
+		cout << "\nHapus Kuda_terbang : ";
+		delete daftar_burung[1];
+		return a.exec();
+		}
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 Analisa Program :
 

@@ -35,7 +35,8 @@ encmap = {
 \usepackage{wallpaper}
 \usepackage{graphicx}
 \usepackage{fontawesome}
-\usepaclage{papertex}
+\usepackage{papertex}
+\usepackage{booktabs}
 
 \definecolor{bluekeywords}{rgb}{0.13,0.13,1}
 \definecolor{greencomments}{rgb}{0,0.5,0}

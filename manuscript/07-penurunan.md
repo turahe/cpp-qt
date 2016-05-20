@@ -715,7 +715,7 @@ A> Volume Silinder
 
  **Keterangan:**
  
- - Tampak pada program utama, variabel pointer bertipe kelas dasar (Lingkaran), yaitu objek1, di-“down-casted” menjadi tipe data kelas turunan (Silinder). Ketika dipanggil metode getVolume() yang sebenanya tidak ada di kelas dasar tetapi hanya ada di kelas turunan, tampak bahwa metode getVolume() milik kelas Silinder menanggapinya.
+ - Tampak pada program utama, variabel pointer bertipe kelas dasar (Lingkaran), yaitu K, di-“down-casted” menjadi tipe data kelas turunan (Silinder). Ketika dipanggil metode `getVolume()` yang sebenanya tidak ada di kelas dasar tetapi hanya ada di kelas turunan, tampak bahwa metode `getVolume()` milik kelas Silinder menanggapinya.
  - Percobaan ini menunjukkan bahwa tipe data pointer dapat dikonversikan menjadi tipe data pointer lain.
 
 I> **Catatan**

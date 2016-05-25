@@ -489,13 +489,13 @@ Contoh 7. Modifikasi data dokumen XML.
 		<Mahasiswa Jurusan="SI">
 		<Nim nama="Katon">23002333</Nim>
 		<Ipk>3.6</Ipk>
-		</Mahasisw
+		</Mahasiswa>
 		</dokumen>
 
 
 3. Kemudian pada file main.cpp tambahkan kode berikut untuk melakukan modifikasi file xml yang sudah kita buat sebelumnya.
 
-
+```
 		#include <QtCore/QCoreApplication>
 		#include <QDebug>
 		#include <QFile>
@@ -556,6 +556,7 @@ Contoh 7. Modifikasi data dokumen XML.
 		fileModif.close();
 		return a.exec();
 		}
+```
 
 4. Kemudian jalankan program diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 5. Untuk melihat hasil dari file xml yang sudah dimodifikasi, anda dapat membuka file “simplemodif.xml” yang ada pada folder Contoh 7-build-simulator.

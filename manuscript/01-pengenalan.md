@@ -295,14 +295,14 @@ Teknologi QtWebkit menampilkan web content melalui QML, sedangkan C++ API diguna
 
 Perlu diperhatikan bersama bahwa pemilihan teknologi adalah biasa, so, tetaplah berkreasi, berikut kita kutipkan beberapa perbandingan antar tiga teknologi UI dari Qt Help Documentation.
 
-## Install Qt Creator
+## 1.4 Install Qt Creator
 
 Pada tutorial ini kita akan menginstall Qt pada ubuntu 14.04 atau Windows 8 dengan menggunakan versi terbaru dari Qt Creator yang dapat di unduh di [halaman](http://www.qt.io/download) Qt cCreator.
 
 ![Halaman web Downlaod Qt Creator](images/qt-downloads.png)
 
 
-### Install Qt Creator di Ubuntu 14.04
+### A. Install Qt Creator di Ubuntu 14.04
 
 ####  1.  Download
 
@@ -342,7 +342,6 @@ Jalankan Perintah berikut ini mengintall Pustaka OpenGL:
 
 ### Install Qt di Windows
 
-####  Downlaod
 
 Anda bisa mendownload di halaman downlod Qt creator dan memlilih versi dari Aplikasi yang Anda butuhkan baik 64 bit atau 32 bit. Sesuikan dengan sistem operasi yang Anda miliki.
 
@@ -363,7 +362,7 @@ Anda bisa mendownload di halaman downlod Qt creator dan memlilih versi dari Apli
 
     ![](images/install-qt-4.png)
 
-## Program Console Pertama dengan Qt Creator
+## 1.5 Program Console Pertama dengan Qt Creator
 
 1. Untuk mencoba membuat aplikasi dengan Qt Creator maka kita perlu dengan membuat menu file > new Project dan pilih project aplication > Qt console aplication
 

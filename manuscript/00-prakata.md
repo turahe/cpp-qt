@@ -1,4 +1,5 @@
-{mainmatter} 
+# Prakata
+
 Bahasa pemrograman C/C++ merupakan bahasa yang popular didalam
 pengajaran pada computer sains maupun pada kalangan programmer yang
 mengembangkan system software maupun aplikasi.

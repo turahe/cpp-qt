@@ -35,7 +35,8 @@ encmap = {
 \usepackage{wallpaper}
 \usepackage{graphicx}
 \usepackage{fontawesome}
-\usepackage{papertex}
+\usepackage{parskip}
+\setlength{\parindent}{1cm}
 \usepackage{booktabs}
 
 \definecolor{bluekeywords}{rgb}{0.13,0.13,1}

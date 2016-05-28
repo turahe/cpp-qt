@@ -125,7 +125,7 @@ yang lain dengan nama yang sama tidak ter-rename.
 
 ![Gambar Code Editor](images/capture1-2.png)
 
-### UI Designer
+### a) UI Designer
 
 Qt Creator menyajikan dua buah editor visual: Qt Designer dan Qt Quick Designer.
 Qt Designer merupakan sebuah tool untuk mendesain dan membangun aplikasi GUI
@@ -148,13 +148,13 @@ aplikasi.
 
 
 
-### Bahasa yang di dukung
+###  b) Bahasa yang di dukung
 
 Anda dapat menggunakan code editor menulis code dalam Qt C++ atau bahasa
 pemograman QML, javascript bahkan HTML5. Syntax highlighting juga disajikan
 untuk banyak bahasa pemograman yang lain.
 
-### Platform
+### c) Platform
 
 Qt Creator men-support untuk membangun dan menjalankan aplikasi-aplikasi Qt
 untuk desktop environments (Seperti Windows, Linux, FreeBSD dan Mac OS) Selain
@@ -163,7 +163,7 @@ Ketika sebuah aplikasi dibangun untuk mobile device yang bisa mengkoneksi ke
 Personal Computer (PC), maka Qt Creator men-generate sebuah package instalasi,
 menginstall package tersebut pada device, dan meneksekusikannya.
 
-### Tools
+### d) Tools
 
 Qt Creator diintegrasikan dengan kumpulan tool-tool yang bermanfaat dan membantu,
 seperti version control systems dan Qt Simulator. Qt Creator menggunakan
@@ -172,7 +172,7 @@ command line client version control system untuk mengakses repositories
 [Perfoce](https://www.perforce.com), [CVS](www.nongnu.org/cvs/),
 [Mercurial](https://www.mercurial-scm.org)).
 
-### Debuggers
+### e) Debuggers
 
  Qt Creator tidak mempunyai debugger. Qt Creator mempunyai plugin debugger
  yang bekerja sebagai interface antara Qt Creator core dan external native debuggers
@@ -216,7 +216,7 @@ web yang menyatu dengan softwarenya bukan? Ya, teknologi QtWebKit
 digunakan dalam pembangunan Help Documentation ini.
 
 
-### A.Teknologi User Interface QtQuick
+### a) Teknologi User Interface QtQuick
 
 QtQuick merupakan salah satu Teknologi UI dari Qt yang menggunakan 
 QML dan JavaScript sebagai penyusun UI nya.Mirip seperti XAML yang
@@ -241,7 +241,7 @@ Animation, Transition, Visual Effect, Shader Effect dan
 lain – lain merupakan fasilitas yang dapat anda kembangkan 
 saat menggunakan QtQuick sebagai User Interface (UI) aplikasi anda.
 
-### B.Teknologi User Interface QtWidget
+###  b) Teknologi User Interface QtWidget
 
 QtWidget merupakan tradisional User Interface element yang 
 biasanya terdapat dalam dekstop environment. Bila anda pengguna 
@@ -285,7 +285,7 @@ dengan QmainWindow sebagai base class nya, pasti
 secara otomatis akan ditampilan menubar , toolbar, 
 dan statusbar.
 
-### C.Teknologi User Interface QtWebkit
+### c) Teknologi User Interface QtWebkit
 
 Tahukah anda bahwa web programing adalah kegiatan yang paling berkembang di dunia saat ini? Tahukah anda bahwa web koding seperti html, css, js sangat populer dan mudah digunakan dan mulai merambah ke teknologi desktop seperti Html5 dan Css3?
 
@@ -340,7 +340,7 @@ Jalankan Perintah berikut ini mengintall Pustaka OpenGL:
 	sudo apt-get install mesa-common-dev
 
 
-### Install Qt di Windows
+### B. Install Qt di Windows
 
 
 Anda bisa mendownload di halaman downlod Qt creator dan memlilih versi dari Aplikasi yang Anda butuhkan baik 64 bit atau 32 bit. Sesuikan dengan sistem operasi yang Anda miliki.
@@ -394,6 +394,7 @@ T> Simulator atau compiler yang lengkap teridir dari
 
 ![](images/qt-creator.jpg)
 
+## 1.6 Struktur Program C++
 
 Program Bahasa C/C++ tidak mengenal aturan penulisan di kolom/baris tertentu, jadi bisa dimulai dari kolom/baris manapun. Namun demikian, untuk mempermudah pembacaan program dan untukkeperluan dokumentasi, sebaiknya penulisan program di bahasa C/C++ diatur sedemikian rupa sehingga mudah dan enak dibaca.
 Berikut adalah struktur dasar program yang dibuat dengan bahasa C++:
@@ -472,7 +473,6 @@ Kemudian jalankan dengan menekan tombol Run (CTRL + R)
 
 A> {linenos=off}
 A>	Hello world
-A>
 A>	Selamat belajar C/C++ enter my world
 
 Tampilan Hello World diakhiri dengan tanda enter baru kemudian dilanjutkan dengan tulisan berikutnya yaitu Selamat Belajar C/C++ enter my World. Artinya perintah `endl` merupakan perintah untuk memberi tanda enter.

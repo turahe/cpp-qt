@@ -6,3 +6,9 @@ _gh_pages
 # file to ignore
 *.tex
 *.psd
+*.bib
+*.aux
+*.log
+*.pdf
+*.gz
+*.toc

@@ -1,6 +1,6 @@
 # Tipe Data, Identifier, Operator dan Control Statement
 
-## Tipe Data dan Identifier
+## 2.1 Tipe Data dan Identifier
 
 Program adalah kumpulan instruksi yang disusun sedemikian rupa
 sehingga mempunyai urutan nalar yang tepat untuk menyelesaikan
@@ -29,7 +29,7 @@ lokasi memori sebenarnya berupa angka angka heksadesimal[^heks], namun pada baha
 
 [^heks]:
 
-## Tipe Data Bahasa C++
+## 2.2 Tipe Data Bahasa C++
 
 Data yang dapat dikelola oleh program bisa bermacam-macam, seperti misalnya bilangan bulat (*integer*), bilangan dengan desimal (*floating point*), huruf (*character*), dan sebagainya. Oleh sebab itu ketika kita akan memakai suatu lokasi memori tertentu untuk menyimpan nilai diperlukan 2 hal, yaitu `identifier` sebagai pengenal (label) lokasi memori yang digunakan dan `tipe data`, yaitu besaran yang menentukan ukuran memori yang dialokasikan. Sekali suatu identifier sudah dialokasikan dengan tipe data tertentu besarnya ruang yang digunakan tidak bisa diubah. Bahasa C++ mengenal tipe-tipe data berikut ini :
 
@@ -48,7 +48,7 @@ Data yang dapat dikelola oleh program bisa bermacam-macam, seperti misalnya bila
 |float 					|4 bytes 	|1.2e–38 to 3.4e38
 |double 				|8 bytes 	|2.2e–308 to 1.8e308
 
-## Variabel dan Konstanta
+## 2.3 Variabel dan Konstanta
 
 Nilai yang tersimpan di memori dan dikenal melalui identifier tersebut terdiri dari variabel dan konstanta. Perbedaan diantara keduanya adalah bahwa variabel (sesuai dengan namanya) nilainya dapat diubah-ubah pada saat program dieksekusi, sedangkan konstanta nilainya tidak dapat diubah (`konstan = tetap`).
 
@@ -124,7 +124,7 @@ A>	lebar		=12
  - Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat diubah.
  - Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak ke layar.
 
-## Statement
+## 2.4 Statement
 
 Dalam bahasa C++, sebuah statement mengontrol urutan pengerjaan eksekusi, mengevaluasi ekspresi atau tidak mengejakan apapun (*null statement*). Semua statement C++ diakhiri dengan titik koma (;), sebagai contoh misalnya :
 
@@ -137,7 +137,7 @@ I> **CATATAN**
 I>
 I> Operator pengerjaan “=“ akan mengambil nilai apapun yang ada disebelah kanannya kenudian memberikannya kepada apapun yang berada di sebelah kirinya. C++ mengenal juga operator pembanding “==“ yang mempunyai arti berbeda dengan operator sama dengan “=”, akan dibahas lebih detail pada sub bab berikut ini.
 
-## Operator dan Ekspresi
+## 2.5 Operator dan Ekspresi
 
 Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Operator mempunyai beberapa kategori, antara lain : Aritmatika, Pengerjaan, Hubungan dan Logika. Operator Aritmatika adalah operator yang digunakan untuk melakukan operasi aritmatika seperti misalnya penjumlahan, pengurangan, perkalian dan pembagian. Simbol untuk operator aritmatika ini adalah : +, -, *, / dan %. Berikut ini adalah operator-operator yang dikenal pada bahasa pemrograman C++.
 
@@ -180,7 +180,7 @@ T> **TIPS**
 T>
 T> Operator “(“ dan “)” dapat dipakai untuk merubah jenjang suatu ekspresi menjadi jenjang tertinggi, sehingga akan diproses terlebih dahulu.
 
-### Operator Unary
+### a) Operator Unary
 
 Operator unary adalah operator yang hanya menggunakan sebuah operand saja, operator unary yang dipakai pada kebanyakan bahasa pemrograman adalah operator unary minus (-). Operator unary ditulis sebelum operand, operator unary “-“ berbeda dengan operator aritmatika “-“ yang membutuhkan dua operand. Dalam bahasa C++ disediakan bermacam-macam operator unary.
 
@@ -192,11 +192,11 @@ Operator unary adalah operator yang hanya menggunakan sebuah operand saja, opera
 |! 			|Unary not
 |~ 			|Operator unary komplemen satu (bitwise NOT)
 
-### Operator Unary Minus
+### b) Operator Unary Minus
 
 Operator ini dipakai untuk memberi nilai minus suatu nilai numerik (bukan pengurangan). Misalnya ungkapan : `A + - B * C` akan diartikan `A + (-B) * C`. Operator unary “-“ ditulis di depan operand.
 
-### Operator Unary ++ dan --
+### c) Operator Unary ++ dan --
 
 Operator unary “++“ dan “--“ merupakan operator khusus yang ada di bahasa C. Operator “++“ akan menambahkan nilai 1 ke pengenal yang menggunakannya sedangkan operator “--“ akan mengurangi dengan nilai numerik 1. Operator unary tersebut jika dituliskan sebelum operand disebut _pre increment_ sedangkan jika ditulis setelah operand disebut _post increment_. Perhatikan perbedaannya pada contoh dibawah ini :
 
@@ -210,7 +210,7 @@ Operator unary “++“ dan “--“ merupakan operator khusus yang ada di bahas
 
 
 
-### Operator Pengerjaan
+### d) Operator Pengerjaan
 
 Operator pengerjaan atau disebut assignment operator, digunakan untuk menempatkan nilai dari suatu ekspresi ke suatu pengenal. Operator yang umum dipakai pada bahasa pemrograman adalah operator pengerjaan “=”. Selain operator pengerjaan “=”, bahasa C++ menyediakan beberapa operator pengerjaan yang lain seperti tabel di bawah ini.
 
@@ -241,7 +241,7 @@ Dari contoh di atas terlihat bahwa operator pengerjaan mempunyai jenjang yang le
 
 Dalam hal ini yang dikerjakan adalah a dikalikan b terlebih dahulu meudian hasilnya diberikan kepada variabel y dan hasil ekspresi y = a * b diberikan kepada variabel x. sehingga misalnya a bernilai 8 dan b bernilai 7, maka baik variabel x maupun y keduanya bernilai 15.
 
-### Operator Hubungan
+### e) Operator Hubungan
 
 Operator hubungan (*relational operator*) digunakan untuk menunjukkan hubungan antara dua buah operand, hasil dari operator ini adalah True atau False.
 
@@ -267,7 +267,7 @@ Berikut ini contoh hasil ekspresi jika a bernilai 5, b bernilai 7 dan c bernilai
 |c != ‘A’ 			|Benar 	|1
 |c <= ‘z’ 			|Benar 	|1
 
-### Operator Logika
+### f) Operator Logika
 
 Jika operator hubungan membandingkan hubungan antara dua buah operand, maka operator logika (*logical operator*) digunakan untuk menggabungkan logika hasil dari operator-operator hubungan. Operator logika menggabungkan __dua buah__ nilai logika. Nilai logika adalah nilai benar (True) atau salah (False).
 
@@ -297,7 +297,7 @@ Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari langkah-lang
 3. Bagian yang paling akhir dikerjakan adalah operator “||”, sehingga hasil akhir logika bernilai logika benar atau True.
 
 
-## Control Statement
+## 2.6 Control Statement
 
 Aliran program tidak selalu berjalan secara sekuensial berurutan dari atas ke bawah, kadang-kadang diperlukan **percabangan** atau **perulangan** atau kombinasi dari keduanya. Semua bahasa pemrograman mempunyai struktur kendali (*control statement*) demikian juga bahasa C++. Struktur kendali merupakan pengatur aliran program, mempunyai rangkaian perintah yang harus ditulis untuk memenuhi beberapa keadaan, yaitu:
 
@@ -305,11 +305,11 @@ Aliran program tidak selalu berjalan secara sekuensial berurutan dari atas ke ba
 - Melanjutkan sebuah pernyataan bila kondisi terpenuhi.
 - Memilih sebuah pilihan dari beberapa alternatif bila kondisi terpenuhi.
 
-### Percabangan
+###  A. Percabangan
 
 Adalah perintah yang memungkinkan pemilihan atas perintah yang akan dijalankan sesuai dengan kondisi tertentu. Ada tiga macam perintah percabangan dalam C++, yaitu `if`, `if … else`, dan `switch`. Dengan percabangan, suatu baris program akan dikerjakan jika suatu kondisi dipenuhi (benar) atau tidak (else), jadi tidak semua baris program akan dieksekusi.
 
-#### Percabangan dengan if
+#### 1. Percabangan dengan if
 
 Sintaks penulisannya sebagai berikut:
 
@@ -324,7 +324,7 @@ Flowchart untuk statment ini adalah :
 
 ![](images/capture2-4.png)
 
-#### Percabangan dengan if .. else
+#### 2. Percabangan dengan if .. else
 
 Sintaks penulisannya sebagai berikut :
 
@@ -349,13 +349,13 @@ I> `if()` lagi. Bentuk `if()` dalam `if()` ini sering disebut
 I> dengan `nested if` (if bersarang).
 
 
-![]()
+![](images/capture2-2.png)
 
 Flowchart untuk statment if bersarang ini adalah :
 
+![](images/capture2-1.png)
 
-
-#### Percabangan dengan switch
+#### 3. Percabangan dengan switch
 
 Perintah ini digunakan sebagai alternatif pengganti dari statment `if … else` dengan `else` lebih dari satu. Dengan perintah ini percabangan dapat diarahkan pada beberapa alternatif pilihan berdasarkan nilai ekspresi. Berbeda dengan `if`, `switch` tidak dapat medeteksi *operator pembanding* (>, <, dsb.), karena ekspresi degan operator ini menghasilkan nilai *boolean*, melainkan hanya dapat mengalihkan alur program ke suatu nilai yang sama, pada statement ini ekspresi yang diminta harus menghasilkan bilangan *bulat*.
 
@@ -423,11 +423,11 @@ A>	sabtu
  - Pada program di atas variabel `hari` dideklarasikan bertipe `int` dan diinisialisasi dengan nilai `6`.
  - Kemudian pada bagian ekspresi di dalam `switch` di isi variabel `hari`, hasil ekspresi tersebut di evaluasi, karena menghasilkan nilai 6, maka yang dicetak ke layar adalah “**Sabtu**”.
 
-### Perulangan
+### B. Perulangan
 
 Perulangan digunakan untuk mengulang suatu perintah sebanyak yang diinginkan tanpa harus menulis ulang. C++ mengenal tiga jenis perintah perulangan, yaitu `for`, `while` dan `do ..while`.
 
-#### Perulangan dengan for
+#### 1. Perulangan dengan for
 
 Digunakan untuk mengulangi perintah dengan jumlah perulangan yang sudah diketahui. Pada statement for ini perlu dituliskan suatu kondisi untuk diuji yang berupa ekspresi boolean, nilai awal dan perintah yang dipakai untuk penghitung (counter). Nilai variabel penghitung akan secara otomatis bertambah atau berkurang tiap kali sebuah perulangan dilaksanakan tergantung perintah yang ditulis pada argumen ini.
 
@@ -444,7 +444,7 @@ Bentuk umum penulisannya sebagai berikut :
 
 ![](images/capture2-8.png)
 
-#### Perulangan dengan while
+#### 2. Perulangan dengan while
 
 Perintah ini digunakan untuk mengulangi suatu perintah sampai kondisi tertentu. Perulangan akan terus berjalan selama kondisi masih bernilai benar.
 
@@ -460,7 +460,7 @@ Sintaks penulisannya sebagai berikut :
 
 ![](images/capture2-9.png)
 
-#### Perulangan dengan do … while
+#### 3. Perulangan dengan do … while
 
 Proses perulangan akan berjalan jika kondisi yang diperiksa di `while` masih bernilai benar dan perulangan akan dihentikan jika kondisinya sudah bernilai salah.
 
@@ -479,7 +479,7 @@ Sintaks penulisannya sebagai berikut :
 
 Perbedaan antara perintah `while` dengan `do … while` adalah terletak dari kondisi yang diperiksa. Pada perintah `while`, kondisi yang diperiksa terletak diawal perulangan, sehingga sebelum masuk ke dalam perulangan `while` kondisi harus bernilai benar. Sedangkan pada perintah `do … while`, kondisi diperiksa di akhir perulangan. Ini berarti bahwa paling sedikit sebuah perulangan akan dilakukan oleh perintah `do … while`, karena untuk masuk ke dalam perulangan tidak ada kondisi yang harus dipenuhi.
 
-#### Kata kunci continue dan break
+#### 4. Kata kunci continue dan break
 
 Kata kunci `break` digunakan untuk keluar dari suatu blok programn sebelum ekspresi _boloean_ yang ada pada statement tersebut menghentikan, sedangkan kata kunci `continue` dugunakan untuk mengabaikan baris perintah suatu perintah di bawahnya dan melanjutkan ke perulangan selanjutnya.
 

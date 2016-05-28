@@ -1,0 +1,129 @@
+\documentclass[11pt,b5paper,oneside,titlepage]{book}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{makeidx}
+\usepackage[english, main=bahasa]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{libertine}
+\usepackage[pdfpagelabels]{hyperref}
+\hypersetup{
+	pdftitle=Koding C++: Koding C++ dengan Qt Creator ,
+	pdfauthor=Nur Wachid,
+	pdfsubject=C++ Qt Creator,
+	pdfkeywords=C++ Qt Creator,
+	bookmarksnumbered=true,     
+	bookmarksopen=true,         
+	bookmarksopenlevel=1,       
+	colorlinks=true,            
+	pdfstartview=Fit,           
+	pdfpagemode=UseOutlines,    % this is the option you were lookin for
+	pdfpagelayout=TwoPageRight
+}
+\usepackage{parskip}
+\setlength{\parindent}{1cm}
+\usepackage{hypcap}
+\usepackage{sidecap}
+\usepackage{booktabs}
+\usepackage[fleqn,tbtags]{mathtools}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage[overlay]{textpos}
+\usepackage{wallpaper}
+\usepackage{graphicx}
+
+% defiisi warna 
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.9,0,0}
+
+
+% paket lisiting digunakan untuk membuat sintaks highliter pada source kode yang di sisipkan
+\usepackage{listings}
+\lstset{breaklines=true,
+	showstringspaces=false,
+	commentstyle=\color{greencomments},
+	keywordstyle=\color{bluekeywords},
+	stringstyle=\color{redstrings},
+	basicstyle=\ttfamily
+}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+	\begin{textblock*}{297mm}(0mm,0mm)
+		\ThisTileWallPaper{\paperwidth}{\paperheight}{../manuscript/images/cover}
+	\end{textblock*}
+	\cleardoublepage
+	\frontmatter
+	\author{Nur Wachid}
+	\title{C Sharp}
+	\maketitle
+	\begingroup
+	\footnotesize
+	\parindent 0pt
+	\parskip \baselineskip
+	%% Copyright Page
+	
+	
+	\textcopyright{} 2016 Nur Wachid \\
+	All rights reserved.
+	
+	Buku ini boleh digandakan atau didistribusikan dengan
+	seizin penulis atau mencantumkan \emph{credit} kepada
+	website penulis atau email penulis. Tetapi pendistribusian
+	buku ini tidak boleh untuk kepentingan komersial.
+	
+	Penulis: Nur Wachid \\
+	Website: \url{http://turahe.github.io}  \\
+	Email: \texttt{wachid  (at) outlook dot com}
+	
+	\begin{center}
+		\begin{tabular}{ll}
+			Edisi pertama:  & April 2016 \\
+		\end{tabular}
+	\end{center}
+	\newpage
+	\input{00-prakata}
+	\endgroup
+	\tableofcontents
+	\mainmatter
+	
+	\part{Dasar}
+	\chapter{Mukadimah}\label{mukadimah}
+	\input{01-pengenalan}
+	
+	\chapter{Tipe Data, Identifier, Operator dan Control Statement}\label{tipe-data-identifier-operator-dan-control-statement}
+	\input{02-tipedata}
+	
+	\chapter{Array dan String}\label{array-dan-string}
+	\input{03-array-string}
+	
+	\chapter{Fungsi}
+	\input{04-fuction}
+	
+	\chapter{Pointer dan References}\label{pointer-dan-references}
+	\input{05-pointer-referensi}
+	\part{Objek Oriented Programming (OOP)}
+	\chapter{Class dan Object}\label{class-dan-object}
+	\input{06-class-object}
+	
+	\chapter{Inheritance}\label{inheritance}
+	\input{07-penurunan}
+	
+	\chapter{Operator Types dan Operator
+		Overloading}\label{operator-types-dan-operator-overloading}
+	\input{08-operator}
+	
+	\part{Interface}
+	\part{Widget}
+	\part{Library}
+	
+	\backmatter
+	
+	
+	\printindex
+\end{document}

@@ -4,7 +4,6 @@ _site
 _gh_pages
 
 # file to ignore
-*.tex
 *.psd
 *.bib
 *.aux

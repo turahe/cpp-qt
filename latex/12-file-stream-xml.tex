@@ -1,4 +1,3 @@
-\section{File, Stream, dan XML}\label{file-stream-dan-xml}
 
 \textbf{Agenda}
 
@@ -20,7 +19,7 @@ Adapun materi yang akan dibahas pada HOL ini adalah:
   QXMLStream Reader untuk membaca dokumen XML
 \end{itemize}
 
-\subsection{Bekerja dengan Paths}\label{bekerja-dengan-paths}
+\section{Bekerja dengan Paths}\label{bekerja-dengan-paths}
 
 QDir digunakan untuk bekerja dengan paths dan drives pada aplikasi Qt.
 QDir memiliki beberapa static method yang memudahkan anda bekerja dengan
@@ -68,7 +67,7 @@ sering digunakan yaitu:
 Program dibawah ini akan menunjukan cara penggunaan QDir untuk mengambil
 informasi direktori yang ada di komputer anda.
 
-Contoh 1. Menampilkan daftar drives dari root directories.
+\subsubsection*{Contoh 1. Menampilkan daftar drives dari root directories.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -76,7 +75,7 @@ Contoh 1. Menampilkan daftar drives dari root directories.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 1, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QDir>
@@ -94,7 +93,7 @@ qDebug() << " " << rootDirs.fileName() ;
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -161,7 +160,7 @@ filter.
   case sensitive.
 \end{itemize}
 
-\subsection{Bekerja dengan Files}\label{bekerja-dengan-files}
+\section{Bekerja dengan Files}\label{bekerja-dengan-files}
 
 Anda dapat menggunakan QDir untuk mengambil informasi file dan QFileInfo
 untuk mengambil informasi file yang lebih lengkap, untuk proses
@@ -171,7 +170,7 @@ memodifikasi file anda harus menggunakan class QFile.
 Agar lebih jelas bagaimana cara menggunakan QFile untuk membuka file,
 anda dapat mengerjakan Contoh dibawah ini.
 
-Contoh 2. Memeriksa apakah file ada dan bisa diakses.
+\subsubsection*{Contoh 2. Memeriksa apakah file ada dan bisa diakses.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -179,7 +178,7 @@ Contoh 2. Memeriksa apakah file ada dan bisa diakses.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 2, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QFile>
 #include <QDebug>
@@ -202,7 +201,7 @@ qDebug("File berhasil dibuka !");
 file.close();
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -227,7 +226,7 @@ return a.exec();
   dibuka maka akan keluar pesan tidak dapat membuka file.
 \end{itemize}
 
-\subsection{Bekerja dengan Stream}\label{bekerja-dengan-stream}
+\section{Bekerja dengan Stream}\label{bekerja-dengan-stream}
 
 Setelah anda membuka file akan lebih mudah untuk mengakses file tersebut
 menggunakan stream class. Qt hadir dengan 2 macam stream class, satu
@@ -237,7 +236,7 @@ stream untuk mengakses file anda dapat menggunakan operator
 \texttt{\textgreater{}\textgreater{}} untuk menulis dan membaca data
 dari file.
 
-\subsubsection{Text Stream}\label{text-stream}
+\subsection{Text Stream}\label{text-stream}
 
 Untuk membuat text stream pada file, buat objek QFile dan buka file
 seperti biasa, disarankan jika anda menggunakan parameter
@@ -245,7 +244,7 @@ seperti biasa, disarankan jika anda menggunakan parameter
 Agar lebih jelas bagaimana penggunaan stream buatlah contoh program pada
 Contoh 3 dibawah ini.
 
-Contoh 3 Menggunakan Stream untuk membaca file.
+\subsubsection*{Contoh 3 Menggunakan Stream untuk membaca file.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -253,7 +252,7 @@ Contoh 3 Menggunakan Stream untuk membaca file.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 3, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QFile>
@@ -284,7 +283,7 @@ qDebug() << line;
 file.close();
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Buat file teks pada alamat tertentu (pada contoh diatas di drive
   \texttt{D:\textbackslash{}sample.txt}), masukan sembarang teks kedalam
@@ -310,7 +309,7 @@ return a.exec();
   apakah sudah sampai akhir file.
 \end{itemize}
 
-\subsubsection{Data Stream}\label{data-stream}
+\subsection{Data Stream}\label{data-stream}
 
 Pada beberapa kasus tertentu mungkin anda tidak dapat menggunakan file
 text untuk menyimpan data. Misalnya anda harus bekerja dengan file yang
@@ -324,7 +323,7 @@ Untuk membaca file biner anda dapat menggunakan objek QDataStream.
 Program dibawah ini menunjukan penggunaan objek QDataStream untuk
 mengakses file biner.
 
-Contoh 4. Menggunakan Data Stream.
+\subsubsection*{Contoh 4. Menggunakan Data Stream.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -335,7 +334,7 @@ Contoh 4. Menggunakan Data Stream.
   Buka file Contoh 4.pro untuk menambahkan library GUI karena pada
   controh program ini digunakan class QColor.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #-------------------------------------------------
 #
 # Project created by QtCreator 2011-01-03T19:58:33
@@ -348,11 +347,11 @@ CONFIG += console
 CONFIG -= app_bundle
 TEMPLATE = app
 SOURCES += main.cpp
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian tambahkan kode berikut pada file main.cpp.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QDataStream>
@@ -422,7 +421,7 @@ saveList();
 loadList();
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -452,14 +451,14 @@ return a.exec();
   list.
 \end{itemize}
 
-\subsection{XML}\label{xml}
+\section{XML}\label{xml}
 
 XML adalah meta-language yang dapat digunakan untuk menyimpan data
 terstruktur berupa string atau teks file. Komponen dasar penyusun
 dokumen XML adalah tag, attribute, dan teks. Contoh dokumen XML yang
 sederhana ditunjukan pada listing dibawah ini.
 
-\{lang=``xml''\} Some text
+ Some text
 
 Pada dokumen XML diatas document tag mengandung author tag dan teks .
 Tag document diawali dengan dan diakhiri dengan closing tag . Kedua tag
@@ -474,7 +473,7 @@ QStreamReader, DOM, dan SAX.
 Untuk menggunakan library XML pada Qt anda harus menambahkan library XML
 pada Qt project file.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #-------------------------------------------------
 #
 # Project created by QtCreator 2011-01-03T21:43:04
@@ -488,22 +487,22 @@ CONFIG += console
 CONFIG -= app_bundle
 TEMPLATE = app
 SOURCES += main.cpp
-\end{verbatim}
+\end{lstlisting}
 
-\subsubsection{DOM}\label{dom}
+\section{DOM}\label{dom}
 
 DOM (Document Object Model) bekerja dengan cara merepresentasikan semua
 dokumen XML menjadi bentuk tree yang mempunyai node dan menyimpanya
 dalam memory.
 
-\subsubsection{Membuat File XML}\label{membuat-file-xml}
+\subsection{Membuat File XML}\label{membuat-file-xml}
 
 Pertama kita akan mulai dengan membuat file XML menggunakan DOM, adapun
 tahapan yang akan kita kerjakan adalah membuat node, menyambungkan node,
 dan terakhir menulis dokumen XML. Agar lebih jelas mari kita coba buat
 program dibawah ini.
 
-Contoh 5. Membuat Nodes untuk membuat simple XML Document.
+\subsubsection*{Contoh 5. Membuat Nodes untuk membuat simple XML Document.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -511,7 +510,7 @@ Contoh 5. Membuat Nodes untuk membuat simple XML Document.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 5, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QFile>
@@ -547,7 +546,7 @@ qDebug() << "File XML berhasil dibuat ..";
 file.close();
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -555,7 +554,7 @@ return a.exec();
 
 Hasil dari file XML ``simple.xml'' yang berhasil dibuat adalah :
 
-\{lang=``xml''\} 22002321 3.5 \textless{}/Mahasisw
+ 22002321 3.5 \textless{}/Mahasisw
 
 \textbf{Keterangan:}
 
@@ -579,7 +578,7 @@ Hasil dari file XML ``simple.xml'' yang berhasil dibuat adalah :
   contoh program diatas dokumen XML disimpan dalam file ``simple.xml''
 \end{itemize}
 
-\subsubsection{Membaca XML file}\label{membaca-xml-file}
+\subsection{Membaca XML file}\label{membaca-xml-file}
 
 Pada contoh sebelumnya anda telah bisa membuat dokumen XML dengan DOM,
 sekarang kita akan mencoba membaca dokumen XML yang sebelumnya sudah
@@ -591,7 +590,7 @@ elemen dan teks yang terkandung dalam dokumen. Agar dokumen XML pada
 file dapat diload kedalam QDomDocument maka dokumen XML tersebut harus
 valid.
 
-Contoh 6. Membaca DOM dari dokumen XML.
+\subsubsection*{Contoh 6. Membaca DOM dari dokumen XML.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -610,7 +609,7 @@ Contoh 6. Membaca DOM dari dokumen XML.
 \item
   Kemudian buka file main.cp, tulis kode untuk membaca file XML berikut:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QFile>
 #include <QTextStream>
@@ -654,7 +653,7 @@ node = node.nextSibling();
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -688,14 +687,14 @@ return a.exec();
   Untuk berpindah ke node selanjutnya gunakan method nextSibling().
 \end{itemize}
 
-\subsubsection{Memodifikasi File XML}\label{memodifikasi-file-xml}
+\subsection{Memodifikasi File XML}\label{memodifikasi-file-xml}
 
 Pada topik sebelumnya kita sudah membahas bagaimana cara menulis dan
 membaca data dari dokumen XML. Pada topik kali ini akan dibahas
 bagaimana cara memodifikasi dokumen XML yang sudah anda load kedalam
 objek QDomDocument.
 
-Contoh 7. Modifikasi data dokumen XML.
+\subsubsection*{Contoh 7. Modifikasi data dokumen XML.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -720,7 +719,7 @@ Contoh 7. Modifikasi data dokumen XML.
   modifikasi file xml yang sudah kita buat sebelumnya.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
         #include <QtCore/QCoreApplication>
         #include <QDebug>
         #include <QFile>
@@ -781,7 +780,7 @@ Contoh 7. Modifikasi data dokumen XML.
         fileModif.close();
         return a.exec();
         }
-\end{verbatim}
+\end{lstlisting}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -829,7 +828,7 @@ Kurniawan\textless{}/Nam \textless{}/Mahasisw 23002333 3.6
   yang sudah dimodifikasi kedalam file simplemodif.xml.
 \end{itemize}
 
-\subsection{QXMLStream Reader}\label{qxmlstream-reader}
+\section{QXMLStream Reader}\label{qxmlstream-reader}
 
 Selain menggunakan DOM untuk membaca dokumen XML, anda juga dapat
 menggunakan objek QXMLStreamReader. QXMLStreamReader adalah class parser
@@ -839,7 +838,7 @@ QXMLStreamReader juga cocok digunakan untuk membaca file yang berukuran
 besar yang tidak cocok jika disimpan di memory. Beberapa token yang
 digunakan adalah sebagai berikut:
 
-\begin{verbatim}
+\begin{lstlisting}[language=xml]
 Token Type Example Getter Functions
 StartDocument N/A isStandaloneDocument()
 EndDocument N/A isStandaloneDocument()
@@ -868,12 +867,12 @@ Misal anda memiliki dokumen XML sebagai berikut
 <doc>
 <quote>Einmal ist keinmal</quote>
 </doc>
-\end{verbatim}
+\end{lstlisting}
 
 Setiap anda menggunakan method readNext() maka akan dibaca satu token.
 Untuk kode diatas kita dapat membaca pertoken.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 StartDocument
 StartElement (name() == "doc")
 StartElement (name() == "quote")
@@ -881,13 +880,13 @@ Characters (text() == "Einmal ist keinmal")
 EndElement (name() == "quote")
 EndElement (name() == "doc")
 EndDocument
-\end{verbatim}
+\end{lstlisting}
 
 Setelah memanggil method readNext(), anda dapat mengecek token yang
 sedang aktif dengan menggunakan isStartElement(), isCharacter(), atau
 menggunakan fungsi yang mirip seperti state().
 
-Contoh 8. Menggunakan QXMLStream Reader untuk membaca XML.
+\subsubsection*{Contoh 8. Menggunakan QXMLStream Reader untuk membaca XML.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -899,8 +898,7 @@ Contoh 8. Menggunakan QXMLStream Reader untuk membaca XML.
   Buat file simple.xml dan buat dokumen XML sebagai berikut
 \end{enumerate}
 
-\{lang=``xml''\} \textless{}Mahasisw 22002321 3.5 \textless{}/Mahasisw
-\textless{}Mahasisw 23002333 3.6 \textless{}/Mahasisw
+
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -909,7 +907,7 @@ Contoh 8. Menggunakan QXMLStream Reader untuk membaca XML.
   Kemudian ketikan kode berikut pada main.cpp untuk membaca data dari
   dokumen XML.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QFile>
@@ -941,7 +939,7 @@ qDebug() << "Teks : " << reader.readElementText();
 file.close();
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Jalankan aplikasi tersebut, maka akan ditampikan output sebagai
   berikut.
@@ -966,7 +964,7 @@ return a.exec();
   tersebut untuk ditampilkan.
 \end{itemize}
 
-Contoh 9. Membuat dokumen XML dengan QXMLStreamWriter.
+\subsubsection*{Contoh 9. Membuat dokumen XML dengan QXMLStreamWriter.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -974,7 +972,7 @@ Contoh 9. Membuat dokumen XML dengan QXMLStreamWriter.
   Buat aplikasi console dengan nama Contoh 9, kemudian tulis kode
   berikut
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QFile>
@@ -1003,7 +1001,7 @@ file.close();
 qDebug() << "File sudah berhasil dibuat !";
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Jalankan program diatas untuk menggenerate dokumen XML dengan nama
   simple.xml.
@@ -1011,15 +1009,15 @@ return a.exec();
   Isi dari dokumen XML yang barusan anda buat adalah sebagai berikut.
 \end{enumerate}
 
-\{lang=``xml''\}
 
-\begin{verbatim}
+
+\begin{lstlisting}[language=xml]
     <Books>
     <Book>
     <Author name="Erick Kurniawan" Title="ASP.NET 3.5"/>
     </Book>
     </Books>
-\end{verbatim}
+\end{lstlisting}
 
 \textbf{Keterangan:}
 

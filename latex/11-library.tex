@@ -1,6 +1,6 @@
-\section{Qt Library}\label{qt-library}
 
-Agenda
+
+\textbf{Agenda}
 
 Pada chapter ini kita akan membahas tentang beberapa class khusus yang
 ada pada Qt Core Module yang dapat digunakan untuk melengkapi library
@@ -17,7 +17,7 @@ yang akan kita bahas pada chapter ini adalah.
   Collection dan Iterator (QList, QStringList, QStack, QQueue, dan QMap)
 \end{itemize}
 
-\subsection{Qt Library}\label{qt-library-1}
+\section{Qt Library}\label{qt-library-1}
 
 Qt SDK menyediakan beberapa class library yang dapat anda gunakan untuk
 mempercepat pembuatan program, misalnya library untuk membuat GUI
@@ -45,7 +45,7 @@ Qt Core Module sendiri dapat berisi :
   Class Object dan QCoreApplication (base class dari QApplication).
 \end{itemize}
 
-\subsection{Menurunkan objek dari class
+\section{Menurunkan objek dari class
 QObject}\label{menurunkan-objek-dari-class-qobject}
 
 QObject class merupakan base class dari sebagian class yang ada di Qt
@@ -60,7 +60,7 @@ class QObject seperti QString dan QColor.
 Gambar dibawah ini menunjukan contoh beberapa class yang diturunkan dari
 QObject.
 
-\subsection{Automatic Memory Management dengan
+\section{Automatic Memory Management dengan
 QObject}\label{automatic-memory-management-dengan-qobject}
 
 Dengan menurunkan class dari QObject anda dapat melakukan automatic
@@ -69,7 +69,7 @@ leak dapat dihindari. Pada contoh dibawah ini kita akan membuat dua
 program yang berbeda, program pertama tidak menggunakan QObject dan
 program kedua menggunakan QObject.
 
-Contoh 1 Alokasi memory dinamis tanpa QObject.
+\subsubsection*{Contoh 1 Alokasi memory dinamis tanpa QObject.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -77,7 +77,7 @@ Contoh 1 Alokasi memory dinamis tanpa QObject.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 1, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -131,7 +131,7 @@ delete objMhs2;
 delete objMhs3;
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -151,7 +151,7 @@ return a.exec();
   banyak objek.
 \end{itemize}
 
-Contoh 2. Alokasi memory dinamis dengan QObject.
+\subsubsection*{Contoh 2. Alokasi memory dinamis dengan QObject.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -159,7 +159,7 @@ Contoh 2. Alokasi memory dinamis dengan QObject.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 2, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QObject>
 #include <QDebug>
@@ -206,7 +206,7 @@ qDebug() << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar";
 qDebug() << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar";
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -236,7 +236,7 @@ return a.exec();
 QObject akan disimpan pada stack memory sebagai parent, ketika QObject
 di hapus semua child dari QObject akan ikut dihapus juga.
 
-\subsection{Menggunakan Qt String}\label{menggunakan-qt-string}
+\section{Menggunakan Qt String}\label{menggunakan-qt-string}
 
 Salah satu langkah yang harus dilakukan jika anda mengembangkan aplikasi
 berbasis Qt adalah ganti semua STL (standar class library) C++ dengan
@@ -253,7 +253,7 @@ platform yang memudahkan membuat aplikasi dalam bahasa yang berbeda.
 Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada
 contoh program dibawah ini.
 
-Contoh 3. Cek apakah nilai QString Null atau Empty
+\subsubsection*{Contoh 3. Cek apakah nilai QString Null atau Empty}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -261,7 +261,7 @@ Contoh 3. Cek apakah nilai QString Null atau Empty
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 3, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -292,7 +292,7 @@ else
 qDebug() << "testing not null";
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -312,7 +312,7 @@ return a.exec();
   Method isEmpty() dapat digunakan untuk memeriksa apakah string kosong.
 \end{itemize}
 
-Contoh 4. Menggunakan Fungsi Left, Mid, Right.
+\subsubsection*{Contoh 4. Menggunakan Fungsi Left, Mid, Right.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -320,7 +320,7 @@ Contoh 4. Menggunakan Fungsi Left, Mid, Right.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 4, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -336,7 +336,7 @@ QString midName = nama.mid(6,5);
 qDebug() << "midName : " << midName;
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -357,7 +357,7 @@ return a.exec();
   tengah.
 \end{itemize}
 
-Contoh 5. Menggabungkan String.
+\subsubsection*{Contoh 5. Menggabungkan String.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -365,7 +365,7 @@ Contoh 5. Menggabungkan String.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 5, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -381,7 +381,7 @@ nama.insert(19,",S.Kom");
 qDebug() << nama;
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -402,7 +402,7 @@ return a.exec();
   index tertentu pada string.
 \end{itemize}
 
-Contoh 6. Membalik String.
+\subsubsection*{Contoh 6. Membalik String.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -410,7 +410,7 @@ Contoh 6. Membalik String.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 6, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -425,7 +425,7 @@ balik+=nama[i];
 qDebug() << "Balik : " << balik;
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -441,17 +441,22 @@ return a.exec();
   nama{[}i{]} akan menghasilkan karakter pada index ke-i.
 \end{itemize}
 
-T\textgreater{} TIPS T\textgreater{} T\textgreater{} Anda dapat
-menggunakan method toStdString() dan fromStdString() untuk mengkonversi
-dari string ke QString dan sebaliknya.
+\begin{quotation}
+	TIPS 
+	
+	Anda dapat
+	menggunakan method\texttt{ toStdString()} dan \texttt{fromStdString()} untuk mengkonversi
+	dari string ke QString dan sebaliknya.
+\end{quotation}
+ 
 
-\subsection{Collection dan Iterator}\label{collection-dan-iterator}
+\section{Collection dan Iterator}\label{collection-dan-iterator}
 
 Qt Core Module juga memiliki class-class collection seperti : list,
 stack, queue, map, dan hash list. Untuk mengakses data pada object
 collection anda dapat menggunakan Iterator.
 
-\subsubsection{Menggunakan QList}\label{menggunakan-qlist}
+\subsection{Menggunakan QList}\label{menggunakan-qlist}
 
 Class QList dapat digunakan untuk membuat type safe object list untuk
 menyimpan data collection. Untuk mempermudah mengakses semua data pada
@@ -464,7 +469,7 @@ compile time. Misal jika anda medeklarasikan QList dengan tipe data
 QString (QList) maka anda tidak dapat memasukan nilai bertipe int
 kedalam list tersebut.
 
-Contoh 7 Menggunakan QList.
+\subsubsection*{Contoh 7 Menggunakan QList.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -472,7 +477,7 @@ Contoh 7 Menggunakan QList.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 7, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -490,7 +495,7 @@ qDebug() << nama;
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -513,7 +518,7 @@ juga dapat menggunakan iterator. Pada program dibawah ini ditunjukan
 penggunaan iterator dengan QListIterator untuk mengakses data yang ada
 pada QList.
 
-Contoh 8. Menggunakan object Iterator.
+\subsubsection*{Contoh 8. Menggunakan object Iterator.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -521,7 +526,7 @@ Contoh 8. Menggunakan object Iterator.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 8, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -543,7 +548,7 @@ qDebug() << (*stlIter);
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -571,7 +576,7 @@ memodifikasi data di list, caranya yaitu dengan menggunakan objek
 QMutableListIterator. Contoh penggunaan QMutableListIterator dapat
 dilihat pada kode dibawah ini.
 
-Contoh 9. Menggunakan Iterator untuk memodifikasi data di list.
+\subsubsection*{Contoh 9. Menggunakan Iterator untuk memodifikasi data di list.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -579,7 +584,7 @@ Contoh 9. Menggunakan Iterator untuk memodifikasi data di list.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 9, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -601,7 +606,7 @@ qDebug() << nama;
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -624,7 +629,7 @@ return a.exec();
   sudah berubah isinya.
 \end{itemize}
 
-\subsubsection{Menambahkan Data pada
+\section{Menambahkan Data pada
 List}\label{menambahkan-data-pada-list}
 
 Ada beberapa cara yang dapat digunakan untuk menambahkan data ke list.
@@ -632,7 +637,7 @@ Anda dapat menambahkan data diawal, diakhir, atau ditengah list.
 Beberapa cara penulisan kode untuk menambahkan list adalah sebagai
 berikut.
 
-Contoh 10. Beberapa cara menambahkan data ke list
+\subsubsection*{Contoh 10. Beberapa cara menambahkan data ke list}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -640,7 +645,7 @@ Contoh 10. Beberapa cara menambahkan data ke list
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 10, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -660,7 +665,7 @@ qDebug() << nama;
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -680,13 +685,13 @@ return a.exec();
   list.
 \end{itemize}
 
-\subsection{Tipe List yang Lain}\label{tipe-list-yang-lain}
+\section{Tipe List yang Lain}\label{tipe-list-yang-lain}
 
 Selain menggunakan QList anda juga dapat menggunakan objek collection
 yang lain seperti QVector dan QLinkedList. Perbandingan performa dari
 ketiga jenis collection diatas dapat dilihat pada table berikut.
 
-\subsection{Special List}\label{special-list}
+\section{Special List}\label{special-list}
 
 Selain untuk tipe data yang umum Qt juga menyediakan collection untuk
 tipe data khusus seperti QStringList.
@@ -694,7 +699,7 @@ tipe data khusus seperti QStringList.
 Class QStringList diturunkan dari QList dan mempunyai banyak tambahan
 fungsi yang berguna untuk memanipulasi data di dalam QStringList.
 
-Contoh 11. Menggunakan QStringList
+\subsubsection*{Contoh 11. Menggunakan QStringList}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -702,7 +707,7 @@ Contoh 11. Menggunakan QStringList
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 11, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QStringList>
@@ -726,7 +731,7 @@ qDebug() << kota;
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -756,14 +761,14 @@ return a.exec();
   gabung, pemecahan string berdasarkan karakter `,'
 \end{itemize}
 
-\subsection{Stack dan Queue}\label{stack-dan-queue}
+\section{Stack dan Queue}\label{stack-dan-queue}
 
 Jika anda ingin menyimpan data pada collection dengan metode FIFO (first
 in first out) atau LIFO (last in first out) maka anda dapat menggunakan
 class QStack dan QQueue. Untuk FIFO anda dapat menggunakan QQueue dan
 untuk LIFO anda dapat menggunakan QStack.
 
-Contoh 12. Menggunakan Stack dan Queue.
+\subsection*{Contoh 12. Menggunakan Stack dan Queue.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -771,7 +776,7 @@ Contoh 12. Menggunakan Stack dan Queue.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 12, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QStack>
@@ -780,30 +785,30 @@ int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);
 QStack<QString> lstStack;
-lstStack.push(“17rick”);
-lstStack.push(“anton”);
-lstStack.push(“katon”);
-lstStack.push(“budi”);
+lstStack.push("17rick");
+lstStack.push("anton");
+lstStack.push("katon");
+lstStack.push("budi");
 //order LIFO
-qDebug() << “Stack LIFO : “;
+qDebug() << "Stack LIFO : ";
 while(!lstStack.isEmpty())
 {
 qDebug() << lstStack.pop();
 }
 QQueue<QString> lstQueue;
-lstQueue.enqueue(“17rick”);
-lstQueue.enqueue(“anton”);
-lstQueue.enqueue(“katon”);
-lstQueue.enqueue(“budi”);
+lstQueue.enqueue("17rick");
+lstQueue.enqueue("anton");
+lstQueue.enqueue("katon");
+lstQueue.enqueue("budi");
 //order FIFO
-qDebug() << “Queue FIFO : “;
+qDebug() << "Queue FIFO : ";
 while(!lstQueue.isEmpty())
 {
 qDebug() << lstQueue.dequeue();
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -829,13 +834,13 @@ return a.exec();
   method dequeue.
 \end{itemize}
 
-\subsection{Mapping}\label{mapping}
+\section{Mapping}\label{mapping}
 
 Untuk membuat object map dan hash Qt menyediakan class QMap. Dengan QMap
 anda dapat membuat collection yang index-nya bukan berupa number
 (key-value pair).
 
-Contoh 13. Menggunakan QMap.
+\subsubsection*{Contoh 13. Menggunakan QMap.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -843,7 +848,7 @@ Contoh 13. Menggunakan QMap.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 13, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -866,7 +871,7 @@ qDebug() << itr.key() << " : " << itr.value();
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.

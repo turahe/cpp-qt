@@ -212,7 +212,7 @@ int main(int argc, char *argv[])
 }
 \end{lstlisting}
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+  Kemudian jalankan kode diatas dengan menekan tombol Ctrl + R, outputnya
   adalah sebagai berikut.
 \end{enumerate}
 \begin{verbatim}
@@ -251,15 +251,16 @@ nilai 10, yaitu nilai kembalian fungsi, ini menunjukkan bahwa fungsi
 
 \end{itemize}
 \begin{quotation}
-	 \textbf{Catatan :}
+		\includegraphics{images/pencil}	 \textbf{Catatan :}
+		
+		Nama parameter pada prototype tidak
+		harus sama dengan nama parameter pada definisi fungsi, oleh karena itu
+		prototype tersebut di atas boleh juga dituliskan seperti berikut :
+		
+		\begin{lstlisting}[language=c++]
+		int absolut(int x);
+		\end{lstlisting}
 	
-	 	 Nama parameter pada prototype tidak
-	 	 harus sama dengan nama parameter pada definisi fungsi, oleh karena itu
-	 	 prototype tersebut di atas boleh juga dituliskan seperti berikut :
-	 	 \begin{lstlisting}[language=c++]
-	 	 	int absolut(int x);
-	 	 \end{lstlisting}
-	 	 
 	 
 \end{quotation}
 
@@ -303,10 +304,12 @@ cout << "Hello World!" << endl;
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
 \end{enumerate}
+\begin{verbatim}
+Hello World!
+Hello World!
+Hello World!
+\end{verbatim}
 
-Hello World!
-Hello World!
-Hello World!
 
 \textbf{Keterangan Program :}
 
@@ -317,7 +320,7 @@ Hello World!
   void, berarti tidak mengembalikan nilai.
 \item
   Pada tubuh pogram, terdapat pemanggilan fungsi :
-\end{itemize}
+
 
 \texttt{hello(3);}
 
@@ -325,8 +328,7 @@ Tampak pada hasil eksekusi bahwa nama fungsi ini dieksekusi bukan
 diakses nilainya (dicetak dengan cout), ini menunjukkan bahwa fungsi
 \texttt{hello()} tersebut tidak mengembalikan nilai.
 
-\begin{itemize}
-\tightlist
+
 \item
   Di bawah fungsi \texttt{main()} terdapat sebuah blok program dengan
   nama \texttt{hello()}, pada tubuh fungsi ini tidak ada perintah
@@ -336,7 +338,7 @@ diakses nilainya (dicetak dengan cout), ini menunjukkan bahwa fungsi
 Jika suatu fungsi memberikan nilai kembalian, maka nilai kembalian yang
 diberikan oleh fungsi dapat dilakukan oleh statemen return yang diikuti
 oleh nilai hasil baliknya. Contoh fungsi yang mengembalikan nilai adalah
-seperti contoh pada Lab1 di atas.
+seperti contoh 1 di atas.
 
 \section{Ruang Lingkup Variabel}\label{ruang-lingkup-variabel}
 

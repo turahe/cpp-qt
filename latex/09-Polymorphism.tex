@@ -1,4 +1,4 @@
-\section{Polymorphism}\label{polymorphism}
+
 
 Secara teknis polimorfisme merupakan suatu konsep untuk merelasikan
 diatara kelas-kelas C++ melalui overriding metode-metode virtual,
@@ -39,7 +39,7 @@ Berikut ini akan dibahas secara lebih mendalam mengenai berbagai aspek
 polimorfisme dari problem pada \texttt{single\ inheritance},
 \texttt{multiple\ inheritance} hingga \texttt{abstract\ data\ type}.
 
-\subsection{Problema Pewarisan Tunggal (Single
+\section{Problema Pewarisan Tunggal (Single
 Inheritance)}\label{problema-pewarisan-tunggal-single-inheritance}
 
 Supaya terlihat sederhana, untuk menjelaskan masalah ini marilah kita
@@ -57,7 +57,7 @@ kelas \texttt{Burung} dan kelas \texttt{Kuda}, karena
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{images/capture8-1.png}
+\includegraphics[width=0.8\textwidth]{images/capture8-1.png}
 \caption{}
 \end{figure}
 
@@ -90,7 +90,7 @@ melakukan pekerjaan \texttt{melompat()}. Kemudian karena seharusnya
 \texttt{Kuda\_terbang} tetap dapat melompat kita membatasi jika jarak
 dekat melompat jika jarak jauh terbang seperti berikut:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 Kuda_terbang::berpindah(long jarak)
 {
 if (jarak > sangat_jauh)
@@ -98,7 +98,7 @@ terbang(jarak);
 else
 melompat(jarak);
 }
-\end{verbatim}
+\end{lstlisting}
 
 Tapi ini menjadikan terbatas, bagaimana jika nanti ternyata
 Kuda\_terbang bisa \texttt{melompat()} lebih jauh atau
@@ -110,7 +110,7 @@ ini tidak melakukan \texttt{terbang()}, baru nanti kalau berupa objek
 Kuda\_terbang, barulah \texttt{terbang()} yang sesungguhnya dikerjakan.
 Marilah kita melakukan percobaan berikut ini.
 
-Contoh 1. Meletakkan metode kelas turunan di kelas dasar.
+\subsubsection*{Contoh 1. Meletakkan metode kelas turunan di kelas dasar.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -118,7 +118,7 @@ Contoh 1. Meletakkan metode kelas turunan di kelas dasar.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 1, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -153,20 +153,25 @@ delete kandang[nomor];
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
 \end{enumerate}
 
-A\textgreater{} \{linenos=off\} A\textgreater{} Pilih (0) Kuda atau (1)
-Kuda terbang : 0 A\textgreater{} Pilih (0) Kuda atau (1) Kuda terbang :
-0 A\textgreater{} Pilih (0) Kuda atau (1) Kuda terbang : 1
-A\textgreater{} Pilih (0) Kuda atau (1) Kuda terbang : 1 A\textgreater{}
-Pilih (0) Kuda atau (1) Kuda terbang : 0 A\textgreater{}\\
-A\textgreater{} kuda tidak bisa terbang A\textgreater{} kuda tidak bisa
-terbang A\textgreater{} terbang\ldots{} A\textgreater{} terbang\ldots{}
-A\textgreater{} kuda tidak bisa terbang
+\begin{verbatim}
+Pilih (0) Kuda atau (1) Kuda terbang : 0
+Pilih (0) Kuda atau (1) Kuda terbang : 0
+Pilih (0) Kuda atau (1) Kuda terbang : 1
+Pilih (0) Kuda atau (1) Kuda terbang : 1
+Pilih (0) Kuda atau (1) Kuda terbang : 0
+
+kuda tidak bisa terbang
+kuda tidak bisa terbang
+terbang...
+terbang...
+kuda tidak bisa terbang
+\end{verbatim}
 
 \textbf{Analisa Program :}
 
@@ -189,23 +194,23 @@ A\textgreater{} kuda tidak bisa terbang
   Pada percobaan eksekusi di atas dipilih 0, 0, 1, 1, 0 yang berarti
   array kandang berisi :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 Kandang[0] <-- berisi objek Kuda 
 Kandang[1] <-- berisi objek Kuda 
 Kandang[2] <-- berisi objek Kuda_terbang 
 Kandang[3] <-- berisi objek Kuda_terbang 
 Kandang[4] <-- berisi objek Kuda 
-\end{verbatim}
+\end{lstlisting}
 
   Sehingga hasil keluaran berikutnya:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 kuda tidak bisa terbang 
 kuda tidak bisa terbang 
 terbang... 
 terbang... 
 kuda tidak bisa terbang
-\end{verbatim}
+\end{lstlisting}
 \item
   Dari percobaan ini tampak \emph{polimorfisme} bisa berhasil dengan
   baik. Namun seperti sudah dijelaskan di atas, harga yang harus dibayar
@@ -215,15 +220,19 @@ kuda tidak bisa terbang
   diingat untuk merubah yang lainnya, ini sangat berisiko akan adanya
   ketidakkonsistenan program.
 \end{itemize}
+\begin{quotation}
+	\textbf{Catatan:}
+	
+	Pada
+	percobaan ini kelas telah disederhanakan untuk fokus pada pokok masalah
+	yang hendak dijelaskan. Konstruktor, destruktor dan sebagainya
+	dihilangkan supaya program tampak sederhana untuk membahas masalah
+	\emph{single inheritance}. Tidak direkomendasikan untuk menulis program
+	yang seperti ini.
+\end{quotation}
 
-I\textgreater{} \textbf{Catatan:} I\textgreater{} I\textgreater{} Pada
-percobaan ini kelas telah disederhanakan untuk fokus pada pokok masalah
-yang hendak dijelaskan. Konstruktor, destruktor dan sebagainya
-dihilangkan supaya program tampak sederhana untuk membahas masalah
-\emph{single inheritance}. Tidak direkomendasikan untuk menulis program
-yang seperti ini.
 
-\subsection{Peletakan ke atas (Pecolating
+\section{Peletakan ke atas (Pecolating
 Upward)}\label{peletakan-ke-atas-pecolating-upward}
 
 Meletakkan fungsi yang diperlukan pada kelas yang berada pada hierarki
@@ -245,7 +254,7 @@ mempunyai sebuah fungsi yang sama (misalnya Burung dan Kuda sama-sama
 bisa makan), maka akan timbul ide untuk memindahkan fungsi tersebut ke
 hirarki di atasnya dan membuat metode virtual pada kelas dasar.
 
-\subsection{Konversi ke bawah (Casting
+\section{Konversi ke bawah (Casting
 Down)}\label{konversi-ke-bawah-casting-down}
 
 Alternatif lain untuk mengatasi single inheritance adalah tetap membuat
@@ -254,12 +263,15 @@ ini hanya dipanggil jika pointer menunjuk objek bertipe
 \texttt{Kuda\_terbang}. Untuk keperluan ini diperlukan untuk dapat
 mendeteksi objek tipe apa yang sedang ditunjuk oleh pointer yang dikenal
 sebagai Runtime Type Identification (RTTI).
+\begin{quotation}
+	 \textbf{Catatan:}
+	 
+	 Hati-hati dalam menggunakan RTTI dalam program. Kebutuhan untuk memakai
+	 RTTI bisa menjadi pertanda adanya desain hirarki pewarisan yang kurang
+	 baik. Untuk itu sebaiknya gunakan metode virtual, template atau multiple
+	 inheritance daripada memakai RTTI.
+\end{quotation}
 
-W\textgreater{} \textbf{Catatan:} W\textgreater{} W\textgreater{}
-Hati-hati dalam menggunakan RTTI dalam program. Kebutuhan untuk memakai
-RTTI bisa menjadi pertanda adanya desain hirarki pewarisan yang kurang
-baik. Untuk itu sebaiknya gunakan metode virtual, template atau multiple
-inheritance daripada memakai RTTI.
 
 Pada percobaan Contoh 1 di atas, kita menunjuk baik Kuda maupun
 \texttt{Kuda\_terbang}dengan array Kuda (kandang). Semuanya dimasukkan
@@ -287,7 +299,7 @@ dengan baik, jika tidak sesuai maka sebenarnya bukan objek
 \texttt{Kuda\_terbang} yang ditunjuk meliankan pointer kosong (null).
 Lakukan percobaan berikut ini.
 
-Contoh 2. Melakukan Down Casting.
+\subsubsection*{Contoh 2. Melakukan Down Casting.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -295,7 +307,7 @@ Contoh 2. Melakukan Down Casting.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 2, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -333,20 +345,24 @@ delete kandang[nomor];
 }
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
 \end{enumerate}
 
-A\textgreater{} \{linenos=off\} A\textgreater{} Pilih (0) Kuda atau (1)
-Kuda terbang : 1 A\textgreater{} Pilih (0) Kuda atau (1) Kuda terbang :
-0 A\textgreater{} Pilih (0) Kuda atau (1) Kuda terbang : 1
-A\textgreater{} Pilih (0) Kuda atau (1) Kuda terbang : 0 A\textgreater{}
-Pilih (0) Kuda atau (1) Kuda terbang : 1 A\textgreater{}\\
-A\textgreater{} terbang\ldots{} A\textgreater{} Kuda biasa
-A\textgreater{} terbang\ldots{} A\textgreater{} Kuda biasa
-A\textgreater{} terbang\ldots{}
+\begin{verbatim}
+Pilih (0) Kuda atau (1) Kuda terbang : 1
+Pilih (0) Kuda atau (1) Kuda terbang : 0
+Pilih (0) Kuda atau (1) Kuda terbang : 1
+Pilih (0) Kuda atau (1) Kuda terbang : 0
+Pilih (0) Kuda atau (1) Kuda terbang : 1
+
+terbang...
+Kuda biasa
+terbang...
+Kuda biasa
+\end{verbatim}
 
 \textbf{Analisa Program :}
 
@@ -367,7 +383,7 @@ A\textgreater{} terbang\ldots{}
   yang sesungguhnya (bukan polimorfisme).
 \end{itemize}
 
-\subsection{Menambahkan ke Dua Daftar}\label{menambahkan-ke-dua-daftar}
+\section{Menambahkan ke Dua Daftar}\label{menambahkan-ke-dua-daftar}
 
 Masalah lain yang dihadapi oleh karena memakai solusi di atas adalah
 bahwa kita telah mendeklarasikan \texttt{Kuda\_terbang} bertipe Kuda,
@@ -386,7 +402,7 @@ satu kesatuan daftar Binatang. Namun akibatnya kelas dasar mempunyai
 semua karakteristik kelas turunannya sehingga ukuran kelas dasar menjadi
 sangat besar dan ini tidak diinginkan.
 
-\subsection{Pewarisan Ganda (Multiple
+\section{Pewarisan Ganda (Multiple
 Inheritance)}\label{pewarisan-ganda-multiple-inheritance}
 
 Dengan C++ dimungkinkan untuk menurunkan kelas baru yang berasal dari
@@ -395,16 +411,16 @@ inheritance). Penurunan lebih dari satu kelas dasar dilakukan dengan
 cara menuliskan kelas dasar berikutnya dipisahkan dengan tanda koma (,)
 seperti berikut:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 class KelasTurunan : public KelasDasar1, public KelasDasar2{}
-\end{verbatim}
+\end{lstlisting}
 
 Percobaan berikut ini memberikan ilustrasi cara deklarasi kelas
 \texttt{Kuda\_terbang} yang mewarisi kelas dasar Kuda dan Burung,
 kemudian program menambahkan objek Kuda\_terbang ini di kedua jenis
 daftar objek tersebut.
 
-Contoh 3. Multiple Inheritance.
+\subsubsection*{Contoh 3. Multiple Inheritance.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -412,7 +428,7 @@ Contoh 3. Multiple Inheritance.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 3, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -467,7 +483,7 @@ cout << "\nHapus Kuda_terbang : ";
 delete daftar_burung[1];
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -475,8 +491,8 @@ return a.exec();
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{images/capture9-1.png}
-\caption{}
+\includegraphics[width=0.8\textwidth]{images/capture9-1.png}
+
 \end{figure}
 
 \textbf{Analisa Program :}
@@ -487,18 +503,18 @@ return a.exec();
   inheritance, yaitu pada deklarasikelas \texttt{Kuda\_terbang} yang
   merupakan keturunan dari Kuda dan Burung :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 class Kuda_terbang : public Kuda, public Burung
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian kelas ini melakukan override terhadap metode
   \texttt{berkicau()}, metode \texttt{berkicau()} pada
   \texttt{Kuda\_terbang} ini mengerjakan pemanggilan metode
   \texttt{meringkik()}, yaitu metode warisan dari kelas Kuda:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 void berkicau() const { meringkik(); }
-\end{verbatim}
+\end{lstlisting}
 \item
   Tampak pada percobaan Contoh 3 ini ketika diciptakan objek bertipe
   Kuda maka yang bekerja adalah konstruktor \texttt{Kuda}, demikian juga
@@ -520,18 +536,18 @@ void berkicau() const { meringkik(); }
   sebenarnya yang pertama berisi objek Kuda sedangkan yang kedua berisi
   objek \texttt{Kuda\_terbang} :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 daftar_kuda[0] = new Kuda(); //<-- objek Kuda
 daftar_kuda[1] = new Kuda_terbang(); //<-- objek Kuda_terbang
-\end{verbatim}
+\end{lstlisting}
 \item
   Demikian juga pada daftar\_burung, yang pertama berisi objek Burung
   sedangkan yang kedua berisi Kuda\_terbang :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 daftar_burung[0] = new Burung(); //<-- objek Burung
 daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
-\end{verbatim}
+\end{lstlisting}
 \item
   Ini menunjukkan bahwa baik \texttt{daftar\_kuda{[}{]}} maupun
   \texttt{daftar\_burung{[}{]}} dapat berpolimorfisme dengan sempurna
@@ -540,20 +556,20 @@ daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
   Pada waktu \texttt{daftar\_burung} berisi objek Kuda\_terbang, ketika
   dipanggil metode berkicau berikut :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 daftar_burung[1]->berkicau(); //<-- berisi objek Kuda_terbang
-\end{verbatim}
+\end{lstlisting}
 \item
   Maka yang menanggapi adalah metode hasil override di dalam kelas
   \texttt{Kuda\_terbang} yaitu pemanggilan metode \texttt{meringkik()},
   sehingga keluarannya adalah :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 " Kikikikikkkk..."
-\end{verbatim}
+\end{lstlisting}
 \end{itemize}
 
-\subsection{Komponen Objek Multi
+\section{Komponen Objek Multi
 Inheritance}\label{komponen-objek-multi-inheritance}
 
 Ketika objek Kuda\_terbang diciptakan di memori, kedua kelas dasarnya
@@ -576,7 +592,7 @@ dasarnya? Bagaimana jika kedua kelas dasar yang diturunkan merupakan
 keturunan dari suatu kelas dasar yang sama? Berikut ini akan kita
 bicarakan mengenai isu-isu tersebut.
 
-\subsection{Konstruktor Kelas Banyak Turunan (Multiple
+\section{Konstruktor Kelas Banyak Turunan (Multiple
 Inheritance)}\label{konstruktor-kelas-banyak-turunan-multiple-inheritance}
 
 Seperti pada umumnya, kelas turunan pasti memanggil konstruktor kelas
@@ -586,16 +602,16 @@ Jika bentuk konstruktor default (konstruktor yang diciptakan secara
 otomatis oleh kompiler jika kelas turunan tidak menuliskan konstruktor
 secara eksplisit) pada single inheritance yaitu:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 KelasTurunan():KelasDasar(){} //<-- Konstruktor default kelas Turunan tunggal
-\end{verbatim}
+\end{lstlisting}
 
 Maka konstruktor default kelas banyak turunan (mutiple inheritance)
 adalah :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 KelasTurunan():KelasDasar1(),KelasDasar2(){}
-\end{verbatim}
+\end{lstlisting}
 
 Jadi pada waktu membuat kelas banyak turunan, khususnya jika kelas
 dasarnya tidak mempunyai konstruktor tanpa parameter, maka konstruktor
@@ -608,12 +624,12 @@ Supaya bisa fokus pada pokok permasalahan, yaitu konstruktor, percobaan
 berikut ini menghilangkan berbagai macam anggota yang lain supaya
 terlihat sederhana dan mudah dipahami.
 
-Contoh 4. Konstruktor Kelas Multiple Inheritance.
+\subsubsection*{Contoh 4. Konstruktor Kelas Multiple Inheritance.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 Contoh 4, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -641,13 +657,15 @@ QCoreApplication a(argc, argv);
 Kuda_terbang* gondrong = new Kuda_terbang();
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
 
-A\textgreater{} Konstruktor Kuda, nama = Gondrong A\textgreater{}
-A\textgreater{} Konstruktor Burung, warna = Merah
+\begin{verbatim}
+Konstruktor Kuda, nama = Gondrong
+Konstruktor Burung, warna = Merah
+\end{verbatim}
 
 \textbf{Analisa Program :}
 
@@ -662,24 +680,24 @@ A\textgreater{} Konstruktor Burung, warna = Merah
   inheritance, yaitu pada deklarasi kelas \texttt{Kuda\_terbang} yang
   merupakan keturunan dari Kuda dan Burung :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 class Kuda_terbang : public Kuda, public Burung
-\end{verbatim}
+\end{lstlisting}
 \item
   Oleh karena itu konstruktor kelas \texttt{Kuda\_terbang} ini harus
   memanggil secara eksplisit konstruktor-konstruktor kelas dasarnya
   seperti berikut:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 Kuda_terbang():Kuda("Gondrong"),Burung("Merah")
-\end{verbatim}
+\end{lstlisting}
 \item
   Tampak pada hasil output, instansiasi kelas Kuda\_terbang menjalankan
   konstruktor Kuda dengan satu parameter dan konstruktor Burung dengan
   satu parameter, baru kemudian menjalankan konstruktornya sendiri.
 \end{itemize}
 
-\subsection{Problem Ambiguitas}\label{problem-ambiguitas}
+\section{Problem Ambiguitas}\label{problem-ambiguitas}
 
 Pada kelas multi inheitance yang beberapa kelas dasarnya mempunyai
 metode virtual yang sama akan menimbulkan masalah ketika objek kelas
@@ -692,23 +710,23 @@ metode \texttt{virutal\ makan()}dam jika kita memanggil metode dari
 objek Kuda\_terbang yang merupakan multi inheritance dari kedua kelas
 tersebut di atas.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 pKterbang->makan();
-\end{verbatim}
+\end{lstlisting}
 
 Maka kompile akan menampilkan pesan kesalahan :
 
-\begin{verbatim}
-Member is ambiguous: ‘Kuda::makan’ and ‘Burung::makan’
-\end{verbatim}
+\begin{lstlisting}[language=c++]
+Member is ambiguous: 'Kuda::makan; and 'Burung::makan'
+\end{lstlisting}
 
 Untuk memecahkan masalah ini dengan pemanggilan secara eksplisit bisa
 dilakukan dengan cara menyebutkan nama kelas dasar pemilik metode
 virtual yang akan dieksekusi, misalnya:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 pKterbang->Kuda::makan();
-\end{verbatim}
+\end{lstlisting}
 
 Kapan saja kita ingin mengeksekusi fungsi anggota atau variabel anggota
 kelas mana yang akan diakses, kita dapat melakukan dengan cara tersebut
@@ -716,9 +734,9 @@ di atas. Jika kelas Kuda\_terbang akan melakukan overriding fungsi
 tersebut, maka pemanggilan tersebut bisa dilakukan di dalam fungsi
 anggota Kuda\_terbang:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 virtual void makan() const { Kuda::makan() }
-\end{verbatim}
+\end{lstlisting}
 
 Dengan cara ini kita bisa menyembunyikan masalah ambiguitas ini dari
 pemakai kelas Kuda\_terbang dengan cara mengenkapsulasi di dalam kelas
@@ -726,11 +744,11 @@ Kuda\_terbang mengenai kelas dasar mana yang diambil warisan fungsi
 makan()-nya. Namun pemakai tetap saja bebas untuk dapat memanggil waisan
 lainnya dengan menulis :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 pKterbang->Burung::makan();
-\end{verbatim}
+\end{lstlisting}
 
-\subsection{Penurunan dari Kelas Dasar
+\section{Penurunan dari Kelas Dasar
 Bersama}\label{penurunan-dari-kelas-dasar-bersama}
 
 Jika dua kelas dasar yang dijadikan multiple inheritance merupakan
@@ -755,7 +773,7 @@ merupakan hasil \emph{multiple inheritance} dari kelas \texttt{Kuda} dan
 
 \begin{figure}[htbp]
 \centering
-\includegraphics{images/capture9-3.png}
+\includegraphics[width=0.8\textwidth]{images/capture9-3.png}
 \caption{}
 \end{figure}
 
@@ -783,22 +801,22 @@ getUmur() tersebut, makan akan timbul ambiguitas lagi, yaitu metode yang
 dipanggil merupakan getUmur() Kuda atau getUmur() Burung? Pemecahan
 problem ini sama dengan pada kelas multi inheitance yang yang kedua
 kelas dasarnya mempunyai metode virtual yang sama, yaitu bisa dilakukan
-dengan cara melakukan override terhadap metode getUmur() kemudian di
-dalamnya memilih metode yang akan merespon, misalnya dipilih getUmur()
+dengan cara melakukan override terhadap metode \texttt{getUmur()} kemudian di
+dalamnya memilih metode yang akan merespon, misalnya dipilih \texttt{getUmur()}
 dari Kuda seperti berikut:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 virtual int getUmur() const { return Kuda::getUmur() }
-\end{verbatim}
+\end{lstlisting}
 
 Agar lebih jelas, lakukan pecobaan berikut ini.
 
-Contoh 5 Penurunan pada umumnya (Common Base Class).
+\subsubsection*{Contoh 5. Penurunan pada umumnya (Common Base Class).}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 Contoh 5, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -850,7 +868,7 @@ cout << "Umur : " << gondrong->getUmur() << endl;
 delete gondrong;
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
@@ -879,12 +897,12 @@ Kuda\ldots{}Umur : 5
   karena itu pada kelas \texttt{Kuda\_terbang} dilakukan overriding
   seperti berikut :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 virtual int const getUmur(){
 cout << "dari Kuda_terbang...";
 return Kuda::getUmur();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Tampak pada hasil pemanggilan metode tersebut pada kelas
   Kuda\_terbang: dari Kuda\_terbang\ldots{}dari Kuda\ldots{}Umur : 5 Ini
@@ -899,7 +917,7 @@ return Kuda::getUmur();
   ada 2 objek Binatang tadi.
 \end{itemize}
 
-\subsection{Penurunan Virtual (Virtual
+\section{Penurunan Virtual (Virtual
 Inheritance)}\label{penurunan-virtual-virtual-inheritance}
 
 Berbeda dengan penurunan biasa (\emph{Common Base Class}), penurunan
@@ -909,7 +927,7 @@ konstruktor kelas dasar paling atas (Binatang), sehingga terbentuklah
 objek dengan bentuk Diamond Inheritance seperti gambar tadi. Supaya
 lebih jelas, lakukan pecobaan berikut ini.
 
-Contoh 6. Penurunan pada umumnya (Common Base Class).
+\subsubsection*{Contoh 6. Penurunan pada umumnya (Common Base Class).}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -917,7 +935,7 @@ Contoh 6. Penurunan pada umumnya (Common Base Class).
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh 6, kemudian tulis kode berikut.
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -957,7 +975,7 @@ cout << "Umur : " << gondrong->getUmur() << endl;
 delete gondrong;
 return a.exec();
 }
-\end{verbatim}
+\end{lstlisting}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -983,9 +1001,9 @@ Binatang\ldots{}Umur : 5
   instansiasi kelas Kuda\_terbang memanggil langsung konstruktor
   Binatang seperti berikut:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 Kuda_terbang():Kuda(),Burung(),Binatang()
-\end{verbatim}
+\end{lstlisting}
 \end{itemize}
 
 Memang kelas \texttt{Kuda\_terbang} bukan keturunan langsung kelas
@@ -993,10 +1011,10 @@ Binatang, namun hal ini bisa dimungkinkan karena kelas dasar dari
 \texttt{Kuda\_terbang}, yaitu Kuda dan Binatang melakukan penurunan
 secara virutal :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++]
 class Kuda : virtual public Binatang{}
 class Burung : virtual public Binatang{}
-\end{verbatim}
+\end{lstlisting}
 
 sehingga dimungkinkan konstruktor \texttt{Kuda\_terbang()} memanggil
 langsung konstruktor \texttt{Binatang()}. Konsekuensinya maka jika ia
@@ -1014,25 +1032,34 @@ dan Binatang ini menunjukkan bahwa ada 2 hanya ada 1 objek Binatang. -
 Jika dibayangkan, maka ``silsilah kekerabatan'' penurunan virtual ini
 adalah seperti gambar Daimond Inheritance di atas.
 
-I\textgreater{} \textbf{Catatan:} I\textgreater{} I\textgreater{} -
-Untuk memastikan kelas turunan hanya mempunyai sebuah kelas dasar
-bersama, deklarasikan kelas-kelas turunan secara virtual dari kelas
-dasar. Contoh: I\textgreater{} I\textgreater{} class Binatang
-//\textless{}-- common base class (kelas dasar bersama) I\textgreater{}
-class Kuda : virtual public Binatang //\textless{}-- penurunan secara
-virtual I\textgreater{} class Burung : virtual public Binatang
-//\textless{}-- penurunan secara virtual I\textgreater{} class
-Kuda\_terbang : public Kuda, public Burung I\textgreater{}
-I\textgreater{} - Jika penurunan dilakukan secara virtual seperti di
-atas, secara otomatis kelas \texttt{Kuda\_terbang} akan memanggil
-konstruktor \texttt{Binatang()} walaupun tidak ditulis secara eksplisit,
-contoh konstruktor \texttt{Kuda\_terbang()} tanpa memanggil konstruktor
-\texttt{Binatang()} berikut ini akan menghasilkan hasil yang sama:
-I\textgreater{} I\textgreater{} Kuda\_terbang()\{//\textless{}--
-pemanggilan Kuda(), Burung() dan Binatang() implisit I\textgreater{}
-cout \textless{}\textless{} ``Konstruktor Kuda\_terbang\n'';\}
+\begin{quotation}
+	\textbf{Catatan:}
+	
+	\begin{itemize}
+		\item Untuk memastikan kelas turunan hanya mempunyai sebuah kelas dasar bersama,
+		deklarasikan kelas-kelas turunan secara virtual dari kelas dasar. Contoh:
+		\begin{lstlisting}[language=c++]
+			class Binatang //<-- common base class (kelas dasar bersama)
+			class Kuda : virtual public Binatang //<-- penurunan secara virtual
+			class Burung : virtual public Binatang //<-- penurunan secara virtual
+			class Kuda_terbang : public Kuda, public Burung
+		\end{lstlisting}
+		\item Jika penurunan dilakukan secara virtual seperti di atas, secara otomatis kelas
+		Kuda\_terbang akan memanggil konstruktor Binatang() walaupun tidak ditulis
+		secara eksplisit, contoh konstruktor Kuda\_terbang() tanpa memanggil konstruktor
+		Binatang() berikut ini akan menghasilkan hasil yang sama:
+		
+		\begin{lstlisting}[language=c++]
+		Kuda_terbang(){//<-- pemanggilan Kuda(), Burung() dan Binatang() implisit
+		cout << "Konstruktor Kuda_terbang\n";}
+		\end{lstlisting}
+	\end{itemize}
+\end{quotation}
 
-\subsection{Masalah Pada Multiple
+
+
+
+\section{Masalah Pada Multiple
 Inheritance}\label{masalah-pada-multiple-inheritance}
 
 Meskipun multiple inheritance menawarkan banyak keuntungan dibanding
@@ -1047,11 +1074,21 @@ mendukung multiple inheritance dengan alasan yang sama. Oleh karena itu,
 jika bisa dilakukan dengan cara single inheritance jangan memakai
 multiple inheritance.
 
-I\textgreater{} \textbf{Catatan} I\textgreater{} I\textgreater{} -
-Pakailah multiple inheritance jika suatu kelas baru memerlukan
-fitur-fitur yang ada di dua kelas yang berbeda. I\textgreater{} -
-Pakailah penurunan secara virtual jika ada lebih dari satu kelas turunan
-namun hanya diperlukan sebuah instan dari kelas dasar. I\textgreater{} -
-Pasti terjadi pemanggilan konstruktor kelas dasar bersama (shared base
-class) dari kelas turunan paling bawah (multiple inheritance) ketika
-memakai kelas dasar virtual.
+\begin{quotation}
+	\textbf{Catatan}
+	\begin{itemize}
+		\item Pakailah multiple inheritance jika suatu kelas baru memerlukan
+		fitur-fitur yang ada di dua kelas yang berbeda.
+		\item Pakailah penurunan secara virtual jika ada lebih dari satu kelas turunan
+		namun hanya diperlukan sebuah instan dari kelas dasar.
+		\item Pasti terjadi pemanggilan konstruktor kelas dasar bersama (shared base
+		class) dari kelas turunan paling bawah (multiple inheritance) ketika
+		memakai kelas dasar virtual.
+	\end{itemize}
+\end{quotation}
+ 
+ 
+ 
+ I\textgreater{} -
+ I\textgreater{} -
+

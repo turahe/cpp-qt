@@ -11,11 +11,12 @@ komputer. Jadi jumlah datanya banyak namun satu jenis.
 
 Array dapat digunakan untuk menyimpan data yang cukup banyak namun
 memiliki tipe yang sama. Bagaimana array melakukan penyimpanan datanya
-di memory komputer? Ilustrasi array satu dimensi pada memory komputer seperti gambar 3.1:
+di memory komputer? Ilustrasi array satu dimensi pada memory komputer seperti gambar \ref{ilustrasi-array-satu-dimensi-pada-memory-komputer}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture3-1.png}
+\label{ilustrasi-array-satu-dimensi-pada-memory-komputer}
 \caption{Ilustrasi array satu dimensi pada memory komputer}
 \end{figure}
 
@@ -28,7 +29,7 @@ array. Misalnya pada tipe data integer, maka jarak antar elemennya
 bernilai 2 s/d 4 byte. Indeks array pada C++ selalu dimulai dari indeks
 ke 0, dan seterusnya indeks ke-1, 2, 3, dan lain-lain.
 
-\subsection{Array 1 Dimensi}\label{a.-array-1-dimensi}
+\subsection{Array 1 Dimensi}\label{array-1-dimensi}
 
 Elemen-elemen array dapat diakses oleh program menggunakan suatu indeks
 tertentu. Pengaksesan elemen array dapat dilakukan berurutan atau random
@@ -41,7 +42,7 @@ Dimensi}\label{deklarasi-array-satu-dimensi}
 
 Bentuk umum deklarasi array satu dimensi:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 tipe_data nama_var_array;
 \end{lstlisting}
 
@@ -56,7 +57,7 @@ char, float, dll)
 
 Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 char huruf[9];
 int umur[10];
 int kondisi[2] = {0,1};
@@ -89,44 +90,44 @@ yaitu sebanyak 3 elemen, yang isinya 1,2, dan 3. Ingat bahwa array
 dinamis tidak bisa dibuat tanpa inisialisasi.
 \end{description}
 
-Tanda \texttt{{[}{]}} disebut juga ``elemen yang ke- ``. Misalnya
-``\texttt{kondisi{[}0{]}}`` berarti elemen yang ke nol. Array yang sudah
+Tanda \texttt{{[}{]}} disebut juga "elemen yang ke- ". Misalnya
+\texttt{kondisi{[}0{]}} berarti elemen yang ke nol. Array yang sudah
 dipesan, misalnya 10 tempat tidak harus diisi semuanya, bisa saja hanya
 diisi 5 elemen saja, baik secara berurutan maupun tidak. Namun pada
 kondisi yang tidak sepenuhnya terisi tersebut, tempat pemesanan di
 memori tetap sebanyak 10 tempat, jadi tempat yang tidak terisi tetap
 akan terpesan dan dibiarkan kosong.
 
-\subsubsection*{Contoh 1. Contoh Input dan Output Array}
+\subsubsection*{Contoh  Input dan Output Array}
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Input dan Output Array]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int nilai[5], x;
-cout<<"Memasukkan nilai"<<endl;
-for(x=0;x<5;x++)
-{
-cout<<"Nilai Angka ke - "<<x+1<< ": ";
-cin>>nilai[x];
-}
-cout<<endl;
-cout<<"Membaca nilai :\n";
-for(x=0;x<5;x++)
-{
-cout<<"Nilai Angka : "<<nilai[x]<<endl;
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int nilai[5], x;
+  cout<<"Memasukkan nilai"<<endl;
+  for(x=0;x<5;x++)
+  {
+    cout<<"Nilai Angka ke - "<<x+1<< ": ";
+    cin>>nilai[x];
+  }
+  cout<<endl;
+  cout<<"Membaca nilai :\n";
+  for(x=0;x<5;x++)
+  {
+    cout<<"Nilai Angka : "<<nilai[x]<<endl;
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 Memasukan nilai
 Nilai Angka ke - 1 : 1
 Nilai Angka ke - 2 : 2
@@ -139,7 +140,7 @@ Nilai Angka : 2
 Nilai Angka : 3
 Nilai Angka : 4
 Nilai Angka : 5
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -167,33 +168,33 @@ Nilai Angka : 5
   \texttt{cout\textless{}\textless{}}.
 \end{itemize}
 
-\subsubsection*{Contoh 2. Contoh Manipulasi Array}
+\subsubsection*{Contoh  Manipulasi Array}
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Manipulasi Array]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int bil[7],i;
-cout<<"elemen ke-1 ? "; cin>>bil[0];
-bil[1] = 5;
-bil[2] = bil[1] + 20;
-for(i=4;i<7;i++)
-bil[i] = i*10;
-bil[3] = bil[bil[1]];
-for(i=0;i<7;i++)
-cout<<"bil["<<i<<"] = "<<bil[i]<<" dan alamatnya: "<<&bil[i]<<"\n";
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int bil[7],i;
+  cout<<"elemen ke-1 ? "; cin>>bil[0];
+  bil[1] = 5;
+  bil[2] = bil[1] + 20;
+  for(i=4;i<7;i++)
+    bil[i] = i*10;
+    bil[3] = bil[bil[1]];
+  for(i=0;i<7;i++)
+    cout<<"bil["<<i<<"] = "<<bil[i]<<" dan alamatnya: "<<&bil[i]<<"\n";
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 elemen ke-1 ? 1
 bil[0] = 1 dan alamatnya: 0x28fe68
 bil[1] = 5 dan alamatnya: 0x28fe6c
@@ -202,7 +203,7 @@ bil[3] = 50 dan alamatnya: 0x28fe74
 bil[4] = 40 dan alamatnya: 0x28fe78
 bil[5] = 50 dan alamatnya: 0x28fe7c
 bil[6] = 60 dan alamatnya: 0x28fe80
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -243,24 +244,24 @@ bil[6] = 60 dan alamatnya: 0x28fe80
 \end{quotation}
  
 
-\subsubsection*{Contoh 3. Penanganan Batas Indeks Elemen Array}
+\subsubsection*{Contoh  Penanganan Batas Indeks Elemen Array}
 
 Buatlah program beikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penanganan Batas Indeks Elemen Array]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int angka[5];
-angka[0] = 0; //batas bawah array
-angka[4] = 4; //batas atas array
-angka[5] = 5; //indeks melebihi batas
-//program akan HANG
-cout<<angka[5];
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int angka[5];
+  angka[0] = 0; //batas bawah array
+  angka[4] = 4; //batas atas array
+  angka[5] = 5; //indeks melebihi batas
+  //program akan HANG
+  cout<<angka[5];
+  return a.exec();
 }
 \end{lstlisting}
 
@@ -288,7 +289,7 @@ Pengisian data seperti itu sering disebut dengan inisialisasi data
 array. Cara menginisialisasi data pada array adalah dengan menuliskannya
 secara langsung pada source code program. Berikut contohnya:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 // An array of 5 integers, all elements initialized to 0
 int IntegerArray[5] = {0};
 \end{lstlisting}
@@ -297,7 +298,7 @@ Pada contoh diatas, semua elemen array bertipe integer yang berjumlah 5
 buah tersebut diisi dengan nilai 0 semuanya. Cara lain menginisialisasi
 array satu dimensi adalah sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 // An array of 5 integers initialized to zero
 int IntegerArray[5] = { 0, 0, 0, 0, 0 };
 \end{lstlisting}
@@ -306,7 +307,7 @@ Nah, bagaimana jika kita ingin menginisialisasi elemen terakhirnya saja?
 Kita tidak bisa melakukannya secara langsung. Yang harus dilakukan
 adalah dengan menginisialisasinya satu-persatu seperti contoh berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 // An array of 5 integers initialized to zero
 int IntegerArray[5] = { 0, 0, 0, 0, 6 };
 \end{lstlisting}
@@ -317,28 +318,28 @@ tidak bisa langsung mengisi dengan cara
 cara demikian, maka isi elemen indeks ke-0 bernilai 6, sedangkan elemen
 lainnya bernilai 0.
 
-\subsubsection*{Contoh 4. Inisialisasi Array dengan nilai 0}
+\subsubsection*{Contoh  Inisialisasi Array dengan nilai 0}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Inisialisasi Array dengan nilai 0]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int bil[7] = {0}; //inisialisasi 0
-for(int i=0;i<7;i++){
-cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int bil[7] = {0}; //inisialisasi 0
+  for(int i=0;i<7;i++){
+    cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Elemen ke-0: 0
 Elemen ke-1: 1
 Elemen ke-2: 2
@@ -346,7 +347,7 @@ Elemen ke-3: 3
 Elemen ke-4: 4
 Elemen ke-5: 5
 Elemen ke-6: 6
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan}
 
@@ -356,28 +357,29 @@ nilai 0, maka semua elemen array tersebut juga akan berisi dengan nilai
 0. Hal ini dibuktikan dengan cara perulangan semua elemen array dan
 ditampilkan dengan \texttt{cout}.
 
-\subsubsection*{Contoh 5. Inisialisasi Array dua nilai elemen pertama}
+\subsubsection*{Contoh  Inisialisasi Array dua nilai elemen pertama}
 
-Buatlah program berikut ini:
+Buka Qt Creator dan buat project Qt Console Application baru dengan
+nama Contoh \ref{inisialisasi-array-dua-nilai-elemen-pertama}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Inisialisasi Array dua nilai elemen pertama, label=inisialisasi-array-dua-nilai-elemen-pertama]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int bil[7] = {2,5}; //inisialisasi dua elemen pertama
-for(int i=0;i<7;i++){
-cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int bil[7] = {2,5}; //inisialisasi dua elemen pertama
+  for(int i=0;i<7;i++){
+    cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 	Elemen ke-0: 2
 	Elemen ke-1: 5
 	Elemen ke-2: 0
@@ -385,7 +387,7 @@ return a.exec();
 	Elemen ke-4: 0
 	Elemen ke-5: 0
 	Elemen ke-6: 0
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan}
 
@@ -405,13 +407,13 @@ otomatis bernilai 0.
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int angka[100] = {1};
 \end{lstlisting}
 
 Maka hasilnya adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 angka[0] = 1,
 angka[1] s/d angka[99] = 0
 \end{lstlisting}
@@ -425,39 +427,39 @@ semua elemen harus di inisialisai terlebih dahulu.
 
 Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int data[5] = {1,2,3,4,5,6}; //error
 int data2[] = {10,20}; //terpesan 2 tempat dimemory
 \end{lstlisting}
 
-\subsubsection*{Contoh 6. Tanpa inisialisasi, array langsung ditampilkan}
+\subsubsection*{Contoh  Tanpa inisialisasi, array langsung ditampilkan}
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Tanpa inisialisasi array langsung ditampilkan]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char h[5];
-for(int i=0;i<5;i++){
-cout<<"Elemen ke "<<i<<" = "<<h[i]<<endl;
-}
-return a.exec();
-}
+  QCoreApplication a(argc, argv);
+  char h[5];
+  for(int i=0;i<5;i++){
+    cout<<"Elemen ke "<<i<<" = "<<h[i]<<endl;
+  }
+  return a.exec();
+  }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Elemen ke-0: 2
 Elemen ke-1: 5
 Elemen ke-2: 0
 Elemen ke-3: 0
 Elemen ke-4: v
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan}
 
@@ -475,11 +477,11 @@ diatas. Untuk itulah inisialisasi elemen array sangatlah penting.
 \end{quotation}
 
 
-\subsubsection*{Contoh 7. Penggunaan tipe data enum pada Array satu dimensi}
+\subsubsection*{Contoh  Penggunaan tipe data enum pada Array satu dimensi}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan tipe data enum pada Array satu dimensi]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -495,9 +497,9 @@ return a.exec();
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Nilai hari selasa adalah = 30
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -528,7 +530,7 @@ pertama dari indeks pertama array yang kita deklarasikan.
 
 Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int data[5] = {1,2,3,4,5};
 \end{lstlisting}
 
@@ -547,21 +549,21 @@ variable array 1 dimensi lainnya? Kita harus menggunakan cara manual,
 yaitu mengkopikan masing-masing elemennya satu persatu dengan perulangan
 manual sesuai dengan jumlah elemen array yang dibuat.
 
-\subsubsection*{Contoh 8. Percobaan Penyalinan Array 1 dimensi}
+\subsubsection*{Contoh  Percobaan Penyalinan Array 1 dimensi}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Percobaan Penyalinan Array 1 dimensi]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int A[6]={1,2,3,4,5,6};
-int B[6];
-B = A;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int A[6]={1,2,3,4,5,6};
+  int B[6];
+  B = A;
+  return a.exec();
 }
 \end{lstlisting}
 
@@ -579,39 +581,39 @@ Program tidak bisa dijalankan karena terdapat \textbf{error}, bahwa
 array tidak bisa dilakukan operasi assigment. Artinya kita tidak bisa
 mengkopi antar array begitu saja.
 
-\subsubsection*{Contoh 9. Penyalinan Array 1 dimensi dengan Perulangan}
+\subsubsection*{Contoh  Penyalinan Array 1 dimensi dengan Perulangan}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penyalinan Array 1 dimensi dengan Perulangan]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int A[6]={1,2,3,4,5,6};
-int B[6];
-for(int i=0;i<6;i++){
-B[i]=A[i];
-}
-for(int j=0;j<6;j++){
-cout<<B[j]<<endl;
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int A[6]={1,2,3,4,5,6};
+  int B[6];
+  for(int i=0;i<6;i++){
+    B[i]=A[i];
+  }
+  for(int j=0;j<6;j++){
+    cout<<B[j]<<endl;
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 1
 2
 3
 4
 5
 6
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -642,7 +644,7 @@ merupakan delapan kolom.
 Contoh deklarasi array dua dimensi yang menggambarkan papan catur
 adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int papan[8][8];
 \end{lstlisting}
 
@@ -664,20 +666,20 @@ Berikut adalah gambar array berdimensi (baris x kolom = 3 x 4)
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{images/capture3-12.png}
+\includegraphics[width=0.6\textwidth]{images/capture3-12.png}
 \caption{array dimensi 3 x 4}
 \end{figure}
 
 \subsubsection{Deklarasi Array Dua
 Dimensi}\label{deklarasi-array-dua-dimensi}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 tipe_data nama_var_array[batas_baris][batas_kolom];
 \end{lstlisting}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int matriks[3][4];
 int matriks2[3][4] = { {5,20,1,11}, {4,7,67,-9}, {9,0,45,3} };
 \end{lstlisting}
@@ -700,13 +702,13 @@ int x[2][4];
 atau diklarasikan dengan langsung menginisialisasi nilai
 elemen-elemen-nya sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int x[2][4]= {{8, 5, 9, 8},{8, 2, 1, 0}}
 \end{lstlisting}
 
 Selanjutnya larik dua dimensi x dapat digambarkan sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 x[0][0]=8 x[0][1]=5 x[0][2]=9 x[0][3]=8
 x[1][0]=8 x[1][1]=2 x[1][2]=1 x[1][3]=0
 \end{lstlisting}
@@ -719,7 +721,7 @@ data numerik ataupun non numerik.
 
 Array dua dimensi bertipe data numerik
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int matriks[3][5] = {{5,12,17,10,7},
 {15,6,25,2,19},
 {4,9,20,22,11}};
@@ -727,7 +729,7 @@ int matriks[3][5] = {{5,12,17,10,7},
 
 Jika data array integer yang diinputkan kurang dari deklarasi
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int matriks[3][5] = {{5,12,17,10,7},
 {15,6,25,2,19},
 {4,9 }}; //kurang 3 angka
@@ -739,7 +741,7 @@ Array 2 dimensi dapat juga digunakan untuk menyimpan data karakter
 (character). Pendeklarasian array 2 dimensi character adalah sebagai
 berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 char matriks[3][5] = {{'A','B','C','D','E'},
 {'F','G','H','I','J'},
 {'K','L','M','N','O'}};
@@ -760,7 +762,7 @@ Akan ditampilkan sebagai:
 
 Array 2 dimensi juga dapat dideklarasikan sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 char matriks[5][12] = {"Jakarta",
 "Bandung",
 "Surabaya",
@@ -783,21 +785,21 @@ Array diatas akan ditampilkan sebagai:
 
 Jika jumlah nilai character lebih banyak daripada deklarasi
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 char matriks2[2][2] = {'a','b','c','d','e'};
 \end{lstlisting}
 
-E\textgreater{} Akan terjadi ERROR!
+\includegraphics{images/warning} Akan terjadi ERROR!
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture3-10.png}
-\caption{}
+
 \end{figure}
 
 Jika data array character yang diinputkan kurang dari deklarasi
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 char matriks[3][5] = {{'a','b','c','d','e'},
 {'f','g','h','i','j'},
 {'k','l' }}; //kurang 3 karakter
@@ -807,18 +809,18 @@ Maka tiga data yang kurang akan diisi dengan karakter NULL atau '\textbackslash{
 
 Jika data array integer yang diinputkan lebih dari deklarasi
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int matriks[3][5] = {{5,12,17,10,7},
 {15,6,25,2,19},
 {4,9,20,22,11,14,19 }}; //lebih 2 angka
 \end{lstlisting}
 
-E\textgreater{} Matriks yang jumlah datanya lebih akan menyebabkan ERROR
+\includegraphics{images/warning} Matriks yang jumlah datanya lebih akan menyebabkan ERROR
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture3-9.png}
-\caption{}
+
 \end{figure}
 
 Array 2 dimensi juga dapat dideklarasikan secara dinamis. Dinamis bisa
@@ -826,7 +828,7 @@ dilakukan pada baris array 2 dimensi. Namun kita tidak bisa
 mendeklarasikan array 2 dimensi secara dinamis pada kolom. Contoh
 pendeklarasian baris dinamis adalah :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int matriks[][5] = {{5,12,17,10,7},
 {15,6,25,2,19},
 {4,9,20,22,11}};
@@ -844,7 +846,7 @@ Akan ditampilkan sebagai:
 
 Contoh matriks dengan deklarasi baris dinamis lainnya:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int matriks[][5] = {5,12,17,10,7,
 15,6,25,2,19,
 4,9,20,22,11,77,88,99};
@@ -876,37 +878,37 @@ dua kali. Terdapat outer loop yang digunakan untuk mengakses baris array
 2 dimensi, dan inner loop yang digunakan untuk mengakses kolom array 2
 dimensi.
 
-\subsubsection*{Contoh 10. Deklarasi dan Menampilkan Array 2 Dimensi}
+\subsubsection*{Contoh  Deklarasi dan Menampilkan Array 2 Dimensi}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Deklarasi dan Menampilkan Array 2 Dimensi]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int matriks[3][5] = {{5,12,17,10,7},
-{15,6,25,2,19},
-{4,9,1,5,2}};
-for(int i=0;i<3;i++){
-for(int j=0;j<5;j++){
-cout<<matriks[i][j]<<"\t";
-}
-cout<<endl;
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int matriks[3][5] = {{5,12,17,10,7},
+  {15,6,25,2,19},
+  {4,9,1,5,2}};
+  for(int i=0;i<3;i++){
+    for(int j=0;j<5;j++){
+      cout<<matriks[i][j]<<"\t";
+    }
+      cout<<endl;
+    }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 5	12	17	10	7
 15	6	25	2	19
 4	 9	 1	  5		2
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -924,7 +926,7 @@ elemen array diberikan karakter tab yang digunakan untuk memberi jarak
 antar output data. Karakter tab pada bahasa C menggunakan escape
 character '\t'.
 
-\subsubsection*{Contoh 11. Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya}
+\subsubsection*{Contoh  Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya}
 
 Misalkan terdapat array 2 dimensi sebagai berikut
 matriks\texttt{{[}3{]}{[}5{]}}
@@ -939,37 +941,37 @@ matriks\texttt{{[}3{]}{[}5{]}}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int matriks[3][5]={{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
-int matrikshasil[3][5];
-for(int i=0;i<3;i++){
-for(int j=0;j<5;j++){
-matrikshasil[i][j] = matriks[i][j];
-}
-}
-for(int i=0;i<3;i++){
-for(int j=0;j<5;j++){
-cout<<matrikshasil[i][j]<<"\t";
-}
-cout<<endl;
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int matriks[3][5]={{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
+  int matrikshasil[3][5];
+  for(int i=0;i<3;i++){
+    for(int j=0;j<5;j++){
+      matrikshasil[i][j] = matriks[i][j];
+    }
+  }
+  for(int i=0;i<3;i++){
+    for(int j=0;j<5;j++){
+      cout<<matrikshasil[i][j]<<"\t";
+    }
+    cout<<endl;
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 1	2	3	4	5
 6	7	8	9	10
 11	12	13	14	16
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -980,36 +982,36 @@ mengakses baris matriks, dan inner loop digunakan untuk mengakses kolom
 matriks. Kemudian untuk masing-masing elemen matriks dimasukkan kedalam
 variabel array matrikshasil tepat pada baris dan kolom yang sesuai.
 
-\subsubsection*{Contoh 12. Penyalinan array 2 dimensi ke dalam array 1 dimensi.}
+\subsubsection*{Contoh  Penyalinan array 2 dimensi ke dalam array 1 dimensi.}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penyalinan array 2 dimensi ke dalam array 1 dimensi]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int matriks[3][5]={{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
-int matrikshasil[15];
-int counter=-1;
-for(int i=0;i<3;i++){
-for(int j=0;j<5;j++){
-counter++;
-matrikshasil[counter] = matriks[i][j];
-}
-}
-for(int i=0;i<15;i++){
-cout<<matrikshasil[i]<<endl;
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int matriks[3][5]={{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
+  int matrikshasil[15];
+  int counter=-1;
+  for(int i=0;i<3;i++){
+    for(int j=0;j<5;j++){
+      counter++;
+      matrikshasil[counter] = matriks[i][j];
+    }
+  }
+  for(int i=0;i<15;i++){
+    cout<<matrikshasil[i]<<endl;
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 1
 2
 3
@@ -1025,7 +1027,7 @@ return a.exec();
 13
 14
 15
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -1060,30 +1062,30 @@ digunakan untuk mengakses indeks kolom.
 
 Berikut adalah contohnya:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pengaksesan Baris demi Baris]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int A[2][3]={{1,2,3},{4,5,6}};
-for(int baris=0;baris<2;baris++){
-for(int kolom=0;kolom<3;kolom++){
-cout<<A[baris][kolom]<<"\t";
-}
-cout<<endl;
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int A[2][3]={{1,2,3},{4,5,6}};
+  for(int baris=0;baris<2;baris++){
+    for(int kolom=0;kolom<3;kolom++){
+      cout<<A[baris][kolom]<<"\t";
+    }
+    cout<<endl;
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 1	 2 	3
 4 	5 	6
-\end{verbatim}
+\end{lcverbatim}
 
 \subsubsection{2. Pengaksesan Kolom demi
 Kolom}\label{pengaksesan-kolom-demi-kolom}
@@ -1097,39 +1099,39 @@ digunakan untuk mengakses indeks baris.
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pengaksesan Kolom demi Kolom]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int A[2][3]={{1,2,3},{4,5,6}};
-for(int kolom=0;kolom<3;kolom++){
-for(int baris=0;baris<2;baris++){
-cout<<A[baris][kolom]<<"\t";
-}
-cout<<endl;
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int A[2][3]={{1,2,3},{4,5,6}};
+  for(int kolom=0;kolom<3;kolom++){
+    for(int baris=0;baris<2;baris++){
+      cout<<A[baris][kolom]<<"\t";
+    }
+    cout<<endl;
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 1	 4
 2	 5
 3 	6
-\end{verbatim}
+\end{lcverbatim}
 
 \section{String}\label{string}
 
 String adalah kumpulan dari nilai-nilai karakter yang berurutan dalam
 bentuk satu dimensi, nilai string ini haruslah ditulis didalam tanda
-petik dua (``) misalnya: ``ini string''. Suatu nilai string disimpan di
+petik dua (") misalnya: "ini string". Suatu nilai string disimpan di
 memori dengan diakhiri oleh nilai '\textbackslash0'(null), misalnya nilai string
-``ANTO'' disimpan dimemori dalam bentuk
+"ANTO" disimpan dimemori dalam bentuk
 
 \begin{tabular}{|c|c|c|c|c|}
 	\hline
@@ -1160,12 +1162,12 @@ sifat-sifat array lainnya yaitu bersifat statis dan letaknya berurutan
 di dalam memory komputer. String berjenis array of character selalu
 dibuat dengan menggunakan array satu dimensi yang dapat terdiri dari
 karakter-karakter yang ditulis dengan menggunakan tanda petik tunggal
-(`) atau satu kesatuan string yang ditulis dengan tanda petik ganda
-(``).
+(') atau satu kesatuan string yang ditulis dengan tanda petik ganda
+(").
 
 Contoh pendeklarasian array of character
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 char nama[6]; //tanpa inisialisasi
 char nama2[6] = "anton"; //langsung diinisialisasi
 char nama2[6] = {'a','n','t','o','n'}; //langsung diinisialisasi
@@ -1175,30 +1177,30 @@ Pada sebuah string, terdapat karakter \texttt{\textbackslash{}0} yang
 dapat digunakan untuk mengetahui kapan berakhirnya suatu string. Berikut
 adalah contoh penggunaaanya.
 
-\subsubsection*{Contoh 13. Penggunaan karakter \textbackslash{0}}
+\subsubsection*{Contoh  Penggunaan karakter \textbackslash{0}}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan karakter \textbackslash{0}]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char string[100]="String";
-int K;
-for(K=0;string[K]!='\0';K++)
-cout<<string[K];
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char string[100]="String";
+  int K;
+  for(K=0;string[K]!='\0';K++)
+    cout<<string[K];
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 String
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -1207,22 +1209,22 @@ arti kita dapat mengetahui panjang suatu string dengan melakukan
 perulangan untuk setiap karakter yang ada pada array sampai ditemukannya
 katakter '\textbackslash0'.
 
-\subsubsection*{Contoh 14. String tanpa karakter \textbackslash{0}}
+\subsubsection*{Contoh  String tanpa karakter \textbackslash{0}}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=String tanpa karakter \textbackslash{0}]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char string[6]="String";
-int K;
-for(K=0;string[K]!='\0';K++)
-cout<<string[K];
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char string[6]="String";
+  int K;
+  for(K=0;string[K]!='\0';K++)
+    cout<<string[K];
+  return a.exec();
 }
 \end{lstlisting}
 
@@ -1244,30 +1246,30 @@ dianggap terlalu sedikit. Hal ini terjadi karena minimal kita harus
 mengalokasikan sejumlah 7 buah elemen. Elemen ke-7 digunakan untuk
 menyimpan tanda akhir string atau karakter \textbackslash0 tersebut.
 
-\subsubsection*{Contoh 15. Mengisi Array of Character}
+\subsubsection*{Contoh  Mengisi Array of Character}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Mengisi Array of Character]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char buffer[50] = {'\0'};
-cout << "Isi data string: ";
-cin >> buffer;
-cout << "Hasil data string: " << buffer << endl;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char buffer[50] = {'\0'};
+  cout << "Isi data string: ";
+  cin >> buffer;
+  cout << "Hasil data string: " << buffer << endl;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 Isi data string: Wachid
 hasil data string: Wachid
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -1287,36 +1289,37 @@ hasil data string: Wachid
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Isi data string: Nur Wachid
 hasil data string: Wachid
 \end{lstlisting}
 
-\subsubsection*{Contoh 16. Pengisian variabel array of character dengan maksimum jumlah
+\subsubsection*{Contoh  Pengisian variabel array of character dengan maksimum jumlah
 karakter.}
 
 Tulislah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pengisian variabel array of character dengan maksimum jumlah
+karakter]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char buffer[50] = {'\0'};
-cout << "Isi data string: ";
-cin.get(buffer,49); //ambil sebanyak 50 karakter atau diakhiri tanda enter
-cout << "Hasil data string: " << buffer << endl;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char buffer[50] = {'\0'};
+  cout << "Isi data string: ";
+  cin.get(buffer,49); //ambil sebanyak 50 karakter atau diakhiri tanda enter
+  cout << "Hasil data string: " << buffer << endl;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 Isi data string: Nur Wachid
 hasil data string: Nur Wachid
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -1335,7 +1338,7 @@ mengoperasikan suatu nilai string yang dimasukkan dalam file header
 string.h. Beberapa fungsi string yang terdapat pada header string.h
 adalah sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 strlen()
 \end{lstlisting}
 
@@ -1344,7 +1347,7 @@ Berfungsi untuk menentukkan panjang suatu nilai string.
 Bentuk umum:
 \texttt{int\ strlen(\textless{}identifier\ string\textgreater{});}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 length()
 \end{lstlisting}
 
@@ -1353,32 +1356,32 @@ Berfungsi untuk menentukan panjang suatu nilai tipe data class string
 Bentuk umum method:
 \texttt{\textless{}nama\_var\_string\textgreater{}.length();}
 
-\subsubsection*{Contoh 17. Penggunaan fungsi strlen()}
+\subsubsection*{Contoh  Penggunaan fungsi strlen()}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strlen()]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char data[100];
-cout<<"Masukkan kalimat apapun yang anda sukai (max 100 huruf): ";
-cin.get(data,99);
-cout<<"panjang huruf adalah: "<<strlen(data)<<" karakter";
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char data[100];
+  cout<<"Masukkan kalimat apapun yang anda sukai (max 100 huruf): ";
+  cin.get(data,99);
+  cout<<"panjang huruf adalah: "<<strlen(data)<<" karakter";
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Masukkan kalimat apapun
 yang anda sukai (max 100 huruf): Nur Wachid 
 panjang huruf adalah: 10 karakter
-\end{verbatim}
+\end{lcverbatim}
  
 
 \textbf{Keterangan:}
@@ -1387,33 +1390,33 @@ Fungsi strlen menerima satu parameter yang hanya bertipe array of
 character. Fungsi ini tidak bisa menerima parameter berupa tipe data C++
 string.
 
-\subsubsection*{Contoh 17. Penggunaan fungsi length pada tipe data string C++}
+\subsubsection*{Contoh  Penggunaan fungsi length pada tipe data string C++}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi length pada tipe data string C++]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-string data2;
-cout<<"Masukkan kalimat apapun yang anda sukai (max 100 huruf): ";
-getline(cin,data2);
-cout<<"panjang huruf adalah: "<<data2.length()<<" karakter";
-return a.exec();
+  QCoreApplication a(argc, argv);
+  string data2;
+  cout<<"Masukkan kalimat apapun yang anda sukai (max 100 huruf): ";
+  getline(cin,data2);
+  cout<<"panjang huruf adalah: "<<data2.length()<<" karakter";
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Masukkan kalimat apapun yang anda sukai
 (max 100 huruf): Nur Wachid 
 panjang huruf adalah: 10 karakter
-\end{verbatim}
+\end{lcverbatim}
  
 
 \textbf{Keterangan}
@@ -1451,32 +1454,32 @@ diperlukan suatu fungsi pustaka yang bernama \texttt{strcpy()}.
   \texttt{void\ strncpy(\textless{}stringhasil\textgreater{},\textless{}stringsumber\textgreater{});}
 \end{enumerate}
 
-\subsubsection*{Contoh 18. Penggunaan fungsi strcpy()}
+\subsubsection*{Contoh  Penggunaan fungsi strcpy()}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcpy()]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char data[100] = {'\0'};
-char data2[]="STRING";
-strcpy(data,data2);
-cout<<"string pertama: "<<data<<"\n";
-cout<<"string kedua : "<<data2;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char data[100] = {'\0'};
+  char data2[]="STRING";
+  strcpy(data,data2);
+  cout<<"string pertama: "<<data<<"\n";
+  cout<<"string kedua : "<<data2;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 String pertama : STRING
 String Kedua : STRING
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -1508,32 +1511,32 @@ String Kedua : STRING
   terjadi error karena tempatnya kurang.
 \end{itemize}
 
-\subsubsection*{Contoh 19. Penggunaan fungsi strncpy()}
+\subsubsection*{Contoh  Penggunaan fungsi strncpy()}
 
 Buatlah program beriku:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strncpy()]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char data[6] = {'\0'};
-char data2[]="STRINGKU";
-strncpy(data,data2,5);
-cout<<"string pertama: "<<data<<"\n";
-cout<<"string kedua : "<<data2;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char data[6] = {'\0'};
+  char data2[]="STRINGKU";
+  strncpy(data,data2,5);
+  cout<<"string pertama: "<<data<<"\n";
+  cout<<"string kedua : "<<data2;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
  String pertama : STRING
  String Kedua : STRINGKU
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -1562,23 +1565,23 @@ operator + seperti pada bahasa pemrograman Pascal. Jika dipaksakan
 menggunakan operator + akan ditampilkan pesan kesalahan sebagai berikut
 ini.
 
-\subsubsection*{Contoh 20. Penggunaan fungsi strcat()}
+\subsubsection*{Contoh  Penggunaan fungsi strcat()}
 
 Buatlah program beriku:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcat()]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char str[6] = "anton";
-char str2[7];
-char str3[14];
-str3 = str + str2;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char str[6] = "anton";
+  char str2[7];
+  char str3[14];
+  str3 = str + str2;
+  return a.exec();
 }
 \end{lstlisting}
 
@@ -1595,32 +1598,32 @@ return a.exec();
 Opearator + tidak bisa digunakan untuk menggabungkan dua buah string.
 Untuk menggabungkan dua string, digunakan fungsi \texttt{strcat()}.
 
-\subsubsection*{Contoh 21. Penggunaan fungsi strcat()}
+\subsubsection*{Contoh  Penggunaan fungsi strcat()}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcat()]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-char string1[100]="Kami kelompok ";
-char string2[]=" belajar Qt C++";
-strcat(string1,string2);
-cout<<"Jadi gabungannya adalah: "<<string1;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  char string1[100]="Kami kelompok ";
+  char string2[]=" belajar Qt C++";
+  strcat(string1,string2);
+  cout<<"Jadi gabungannya adalah: "<<string1;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Jadi gabungannya adalah:
 Kami kelompok belajar Qt C++
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -1639,7 +1642,7 @@ Kami kelompok belajar Qt C++
 \end{itemize}
 
 \begin{quotation}
-	\textbf{TIPS}
+\includegraphics{images/tips}	\textbf{TIPS}
 	
 	Beberapa fungsi yang \texttt{\#include\ string.h} dan dapat digunakan
 	untuk memanipulasi \emph{array of character} adalah:
@@ -1701,7 +1704,7 @@ menjadi \texttt{numerik} dan sebaliknya numerik bisa dikonversi menjadi
 \texttt{\#include\ \textless{}stdlib\textgreater{}}. Fungsi-fungsi
 konversi dari string ke numerik adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 atoi() //untuk mengubah string menjadi int
 atof() //untuk mengubah string menjadi float
 atol() //untuk mengubah string menjadi long int
@@ -1710,7 +1713,7 @@ atol() //untuk mengubah string menjadi long int
 Sedangkan kebalikannya, fungsi untuk mengubah numerik menjadi string
 adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 itoa() //untuk mengubah int menjadi string
 ltoa() //untuk mengubah long int menjadi string
 ultoa() //untuk mengubah unsigned long menjadi string
@@ -1730,43 +1733,44 @@ dan fungsi untuk memanipulasi data string. Kelas ini dikenal dengan
 membuat kopi string, atau menempatkan mereka di memory dengan lebih
 mudah.
 
-\subsubsection*{Contoh 22. Pembuatan variabel string C++, penyalinan string, dan
+\subsubsection*{Contoh  Pembuatan variabel string C++, penyalinan string, dan
 penggabungan string}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pembuatan variabel string C++ penyalinan string dan
+penggabungan string]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-string str1("Ini string C++");
-cout<<"Isi str1 = "<<str1<<endl;
-//salin isi str1 ke str2
-string str2;
-str2 = str1;
-cout<<"Isi str2 = "<<str2<<endl;
-//ubah str2
-str2 = "Hallo, ";
-//buat strhasil dan isi dgn gabungan dari str1 dan str2
-string strhasil;
-strhasil = str2 + str1;
-cout<<strhasil;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  string str1("Ini string C++");
+  cout<<"Isi str1 = "<<str1<<endl;
+  //salin isi str1 ke str2
+  string str2;
+  str2 = str1;
+  cout<<"Isi str2 = "<<str2<<endl;
+  //ubah str2
+  str2 = "Hallo, ";
+  //buat strhasil dan isi dgn gabungan dari str1 dan str2
+  string strhasil;
+  strhasil = str2 + str1;
+  cout<<strhasil;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Isi str1 : Ini string C++
 Isi str1 : Ini string C++
 Isi str1 : Ini string C++
 Halo, Ini string C++
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -1786,92 +1790,97 @@ Halo, Ini string C++
   seperti yang dapat dilihat pada kode program diatas.
 \end{itemize}
 \begin{quotation}
-	 \textbf{TIPS} 
+\includegraphics{images/tips}	 \textbf{TIPS} 
 	 
 	 Class
-	 string memiliki beberapa fitur / manfaat, yaitu: T\textgreater{}
-	 T\textgreater{} - Mengurangi kesulitan dalam upaya penciptaan dan
-	 memanipulasi string T\textgreater{} - Meningkatkan stabilitas aplikasi
-	 yang sedang diprogram dalam pengelolaan dan alokasi memori internal
-	 T\textgreater{} - Mudah dalam menyalin, memotong, menemukan, dan
-	 penghapusan string T\textgreater{} - Memberikan kesempatan pada
-	 programmer untuk lebih fokus pada pengembangan aplikasi daripada
-	 kesulitan dalam manipulasi string
+	 string memiliki beberapa fitur / manfaat, yaitu: 
+\begin{itemize}
+	\item Mengurangi kesulitan dalam upaya penciptaan dan
+	memanipulasi string
+	\item Meningkatkan stabilitas aplikasi
+	yang sedang diprogram dalam pengelolaan dan alokasi memori internal
+	\item Mudah dalam menyalin, memotong, menemukan, dan
+	penghapusan string
+	\item Memberikan kesempatan pada
+	programmer untuk lebih fokus pada pengembangan aplikasi daripada
+	kesulitan dalam manipulasi string
+\end{itemize}	 
+	 
 \end{quotation}
 
 
-\subsubsection*{Contoh 23. Penggunaan class string untuk manipulasi dat}a
+\subsubsection*{Contoh  Penggunaan class string untuk manipulasi data}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan class string untuk manipulasi data]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-//buat var nama dgn C-style string
-char nama[10] = "Halooooooo";
-//buat var string dan diisi nilai dari var nama
-string nama_copy(nama);
-cout<<nama_copy<<endl;
-//buat var nama2 dan kopikan isinya ke nama2_copy melalui konstruktor
-string nama2 = "saya belajar";
-string nama2_copy(nama2);
-cout<<nama2_copy<<endl;
-//buat var nama35 yg diisi nilai dari nama tapi hanya 5 huruf saja
-string nama35(nama,5);
-cout<<nama35<<endl;
-//buat var ulang yg diisi huruf 'C' sebanyak 10 buah
-string ulang(10,'a');
-cout<<ulang;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  //buat var nama dgn C-style string
+  char nama[10] = "Halooooooo";
+  //buat var string dan diisi nilai dari var nama
+  string nama_copy(nama);
+  cout<<nama_copy<<endl;
+  //buat var nama2 dan kopikan isinya ke nama2_copy melalui konstruktor
+  string nama2 = "saya belajar";
+  string nama2_copy(nama2);
+  cout<<nama2_copy<<endl;
+  //buat var nama35 yg diisi nilai dari nama tapi hanya 5 huruf saja
+  string nama35(nama,5);
+  cout<<nama35<<endl;
+  //buat var ulang yg diisi huruf 'C' sebanyak 10 buah
+  string ulang(10,'a');
+  cout<<ulang;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
- \begin{verbatim}
+ \begin{lcverbatim}
  Halooooooo
  saya belajar
  C
- \end{verbatim}
+ \end{lcverbatim}
 
 \textbf{Keterangan:}
 
 Dapat dilihat langsung pada baris komentar program diatas.
 
-\subsubsection*{Contoh 24. Penggabungan string dengan menggunakan class string}
+\subsubsection*{Contoh  Penggabungan string dengan menggunakan class string}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggabungan string dengan menggunakan class string]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-string satu("Percobaan 1 ");
-string dua("Percobaan 2 ");
-satu += dua;
-cout<<satu<<endl;
-string tampung = "Percobaan tampung";
-satu.append("Percobaan 3 ");
-satu.append(tampung);
-cout<<satu;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  string satu("Percobaan 1 ");
+  string dua("Percobaan 2 ");
+  satu += dua;
+  cout<<satu<<endl;
+  string tampung = "Percobaan tampung";
+  satu.append("Percobaan 3 ");
+  satu.append(tampung);
+  cout<<satu;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 Percobaan 1 	Percobaan 2
 Percobaan 1 	Percobaan 2 	Percobaan 3 	Percebaan tampung
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -1894,31 +1903,31 @@ Percobaan 1 	Percobaan 2 	Percobaan 3 	Percebaan tampung
   dengan memasukkan parameter bertipe string juga.
 \end{itemize}
 
-\subsubsection*{Contoh 25. Pengaksesan isi nilai class string}
+\subsubsection*{Contoh  Pengaksesan isi nilai class string}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pengaksesan isi nilai class string]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-string satu("Indonesia Raya");
-for(size_t i=0;i<satu.length();i++){
-cout<<satu[i]<<endl;
-}
-cout<<endl;
-cout<<"C-sytle: "<<satu.c_str();
-return a.exec();
+  QCoreApplication a(argc, argv);
+  string satu("Indonesia Raya");
+  for(size_t i=0;i<satu.length();i++){
+    cout<<satu[i]<<endl;
+  }
+  cout<<endl;
+  cout<<"C-sytle: "<<satu.c_str();
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 I
 n
 d
@@ -1936,7 +1945,7 @@ y
 a
 
 C-style: Indonesia Raya
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -1958,57 +1967,57 @@ C-style: Indonesia Raya
   \texttt{c\_str()}.
 \end{itemize}
 
-\subsubsection*{Contoh 26. Menemukan substring pada sebuah string besar}
+\subsubsection*{Contoh  Menemukan substring pada sebuah string besar}
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menemukan substring pada sebuah string besar]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-string strSample ("Kata pak Hari, \"hari ini matahari cerah sekali!\"");
-cout << "Contoh string adalah: " << endl;
-cout << strSample << endl << endl;
-// Temukan kata "hari"
-size_t nOffset = strSample.find ("hari", 0);
-// Cek apakah ketemu?
-if (nOffset != string::npos)
-cout << "Ketemu pertama kata \"hari\" pada offset " << nOffset;
-else
-cout << "Substring tidak ditemukan" << endl;
-cout << endl << endl;
-cout << "Mencari semua kata substring \"hari\"" << endl;
-size_t nSubstringOffset = strSample.find ("hari", 0);
-while (nSubstringOffset != string::npos)
-{
-cout << "Kata \"hari\" ada di offset " << nSubstringOffset << endl;
-// Pencarian dilanjutkan ke karakter berikutnya dst
-size_t nSearchOffset = nSubstringOffset + 1;
-nSubstringOffset = strSample.find ("hari", nSearchOffset);
-}
-cout << endl;
-cout << "Mencari semua karakter 'a'" << endl;
-const char chCharToSearch = 'a';
-size_t nCharacterOffset = strSample.find (chCharToSearch, 0);
-while (nCharacterOffset != string::npos)
-{
-cout << "'" << chCharToSearch << "' ditemukan";
-cout << " pada posisi " << nCharacterOffset << endl;
-//pencarian dilanjutkan
-size_t nCharSearchOffset = nCharacterOffset + 1;
-nCharacterOffset = strSample.find(chCharToSearch,nCharSearchOffset);
-}
-return a.exec();
+  QCoreApplication a(argc, argv);
+  string strSample ("Kata pak Hari, \"hari ini matahari cerah sekali!\"");
+  cout << "Contoh string adalah: " << endl;
+  cout << strSample << endl << endl;
+  // Temukan kata "hari"
+  size_t nOffset = strSample.find ("hari", 0);
+  // Cek apakah ketemu?
+  if (nOffset != string::npos)
+    cout << "Ketemu pertama kata \"hari\" pada offset " << nOffset;
+  else
+    cout << "Substring tidak ditemukan" << endl;
+    cout << endl << endl;
+    cout << "Mencari semua kata substring \"hari\"" << endl;
+    size_t nSubstringOffset = strSample.find ("hari", 0);
+  while (nSubstringOffset != string::npos)
+  {
+    cout << "Kata \"hari\" ada di offset " << nSubstringOffset << endl;
+    // Pencarian dilanjutkan ke karakter berikutnya dst
+    size_t nSearchOffset = nSubstringOffset + 1;
+    nSubstringOffset = strSample.find ("hari", nSearchOffset);
+  }
+  cout << endl;
+  cout << "Mencari semua karakter 'a'" << endl;
+  const char chCharToSearch = 'a';
+  size_t nCharacterOffset = strSample.find (chCharToSearch, 0);
+  while (nCharacterOffset != string::npos)
+  {
+    cout << "'" << chCharToSearch << "' ditemukan";
+    cout << " pada posisi " << nCharacterOffset << endl;
+    //pencarian dilanjutkan
+    size_t nCharSearchOffset = nCharacterOffset + 1;
+    nCharacterOffset = strSample.find(chCharToSearch,nCharSearchOffset);
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Contoh string adalah:
 Kata pak Hari, "hari ini matahari cerah sekali!"
 Ketemu pertama kata "hari" pada offset 16
@@ -2026,7 +2035,7 @@ Mencari semua karakter 'a'
 'a' ditemukan pada posisi 30
 'a' ditemukan pada posisi 37
 'a' ditemukan pada posisi 43
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -2054,11 +2063,11 @@ Mencari semua karakter 'a'
   sama dengan proses pencarian dengan parameter substring.
 \end{itemize}
 
-\subsubsection*{Contoh 27. Membalik kata / kalimat.}
+\subsubsection*{Contoh  Membalik kata / kalimat.}
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Membalik kata / kalimat]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -2079,12 +2088,12 @@ return a.exec();
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 String asli:
 String ini akan dibalik!
 Setelah dibalik:
 !kilabid naka ini gnirtS
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -2097,11 +2106,11 @@ Perintah reverse tersebut akan benar-benar mengganti string asli menjadi
 terbalik, sehingga variable string kita akan berubah berisi kalimat yang
 sudah terbalik.
 
-Contoh 28. Konversi huruf besar dan kecil.
+\subsubsection*{Contoh  Konversi huruf besar dan kecil.}
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Konversi huruf besar dan kecil]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -2109,24 +2118,24 @@ Tulislah program berikut ini:
 using namespace std;
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-cout << "Masukkan sebuah string: " << endl;
-string strInput;
-getline (cin, strInput);
-transform(strInput.begin(),strInput.end(),strInput.begin(),(int(*)(int))toupper);
-cout << "Hasil konversi ke huruf besar: " << endl;
-cout << strInput << endl << endl;
-transform
-(strInput.begin(),strInput.end(),strInput.begin(),(int(*)(int))tolower);
-cout << "Hasil konversi ke huruf kecil: " << endl;
-cout << strInput << endl << endl;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  cout << "Masukkan sebuah string: " << endl;
+  string strInput;
+  getline (cin, strInput);
+  transform(strInput.begin(),strInput.end(),strInput.begin(),(int(*)(int))toupper);
+  cout << "Hasil konversi ke huruf besar: " << endl;
+  cout << strInput << endl << endl;
+  transform
+  (strInput.begin(),strInput.end(),strInput.begin(),(int(*)(int))tolower);
+  cout << "Hasil konversi ke huruf kecil: " << endl;
+  cout << strInput << endl << endl;
+  return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Masukkan sebuah string:
 Ini KoK tulisaNya AlaY BaNGet yA!
 Hasil konversi ke huruf besar:
@@ -2134,7 +2143,7 @@ INI KOK TULISANYA ALAY BANGET YA!
 
 Hasil konversi ke huruf kecil:
 ini kok tulisanya alay banget ya!
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 

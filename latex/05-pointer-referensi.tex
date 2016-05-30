@@ -47,36 +47,36 @@ untuk anda. Jika anda ingin mengetahui pada alamat memory yang mana
 variabel anda disimpan maka anda dapat menggunakan operator address-of
 (\&).
 
-\subsubsection*{Contoh 1. Menampilkan alamat memory menggunakan address-of operator.}
+\subsubsection*{Contoh  Menampilkan alamat memory menggunakan address-of operator.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
-Contoh 1, kemudian tulis kode berikut.
+Contoh \ref{menampilkan-alamat-memory-dengan-menggunakan-address-of-operator}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menampilkan alamat memory menggunakan address-of operator, label=menampilkan-alamat-memory-dengan-menggunakan-address-of-operator]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int main(int argc, char *argv[])
 {
-using namespace std;
-QCoreApplication a(argc, argv);
-unsigned short bil1 =20;
-ulong bil2 = 200000;
-long bil3 = -670000;
-cout << "bil1 = " << bil1 << " address = " << &bil1 << endl;
-cout << "bil2 = " << bil2 << " address = " << &bil2 << endl;
-cout << "bil3 = " << bil3 << " address = " << &bil3 << endl;
-return a.exec();
+  using namespace std;
+  QCoreApplication a(argc, argv);
+  unsigned short bil1 =20;
+  ulong bil2 = 200000;
+  long bil3 = -670000;
+  cout << "bil1 = " << bil1 << " address = " << &bil1 << endl;
+  cout << "bil2 = " << bil2 << " address = " << &bil2 << endl;
+  cout << "bil3 = " << bil3 << " address = " << &bil3 << endl;
+  return a.exec();
 }
 \end{lstlisting}
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 bil1 = 20 address = 0x28fe96 
 bil2 = 200000 address = 0x28fe90 
 bil3 = -670000 address = 0x28fe8c
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa Program :}
 
@@ -101,7 +101,7 @@ menyimpan alamat variabel kedalam pointer. Sebagai contoh untuk
 mendeklarasikan pointer yang menunjuk ke variabel tertentu yang bertipe
 integer, anda dapat menuliskannya sebagai berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int *pBil = 0;
 \end{lstlisting}
 
@@ -133,7 +133,7 @@ misal (pBil, pUmur).
 
 Contoh dibawah ini adalah cara deklarasi dan inisialiasi pointer.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int *pBil = 0; //membuat variabel pointer dan inisialisasi null
 int bil = 12; //deklarasi variabel
 pBil = &bil; //menunjuk ke alamat variabel bil
@@ -144,7 +144,7 @@ alamat dari variabel bil, tanda address-of (\&) digunakan untuk
 mengambil alamat memory dari variabel bil. Anda dapat menuliskan
 statement diatas dengan lebih singkat sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int bil = 12; //deklarasi variable
 int *pBil = &bil; //menunjuk ke alamat variabel bil
 \end{lstlisting}
@@ -162,7 +162,7 @@ Operator \emph{indirection (})* disebut juga dengan operator
 \emph{dereferensi}, ketika pointer di dereferensi maka nilai dari
 variabel yang alamatnya ditunjuk oleh pointer dapat diambil.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int number = *pBil; //mengambil nilai variabel yg alamatnya disimpan padapointer pBil
 \end{lstlisting}
 
@@ -170,47 +170,47 @@ Pada kode ditas dapat dilihat bahwa nilai dari \texttt{*pBil} akan sama
 dengan nilai bil, karena pointer \texttt{pBil} mereferensi ke alamat
 dimana variabel bil disimpan, maka number akan bernilai 12.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 *pBil = 20; //nilai dari variabel bil juga akan berubah menjadi 20
 \end{lstlisting}
 
 Pada kode diatas nilai dari variabel bil akan berubah menjadi 20, karena
 variabel bil direferensi oleh pointer \texttt{pBil}.
 
-\subsubsection*{Contoh 2. Memanipulasi data menggunakan Pointer}
+\subsubsection*{Contoh  Memanipulasi data menggunakan Pointer}
 
 Buka Qt Creator, buat project Qt Console Application dengan nama Contoh
-2. Kemudian tulis kode berikut.
+\ref{manipulasi-data-menggunakan-pointer}. Kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Memanipulasi data menggunakan Pointer, label=manipulasi-data-menggunakan-pointer]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int main(int argc, char *argv[])
 {
-using namespace std;
-QCoreApplication a(argc, argv);
-ushort umur;
-ushort *pUmur = 0;
-umur = 17;
-cout << "Umur : " << umur << endl;
-pUmur = &umur;
-cout << "pUmur : " << *pUmur << endl;
-cout << "Merubah nilai pUmur.." << endl;
-*pUmur = 28;
-cout << "Umur : " << umur << endl;
-cout << "pUmur : " << *pUmur << endl;
-cout << "Merubah nilai umur.." << endl;
-umur = 30;
-cout << "Umur : " << umur << endl;
-cout << "pUmur : " << *pUmur << endl;
-return a.exec();
+  using namespace std;
+  QCoreApplication a(argc, argv);
+  ushort umur;
+  ushort *pUmur = 0;
+  umur = 17;
+  cout << "Umur : " << umur << endl;
+  pUmur = &umur;
+  cout << "pUmur : " << *pUmur << endl;
+  cout << "Merubah nilai pUmur.." << endl;
+  *pUmur = 28;
+  cout << "Umur : " << umur << endl;
+  cout << "pUmur : " << *pUmur << endl;
+  cout << "Merubah nilai umur.." << endl;
+  umur = 30;
+  cout << "Umur : " << umur << endl;
+  cout << "pUmur : " << *pUmur << endl;
+  return a.exec();
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan kode diatas, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Umur : 17
 pUmur : 17
 Merubah nilai pUmur..
@@ -219,7 +219,7 @@ pUmur : 28
 Merubah nilai umur..
 Umur : 30
 pUmur : 30
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa Program:}
 
@@ -247,38 +247,38 @@ Pointer}\label{mengganti-alamat-yang-direferensi-oleh-pointer}
 Anda juga dapat mengganti alamat variabel yang direferensi oleh pointer
 tertentu tanpa harus mengetahui nilai dari variabel tersebut.
 
-\subsubsection*{Contoh 3. Mengganti alamat yang di referensi oleh pointer}
+\subsubsection*{Contoh  Mengganti alamat yang di referensi oleh pointer}
 
-Buat project Qt Console Application baru, beri nama Contoh 3, kemudian
+Buat project Qt Console Application baru, beri nama Contoh \ref{mengganti-alamat-referensi-oleh-pointer}, kemudian
 tulis kode berikut
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Mengganti alamat yang di referensi oleh pointer, label=mengganti-alamat-referensi-oleh-pointer]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int main(int argc, char *argv[])
 {
-using namespace std;
-QCoreApplication a(argc, argv);
-ushort umur1 = 17, umur2 = 28;
-ushort *pUmur = &umur1; //ganti referensi
-cout << "umur1 : " << umur1 << " alamat : " << &umur1 << endl;
-cout << "pUmur : " << *pUmur << " alamat : " << pUmur << endl;
-pUmur = &umur2;
-cout << "umur2 : " << umur2 << " alamat : " << &umur2 << endl;
-cout << "pUmur : " << *pUmur << " alamat : " << pUmur << endl;
-return a.exec();
+  using namespace std;
+  QCoreApplication a(argc, argv);
+  ushort umur1 = 17, umur2 = 28;
+  ushort *pUmur = &umur1; //ganti referensi
+  cout << "umur1 : " << umur1 << " alamat : " << &umur1 << endl;
+  cout << "pUmur : " << *pUmur << " alamat : " << pUmur << endl;
+  pUmur = &umur2;
+  cout << "umur2 : " << umur2 << " alamat : " << &umur2 << endl;
+  cout << "pUmur : " << *pUmur << " alamat : " << pUmur << endl;
+  return a.exec();
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 umur1 : 17 alamat : 0x28fe92
 pUmur : 17 alamat : 0x28fe92
 umur2 : 28 alamat : 0x28fe90
 pUmur : 28 alamat : 0x28fe90
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -301,7 +301,7 @@ pUmur : 28 alamat : 0x28fe90
 Pada C++ nama dari array adalah konstan pointer yang menunjuk pada
 elemen pertama dari array, misal untuk deklarasi array berikut
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int Numbers[5];
 \end{lstlisting}
 
@@ -312,42 +312,42 @@ Anda dapat menggunakan nama array sebagai konstan pointer, misalnya
 Numbers+3 adalah cara penulisan untuk mengakses pointer yang menunjuk ke
 \texttt{Numbers{[}3{]}}.
 
-\subsubsection*{Contoh 4. Pointer dan Array}
+\subsubsection*{Contoh  Pointer dan Array}
 
-Buat project Qt Console Application dengan nama Contoh 4, kemudian tulis
+Buat project Qt Console Application dengan nama Contoh \ref{pointer-dan-array}, kemudian tulis
 kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pointer dan Array, label=pointer-dan-array]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int main(int argc, char *argv[])
 {
-using namespace std;
-QCoreApplication a(argc, argv);
-const int ARRAY_LENGTH = 5;
-int numbers[ARRAY_LENGTH] = {100,200,222,111,777};
-//mengakses alamat pertama dari array (numbers[0])
-cout << "Alamat numbers[0] : " << numbers << endl;
-//mengakses nilai dari elemen pertama array (numbers[0])
-cout << "Nilai numbers[0] : " << *numbers << endl;
-//mengakses alamat numbers[4]
-cout << "Alamat numbers[4] : " << numbers+4 << endl;
-//mengakses nilai dari numbers[4]
-cout << "Nilai numbers[4] : " << *(numbers+4) << endl;
-const int *pNumber = numbers;
-//menggunakan pointer untuk mencetak semua elemen array
-for(int i=0; i<ARRAY_LENGTH; i++)
-{
-cout << "numbers[" << i << "] = " << *(pNumber+i) << endl;
-}
-return a.exec();
+  using namespace std;
+  QCoreApplication a(argc, argv);
+  const int ARRAY_LENGTH = 5;
+  int numbers[ARRAY_LENGTH] = {100,200,222,111,777};
+  //mengakses alamat pertama dari array (numbers[0])
+  cout << "Alamat numbers[0] : " << numbers << endl;
+  //mengakses nilai dari elemen pertama array (numbers[0])
+  cout << "Nilai numbers[0] : " << *numbers << endl;
+  //mengakses alamat numbers[4]
+  cout << "Alamat numbers[4] : " << numbers+4 << endl;
+  //mengakses nilai dari numbers[4]
+  cout << "Nilai numbers[4] : " << *(numbers+4) << endl;
+  const int *pNumber = numbers;
+  //menggunakan pointer untuk mencetak semua elemen array
+  for(int i=0; i<ARRAY_LENGTH; i++)
+  {
+    cout << "numbers[" << i << "] = " << *(pNumber+i) << endl;
+  }
+  return a.exec();
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Alamat numbers[0] : 0x28fe78
 Nilai numbers[0] : 100
 Alamat numbers[4] : 0x28fe88
@@ -357,7 +357,7 @@ numbers[1] = 200
 numbers[2] = 222
 numbers[3] = 111
 numbers[4] = 777
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -395,7 +395,7 @@ anda simpan sehingga compiler dapat mengetahui berapa banyak memory yang
 dibutuhkan untuk menyimpan data tersebut. Contoh penggunaan keyword
 `new' dapat dilihat pada kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 //mengalokasikan memory di heap untuk menyimpan data integer
 int *pBil = new int;
 //nilai 19 akan disimpan di heap yg sudah dialokasikan
@@ -420,48 +420,48 @@ memory yang sudah anda hapus, agar tidak terjadi kesalahan setelah
 menghapus memory anda disarankan untuk memberi nilai null (0) pada
 pointer.
 
-\subsubsection*{Contoh 5. Mengalokasikan, menggunakan, dan mendelete Pointer}
+\subsubsection*{Contoh  Mengalokasikan, menggunakan, dan mendelete Pointer}
 
-Buat project Qt Console Application dengan nama Contoh 5, kemudian tulis
+Buat project Qt Console Application dengan nama Contoh \ref{alokasi-menggunakan-delete-pointer}, kemudian tulis
 kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Mengalokasikan menggunakan dan mendelete Pointer, label=alokasi-menggunakan-delete-pointer]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int main(int argc, char *argv[])
 {
-using namespace std;
-QCoreApplication a(argc, argv);
-int bil = 20;
-//pointer yang menunjuk ke alamat lokal
-int *pBil = &bil;
-cout << "bil : " << bil << endl;
-cout << "pBil : " << *pBil << endl;
-//mengalokasikan memory di heap untuk menyimpan data integer
-int *pHeap = new int;
-//nilai 19 akan disimpan di heap yg sudah dialokasikan
-*pHeap = 19;
-cout << "Nilai pHeap : " << *pHeap << endl;
-delete pHeap;
-pHeap = 0; //null pointer
-//mengalokasikan memory
-pHeap = new int;
-*pHeap = 100;
-cout << "Nilai pHeap : " << *pHeap << endl;
-delete pHeap;
-return a.exec();
+  using namespace std;
+  QCoreApplication a(argc, argv);
+  int bil = 20;
+  //pointer yang menunjuk ke alamat lokal
+  int *pBil = &bil;
+  cout << "bil : " << bil << endl;
+  cout << "pBil : " << *pBil << endl;
+  //mengalokasikan memory di heap untuk menyimpan data integer
+  int *pHeap = new int;
+  //nilai 19 akan disimpan di heap yg sudah dialokasikan
+  *pHeap = 19;
+  cout << "Nilai pHeap : " << *pHeap << endl;
+  delete pHeap;
+  pHeap = 0; //null pointer
+  //mengalokasikan memory
+  pHeap = new int;
+  *pHeap = 100;
+  cout << "Nilai pHeap : " << *pHeap << endl;
+  delete pHeap;
+  return a.exec();
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 bil : 20
 pBil : 20
 Nilai pHeap : 19
 Nilai pHeap : 100
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -497,7 +497,7 @@ ingin membuat objek bertipe class Mahasiswa anda dapat mendeklarasikan
 pointer untuk class tersebut dan mengalokasikan memory di heap untuk
 menyimpan objek tersebut. Sintaks penulisanya sama dengan sebelumnya.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Mahasiswa *mhs = new Mahasiswa;
 \end{lstlisting}
 
@@ -510,12 +510,12 @@ Ketika anda menghapus pointer yang menunjuk ke objek dengan keyword
 bagi programmer untuk membersihkan heap memory dari variabel yang sudah
 tidak digunakan.
 
-\subsubsection*{Contoh 6. Membuat dan menghapus objek dari Heap}
+\subsubsection*{Contoh  Membuat dan menghapus objek dari Heap}
 
-Buat project Qt Console Application dengan nama Contoh 6, kemudian tulis
+Buat project Qt Console Application dengan nama Contoh \ref{membuat-menghapus-objek-heap}, kemudian tulis
 kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Membuat dan menghapus objek dari Heap, label=membuat-menghapus-objek-heap]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -553,14 +553,14 @@ return a.exec();
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Deklarasi object tanpa pointer
 Konstruktor dipanggil..
 Mengalokasikan heap memory untuk menyimpan objek
 Konstruktor dipanggil..
 Delete objek di memory
 Destruktor dipanggil..
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa :}
 
@@ -588,7 +588,7 @@ Anda dapat menggunakan keyword `const' pada pointer dengan menuliskannya
 sebelum atau sesudah tipe data, atau keduanya. Contoh deklarasi const
 pointer dapat dilihat pada kode dibawah ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 const int * pBil1;
 int * const pBil2;
 const int * const pBil3;
@@ -635,7 +635,7 @@ maka objek target juga akan berubah.
 Cara penulisan reference adalah menambahkan operator (\&) didepan nama
 variabel, contohnya :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int &rBil = intBil;
 \end{lstlisting}
 
@@ -643,12 +643,12 @@ Statement diatas dapat diartikan ``rBil adalah referensi dari variabel
 intBil'', reference berbeda dengan variabel biasa karena reference harus
 diinisialisasi ketika dibuat.
 
-\subsubsection*{Contoh 7. Membuat dan Menggunakan Reference.}
+\subsubsection*{Contoh  Membuat dan Menggunakan Reference.}
 
-Buat project Qt Console Application dengan nama Contoh 7, kemudian tulis
+Buat project Qt Console Application dengan nama Contoh \ref{membuat-menggunakan-reference}, kemudian tulis
 kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Membuat dan Menggunakan Reference, label=membuat-menggunakan-reference]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -675,7 +675,7 @@ return a.exec();
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Nilai bil1 : 18
 Nilai &rBil : 18
 Nilai bil1 : 19
@@ -685,7 +685,7 @@ Nilai &rBil : 33
 Menampilkan alamat memory :
 &bil1 : 0x28fe90
 &rBil : 0x28fe90
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -713,37 +713,37 @@ Variable}\label{re-assign-reference-variable}
 Variabel reference tidak dapat di re-assign (ditetapkan ulang). Agar
 lebih jelas perhatikan contoh dibawah ini:
 
-\subsubsection*{Contoh 8. Re-assign Reference Value}
+\subsubsection*{Contoh  Re-assign Reference Value}
 
-Buat project Qt Console Application dengan nama Contoh 8, kemudian tulis
+Buat project Qt Console Application dengan nama Contoh \ref{Re-assign-Reference-Value}, kemudian tulis
 kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Re-assign Reference Value, label=Re-assign-Reference-Value]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int main(int argc, char *argv[])
 {
-using namespace std;
-QCoreApplication a(argc, argv);
-int bil = 14;
-int &rBil = bil;
-cout << "rBil : " << rBil << endl;
-int bil2 = 19;
-rBil = bil2; //tebak hasilnya !
-cout << "rBil : " << rBil << endl;
-cout << "bil : " << bil << endl;
-return a.exec();
+  using namespace std;
+  QCoreApplication a(argc, argv);
+  int bil = 14;
+  int &rBil = bil;
+  cout << "rBil : " << rBil << endl;
+  int bil2 = 19;
+  rBil = bil2; //tebak hasilnya !
+  cout << "rBil : " << rBil << endl;
+  cout << "bil : " << bil << endl;
+  return a.exec();
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 rBil : 14
 rBil : 19
 bil : 19
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -765,45 +765,45 @@ masalah diatas. Contoh dibawah ini akan menunjukan perbedaan penggunaan
 passing by value dan passing by reference (dengan pointer dan variaabel
 reference).
 
-\subsubsection*{Contoh 9. Passing by Value.}
+\subsubsection*{Contoh  Passing by Value.}
 
-Buat project Qt Console Application dengan nama Contoh 9, kemudian tulis
+Buat project Qt Console Application dengan nama Contoh \ref{passing-by-value}, kemudian tulis
 kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Passing by Value, label=passing-by-value]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 void Tukar(int x,int y);
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int x=12, y=21;
-cout << "Pada main, sebelum ditukar x=" << x << ", y=" << y << endl;
-Tukar(x,y);
-cout << "Pada main, setelah ditukar x=" << x << ", y=" << y << endl;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int x=12, y=21;
+  cout << "Pada main, sebelum ditukar x=" << x << ", y=" << y << endl;
+  Tukar(x,y);
+  cout << "Pada main, setelah ditukar x=" << x << ", y=" << y << endl;
+  return a.exec();
 }
-void Tukar(int x,int y)
+  void Tukar(int x,int y)
 {
-int tampung;
-cout << "Pada fungsi, sebelum ditukar, x=" << x << ", y=" << y << endl;
-tampung = x;
-x=y;
-y=tampung;
-cout << "Pada fungsi, Setelah ditukar, x=" << x << ", y=" << y << endl;
+  int tampung;
+  cout << "Pada fungsi, sebelum ditukar, x=" << x << ", y=" << y << endl;
+  tampung = x;
+  x=y;
+  y=tampung;
+  cout << "Pada fungsi, Setelah ditukar, x=" << x << ", y=" << y << endl;
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Pada main, sebelum ditukar x=12, y=21
 Pada fungsi, sebelum ditukar, x=12, y=21
 Pada fungsi, Setelah ditukar, x=21, y=12
 Pada main, setelah ditukar x=12, y=21
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -812,45 +812,45 @@ Pada kode diatas dapat dilihat bahwa \emph{passing by value} ke fungsi
 \texttt{y} yang ada pada fungsi main, dan hanya berpengaruh pada scope
 fungsi \texttt{Tukar()}. saja.
 
-\subsubsection*{Contoh 10. Passing by reference dengan pointer}
+\subsubsection*{Contoh . Passing by reference dengan pointer}
 
-Buat project Qt Console Application dengan nama Contoh 10, kemudian
+Buat project Qt Console Application dengan nama Contoh \ref{passing-by-reference-dengan-pointer}, kemudian
 tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Passing by reference dengan pointer, label=passing-by-reference-dengan-pointer]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 void Tukar(int *x, int *y);
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int x=12, y=21;
-cout << "main func, x=" << x << ", y=" << y << endl;
-Tukar(&x,&y);
-cout << "main func, x=" << x << ", y=" << y << endl;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int x=12, y=21;
+  cout << "main func, x=" << x << ", y=" << y << endl;
+  Tukar(&x,&y);
+  cout << "main func, x=" << x << ", y=" << y << endl;
+  return a.exec();
 }
-void Tukar(int *x, int *y)
+  void Tukar(int *x, int *y)
 {
-int tampung;
-cout << "Pada fungsi, sebelum ditukar x=" << *x << ",y=" << *y << endl;
-tampung = *x;
-*x = *y;
-*y = tampung;
-cout << "Pada fungsi, sesudah ditukar x=" << *x << ",y=" << *y << endl;
+  int tampung;
+  cout << "Pada fungsi, sebelum ditukar x=" << *x << ",y=" << *y << endl;
+  tampung = *x;
+  *x = *y;
+  *y = tampung;
+  cout << "Pada fungsi, sesudah ditukar x=" << *x << ",y=" << *y << endl;
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 main func, x=12, y=21
 Pada fungsi, sebelum ditukar x=12,y=21
 Pada fungsi, sesudah ditukar x=21,y=12
 main func, x=21, y=11
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -860,45 +860,45 @@ lihat bahwa setelah fungsi \texttt{Tukar()} dijalankan variabel
 \texttt{x} dan \texttt{y} di main function nilainya sudah berhasil
 ditukar.
 
-\subsubsection*{Contoh 11. Menjalankan fungsi Tukar() dengan reference}
+\subsubsection*{Contoh  Menjalankan fungsi Tukar() dengan reference}
 
-Buat project Qt Console Application dengan nama Contoh 11, kemudian
+Buat project Qt Console Application dengan nama Contoh \ref{fungsi-tukar}, kemudian
 tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menjalankan fungsi Tukar() dengan reference, label=fungsi-tukar]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
 void Tukar(int &x, int &y);
 int main(int argc, char *argv[])
 {
-QCoreApplication a(argc, argv);
-int x=12, y=21;
-cout << "main func, sebelum ditukar x=" << x << ", y=" << y << endl;
-Tukar(x,y);
-cout << "main func, setelah ditukar x=" << x << ", y=" << y << endl;
-return a.exec();
+  QCoreApplication a(argc, argv);
+  int x=12, y=21;
+  cout << "main func, sebelum ditukar x=" << x << ", y=" << y << endl;
+  Tukar(x,y);
+  cout << "main func, setelah ditukar x=" << x << ", y=" << y << endl;
+  return a.exec();
 }
-void Tukar(int &x, int &y)
+  void Tukar(int &x, int &y)
 {
-int tampung;
-cout << "Pada function, sebelum ditukar x=" << x << ", y=" << y << endl;
-tampung = x;
-x = y;
-y = tampung;
-cout << "Sesudah function, sebelum ditukar x=" << x << ", y=" << y << endl;
+  int tampung;
+  cout << "Pada function, sebelum ditukar x=" << x << ", y=" << y << endl;
+  tampung = x;
+  x = y;
+  y = tampung;
+  cout << "Sesudah function, sebelum ditukar x=" << x << ", y=" << y << endl;
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 main func, sebelum ditukar x=12, y=21
 Pada function, sebelum ditukar x=12, y=21
 Sesudah function, sebelum ditukar x=21, y=12
 main func, setelah ditukar x=21, y=11
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -917,12 +917,12 @@ function pass by reference. Karena function pass by reference dapat
 memanipulasi objek asli. Agar lebih jelas coba kerjakan contoh dibawah
 ini.
 
-\subsubsection*{Contoh 12. Mengembalikan beberapa nilai dengan pointer}
+\subsubsection*{Contoh  Mengembalikan beberapa nilai dengan pointer}
 
-Buat project Qt Console Application dengan nama Contoh 12, kemudian
+Buat project Qt Console Application dengan nama Contoh \ref{mengembalikan-nilai-pointer}, kemudian
 tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Mengembalikan beberapa nilai dengan pointer, label=mengembalikan-nilai-pointer]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -965,12 +965,12 @@ int main(int argc, char *argv[])
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Masukan number : 5
 Number : 5
 pLuasPersegi : 25
 pVolumeKubus : 125
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -992,12 +992,12 @@ pVolumeKubus : 125
   function nilai variabel asli di main function juga berubah.
 \end{itemize}
 
-\subsubsection*{Contoh 13. Mengembalikan beberapa nilai dengan reference variabel}
+\subsubsection*{Contoh  Mengembalikan beberapa nilai dengan reference variabel}
 
-Buat project Qt Console Application dengan nama Contoh 13, kemudian
+Buat project Qt Console Application dengan nama Contoh \ref{mengembalikan-nilai-reference-variabel}, kemudian
 tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Mengembalikan beberapa nilai dengan reference variabel, label=mengembalikan-nilai-reference-variabel]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1039,12 +1039,12 @@ int main(int argc, char *argv[])
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Masukan number : 5
 Number : 5
 pLuasPersegi : 25
 pVolumeKubus : 125
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -1070,12 +1070,12 @@ atau class yang dibuat sendri oleh user) ini akan menurunkan performa
 dari program. Untuk melakukan passing parameter objek melalui function
 disarankan menggunakan reference pada objek.
 
-\subsubsection*{Contoh 14. Passing Object By Value}
+\subsubsection*{Contoh  Passing Object By Value}
 
-Buat project Qt Console Application dengan nama Contoh 14, kemudian
+Buat project Qt Console Application dengan nama Contoh \ref{pasing-by-value}, kemudian
 tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Passing Object By Value, label=pasing-by-value]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1117,7 +1117,7 @@ int main(int argc, char *argv[])
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Membuat object mahasiswa
 Memanggil Mahasiswa Konstruktor
 Memanggil Copy Konstruktor
@@ -1125,7 +1125,7 @@ Mengembalikan FunctionMhs ..
 Memanggil Copy Konstruktor
 Memanggil Mahasiswa Destruktor
 Memanggil Mahasiswa Destruktor
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 
@@ -1143,58 +1143,58 @@ Memanggil Mahasiswa Destruktor
   Cara yang lebih efisien akan dibahas pada contoh program selanjutnya.
 \end{itemize}
 
-\subsubsection*{Contoh 15. Passing Object By Reference}
+\subsubsection*{Contoh  Passing Object By Reference}
 
-Buat project Qt Console Application dengan nama Contoh 15, kemudian
+Buat project Qt Console Application dengan nama Contoh \ref{Passing-Object-By-Reference}, kemudian
 tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Passing Object By Reference, label=Passing-Object-By-Reference]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
-class Mahasiswa
-{
-public:
-Mahasiswa();
-Mahasiswa(Mahasiswa&);
-~Mahasiswa();
-};
-Mahasiswa::Mahasiswa()
-{
-cout << "Memanggil Mahasiswa Konstruktor " << endl;
-}
-Mahasiswa::Mahasiswa(Mahasiswa &)
-{
-cout << "Memanggil Copy Konstruktor " << endl;
-}
-Mahasiswa::~Mahasiswa()
-{
-cout << "Memanggil Mahasiswa Destruktor " << endl;
-}
-Mahasiswa &FunctionMhs(Mahasiswa &objMhs);
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-cout << "Membuat object mahasiswa " << endl;
-Mahasiswa objMhs1;
-FunctionMhs(objMhs1);
-return a.exec();
-}
-Mahasiswa &FunctionMhs(Mahasiswa &objMhs)
-{
-cout << "Mengembalikan FunctionMhs .." << endl;
-return objMhs;
+  class Mahasiswa
+  {
+    public:
+    Mahasiswa();
+    Mahasiswa(Mahasiswa&);
+    ~Mahasiswa();
+  };
+    Mahasiswa::Mahasiswa()
+  {
+    classout << "Memanggil Mahasiswa Konstruktor " << endl;
+  }
+    Mahasiswa::Mahasiswa(Mahasiswa &)
+  {
+    cout << "Memanggil Copy Konstruktor " << endl;
+  }
+    Mahasiswa::~Mahasiswa()
+  {
+    cout << "Memanggil Mahasiswa Destruktor " << endl;
+  }
+  Mahasiswa &FunctionMhs(Mahasiswa &objMhs);
+  int main(int argc, char *argv[])
+  {
+    QCoreApplication a(argc, argv);
+    cout << "Membuat object mahasiswa " << endl;
+    Mahasiswa objMhs1;
+    FunctionMhs(objMhs1);
+    return a.exec();
+    }
+      Mahasiswa &FunctionMhs(Mahasiswa &objMhs)
+    {
+      cout << "Mengembalikan FunctionMhs .." << endl;
+    return objMhs;
 }
 \end{lstlisting}
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
 
-\begin{verbatim}
+\begin{lcverbatim}
 Membuat object mahasiswa
 Memanggil Mahasiswa Konstruktor
 Mengembalikan FunctionMhs ..
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisa:}
 

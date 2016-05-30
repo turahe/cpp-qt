@@ -20,7 +20,7 @@ Contoh nyatanya terdapat pada bahasa C dan C++. Pada bahasa C tidak
 terdapat tipe data bool (boolean) sehingga kita harus menggunakan kata
 kunci typedef.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 typedef unsigned int BOOL;
 BOOL mybool = 0;
 BOOL isTrue(){
@@ -36,7 +36,7 @@ bahasa C ke bahasa C++, dimana bahasa C++ sudah ada tipe data bool yang
 tentunya berbeda ``persepsi'' dengan BOOL dari bahasa C. Maka dari itu
 dilakukan casting. Berikut adalah contoh castingnya:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 bool hasilku = (bool) isTrue(); // C-Style cast
 \end{lstlisting}
 
@@ -56,7 +56,7 @@ menerima data dari variabel yang bertipe data berjarak jangkauan kecil.
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 short a=2000;
 int b;
 b=a;
@@ -70,7 +70,7 @@ conversion} juga dapat diterpakan pada \emph{constrctor} sebuah
 \emph{class}, sehingga ketika kita memanggil konstruktor tersebut, maka
 konversi akan dilakukan. Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 class A {
 };
 class B {
@@ -83,7 +83,7 @@ B (A a)
 
 Proses instansiasi adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 A a;
 B b=a;
 \end{lstlisting}
@@ -100,13 +100,13 @@ tanda kurung.
 
 \textbf{Sintaks:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 (<type>)<value>
 \end{lstlisting}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 short a=2000;
 int b;
 b = (int) a; // c-like cast notation
@@ -127,11 +127,11 @@ bisa memaksa variabel a yang bertipe \texttt{short} diperlakukan menjadi
 diberi tanda kurung pada variabel a sehingga variabel a bisa di assign
 ke dalam variabel b yang bertipe integer.
 
-\subsubsection*{Contoh 1. Contoh Explicit Casting pada Tipe Data Numerik.}
+\subsubsection*{Contoh Explicit Casting pada Tipe Data Numerik.}
 
 Tulislah kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Explicit Casting pada Tipe Data Numerik]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -223,11 +223,12 @@ Mari kita Keterangan: perbaris.
   menjadi float, karena float tipe datanya lebih besar lebar datanya
   daripada integer.
 \end{itemize}
+\begin{quotation}
+\textbf{TIPS} 
+	
+Untuk melakukan casting yang benar, maka casting akan valid jika kita mengcasting tipe data yang berukuran lebih besar menjadi tipe data yang berukuran lebih kecil. Misalnya float dicast menjadi int.
+\end{quotation}
 
-T\textgreater{} \textbf{TIPS} T\textgreater{} T\textgreater{} Untuk
-melakukan casting yang benar, maka casting akan valid jika kita
-mengcasting tipe data yang berukuran lebih besar menjadi tipe data yang
-berukuran lebih kecil. Misalnya float dicast menjadi int.
 
 \section{Casting Operator pada C++}\label{casting-operator-pada-c}
 
@@ -247,7 +248,7 @@ C++ memiliki cara pengcastingan yang baru, yaitu:
 
 Bentuk umum untuk semuanya adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 tipe_tujuan hasil = tipe_casting <tipe_tujuan> (obyek_yg_mau_dicasting);
 \end{lstlisting}
 
@@ -266,7 +267,7 @@ sama sekali. Dengan menggunakan \texttt{static\_cast}, pointer bisa
 dicaskting ke class induknya atau dapat down-case menjadi class
 turunannya. Berikut contohnya:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 CInduk* pInduk = new CTurunan (); // membuat obyek Cturunan dari Cinduk (polymorfisme)
 CTurunan* pTurunan = static_cast<CTurunan*>(pInduk); // mengcasting pInduk menjadi Cturunan, valid!
 // CTdkAdaHubungan merupakan class yang tidak ada hubungannya dengan CInduk melalui inheritance
@@ -303,13 +304,13 @@ biasa agar programmer dapat melihat
 
 secara eksplisit tipe data yang dicastingnya. Sintaks umunya adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 static_cast<<type>>(<value>);
 \end{lstlisting}
 
 \textbf{Berikut contohnya:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 double myphi = 3.14;
 int angka = static_cast<int>(myphi);
 \end{lstlisting}
@@ -329,7 +330,7 @@ dalam blok try\ldots{}catch.
 
 \textbf{Bentuk umumnya adalah:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 tipe_tujuan* pTujuan = dynamic_cast <tipe_class*> (pSumber);
 if (pTujuan) // apakah proses casting sukses?
 pTujuan->CallFunc ();
@@ -337,7 +338,7 @@ pTujuan->CallFunc ();
 
 \textbf{Contoh penggunaan:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 CInduk* pInduk = new CTurunan();
 // Melakukan down casting
 CTurunan* pTurunan = dynamic_cast <CTurunan*> (pInduk);
@@ -358,13 +359,13 @@ dengan menggunakan tanda \&.
 
 Casting ini tidak boleh menghasilkan kembalian NULL. Sintaksnya:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 <type> subclass = dynamic_cast<<type> &>( ref_obj );
 \end{lstlisting}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 class CBase { };
 class CDerived: public CBase { };
 CBase b; CBase* pb;
@@ -373,11 +374,11 @@ pb = dynamic_cast<CBase*>(&d); // ok: derived-to-base
 pd = dynamic_cast<CDerived*>(&b); // wrong: base-to-derived
 \end{lstlisting}
 
-\subsubsection*{Contoh 2. Contoh Dynamic Casting.}
+\subsubsection*{Contoh Dynamic Casting.}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Contoh Dynamic Casting]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -467,19 +468,19 @@ jenis obyeknya berhubungan atau tidak. Casting ini tidak boleh digunakan
 untuk melakukan down casting pada hierarki kelas atau untuk menghapus
 const volatile. Sintaks:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 reinterpret_cast<<type>>( <val> );
 \end{lstlisting}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 reinterpret_cast<int*>(100);
 \end{lstlisting}
 
 Reinterpret\_cast pada class menggunakan syntax sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 CInduk * pInduk = new CInduk ();
 CTdkAdaHubungan * pTdkHubung = reinterpret_cast<CTdkAdaHubungan*>(pInduk);
 // program diatas bisa dikompile tapi sangat tidak disarankan karena class CtdkAdaHubungan bukanlah turunan dari Cinduk.
@@ -491,7 +492,7 @@ ditemukan pada pemrograman aplikasi tingkat rendah tertentu (seperti
 driver) dimana harus dilakukan konversi ke tipe sederhana dimana API
 dapat menerimanya.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 CSomeClass* pObject = new CSomeClass ();
 // harus dikirimkan dalam bentuk byte (unsigned char)
 unsigned char* pBytes = reinterpret_cast <unsigned char*>(pObject);
@@ -499,7 +500,7 @@ unsigned char* pBytes = reinterpret_cast <unsigned char*>(pObject);
 
 \textbf{Contoh lain:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 class A {};
 class B {};
 A * a = new A;
@@ -522,13 +523,13 @@ sebagai konstanta.
 
 \textbf{Sintaks:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 const_cast<<type>>(<value>);
 \end{lstlisting}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 void func(char *);
 const char *x = "abcd";
 func(const_cast<char *>(x));
@@ -539,7 +540,7 @@ suatu objek. Mengapa diperlukan? Karena kadang-kadang programmer
 melupakan penggunaan const pada method yang seharusnya berjenis const
 method. Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 ContohClass
 {
 public:
@@ -555,7 +556,7 @@ a const reference"
 
 Kita dapat menggunakan const\_cast untuk mengubah a adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 void tampilkanData (const ContohClass& mData)
 {
 ContohClass& refData = const_cast <ContohClass&>(mData);
@@ -565,7 +566,7 @@ refData.tampilkanAnggota(); // OK!
 
 Kita juga dapat menggunakan pointer:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 void tampilkanData (const ContohClass* pData)
 {
 // pData->DisplayMembers(); Error: attempt to invoke a non-const function!
@@ -576,7 +577,7 @@ pCastedData->DisplayMembers(); // Allowed!
 
 Contoh lain:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 // const_cast
 #include <iostream>
 using namespace std;
@@ -656,7 +657,7 @@ disupport oleh Qt. Untuk membuat database MySQL.
 Untuk melakukan koneksi QtConsole dengan MySQL, maka lakukan Contoh
 berikut:
 
-\subsubsection*{Contoh 3. Percobaan koneksi MySQL dengan QtConsole}
+\subsubsection*{Contoh Percobaan koneksi MySQL dengan QtConsole}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -692,7 +693,7 @@ Hasil:
 
 Koneksi Qt dengan Mysql ddan menampilkan datanya
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Percobaan koneksi MySQL dengan QtConsole]
 #include <QtCore/QCoreApplication>
 #include <QtSql/QtSql>
 #include <QtDebug>
@@ -789,7 +790,7 @@ SQLite adalah:
 Untuk melakukan koneksi QtConsole dengan SQLite, maka lakukan Contoh
 berikut:
 
-\subsubsection*{Contoh 4. Percobaan koneksi SQLite dengan QtConsole}
+\subsubsection*{Contoh Percobaan koneksi SQLite dengan QtConsole}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -853,7 +854,7 @@ Nim & Nama & IPK\tabularnewline
 
 Koneksi Qt ke Database
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Percobaan koneksi SQLite dengan QtConsole]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QtSql/QtSql>
@@ -916,7 +917,7 @@ dihasilkan bisa satu atau lebih dari satu.
 Pada Qt cara yang digunakan untuk membaca data adalah dengan menggunakan
 class QSqlQuery dan method query seperti berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 QSqlQuery query("SELECT * FROM mahasiswa");
 while (query.next()) {
 QString nim = query.value(0).toString();
@@ -934,11 +935,11 @@ pertama (dalam hal ini digunakan indeks 0). Untuk mengambil field
 tertentu pada tabel, misalnya ipk, maka hanya perlu mengganti indeksnya
 menjadi 2 saja.
 
-\subsubsection*{Contoh 5. Membaca data pada Sqlite.}
+\subsubsection*{Contoh  Membaca data pada Sqlite.}
 
 Tulislah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption= Membaca data pada Sqlite]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QtSql/QtSql>
@@ -1003,7 +1004,7 @@ gagal.
 Pada Qt cara yang digunakan untuk menambah data adalah dengan
 menggunakan class QSqlQuery dan method query seperti berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 QSqlQuery query;
 bool hasil = query.exec("INSERT INTO mahasiswa (nim, nama,ipk) VALUES
 ('22113344','anton', 3.4)");
@@ -1015,11 +1016,11 @@ tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil
 dari akibat penambahan datanya. Jika berhasil maka akan mengembalikan
 nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-\subsubsection*{Contoh 6. Menambahkan data pada SQLite.}
+\subsubsection*{Contoh  Menambahkan data pada SQLite.}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption= Menambahkan data pada SQLite]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QtSql/QtSql>
@@ -1074,7 +1075,7 @@ return a.exec();
 
 Jika kita hendak membaca data pada SQLite, maka tambahkan kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Membaca data pada SQLite]
 QsqlQuery query.exec("select nim,nama,ipk from mahasiswa order by nim desc");
 QString nim,nama;
 float ipk;
@@ -1110,7 +1111,7 @@ berhasil, nilai false jika pengeditan data gagal.
 Pada Qt cara yang digunakan untuk mengedit data adalah dengan
 menggunakan class QSqlQuery dan method query seperti berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=menggunakan class QSqlQuery dan method query]
 QSqlQuery query;
 bool hasil = query.exec("UPDATE mahasiswa SET nama='Antonius Rachmat C' WHERE
 nim='2200259');
@@ -1122,7 +1123,7 @@ tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil
 dari akibat pengeditan datanya. Jika berhasil maka akan mengembalikan
 nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-\subsubsection*{Contoh 7. Mengedit data pada SQLite.}
+\subsubsection*{Contoh Mengedit data pada SQLite.}
 
 Kondisi awal tabel:
 
@@ -1130,7 +1131,7 @@ Kita akan mengedit nim 22002529 menjadi bernama Antonius Rachmat C
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Mengedit data pada SQLite]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QtSql/QtSql>
@@ -1188,7 +1189,7 @@ gagal.
 Pada Qt cara yang digunakan untuk menghapus data adalah dengan
 menggunakan class QSqlQuery dan method query seperti berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=menghapus data adalah dengan menggunakan class QSqlQuery dan method query]
 QSqlQuery query;
 bool hasil = query.exec("DELETE FROM mahasiswa WHERE nim='22334455');
 if(hasil) qDebug() << "Berhasil"; else qDebug << "gagal";
@@ -1199,7 +1200,7 @@ tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil
 dari akibat penghapusan datanya. Jika berhasil maka akan mengembalikan
 nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-\subsubsection*{Contoh 8. Menghapus data pada SQLite.}
+\subsubsection*{Contoh  Menghapus data pada SQLite.}
 
 Kondisi awal tabel:
 
@@ -1207,7 +1208,7 @@ Kita akan menghapus data ``mhs baru''.
 
 Buatlah program sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption= Menghapus data pada SQLite]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QtSql/QtSql>
@@ -1297,14 +1298,14 @@ fungsi-fungsi lain diluar class yang digunakan untuk melakukan
 fungsi-fungsi sesuai dengan 5 fungsi yang didefinisikan pada menu. Untuk
 lebih jelasnya silahkan dicoba pada Contoh berikut ini.
 
-\subsubsection*{Contoh 9. Pembuatan manipulasi data pada SQLite dengan menggunakan menu}
+\subsubsection*{Contoh  Pembuatan manipulasi data pada SQLite dengan menggunakan menu}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Tulislah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption= Pembuatan manipulasi data pada SQLite dengan menggunakan menu]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QtSql/QtSql>
@@ -1531,7 +1532,7 @@ return a.exec();
 	bisa digunakan setelah fungsi getline, karena akan membuat inputan
 	menjadi bertumpuk seperti pada contoh ini:
 	
-	\begin{lstlisting}[language=c++]
+	\begin{lstlisting}[language=c++, numbers=none]
 	int main(){
 	int id, age;
 	string name, address;
@@ -1544,7 +1545,7 @@ return a.exec();
 	
 	\textbf{Hasil:}
 	
-	\begin{lstlisting}[language=c++]
+	\begin{lstlisting}[language=c++, numbers=none]
 	Enter ID: 23
 	Enter Name: Enter Address : Yogyakarta
 	Enter Age : 45
@@ -1554,7 +1555,7 @@ return a.exec();
 	Untuk mencegahnya kita bisa menukar posisi bahwa cin diletakkan dibawah
 	getline, seperti berikut:
 	
-	\begin{lstlisting}[language=c++]
+	\begin{lstlisting}[language=c++, numbers=none]
 	int main(){
 	 int id, age;
 	 string name, address;
@@ -1567,7 +1568,7 @@ return a.exec();
 	
 	\textbf{Sehingga tampilan:}
 	
-	\begin{lstlisting}[language=c++]
+	\begin{lstlisting}[language=c++, numbers=none]
 	Enter Name: Yanuar Adi
 	Enter Address : Yogyakarta
 	Enter ID: 23
@@ -1577,7 +1578,7 @@ return a.exec();
 	Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan
 	dengan cara:
 	
-	\begin{lstlisting}[language=c++]
+	\begin{lstlisting}[language=c++, numbers=none]
 	int main(){
 	int id, age;
 	string name, address;
@@ -1591,7 +1592,7 @@ return a.exec();
 	
 	\textbf{Sehingga tampilan:}
 	
-	\begin{lstlisting}[language=c++]
+	\begin{lstlisting}[language=c++, numbers=none]
 	Enter ID : 23
 	Enter Name : Yanuar Adi
 	Enter Address : Yogyakarta

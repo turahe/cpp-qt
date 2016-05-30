@@ -4,12 +4,33 @@
 \usepackage{amssymb}
 \usepackage{textcomp}
 \usepackage{wasysym}
-\usepackage{makeidx}
+
+\usepackage{imakeidx}% membuat index
+\makeindex
+
+\usepackage{xcolor}
+\usepackage{fancyvrb,newverbs}
+\usepackage{verbatim}
+
+\definecolor{cverbbg}{gray}{0.93}
+
+\newenvironment{lcverbatim}
+{\SaveVerbatim{cverb}}
+{\endSaveVerbatim
+	\flushleft\fboxrule=0pt\fboxsep=.5em
+	\colorbox{cverbbg}{%
+		\makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+	}
+	\endflushleft
+}
+
+
+
 \usepackage[english, main=bahasa]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{libertine}
-%\usepackage{biolinum}
+ \usepackage{outlines}
 \usepackage[pdfpagelabels]{hyperref}
 \hypersetup{
 	pdftitle=Koding C++: Koding C++ dengan Qt Creator ,
@@ -31,7 +52,7 @@
 \usepackage{booktabs}
 \usepackage[fleqn,tbtags]{mathtools}
 \usepackage{longtable}
-\usepackage{xcolor}
+
 \usepackage[overlay]{textpos}
 \usepackage{wallpaper}
 \usepackage{graphicx}
@@ -47,6 +68,7 @@
 \lstset{breaklines=true,
 	morekeywords={},
 %	backgroundcolor=\color{black},
+%frame=shadowbox,
 	showstringspaces=false,
 	basicstyle      = \small\ttfamily,
 	 numberstyle=\tiny,
@@ -56,7 +78,7 @@
 	identifierstyle =\color{greenidentifier},
 	basicstyle=\ttfamily,
 	numbers=left,
-	emph={QDebug,iostream,QtCore,QCoreApplication,QtSql,QtDebug,string, algorithm},
+	emph={QDebug,iostream,QtCore,QCoreApplication,QtSql,QtDebug,string,QDomDocument,algorithm,QTextStream,QFile,QDomElement,QDomText},
 	 emphstyle=\color{keyyellow},
 	emph={[2]root,base},
 	emphstyle={[2]\color{blue}}
@@ -78,20 +100,19 @@
 [\vspace{2ex}%
 \titlerule]
 
-\usepackage{titletoc} % Required for manipulating the table of contents
-
-\usepackage{fancyhdr} % Required for header and footer configuration
-
+\usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % Section text font settings
 \fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
 \fancyhead[LO]{\rightmark} % Print the nearest section name on the left side of odd pages
 \fancyhead[RE]{\leftmark} % Print the current chapter name on the right side of even pages
-\renewcommand{\headrulewidth}{0.5pt} % Width of the rule under the header
+\renewcommand{\headrulewidth}{1.5pt} % Width of the rule under the header
 \addtolength{\headheight}{2.5pt} % Increase the spacing around the header slightly
-\renewcommand{\footrulewidth}{0pt} % Removes the rule in the footer
+\renewcommand{\footrulewidth}{1pt} % Removes the rule in the footer
 \fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Style for when a plain pagestyle is specified
+\rfoot{Belajar C++ dengan Qt Creator}
+\lfoot{\includegraphics{images/logo-qt}}
 
 % Removes the header from odd empty pages at the end of chapters
 \makeatletter
@@ -103,21 +124,33 @@
 	\newpage
 	\fi}
 
+\makeatletter
+\renewcommand{\cleardoublepage}{
+	\clearpage\ifodd\c@page\else
+	\hbox{}
+	\vspace*{\fill}
+	\thispagestyle{empty}
+	\newpage
+	\fi}
+
 \begin{document}
+	\begingroup
+	\thispagestyle{empty}
 	\begin{textblock*}{297mm}(0mm,0mm)
-		\ThisTileWallPaper{\paperwidth}{\paperheight}{../manuscript/images/cover}
+		\ThisTileWallPaper{\paperwidth}{\paperheight}{images/cover}
 	\end{textblock*}
+	\endgroup
 	\cleardoublepage
 	\frontmatter
 	\author{Nur Wachid}
-	\title{Koding C++: Koding C++ dengan Qt Creator}
+	\title{Belajar C++ dengan Qt Creator}
 	\maketitle
 	\begingroup
 %	\footnotesize
 %	\parindent 0pt
 	\parskip \baselineskip
 	%% Copyright Page
-	
+	\thispagestyle{empty}
 	
 	\textcopyright{} 2016 Nur Wachid \\
 	All rights reserved.
@@ -140,7 +173,15 @@
 	
 	\endgroup
 	\tableofcontents
+	\lstlistoflistings
+
+%	\listoffigures
+	
+%	\listoftables
+	
+	\clearpage
 	\newpage
+
 	\input{00-prakata}
 	\mainmatter
 	
@@ -176,15 +217,15 @@
 	\chapter{Casting dan Database}\label{casting-dan-database}
 	\input{10-casting-database}
 	
-	\part{Interface}
+%	\part{Interface}
 	
 	\part{Widget}
 	
 	\chapter{File, Stream, dan XML}\label{file-stream-dan-xml}
 		\input{12-file-stream-xml}
 		
-		\chapter{Qt Webkit}
-		\input{13-qt-webkit}
+%		\chapter{Qt Webkit}
+%		\input{13-qt-webkit}
 	\part{Library}
 	\chapter{Library}
 	\input{11-library}

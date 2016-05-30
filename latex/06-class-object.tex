@@ -135,7 +135,7 @@ merupakan konsep berorientasi obyek.
 
 Struktur sederhana sebuah class pada C++:
 
-\begin{lstlisting}[language=c++, caption=struktur sederhana class pada c++]
+\begin{lstlisting}[language=c++, numbers=none]
 class <namaclass>{
 //bagian member variabel / property class
 <tipedat <namavariabel>;
@@ -148,7 +148,7 @@ class <namaclass>{
 
 Contoh class:
 
-\begin{lstlisting}[language=c++, caption= contoh class]
+\begin{lstlisting}[language=c++, numbers=none]
 class Kucing{
 //bagian member variabel yang bersifat private
 private:
@@ -206,7 +206,7 @@ class tersebut adalah dengan menginisialisasinya (dengan membuat sebuah
 atau beberapa obyek) dari class tersebut. Membuat obyek bisa dianggap
 seperti membuat variabel yang bertipe class yang kita buat. Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Kucing kucingku;
 Orang anton;
 Mobil kijang;
@@ -225,7 +225,7 @@ katty adalah obyek dari class Kucing yang dapat digunakan dalam program.
 
 Setelah kita membuat obyek seperti:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Kucing katty;
 \end{lstlisting}
 
@@ -233,13 +233,13 @@ Cara mengakses member variabel adalah dengan menggunakan tanda titik
 (.). Contoh jika kita hendak mengisi data berat badan katty dengan nilai
 8 kg, maka yang harus dilakukan adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Katty.berat = 8;
 \end{lstlisting}
 
 Demikian juga dengan nama, umur, dan jenis kelamin.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Katty.nama = "Katty";
 Katty.jenis_kelamin = "jantan";
 Katty.umur = 2;
@@ -251,16 +251,16 @@ Function/Method}\label{mengakses-member-functionmethod}
 Sedangkan cara untuk mengakses member function dari suatu class adalah
 dengan juga menggunakan tanda titik pada obyeknya. Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 katty.Bersuara();
 katty.tampilkanUmur();
 \end{lstlisting}
 
-\subsubsection*{Contoh 1. Pembuatan class Sepeda}
+\subsubsection*{Contoh  Pembuatan class Sepeda}
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pembuatan class Sepeda, label=pembuatan-class-sepeda]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -303,9 +303,9 @@ return a.exec();
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Kecepatan: 30 Merk: Federal
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -351,17 +351,17 @@ Kecepatan: 30 Merk: Federal
 
 Contoh :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 void Sepeda::ubahKecepatan(int kec){
 Sepeda::kecepatan = kec;
 }
 \end{lstlisting}
 
-\subsubsection*{Contoh 2. Pembuatan obyek Sepeda.}
+\subsubsection*{Contoh  Pembuatan obyek Sepeda.}
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pembuatan obyek Sepeda]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -411,7 +411,7 @@ return a.exec();
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Sepeda pertama:
 Kecepatan: 30
 Merk: Federal
@@ -419,7 +419,7 @@ Gigi: 2
 Sepeda kedua:
 Kecepatan: 45
 Merk: Polygon
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -438,11 +438,11 @@ Merk: Polygon
   memiliki data dan method yang berbeda-beda satu sama lain.
 \end{itemize}
 
-\subsubsection*{Contoh 3. Pembuatan Obyek Array Sepeda}
+\subsubsection*{Contoh  Pembuatan Obyek Array Sepeda}
 
 Buatlah program beikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Pembuatan Obyek Array Sepeda]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -491,7 +491,7 @@ return a.exec();
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 Sepeda pertama:
 Tampilan Sepeda ke-1
 Kecepatan: 30
@@ -513,14 +513,14 @@ Tampilan Sepeda ke-5
 Kecepatan: 34
 Merk: -
 Gigi: 14
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
 \begin{itemize}
 \tightlist
 \item
-  Program diatas merupakan pengembangan lagi dari Contoh 1.
+  Program diatas merupakan pengembangan lagi dari Contoh \ref{pembuatan-class-sepeda}.
 \item
   Program diatas membuat obyek dari class Sepeda dalam bentuk Array 1
   dimensi yang bertipe Sepeda.
@@ -539,7 +539,7 @@ Gigi: 14
 	dapat melakukan assigment / penugasan terhadap obyek ke obyek lain.
 	Contoh kita memiliki class Sepeda dan kita membuat obyek spd1 dan spd2.
 	
-	\begin{lstlisting}[language=c++]
+	\begin{lstlisting}[language=c++, numbers=none]
 	Sepeda spd1,spd2;
 	spd1.setMerk("X");
 	spd1.ubahKecepatan(50);
@@ -548,7 +548,7 @@ Gigi: 14
 	
 	maka bisa dilakukan:
 	
-	\begin{lstlisting}[language=c++]
+	\begin{lstlisting}[language=c++, numbers=none]
 	spd2 = spd1;
 	\end{lstlisting}
 	
@@ -603,47 +603,49 @@ bisa diakses dari luar class, harus dari dalam class tersebut atau
 berada dalam method class tersebut, sedangkan jika public maka bisa
 akses dari luar class.
 
-\subsubsection*{Contoh 4. Perbedaan private dan public pada member variabel}
+\subsubsection*{Contoh  Perbedaan private dan public pada member variabel}
 \begin{enumerate}
 	\def\labelenumi{\arabic{enumi}.}
+
 	\item Buatlah program berikut:
-	\begin{lstlisting}[language=c++]
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Sepeda{
-	private:
-	int kecepatan;
-	int gigi;
-	string merk;
-	public:
-	int pkecepatan;
-	int pgigi;
-	string pmerk;
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	cout<<"Pengaksesan public:\n";
-	Sepeda s;
-	s.pgigi = 3;
-	s.pkecepatan = 30;
-	s.pmerk = "Polygon";
-	cout<<"Gigi: "<<s.pgigi<<endl;
-	cout<<"Kecepatan: "<<s.pkecepatan<<endl;
-	cout<<"Merk: "<<s.pmerk<<endl;
-	return a.exec();
-	}
-	\end{lstlisting}
+	
+\begin{lstlisting}[language=c++, caption=Public pada member variabel]
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Sepeda{
+private:
+int kecepatan;
+int gigi;
+string merk;
+public:
+int pkecepatan;
+int pgigi;
+string pmerk;
+};
+int main(int argc, char *argv[])
+{
+QCoreApplication a(argc, argv);
+cout<<"Pengaksesan public:\n";
+Sepeda s;
+s.pgigi = 3;
+s.pkecepatan = 30;
+s.pmerk = "Polygon";
+cout<<"Gigi: "<<s.pgigi<<endl;
+cout<<"Kecepatan: "<<s.pkecepatan<<endl;
+cout<<"Merk: "<<s.pmerk<<endl;
+return a.exec();
+}
+\end{lstlisting}
 	
 \item 	\textbf{Hasil:}
 	
-	\begin{verbatim}
+	\begin{lcverbatim}
 	Pengaksesan public:
 	Gigi: 3
 	Kecepatan: 30
 	Merk: Polygon
-	\end{verbatim}
+	\end{lcverbatim}
 	
 \item 	\textbf{Keterangan:}
 	
@@ -655,34 +657,34 @@ akses dari luar class.
 	
 \item 	Ubahlah program pada Contoh 5 diatas menjadi seperti berikut ini:
 	
-	\begin{lstlisting}[language=c++]
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Sepeda{
-	private:
-	int kecepatan;
-	int gigi;
-	string merk;
-	public:
-	int pkecepatan;
-	int pgigi;
-	string pmerk;
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	cout<<"Pengaksesan public:\n";
-	Sepeda s;
-	s.gigi = 3;
-	s.kecepatan = 30;
-	s.merk = "Federal";
-	cout<<"Gigi: "<<s.gigi<<endl;
-	cout<<"Kecepatan: "<<s.kecepatan<<endl;
-	cout<<"Merk: "<<s.merk<<endl;
-	return a.exec();
-	}
-	\end{lstlisting}
+\begin{lstlisting}[language=c++, caption=Privat pada member variabel]
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Sepeda{
+private:
+int kecepatan;
+int gigi;
+string merk;
+public:
+int pkecepatan;
+int pgigi;
+string pmerk;
+};
+int main(int argc, char *argv[])
+{
+QCoreApplication a(argc, argv);
+cout<<"Pengaksesan public:\n";
+Sepeda s;
+s.gigi = 3;
+s.kecepatan = 30;
+s.merk = "Federal";
+cout<<"Gigi: "<<s.gigi<<endl;
+cout<<"Kecepatan: "<<s.kecepatan<<endl;
+cout<<"Merk: "<<s.merk<<endl;
+return a.exec();
+}
+\end{lstlisting}
 	
 \item 	\textbf{Hasil:}
 	
@@ -713,7 +715,7 @@ enkapsulasi. Cara untuk membuat member method adalah dengan
 mendeklarasikannya pada bagian public, sedangkan implementasi kodingnya
 berada diluar kelas. Berikut adalah contohya.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 class Sepeda{
 private:
 int kecepatan;
@@ -731,11 +733,11 @@ minimal selalu mewakili semua member variabelnya. Misal kita memiliki 1
 buah member variabel bernama umur, maka minimal kita akan memiliki satu
 buah member function, misalnya bernama ubahUmur(int u).
 
-\subsubsection*{Contoh 5. Member function dan implementasinya.}
+\subsubsection*{Contoh  Member function dan implementasinya.}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Member function dan implementasinya]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -791,10 +793,10 @@ return a.exec();
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 Kecepatan: 30
 Merk: Federal
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -840,13 +842,13 @@ variabel.
 method ini berfungsi untuk mengambil nilai dari sebuah member variabel.
 Asesor method biasanya dinamai :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 <tipedataMemberVariabel> get<NamaMemberVariabel>();
 \end{lstlisting}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int getUmur();
 \end{lstlisting}
 
@@ -857,21 +859,21 @@ variabel
 
 Mutator method biasanya dinamai :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 void set<NamaMemberVariabel>(<tipedataMemberVariabel> <namavariabel>);
 \end{lstlisting}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 void setUmur(int u);
 \end{lstlisting}
 
-\subsubsection*{Contoh 6. Penggunaan accessor dan mutator method}
+\subsubsection*{Contoh  Penggunaan accessor dan mutator method}
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan accessor dan mutator method]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -962,7 +964,7 @@ Destructor}\label{constructor-dan-destructor}
 Kita dapat mendeklarasikan variabel biasa dan kemudian melakukan
 inisialisasi terhadap variabel tersebut dengan mudah. Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int umur = 5;
 \end{lstlisting}
 
@@ -991,7 +993,7 @@ constructor dengan nama Sepeda() juga. Sedangkan destructor method sama
 dengan constructor namun diawali dengan tanda \texttt{\textasciitilde{}}
 didepannya. Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 class Sepeda{
 private:
 //member variabel
@@ -1015,7 +1017,7 @@ obyek), maka kita memanggil constructor default.
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Sepeda sepedaku;
 \end{lstlisting}
 
@@ -1023,24 +1025,24 @@ Berarti kita memanggil default konstruktor bernama Sepeda() tanpa
 parameter apapun. Jika kita membuat konsruktor dengan menggunakan
 parameter seperti misalnya:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Sepeda(string merk, int berat);
 \end{lstlisting}
 
 Maka pada saat instansiasi kita menggunakan cara sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Sepeda sepedaku("Federal",2);
 \end{lstlisting}
 
 Arti instasiasi diatas adalah kita memanggil konstruktor yang
 berparameter dua buah, string dan integer.
 
-\subsubsection*{Contoh 7. Menggunakan Constructor dan Destructor.}
+\subsubsection*{Contoh  Menggunakan Constructor dan Destructor.}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menggunakan Constructor dan Destructor, label=menggunakan-Constructor-Destructor]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1139,7 +1141,7 @@ return a.exec();
 Contoh, tambahkan satu baris berikut ini pada bagian akhir kode pada
 Contoh 7 sebelum \texttt{return\ a.exec()}.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Kucing kucingku2;
 \end{lstlisting}
 
@@ -1157,11 +1159,11 @@ defaultnya sudah hilang. Agar kita dapat menggunakan baris
 \texttt{Kucing\ kucingku2;} maka kita harus menambah method constructor
 lagi yang tidak berparameter.
 
-\subsubsection*{Contoh 8. Percobaan Menambah Constructor Method.}
+\subsubsection*{Contoh  Percobaan Menambah Constructor Method.}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Percobaan Menambah Constructor Method]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1263,11 +1265,11 @@ mempermudah menginisialisasi data variabel member. Penggunaan nilai
 default ini juga memungkinkan kita untuk tidak memasukkan semua
 parameter pada pemanggilan konstruktor.
 
-\subsubsection*{Contoh 9. Penggunaan Constructor dengan Nilai Default}
+\subsubsection*{Contoh  Penggunaan Constructor dengan Nilai Default}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan Constructor dengan Nilai Default]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1305,7 +1307,7 @@ return a.exec();
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Judul: unknown
 Pengarang: unknown
 Jumlah halaman: 1
@@ -1318,7 +1320,7 @@ Jumlah halaman: 1
 Judul: Pemrograman C
 Pengarang: Walter
 Jumlah halaman: 100
-\end{verbatim}
+\end{lcverbatim}
 \textbf{Keterangan:}
 
 \begin{itemize}
@@ -1351,36 +1353,36 @@ Jumlah halaman: 100
 	Kita juga
 	dapat memberi nilai default dengan cara lain, perhatikan contoh berikut:
 	
-	\begin{lstlisting}[language=c++]
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Contoh{
-	private:
-	int x;
-	int y;
-	int z;
-	public:
-	Contoh():x(0),y(2),z(4){
-	}
-	void tampilInfo(){
-	cout<<"x="<<x<<" y="<<y<<" z="<<z;
-	}
-	};
-	int main(int argc, char *argv[])
-	{
-	QCoreApplication a(argc, argv);
-	Contoh aa;
-	aa.tampilInfo();
-	return a.exec();
-	}
-	\end{lstlisting}
+\begin{lstlisting}[language=c++, caption=Memberi nilai default pada constructor]
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Contoh{
+private:
+int x;
+int y;
+int z;
+public:
+Contoh():x(0),y(2),z(4){
+}
+void tampilInfo(){
+cout<<"x="<<x<<" y="<<y<<" z="<<z;
+}
+};
+int main(int argc, char *argv[])
+{
+QCoreApplication a(argc, argv);
+Contoh aa;
+aa.tampilInfo();
+return a.exec();
+}
+\end{lstlisting}
 	
 	\textbf{Hasil:}
 	
-\begin{verbatim}
+\begin{lcverbatim}
 x=0 y=2 z=4
-\end{verbatim}
+\end{lcverbatim}
 	
 	\textbf{Keterangan:}
 	
@@ -1408,18 +1410,18 @@ mengubah nilai dari member function. Sehingga cara yang tepat untuk
 mendeklarasikan asesor method adalah dengan cara memberi kata kunci
 const pada akhir nama method tersebut. Contoh:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 //mutator
 void setUmur(int u);
 //asesor
 int getUmur() const;
 \end{lstlisting}
 
-\subsubsection*{Contoh 10. Penggunaan const method.}
+\subsubsection*{Contoh  Penggunaan const method.}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Penggunaan const method]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1491,13 +1493,13 @@ return a.exec();
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 Kucingku bernama Katty, 
 dia berbobot 4 kg dan sudah
 berumur 2 tahun sekarang. 
 Lima tahun telah berlalu,
  sekarang kucingku sudah berumur: 7 tahun
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -1516,7 +1518,7 @@ Lima tahun telah berlalu,
   this-\textgreater{}umur = 5.
   Kode lengkapnya adalah:
   
-  \begin{lstlisting}[language=c++]
+  \begin{lstlisting}[language=c++, numbers=none]
   int Kucing::getUmur() const{
   this->umur = 5;
   return this->umur;
@@ -1553,7 +1555,7 @@ cara diatas, kita juga bisa mendefinsikan method di dalam class itu
 sendiri secara langsung. Hal tersebut dinamakan inline implementation.
 Contoh inline implementation adalah:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 class Manusia{
 private:
 string nama;
@@ -1571,11 +1573,11 @@ Pada contoh diatas terlihat bahwa pada class Manusia implementasi kode
 method setNama dan getNama langsung dituliskan didalam program tersebut.
 Hal itu disebut inline implementation.
 
-\subsubsection*{Contoh 11. Inline Implementation.}
+\subsubsection*{Contoh  Inline Implementation.}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Implementasi inline]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1631,11 +1633,11 @@ return a.exec();
 \end{lstlisting}
 
 \textbf{Hasil:}
-\begin{verbatim}
+\begin{lcverbatim}
 Nama: Susanto, Jenis Kelamin: L 
 Nama: Susanti, Jenis Kelamin: P 
 Nama: Rudi, Jenis Kelamin: L
-\end{verbatim}
+\end{lcverbatim}
  
 
 \textbf{Keterangan:}
@@ -1666,11 +1668,11 @@ juga terdiri dari class Titik. Class dapat menjadi solusi yang baik
 untuk membuat tipe data baru yang memiliki member variabel dan member
 method yang tentunya sangat berguna.
 
-\subsubsection*{Contoh 12. Class Mobil dan Class Roda.}
+\subsubsection*{Contoh  Class Mobil dan Class Roda.}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Class Mobil dan Roda]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1775,7 +1777,7 @@ return a.exec();
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Merk: Innova
 Roda depan1:
 Merk: Bridgestone
@@ -1788,7 +1790,7 @@ Merk: Bridgestone
 Diameter: 40
 Roda belakang2:
 Merk: Bridgestone
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -1820,11 +1822,11 @@ Merk: Bridgestone
   \texttt{getMerk()} dan \texttt{getDiameter()}.
 \end{itemize}
 
-\subsubsection*{Contoh 12. Contoh Class Titik dan Garis.}
+\subsubsection*{Contoh  Class Titik dan Garis.}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Class titik dan Garis, label=class-titik-garis]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <math.h>
@@ -1943,7 +1945,7 @@ return a.exec();
 
 \textbf{Hasil:}
 
-\begin{verbatim}
+\begin{lcverbatim}
 A (1 , 1)
 B (5 , 1)
 C (5 , 6)
@@ -1960,7 +1962,7 @@ Panjang garis cd: 4
 da awal: (1 , 6)
 akhir: (1 , 1)
 Panjang garis da: 5
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -1990,33 +1992,32 @@ Panjang garis da: 5
 \end{itemize}
 
 \begin{quotation}
-	\textbf{TIPS} 
+\textbf{TIPS} 
 	
-	Pada
-	bahasa C++ kita tidak dapat memanggil konstruktor dari dalam konstruktor
-	lain yang berada dalam satu class.
+Pada bahasa C++ kita tidak dapat memanggil konstruktor dari dalam konstruktor
+lain yang berada dalam satu class.
 	
-	Contoh:
+\textbf{Contoh:}
 	
-	\begin{lstlisting}[language=c++]
-	class Halaman{
-	private:
-	int nohal;
-	int jenishal;
-	//1 -> halaman biasa, 2 -> halaman header
-	public:
-	Halaman(){
-	}
-	Halaman(int nohal){
-	this->nohal = nohal;
-	}
-	Halaman(int nohal,int jenishal){
-	Halaman(nohal); //memanggil konstruktor Halaman diatasnya!
-	this->jenishal = jenishal;
-	}
-	};
-	\end{lstlisting}
+\begin{lstlisting}[language=c++, numbers=none]
+class Halaman{
+private:
+int nohal;
+int jenishal;
+//1 -> halaman biasa, 2 -> halaman header
+public:
+Halaman(){
+}
+Halaman(int nohal){
+this->nohal = nohal;
+}
+Halaman(int nohal,int jenishal){
+Halaman(nohal); //memanggil konstruktor Halaman diatasnya!
+this->jenishal = jenishal;
+}
+};
+\end{lstlisting}
 	
-	E\textgreater{} Akan menghasilkan error!
+ Akan menghasilkan error!
 \end{quotation}
 

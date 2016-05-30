@@ -1,13 +1,27 @@
+# folder to ignore
+
 _site
 .sass-cache
 .jekyll-metadata
 _gh_pages
 
 # file to ignore
+#=======================#
+
+# file image
 *.psd
+
+# file latex
 *.bib
 *.aux
 *.log
 *.pdf
 *.gz
 *.toc
+*.out
+*.lol
+*.lot
+*.idx
+*.ilg
+*.ind
+*.lof

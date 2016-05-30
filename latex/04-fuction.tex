@@ -95,7 +95,7 @@ diberikan oleh fungsi tersebut. Tubuh suatu fungsi diawali dengan tanda
 kurung kurawal buka dan diakhiri dengan tanda kurung kurawal tutup.
 Beikut ini adalah bentuk umum dari suatu fungsi:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 <tipe> <nama_fungsi>([<paramter1>, <paramter2> ,...])
 {
 <tubuh fungsi>
@@ -117,7 +117,7 @@ jika dalam tubuh fungsi memerlukan nilai dari luar fungsi. Parameter ini
 dinamakan parameter formal. Berikut ini adalah contoh cara
 mendefinisikan fungsi.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int terbesar(int bil1, int bil2)
 {
 int hasil;
@@ -183,15 +183,15 @@ pustaka sebagai contoh, fungsi pustaka \texttt{printf()}, prototypenya
 berada di dalam file judul \texttt{stdio.h}. Pencantuman prototype
 fungsi dapat menggunakan preprocessor directive \texttt{\#include}.
 
-\subsubsection*{Contoh 1. Membuat Fungsi yang mengembalikan nilai.}
+\subsubsection*{Contoh  Membuat Fungsi yang mengembalikan nilai.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh 1, kemudian tulis kode berikut.
+  nama Contoh \ref{membuat-fungsi-yang-mengembalikan-nilai}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Membuat Fungsi yang mengembalikan nilai, label=membuat-fungsi-yang-mengembalikan-nilai]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int absolut(int bil);
@@ -215,10 +215,10 @@ int main(int argc, char *argv[])
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl + R, outputnya
   adalah sebagai berikut.
 \end{enumerate}
-\begin{verbatim}
+\begin{lcverbatim}
 Bilangan : -10
 Dimutlakkan menjadi : 10
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Analisa Program :}
@@ -234,7 +234,7 @@ Dimutlakkan menjadi : 10
   Pada tubuh pogram, terdapat pemanggilan fungsi :
 
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 	cout << "Dimutlakkan menjadi : " << absolut(bilangan)
 	<< endl;
 \end{lstlisting}
@@ -257,7 +257,7 @@ nilai 10, yaitu nilai kembalian fungsi, ini menunjukkan bahwa fungsi
 		harus sama dengan nama parameter pada definisi fungsi, oleh karena itu
 		prototype tersebut di atas boleh juga dituliskan seperti berikut :
 		
-		\begin{lstlisting}[language=c++]
+		\begin{lstlisting}[language=c++, numbers=none]
 		int absolut(int x);
 		\end{lstlisting}
 	
@@ -276,15 +276,15 @@ tidak mempunyai nilai kembalian digunakan tipe data void untuk tipe
 fungsi tersebut dan pada tubuh definisi fungsi tidak ada satmenet
 return.
 
-\subsubsection*{Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.}
+\subsubsection*{Contoh  Membuat Fungsi yang tidak mengembalikan nilai.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 2, kemudian tulis kode berikut.
+  nama contoh \ref{membuat-fungsi-yang-tidak-mengembalikan-nilai}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Membuat Fungsi yang tidak mengembalikan nilai, label=membuat-fungsi-yang-tidak-mengembalikan-nilai]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 void hello(int kali);
@@ -304,11 +304,11 @@ cout << "Hello World!" << endl;
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
 \end{enumerate}
-\begin{verbatim}
+\begin{lcverbatim}
 Hello World!
 Hello World!
 Hello World!
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan Program :}
@@ -355,15 +355,15 @@ kurung kurawal) yang bersangkutan. Variabel lokal akan dihapus dari
 memori jika proses sudah meninggalkan blok statemen letak variable
 lokalnya.
 
-\subsubsection*{Contoh 3. Variabel Lokal.}
+\subsubsection*{Contoh  Variabel Lokal.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh 2, kemudian tulis kode berikut.
+  nama Contoh \ref{variabel-lokal}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Variabel Lokal, label=variabel-lokal]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 float kali(float a, float b); /*prototype fungsi*/
@@ -388,7 +388,10 @@ return c;
   adalah sebagai berikut.
 \end{enumerate}
 
+\begin{lcverbatim}
 Hasil = 28
+\end{lcverbatim}
+
 
 \textbf{Analisa Program:}
 
@@ -423,15 +426,15 @@ pada satu blok statemen saja. Supaya menjadi variabel global, maka
 variabel global ini dideklarasikan di luar suatu blok ataupun di luar
 fungsi-fungsi yang mengguanakanya.
 
-\subsubsection*{Contoh 4. Variabel Global.}
+\subsubsection*{Contoh  Variabel Global.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh 2, kemudian tulis kode berikut.
+  nama Contoh \ref{variabel-global}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Variabel Global, label=variabel-global]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 void kali(float a, float b); /*prototype fungsi*/
@@ -453,8 +456,10 @@ int main(int argc, char *argv[])
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
 \end{enumerate}
-
+\begin{lcverbatim}
 Variabel global hasil = 28
+\end{lcverbatim}
+
 
 \textbf{Analisa Program:}
 
@@ -489,12 +494,12 @@ pengubah (modifer) dari variable lokal atau global, sehingga variabel
 statik dapat bersifat statik lokal atau statik global tergantung dari
 letak pendeklarasianya.
 
-\subsubsection*{Contoh 5. Variabel Statik.}
+\subsubsection*{Contoh  Variabel Statik.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
-contoh 2, kemudian tulis kode berikut.
+contoh \ref{variabel=static}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Variabel Statik, label=variabel=static]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 long int kali(long int i); /*prototype*/
@@ -525,7 +530,9 @@ f = f * i;
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
 
-A\textgreater{} \{linenos=off\} A\textgreater{} 5 Faktorial = 120
+\begin{lcverbatim}
+5 Faktorial = 120
+\end{lcverbatim} 
 
 \textbf{Analisa Program:}
 
@@ -577,7 +584,7 @@ suatu pekerjaan dan mengirimkan suatu nilai hasil suatu pekerjaan
 tersebut yang dinamakan nilai kembalian (\texttt{return\ value}). Jika
 kita mendeklarasikan seperti berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int fungsiku();  
 \end{lstlisting}
 
@@ -585,7 +592,7 @@ Ini berarti kita mendeklarasikan fungsi bernama fungsiku yang akan
 mengembalikan nilai bertipe integer. Jika kita mendeklarasikan seperti
 berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int fungsiku(int nilaiInt, float nilaiFloat);  
 \end{lstlisting}
 
@@ -603,7 +610,7 @@ memanggil fungsi sambil menuliskan nilai yang dikirim di dalam tanda
 kurung, parameter ini dinamakan parameter aktual atau argumen. Sebagai
 contoh misalnya :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 Hasil = fungsiku(10, 12.5);  
 \end{lstlisting}
 
@@ -649,7 +656,7 @@ parameter, suatu parameter formal bisa mempunyai suatu nilai default
 ketika tidak ada nilai yang diterima dari parameter aktual. Misalnya
 deklarasi prototype seperti berikut :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int fungsiku(int nilaiInt = 10);  
 \end{lstlisting}
 
@@ -659,14 +666,14 @@ diterima maka akan digunakan nilai default yaitu 10. Karena nama
 parameter tidak diwajibkan pada prototype, maka prototype tersebut juga
 boleh ditulis :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int fungsiku(int = 10);  
 \end{lstlisting}
 
 Pemakaian parameter default ini tidak mengubah definisi fungsi, header
 dari definisi fungsi tersebut tetap seperti berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int fungsiku(int x);  
 \end{lstlisting}
 
@@ -689,43 +696,45 @@ Berarti kita hanya boleh memberikan nilai default untuk b jika kita
 telah memberikan nilai default untuk c. Nilai default untuk a hanya
 boleh diberikan jika kita telah memberikan nilai default untuk b dan c.
 
-\subsubsection*{Contoh 6. Default Parameter.}
+\subsubsection*{Contoh Default Parameter.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
-contoh 2, kemudian tulis kode berikut.
+contoh \ref{default-parameter}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Default Parameter, label=default-parameter]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int volume(int,int=1,int=1); /*prototype*/
 int main(int argc, char *argv[])
 {
-using namespace std;
-QCoreApplication a(argc, argv);
-int panjang,lebar,tinggi;
-panjang = 10;
-lebar = 15;
-tinggi = 25;
-/*menghitun volume*/
-cout << "Volume 1 --> " << volume(panjang,lebar,tinggi)<< endl;
-cout << "Volume 2 --> " << volume(panjang,lebar)<< endl;
-cout << "Volume 3 --> " << volume(panjang)<< endl;
-return a.exec();
-}
-/*---Fungsi volume---*/
-int volume(int p, int l, int t)
-{
-return p * l * t;
+  using namespace std;
+  QCoreApplication a(argc, argv);
+  int panjang,lebar,tinggi;
+  panjang = 10;
+  lebar = 15;
+  tinggi = 25;
+  /*menghitun volume*/
+  cout << "Volume 1 --> " << volume(panjang,lebar,tinggi)<< endl;
+  cout << "Volume 2 --> " << volume(panjang,lebar)<< endl;
+  cout << "Volume 3 --> " << volume(panjang)<< endl;
+  return a.exec();
+  }
+  /*---Fungsi volume---*/
+  int volume(int p, int l, int t)
+  {
+  return p * l * t;
 }
    
 \end{lstlisting}
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
+\begin{lcverbatim}
+ Volume 1 --> 3750
+ Volume 2 --> 150
+ Volume 3 -->  10
+\end{lcverbatim}
 
-A\textgreater{} \{linenos=off\} A\textgreater{} Volume 1
---\textgreater{} 3750 A\textgreater{} Volume 2 --\textgreater{} 150
-A\textgreater{} Volume 3 --\textgreater{} 10
 
 \textbf{Analisa Program:}
 

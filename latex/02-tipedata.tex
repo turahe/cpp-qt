@@ -1,3 +1,15 @@
+\textbf{Agenda}
+
+Pada bab ini kita akan membahas beberapa topik yang berhubungan dengan tipe data, Indentifier dan kontrol statement yaitu:
+
+\begin{itemize}
+	\item Tipe data dan Identifier\ref{tipe-data-dan-identifier}
+	\item Tipe data bahasa C++\ref{tipe-data-bahasa-c}
+	\item Variabel dan Konstanta\ref{variabel-dan-konstanta}
+	\item Statement\pageref{statement}
+	\item Operator dan\ref{} Ekspresi\pageref{operator-dan-ekspresi}
+	\item Control Statement\pageref{control-statement}
+\end{itemize}
 
 \section{Tipe Data dan
 Identifier}\label{tipe-data-dan-identifier}
@@ -31,8 +43,7 @@ atau kata (label) sehingga kita tidak perlu mengetahu alamat yang
 sesungguhnya dan dengan identifier (label) akan lebih mudah untuk
 diingat.
 
-\section{Tipe Data Bahasa
-	C++}\label{tipe-data-bahasa-c}
+\section{Tipe Data Bahasa C++}\label{tipe-data-bahasa-c}
 
 Data yang dapat dikelola oleh program bisa bermacam-macam, seperti
 misalnya bilangan bulat (\emph{integer}), bilangan dengan desimal
@@ -63,6 +74,7 @@ char & 1 byte & 256 character values\tabularnewline
 float & 4 bytes & 1.2e--38 to 3.4e38\tabularnewline
 double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
 \bottomrule
+
 \end{longtable}
 
 \section{Variabel dan Konstanta}\label{variabel-dan-konstanta}
@@ -105,16 +117,16 @@ ketika konstanta dibuat dan setelah itu nilainya tidak dapat diubah. C++
 mempunyai 2 macam konstanta, yaitu konstanta literal dan konstanta
 simbolik. Berikut ini adalah contoh deklarasi variabel:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
 int harga;
-\end{verbatim}
+\end{lstlisting}
 
 Yang dimaksud dengan konstanta literal adalah suatu nilai yang ditulis
 pada kode program. Sebagai contoh misalnya :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
 int usiaku = 42;
-\end{verbatim}
+\end{lstlisting}
 
 Nilai 42 tidak dapat menerima nilai lain dan nilai tersebut bersifat
 tetap. Perhatikan dalam hal ini identifier ``usiaku'' adalah variabel
@@ -129,9 +141,9 @@ dengan menggunakan preprocessor directive \texttt{\#define} dan yang
 kedua adalah dengan memakai kata kunci \texttt{const}. Berikut ini
 contoh mendeklarasikan dan menginisialisasi konstanta :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
 #define kapasitas 15
-\end{verbatim}
+\end{lstlisting}
 
 Perhatikan bahwa \texttt{kapasitas} tidak mempunyai tipe data tertentu
 (int, char dsb.). Preprosessor akan melakukan substitusi berupa teks,
@@ -152,9 +164,9 @@ bilangan 15.
 Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan
 memakai kata kunci const seperti berikut :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
 const int usiaku = 42;
-\end{verbatim}
+\end{lstlisting}
 
 Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku
 bertipe int dan diinisialisasi dengan nilai 42. Setelah baris ini simbol
@@ -164,15 +176,15 @@ mencegah adanya kesalahan dan yang paling penting adalah bahwa konstanta
 ini mempunyai tipe data dan kompiler dapat mengharuskan konstanta ini
 diperlakukan sebagai tipe data tersebut.
 
-\subsubsection{Contoh 1. Tipe data dan Identifier.}
+\subsubsection*{Contoh Tipe data dan Identifier.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh 1, kemudian tulis kode berikut.
+  nama Contoh \ref{tipe-data-identifier}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Tipe data dan Identifier, label=tipe-data-identifier]
 #include <iostream>
 int main(int argc, char *argv[])
 {
@@ -192,10 +204,10 @@ return a.exec();
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
 \end{enumerate}
-\begin{verbatim}
+\begin{lcverbatim}
 Panjang =15
 lebar =12
-\end{verbatim}
+\end{lcverbatim}
 
 
 \textbf{Keterangan:}
@@ -221,9 +233,9 @@ eksekusi, mengevaluasi ekspresi atau tidak mengejakan apapun (\emph{null
 statement}). Semua statement C++ diakhiri dengan titik koma (;), sebagai
 contoh misalnya :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
 x = a + b;
-\end{verbatim}
+\end{lstlisting}
 
 Pernyataan tersebut bukanlah suatu pernyataan persamaan aljabar dalam
 matematika yang artinya x sama dengan a + b, melainkan memberi nilai x
@@ -475,11 +487,11 @@ adalah suatu nilai yang mempunyai besaran dan tipe data tertentu.
 Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan ``panjang
 * lebar'' yang menghasilkan nilai 15, 12 dan 180:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
 panjang = 15;
 lebar = 12;
 luas = panjang * lebar ;
-\end{verbatim}
+\end{lstlisting}
 
 \textbf{Keterangan :}
 
@@ -616,9 +628,9 @@ aritmatika dikerjakan terlebih dahulu.
 C++ mengijinkan operator pengerjaan ditulis lebih dari satu kali pada
 sebuah statement, misalnya :
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
 x = y = a * b;
-\end{verbatim}
+\end{lstlisting}
 
 Dalam hal ini yang dikerjakan adalah a dikalikan b terlebih dahulu
 meudian hasilnya diberikan kepada variabel y dan hasil ekspresi y = a *
@@ -699,9 +711,9 @@ FALSE & FALSE & FALSE & FALSE & TRUE\tabularnewline
 Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai \textquotedblleft a \textquotedblright maka
 ungkapan dibawah ini mempunyai hasil akhir benar (True).
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
 A < B || B == 7 && C > ‘z’
-\end{verbatim}
+\end{lstlisting}
 
 Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari
 langkah-langkah sebagai berikut:
@@ -756,19 +768,19 @@ tidak semua baris program akan dieksekusi.
 
 Sintaks penulisannya sebagai berikut:
 
-\begin{verbatim}
+\begin{lstlisting}[language=c++, numbers=none]
  if (<ekspresi_boolean>)
  {
  <statements>
  }
-\end{verbatim}
+\end{lstlisting}
 
 Flowchart untuk statment ini adalah :
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture2-4.png}
-\caption{}
+\caption{flowchart percabangan if}
 \end{figure}
 
 \subsubsection{2. Percabangan dengan if ..
@@ -803,7 +815,7 @@ Flowchart untuk statment ini adalah :
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture2-2.png}
-\caption{}
+\caption{flowchart percabangan if..else}
 \end{figure}
 
 Flowchart untuk statment if bersarang ini adalah :
@@ -811,7 +823,7 @@ Flowchart untuk statment if bersarang ini adalah :
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture2-1.png}
-\caption{}
+\caption{flowchart percabangan if bersarang}
 \end{figure}
 
 \subsubsection{3. Percabangan dengan
@@ -827,7 +839,7 @@ menghasilkan nilai \emph{boolean}, melainkan hanya dapat mengalihkan
 alur program ke suatu nilai yang sama, pada statement ini ekspresi yang
 diminta harus menghasilkan bilangan \emph{bulat}.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
  switch (<ekspresi>)
  {
  case <konst_1>: <pernyataan_1>;
@@ -859,20 +871,20 @@ diberikan, maka pernyataan pada \emph{default} yang akan dijalankan.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture2-3.png}
-\caption{}
+\caption{Percabangan dengan switch}
 \end{figure}
 
 Flowchart untuk statement ini adalah :
 
-\subsubsection{Contoh.2 Tipe data dan Identifier.}
+\subsubsection{Contoh Tipe data dan Identifier.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh 2, kemudian tulis kode berikut.
+  nama Contoh \ref{tipe-data-dan-identifier}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Tipe data dan Identifier, label=tipe-data-dan-identifier]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int main(int argc, char *argv[])
@@ -905,9 +917,9 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 sabtu
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan Program :}
 
@@ -940,7 +952,7 @@ dilaksanakan tergantung perintah yang ditulis pada argumen ini.
 
 Bentuk umum penulisannya sebagai berikut :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
  for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
  {
  <statmemnts>
@@ -950,7 +962,7 @@ Bentuk umum penulisannya sebagai berikut :
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture2-8.png}
-\caption{}
+\caption{flowchart perulangan dengan for}
 \end{figure}
 
 \subsubsection{2. Perulangan dengan while}\label{perulangan-dengan-while}
@@ -961,7 +973,7 @@ benar.
 
 Sintaks penulisannya sebagai berikut :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
 {
 <statmemnts>
@@ -971,7 +983,7 @@ for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture2-9.png}
-\caption{}
+\caption{flowchart perulangan dengan while}
 \end{figure}
 
 \subsubsection{3. Perulangan dengan do \ldots{}
@@ -983,7 +995,7 @@ kondisinya sudah bernilai salah.
 
 Sintaks penulisannya sebagai berikut :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
  do
  {
  <statements>
@@ -994,7 +1006,7 @@ Sintaks penulisannya sebagai berikut :
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture2-10.png}
-\caption{}
+\caption{flowchart perulangan dengan do..}
 \end{figure}
 
 Perbedaan antara perintah \texttt{while} dengan
@@ -1019,7 +1031,7 @@ melanjutkan ke perulangan selanjutnya.
 Sintaks penulisan \texttt{break} dan \texttt{continue} adalah sebagai
 berikut :
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
  while(<expresi_boolean1>)
  {
  <statements>

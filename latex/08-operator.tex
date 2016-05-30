@@ -4,23 +4,22 @@ Pada chapter ini kita akan membahas beberapa topik tentang penggunaan
 Operator Types dan Operator Overloading, adapun topik yang akan dibahas
 adalah
 
-\begin{itemize}
-\tightlist
-\item
-  Menggunakan operator keyword
-\item
+\begin{outline}
+\1
+  \protect\hyperlink{operator-pada-cpp}{Menggunakan operator keyword}
+\1
   Notasi prefik dan postfix
-\item
+\1
   Menggunakan unary dan binary operator
-\item
+\1
   Conversion operator
-\item
+\1
   Subscript operator
-\item
+\1
   Function operator
-\end{itemize}
+\end{outline}
 
-\section{Operator pada C++}\label{operator-pada-c}
+\section{Operator pada C++}\label{operator-pada-cpp}
 
 Pada bab awal kita sudah mempelajari berbagai macam operator (+, -, /,
 \textgreater{}, \textless{}) yang dapat digunakan pada tipe data yang
@@ -29,7 +28,7 @@ dll. Namun jika anda ingin menggunakan operator tersebut pada tipe data
 yang anda definisikan sendiri seperti tipe data Class, maka anda dapat
 menggunakan keyword operator .
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 return_type operator operator_symbol (...parameter list...);
 \end{lstlisting}
 
@@ -39,7 +38,7 @@ hanya anda dapat menggunakan operator symbol seperti (+, -,
 menggunakan keyword operator jika anda dapat menggunakan fungsi ?
 Ilustrasi dibawah ini akan menunjukan kenapa kita membutuhkan operator.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 CKataString strKata1("Hello");
 CKataString strKata2("World");
 \end{lstlisting}
@@ -47,7 +46,7 @@ CKataString strKata2("World");
 Jika anda menginginkan untuk menggabungkan kedua kata tersebut anda
 dapat membuat function \texttt{Concatenate} seperti berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 CKataString strGabung;
 strGabung = strKata1.Concatenate(strKata2);
 \end{lstlisting}
@@ -55,7 +54,7 @@ strGabung = strKata1.Concatenate(strKata2);
 Selain cara seperti diatas akan lebih natural jika anda menulis kode
 sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 CKataString strGabung;
 strGabung = strKata1 + strKata2;
 \end{lstlisting}
@@ -71,7 +70,7 @@ Ada 2 macam operator yang terdapat di C++ yaitu unary dan binary.
 Unary operator hanya mempunyai single operand saja, cara penulisan unary
 operator adalah sebagai berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 return_type operator operator_type (parameter_type)
 {
 // ... implementation
@@ -102,15 +101,15 @@ dibawah ini kita akan membuat Class Kalender yang mempunyai tiga class
 member yang merepresentasikan hari, bulan, dan tahun (tipe integer),
 anda dapat menggunakan operator ++ untuk menambahkan hari.
 
-\subsubsection*{Contoh 1. Menggunakan Increment Operator (Notasi prefix).}
+\subsubsection*{Contoh  Menggunakan Increment Operator (Notasi prefix).}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 1, kemudian tulis kode berikut.
+  nama contoh \ref{coontoh-8.1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menggunakan Increment Operator (Notasi prefix), label=coontoh-8.1]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -172,13 +171,13 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Membuat object kalender dan memberi inisialisasi
 23 / 10 / 2010
 
 Tanggal setelah notasi prefik dijalankan
 24 / 10 / 2010
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -204,7 +203,7 @@ Tanggal setelah notasi prefik dijalankan
 Ada perbedaan penulisan notasi prefix dan postfix, sebagai contoh anda
 dapat melihat kode dibawah ini.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 int bil1 = 22;
 int bil2 = bil1++;
 //mengcopy nilai lama dari bil1
@@ -222,15 +221,15 @@ Untuk contoh dibawah ini kita akan mencoba menggunakan notasi
 menduplikat objek yang diinputkan, melakukan increment dan mengembalikan
 objek tersebut by value.
 
-\subsubsection*{Contoh 2. Menggunakan Operator Increment (notasi postfix).}
+\subsubsection*{Contoh  Menggunakan Operator Increment (notasi postfix).}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 2, kemudian tulis kode berikut.
+  nama contoh \ref{contoh-8.2}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menggunakan Operator Increment (notasi postfix), label=contoh-8.2]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -298,14 +297,14 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Membuat object kalender dan memberi inisialisasi
 23 / 10 / 2010
 
 Menggunakan notasi postfix
 objLama : 23 / 10 / 2010
 objKal : 24 / 10 / 2010
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -320,7 +319,7 @@ objKal : 24 / 10 / 2010
   kemudian mengembalikan objek tersebut by value.
 \end{itemize}
 
-\subsection{Conversion Operator}\label{conversion-operator}
+\section{Conversion Operator}\label{conversion-operator}
 
 Bagaimana jika anda menginginkan statement
 \texttt{int\ bil\ =\ Kalender(23,10,2010)} memiliki arti? Untuk itu anda
@@ -331,14 +330,14 @@ yang hanya menerima parameter bertipe integer.
 Anda dapat melakukan konversi diatas dengan menggunakan conversion
 operator yang mempunyai syntax sebagai berikut:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 operator conversion_type();
 \end{lstlisting}
 
 Jadi jika anda menghendaki mengkonversi tipe Kalender menjadi int anda
 dapat menggunakan operator berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 operator int()
 {
 // implementation
@@ -349,12 +348,12 @@ return intValue;
 Contoh dibawah ini akan menunjukan bagaimana penggunaan conversion
 operator untuk mengkonversi tipe Kalender menjadi int.
 
-\subsubsection*{Contoh 3. Conversion Operator untuk konversi class Kalender ke integer.}
+\subsubsection*{Contoh Conversion Operator untuk konversi class Kalender ke integer.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
-contoh 3, kemudian tulis kode berikut.
+contoh \ref{contoh-8.3}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Conversion Operator untuk konversi class Kalender ke integer, label=contoh-8.3]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -390,11 +389,13 @@ return a.exec();
 \end{lstlisting}
 
 \textbf{Hasilnya}
-
+\begin{lcverbatim}
 Inisialisasi data :
 23 / 10 / 2010
 
 Integer yang sesuai dengan data 2011023
+\end{lcverbatim}
+
 
 \textbf{Keterangan:}
 
@@ -419,7 +420,7 @@ Operator yang mengoperasikan dua operand disebut dengan binary operator,
 cara penulisan binary operator sama dengan penulisan oprator yang
 sebelumnya.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 return_type operator_type (parameter);
 \end{lstlisting}
 
@@ -448,15 +449,15 @@ Contoh program dibawah ini menggunakan operator Addition (+) untuk
 menambahkan hari pada objek kalender, anda dapat menambahkan beberapa
 hari kedepan, misal 5 atau 10 hari dari tanggal sekarang.
 
-\subsubsection*{Contoh 4. Menggunakan Binary Addition Operator.}
+\subsubsection*{Contoh  Menggunakan Binary Addition Operator.}\label{contoh-8.4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 4, kemudian tulis kode berikut.
+  nama contoh \ref{contoh-8.4}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menggunakan Binary Addition Operator, label=contoh-8.4]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -523,12 +524,13 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Inisialisasi Data
 
-A 23 / 10 / 2011 Menambahkan 25 hari kedepan Hasil setelah ditambahkan 25 hari 18 / 11 / 2011 13
-/ 11 / 2011
-\end{verbatim}
+23 / 10 / 2011 Menambahkan 25 hari kedepan
+Hasil setelah ditambahkan 25 hari 18 / 11 / 2011 
+13 / 11 / 2011
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -553,16 +555,16 @@ sintaks a += b, yang sama artinya dengan a = a + b. Pada contoh program
 dibawah ini operator \emph{Addition-Assignment} akan digunakan untuk
 menambahkan hari pada objek Kalender.
 
-\subsubsection*{Contoh 5. Menggunakan Addition Assigment Operator dan Substraction
-Assigment Operator.}
+\subsubsection*{Contoh  Menggunakan Addition Assigment Operator dan Substraction Assigment Operator.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 5, kemudian tulis kode berikut.
+  nama contoh \ref{contoh-8.5}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption= Menggunakan Addition Assigment Operator dan Substraction
+Assigment Operator. label=contoh-8.5]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -624,13 +626,13 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Inisialisasi Data
 23/10/2011
 Menambahkan 25 hari kedepan
 Hasil setelah ditambahkan 25 hari
 18/11/2011
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -643,7 +645,7 @@ Kalender, anda dapat menuliskan kode \texttt{objKal\ +=\ 25;}
 Pada kasus tertentu dimana anda ingin membandingkan dua objek bertipe
 Kalender ada dapat menggunakan comparison operator.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 if (objKal1 == objKal2)
 {
 // Do something
@@ -659,15 +661,15 @@ Anda dapat menggunakan equality operator (==) atau inequality operator
 operator yang mempunyai return value atau parameter yang berbeda, ini
 disebut dengan overloading operator.
 
-\subsubsection*{Contoh 6. Overloading Comparison Operator (Equality dan Inequality).}
+\subsubsection*{Contoh  Overloading Comparison Operator (Equality dan Inequality).}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 6, kemudian tulis kode berikut.
+  nama contoh \ref{contoh-8.6}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Overloading Comparison Operator (Equality dan Inequality, label=contoh-8.6]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -773,7 +775,7 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Inisialisasi Kalender 1
 23 / 10 / 2010
 
@@ -788,7 +790,7 @@ kalender1 dan kalender3 sama !
 nilai integer yang ekuivalen dengan objKal3 adalah 20101023
 Nilai integer dari objKal3 dan intKal3 sama
 Nilai integer dari objKal2 dan intKal3 tidak sama
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan:}
 
@@ -820,16 +822,14 @@ Seperti pada contoh sebelumnya anda juga dapat menggunakan operator
 membandingkan objek Kalender. Agar mudah untuk dibandingkan maka objek
 Kalender dikonversi terlebih dahulu menjadi tipe int.
 
-\subsubsection*{Contoh 7. Menggunakan Operator \textless{}. \textgreater{},
-\textless{}=, \textgreater{}=.}
-
+\subsubsection*{Contoh  Menggunakan Operator \textless{}. \textgreater{}, \textless{}=, \textgreater{}=.}
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 7, kemudian tulis kode berikut.
+  nama contoh \ref{contoh-8.7}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menggunakan Operator Overloading, label=contoh-8.7]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -910,7 +910,7 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 objKal1 berisi :
 23 / 10 / 2010
 
@@ -924,7 +924,7 @@ objKal1 < objKal2 = false
 objKal1 > objKal2 = true
 objKal1 <= objKal3 = true
 objKal1 >= objKal3 = true
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan}
 
@@ -947,15 +947,15 @@ seperti ketika anda mengakses array, anda dapat menambahkan operator
 index tertentu dari objek. Contoh dibawah ini akan menjelaskan
 penggunaan subscript operator untuk membuat array yang dinamis.
 
-\subsubsection*{Contoh 8. Subscript Operator untuk Dynamic Array.}
+\subsubsection*{Contoh  Subscript Operator untuk Dynamic Array.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 8, kemudian tulis kode berikut.
+  nama contoh \ref{contoh-8.8}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Subscript Operator untuk Dynamic Array, label=contoh-8.8]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1005,9 +1005,9 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 The content array are : {23 16 9 20 55 }
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Keterangan}
 
@@ -1022,15 +1022,15 @@ Function operator digunakan jika anda ingin membuat objek bekerja
 seperti function. Untuk lebih jelasnya penggunaan function
 \texttt{operator()} anda dapat mencoba program dibawah ini.
 
-\subsubsection*{Contoh 9. Menggunakan operator() untuk membuat function object.}
+\subsubsection*{Contoh  Menggunakan operator() untuk membuat function object.}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh 9, kemudian tulis kode berikut.
+  nama contoh \ref{contoh-8.9}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, caption=Menggunakan operator() untuk membuat function object., label=contoh-8.9]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1056,9 +1056,9 @@ return a.exec();
   adalah sebagai berikut.
 \end{enumerate}
 
-\begin{verbatim}
+\begin{lcverbatim}
 Hello Function Operator !
-\end{verbatim}
+\end{lcverbatim}
 
 \textbf{Analisis}
 

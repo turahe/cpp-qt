@@ -21,7 +21,7 @@ live from the Internet.
 A web site can be loaded onto QWebView with the load() function. So, the
 core part of making browser is following lines of code:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 QWebView *view = new QWebView(parent);
 view->load(QUrl("http://google.com/"));
 view->show();
@@ -46,7 +46,7 @@ Project-\textgreater{}Empty Qt Project-\textgreater{}Choose\ldots{}
 
 Paste the following lines to the Browser1.pro:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 QT       += core gui
 QT       += webkitwidgets
 
@@ -77,7 +77,7 @@ File-\textgreater{}Choose\ldots{}
 
 Copy the following code for the main.cpp:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 #include <QApplication>
 #include <QWebView>
 
@@ -104,7 +104,7 @@ loaded:
 NOTE: The linking against the Webkit does not seem to be needed. So, I
 dropped the following line from the Browser1.pro file.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 QT       += webkit
 \end{lstlisting}
 
@@ -141,7 +141,7 @@ Class-\textgreater{}Dialog without Buttons
 .pro File To link against Webkit, we need to add one line to the .pro
 file (with Qt5.3, the line will be added automatically):
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 QT       += core gui
 QT       += webkitwidgets
 
@@ -213,7 +213,7 @@ Fortunately, the Creator intelligence gives us some hints on what to do:
 
 So, the finished coding, our slots in dialog.cpp look like this:
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 void Dialog::on_backButton_clicked()
 {
     ui->webView->back();
@@ -264,7 +264,7 @@ If we type in another site:
 
 Here is the source code: Browser2.zip.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 main.cpp.
 
 #include "dialog.h"
@@ -283,7 +283,7 @@ int main(int argc, char *argv[])
 
 dialog.h.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 #ifndef DIALOG_H
 #define DIALOG_H
 
@@ -322,7 +322,7 @@ private:
 
 dialog.cpp.
 
-\begin{lstlisting}[language=c++]
+\begin{lstlisting}[language=c++, numbers=none]
 #include "dialog.h"
 #include "ui_dialog.h"
 

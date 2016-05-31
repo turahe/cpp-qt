@@ -49,7 +49,7 @@ Kita memerlukan subrutin, karena dalam program yang besar akan lebih
 baik jika tugas tertentu dilakukan oleh subrutin tertentu, dengan
 demikian program akan menjadi lebih mudah dibaca dan dipelihara.
 \begin{quotation}
-	\textbf{Catatan :}
+\includegraphics{images/pencil}	\textbf{Catatan :}
 	
 	Fungsi bisa dikatakan sebagai bentuk
 	lain dari instruksi yang dapat memberikan sebuah nilai apabila diberi
@@ -66,7 +66,7 @@ Defined Function}). Fungsi-fungsi banyak digunakan dengan dua alasan
 utama, yaitu:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Fungsi-fungsi menjadikan program C++ mempunyai struktur yang jelas.
   Dengan memisahkan langkah--langkah detail ke satu atau lebih
@@ -142,7 +142,7 @@ fungsi. Deklarasi fungsi ini dinamakan prototipe (\emph{prototype}).
 Ada tiga cara mendeklarasikan fungsi (membuat \emph{prototype}), yaitu :
 
 \begin{itemize}
-\tightlist
+
 \item
   Menuliskan prototipe ke dalam sebuah file, kemudian menggunakan
   directive \texttt{\#include} untuk menyertakannya.
@@ -186,7 +186,7 @@ fungsi dapat menggunakan preprocessor directive \texttt{\#include}.
 \subsubsection*{Contoh  Membuat Fungsi yang mengembalikan nilai.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{membuat-fungsi-yang-mengembalikan-nilai}, kemudian tulis kode berikut.
@@ -224,7 +224,7 @@ Dimutlakkan menjadi : 10
 \textbf{Analisa Program :}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas baris ketiga tertulis :
   \texttt{int\ absolut(int\ bil);} inilah yang disebut sebagai
@@ -257,9 +257,9 @@ nilai 10, yaitu nilai kembalian fungsi, ini menunjukkan bahwa fungsi
 		harus sama dengan nama parameter pada definisi fungsi, oleh karena itu
 		prototype tersebut di atas boleh juga dituliskan seperti berikut :
 		
-		\begin{lstlisting}[language=c++, numbers=none]
-		int absolut(int x);
-		\end{lstlisting}
+\begin{lstlisting}[language=c++, numbers=none]
+int absolut(int x);
+\end{lstlisting}
 	
 	 
 \end{quotation}
@@ -279,7 +279,7 @@ return.
 \subsubsection*{Contoh  Membuat Fungsi yang tidak mengembalikan nilai.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{membuat-fungsi-yang-tidak-mengembalikan-nilai}, kemudian tulis kode berikut.
@@ -358,7 +358,7 @@ lokalnya.
 \subsubsection*{Contoh  Variabel Lokal.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{variabel-lokal}, kemudian tulis kode berikut.
@@ -396,7 +396,7 @@ Hasil = 28
 \textbf{Analisa Program:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Variable a, b dan c merupakan variabel lokal pada fungsi
   \texttt{kali()}. Variabel ini tidak dikenal pada fungsi utama sehingga
@@ -429,7 +429,7 @@ fungsi-fungsi yang mengguanakanya.
 \subsubsection*{Contoh  Variabel Global.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{variabel-global}, kemudian tulis kode berikut.
@@ -464,17 +464,17 @@ Variabel global hasil = 28
 \textbf{Analisa Program:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Variabel hasil dideklarasikan di luar blok program (di luar kurung
   kurawal), maka variabel hasil merupakan variabel global yang dikenal
-  di blok manapun.\\
+  di blok manapun.
 \item
   Ketika variabel hasil mengalami manipulasi di dalam fungsi
   \texttt{kali()}, maka sebenarnya yang diubah adalah variabel hasil
   yang sama, sehingga ketika ditampilkan dengan cout variabel ini
   menghasilkan nilai perkalian antara a dan b seperti apa yang dilakukan
-  di dalam fungsi \texttt{kali()}.\\
+  di dalam fungsi \texttt{kali()}.
 \item
   Perlu diperhatikan bahwa variabel hasil bersifat global bagi fungsi
   \texttt{main()} maupun fungsi \texttt{kali()} karena deklarasi
@@ -537,7 +537,7 @@ adalah sebagai berikut.
 \textbf{Analisa Program:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dari contoh program ini, variable \texttt{f} di fungsi
   \texttt{kali\ ()} merupakan variable lokal yang bersifat statik yang
@@ -560,11 +560,11 @@ Penggunaan variabel lokal lebih disarankan, karena penggunaan variabel
 global akan memnyebabkan dampak-dampak sebagai berikut :
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Memboroskan memori computer karena computer masih menyimpan nilainya
-  walaupun sudah tidak diperlukan lagi.\\
+  walaupun sudah tidak diperlukan lagi.
 \item
   Mudah terjadi kesalahan program karena satu perubahan dapat
   menyebabkan perubahan menyeluruh pada program.
@@ -739,7 +739,7 @@ adalah sebagai berikut.
 \textbf{Analisa Program:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 25 karena
   semua parameter formal menerima nilai, maka hasilnya 3750.\\

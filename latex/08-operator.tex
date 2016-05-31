@@ -6,17 +6,15 @@ adalah
 
 \begin{outline}
 \1
-  \protect\hyperlink{operator-pada-cpp}{Menggunakan operator keyword}
+ \ref{operator-pada-cpp} \protect\hyperlink{operator-pada-cpp}{Menggunakan operator keyword}
 \1
-  Notasi prefik dan postfix
+  \ref{conversion-operator} \protect\hyperlink{conversion-operator}{Conversion operator}
+   \1
+   \ref{overloading-operator} Overloading Operator \textless{}, \textgreater{}, \textless{}=, \textgreater{}=
 \1
-  Menggunakan unary dan binary operator
+ \ref{subscript-operator} Subscript operator
 \1
-  Conversion operator
-\1
-  Subscript operator
-\1
-  Function operator
+  \ref{function-operator}Function operator
 \end{outline}
 
 \section{Operator pada C++}\label{operator-pada-cpp}
@@ -104,7 +102,7 @@ anda dapat menggunakan operator ++ untuk menambahkan hari.
 \subsubsection*{Contoh  Menggunakan Increment Operator (Notasi prefix).}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{coontoh-8.1}, kemudian tulis kode berikut.
@@ -182,7 +180,7 @@ Tanggal setelah notasi prefik dijalankan
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Class Kalender berisi tiga member variabel yaitu \texttt{\_hari},
   \texttt{\_bulan}, dan \texttt{\_tahun} yang merepresentasikan waktu
@@ -224,7 +222,7 @@ objek tersebut by value.
 \subsubsection*{Contoh  Menggunakan Operator Increment (notasi postfix).}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh-8.2}, kemudian tulis kode berikut.
@@ -309,7 +307,7 @@ objKal : 24 / 10 / 2010
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja
   penulisan operator \texttt{++} menggunakan notasi \texttt{postfix}.
@@ -400,7 +398,7 @@ Integer yang sesuai dengan data 2011023
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada operator \texttt{int()}, \texttt{variabel} \texttt{\_tahun},
   \texttt{\_bulan}, dan \texttt{\_hari} dikalikan dengan bilangan
@@ -449,10 +447,10 @@ Contoh program dibawah ini menggunakan operator Addition (+) untuk
 menambahkan hari pada objek kalender, anda dapat menambahkan beberapa
 hari kedepan, misal 5 atau 10 hari dari tanggal sekarang.
 
-\subsubsection*{Contoh  Menggunakan Binary Addition Operator.}\label{contoh-8.4}
+\subsubsection*{Contoh  Menggunakan Binary Addition Operator.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh-8.4}, kemudian tulis kode berikut.
@@ -535,7 +533,7 @@ Hasil setelah ditambahkan 25 hari 18 / 11 / 2011
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dengan menggunakan operator + anda dapat menambahkan hari pada objek
   Kalender, jumlah hari yang ditambahkan tergantung dari nilai yang
@@ -558,13 +556,13 @@ menambahkan hari pada objek Kalender.
 \subsubsection*{Contoh  Menggunakan Addition Assigment Operator dan Substraction Assigment Operator.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh-8.5}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption= Menggunakan Addition Assigment Operator dan Substraction
-Assigment Operator. label=contoh-8.5]
+Assigment Operator, label=contoh-8.5]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -664,7 +662,7 @@ disebut dengan overloading operator.
 \subsubsection*{Contoh  Overloading Comparison Operator (Equality dan Inequality).}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh-8.6}, kemudian tulis kode berikut.
@@ -795,7 +793,7 @@ Nilai integer dari objKal2 dan intKal3 tidak sama
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun
   masing-masing ada 2 \emph{inequality} dan \emph{equality} operator
@@ -814,8 +812,7 @@ Nilai integer dari objKal2 dan intKal3 tidak sama
   konversi dari objek Kalender).
 \end{itemize}
 
-\section{Overloading Operator \textless{}, \textgreater{},
-\textless{}=, \textgreater{}=}\label{overloading-operator}
+\section{Overloading Operator \textless{}, \textgreater{}, \textless{}=, \textgreater{}=}\label{overloading-operator}
 
 Seperti pada contoh sebelumnya anda juga dapat menggunakan operator
 \textless{}, \textgreater{}, \textless{}=, \textgreater{}= untuk
@@ -824,7 +821,7 @@ Kalender dikonversi terlebih dahulu menjadi tipe int.
 
 \subsubsection*{Contoh  Menggunakan Operator \textless{}. \textgreater{}, \textless{}=, \textgreater{}=.}
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh-8.7}, kemudian tulis kode berikut.
@@ -929,7 +926,7 @@ objKal1 >= objKal3 = true
 \textbf{Keterangan}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas penggunaan operator \textless{}, \textgreater{},
   \textless{}=, \textgreater{}= digunakan untuk membandingkan dua objek
@@ -950,7 +947,7 @@ penggunaan subscript operator untuk membuat array yang dinamis.
 \subsubsection*{Contoh  Subscript Operator untuk Dynamic Array.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh-8.8}, kemudian tulis kode berikut.
@@ -1025,7 +1022,7 @@ seperti function. Untuk lebih jelasnya penggunaan function
 \subsubsection*{Contoh  Menggunakan operator() untuk membuat function object.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh-8.9}, kemudian tulis kode berikut.
@@ -1063,7 +1060,7 @@ Hello Function Operator !
 \textbf{Analisis}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dengan membuat function operator maka anda dapat menggunakan objek
   seperti ketika anda menggunakan function.

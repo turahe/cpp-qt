@@ -8,7 +8,7 @@ standar C++ yang sebelumnya sudah kita gunakan. Adapun beberapa topik
 yang akan kita bahas pada chapter ini adalah.
 
 \begin{itemize}
-\tightlist
+
 \item
   Qt Object
 \item
@@ -32,7 +32,7 @@ Qt Core Module adalah library yang dibutuhkan oleh setiap aplikasi Qt.
 Qt Core Module sendiri dapat berisi :
 
 \begin{itemize}
-\tightlist
+
 \item
   Basic Data Type seperti QString dan QByteArray.
 \item
@@ -72,7 +72,7 @@ program kedua menggunakan QObject.
 \subsubsection*{Contoh  Alokasi memory dinamis tanpa QObject.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.1}, kemudian tulis kode berikut.
@@ -140,7 +140,7 @@ return a.exec();
 \textbf{Keterangan:}:
 
 \begin{itemize}
-\tightlist
+
 \item
   Class Mahasiswa yang kita buat diatas tidak diturunkan dari class
   QObject, sehingga kita harus menghapus memory di heap yang sudah tidak
@@ -154,7 +154,7 @@ return a.exec();
 \subsubsection*{Contoh  Alokasi memory dinamis dengan QObject.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.2}, kemudian tulis kode berikut.
@@ -215,7 +215,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Untuk menggunakan QObject anda harus menambahkan header file .
 \item
@@ -256,7 +256,7 @@ contoh program dibawah ini.
 \subsubsection*{Contoh  Cek apakah nilai QString Null atau Empty}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.3}, kemudian tulis kode berikut.
@@ -301,7 +301,7 @@ return a.exec();
 \textbf{Keterangan:}:
 
 \begin{itemize}
-\tightlist
+
 \item
   Class QString memiliki method size untuk mengetahui ukuran panjang
   string.
@@ -315,7 +315,7 @@ return a.exec();
 \subsubsection*{Contoh  Menggunakan Fungsi Left, Mid, Right.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.4}, kemudian tulis kode berikut.
@@ -345,7 +345,7 @@ return a.exec();
 \textbf{Keterangan:}:
 
 \begin{itemize}
-\tightlist
+
 \item
   Class QString memiliki fungsi left() untuk mengambil sejumlah karakter
   tertentu dari kiri.
@@ -360,7 +360,7 @@ return a.exec();
 \subsubsection*{Contoh 5. Menggabungkan String.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.5}, kemudian tulis kode berikut.
@@ -390,7 +390,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Fungsi append() dapat digunakan untuk menambahkan katrakter di akhir
   string.
@@ -405,7 +405,7 @@ return a.exec();
 \subsubsection*{Contoh  Membalik String.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.6}, kemudian tulis kode berikut.
@@ -434,7 +434,7 @@ return a.exec();
 \textbf{Keterangan:}:
 
 \begin{itemize}
-\tightlist
+
 \item
   Karena QString adalah array of QChar anda dapat mengambil karakter
   dari QString menggunakan index array, misal pada contoh diatas
@@ -472,7 +472,7 @@ kedalam list tersebut.
 \subsubsection*{Contoh Menggunakan QList.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.7}, kemudian tulis kode berikut.
@@ -504,7 +504,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pertama kita mendeklarasikan objek lstNama yang bertipe QList,
   kemudian objek lstNama diberi beberapa data.
@@ -521,7 +521,7 @@ pada QList.
 \subsubsection*{Contoh  Menggunakan object Iterator.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.8}, kemudian tulis kode berikut.
@@ -557,7 +557,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   QListIterator digunakan untuk mengakses data yang ada pada QList.
 \item
@@ -579,7 +579,7 @@ dilihat pada kode dibawah ini.
 \subsubsection*{Contoh  Menggunakan Iterator untuk memodifikasi data di list.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.9}, kemudian tulis kode berikut.
@@ -615,7 +615,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dengan menggunakan QMutableListIterator anda dapat memodifikasi data
   yang anda akses dengan menggunakan iterator.
@@ -640,7 +640,7 @@ berikut.
 \subsubsection*{Contoh Beberapa cara menambahkan data ke list}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.10}, kemudian tulis kode berikut.
@@ -674,7 +674,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Keyword \textless{}\textless{} dan method append digunakan untuk
   manambahkan data di akhir list.
@@ -702,7 +702,7 @@ fungsi yang berguna untuk memanipulasi data di dalam QStringList.
 \subsubsection*{Contoh Menggunakan QStringList}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.11}, kemudian tulis kode berikut.
@@ -740,7 +740,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dengan menggunakan list QStringList anda akan lebih mudah untuk
   memanipulasi list yang bertipe string, misalnya anda ingin
@@ -771,7 +771,7 @@ untuk LIFO anda dapat menggunakan QStack.
 \subsection*{Contoh Menggunakan Stack dan Queue.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.12}, kemudian tulis kode berikut.
@@ -817,7 +817,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Untuk menyimpan data dengan metode LIFO (Last In First Out) anda dapat
   menggunakan QStack.
@@ -843,7 +843,7 @@ anda dapat membuat collection yang index-nya bukan berupa number
 \subsubsection*{Contoh  Menggunakan QMap.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh-11.13}, kemudian tulis kode berikut.
@@ -880,7 +880,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dengan menggunakan QMap anda dapat membuat collection yang index-nya
   tidak berupa bilangan. Misal anda dapat menggunakan index yang tipenya

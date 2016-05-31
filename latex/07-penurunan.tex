@@ -97,7 +97,7 @@ Volume drum = 981250 Cm2
 \textbf{Keterangan Program :}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas sudah dibuat kelas \texttt{Lingkaran}, dengan
   variabel anggota \texttt{radius} bertipe \texttt{float} dan fungsi
@@ -211,7 +211,7 @@ Berikut ini adalah perubahan jenis akses anggota dari kelas dasar ke
 kelas turunan berdasarkan jenis akses penurunan:
 
 \begin{quotation}
-	\textbf{TIPS} 
+\includegraphics{images/tips}	\textbf{TIPS} 
 	
 	Pada
 	umumnya jenis akses penurunan adalah \emph{public}, oleh karena itu
@@ -278,7 +278,7 @@ apa-apa seperti berikut:
 \subsubsection*{Contoh  Konstruktor default.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator, buat project Qt Console Application dengan nama
   Contoh \ref{Konstruktor-default}. Kemudian tulis kode berikut.
@@ -355,7 +355,7 @@ kelas turunan akan memanggil konstruktor kosong kelas dasarnya.
 \subsubsection*{Contoh Konstruktor default kelas turunan.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator, buka project Qt Console Application dengan nama
   Contoh \ref{Konstruktor-default} tadi. Kemudian ubah isi konstruktor kelas Kelasku dan
@@ -427,7 +427,7 @@ di dalamnya ada pemanggilan konstruktor kelas dasarnya.
 \subsubsection*{Contoh  Konstruktor default kelas turunan memanggil konstruktor kelas dasar.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator, buka project Qt Console Application dengan nama
   Contoh \ref{Konstruktor-default} tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti
@@ -505,7 +505,7 @@ Turunan seperti berikut.
 \subsubsection*{Contoh Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator, buka project Qt Console Application dengan nama
   Contoh \ref{Konstruktor-default} tadi. Kemudian tambahkan konstruktor pada kelas Turunan
@@ -569,7 +569,7 @@ kompiler akan menambahkan pemanggilan konstruktor default (konstruktor
 tanpa parameter) pada kelas dasar.
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{2}
 \item
   Sekarang ubahlah konstruktor kelas Turunan, agar secara eksplisit
@@ -593,7 +593,7 @@ Mengucapkan : Hallo.. :-)
 \textbf{Keterangan Program:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program ini sekarang kelas Turunan mempunyai konstruktor yang
   memanggil konstruktor kelas dasar. Karena pada kelas dasar hanya
@@ -623,7 +623,7 @@ seperti gambar ilustrasi berikut:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture7-4.png}
-\caption{}
+\caption{Ilustrasi metode class dasar pada class turunan dalam objek lingkaran, silinder dan persegi}
 \end{figure}
 
 Dengan demikian kelas turunan Silinder harus membuat implementasi yang
@@ -642,8 +642,8 @@ parameter tersebut.
 
 \subsubsection*{Contoh Melakukan Overriding.}
 \begin{enumerate}
-	\def\labelenumi{\arabic{enumi}.}
-	\tightlist
+	
+	
 	\item Buka project Qt Console Application projek Contoh \ref{Pewarisan-Inheritance} yang tadi sudah
 	dibuat, kemudian ubah kode menjadi seperti berikut
 	
@@ -725,7 +725,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program ini, pembuatan objek dilakukan dengan memberikan nilai
   radius=50 dan tinggi = 125, ini tampak pada program utama (main()) :
@@ -767,7 +767,7 @@ diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
 \subsubsection*{Contoh  Mengakses metode kelas dasar.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka project Qt Console Application projek Contoh \ref{Pewarisan-Inheritance} yang baru saja
   dibuat, kemudian ubah kode pada metode : \texttt{getLuas()},
@@ -848,7 +848,7 @@ kepada kelas turunan.
 \subsubsection*{Contoh Penyembunyian metode kelas dasar.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Jalankan Qt Console Application projek, buat projek bernama Contoh \ref{Penyembunyian-metode-kelas-dasar}
   seperti berikut:
@@ -895,7 +895,7 @@ return a.exec();
 \end{lcverbatim}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{2}
 \item
   Hilangkan tanda comment pada pemanggilan metode hallo pada dua baris
@@ -957,7 +957,7 @@ memahami metode virtual.
 \subsubsection*{Contoh  Metode virtual dan non virtual.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Jalankan Qt Console Application projek, buat projek bernama Contoh \ref{Metode-virtual-nonvirtual}
   seperti berikut:
@@ -1021,7 +1021,7 @@ Luas Lingkaran
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Tampak pada program utama, variabel pointer bertipe kelas dasar
   (Lingkaran) digunakan untuk menunjuk objek bertipe kelas turunan
@@ -1046,7 +1046,7 @@ Luas Lingkaran
   berikutnya.
 \end{itemize}
 \begin{quotation}
-	\textbf{Catatan} 
+\includegraphics{images/pencil}	\textbf{Catatan} 
 	\begin{itemize}
 		\item Kata
 		kunci virtual tidak membuat metode tersebut harus dioverride.
@@ -1125,7 +1125,7 @@ Nilai : Luas Lingkaran
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Tampak pada hasil percobaan, pointer dan referensi memanggil metode
   virtual, sehingga yang dieksekusi adalah metode \texttt{getLuas()}
@@ -1202,7 +1202,7 @@ Volume Silinder
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Tampak pada program utama, variabel pointer bertipe kelas dasar
   (Lingkaran), yaitu K, di-``down-casted'' menjadi tipe data kelas
@@ -1215,11 +1215,18 @@ Volume Silinder
   menjadi tipe data pointer lain.
 \end{itemize}
 
-I\textgreater{} \textbf{Catatan} I\textgreater{} I\textgreater{} -
-Casting terhadap pointer hanya bisa dilakukan terhadap tipe-tipe yang
-mempunyai hubungan kekerabatan (inheritance). I\textgreater{} - Dengan
-casting kita bisa memaksa variabel pointer bertipe kelas dasar yang
-digunakan untuk menunjuk objek bertipe kelas turunan untuk memanggil
-metode yang bukan merupakan override dari metode virtual kelas dasar,
-namun cara ini tidak cukup aman jika objek tersebut bukan dari kelas
-turunan.
+\begin{quotation}
+	\includegraphics{images/pencil} \textbf{Catatan} 
+	\begin{itemize}
+		\item Casting terhadap pointer hanya bisa dilakukan terhadap tipe-tipe yang
+		mempunyai hubungan kekerabatan (inheritance).
+		\item  Dengan
+		casting kita bisa memaksa variabel pointer bertipe kelas dasar yang
+		digunakan untuk menunjuk objek bertipe kelas turunan untuk memanggil
+		metode yang bukan merupakan override dari metode virtual kelas dasar,
+		namun cara ini tidak cukup aman jika objek tersebut bukan dari kelas
+		turunan.
+	\end{itemize}
+\end{quotation}
+
+

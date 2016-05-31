@@ -6,7 +6,7 @@ Pada chapter ini kita akan membahas beberapa topik yang berhubungan
 dengan pointer dan reference yaitu:
 
 \begin{itemize}
-\tightlist
+
 \item
   Penggunaan Pointer.
 \item
@@ -81,7 +81,7 @@ bil3 = -670000 address = 0x28fe8c
 \textbf{Analisa Program :}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas operator address of (\&) digunakan untuk
   mengetahui alamat memory tempat variabel bil disimpan.
@@ -117,10 +117,9 @@ disebut dengan wild pointer karena bisa menunjuk ke alamat manapun, wild
 pointer harus dihindari karena sangat berbahaya.
 
 \begin{quotation}
-	 \textbf{TIPS} 
+\includegraphics{images/tips} \textbf{TIPS} 
 	 
-	 Selalu
-	 lakukan inisialisasi ketika membuat pointer.
+	 Selalu lakukan inisialisasi ketika membuat pointer.
 \end{quotation}
 
 
@@ -224,7 +223,7 @@ pUmur : 30
 \textbf{Analisa Program:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas pointer \texttt{pUmur} mereferensi/menunjuk ke
   alamat dimana nilai variabel umur disimpan.
@@ -283,7 +282,7 @@ pUmur : 28 alamat : 0x28fe90
 \textbf{Analisa:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas dapat dilihat bahwa pertama kali pointer pUmur
   mereferensi pada alamat variabel \texttt{umur1}, sehingga ketika
@@ -377,7 +376,7 @@ Setelah kita mempelajari cara penggunaan pointer sekarang kita akan
 melihat kapan pointer biasa digunakan dalam pemrograman.
 
 \begin{itemize}
-\tightlist
+
 \item
   Pengaturan data pada free store / heap memory.
 \item
@@ -466,7 +465,7 @@ Nilai pHeap : 100
 \textbf{Analisa:}
 
 \begin{itemize}
-\tightlist
+
 \item
   \texttt{pHeap} adalah pointer yang menunjuk ke alamat memory yang
   sudah dialokasikan dengan keyword `new', anda dapat menyimpan nilai
@@ -565,7 +564,7 @@ Destruktor dipanggil..
 \textbf{Analisa :}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas kita membuat class Mahasiswa yang mempunyai objek
   konstruktor dan destruktor.
@@ -597,7 +596,7 @@ const int * const pBil3;
 Tiga statement diatas memiliki pengertian yang berbeda, yaitu:
 
 \begin{itemize}
-\tightlist
+
 \item
   Statement pertama : \texttt{pBil1} adalah pointer yang menunjuk ke
   konstan integer, jadi nilai yang ditunjuk oleh pointer tidak dapat
@@ -613,7 +612,7 @@ Tiga statement diatas memiliki pengertian yang berbeda, yaitu:
 \end{itemize}
 
 \begin{quotation}
-	\textbf{TIPS}
+\includegraphics{images/tips}	\textbf{TIPS}
 	
 	Lihat
 	letak penulisan keyword const, jika sebelum tipe data maka nilai
@@ -690,7 +689,7 @@ Menampilkan alamat memory :
 \textbf{Analisa:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pertama kita mendeklarasikan referensi \texttt{rBil=bil1}, maka ketika
   dicetak nilai \texttt{rBil} sama dengan nilai variabel \texttt{bil1}
@@ -975,7 +974,7 @@ pVolumeKubus : 125
 \textbf{Analisa:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Inputan untuk variabel number harus lebih besar dari 0, jika tidak
   program akan menghasilkan pesan error.
@@ -1049,7 +1048,7 @@ pVolumeKubus : 125
 \textbf{Analisa:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Hasil program diatas sama dengan Contoh 12 sebelumnya, namun
   perbedaannya adalah program diatas menggunakan parameter reference
@@ -1130,7 +1129,7 @@ Memanggil Mahasiswa Destruktor
 \textbf{Analisa:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dapat kita lihat diatas bahwa \emph{passing object by value} tidak
   efisien karena setiap kali function dipanggil dan mengembalikan nilai
@@ -1199,7 +1198,7 @@ Mengembalikan FunctionMhs ..
 \textbf{Analisa:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Dengan menambahkan reference pada function dan parameter yang
   dikirimkan, performa aplikasi anda dapat lebih efektif karena objek

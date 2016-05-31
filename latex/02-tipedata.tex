@@ -2,14 +2,14 @@
 
 Pada bab ini kita akan membahas beberapa topik yang berhubungan dengan tipe data, Indentifier dan kontrol statement yaitu:
 
-\begin{itemize}
-	\item Tipe data dan Identifier\ref{tipe-data-dan-identifier}
-	\item Tipe data bahasa C++\ref{tipe-data-bahasa-c}
-	\item Variabel dan Konstanta\ref{variabel-dan-konstanta}
-	\item Statement\pageref{statement}
-	\item Operator dan\ref{} Ekspresi\pageref{operator-dan-ekspresi}
-	\item Control Statement\pageref{control-statement}
-\end{itemize}
+\begin{outline}
+	\1 \ref{tipe-data-dan-identifier} Tipe data dan Identifier
+	\1 \ref{tipe-data-bahasa-c} Tipe data bahasa C++
+	\1 \ref{variabel-dan-konstanta} Variabel dan Konstanta
+	\1 \ref{statement} Statement
+	\1 \ref{operator-dan-ekspresi} Operator dan Ekspres
+	\1 \ref{control-statement} Control Statement
+\end{outline}
 
 \section{Tipe Data dan
 Identifier}\label{tipe-data-dan-identifier}
@@ -94,7 +94,7 @@ suatu nilai. Pengenal (identifier) bisa terdiri dari sebuah huruf atau
 kombinasi antara huruf dengan angka dengan syarat.
 
 \begin{itemize}
-\tightlist
+
 \item
   Harus diawali dengan huruf
 \item
@@ -152,7 +152,7 @@ dengan teks 15. Karena preprosesor bekerja sebelum kompiler, kompiler
 tidak mengenal konstanta \texttt{kapasitas}, yang dikenal hanyalah
 bilangan 15.
 \begin{quotation}
-	\textbf{TIPS} 
+\includegraphics{images/tips}	\textbf{TIPS} 
 	
 	Walaupun
 	dengan memakai preprocessor directive \texttt{\#define} tampak mudah,
@@ -179,7 +179,7 @@ diperlakukan sebagai tipe data tersebut.
 \subsubsection*{Contoh Tipe data dan Identifier.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{tipe-data-identifier}, kemudian tulis kode berikut.
@@ -213,7 +213,7 @@ lebar =12
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program di atas variabel panjang dan lebar dideklarasikan bertipe
   int.
@@ -249,7 +249,7 @@ disebut ekspresi, sedangkan sama dengan (=) dan plus (+) dinamakan
 operator yang akan dibahas berikut ini.
 
 \begin{quotation}
-	 \textbf{CATATAN}
+\includegraphics{images/pencil}	 \textbf{CATATAN}
 	 
 	 Operator pengerjaan = akan mengambil nilai apapun yang ada disebelah
 	 kanannya kenudian memberikannya kepada apapun yang berada di sebelah
@@ -496,7 +496,7 @@ luas = panjang * lebar ;
 \textbf{Keterangan :}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada baris pertama dan kedua di atas digunakan hanya sebuah operator
   \texttt{=} (yaitu jenjang ke 14), arah proses dari kanan ke kiri,
@@ -523,7 +523,7 @@ luas = panjang * lebar ;
 \end{itemize}
 
 \begin{quotation}
-	\textbf{TIPS}
+\includegraphics{images/tips}	\textbf{TIPS}
 	
 	Operator
 	( dan ) dapat dipakai untuk merubah jenjang suatu ekspresi
@@ -719,8 +719,8 @@ Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari
 langkah-langkah sebagai berikut:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Jenjang operator hubungan lebih tinggi dibandingkan dengan operator
   logika, jadi operator hubungan dikerjakan terlebih dahulu.
@@ -745,7 +745,7 @@ program, mempunyai rangkaian perintah yang harus ditulis untuk memenuhi
 beberapa keadaan, yaitu:
 
 \begin{itemize}
-\tightlist
+
 \item
   Mengulang suatu perintah jika suatu kondisi dipenuhi.
 \item
@@ -802,7 +802,7 @@ Sintaks penulisannya sebagai berikut :
 Flowchart untuk statment ini adalah :
 
 \begin{quotation}
-	\textbf{CATATAN} 
+\includegraphics{images/pencil}	\textbf{CATATAN} 
 	
 	Di
 	dalam \texttt{if()} maupun di dalam else bisa diisi dengan perintah
@@ -879,7 +879,7 @@ Flowchart untuk statement ini adalah :
 \subsubsection{Contoh Tipe data dan Identifier.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{tipe-data-dan-identifier}, kemudian tulis kode berikut.
@@ -924,7 +924,7 @@ sabtu
 \textbf{Keterangan Program :}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program di atas variabel \texttt{hari} dideklarasikan bertipe
   \texttt{int} dan diinisialisasi dengan nilai \texttt{6}.

@@ -177,7 +177,7 @@ return a.exec();
 Mari kita Keterangan: perbaris.
 
 \begin{itemize}
-\tightlist
+
 \item
   Integer dibagi integer dan dimasukkan ke dalam variabel integer akan
   menjadi integer, walaupun ada koma dibelakangnya, yaitu 0.5 tapi akan
@@ -224,7 +224,7 @@ Mari kita Keterangan: perbaris.
   daripada integer.
 \end{itemize}
 \begin{quotation}
-\textbf{TIPS} 
+\includegraphics{images/tips}\textbf{TIPS} 
 	
 Untuk melakukan casting yang benar, maka casting akan valid jika kita mengcasting tipe data yang berukuran lebih besar menjadi tipe data yang berukuran lebih kecil. Misalnya float dicast menjadi int.
 \end{quotation}
@@ -235,7 +235,7 @@ Untuk melakukan casting yang benar, maka casting akan valid jika kita mengcastin
 C++ memiliki cara pengcastingan yang baru, yaitu:
 
 \begin{itemize}
-\tightlist
+
 \item
   static\_cast
 \item
@@ -278,7 +278,7 @@ CTdkAdaHubungan* pTdkHub = static_cast<CTdkAdaHubungan*>(pInduk); // Error
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada contoh diatas terlihat bahwa class anak dapat dibuat dari class
   induk karena ada hubungan pewarisan. Konsep ini merupakan konsep
@@ -660,8 +660,8 @@ berikut:
 \subsubsection*{Contoh Percobaan koneksi MySQL dengan QtConsole}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Buatlah sebuah database pada MySQL dengan nama: testmhs
 \item
@@ -684,9 +684,9 @@ NIM & Nama & IPK\tabularnewline
 Hasil:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{3}
-\tightlist
+
 \item
   Tulis kode berikut ini:
 \end{enumerate}
@@ -725,7 +725,7 @@ return a.exec();
 \end{lstlisting}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{4}
 \item
   Pada file project yang berekstensi .pro, tambahkan linking ke library
@@ -739,7 +739,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Program diatas dapat menampilkan driver database yang terinstall dan
   dapat dikenali oleh system Qt, yaitu QSQLITE, QMYSQL, QODBC3, dan
@@ -774,8 +774,8 @@ Yang perlu diperhatikan ketika kita membuat koneksi dengan basisdata
 SQLite adalah:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Jika basis data SQLite akan dibuat langsung dari program, maka file
   database hasil pembuatan tersebut akan berada di folder simulator pada
@@ -793,8 +793,8 @@ berikut:
 \subsubsection*{Contoh Percobaan koneksi SQLite dengan QtConsole}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Buatlah sebuah database pada Sqlite dengan nama: testmhs.db, ingat
   harus berjenis SQLite3.
@@ -815,7 +815,7 @@ Nama tabel: mahasiswa
 Field:
 
 \begin{itemize}
-\tightlist
+
 \item
   NIM tipe VARCHAR(8), primary key, not null, unique
 \item
@@ -825,9 +825,9 @@ Field:
 \end{itemize}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{5}
-\tightlist
+
 \item
   Kemudian isi data sebagai berikut:
 \end{enumerate}
@@ -844,9 +844,9 @@ Nim & Nama & IPK\tabularnewline
 \end{longtable}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{6}
-\tightlist
+
 \item
   Setelah itu buatlah project baru pada QtConsole application, dan
   tulislah kode program berikut:
@@ -874,7 +874,7 @@ return a.exec();
 \end{lstlisting}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{7}
 \item
   Pada project, pilihlah file berekstensi .pro, kemudian bukalah file
@@ -888,7 +888,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Baris pertama output adalah daftar driver yang didukung oleh Qt dan
   QtCreator.
@@ -973,7 +973,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Program diatas melakukan koneksi ke SQLite dan kemudian mengirimkan
   query untuk mengambil data-data dari tabel mahasiswa dengan
@@ -1090,9 +1090,14 @@ qDebug() << nim << " " << nama << " " << ipk;
 
 Sehingga akan dihasilkan:
 
-T\textgreater{} \textbf{TIPS} T\textgreater{} T\textgreater{} Untuk
-mengetahui cara menghandle berbagai jenis tipe data pada database SQLite
-versi 3 pada Qt dapat
+\begin{quotation}
+	\includegraphics{images/tips}
+	\textbf{TIPS} 
+	
+	Untuk
+	mengetahui cara menghandle berbagai jenis tipe data pada database SQLite
+	versi 3 pada Qt dapat
+\end{quotation}
 
 dilihat pada tabel berikut:
 
@@ -1164,7 +1169,7 @@ Kondisi akhir tabel:
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Program diatas masih sama menggunakan obyek QsqlQuery dan method
   exec(). Hanya SQL query nya saja yang berbeda dengan Contoh sebelumnya
@@ -1254,8 +1259,8 @@ memanipulasi data pada tabel mahasiswa dengan menggunakan menu. Pada
 menu akan ditampilkan beberapa pilihan seperti:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Tambah data
 \item
@@ -1273,7 +1278,7 @@ menu akan ditampilkan beberapa pilihan seperti:
 Penjelasan:
 
 \begin{itemize}
-\tightlist
+
 \item
   Menu 1 akan digunakan untuk menambah data mahasiswa
 \item
@@ -1301,7 +1306,7 @@ lebih jelasnya silahkan dicoba pada Contoh berikut ini.
 \subsubsection*{Contoh  Pembuatan manipulasi data pada SQLite dengan menggunakan menu}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Tulislah program berikut:
 
@@ -1457,7 +1462,7 @@ return a.exec();
 \textbf{Hasil:}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Tampilan menu:
 \item
@@ -1476,7 +1481,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Program diatas merupakan program yang cukup banyak dan kompleks.
   Program ini dibuat dengan prinsip perulangan. Kita akan mengulang
@@ -1524,7 +1529,8 @@ return a.exec();
 \end{itemize}
 
 \begin{quotation}
-	\textbf{TIPS:} 
+
+\includegraphics{images/tips}	\textbf{TIPS:} 
 	
 	Untuk
 	mengkonversi dari tipe data string menuju ke Qstring, digunakan

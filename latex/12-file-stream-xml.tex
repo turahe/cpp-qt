@@ -6,7 +6,7 @@ Qt Framework yang digunakan untuk bekerja dengan File dan dokumen XML.
 Adapun materi yang akan dibahas pada HOL ini adalah:
 
 \begin{itemize}
-\tightlist
+
 \item
   Bekerja dengan QDir dan QFileInfo.
 \item
@@ -33,7 +33,7 @@ informasi tentang file dan direktori, ada beberapa method penting yang
 sering digunakan yaitu:
 
 \begin{itemize}
-\tightlist
+
 \item
   \texttt{isDir()}, \texttt{isFile()}, dan \texttt{isSymLink()} akan
   mengembalikan nilai true jika objek yang dicek berupa direktori, file,
@@ -70,7 +70,7 @@ informasi direktori yang ada di komputer anda.
 \subsubsection*{Menampilkan daftar drives dari root directories.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{menampilkan-daftar-drives-dari-root-direktories}, kemudian tulis kode berikut.
@@ -102,7 +102,7 @@ return a.exec();
 \textbf{Keterangan:}:
 
 \begin{itemize}
-\tightlist
+
 \item
   Static method \texttt{QDir::drives()} akan mengembalikan collection
   berupa \texttt{QList\textless{}FileInfo\textgreater{}} yang berisi
@@ -124,7 +124,7 @@ Dibawah ini adalah daftar kriteria yang dapat digunakan untuk melakukan
 filter.
 
 \begin{itemize}
-\tightlist
+
 \item
   QDir::Dirs: Lists directories.
 \item
@@ -173,7 +173,7 @@ anda dapat mengerjakan Contoh dibawah ini.
 \subsubsection*{Contoh  Memeriksa apakah file ada dan bisa diakses.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{memeriksa-file}, kemudian tulis kode berikut.
@@ -215,7 +215,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   \texttt{Method\ exists()} digunakan untuk mengecek apakah file yang
   ada atau tidak. Jika file tidak ditemukan maka program akan keluar dan
@@ -247,7 +247,7 @@ Contoh 3 dibawah ini.
 \subsubsection*{Menggunakan Stream untuk membaca file.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{menggunakan-stream}, kemudian tulis kode berikut.
@@ -296,7 +296,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Objek \texttt{QTextStream} digunakan jika anda ingin menggunakan
   stream untuk mengakses file text.
@@ -326,7 +326,7 @@ mengakses file biner.
 \subsubsection*{Contoh 4. Menggunakan Data Stream.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{menggunakan-data-stream}
@@ -430,7 +430,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas struct Warna adalah user define type yang dibuat
   sendiri, struct Warna memiliki dua member variabel yaitu text yang
@@ -505,7 +505,7 @@ program dibawah ini.
 \subsubsection*{Contoh  Membuat Nodes untuk membuat simple XML Document.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{membuat-nodes-simple-xml-document}, kemudian tulis kode berikut.
@@ -559,7 +559,7 @@ Hasil dari file XML ``simple.xml'' yang berhasil dibuat adalah :
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Untuk membuat dokumen XML menggunakan DOM, pertama buat objek
   QDomDocument .
@@ -593,7 +593,7 @@ valid.
 \subsubsection*{Contoh 6. Membaca DOM dari dokumen XML.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Untuk dokumen XML yang akan digunakan pada contoh program ini adalah
   dokumen XML yang sudah kita buat sebelumnya yaitu ``simple.xml''.
@@ -662,7 +662,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Untuk membaca data dari file, seperti biasa gunakan objek QFile dan
   jalankan method open().
@@ -697,8 +697,8 @@ objek QDomDocument.
 \subsubsection*{Contoh  Modifikasi data dokumen XML.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Buat project console aplication baru dengan nama Contoh \ref{Main-program-Modifikasi-data-dokumen-XML}, pilih Qt
   Simulator sebagai simulator yang digunakan. Jalankan program sehingga
@@ -711,9 +711,9 @@ objek QDomDocument.
 \{lang=``xml''\} 22002321 3.5 \textless{}/Mahasisw 23002333 3.6
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{2}
-\tightlist
+
 \item
   Kemudian pada file main.cpp tambahkan kode berikut untuk melakukan
   modifikasi file xml yang sudah kita buat sebelumnya.
@@ -783,9 +783,9 @@ return a.exec();
 \end{lstlisting}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{3}
-\tightlist
+
 \item
   Kemudian jalankan program diatas dengan menekan tombol Ctrl+R, maka
   akan ditampilkan output sebagai berikut.
@@ -804,7 +804,7 @@ Kurniawan\textless{}/Nam \textless{}/Mahasisw 23002333 3.6
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Langkah pertama baca file simple.xml yang akan dimodifikasi, kemudian
   masukan isinya kedalam QDomDocument.
@@ -889,8 +889,8 @@ menggunakan fungsi yang mirip seperti state().
 \subsubsection*{Contoh  Menggunakan QXMLStream Reader untuk membaca XML.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Buat aplikasi console baru dengan nama Contoh \ref{menggunakan-qmlstream-reader-untuk-membaca-xml}, pilih Qt Simulator
   untuk menampilkan outputnya.
@@ -901,7 +901,7 @@ menggunakan fungsi yang mirip seperti state().
 
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \setcounter{enumi}{2}
 \item
   Kemudian ketikan kode berikut pada main.cpp untuk membaca data dari
@@ -948,7 +948,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Untuk membaca dokumen XML menggunakan QXMLStreamReader anda dapat
   melakukan looping dengan memeriksa apakah sudah sampai pada akhir
@@ -967,7 +967,7 @@ return a.exec();
 \subsubsection*{Contoh  Membuat dokumen XML dengan QXMLStreamWriter.}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Buat aplikasi console dengan nama Contoh \ref{membuat-document-xml-dengan-qmlstream-writer}, kemudian tulis kode
   berikut
@@ -1020,7 +1020,7 @@ return a.exec();
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Anda dapat menggunakan QXMLStreamWriter untuk membuat dokumen XML.
 \item

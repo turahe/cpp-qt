@@ -208,7 +208,7 @@ bil[6] = 60 dan alamatnya: 0x28fe80
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Program diatas memasukkan nilai-nilai integer kedalam array bernama
   bil yang berisi \texttt{7} elemen (dari indeks \texttt{0-6}).
@@ -232,7 +232,7 @@ bil[6] = 60 dan alamatnya: 0x28fe80
   operator \texttt{\&}.
 \end{itemize}
 \begin{quotation}
-	\textbf{TIPS} 
+\includegraphics{images/tips}	\textbf{TIPS} 
 	
 	Dalam
 	bahasa C++, tidak terdapat \emph{error handling} terhadap batasan nilai
@@ -268,7 +268,7 @@ int main(int argc, char *argv[])
 \textbf{Hasil dan Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Progarm akan HANG-UP. Hal ini terjadi karena compiler tidak
   bertanggungjawab dengan pengaksesan indeks array yang melebihi batas
@@ -318,11 +318,11 @@ tidak bisa langsung mengisi dengan cara
 cara demikian, maka isi elemen indeks ke-0 bernilai 6, sedangkan elemen
 lainnya bernilai 0.
 
-\subsubsection*{Contoh  Inisialisasi Array dengan nilai 0}
+\subsubsection*{Contoh  Inisialisasi Array dengan nilai \textbackslash{}0}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Inisialisasi Array dengan nilai 0]
+\begin{lstlisting}[language=c++, caption=Inisialisasi Array dengan nilai \textbackslash{}0]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -397,7 +397,7 @@ selanjutnya semua elemen lainnya yang tidak di inisialisasi secara
 otomatis bernilai 0.
 
 \begin{quotation}
-	\textbf{TIPS}
+\includegraphics{images/tips}	\textbf{TIPS}
 	
 	Untuk
 	semua array pada C++, inisialisasi satu buah elemen saja pada array akan
@@ -470,7 +470,7 @@ masing-masing elemen akan bersifat acak juga seperti pada hasil program
 diatas. Untuk itulah inisialisasi elemen array sangatlah penting.
 
 \begin{quotation}
-	 \textbf{TIPS}
+\includegraphics{images/tips}	 \textbf{TIPS}
 	 
 	 Inisialisasi pada elemen array yang dideklarsikan \textbf{SANGATLAH
 	 	PENTING} untuk menghindari nilai \textbf{ACAK}!
@@ -618,7 +618,7 @@ int main(int argc, char *argv[])
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Cara penyalinan array adalah dengan melakukan perulangan sebanyak
   elemen array yang akan disalin dan menyalinnya secara manual
@@ -817,11 +817,11 @@ int matriks[3][5] = {{5,12,17,10,7},
 
 \includegraphics{images/warning} Matriks yang jumlah datanya lebih akan menyebabkan ERROR
 
-\begin{figure}[htbp]
+
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture3-9.png}
 
-\end{figure}
+
 
 Array 2 dimensi juga dapat dideklarasikan secara dinamis. Dinamis bisa
 dilakukan pada baris array 2 dimensi. Namun kita tidak bisa
@@ -1032,7 +1032,7 @@ int main(int argc, char *argv[])
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Untuk menyalin array 2 dimensi ke 1 dimensi, maka harus diperlukan
   sebuah array 1 dimensi baru yang berukuran total sesuai dengan hasil
@@ -1145,8 +1145,8 @@ nilai dari suatu string dapat dideteksi.
 Untuk mendeklarasikan sebuah string terdapat dua cara:
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
+
+
 \item
   Menggunakan array of character yang sering disebut C-style string
 \item
@@ -1275,7 +1275,7 @@ hasil data string: Wachid
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas kita mendeklarasikan variabel array of string
   bernama buffer yang berukuran 6 elemen. Variabel buffer diatas
@@ -1422,7 +1422,7 @@ panjang huruf adalah: 10 karakter
 \textbf{Keterangan}
 
 \begin{itemize}
-\tightlist
+
 \item
   Program diatas tidak menggunakan array of character, melainkan
   menggunakan tipe data C++ \texttt{class\ string}. Tipe data ini
@@ -1445,7 +1445,7 @@ atau mengerjakan suatu nilai string ke variabel string yang lain
 diperlukan suatu fungsi pustaka yang bernama \texttt{strcpy()}.
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
+
 \item
   Bentuk umum:
   \texttt{void\ strcpy(\textless{}stringhasil\textgreater{},\textless{}stringsumber\textgreater{});}
@@ -1499,7 +1499,7 @@ String Kedua : STRING
   jumlah maksimum. Contoh Error:
 
   \begin{itemize}
-  \tightlist
+  
   \item
     \texttt{char\ data{[}5{]}\ =\ \{\textquotesingle{}\textbackslash{}0\textquotesingle{}\};}
   \item
@@ -1542,7 +1542,7 @@ int main(int argc, char *argv[])
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Fungsi \texttt{strncpy} dapat digunakan untuk menyalin dari satu array
   of character ke array of character lainnya dengan memberikan penanda
@@ -1629,7 +1629,7 @@ Kami kelompok belajar Qt C++
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Program diatas menggunakan fungsi \texttt{strcat} dimana fungsi
   tersebut akan menggabungkan dua buah string. Parameter string pertama
@@ -1684,7 +1684,7 @@ Kami kelompok belajar Qt C++
 	\texttt{strcmp()} dengan hasil sebagai berikut:
 	
 	\begin{itemize}
-		\tightlist
+		
 		\item
 		Hasil \textless{} 0, Jika string1 \textless{} string2
 		\item
@@ -1775,7 +1775,7 @@ Halo, Ini string C++
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Tanpa perlu dipelajari lebih dalam, kita dapat melihat bahwa class
   string pada C++ jelas jauh lebih cepat penggunaannya dan mudah dalam
@@ -1886,7 +1886,7 @@ Percobaan 1 	Percobaan 2 	Percobaan 3 	Percebaan tampung
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Pada program diatas, terdapat dua buah variabel bertipe string, yaitu
   \texttt{satu} dan \texttt{dua}. Tipe data string tidak mendukung
@@ -1950,7 +1950,7 @@ C-style: Indonesia Raya
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Variabel string yang bertipe class string juga memiliki sifat yang
   sama dengan variabel string dengan model C-string style. Keduanya
@@ -2040,7 +2040,7 @@ Mencari semua karakter 'a'
 \textbf{Keterangan:}
 
 \begin{itemize}
-\tightlist
+
 \item
   Program diatas membuat sebuah variabel string bernama strSample yang
   diisi dengan kalimat : ``Kata pak Hari, ``hari ini matahari cerah

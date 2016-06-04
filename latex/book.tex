@@ -8,6 +8,7 @@
 \usepackage{imakeidx}% membuat index
 \makeindex
 
+\usepackage{minitoc}
 \usepackage{xcolor}
 \usepackage{fancyvrb,newverbs}
 \usepackage{verbatim}
@@ -31,7 +32,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{libertine}
  \usepackage{outlines}
-\usepackage[pdfpagelabels]{hyperref}
+\usepackage[pdfpagelabels,colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
 \hypersetup{
 	pdftitle=Belajar C++ dengan Qt Creator ,
 	pdfauthor=Nur Wachid,
@@ -133,7 +134,8 @@
 	\fi}
 
 \begin{document}
-	\begingroup
+	\dominitoc
+	\begingroup  
 	\thispagestyle{empty}
 	\begin{textblock*}{297mm}(0mm,0mm)
 		\ThisTileWallPaper{\paperwidth}{\paperheight}{images/cover}
@@ -169,6 +171,8 @@
 			Edisi pertama:  & April 2016 \\
 		\end{tabular}
 	\end{center}
+	\pagebreak
+	\chapter*{Tentang Penulis}
 	
 	\endgroup
 	\tableofcontents

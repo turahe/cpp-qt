@@ -5,12 +5,24 @@
 \usepackage{textcomp}
 \usepackage{wasysym}
 
-\usepackage{imakeidx}% membuat index
+\usepackage[english, main=bahasa]{babel} % paket bahasa indonesia
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{libertine} % font libertine
+
+% membuat index
+\usepackage{imakeidx}
 \makeindex
 
-\usepackage{minitoc}
-\usepackage{xcolor}
+\usepackage{minitoc} % paket TOC pada setiap chapter
+\usepackage{xcolor} % paket warna
 \usepackage{fancyvrb,newverbs}
+
+%----------------------------
+% membuat enviroment baru berupa verbatin untuk hasil compile dari setiap
+% listing program yang di buat
+%------------------------------------------------
+
 \usepackage{verbatim}
 
 \definecolor{cverbbg}{gray}{0.93}
@@ -25,13 +37,16 @@
 	\endflushleft
 }
 
-
-
-\usepackage[english, main=bahasa]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{libertine}
- \usepackage{outlines}
+%-----------------------------------------------------
+% membuat sebuah label pada hsil output pdf yang dibuat dengan hasil
+% asumsi berikut ini
+% 1. warna ref, pageref dan TOC berwarna hitam (black)[linkcolor=black]
+% 2. warna hyperlink dan url berwarna biru (blue)[urlcolor=blue]
+% 3. meta data output pdf adalah:
+%	- title = Belajar C++ dengan Qt Creator
+%	- Author Nur Wachid
+%	- subjek dan Keyword = C++ Qt Creator
+%----------------------------------------------------------------------	
 \usepackage[pdfpagelabels,colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
 \hypersetup{
 	pdftitle=Belajar C++ dengan Qt Creator ,
@@ -46,8 +61,12 @@
 	pdfpagemode=UseOutlines,    % this is the option you were lookin for
 	pdfpagelayout=TwoPageRight
 }
+%-------------------------------------------------------------
+
+% setting indent pada setiap pargraf sepanjang 1cm
 \usepackage{parskip}
 \setlength{\parindent}{1cm}
+%---------------------------------------
 \usepackage{hypcap}
 \usepackage{sidecap}
 \usepackage{booktabs}
@@ -58,20 +77,25 @@
 \usepackage{wallpaper}
 \usepackage{graphicx}
 
-% defiisi warna 
+%----------------------------------------------
+% definisi warna dengan paket dari xcolor
+%-----------------------------
+
 \definecolor{bluekeywords}{rgb}{0.13,0.13,1}
 \definecolor{bluecomments}{rgb}{0,0,.6}
 \definecolor{redstrings}{rgb}{0.9,0,0.9}
 \definecolor{greenidentifier}{rgb}{0,.6,0}
 \definecolor{keyyellow}{cmyk}{0,0,.8,.3}
-% paket lisiting digunakan untuk membuat sintaks highliter pada source kode yang di sisipkan
+
+%------------------------------------------------------------------------------------
+% paket listing digunakan untuk membuat sintaks highliter pada source kode yang di sisipkan
 \usepackage{listings}
 \lstset{breaklines=true,
 	morekeywords={},
 %	backgroundcolor=\color{black},
 %frame=shadowbox,
 	showstringspaces=false,
-	basicstyle      = \small\ttfamily,
+	basicstyle=\small\ttfamily,
 	 numberstyle=\tiny,
 	commentstyle=\color{gray},
 	keywordstyle=\color{bluekeywords},
@@ -84,10 +108,11 @@
 	emph={[2]root,base},
 	emphstyle={[2]\color{blue}}
 	 }
+%----------------------------------------------
 
-
-
-% format judul ato judul
+%-----------------------------------------
+% format judul(chapter)
+%----------------------------------------------
 \usepackage{titlesec}
 %\renewcommand{\thechapter}{\Roman{chapter}}
 \titleformat{\chapter}[display]
@@ -100,29 +125,35 @@
 [\vspace{2ex}%
 \titlerule]
 
+%---------------------------------------------------------
+% Format Header dan Footer
+% 1. Seting Font pada setiap chapter
+% 2. Setting font pada setiap section
+% 3. Setting font pada nomor halaman di bagian header
+% 4. Mencetak nama section terdekat pada bagian sisi sebelah kiri halaman di setiap halaman ganjil
+% 5. Mencetak nama section terdekat pada bagian sisi sebelah kanan halaman di setiap halaman genap
+% 6. Mengatur lebar garis pada setiap halaman di bawah header selebar 1,5 pt
+% 7. 
+% 8. menghapus garis pada bagian footer
+% 9. judul pada bagian kanan footer
+% 10. gambar logo qt pada sisi kiri footer
+%-------------------------------------
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
-\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % Section text font settings
-\fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
-\fancyhead[LO]{\rightmark} % Print the nearest section name on the left side of odd pages
-\fancyhead[RE]{\leftmark} % Print the current chapter name on the right side of even pages
-\renewcommand{\headrulewidth}{1.5pt} % Width of the rule under the header
-\addtolength{\headheight}{2.5pt} % Increase the spacing around the header slightly
-\renewcommand{\footrulewidth}{0.5pt} % Removes the rule in the footer
-\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % Style for when a plain pagestyle is specified
-\rfoot{Belajar C++ dengan Qt Creator}
-\lfoot{\includegraphics{images/logo-qt}}
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % [1]
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % [2]
+\fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % [3]
+\fancyhead[LO]{\rightmark} % [4]
+\fancyhead[RE]{\leftmark} % [5]
+\renewcommand{\headrulewidth}{1.5pt} % [6]
+\addtolength{\headheight}{2.5pt} % [7] Increase the spacing around the header slightly
+\renewcommand{\footrulewidth}{0.5pt} %[8] Removes the rule in the footer
+\fancypagestyle{plain}{\fancyhead{}\renewcommand{\headrulewidth}{0pt}} % [9] Style for when a plain pagestyle is specified
+\rfoot{Belajar C++ dengan Qt Creator}% [10]
+\lfoot{\includegraphics{images/logo-qt}} % [11]
 
-% Removes the header from odd empty pages at the end of chapters
-\makeatletter
-\renewcommand{\cleardoublepage}{
-	\clearpage\ifodd\c@page\else
-	\hbox{}
-	\vspace*{\fill}
-	\thispagestyle{empty}
-	\newpage
-	\fi}
+%-----------------------------------------
+% Menhapus header pada halaman ganjil yang kosong pada akhir chapter
 
 \makeatletter
 \renewcommand{\cleardoublepage}{
@@ -133,6 +164,18 @@
 	\newpage
 	\fi}
 
+\makeatletter
+\renewcommand{\cleardoublepage}{
+	\clearpage\ifodd\c@page\else
+	\hbox{}
+	\vspace*{\fill}
+	\thispagestyle{empty}
+	\newpage
+	\fi}
+
+%-------------------------------------------
+% Isi konten dari bagian dasar, OOP, interface, widget dan Library
+% memuat  bab
 \begin{document}
 	\dominitoc
 	\begingroup  
@@ -147,12 +190,11 @@
 	\title{Belajar C++ dengan Qt Creator}
 	\maketitle
 	\begingroup
-%	\footnotesize
-%	\parindent 0pt
 	\parskip \baselineskip
-	%% Copyright Page
 	\thispagestyle{empty}
-	
+
+	\includegraphics[width=0.2\textwidth]{images/cc-by-nc}
+
 	\textcopyright{} 2016 Nur Wachid \\
 	All rights reserved.
 	
@@ -178,9 +220,9 @@
 	\tableofcontents
 	\lstlistoflistings
 
-%	\listoffigures
+	\listoffigures
 	
-%	\listoftables
+	\listoftables
 	
 	\clearpage
 	\newpage

@@ -46,9 +46,9 @@ kesalahan kompiler.
 \subsubsection*{Contoh Pewarisan (Inheritance).}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
-Contoh \ref{Pewarisan-Inheritance}, kemudian tulis kode berikut.
+Contoh \ref{contoh7-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Pewarisan (Inheritance), label=Pewarisan-Inheritance]
+\begin{lstlisting}[language=c++, caption=Pewarisan (Inheritance), label=contoh7-1]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -151,11 +151,11 @@ akan berubah menjadi private di dalam kelas Silinder.
 
 \subsubsection*{Contoh  Jenis Akses Public Pada Penurunan.}
 
-Buka project Contoh \ref{Pewarisan-Inheritance} di atas, kemudian tambahkan (edit) kode berikut
+Buka project Contoh \ref{contoh7-1} di atas, kemudian tambahkan (edit) kode berikut
 pada fungsi
 \texttt{main()\ :\ cout\ \textless{}\textless{}\ "Milik\ Base\ Class\ -\/-\textgreater{}\ "\ \textless{}\textless{}\ drum.getLuas()\ \textless{}\textless{}\ endl;}
 
-\begin{lstlisting}[language=c++, caption=Jenis Akses Public Pada Penurunan, label=]
+\begin{lstlisting}[language=c++, caption=Jenis Akses Public Pada Penurunan, label=contoh7-2]
 int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);
@@ -287,9 +287,9 @@ apa-apa seperti berikut:
 
 \item
   Buka Qt Creator, buat project Qt Console Application dengan nama
-  Contoh \ref{Konstruktor-default}. Kemudian tulis kode berikut.
+  Contoh \ref{contoh7-3}. Kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor default, label=Konstruktor-default]
+\begin{lstlisting}[language=c++, caption=Konstruktor default, label=contoh7-3]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -340,9 +340,7 @@ menambahkan konstruktor default (yaitu konstruktor tanpa parameter dan
 tanpa program apapun) pada hasil kompilasi, jadi pada contoh program di
 atas hasil kompilasi dengan atau tanpa konstruktor adalah tetap sama.
 
-\subsection{Konstruktor Kelas Turunan Pasti Memanggil Konstruktor
-Kelas
-Dasar}\label{konstruktor-kelas-turunan-pasti-memanggil-konstruktor-kelas-dasar}
+\subsection{Konstruktor Kelas Turunan Pasti Memanggil Konstruktor Kelas Dasar}\label{konstruktor-kelas-turunan-pasti-memanggil-konstruktor-kelas-dasar}
 
 Seperti dijelaskan di atas bahwa tidak ada kelas yang tidak mempunyai
 konstruktor, demikian juga dengan kelas turunan. Pada waktu ada
@@ -364,10 +362,10 @@ kelas turunan akan memanggil konstruktor kosong kelas dasarnya.
 
 \item
   Buka Qt Creator, buka project Qt Console Application dengan nama
-  Contoh \ref{Konstruktor-default} tadi. Kemudian ubah isi konstruktor kelas Kelasku dan
+  Contoh \ref{contoh7-4} tadi. Kemudian ubah isi konstruktor kelas Kelasku dan
   tambahkan kelas Turunan berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor default kelas turunan, label=Konstruktor-default-kelas-turunan]
+\begin{lstlisting}[language=c++, caption=Konstruktor default kelas turunan, label=contoh7-4]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -436,10 +434,10 @@ di dalamnya ada pemanggilan konstruktor kelas dasarnya.
 
 \item
   Buka Qt Creator, buka project Qt Console Application dengan nama
-  Contoh \ref{Konstruktor-default} tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti
+  Contoh \ref{contoh7-5} tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti
   berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor default kelas turunan memanggil konstruktor kelas dasar, label=Konstruktor-default-kelas-turunan-memanggil-konstruktor-kelas-dasar]
+\begin{lstlisting}[language=c++, caption=Konstruktor default kelas turunan memanggil konstruktor kelas dasar, label=contoh7-5]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -476,7 +474,7 @@ return a.exec();
 
 \textbf{Keterangan Program:}
 
-Seperti pada percobaan contoh 4, kelas Turunan tidak mempunyai
+Seperti pada percobaan contoh \ref{contoh7-4}, kelas Turunan tidak mempunyai
 konstruktor secara eksplisit, sehingga dibuatkan konstruktor oleh
 kompiler berupa :
 
@@ -494,7 +492,7 @@ no maching function call to 'Kelasku::Kelasku()'
 Maksud pesan ini adalah bahwa pada kelas Kelasku tidak terdapat
 konstruktor Kelasku() dengan tanpa parameter. Ini juga membuktikan bahwa
 konstruktor default mempunyai bentuk seperti yang sudah dijelaskan pada
-Keterangan percobaan contoh 4.
+Keterangan percobaan contoh \ref{contoh7-4}.
 
 Dengan demikian jelas bahwa konstruktor kelas dasar pasti dipanggil oleh
 konstruktor default kelas turunan. Akan tetapi bagaimanakah jika pada
@@ -514,10 +512,10 @@ Turunan seperti berikut.
 
 \item
   Buka Qt Creator, buka project Qt Console Application dengan nama
-  Contoh \ref{Konstruktor-default} tadi. Kemudian tambahkan konstruktor pada kelas Turunan
+  Contoh \ref{contoh7-6} tadi. Kemudian tambahkan konstruktor pada kelas Turunan
   seperti berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar, label=Konstruktor-kelas-turunan-harus-memanggil-salah-satu-konstruktor-kelas-dasar]
+\begin{lstlisting}[language=c++, caption=Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar, label=contoh7-6]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -650,10 +648,10 @@ parameter tersebut.
 \begin{enumerate}
 	
 	
-	\item Buka project Qt Console Application projek Contoh \ref{Pewarisan-Inheritance} yang tadi sudah
+	\item Buka project Qt Console Application projek Contoh \ref{contoh7-7} yang tadi sudah
 	dibuat, kemudian ubah kode menjadi seperti berikut
 	
-\begin{lstlisting}[language=c++, caption=Melakukan Overriding]
+\begin{lstlisting}[language=c++, caption=Melakukan Overriding, label=contoh7-7]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -718,8 +716,8 @@ return a.exec();
 	Volume drum = 6.86875e+006 Cm3
 	\end{lcverbatim}
 	
-	Bandingkan dengan hasil keluaan pada program di contoh 2 seperti berikut
-	:
+	Bandingkan dengan hasil keluaan pada program di contoh \ref{contoh7-2} 
+  seperti berikut:
 	
 	\begin{lcverbatim}
 	Volume drum = 981250 Cm2
@@ -736,7 +734,7 @@ return a.exec();
   Pada program ini, pembuatan objek dilakukan dengan memberikan nilai
   radius=50 dan tinggi = 125, ini tampak pada program utama (main()) :
   \texttt{Silinder\ drum(50,125)}, sama dengan ketika membuat objek pada
-  contoh 1. Namun tampak pada hasil eksekusi, Luas Silinder adalah
+  contoh \ref{contoh7-1}. Namun tampak pada hasil eksekusi, Luas Silinder adalah
   \texttt{54950\ Cm2} karena menggunakan rumus baru, tetapi pada
   keluaran Milik Base Class nilainya juga sama yaitu \texttt{54950}, dan
   akibatnya volume drum yang seharusnya \texttt{981250\ Cm3} manjadi
@@ -755,7 +753,7 @@ return a.exec();
 \section{Memanggil Metode Kelas
 Dasar}\label{memanggil-metode-kelas-dasar}
 
-Pada kasus contoh 7 di atas sebenarnya metode \texttt{getLuas()} masih
+Pada kasus contoh \ref{contoh7-7} di atas sebenarnya metode \texttt{getLuas()} masih
 dibutuhkan pada kelas Silinder untuk menghitung volume
 (\texttt{getVolume()}), bahkan sebenarnya untuk menghitung luas tutup,
 yang sebenarnya juga luas lingkaran, masih membutuhkan metode
@@ -775,12 +773,12 @@ diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
 \begin{enumerate}
 
 \item
-  Buka project Qt Console Application projek Contoh \ref{Pewarisan-Inheritance} yang baru saja
+  Buka project Qt Console Application projek Contoh \ref{contoh7-8} yang baru saja
   dibuat, kemudian ubah kode pada metode : \texttt{getLuas()},
   \texttt{getVolume()} dan program utama. Berikut ini adalah potongan
   program yang mengalami perubahan saja:
 
-\begin{lstlisting}[language=c++, caption=Mengakses metode kelas dasar]
+\begin{lstlisting}[language=c++, caption=Mengakses metode kelas dasar, label=contoh7-8]
 public:
 float getLuas(){ //<-- Overriding
 float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;
@@ -839,7 +837,7 @@ drum.Lingkaran::getLuas()
   kesalahan seperti tadi, karena rumus \texttt{getLuas()} yang digunakan
   sudah benar, yaitu metode \texttt{getLuas()} milik kelas dasar.
 \item
-  Dari percobaan contoh 7 ini tampak cara melakukan overriding dan cara
+  Dari percobaan contoh \ref{contoh7-7} ini tampak cara melakukan overriding dan cara
   memanggil anggota milik kelas dasar.
 \end{itemize}
 
@@ -856,10 +854,10 @@ kepada kelas turunan.
 \begin{enumerate}
 
 \item
-  Jalankan Qt Console Application projek, buat projek bernama Contoh \ref{Penyembunyian-metode-kelas-dasar}
-  seperti berikut:
+  Jalankan Qt Console Application projek, buat projek bernama Contoh 
+  \ref{contoh7-9}  seperti berikut:
 
-\begin{lstlisting}[language=c++, caption=Penyembunyian metode kelas dasar, label=Penyembunyian-metode-kelas-dasar]
+\begin{lstlisting}[language=c++, caption=Penyembunyian metode kelas dasar, label=contoh7-9]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -905,9 +903,9 @@ return a.exec();
 \setcounter{enumi}{2}
 \item
   Hilangkan tanda comment pada pemanggilan metode hallo pada dua baris
-  di progam utama contoh \ref{Penyembunyian-metode-kelas-dasar} menjadi seperti berikut:
+  di progam utama contoh \ref{contoh7-10} menjadi seperti berikut:
 
-\begin{lstlisting}[language=c++, caption=Menghilangkan comment pada metode hallo]
+\begin{lstlisting}[language=c++, caption=Menghilangkan comment pada metode hallo, label=contoh7-10]
 int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);
@@ -965,10 +963,10 @@ memahami metode virtual.
 \begin{enumerate}
 
 \item
-  Jalankan Qt Console Application projek, buat projek bernama Contoh \ref{Metode-virtual-nonvirtual}
+  Jalankan Qt Console Application projek, buat projek bernama Contoh \ref{contoh7-11}
   seperti berikut:
 
-\begin{lstlisting}[language=c++, caption=Metode virtual dan non virtual, label=Metode-virtual-nonvirtual]
+\begin{lstlisting}[language=c++, caption=Metode virtual dan non virtual, label=contoh7-11]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1003,10 +1001,10 @@ return a.exec();
 Luas Silinder
 \end{lcverbatim} 
 \item
-  Sekarang hapuslah kata kunci pada contoh \ref{Metode-virtual-nonvirtual} virtual metode getLuas() pada kelas
+  Sekarang hapuslah kata kunci pada contoh \ref{contoh7-12} virtual metode getLuas() pada kelas
   Lingkaran seperti berikut.
 
-\begin{lstlisting}[language=c++, caption=Menghapus methode getluas]
+\begin{lstlisting}[language=c++, caption=Menghapus methode getluas, label=contoh7-12]
 class Lingkaran{
 public:
 float getLuas(){
@@ -1082,7 +1080,7 @@ tidak langsung pada bagian yang membicarakan konstruktor di atas. Jadi
 ada bagian yang merupakan anggota kelas dasar dan ada bagaian yang
 merupakan anggota kelas turunan. Sebagai contoh misalnya berikut ini
 ilustrasi mengenai objek bertipe Silinder yang merupakan turunan dari
-kelas Lingkaran yang dibahas pada contoh 10 di atas.
+kelas Lingkaran yang dibahas pada contoh \ref{contoh7-10} di atas.
 
 \begin{figure}[htbp]
 \centering
@@ -1095,13 +1093,13 @@ Pemotongan (Silicing). Supaya lebih jelas lakukan percobaan berikut ini.
 
 \subsubsection*{Contoh  Metode virtual dan non virtual.}
 
-Jalankan Qt Console Application projek, buka projek bernama contoh \ref{Metode-virtual-nonvirtual}
+Jalankan Qt Console Application projek, buka projek bernama contoh \ref{contoh7-13}
 yang dibuat tadi, kemudian ubah kode progam pada bagian program utama
 seperti berikut:
 
 
 
-\begin{lstlisting}[language=c++, caption=Metode virtual dan non virtual]
+\begin{lstlisting}[language=c++, caption=Metode virtual dan non virtual, label=contoh7-13]
 int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);
@@ -1182,10 +1180,10 @@ Kelas_turunan* variabel2 = static_cast<Kelas_turunan*>(variabel1);
 
 \subsubsection*{Contoh  Memakai static\_cast.}
 
-Jalankan Qt Console Application projek, buka projek bernama contoh \ref{Metode-virtual-nonvirtual} di
+Jalankan Qt Console Application projek, buka projek bernama contoh \ref{contoh7-14} di
 atas, ubah pada bagian program utama (main()) menjadi seperti berikut:
 
-\begin{lstlisting}[language=c++, caption=Memakai static\_cast]
+\begin{lstlisting}[language=c++, caption=Memakai static\_cast, label=contoh7-14]
 int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);

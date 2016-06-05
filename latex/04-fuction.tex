@@ -24,11 +24,12 @@ tersebut, setelah selesai, yaitu ditandai dengan statemen
 \texttt{return} atau tanda kurung kurawal tutup, maka akan kembali ke
 progam utama melanjutkan ke baris program berikutnya. Peristiwa ini
 dinamakan pemanggilan fungsi, berikut ini adalah ilustrasi mengenai
-pemanggilan fugsi :
+pemanggilan fungsi seperti gambar \ref{gambar4-1}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture4-1.png}
+\label{gambar4-1}
 \caption{Ilustrasi penanganan fungsi}
 \end{figure}
 
@@ -195,9 +196,9 @@ fungsi dapat menggunakan preprocessor directive \texttt{\#include}.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{membuat-fungsi-yang-mengembalikan-nilai}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh4-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Membuat Fungsi yang mengembalikan nilai, label=membuat-fungsi-yang-mengembalikan-nilai]
+\begin{lstlisting}[language=c++, caption=Membuat Fungsi yang mengembalikan nilai, label=contoh4-1]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int absolut(int bil);
@@ -288,9 +289,9 @@ return.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{membuat-fungsi-yang-tidak-mengembalikan-nilai}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh4-2}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Membuat Fungsi yang tidak mengembalikan nilai, label=membuat-fungsi-yang-tidak-mengembalikan-nilai]
+\begin{lstlisting}[language=c++, caption=Membuat Fungsi yang tidak mengembalikan nilai, label=contoh4-2]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 void hello(int kali);
@@ -344,7 +345,7 @@ diakses nilainya (dicetak dengan cout), ini menunjukkan bahwa fungsi
 Jika suatu fungsi memberikan nilai kembalian, maka nilai kembalian yang
 diberikan oleh fungsi dapat dilakukan oleh statemen return yang diikuti
 oleh nilai hasil baliknya. Contoh fungsi yang mengembalikan nilai adalah
-seperti contoh 1 di atas.
+seperti contoh \ref{contoh4-1} di atas.
 
 \section{Ruang Lingkup Variabel}\label{ruang-lingkup-variabel}
 
@@ -367,9 +368,9 @@ lokalnya.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{variabel-lokal}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh4-3}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Variabel Lokal, label=variabel-lokal]
+\begin{lstlisting}[language=c++, caption=Variabel Lokal, label=contoh4-3]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 float kali(float a, float b); /*prototype fungsi*/
@@ -438,9 +439,9 @@ fungsi-fungsi yang mengguanakanya.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{variabel-global}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh4-4}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Variabel Global, label=variabel-global]
+\begin{lstlisting}[language=c++, caption=Variabel Global, label=contoh4-4]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 void kali(float a, float b); /*prototype fungsi*/
@@ -503,9 +504,9 @@ letak pendeklarasianya.
 \subsubsection*{Contoh  Variabel Statik.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
-contoh \ref{variabel=static}, kemudian tulis kode berikut.
+contoh \ref{contoh4-5}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Variabel Statik, label=variabel=static]
+\begin{lstlisting}[language=c++, caption=Variabel Statik, label=contoh3]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 long int kali(long int i); /*prototype*/
@@ -545,7 +546,7 @@ adalah sebagai berikut.
 \begin{itemize}
 
 \item
-  Dari contoh program ini, variable \texttt{f} di fungsi
+  Dari contoh \ref{contoh4-5} program ini, variable \texttt{f} di fungsi
   \texttt{kali\ ()} merupakan variable lokal yang bersifat statik yang
   mempunyai nilai awal \texttt{1}. Pada fungsi ini nilai variabel
   \texttt{f} yang lama akan dikalikan dengan nilai variable i untuk
@@ -553,7 +554,7 @@ adalah sebagai berikut.
 \item
   Pada fungsi utama, fungsi \texttt{kali()} akan dipanggil sebanyak n
   kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan
-  nilai \texttt{n} (pada contoh ini \texttt{n\ =\ 5}), sehingga akan
+  nilai \texttt{n} (pada contoh \ref{contoh4-5} \texttt{n\ =\ 5}), sehingga akan
   dihasilkan suatu niali n!.\\
 \item
   Supaya nilai variable \texttt{f} yang lama masih tetap dipertahankan,
@@ -638,7 +639,7 @@ dikirimkan adalah alamat dari variabel yang menyimpan nilai yang
 dikirmkan tersebut.
 
 Hasil dari suatu fungsi dapat diperoleh dari nilai kembaliannya (return)
-atau dengan variabel global. Seperti contoh pada Contoh 4, hasil proses
+atau dengan variabel global. Seperti contoh pada Contoh \ref{contoh4-4}, hasil proses
 dari suatu fungsi tersebut dapat diperoleh karena variabel yang dipakai
 dalam fungsi bersifat global. Selain dengan cara tersebut di atas, hasil
 dari suatu fungsi dapat juga diperoleh dari parameter aktual yang
@@ -705,9 +706,9 @@ boleh diberikan jika kita telah memberikan nilai default untuk b dan c.
 \subsubsection*{Contoh Default Parameter.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
-contoh \ref{default-parameter}, kemudian tulis kode berikut.
+contoh \ref{contoh4-6}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Default Parameter, label=default-parameter]
+\begin{lstlisting}[language=c++, caption=Default Parameter, label=contoh4-6]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int volume(int,int=1,int=1); /*prototype*/
@@ -747,13 +748,13 @@ adalah sebagai berikut.
 \begin{itemize}
 
 \item
-  Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 25 karena
-  semua parameter formal menerima nilai, maka hasilnya 3750.\\
+  Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 15 x 25 karena
+  semua parameter formal menerima nilai, maka hasilnya 3750.
 \item
-  Dari contoh program ini, Volume 1 dihasilkan dari 10 x 15 x 1 karena
-  parameter formal ketiga tidak menerima nilai, maka hasilnya 150.\\
+  Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 15 x 1 karena
+  parameter formal ketiga tidak menerima nilai, maka hasilnya 150.
 \item
-  Dari contoh program ini, Volume 1 dihasilkan dari 10 x 1 x 1 karena
+  Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 1 x 1 karena
   parameter formal kedua dan ketiga tidak menerima nilai, maka hasilnya
   10.
 \end{itemize}

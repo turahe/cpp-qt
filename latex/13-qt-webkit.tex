@@ -1,11 +1,17 @@
+\textbf{Agenda}
 
+Pada Bab ini kita akan mempelajari tentang module bawaan Qt Creator yaitu
+Qt Webkit seperti berikut ini
 
 \minitoc
 
 \section{Qt Webkit}\label{qt-webkit}
 
-In this tutorial, we'll make our own browser using Qt Webkit.
+Pada contoh ini kita akan membuat sebuah browser dengan menggunakan 
+Qt Webkit 
 
+pertama,kita akan mencoba memuat sebuah url untuk menampilkan halaman
+kemudian 
 First, we'll just try to load a url to display a web page, then start to
 build the more refined browser.
 
@@ -13,15 +19,16 @@ In my opinion, one of the most important pieces of Qt Webkit is
 QWebView. The Qt document also says:
 
 \begin{quote}
-QWebView is the main widget component of the QtWebKit web browsing
-module. It can be used in various applications to display web content
-live from the Internet.
+Qwebview merupakan komponen widget utama dari module web browser Qtwebkit
+yang dapat digunakan dalam beberapa aplikasi untuk menampilkan konten
+pada internet 
 \end{quote}
 
-\section{My Web Browser version 1}\label{my-web-browser-version-1}
+\subsubsection*{Contoh membuat browser dengan Qt Webkit dengan meload url}\label{my-web-browser-version-1}
 
-A web site can be loaded onto QWebView with the load() function. So, the
-core part of making browser is following lines of code:
+Sebuah website dapat di muat kedalam sebuah browser dengan menggunakan Qwebview 
+dengan fungsi load() fungsi ini merupakan bagian core dari peting untuk menampilkan 
+konten statis pada browser
 
 \begin{lstlisting}[language=c++, numbers=none]
 QWebView *view = new QWebView(parent);
@@ -65,17 +72,11 @@ Right click on the Project name and select Add
 new\ldots{}-\textgreater{}C++-\textgreater{}C++ Source
 File-\textgreater{}Choose\ldots{}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{images/main_cpp.png}
-\caption{}
-\end{figure}
 
-\begin{figure}[htbp]
-\centering
+\includegraphics[width=0.8\textwidth]{images/main_cpp.png}
+
 \includegraphics[width=0.8\textwidth]{images/Browser1_files.png}
-\caption{}
-\end{figure}
+
 
 Copy the following code for the main.cpp:
 

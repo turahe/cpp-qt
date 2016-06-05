@@ -265,7 +265,7 @@ katty.tampilkanUmur();
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++, caption=Pembuatan class Sepeda, label=pembuatan-class-sepeda]
+\begin{lstlisting}[language=c++, caption=Pembuatan class Sepeda, label=contoh6-1]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -366,7 +366,7 @@ Sepeda::kecepatan = kec;
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++, caption=Pembuatan obyek Sepeda]
+\begin{lstlisting}[language=c++, caption=Pembuatan obyek Sepeda, label=contoh6-2]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -447,7 +447,7 @@ Merk: Polygon
 
 Buatlah program beikut ini:
 
-\begin{lstlisting}[language=c++, caption=Pembuatan Obyek Array Sepeda]
+\begin{lstlisting}[language=c++, caption=Pembuatan Obyek Array Sepeda, label=contoh6-3]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -525,7 +525,7 @@ Gigi: 14
 \begin{itemize}
 
 \item
-  Program diatas merupakan pengembangan lagi dari Contoh \ref{pembuatan-class-sepeda}.
+  Program diatas merupakan pengembangan lagi dari Contoh \ref{contoh6-3}.
 \item
   Program diatas membuat obyek dari class Sepeda dalam bentuk Array 1
   dimensi yang bertipe Sepeda.
@@ -614,7 +614,7 @@ akses dari luar class.
 
 	\item Buatlah program berikut:
 	
-\begin{lstlisting}[language=c++, caption=Public pada member variabel]
+\begin{lstlisting}[language=c++, caption=Public pada member variabel, label=contoh6-4]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -660,9 +660,9 @@ return a.exec();
 	Sepeda Akan terjadi hal yang berbeda jika kita mengakses semua variabel
 	member yang bersifat private.
 	
-\item 	Ubahlah program pada Contoh 5 diatas menjadi seperti berikut ini:
+\item 	Ubahlah program pada Contoh \ref{contoh6-4} diatas menjadi seperti berikut ini:
 	
-\begin{lstlisting}[language=c++, caption=Privat pada member variabel]
+\begin{lstlisting}[language=c++, caption=Privat pada member variabel, label=contoh6-5]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -699,7 +699,7 @@ return a.exec();
 
 	\end{figure}
 	
-\item 	\textbf{Keterangan:}:
+\item 	\textbf{Keterangan:}
 	
 	Akan terjadi compile time error, karena kita mengakses variabel member
 	yang bersifat \emph{private}. Berarti class Sepeda sudah bisa menerapkan
@@ -742,7 +742,7 @@ buah member function, misalnya bernama ubahUmur(int u).
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Member function dan implementasinya]
+\begin{lstlisting}[language=c++, caption=Member function dan implementasinya, label=contoh6-6]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -878,7 +878,7 @@ void setUmur(int u);
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan accessor dan mutator method]
+\begin{lstlisting}[language=c++, caption=Penggunaan accessor dan mutator method, label=contoh6-7]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1047,7 +1047,7 @@ berparameter dua buah, string dan integer.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Menggunakan Constructor dan Destructor, label=menggunakan-Constructor-Destructor]
+\begin{lstlisting}[language=c++, caption=Menggunakan Constructor dan Destructor, label=contoh6-8]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1144,7 +1144,7 @@ return a.exec();
 
 
 Contoh, tambahkan satu baris berikut ini pada bagian akhir kode pada
-Contoh 7 sebelum \texttt{return\ a.exec()}.
+Contoh \ref{contoh6-1} sebelum \texttt{return\ a.exec()}.
 
 \begin{lstlisting}[language=c++, numbers=none]
 Kucing kucingku2;
@@ -1168,7 +1168,7 @@ lagi yang tidak berparameter.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Percobaan Menambah Constructor Method]
+\begin{lstlisting}[language=c++, caption=Percobaan Menambah Constructor Method, label=contoh6-9]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1276,7 +1276,7 @@ parameter pada pemanggilan konstruktor.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan Constructor dengan Nilai Default]
+\begin{lstlisting}[language=c++, caption=Penggunaan Constructor dengan Nilai Default, label=contoh6-10]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1360,7 +1360,7 @@ Jumlah halaman: 100
 	Kita juga
 	dapat memberi nilai default dengan cara lain, perhatikan contoh berikut:
 	
-\begin{lstlisting}[language=c++, caption=Memberi nilai default pada constructor]
+\begin{lstlisting}[language=c++, caption=Memberi nilai default pada constructor, label=contoh6-11]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1428,7 +1428,7 @@ int getUmur() const;
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan const method]
+\begin{lstlisting}[language=c++, caption=Penggunaan const method, label=contoh6-12]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1584,7 +1584,7 @@ Hal itu disebut inline implementation.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Implementasi inline]
+\begin{lstlisting}[language=c++, caption=Implementasi inline, label=contoh6-13]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1679,7 +1679,7 @@ method yang tentunya sangat berguna.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Class Mobil dan Roda]
+\begin{lstlisting}[language=c++, caption=Class Mobil dan Roda, label=contoh6-14]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1833,7 +1833,7 @@ Merk: Bridgestone
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Class titik dan Garis, label=class-titik-garis]
+\begin{lstlisting}[language=c++, caption=Class titik dan Garis, label=class-titik-garis, label=contoh6-15]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <math.h>

@@ -91,7 +91,7 @@
 % paket listing digunakan untuk membuat sintaks highliter pada source kode yang di sisipkan
 \usepackage{listings}
 \lstset{breaklines=true,
-	morekeywords={},
+	morekeywords={foreach, argc, argv},
 %	backgroundcolor=\color{black},
 %frame=shadowbox,
 	showstringspaces=false,
@@ -103,7 +103,7 @@
 	identifierstyle =\color{greenidentifier},
 	basicstyle=\ttfamily,
 	numbers=left,
-	emph={QDebug,iostream,QtCore,QCoreApplication,QtSql,QtDebug,string,QDomDocument,algorithm,QTextStream,QFile,QDomElement,QDomText},
+	emph={QDebug,iostream,QtCore,QCoreApplication,QtSql,QtDebug,string,QDomDocument,algorithm,QTextStream,QFile,QDomElement,QDomText,QDataStream,QList,QColor},
 	 emphstyle=\color{keyyellow},
 	emph={[2]root,base},
 	emphstyle={[2]\color{blue}}
@@ -143,8 +143,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % [1]
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % [2]
 \fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % [3]
-\fancyhead[LO]{\rightmark} % [4]
-\fancyhead[RE]{\leftmark} % [5]
+%\fancyhead[LO]{\rightmark} % [4]
+%\fancyhead[RE]{\leftmark} % [5]
 \renewcommand{\headrulewidth}{1.5pt} % [6]
 \addtolength{\headheight}{2.5pt} % [7] Increase the spacing around the header slightly
 \renewcommand{\footrulewidth}{0.5pt} %[8] Removes the rule in the footer
@@ -269,8 +269,8 @@
 	\chapter{File, Stream, dan XML}\label{file-stream-dan-xml}
 		\input{12-file-stream-xml}
 		
-%		\chapter{Qt Webkit}
-%		\input{13-qt-webkit}
+		\chapter{Qt Webkit}
+		\input{13-qt-webkit}
 	\part{Library}
 	\chapter{Library}\label{library}
 	\input{11-library}

@@ -7,7 +7,7 @@ Pada bab ini kita akan membahas beberapa topik yang berhubungan dengan tipe data
 \section{Tipe Data dan
 Identifier}\label{tipe-data-dan-identifier}
 
-Program adalah kumpulan instruksi yang disusun sedemikian rupa sehingga
+\index{Program}Program adalah kumpulan instruksi yang disusun sedemikian rupa sehingga
 mempunyai urutan nalar yang tepat untuk menyelesaikan suatu persoalan.
 Instruksi-instruksi yang digunakan dalam pemrograman mengacu pada suatu
 bahasa pemrograman tertentu, pada buku ini menggunakan bahasa
@@ -18,22 +18,23 @@ Segala sesuatu yang diproses oleh program adalah data. Dalam hal ini
 data adalah elemen-elemen yang digunakan untuk menjelaskan segala
 sesuatu yang mempunyai besaran (ukuran/ nilai), seperti misalnya
 \textbf{umur} besarannya bisa berupa biangan desimal \textbf{42.5}
-(maksudnya 42½ tahun), \textbf{golongan} seorang karyawan besarannya
+(maksudnya 42\textonehalf{} tahun), \textbf{golongan} seorang karyawan besarannya
 bisa berupa sebuah karakter A (maksudnya goongan A) dan sebagainya.
 Bahasa C++ menyimpan besaran-besaran tersebut di memori utama untuk
 dikelola oleh program, sehingga perlu dilakukan pengaturan pemakaian
 memori, oleh karena itu dalam bahasa pemrograman selalu terdapat
 istilah-istilah yang bernama \textbf{Tipe Data}, \textbf{Variabel} dan
-\textbf{Konstanta}.
+\textbf{Konstanta}\index{konstanta}.
 
 Identifier (pengenal) adalah suatu nama yang digunakan program untuk
 merujuk ke suatu lokasi memori tertentu agar nilai pada lokasi tersebut
 dapat diakses. Alamat lokasi memori sebenarnya berupa angka angka
-heksadesimal, namun pada bahasa pemrograman
-setingkat C++ (middle level programming language) dan di atasnya, telah
+heksadesimal\index{heksadesimal}, namun pada bahasa pemrograman
+setingkat C++ (middle level programming language)
+\index{middle level programming language} dan di atasnya, telah
 mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf
 atau kata (label) sehingga kita tidak perlu mengetahu alamat yang
-sesungguhnya dan dengan identifier (label) akan lebih mudah untuk
+sesungguhnya dan dengan identifier\index{identifier} (label) akan lebih mudah untuk
 diingat.
 
 \section{Tipe Data Bahasa C++}\label{tipe-data-bahasa-c}
@@ -47,28 +48,30 @@ pengenal (label) lokasi memori yang digunakan dan \texttt{tipe\ data},
 yaitu besaran yang menentukan ukuran memori yang dialokasikan. Sekali
 suatu identifier sudah dialokasikan dengan tipe data tertentu besarnya
 ruang yang digunakan tidak bisa diubah. Bahasa C++ mengenal tipe-tipe
-data berikut ini :
+tabel berikut ini.
+
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule
-Tipe Data & Ukuran & Jangkauan Nilai Yang dapat Ditampung\tabularnewline
-\midrule
-\endhead
-bool & 1 byte & True or false\tabularnewline
-unsigned short int & 2 bytes & 0 to 65,535\tabularnewline
-short int & 2 bytes & --32,768 to 32,767\tabularnewline
-unsigned long int & 4 bytes & 0 to 4,294,967,295\tabularnewline
-long int & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
-int (16 bit) & 2 bytes & --32,768 to 32,767\tabularnewline
-int (32 bit) & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
-unsigned int (16 bit) & 2 bytes & 0 to 65,535\tabularnewline
-unsigned int (32 bit) & 4 bytes & 0 to 4,294,967,295\tabularnewline
-char & 1 byte & 256 character values\tabularnewline
-float & 4 bytes & 1.2e--38 to 3.4e38\tabularnewline
-double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
-\bottomrule
+		\toprule
+		Tipe Data & Ukuran & Jangkauan Nilai Yang dapat Ditampung\tabularnewline
+		\midrule
+		\endhead
+		bool & 1 byte & True or false\tabularnewline
+		unsigned short int & 2 bytes & 0 to 65,535\tabularnewline
+		short int & 2 bytes & --32,768 to 32,767\tabularnewline
+		unsigned long int & 4 bytes & 0 to 4,294,967,295\tabularnewline
+		long int & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
+		int (16 bit) & 2 bytes & --32,768 to 32,767\tabularnewline
+		int (32 bit) & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
+		unsigned int (16 bit) & 2 bytes & 0 to 65,535\tabularnewline
+		unsigned int (32 bit) & 4 bytes & 0 to 4,294,967,295\tabularnewline
+		char & 1 byte & 256 character values\tabularnewline
+		float & 4 bytes & 1.2e--38 to 3.4e38\tabularnewline
+		double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
+		\bottomrule
+		
+	\end{longtable}
 
-\end{longtable}
 
 \section{Variabel dan Konstanta}\label{variabel-dan-konstanta}
 
@@ -144,6 +147,7 @@ setiap ada akses terhadap kata \texttt{kapasitas}, akan digantikan
 dengan teks 15. Karena preprosesor bekerja sebelum kompiler, kompiler
 tidak mengenal konstanta \texttt{kapasitas}, yang dikenal hanyalah
 bilangan 15.
+
 \begin{quotation}
 \includegraphics{images/tips}	\textbf{TIPS} 
 	
@@ -175,9 +179,9 @@ diperlakukan sebagai tipe data tersebut.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{tipe-data-identifier}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh2-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Tipe data dan Identifier, label=tipe-data-identifier]
+\begin{lstlisting}[language=c++, caption=Tipe data dan Identifier, label=contoh2-1]
 #include <iostream>
 int main(int argc, char *argv[])
 {
@@ -193,14 +197,17 @@ cout << "Lebar = " << lebar << endl;
 return a.exec();
 }
 \end{lstlisting}
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
-\end{enumerate}
+
 \begin{lcverbatim}
 Panjang =15
 lebar =12
 \end{lcverbatim}
+
+\end{enumerate}
 
 
 \textbf{Keterangan:}
@@ -477,6 +484,7 @@ Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa
 berasal dari sebuah variabel maupun kumpulan variabel-variabel yang
 dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi
 adalah suatu nilai yang mempunyai besaran dan tipe data tertentu.
+
 Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan ``panjang
 * lebar'' yang menghasilkan nilai 15, 12 dan 180:
 
@@ -529,7 +537,7 @@ luas = panjang * lebar ;
 Operator unary adalah operator yang hanya menggunakan sebuah operand
 saja, operator unary yang dipakai pada kebanyakan bahasa pemrograman
 adalah operator unary minus (-). Operator unary ditulis sebelum operand,
-operator unary "-" berbeda dengan operator aritmatika "-" yang
+operator unary ``-'' berbeda dengan operator aritmatika ``-'' yang
 membutuhkan dua operand. Dalam bahasa C++ disediakan bermacam-macam
 operator unary.
 
@@ -551,14 +559,14 @@ NOT)\tabularnewline
 
 Operator ini dipakai untuk memberi nilai minus suatu nilai numerik
 (bukan pengurangan). Misalnya ungkapan : \texttt{A\ +\ -\ B\ *\ C} akan
-diartikan \texttt{A\ +\ (-B)\ *\ C}. Operator unary "-" ditulis di
+diartikan \texttt{A\ +\ (-B)\ *\ C}. Operator unary ``-'' ditulis di
 depan operand.
 
 \subsection{Operator Unary ++ dan --}\label{c-operator-unary-dan}
 
-Operator unary "++" dan "--" merupakan operator khusus yang ada di
-bahasa C. Operator "++" akan menambahkan nilai 1 ke pengenal yang
-menggunakannya sedangkan operator "--" akan mengurangi dengan nilai
+Operator unary ``++'' dan ``--'' merupakan operator khusus yang ada di
+bahasa C. Operator ``++'' akan menambahkan nilai 1 ke pengenal yang
+menggunakannya sedangkan operator ``--'' akan mengurangi dengan nilai
 numerik 1. Operator unary tersebut jika dituliskan sebelum operand
 disebut \emph{pre increment} sedangkan jika ditulis setelah operand
 disebut \emph{post increment}. Perhatikan perbedaannya pada contoh
@@ -581,8 +589,8 @@ x = 6 dan a = 5 & x = 6 dan a = 6\tabularnewline
 
 Operator pengerjaan atau disebut assignment operator, digunakan untuk
 menempatkan nilai dari suatu ekspresi ke suatu pengenal. Operator yang
-umum dipakai pada bahasa pemrograman adalah operator pengerjaan "=".
-Selain operator pengerjaan "=", bahasa C++ menyediakan beberapa
+umum dipakai pada bahasa pemrograman adalah operator pengerjaan ``=''.
+Selain operator pengerjaan ``='', bahasa C++ menyediakan beberapa
 operator pengerjaan yang lain seperti tabel di bawah ini.
 
 \begin{longtable}[]{@{}lll@{}}
@@ -651,7 +659,7 @@ Operator & Jenjang & Arti\tabularnewline
 \end{longtable}
 
 Berikut ini contoh hasil ekspresi jika a bernilai 5, b bernilai 7 dan c
-bernilai 'a'
+bernilai `a'
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
@@ -686,8 +694,7 @@ Operator & Jenjang & Arti\tabularnewline
 \bottomrule
 \end{longtable}
 
-Selain dua operator logika ini, operator unary \textquotedblleft ! \textquotedblright (logika NOT) dapat
-digunakan untuk operasi logika.
+Selain dua operator logika ini, operator unary \textquotedblleft ! \textquotedblright (logika NOT) dapat digunakan untuk operasi logika.
 
 \begin{longtable}[]{@{}lllll@{}}
 \toprule
@@ -701,8 +708,7 @@ FALSE & FALSE & FALSE & FALSE & TRUE\tabularnewline
 \bottomrule
 \end{longtable}
 
-Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai \textquotedblleft a \textquotedblright maka
-ungkapan dibawah ini mempunyai hasil akhir benar (True).
+Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai \textquotedblleft a \textquotedblright maka ungkapan dibawah ini mempunyai hasil akhir benar (True).
 
 \begin{lstlisting}[language=c++, numbers=none]
 A < B || B == 7 && C > 'z'
@@ -718,8 +724,8 @@ langkah-langkah sebagai berikut:
   Jenjang operator hubungan lebih tinggi dibandingkan dengan operator
   logika, jadi operator hubungan dikerjakan terlebih dahulu.
 \item
-  Operator logika "\&\&" mempunyai jenjang lebih tinggi dari operator
-  "\textbar{}\textbar{}", sehingga operator "\&\&" dikerjakan
+  Operator logika ``\&\&'' mempunyai jenjang lebih tinggi dari operator
+  ``\textbar{}\textbar{}'', sehingga operator ``\&\&'' dikerjakan
   terlebih dahulu.
 \item
   Bagian yang paling akhir dikerjakan adalah operator
@@ -875,9 +881,9 @@ Flowchart untuk statement ini adalah :
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{tipe-data-dan-identifier}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh2-2}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Tipe data dan Identifier, label=tipe-data-dan-identifier]
+\begin{lstlisting}[language=c++, caption=Tipe data dan Identifier, label=contoh2-2]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 int main(int argc, char *argv[])
@@ -908,11 +914,14 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
-\end{enumerate}
 
-\begin{lcverbatim}
+ \begin{lcverbatim}
 sabtu
 \end{lcverbatim}
+
+\end{enumerate}
+
+
 
 \textbf{Keterangan Program :}
 

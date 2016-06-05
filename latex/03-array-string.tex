@@ -17,12 +17,13 @@ komputer. Jadi jumlah datanya banyak namun satu jenis.
 
 Array dapat digunakan untuk menyimpan data yang cukup banyak namun
 memiliki tipe yang sama. Bagaimana array melakukan penyimpanan datanya
-di memory komputer? Ilustrasi array satu dimensi pada memory komputer seperti gambar \ref{ilustrasi-array-satu-dimensi-pada-memory-komputer}.
+di memory komputer? Ilustrasi array satu dimensi pada memory komputer 
+seperti gambar \ref{gambar3-1}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture3-1.png}
-\label{ilustrasi-array-satu-dimensi-pada-memory-komputer}
+\label{gambar3-1}
 \caption{Ilustrasi array satu dimensi pada memory komputer}
 \end{figure}
 
@@ -78,17 +79,20 @@ berarti akan memesan tempat di memori komputer sebanyak 9 tempat dengan
 indeks dari 0-8, dimana semua elemennya bertipe data karakter semuanya.
 Kalau satu karakter berukuran 1 byte, berarti membutuhkan memori sebesar
 9 byte.
+
 \item[\texttt{int\ umur{[}10{]}}]
 berarti akan memesan tempat di memori komputer sebanyak 10 tempat dengan
 indeks dari 0-9, dimana semua elemennya bertipe data integer semuanya.
 Kalau satu integer berukuran 4 bytes, berarti membutuhkan memori sebesar
 4 x 10 = 20 bytes.
+
 \item[\texttt{int\ kondisi{[}2{]}}]
 berarti akan memesan tempat di memori komputer sebanyak 2 tempat dengan
 indeks 0-1, dimana semua elemennya bertipe data integer semuanya. Dan
 pada contoh di atas isi elemen-elemennya yang sebanyak 2 buah diisi
 sekaligus (diinisialisasi) yaitu pada elemen kondisi{[}0{]} bernilai 0,
 dan elemen kondisi{[}1{]} bernilai 1.
+
 \item[\texttt{int\ arr\_dinamis{[}{]}}]
 berarti mendeklarasikan array dengan ukuran maksimum array tidak
 diketahui, namun ukuran tersebut diketahui berdasarkan inisialisasi
@@ -108,7 +112,7 @@ akan terpesan dan dibiarkan kosong.
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++, caption=Input dan Output Array]
+\begin{lstlisting}[language=c++, caption=Input dan Output Array, label=contoh3-1]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -178,7 +182,7 @@ Nilai Angka : 5
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++, caption=Manipulasi Array]
+\begin{lstlisting}[language=c++, caption=Manipulasi Array, label=contoh3-2]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -254,7 +258,7 @@ bil[6] = 60 dan alamatnya: 0x28fe80
 
 Buatlah program beikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penanganan Batas Indeks Elemen Array]
+\begin{lstlisting}[language=c++, caption=Penanganan Batas Indeks Elemen Array, label=contoh3-3]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -328,7 +332,7 @@ lainnya bernilai 0.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Inisialisasi Array dengan nilai \textbackslash{}0]
+\begin{lstlisting}[language=c++, caption=Inisialisasi Array dengan nilai \textbackslash{}0, label=contoh3-4]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -366,9 +370,9 @@ ditampilkan dengan \texttt{cout}.
 \subsubsection*{Contoh  Inisialisasi Array dua nilai elemen pertama}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan
-nama Contoh \ref{inisialisasi-array-dua-nilai-elemen-pertama}, kemudian tulis kode berikut.
+nama Contoh \ref{contoh3-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Inisialisasi Array dua nilai elemen pertama, label=inisialisasi-array-dua-nilai-elemen-pertama]
+\begin{lstlisting}[language=c++, caption=Inisialisasi Array dua nilai elemen pertama, label=contoh3-5]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -442,7 +446,7 @@ int data2[] = {10,20}; //terpesan 2 tempat dimemory
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Tanpa inisialisasi array langsung ditampilkan]
+\begin{lstlisting}[language=c++, caption=Tanpa inisialisasi array langsung ditampilkan, label=contoh3-6]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -487,7 +491,7 @@ diatas. Untuk itulah inisialisasi elemen array sangatlah penting.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan tipe data enum pada Array satu dimensi]
+\begin{lstlisting}[language=c++, caption=Penggunaan tipe data enum pada Array satu dimensi, label=contoh3-7]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -559,7 +563,7 @@ manual sesuai dengan jumlah elemen array yang dibuat.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Percobaan Penyalinan Array 1 dimensi]
+\begin{lstlisting}[language=c++, caption=Percobaan Penyalinan Array 1 dimensi, label=contoh3-7]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -591,7 +595,7 @@ mengkopi antar array begitu saja.
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penyalinan Array 1 dimensi dengan Perulangan]
+\begin{lstlisting}[language=c++, caption=Penyalinan Array 1 dimensi dengan Perulangan, label=contoh3-8]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -654,11 +658,12 @@ adalah:
 int papan[8][8];
 \end{lstlisting}
 
-yang digambarkan dalam bentuk gambar 3.2:
+yang digambarkan dalam bentuk gambar \ref{gambar3-2}:
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{images/capture3-11.png}
+\label{gambar3-2}
 \caption{Contoh deklarasi array dua dimensi yang menggambarkan papan catur}
 \end{figure}
 
@@ -673,6 +678,7 @@ Berikut adalah gambar array berdimensi (baris x kolom = 3 x 4)
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{images/capture3-12.png}
+\label{gambar3-3}
 \caption{array dimensi 3 x 4}
 \end{figure}
 
@@ -891,7 +897,7 @@ dimensi.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Deklarasi dan Menampilkan Array 2 Dimensi]
+\begin{lstlisting}[language=c++, caption=Deklarasi dan Menampilkan Array 2 Dimensi, label=contoh3-9]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -950,7 +956,7 @@ matriks\texttt{{[}3{]}{[}5{]}}
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya]
+\begin{lstlisting}[language=c++, caption=Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya, label=contoh3-10]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -995,7 +1001,7 @@ variabel array matrikshasil tepat pada baris dan kolom yang sesuai.
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penyalinan array 2 dimensi ke dalam array 1 dimensi]
+\begin{lstlisting}[language=c++, caption=Penyalinan array 2 dimensi ke dalam array 1 dimensi, label=contoh3-11]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1071,7 +1077,7 @@ digunakan untuk mengakses indeks kolom.
 
 Berikut adalah contohnya:
 
-\begin{lstlisting}[language=c++, caption=Pengaksesan Baris demi Baris]
+\begin{lstlisting}[language=c++, caption=Pengaksesan Baris demi Baris, label=contoh3-12]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1108,7 +1114,7 @@ digunakan untuk mengakses indeks baris.
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++, caption=Pengaksesan Kolom demi Kolom]
+\begin{lstlisting}[language=c++, caption=Pengaksesan Kolom demi Kolom, label=contoh3-13]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1190,7 +1196,7 @@ adalah contoh penggunaaanya.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan karakter \textbackslash{0}]
+\begin{lstlisting}[language=c++, caption=Penggunaan karakter \textbackslash{0}, label=contoh3-14]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1222,7 +1228,7 @@ katakter '\textbackslash0'.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=String tanpa karakter \textbackslash{0}]
+\begin{lstlisting}[language=c++, caption=String tanpa karakter \textbackslash{0}, label=contoh3-15]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1259,7 +1265,7 @@ menyimpan tanda akhir string atau karakter \textbackslash0 tersebut.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Mengisi Array of Character]
+\begin{lstlisting}[language=c++, caption=Mengisi Array of Character, label=contoh3-16]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1309,7 +1315,7 @@ karakter.}
 Tulislah program berikut:
 
 \begin{lstlisting}[language=c++, caption=Pengisian variabel array of character dengan maksimum jumlah
-karakter]
+karakter, label=contoh3-17]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1369,7 +1375,7 @@ Bentuk umum method:
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strlen()]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strlen(), label=contoh3-18]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 using namespace std;
@@ -1403,7 +1409,7 @@ string.
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan fungsi length pada tipe data string C++]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi length pada tipe data string C++, label=contoh3-19]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1467,7 +1473,7 @@ diperlukan suatu fungsi pustaka yang bernama \texttt{strcpy()}.
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcpy()]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcpy(), label=contoh3-20]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1524,7 +1530,7 @@ String Kedua : STRING
 
 Buatlah program beriku:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strncpy()]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strncpy(), label=contoh3-21]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1578,7 +1584,7 @@ ini.
 
 Buatlah program beriku:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcat()]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcat(), label=contoh3-22]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1611,7 +1617,7 @@ Untuk menggabungkan dua string, digunakan fungsi \texttt{strcat()}.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcat()]
+\begin{lstlisting}[language=c++, caption=Penggunaan fungsi strcat(), label=contoh3-23]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1748,7 +1754,7 @@ penggabungan string}
 Buatlah program berikut:
 
 \begin{lstlisting}[language=c++, caption=Pembuatan variabel string C++ penyalinan string dan
-penggabungan string]
+penggabungan string, label=contoh3-24]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1822,7 +1828,7 @@ Halo, Ini string C++
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan class string untuk manipulasi data]
+\begin{lstlisting}[language=c++, caption=Penggunaan class string untuk manipulasi data, label=contoh3-25]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1865,7 +1871,7 @@ Dapat dilihat langsung pada baris komentar program diatas.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Penggabungan string dengan menggunakan class string]
+\begin{lstlisting}[language=c++, caption=Penggabungan string dengan menggunakan class string, label=contoh3-26]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1916,7 +1922,7 @@ Percobaan 1 	Percobaan 2 	Percobaan 3 	Percebaan tampung
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Pengaksesan isi nilai class string]
+\begin{lstlisting}[language=c++, caption=Pengaksesan isi nilai class string, label=contoh3-27]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -1980,7 +1986,7 @@ C-style: Indonesia Raya
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Menemukan substring pada sebuah string besar]
+\begin{lstlisting}[language=c++, caption=Menemukan substring pada sebuah string besar, label=contoh3-28]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -2076,7 +2082,7 @@ Mencari semua karakter 'a'
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Membalik kata / kalimat]
+\begin{lstlisting}[language=c++, caption=Membalik kata / kalimat, label=contoh3-29]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -2119,7 +2125,7 @@ sudah terbalik.
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Konversi huruf besar dan kecil]
+\begin{lstlisting}[language=c++, caption=Konversi huruf besar dan kecil, label=contoh3-30]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>

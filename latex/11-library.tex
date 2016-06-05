@@ -13,7 +13,15 @@ Qt SDK menyediakan beberapa class library yang dapat anda gunakan untuk
 mempercepat pembuatan program, misalnya library untuk membuat GUI
 (Graphical User Interface), network programming, dan library untuk
 bekerja dengan XML. Beberapa class library yang disediakan oleh Qt dapat
-dilihat pada gambar dibawah ini.
+dilihat pada gambar \ref{fig:qt-library}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{images/qt-library}
+\caption{Class libray yang di sediakan oleh Qt}
+\label{fig:qt-library}
+\end{figure}
+
 
 Pada chapter ini kita akan membahas beberapa class dalam Qt Core Module
 yang sering digunakan seperti QObject, QString dan QStringList.
@@ -35,8 +43,7 @@ Qt Core Module sendiri dapat berisi :
   Class Object dan QCoreApplication (base class dari QApplication).
 \end{itemize}
 
-\section{Menurunkan objek dari class
-QObject}\label{menurunkan-objek-dari-class-qobject}
+\section{Menurunkan objek dari class QObject}\label{menurunkan-objek-dari-class-qobject}
 
 QObject class merupakan base class dari sebagian class yang ada di Qt
 library. Dengan menurunkan class dari QObject maka anda dapat
@@ -47,8 +54,16 @@ Beberapa class pada Qt yang diturunkan dari class QObject diantaranya
 QWidget, QLayout, dan QThread. Ada juga class yang tidak diturunkan dari
 class QObject seperti QString dan QColor.
 
-Gambar dibawah ini menunjukan contoh beberapa class yang diturunkan dari
+Gambar \ref{fig:qobjek} menunjukan contoh beberapa class yang diturunkan dari
 QObject.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\linewidth]{images/Qobjek}
+\caption{Turunan objek dari class QObject}
+\label{fig:qobjek}
+\end{figure}
+
 
 \section{Automatic Memory Management dengan
 QObject}\label{automatic-memory-management-dengan-qobject}
@@ -125,9 +140,19 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+  
+  \begin{lcverbatim}
+22002321 : 8 kar
+22002322 : 8 kar
+22002323 : 8 kar
+22002323 : 8 kar
+destroy object
+destroy object
+destroy object
+  \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}:
+\textbf{Keterangan:}
 
 \begin{itemize}
 
@@ -375,6 +400,9 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+  
+  \begin{lcverbatim}
+  \end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}

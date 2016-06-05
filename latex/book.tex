@@ -86,7 +86,7 @@
 \definecolor{redstrings}{rgb}{0.9,0,0.9}
 \definecolor{greenidentifier}{rgb}{0,.6,0}
 \definecolor{keyyellow}{cmyk}{0,0,.8,.3}
-
+\definecolor{cyan}{rgb}{0,0.9,0.9}
 %------------------------------------------------------------------------------------
 % paket listing digunakan untuk membuat sintaks highliter pada source kode yang di sisipkan
 \usepackage{listings}
@@ -103,10 +103,10 @@
 	identifierstyle =\color{greenidentifier},
 	basicstyle=\ttfamily,
 	numbers=left,
-	emph={QDebug,iostream,QtCore,QCoreApplication,QtSql,QtDebug,string,QDomDocument,algorithm,QTextStream,QFile,QDomElement,QDomText,QDataStream,QList,QColor},
+	emph={QDebug,iostream,QtCore,QCoreApplication,QtSql,QtDebug,string,QDomDocument,algorithm,QTextStream,QFile,QDomElement,QDomText,QDataStream,QList,QColor, QDir, QFileInfo},
 	 emphstyle=\color{keyyellow},
-	emph={[2]root,base},
-	emphstyle={[2]\color{blue}}
+	emph={[2]dir, isFile,  isDir, isSymLink,absoluteDir,  exists,  isHidden, isReadable, isWritable, isExecutable,  fileName},
+	emphstyle={[2]\color{cyan}}
 	 }
 %----------------------------------------------
 
@@ -143,8 +143,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % [1]
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % [2]
 \fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % [3]
-%\fancyhead[LO]{\rightmark} % [4]
-%\fancyhead[RE]{\leftmark} % [5]
+\fancyhead[LO]{\rightmark} % [4]
+\fancyhead[RE]{\leftmark} % [5]
 \renewcommand{\headrulewidth}{1.5pt} % [6]
 \addtolength{\headheight}{2.5pt} % [7] Increase the spacing around the header slightly
 \renewcommand{\footrulewidth}{0.5pt} %[8] Removes the rule in the footer
@@ -262,7 +262,9 @@
 	\chapter{Casting dan Database}\label{casting-dan-database}
 	\input{10-casting-database}
 	
-%	\part{Interface}
+	\part{Interface}
+	\chapter{GUI}
+	\input{14-gui}
 	
 	\part{Widget}
 	
@@ -276,7 +278,8 @@
 	\input{11-library}
 	
 	\backmatter
-	
+\part{Lampiran}	
+	\chapter{A}
 	
 	\printindex
 \end{document}

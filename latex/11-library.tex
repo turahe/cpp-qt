@@ -225,6 +225,13 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+\begin{lcverbatim}
+"22002321"  :  8  kar
+"22002322"  :  8  kar
+"22002323"  :  8  kar
+"22002323"  :  8  kar
+\end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -311,9 +318,17 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+  \begin{lcverbatim}
+"Erick Kurniawan"
+Ukuran string  15
+test not null
+test empty
+testing null
+  \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}:
+\textbf{Keterangan:}
 
 \begin{itemize}
 
@@ -355,9 +370,15 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+  \begin{lcverbatim}
+  firstName :  "Erick"
+lastName :  "Kurniawan"
+midName :  "Kurni"
+\end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}:
+\textbf{Keterangan:}
 
 \begin{itemize}
 
@@ -372,27 +393,26 @@ return a.exec();
   tengah.
 \end{itemize}
 
-\subsubsection*{Contoh 5. Menggabungkan String.}
+\subsubsection*{Contoh Menggabungkan String.}
 
 \begin{enumerate}
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.5}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-5}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Menggabungkan String, label=contoh-11.5]
+\begin{lstlisting}[language=c++, caption= Menggabungkan String, label=contoh11-5]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);
-QString nama = "Erick";
-nama.append(" ");
-nama.append("Kurniawan");
-nama.append(",M.Kom");
-nama.prepend("Mr. ");
+QString nama = "Slamet ";
+nama.append("");
+nama.append(",BA");
+nama.prepend("Pak. ");
 qDebug() << "Nama : " << nama;
-nama.insert(19,",S.Kom");
+nama.insert(16,",SE");
 qDebug() << nama;
 return a.exec();
 }
@@ -402,6 +422,8 @@ return a.exec();
   ditampilkan output sebagai berikut.
   
   \begin{lcverbatim}
+  Nama :  "Pak. Slamet ,BA"
+"Pak. Slamet ,BA ,SE"
   \end{lcverbatim}
 \end{enumerate}
 
@@ -426,15 +448,15 @@ return a.exec();
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.6}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-6}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Membalik String, label=contoh-11.6]
+\begin{lstlisting}[language=c++, caption= Membalik String, label=contoh11-6]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);
-QString nama = "Erick Kurniawan";
+QString nama = "Nur Wachid";
 QString balik;
 for(int i=nama.length()-1;i>=0;i--)
 {
@@ -447,17 +469,17 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+  \begin{lcverbatim}
+  Balik :  "dihcaW ruN"
+  \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}:
+\textbf{Keterangan:}
 
-\begin{itemize}
-
-\item
   Karena QString adalah array of QChar anda dapat mengambil karakter
   dari QString menggunakan index array, misal pada contoh diatas
   nama{[}i{]} akan menghasilkan karakter pada index ke-i.
-\end{itemize}
 
 \begin{quotation}
 	TIPS 
@@ -493,9 +515,9 @@ kedalam list tersebut.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.7}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-7}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Menggunakan QList,label=contoh-11.7]
+\begin{lstlisting}[language=c++, caption=Menggunakan QList,label=contoh11-7]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -517,6 +539,14 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+  
+\begin{lcverbatim}
+"Erick"
+"Erick"
+"Anton"
+"Katon"
+"Budi"
+\end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -542,9 +572,9 @@ pada QList.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.8}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-8}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Menggunakan object Iterator, label=contoh-11.8]
+\begin{lstlisting}[language=c++, caption=Menggunakan object Iterator, label=contoh11-8]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -570,6 +600,19 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+\begin{lcverbatim}
+12
+24
+36
+48
+60
+12
+24
+36
+48
+60
+\end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -587,7 +630,7 @@ return a.exec();
   const iterator
 \end{itemize}
 
-QList::const\_iterator
+\subsection{QList::const\_iterator}
 
 Selain untuk membaca data pada list, iterator juga dapat digunakan untuk
 memodifikasi data di list, caranya yaitu dengan menggunakan objek
@@ -600,9 +643,9 @@ dilihat pada kode dibawah ini.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.9}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-9}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Menggunakan Iterator untuk memodifikasi data di list, label=contoh-11.9]
+\begin{lstlisting}[language=c++, caption= Menggunakan Iterator untuk memodifikasi data di list, label=contoh11-9]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -628,6 +671,13 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+\begin{lcverbatim}
+"update data.."
+"Anton"
+"Katon"
+"update data.."
+\end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -661,9 +711,9 @@ berikut.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.10}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-10}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Beberapa cara menambahkan data ke list, label=contoh-11.10]
+\begin{lstlisting}[language=c++, caption= Beberapa cara menambahkan data ke list, label=contoh11-10]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -687,6 +737,14 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+\begin{lcverbatim}
+"anton"
+"erick"
+"budi"
+"katon"
+"naren"
+\end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -723,9 +781,9 @@ fungsi yang berguna untuk memanipulasi data di dalam QStringList.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.11}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-11}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Menggunakan QStringList,label=contoh-11.11]
+\begin{lstlisting}[language=c++, caption=Menggunakan QStringList,label=contoh11-11]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QStringList>
@@ -753,6 +811,18 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+\begin{lcverbatim}
+"Jogjakarta,Jakarta,Bandung,Semarang"
+"Jogjakarta"
+"Jakarta"
+"Bandung"
+"Semarang"
+"Jogjaaakaaartaaa"
+"Jaaakaaartaaa"
+"Baaandung"
+"Semaaaraaang"
+\end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -792,9 +862,9 @@ untuk LIFO anda dapat menggunakan QStack.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.12}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-12}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Menggunakan Stack dan Queue, label=contoh-11.12]
+\begin{lstlisting}[language=c++, caption=Menggunakan Stack dan Queue, label=contoh11-12]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QStack>
@@ -830,6 +900,18 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+\begin{lcverbatim}
+Stack LIFO : 
+"budi"
+"katon"
+"anton"
+"17rick"
+Queue FIFO : 
+"17rick"
+"anton"
+"katon"
+"budi"
+\end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -864,9 +946,9 @@ anda dapat membuat collection yang index-nya bukan berupa number
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.13}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-13}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Menggunakan QMap, label=contoh-11.13]
+\begin{lstlisting}[language=c++, caption=Menggunakan QMap, label=contoh11-13]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 int main(int argc, char *argv[])
@@ -893,6 +975,19 @@ return a.exec();
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
+
+\begin{lcverbatim}
+erick age :  29
+menampilkan semua data yg ada di map :
+"anton"  :  29
+"erick"  :  29
+"katon"  :  42
+Mengakses data menggunakan iterator
+"anton"  :  29
+"erick"  :  29
+"katon"  :  42
+\end{lcverbatim}
+
 \end{enumerate}
 
 \textbf{Keterangan:}

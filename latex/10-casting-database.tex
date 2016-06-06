@@ -46,8 +46,7 @@ dilakukan casting. Berikut adalah contoh castingnya:
 bool hasilku = (bool) isTrue(); // C-Style cast
 \end{lstlisting}
 
-\section{Data Type Casting
-(Conversion)}\label{data-type-casting-conversion}
+\section{Data Type Casting (Conversion)}\label{data-type-casting-conversion}
 
 Mengubah sebuah ekspresi dari tipe yang diberikan dalam jenis lain
 dikenal sebagai tipe-casting. Konversi tersebut ada dua jenis:
@@ -178,9 +177,23 @@ return a.exec();
 
 \textbf{Hasil:}
 
+\begin{lcverbatim}
+1. c=2
+2. c=2
+3. c=2
+4. c=2
+5. c=2
+6. c=2
+7. d=2
+8. d=2.5
+9. d=2.5
+10. d=2.5
+11. d=2
+12. d=2.5
+\end{lcverbatim}
 \textbf{Keterangan:}
 
-Mari kita Keterangan: perbaris.
+Mari kita analisa perbaris.
 
 \begin{itemize}
 
@@ -229,9 +242,11 @@ Mari kita Keterangan: perbaris.
   menjadi float, karena float tipe datanya lebih besar lebar datanya
   daripada integer.
 \end{itemize}
+
 \begin{quotation}
+
 \includegraphics{images/tips}\textbf{TIPS} 
-	
+
 Untuk melakukan casting yang benar, maka casting akan valid jika kita mengcasting tipe data yang berukuran lebih besar menjadi tipe data yang berukuran lebih kecil. Misalnya float dicast menjadi int.
 \end{quotation}
 
@@ -321,8 +336,7 @@ double myphi = 3.14;
 int angka = static_cast<int>(myphi);
 \end{lstlisting}
 
-\subsection{Penggunaan
-dynamic\_cast}\label{penggunaan-dynamicux5fcast}
+\subsection{Penggunaan dynamic\_cast}\label{penggunaan-dynamicux5fcast}
 
 Fungsi dynamic\_cast merupakan kebalikan dari static\_cast, hal ini
 karena proses pengcastingan terjadi saat runtime. Casing jenis ini
@@ -452,6 +466,18 @@ pCat->TangkapTikus();
 
 \textbf{Hasil:}
 
+\begin{lcverbatim}
+Penggunaan dynamic_cast untuk menentukan jenis Animal 1
+Binatang Dog!
+Dog: Kibas-kibas ekor!
+Penggunaan dynamic_cast untuk menentukan jenis Animal 2
+Binatang kucing!
+Cat: tikus tertangkap!
+Verifikasi tipe: Animal 1 Besuara!
+Dog: Guk-guk!
+Verifikasi tipe: Animal 2 Besuara!
+Cat: Meong!
+\end{lcverbatim}
 \textbf{Keterangan:}
 
 Kelas abstrak Canimal diturunkan pada dua class, yaitu CDog dan CCat
@@ -465,8 +491,7 @@ dapat menggunakan pointernya untuk memanggil method pada class
 turunannya sesuai dengan jenis classnya. Untuk class Dog memanggil
 method KibasEkor(), sedangkan class Cat memanggil method TangkapTikus().
 
-\subsection{Penggunaan
-reinterpret\_cast}\label{penggunaan-reinterpretux5fcast}
+\subsection{Penggunaan reinterpret\_cast}\label{penggunaan-reinterpretux5fcast}
 
 Penggunaan casting ini benar-benar tidak memungkinkan programmer untuk
 mengcasting dari satu obyek ke jenis obyek lain, terlepas dari apakah
@@ -513,9 +538,14 @@ A * a = new A;
 B * b = reinterpret_cast<B*>(a);
 \end{lstlisting}
 
-T\textgreater{} \textbf{TIPS} T\textgreater{} T\textgreater{} Sebisa
+\begin{quotation}
+\textbf{TIPS} 
+
+Sebisa
 mungkin reinterpret\_cast tidak digunakan jika tidak terpaksa karena
 tidak aman.
+\end{quotation}
+
 
 \subsection{Penggunaan const\_cast}\label{penggunaan-constux5fcast}
 
@@ -598,16 +628,22 @@ return 0;
 }
 \end{lstlisting}
 
-\section{Pemrograman Basisdata dengan QtConsole
-Application}\label{pemrograman-basisdata-dengan-qtconsole-application}
+\section{Pemrograman Basisdata dengan QtConsole Application}\label{pemrograman-basisdata-dengan-qtconsole-application}
 
 Pada bagian kedua ini kita akan berkenalan dengan bagaimana mengakses
 basisdata dengan menggunakan Qt. Basis data adalah suatu kumpulan
 tabel-tabel yang berisi data-data yang saling berelasi satu sama lain
 secara logika. Basis data tersusun dari tabel, sedangkan tabel tersusun
 dari baris record-record yang memiliki atribut (kolom) dan nilainya.
+Gambaran basis data pada Qt Creator seperti gambar \ref{fig:basis-data-qt}
 
-Gambaran basis data adalah sebagai berikut:
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{images/basis-data-qt}
+\caption{Pemrograman Basis data Qt Creator}
+\label{fig:basis-data-qt}
+\end{figure}
+
 
 Pada contoh diatas, terdapat sebuah basisdata perkuliahan, dimana
 terdapat 5 buah tabel. Tabel yang ada memiliki field (atribut/kolom).
@@ -618,11 +654,9 @@ menggambarkan tabel matakuliah, demikian juga yang lainnya.
 Kita tidak akan membahas lebih lanjut tentang basisdata. Pada basis data
 kita juga mengenal SQL (Structured Query Language). SQL merupakan bahasa
 untuk mengakses dan memanipulasi basis data terutama isi record-record
-pada tabel. SQL dapat dipelajari lebih lanjut, misalnya pada:
-http://www.w3schools.com/sql/default.asp
+pada tabel.
 
-\subsection{Koneksi Qt dengan
-Basisdata}\label{koneksi-qt-dengan-basisdata}
+\subsection{Koneksi Qt dengan Basisdata}\label{koneksi-qt-dengan-basisdata}
 
 Untuk melakukan koneksi pada basis data, Qt menyediakan dukungan pada
 beberapa basis data yang terkenal, misalnya
@@ -671,33 +705,31 @@ berikut:
 \item
   Buatlah sebuah database pada MySQL dengan nama: testmhs
 \item
-  Gunakan HeidiSQL untuk membuatnya:
+  Gunakan gunakan PHPmyAdmin untuk membuat tabel database.
+  
+  \includegraphics[width=0.7\linewidth]{images/phpmyadmin}
+  
 \item
   Isilah datanya sebagai berikut:
-\end{enumerate}
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
 NIM & Nama & IPK\tabularnewline
 \midrule
 \endhead
-22001234 & Anton & 3.5\tabularnewline
-22003241 & Rudi & 2.68\tabularnewline
-22003456 & Katon & 2.9\tabularnewline
+011041 & Wachid & 3.6\tabularnewline
+012042 & Arif & 3.6\tabularnewline
+011012 & Eko & 3.4\tabularnewline
 \bottomrule
 \end{longtable}
 
 Hasil:
 
-\begin{enumerate}
-
-\setcounter{enumi}{3}
+\includegraphics[width=0.7\linewidth]{images/database-mhs}
 
 \item
   Tulis kode berikut ini:
-\end{enumerate}
 
-Koneksi Qt dengan Mysql ddan menampilkan datanya
 
 \begin{lstlisting}[language=c++, caption=Percobaan koneksi MySQL dengan QtConsole]
 #include <QtCore/QCoreApplication>
@@ -711,7 +743,7 @@ QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
 db.setDatabaseName( "testmhs" );
 db.setHostName("localhost");
 db.setUserName("root");
-db.setPassword("triadpass");
+db.setPassword("");
 if( !db.open() )
 {
 qDebug() << db.lastError();
@@ -730,16 +762,41 @@ return a.exec();
 }
 \end{lstlisting}
 
-\begin{enumerate}
-
-\setcounter{enumi}{4}
 \item
   Pada file project yang berekstensi .pro, tambahkan linking ke library
   sql sebagai berikut:
+  
+  \begin{lstlisting}[language=c++]
+#-------------------------------------------------
+#
+# Project created by QtCreator 2016-01-03T19:58:33
+#
+#-------------------------------------------------
+QT += core
+QT += gui
+Qt += sql
+TARGET = databases
+CONFIG += console
+CONFIG -= app_bundle
+TEMPLATE = app
+SOURCES += main.cpp
+  \end{lstlisting}
 \item
   Kemudian run dan hasilnya adalah sebagai berikut:
-\item
-  Tambahkan bagian ini
+
+\begin{lcverbatim}
+("QSQLITE", "QMYSQL", "QODBC3", "QODBC")
+Koneksi sukses
+"11041"
+"Wachid"
+"3.6"
+"12042"
+"Arif"
+"3.6"
+"11012"
+"Eko"
+"3.4"
+\end{lcverbatim}
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -773,8 +830,7 @@ return a.exec();
 SQLite merupakan database yang sudah disupport secara native oleh Qt.
 Untuk membuat database SQLite, kita membutuhkan tool yang dapat
 digunakan untuk mengelola databasenya dengan mudah, silahkan gunakan
-sqliteadmin yang berbasis desktop yang dapat didownload pada:
-http://www.sqliteadmin.orbmu2k.de.
+sqliteadmin\footnote{http://www.sqliteexpert.com/} yang berbasis desktop.
 
 Yang perlu diperhatikan ketika kita membuat koneksi dengan basisdata
 SQLite adalah:
@@ -804,17 +860,23 @@ berikut:
 \item
   Buatlah sebuah database pada Sqlite dengan nama: testmhs.db, ingat
   harus berjenis SQLite3.
+
+\includegraphics[width=0.7\linewidth]{images/sqlite-expert}
+  
+  
 \item
-  Gunakan SQLiteadmin untuk membuatnya
+  Gunakan Sqlite Expert untuk membuatnya
 \item
-  Pilih menu Database \textgreater{} New
+  Pilih menu File \textgreater{} New Database
+  
+  \includegraphics[width=0.7\linewidth]{images/file-new-database}
+  
 \item
   Simpan dengan nama testmhs.db (pilih tipe sqlite 3 database), simpan
   pada folder project yang akan dibuat.
 \item
-  Kemudian buat tabel baru dengan klik kanan pada tables diatas --
-  create new table, kemudian isikan data berikut:
-\end{enumerate}
+  Kemudian buat tabel baru dengan klik menu table \textgreater{} New Table,
+  kemudian isikan data berikut:
 
 Nama tabel: mahasiswa
 
@@ -830,35 +892,26 @@ Field:
   IPK tipe FLOAT
 \end{itemize}
 
-\begin{enumerate}
-
-\setcounter{enumi}{5}
 
 \item
   Kemudian isi data sebagai berikut:
-\end{enumerate}
+
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
-Nim & Nama & IPK\tabularnewline
+NIM & Nama & IPK\tabularnewline
 \midrule
 \endhead
-22002529 & Anton & 3.68\tabularnewline
-22002349 & Erick & 3.15\tabularnewline
-22002521 & Aditya & 3.4\tabularnewline
+011041 & Wachid & 3.6\tabularnewline
+012042 & Arif & 3.6\tabularnewline
+011012 & Eko & 3.4\tabularnewline
 \bottomrule
 \end{longtable}
 
-\begin{enumerate}
-
-\setcounter{enumi}{6}
 
 \item
   Setelah itu buatlah project baru pada QtConsole application, dan
   tulislah kode program berikut:
-\end{enumerate}
-
-Koneksi Qt ke Database
 
 \begin{lstlisting}[language=c++, caption=Percobaan koneksi SQLite dengan QtConsole]
 #include <QtCore/QCoreApplication>
@@ -879,17 +932,34 @@ return a.exec();
 }
 \end{lstlisting}
 
-\begin{enumerate}
-
-\setcounter{enumi}{7}
 \item
   Pada project, pilihlah file berekstensi .pro, kemudian bukalah file
   tersebut dan tambahkanlah bagian kode berikut:
+  
+  \begin{lstlisting}[language=c++]
+  #-------------------------------------------------
+  #
+  # Project created by QtCreator 2016-01-03T19:58:33
+  #
+  #-------------------------------------------------
+  QT += core
+  QT += gui
+  Qt += sql
+  TARGET = databases
+  CONFIG += console
+  CONFIG -= app_bundle
+  TEMPLATE = app
+  SOURCES += main.cpp
+  \end{lstlisting}
+  
 \item
   Build dan run
-\end{enumerate}
 
-\textbf{Hasil:}
+\begin{lcverbatim}
+("QSQLITE")
+Koneksi berhasil
+\end{lcverbatim}
+\end{enumerate}
 
 \textbf{Keterangan:}
 
@@ -904,14 +974,18 @@ return a.exec();
 \item
   Program diatas mengharuskan adanya urutan perintah yang harus
   dilakukan ketika kita akan melakukan koneksi ke database Sqlite,
-  yaitu: o Load driver SQLITE Tambahkan bagian ini
+  yaitu: 
+
+\begin{itemize}
+\item Load driver SQLITE Tambahkan bagian ini
+\item setDatabaseName sesuai dengan nama file Sqlite yang akan diakses 
+\item Kemudian open koneksi dengan memanggil method open 
+\item Jika ada error tampilkan errornya, jika tidak tampilkan bahwa koneksi berhasil
+\end{itemize}  
+
 \end{itemize}
 
-o setDatabaseName sesuai dengan nama file Sqlite yang akan diakses o
-Kemudian open koneksi dengan memanggil method open o Jika ada error
-tampilkan errornya, jika tidak tampilkan bahwa koneksi berhasil
-
-Membaca data pada tabel SQLITE
+\subsection{Membaca data pada tabel SQLITE}
 
 Cara membaca data pada tabel Sqlite adalah dengan menggunakan perintah
 query SQL SELECT. Sintaksnya adalah
@@ -976,6 +1050,15 @@ return a.exec();
 
 \textbf{Hasil:}
 
+\begin{lcverbatim}
+("QSQLITE")
+Koneksi berhasil
+true
+"11041""Wachid"
+"12042""Arif"
+"11012""Eko"
+\end{lcverbatim}
+
 \textbf{Keterangan:}
 
 \begin{itemize}
@@ -995,8 +1078,7 @@ return a.exec();
   seterusnya.
 \end{itemize}
 
-\subsection{Menambah data pada tabel
-SQLITE}\label{menambah-data-pada-tabel-sqlite}
+\subsection{Menambah data pada tabel SQLITE}\label{menambah-data-pada-tabel-sqlite}
 
 Cara menambah data pada tabel Sqlite adalah dengan menggunakan perintah
 query SQL INSERT. Sintaksnya adalah
@@ -1052,6 +1134,12 @@ return a.exec();
 
 \textbf{Hasil:}
 
+\begin{lcverbatim}
+("QSLITE")
+Koneksi berhasil
+Berhasil ditambahkan
+\end{lcverbatim}
+
 \textbf{Keterangan:}
 
 \begin{itemize}
@@ -1060,6 +1148,17 @@ return a.exec();
   ketika program dijalankan maka data baru bernama ``mhs baru'' berhasil
   ditambahkan dan mengubah jumlah record pada tabel sehingga menjadi 4
   buah. Tampilan perubahan adalah sebagai berikut:
+  
+  \begin{tabular}{|l|l|l|}
+  \hline
+  NIM & Nama & IPK \\ \hline
+  011041 & Wachid & 3.1 \\ \hline
+  012042 & Arif & 3.6 \\ \hline
+  011041 & Eko & 3.4 \\ \hline
+  012011 & Alif & 3.3 \\ \hline
+  013021 & Ananda & 3.8 \\ \hline
+  
+  \end{tabular}
 \item
   Cara menambahkan record pada SQLite sangat mudah, yaitu dengan
   menggunakan SQL insert into yang harus disesuaikan dengan jumlah field
@@ -1077,9 +1176,13 @@ return a.exec();
   sudah menset bahwa field nim bersifat primary, yang artinya tidak
   boleh ada data nim yang kembar. Hal inilah yang menyebabkan data Gagal
   ditambahkan.
-\end{itemize}
+  \begin{lcverbatim}
+  ("QSLITE")
+  Koneksi berhasil
+  gagal  ditambahkan
+\end{lcverbatim}
 
-Jika kita hendak membaca data pada SQLite, maka tambahkan kode berikut:
+\item Jika kita hendak membaca data pada SQLite, maka tambahkan kode berikut:
 
 \begin{lstlisting}[language=c++, caption=Membaca data pada SQLite]
 QsqlQuery query.exec("select nim,nama,ipk from mahasiswa order by nim desc");
@@ -1094,21 +1197,21 @@ qDebug() << nim << " " << nama << " " << ipk;
 }
 \end{lstlisting}
 
-Sehingga akan dihasilkan:
+\item Sehingga akan dihasilkan:
 
-\begin{quotation}
-	\includegraphics{images/tips}
-	\textbf{TIPS} 
-	
-	Untuk
-	mengetahui cara menghandle berbagai jenis tipe data pada database SQLite
-	versi 3 pada Qt dapat
-\end{quotation}
+\begin{lcverbatim}
+"012011"  "Alif"  "3.3"
+"013021"  "Ananda"  "3.8" 
+"011041" "Wachid"  "3.1" 
+"012042"  "Arif"  "3.6" 
+"011012"  "Eko"  "3.4" 
 
-dilihat pada tabel berikut:
+\end{lcverbatim}
+\end{itemize}
 
-\subsection{Mengedit data pada tabel
-SQLITE}\label{mengedit-data-pada-tabel-sqlite}
+
+
+\subsection{Mengedit data pada tabel SQLITE}\label{mengedit-data-pada-tabel-sqlite}
 
 Cara mengedit data pada tabel Sqlite adalah dengan menggunakan perintah
 query SQL UPDATE. Sintaksnya adalah
@@ -1136,11 +1239,22 @@ nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
 \subsubsection*{Contoh Mengedit data pada SQLite.}
 
-Kondisi awal tabel:
+\begin{enumerate}
+\item Kondisi awal tabel:
 
-Kita akan mengedit nim 22002529 menjadi bernama Antonius Rachmat C
+\begin{tabular}{|l|l|l|}
+\hline
+NIM & Nama & IPK \\ \hline
+011041 & Wachid & 3.1 \\ \hline
+012042 & Arif & 3.6 \\ \hline
+011041 & Eko & 3.4 \\ \hline
+012011 & Alif & 3.3 \\ \hline
+013021 & \colorbox{red}{Ananda} & 3.8 \\ \hline
+\end{tabular}
 
-Buatlah program berikut:
+Kita akan mengedit nim 013021 menjadi bernama Aryo
+
+\item Buatlah program berikut:
 
 \begin{lstlisting}[language=c++, caption=Mengedit data pada SQLite]
 #include <QtCore/QCoreApplication>
@@ -1157,7 +1271,7 @@ db.setDatabaseName("testmhs.db");
 if(!db.open())
 {
 qDebug() << db.lastError();
-    qFatal( "Failed to connect." );
+qFatal( "Failed to connect." );
 } else qDebug() << "Koneksi berhasil";
 QSqlQuery query;
 bool hasil = query.exec("update mahasiswa set nama='Antonius Rachmat C' where
@@ -1168,9 +1282,26 @@ return a.exec();
 }
 \end{lstlisting}
 
-\textbf{Hasil:}
+\item \textbf{Hasil:}
+\begin{lcverbatim}
+("QSLITE")
+Koneksi berhasil
+Berhasil diedit
+Jumlah record yang diedit : 1
+\end{lcverbatim}
+\item Kondisi akhir tabel:
 
-Kondisi akhir tabel:
+\begin{tabular}{|l|l|l|}
+\hline
+013021 & Ananda & 3.8 \\ \hline
+NIM & Nama & IPK \\ \hline
+011041 & Wachid & 3.1 \\ \hline
+012042 & Arif & 3.6 \\ \hline
+011041 & Eko & 3.4 \\ \hline
+012011 & Alif & 3.3 \\ \hline
+
+\end{tabular}
+\end{enumerate}
 
 \textbf{Keterangan:}
 
@@ -1186,8 +1317,7 @@ Kondisi akhir tabel:
   numRowsAffected() dari obyek QsqlQuery.
 \end{itemize}
 
-\subsection{Menghapus data pada tabel
-SQLITE}\label{menghapus-data-pada-tabel-sqlite}
+\subsection{Menghapus data pada tabel SQLITE}\label{menghapus-data-pada-tabel-sqlite}
 
 Cara menghapus data pada tabel Sqlite adalah dengan menggunakan perintah
 query SQL UPDATE. Sintaksnya adalah DELETE FROM WHERE \textless{}kriteri
@@ -1213,11 +1343,22 @@ nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
 \subsubsection*{Contoh  Menghapus data pada SQLite.}
 
-Kondisi awal tabel:
+\begin{enumerate}
+\item Kondisi awal tabel:
 
-Kita akan menghapus data ``mhs baru''.
+\begin{tabular}{|l|l|l|}
+\hline
+NIM & Nama & IPK \\ \hline
+011041 & Wachid & 3.1 \\ \hline
+012042 & Arif & 3.6 \\ \hline
+011041 & Eko & 3.4 \\ \hline
+012011 & Alif & 3.3 \\ \hline
+013021 & \colorbox{red}{Ananda} & 3.8 \\ \hline
+\end{tabular}
 
-Buatlah program sebagai berikut:
+Kita akan menghapus data ``Ananda''.
+
+\item Buatlah program sebagai berikut:
 
 \begin{lstlisting}[language=c++, caption= Menghapus data pada SQLite]
 #include <QtCore/QCoreApplication>
@@ -1244,9 +1385,28 @@ return a.exec();
 }
 \end{lstlisting}
 
-\textbf{Hasil:}
+\item \textbf{Hasil:}
 
-Kondisi akhir tabel:
+\begin{lcverbatim}
+("QSLITE")
+Koneksi berhasil
+Berhasil diedit
+Jumlah record yang dihapus : 1
+\end{lcverbatim}
+
+\item Kondisi akhir tabel:
+
+\begin{tabular}{|l|l|l|}
+\hline
+NIM & Nama & IPK \\ \hline
+011041 & Wachid & 3.1 \\ \hline
+012042 & Arif & 3.6 \\ \hline
+011041 & Eko & 3.4 \\ \hline
+012011 & Alif & 3.3 \\ \hline
+
+\end{tabular}
+
+\end{enumerate}
 
 \textbf{Keterangan:}
 
@@ -1471,17 +1631,128 @@ return a.exec();
 
 \item
   Tampilan menu:
+  
+ \begin{lcverbatim}
+MENU:
+1. Tambah data
+2. Tampil data
+3. Hapus data
+4. Cari nim
+5. Edit data
+6. Exit
+Pilihan:
+ \end{lcverbatim}
+
 \item
   Menu tambah data dan tampil data:
+  
+ \begin{lcverbatim}
+ MENU:
+ 1. Tambah data
+ 2. Tampil data
+ 3. Hapus data
+ 4. Cari nim
+ 5. Edit data
+ 6. Exit
+ Pilihan: 1
+ NIM: 013012
+ Nama: Ramadhani
+ Penambahan berhasil
+ Tekan sembarang tombol . . .
+ \end{lcverbatim}
+  
+\begin{lcverbatim}
+"NIM  Nama  IPK" 
+"011041  Wachid  3.1" 
+"012042  Arif  3.6 "
+"011041  Eko  3.4"
+"012011  Alif  3.3" 
+"013012 Ramadhani   3.8" 
+  \end{lcverbatim}
 \item
   Menu hapus data dan tampil data:
+  
+ \begin{lcverbatim}
+MENU:
+1. Tambah data
+2. Tampil data
+3. Hapus data
+4. Cari nim
+5. Edit data
+6. Exit
+Pilihan: 3
+NIM yang akan dihapus: 011041
+Penghapusan berhasil
+Tekan sembarang tombol . . .
+\end{lcverbatim}
+\begin{lcverbatim}
+"NIM  Nama  IPK" 
+"012042  Arif  3.6 "
+"011041  Eko  3.4"
+"012011  Alif  3.3" 
+"013012 Ramadhani   3.8" 
+\end{lcverbatim}
+   
 \item
-  Menu edit data dan tampil data: Mengedit 22031235 menjadi bernama
-  Johan W dan IPK menjadi 1.9
+  Menu edit data dan tampil data: 
+  
+  Mengedit 011041 menjadi bernama
+  Nur Wachid dan IPK menjadi 3.01
+  
+  \begin{lcverbatim}
+  MENU:
+  1. Tambah data
+  2. Tampil data
+  3. Hapus data
+  4. Cari nim
+  5. Edit data
+  6. Exit
+  Pilihan: 5
+  NIM yang akan diedit: 011042
+  Nama baru: Arif H
+  IPK: 3.01
+  Tekan sembarang tombol . . .
+  \end{lcverbatim}
+  
+\begin{lcverbatim}
+"NIM  Nama  IPK" 
+"012042  Arif H  3.6 "
+"011041  Eko  3.4"
+"012011  Alif  3.3" 
+"013012 Ramadhani   3.8" 
+\end{lcverbatim}
 \item
   Menu cari data:
+
+\begin{lcverbatim}
+MENU:
+1. Tambah data
+2. Tampil data
+3. Hapus data
+4. Cari nim
+5. Edit data
+6. Exit
+Pilihan: 4
+NIM yang akan dicari: 011042
+"NIM  Nama  IPK" 
+"012042  Arif H  3.6 "
+Tekan sembarang tombol . . .
+\end{lcverbatim}
 \item
   Menu Exit
+
+\begin{lcverbatim}
+MENU:
+1. Tambah data
+2. Tampil data
+3. Hapus data
+4. Cari nim
+5. Edit data
+6. Exit
+Pilihan: 6
+Tekan sembarang tombol . . .Good bye
+\end{lcverbatim}
+
 \end{enumerate}
 
 \textbf{Keterangan:}
@@ -1536,80 +1807,80 @@ return a.exec();
 
 \begin{quotation}
 
-\includegraphics{images/tips}	\textbf{TIPS:} 
-	
-	Untuk
-	mengkonversi dari tipe data string menuju ke Qstring, digunakan
-	\texttt{\textless{}variabel\ string\ bias.c\_str()} Perintah cin tidak
-	bisa digunakan setelah fungsi getline, karena akan membuat inputan
-	menjadi bertumpuk seperti pada contoh ini:
-	
-	\begin{lstlisting}[language=c++, numbers=none]
-	int main(){
-	int id, age;
-	string name, address;
-	cout<<"Enter ID : "; cin>>id;
-	cout<<"Enter Name: "; getline(cin,name);
-	cout<<"Enter Address : "; getline(cin, address);
-	cout<<"Enter Age: "; cin>>age;
-	}
-	\end{lstlisting}
-	
-	\textbf{Hasil:}
-	
-	\begin{lstlisting}[language=c++, numbers=none]
-	Enter ID: 23
-	Enter Name: Enter Address : Yogyakarta
-	Enter Age : 45
-	\end{lstlisting}
-	
-	Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu.
-	Untuk mencegahnya kita bisa menukar posisi bahwa cin diletakkan dibawah
-	getline, seperti berikut:
-	
-	\begin{lstlisting}[language=c++, numbers=none]
-	int main(){
-	 int id, age;
-	 string name, address;
-	 cout<<"Enter Name: "; getline(cin,name);
-	 cout<<"Enter Address : "; getline(cin, address);
-	 cout<<"Enter ID : "; cin>>id;
-	 cout<<"Enter Age: "; cin>>age;
-	 }
-	\end{lstlisting}
-	
-	\textbf{Sehingga tampilan:}
-	
-	\begin{lstlisting}[language=c++, numbers=none]
-	Enter Name: Yanuar Adi
-	Enter Address : Yogyakarta
-	Enter ID: 23
-	Enter Age: 43
-	\end{lstlisting}
-	
-	Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan
-	dengan cara:
-	
-	\begin{lstlisting}[language=c++, numbers=none]
-	int main(){
-	int id, age;
-	string name, address;
-	cout<<"Enter ID : "; cin>>id;
-	getline(cin,name);
-	cout<<"Enter Name: "; getline(cin,name);
-	cout<<"Enter Address : "; getline(cin, address);
-	cout<<"Enter Age: "; cin>>age;
-	}
-	\end{lstlisting}
-	
-	\textbf{Sehingga tampilan:}
-	
-	\begin{lstlisting}[language=c++, numbers=none]
-	Enter ID : 23
-	Enter Name : Yanuar Adi
-	Enter Address : Yogyakarta
-	Enter Age : 32
-	Terimakasih.
-	\end{lstlisting}
+\includegraphics{images/tips}\textbf{TIPS:} 
+
+Untuk
+mengkonversi dari tipe data string menuju ke Qstring, digunakan
+\texttt{\textless{}variabel\ string\ bias.c\_str()} Perintah cin tidak
+bisa digunakan setelah fungsi getline, karena akan membuat inputan
+menjadi bertumpuk seperti pada contoh ini:
+
+\begin{lstlisting}[language=c++, numbers=none]
+int main(){
+int id, age;
+string name, address;
+cout<<"Enter ID : "; cin>>id;
+cout<<"Enter Name: "; getline(cin,name);
+cout<<"Enter Address : "; getline(cin, address);
+cout<<"Enter Age: "; cin>>age;
+}
+\end{lstlisting}
+
+\textbf{Hasil:}
+
+\begin{lcverbatim}
+Enter ID: 23
+Enter Name: Enter Address : Yogyakarta
+Enter Age : 45
+\end{lcverbatim}
+
+Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu.
+Untuk mencegahnya kita bisa menukar posisi bahwa cin diletakkan dibawah
+getline, seperti berikut:
+
+\begin{lstlisting}[language=c++, numbers=none]
+int main(){
+ int id, age;
+ string name, address;
+ cout<<"Enter Name: "; getline(cin,name);
+ cout<<"Enter Address : "; getline(cin, address);
+ cout<<"Enter ID : "; cin>>id;
+ cout<<"Enter Age: "; cin>>age;
+ }
+\end{lstlisting}
+
+\textbf{Sehingga tampilan:}
+
+\begin{lcverbatim}
+Enter Name: Yanuar Adi
+Enter Address : Yogyakarta
+Enter ID: 23
+Enter Age: 43
+\end{lcverbatim}
+
+Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan
+dengan cara:
+
+\begin{lstlisting}[language=c++, numbers=none]
+int main(){
+int id, age;
+string name, address;
+cout<<"Enter ID : "; cin>>id;
+getline(cin,name);
+cout<<"Enter Name: "; getline(cin,name);
+cout<<"Enter Address : "; getline(cin, address);
+cout<<"Enter Age: "; cin>>age;
+}
+\end{lstlisting}
+
+\textbf{Sehingga tampilan:}
+
+\begin{lcverbatim}
+Enter ID : 23
+Enter Name : Yanuar Adi
+Enter Address : Yogyakarta
+Enter Age : 32
+Terimakasih.
+\end{lcverbatim}
 \end{quotation}
 

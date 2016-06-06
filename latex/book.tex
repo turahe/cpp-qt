@@ -154,7 +154,7 @@
 
 %-----------------------------------------
 % Menhapus header pada halaman ganjil yang kosong pada akhir chapter
-
+%-----------------------------------------
 \makeatletter
 \renewcommand{\cleardoublepage}{
 	\clearpage\ifodd\c@page\else
@@ -177,7 +177,7 @@
 % Isi konten dari bagian dasar, OOP, interface, widget dan Library
 % memuat  bab
 \begin{document}
-	\dominitoc
+	\dominitoc 
 	\begingroup  
 	\thispagestyle{empty}
 	\begin{textblock*}{297mm}(0mm,0mm)
@@ -220,16 +220,22 @@
 	\tableofcontents
 	\lstlistoflistings
 
-	\listoffigures
+	%\listoffigures
 	
-	\listoftables
+	%\listoftables
 	
 	\clearpage
 	\newpage
-
+	\chapter*{Prakata}
+	\thispagestyle{empty}
 	\input{00-prakata}
 	\mainmatter
-	
+
+%---------------------------------------------
+% Dasar dari pemrograman C++ yakni mengenai
+% 1 mukadimah, tipe data, indetifier, operator  control flow
+%	array, string, fungsi, pointer, rekursif
+%----------------------------------------------	
 	\part{Dasar}
 	\chapter{Mukadimah}\label{mukadimah}
 	\input{01-pengenalan}
@@ -245,7 +251,11 @@
 	
 	\chapter{Pointer dan References}\label{pointer-dan-references}
 	\input{05-pointer-referensi}
-	
+
+%--------------------------------------------------------
+% Bagian OOP mempelajari tentang class, objek, inherinitance,
+% Operator, overloading, Polymorphism, casting, database
+%--------------------------------------------------------------
 	\part{Objek Oriented Programming (OOP)}
 	
 	\chapter{Class dan Object}\label{class-dan-object}
@@ -254,8 +264,7 @@
 	\chapter{Inheritance}\label{inheritance}
 	\input{07-penurunan}
 	
-	\chapter{Operator Types dan Operator
-		Overloading}\label{operator-types-dan-operator-overloading}
+	\chapter{Operator Types dan Operator Overloading}\label{operator-types-dan-operator-overloading}
 	\input{08-operator}
 	
 	\chapter{Polymorphism}\label{polymorphism}
@@ -263,27 +272,41 @@
 	
 	\chapter{Casting dan Database}\label{casting-dan-database}
 	\input{10-casting-database}
-	
+
+%-------------------------------------------
+% mempelajari tentang antarmuka menggunakan Qt Creator
+% gui secara umum ataupun widgeting xml dan antarmuka
+%----------------------------------- 	
 	\part{Interface}
+
 	\chapter{GUI}
 	\input{14-gui}
-	
+
+%-----------------------------------------------------
+% mempelajari tentang widget dari Qt CReator dan bagaimaan cara menggunakanya
+%--------------------------------------------------------- 	
 	\part{Widget}
 	
 	\chapter{File, Stream, dan XML}\label{file-stream-dan-xml}
-		\input{12-file-stream-xml}
-		
+	\input{12-file-stream-xml}
+
+	\chapter{Qt Webkit}
+	\input{13-qt-webkit}	
 		
 	\part{Library}
 	\chapter{Library}\label{library}
 	\input{11-library}
 	
+	
+%-------------------------------------------------------------
+% Bagian Lampiran berisi tentang index dan biblography
+%------------------------------------------------------------
 	\backmatter
-\part{Lampiran}	
+	\part{Lampiran}	
+
 	\chapter{A}
 	
-	\chapter{Qt Webkit}
-	\input{13-qt-webkit}
+	
 	
 	\printindex
 \end{document}

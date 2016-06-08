@@ -4,9 +4,9 @@ Pada Bab ini kita akan mempelajari tentang funtion bahasa C++ seperti berikut in
 
 \minitoc
 
-Fungsi (Function) adalah sekumpulan program yang diberi nama, sehingga
+\index{Fungsi}Fungsi (Function) adalah sekumpulan program yang diberi nama, sehingga
 dengan demikian jika program itu diperlukan dapat dipanggil kembali.
-Walaupun Pemrograman Berorientasi Objek telah menggeser perhatian dari
+Walaupun \index{Pemrograman Berorientasi Objek}Pemrograman Berorientasi Objek telah menggeser perhatian dari
 fungsi ini, namun fungsi tetap saja merupakan bagian paling inti dalam
 suatu program. Fungsi global bisa berada di luar kelas maupun objek.
 
@@ -136,8 +136,7 @@ return kembali;
 }
 \end{lstlisting}
 
-\section{Deklarasi Fungsi
-(Prototype)}\label{deklarasi-fungsi-prototype}
+\section{Deklarasi Fungsi (Prototype)}\label{deklarasi-fungsi-prototype}
 
 Suatu fungsi harus dideklarasikan sebelum digunakan, jika suatu fungsi
 tidak dideklarasikan maka fungsi tersebut tidak akan bisa dipanggil.
@@ -173,7 +172,7 @@ pertama. Pada kasus semacam ini tidak mungkin menempatkan definisi
 fungsi pada urutan yang benar tanpa membuat prototype.
 
 Ketiga, penggunaan prototype merupakan teknik penelusuran kesalahan yang
-baik dan handal. Ketika suatu prototype mendeklarasikan fungsi dengan
+baik dan handal. Ketika suatu \index{prototype}prototype mendeklarasikan fungsi dengan
 parameter tertentu dan nilai kembalian tertentu, maka kompiler akan
 menjaga konsistensinya dengan definisi fungsi tanpa harus menunggu
 program dijalankan.
@@ -221,11 +220,12 @@ int main(int argc, char *argv[])
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl + R, outputnya
   adalah sebagai berikut.
+  \begin{lcverbatim}
+  	Bilangan : -10
+  	Dimutlakkan menjadi : 10
+  \end{lcverbatim}
 \end{enumerate}
-\begin{lcverbatim}
-Bilangan : -10
-Dimutlakkan menjadi : 10
-\end{lcverbatim}
+
 
 
 \textbf{Analisa Program :}
@@ -506,7 +506,7 @@ letak pendeklarasianya.
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 contoh \ref{contoh4-5}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Variabel Statik, label=contoh3]
+\begin{lstlisting}[language=c++, caption=Variabel Statik, label=contoh4-5]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 long int kali(long int i); /*prototype*/

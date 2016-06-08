@@ -527,8 +527,7 @@ Arti dari program diatas menunjukkan kita dapat mengakses indeks
 data \texttt{enum} pada kenyataannya akan dikonversikan kedalam nilai
 \texttt{integer}, mulai dari \texttt{0}.
 
-\subsection{Pengalamatan dan Pengkopian Array 1
-Dimensi}\label{pengalamatan-dan-pengkopian-array-1-dimensi}
+\subsection{Pengalamatan dan Pengkopian Array 1 Dimensi}\label{pengalamatan-dan-pengkopian-array-1-dimensi}
 
 Array tidak bisa disalin begitu saja antara array satu yang ada nilainya
 ke array lain yang kosong. Hal ini dikerenakan array bukanlah tipe data
@@ -1139,7 +1138,7 @@ int main(int argc, char *argv[])
 
 \section{String}\label{string}
 
-String adalah kumpulan dari nilai-nilai karakter yang berurutan dalam
+\index{String}String adalah kumpulan dari nilai-nilai karakter yang berurutan dalam
 bentuk satu dimensi, nilai string ini haruslah ditulis didalam tanda
 petik dua (") misalnya: "ini string". Suatu nilai string disimpan di
 memori dengan diakhiri oleh nilai '\textbackslash0'(null), misalnya nilai string
@@ -1160,7 +1159,7 @@ Untuk mendeklarasikan sebuah string terdapat dua cara:
 
 
 \item
-  Menggunakan array of character yang sering disebut C-style string
+  Menggunakan \index{array of character}array of character yang sering disebut \index{C-style}C-style string
 \item
   Menggunakan tipe data string pada C++
 \end{enumerate}
@@ -1292,7 +1291,7 @@ hasil data string: Wachid
   Pada program diatas kita mendeklarasikan variabel array of string
   bernama buffer yang berukuran 6 elemen. Variabel buffer diatas
   merupakan variabel berjenis string C-style yang diinisialisasi dengan
-  karakter \textbackslash{0} atau karakter NULL.
+  karakter \textbackslash{0} atau karakter\index{NULL} NULL.
 \item
   Problem lainnya adalah jika kita menginputkan data string yang
   mengandung spasi, maka cin hanya akan membaca data string sebelum
@@ -1306,8 +1305,7 @@ Isi data string: Nur Wachid
 hasil data string: Wachid
 \end{lstlisting}
 
-\subsubsection*{Contoh  Pengisian variabel array of character dengan maksimum jumlah
-karakter.}
+\subsubsection*{Contoh  Pengisian variabel array of character dengan maksimum jumlah karakter.}
 
 Tulislah program berikut:
 
@@ -1707,8 +1705,7 @@ Kami kelompok belajar Qt C++
 \end{quotation}
 
 
-\subsection{Fungsi mengubah string menjadi numerik dan
-sebaliknya}\label{fungsi-mengubah-string-menjadi-numerik-dan-sebaliknya}
+\subsection{Fungsi mengubah string menjadi numerik dan sebaliknya}\label{fungsi-mengubah-string-menjadi-numerik-dan-sebaliknya}
 
 Pada bahasa C++ tipe data \emph{array of character} bisa dikonversi
 menjadi \texttt{numerik} dan sebaliknya numerik bisa dikonversi menjadi
@@ -1740,7 +1737,7 @@ Fungsi diatas menerima parameter
 
 C++ library standar memiliki kelas string yang membuat bekerja dengan
 string lebih mudah dengan menyediakan satu set encapsulasi dari data,
-dan fungsi untuk memanipulasi data string. Kelas ini dikenal dengan
+dan fungsi untuk memanipulasi data \index{String}string. Kelas ini dikenal dengan
 \texttt{std::} string yang dapat menangani rincian alokasi memori dan
 membuat kopi string, atau menempatkan mereka di memory dengan lebih
 mudah.
@@ -2109,8 +2106,8 @@ Setelah dibalik:
 
 \textbf{Keterangan:}
 
-Untuk membalik kalimat bertipe string, kita harus menggunakan library
-header algoritm, sehingga kita harus mengincludekan library tersebut
+Untuk membalik kalimat bertipe string, kita harus menggunakan \index{library}library
+header \index{algoritm}algoritm, sehingga kita harus mengincludekan library tersebut
 \texttt{\#include\ \textless{}algorithm\textgreater{}}. Setelah itu
 untuk menggunakannya kita gunakan perintah
 \emph{reverse}(\texttt{\textless{}indeks\ string\ pertam\textgreater{}},\texttt{\textless{}indeks\ string\ terakhir\textgreater{}}).

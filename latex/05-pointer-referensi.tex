@@ -7,7 +7,7 @@ dengan pointer dan reference yaitu:
 
 \section{Apa itu Pointer?}\label{apa-itu-pointer}
 
-Pointer adalah variabel yang dapat menyimpan alamat memory. Untuk dapat
+\index{Pointer}Pointer adalah variabel yang dapat menyimpan alamat memory. Untuk dapat
 memahami pointer lebih jauh anda perlu mengenal sedikit tentang memory
 komputer.
 
@@ -31,8 +31,7 @@ Tiap komputer mempunyai skema yang berbeda untuk penomoran memory,
 sebagai programmer anda tidak perlu tahu skema alamat dalam memory untuk
 menyimpan variabel karena kompiler akan melakukan pekerjaan tersebut
 untuk anda. Jika anda ingin mengetahui pada alamat memory yang mana
-variabel anda disimpan maka anda dapat menggunakan operator address-of
-(\&).
+variabel anda disimpan maka anda dapat menggunakan operator \index{address-of(\&)}address-of(\&).
 
 \subsubsection*{Contoh  Menampilkan alamat memory menggunakan address-of operator.}
 
@@ -356,8 +355,7 @@ Anda dapat menggunakan nama array \texttt{numbers+4} untuk menunjuk ke
 alamat elemen \texttt{numbers{[}4{]}}, untuk menampilkan nilai
 \texttt{numbers{[}4{]}} anda dapat menuliskan \texttt{*(numbers+4)}.
 
-\subsection{Kapan kita menggunakan
-pointer?}\label{kapan-kita-menggunakan-pointer}
+\section{Kapan kita menggunakan pointer?}\label{kapan-kita-menggunakan-pointer}
 
 Setelah kita mempelajari cara penggunaan pointer sekarang kita akan
 melihat kapan pointer biasa digunakan dalam pemrograman.
@@ -372,8 +370,7 @@ melihat kapan pointer biasa digunakan dalam pemrograman.
   Passing variabel dengan reference pada function.
 \end{itemize}
 
-\subsubsection{\texorpdfstring{1. Mengalokasikan tempat dengan keyword
-`new'}{Mengalokasikan tempat dengan keyword new}}\label{mengalokasikan-tempat-dengan-keyword-new}
+\subsection{Mengalokasikan tempat dengan keyword new}\label{mengalokasikan-tempat-dengan-keyword-new}
 
 Anda dapat mengalokasikan memory pada free store / heap memory dengan
 menggunakan keyword `new' diikuti dengan tipe data dari objek yang akan
@@ -388,8 +385,7 @@ int *pBil = new int;
 *pBil = 19;
 \end{lstlisting}
 
-\subsubsection{\texorpdfstring{2. Membersihkan memory dengan keyword
-`delete'}{Membersihkan memory dengan keyword delete}}\label{membersihkan-memory-dengan-keyword-delete}
+\subsection{Membersihkan memory dengan keyword delete}\label{membersihkan-memory-dengan-keyword-delete}
 
 Ketika anda sudah selesai menggunakan objek yang ada di memory, anda
 harus mengosongkan kembali memory tersebut agar dapat digunakan kembali.
@@ -610,7 +606,7 @@ Tiga statement diatas memiliki pengertian yang berbeda, yaitu:
 
 Pada pembahasan sebelumnya kita membahas penggunaan pointer untuk
 mengakses objek secara tidak langsung (indirect). Fungsi reference mirip
-seperti pointer namun dengan penulisan yang relatif lebih mudah.
+seperti \index{pointer}pointer namun dengan penulisan yang relatif lebih mudah.
 
 Reference adalah alias, ketika anda membuat reference anda
 menginisialisasi dengan nama dari objek yg dijadikan target. Reference
@@ -692,8 +688,7 @@ Menampilkan alamat memory :
   reference dengan menambahkan keyword (\&) didepan variabel.
 \end{itemize}
 
-\subsection{Re-assign Reference
-Variable}\label{re-assign-reference-variable}
+\subsection{Re-assign Reference Variable}\label{re-assign-reference-variable}
 
 Variabel reference tidak dapat di re-assign (ditetapkan ulang). Agar
 lebih jelas perhatikan contoh dibawah ini:
@@ -737,8 +732,7 @@ Variabel reference \texttt{rBil} yang sudah diinisialisasi dengan
 \texttt{rBil=bil2} tidak menjadikan referensinya berubah tetapi nilai
 \texttt{bil2} yang mengganti nilai \texttt{rBil} dan \texttt{bil1}.
 
-\subsection{Passing function argument dengan
-reference}\label{passing-function-argument-dengan-reference}
+\subsection{Passing function argument dengan reference}\label{passing-function-argument-dengan-reference}
 
 Pada chapter sebelumnya tentang \texttt{function}, kita sudah membahas
 beberapa keterbatasan dari \texttt{function} diantaranya, argument hanya
@@ -891,8 +885,7 @@ Pada kode diatas kita juga berhasil menukar nilai x dan y menggunakan
 fungsi tukar sama dengan kode sebelumnya. Ini karena passing parameter
 menggunakan variabel reference.
 
-\subsection{Function yang mengembalikan beberapa
-nilai}\label{function-yang-mengembalikan-beberapa-nilai}
+\subsection{Function yang mengembalikan beberapa nilai}\label{function-yang-mengembalikan-beberapa-nilai}
 
 Seperti yang sudah kita bahas sebelumnya bahwa salah satu keterbatasan
 dari function adalah hanya dapat mengembalikan satu nilai saja.
@@ -1046,8 +1039,7 @@ pVolumeKubus : 125
   pembacaan program.
 \end{itemize}
 
-\subsection{Passing By Reference untuk
-Efisiensi}\label{passing-by-reference-untuk-efisiensi}
+\subsection{Passing By Reference untuk Efisiensi}\label{passing-by-reference-untuk-efisiensi}
 
 Setiap kali anda melakukan passing objek by value, copy dari objek
 tersebut akan dibuat kembali. Untuk tipe data objek yang besar (struct

@@ -10,9 +10,9 @@ yang akan kita bahas pada chapter ini adalah.
 \section{Qt Library}\label{qt-library-1}
 
 Qt SDK menyediakan beberapa class library yang dapat anda gunakan untuk
-mempercepat pembuatan program, misalnya library untuk membuat GUI
+mempercepat pembuatan program, misalnya \index{library}library untuk membuat GUI\index{GUI}
 (Graphical User Interface), network programming, dan library untuk
-bekerja dengan XML. Beberapa class library yang disediakan oleh Qt dapat
+bekerja dengan \index{XML}XML. Beberapa class library yang disediakan oleh Qt dapat
 dilihat pada gambar \ref{fig:qt-library}.
 
 \begin{figure}[htbp]
@@ -23,8 +23,9 @@ dilihat pada gambar \ref{fig:qt-library}.
 \end{figure}
 
 
-Pada chapter ini kita akan membahas beberapa class dalam Qt Core Module
-yang sering digunakan seperti QObject, QString dan QStringList.
+Pada bab ini kita akan membahas beberapa class dalam Qt Core Module
+yang sering digunakan seperti \index{QObject}QObject, \index{QString}QString 
+dan \index{QStringList}QStringList.
 
 Qt Core Module adalah library yang dibutuhkan oleh setiap aplikasi Qt.
 Qt Core Module sendiri dapat berisi :
@@ -32,13 +33,13 @@ Qt Core Module sendiri dapat berisi :
 \begin{itemize}
 
 \item
-  Basic Data Type seperti QString dan QByteArray.
+  Basic Data Type seperti QString dan \index{QbyteArray}QByteArray.
 \item
-  Basic Data Structure seperti QList, QVector, dan QHash.
+  Basic Data Structure seperti QList, \index{QVector}QVector, dan \index{QHash}QHash.
 \item
-  Input/Output class seperti QIODevice, QTextStream, dan QFile.
+  Input/Output class seperti \index{QIODevice}QIODevice, \index{QTextStream}QTextStream, dan \index{QFile}QFile.
 \item
-  Class untuk pemrograman multithread seperti Qthread.
+  Class untuk pemrograman multithread seperti \index{Qthread}Qthread.
 \item
   Class Object dan QCoreApplication (base class dari QApplication).
 \end{itemize}
@@ -51,8 +52,9 @@ menggunakan fitur automatic memory management dan mekanisme signal/slot
 yang disediakan oleh Qt.
 
 Beberapa class pada Qt yang diturunkan dari class QObject diantaranya
-QWidget, QLayout, dan QThread. Ada juga class yang tidak diturunkan dari
-class QObject seperti QString dan QColor.
+\index{QWidget}QWidget, \index{QLayout}QLayout, dan \index{QThread}QThread.
+Ada juga class yang tidak diturunkan dari
+class QObject seperti QString dan \index{QColor}QColor.
 
 Gambar \ref{fig:qobjek} menunjukan contoh beberapa class yang diturunkan dari
 QObject.
@@ -65,8 +67,7 @@ QObject.
 \end{figure}
 
 
-\section{Automatic Memory Management dengan
-QObject}\label{automatic-memory-management-dengan-qobject}
+\section{Automatic Memory Management dengan QObject}\label{automatic-memory-management-dengan-qobject}
 
 Dengan menurunkan class dari QObject anda dapat melakukan automatic
 memory management pada program anda, sehingga kemungkinan terjadi memory
@@ -80,9 +81,9 @@ program kedua menggunakan QObject.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh-11.1}, kemudian tulis kode berikut.
+  nama Contoh \ref{contoh11-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Alokasi memory dinamis tanpa QObject, label=contoh-11.1]
+\begin{lstlisting}[language=c++, caption= Alokasi memory dinamis tanpa QObject, label=contoh11-1]
 #include <QtCore/QCoreApplication>
 #include <iostream>
 #include <string>
@@ -477,7 +478,7 @@ return a.exec();
 
 \textbf{Keterangan:}
 
-  Karena QString adalah array of QChar anda dapat mengambil karakter
+  Karena \index{QString}QString adalah array of \index{QChar}QChar anda dapat mengambil karakter
   dari QString menggunakan index array, misal pada contoh diatas
   nama{[}i{]} akan menghasilkan karakter pada index ke-i.
 
@@ -851,8 +852,8 @@ return a.exec();
 
 \section{Stack dan Queue}\label{stack-dan-queue}
 
-Jika anda ingin menyimpan data pada collection dengan metode FIFO (first
-in first out) atau LIFO (last in first out) maka anda dapat menggunakan
+Jika anda ingin menyimpan data pada collection dengan metode \index{FIFO}FIFO (first
+in first out) atau \index{LIFO}LIFO (last in first out) maka anda dapat menggunakan
 class QStack dan QQueue. Untuk FIFO anda dapat menggunakan QQueue dan
 untuk LIFO anda dapat menggunakan QStack.
 
@@ -927,7 +928,7 @@ Queue FIFO :
   pop().
 \item
   Untuk menyimpan data dengan metode FIFO (First In First Out) anda
-  dapat menggunakan QQueue.
+  dapat menggunakan \index{QQueue}QQueue.
 \item
   Untuk menambahkan data kedalam QQueue anda dapat menggunakan method
   enqueue, dan untuk mengambil data dari QQueue anda dapat menggunakan
@@ -936,7 +937,7 @@ Queue FIFO :
 
 \section{Mapping}\label{mapping}
 
-Untuk membuat object map dan hash Qt menyediakan class QMap. Dengan QMap
+Untuk membuat object map dan hash Qt menyediakan class \index{QMap}QMap. Dengan QMap
 anda dapat membuat collection yang index-nya bukan berupa number
 (key-value pair).
 

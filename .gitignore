@@ -5,27 +5,5 @@ _site
 .jekyll-metadata
 _gh_pages
 
-# file to ignore
-#=======================#
-
-# file image
+# remove extension
 *.psd
-
-# file latex
-*.bib
-*.aux
-*.log
-*.pdf
-*.gz
-*.toc
-*.out
-*.lol
-*.lot
-*.idx
-*.ilg
-*.ind
-*.lof
-
-# remove format mini toc
-*.maf
-*.mtc*

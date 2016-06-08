@@ -110,7 +110,8 @@ menggunakan MinGW\footnote{minGW adalah salah satu aplikasi yng
 \href{https://id.wikipedia.org/wiki/Microsoft_Visual_Studio_Express}{MSVC}\footnote{sebuah perangkat lunak lengkap (suite) yang dapat digunakan untuk melakukan pengembangan aplikasi, baik itu aplikasi bisnis, aplikasi personal, ataupun komponen aplikasinya, dalam bentuk aplikasi console, aplikasi Windows, ataupun aplikasi Web. Visual Studio mencakup kompiler, SDK, Integrated Development Environment (IDE), dan dokumentasi (umumnya berupa MSDN Library). Kompiler yang dimasukkan ke dalam paket Visual Studio antara lain Visual C++, Visual C\#, Visual Basic, Visual Basic .NET, Visual InterDev, Visual J++, Visual J\#, Visual FoxPro, dan Visual SourceSafe.}
 yang sudah build-in di dalam install.
 
-Project Qt Creator menggunakan format cross platform project (.pro)
+Project Qt Creator seperti pada gambar \ref{fig:projek-pada-qt-creator}
+ menggunakan format cross platform project (.pro)
 untuk mengizinkan tim developer untuk share project yang mempunyai
 platform-platform yang berbeda-beda dan menggunakan common tool untuk
 implementasi dan debugging program. Sebuah project dapat meliputi:
@@ -131,18 +132,19 @@ diimport-kan, dan Qt Creator dapat meng-ignore sistem build.
 
 \begin{figure}[htbp]
 \centering 
-\includegraphics[width=0.6\textwidth]{images/Capture1-1}
+\includegraphics[width=0.6\textwidth]{images/Capture1-1.PNG}
 \caption{Projek pada Qt Creator}
-\end{figure}\label{projek-pada-qt-creator}
+\label{fig:projek-pada-qt-creator}
+\end{figure}
 
-Editor Qt Creator mempunyai sebuah code editor yang telah terintegrasi
-dengan Qt Designer untuk mendesain dan membangun aplikasi GUI dari \index{Qt
-	widgets}Qt
-widgets. Karena Qt Creator adalah sebuah Integrated Development
-Enviroment (IDE), maka Qt Creator memisahkan antara text editor untuk
-build dan editor untuk menjalankan (run) aplikasi-aplikasi. Qt Creator
-bukan hanya bisa membaca text file biasa, akan tetapi juga bisa membaca
-file C++ dan bahasa QML \index{QML}.
+Editor Qt Creator seperti pada gambar \ref{fig:code-editor}
+ mempunyai sebuah code editor yang telah terintegrasi
+dengan Qt Designer untuk mendesain dan membangun aplikasi GUI dari 
+\index{Qt	widgets}Qt widgets. Karena Qt Creator adalah sebuah 
+Integrated Development Enviroment (IDE), maka Qt Creator memisahkan 
+antara text editor untuk build dan editor untuk menjalankan (run) 
+aplikasi-aplikasi. Qt Creator bukan hanya bisa membaca text file biasa, 
+akan tetapi juga bisa membaca file C++ dan bahasa QML\index{QML}.
 
 Keunggulan Code Editor Qt Creator
 
@@ -170,14 +172,15 @@ Keunggulan Code Editor Qt Creator
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{images/Capture1-2}
-\label{code-editor}
+\includegraphics[width=0.8\textwidth]{images/Capture1-2.PNG}
+\label{fig:code-editor}
 \caption{ Code Editor}
 \end{figure}
 
 \subsection{UI Designer}\label{ui-designer}
 
-Qt Creator menyajikan dua buah editor visual: \index{Qt Designer}Qt Designer  dan \index{Qt Quick	Designer}Qt Quick
+Qt Creator menyajikan dua buah editor visual: \index{Qt Designer}
+Qt Designer  dan \index{Qt Quick	Designer}Qt Quick
 Designer. Qt Designer merupakan sebuah tool untuk mendesain dan
 membangun aplikasi GUI dari \index{Qt widgets}Qt widgets. Widgets dan forms yang dibentuk
 dengan Qt Designer terintegrasi dengan code program, Qt signals dan
@@ -186,20 +189,23 @@ properti-properti pada pada elemen-elemen grafik. Semua
 properti-properti yang diatur pada Qt Designer dapat diubah secara
 dinamik melalui/di dalam code.
 
-Qt Quick Designer digunakan untuk membangun secara mudah animasi-animasi
+Qt Quick Designer seperti gambar \ref{fig:gambar-ui-designers}
+digunakan untuk membangun secara mudah animasi-animasi
 dengan menggunakan sebuah bahasa pemograman yang dikenal dengan
-\href{https://en.wikipedia.org/wiki/QML}{Qt Meta-Object Language (QML)}\footnote{https://en.wikipedia.org/wiki/QML}.
+\href{https://en.wikipedia.org/wiki/QML}{Qt Meta-Object Language 
+(QML)}\footnote{https://en.wikipedia.org/wiki/QML}.
 Dalam QML, sebuah user interface dispesifikasikan sebagai sebuah pohon
-(tree) dari objects dengan properti-properti. Kamu menggunaan teks
+(tree) dari objects dengan properti-properti. anda bisa menggunaan teks
 editor visual untuk menciptakan items, screens, dan aplikasi, serta
 mendefinisikan perubahan action-acton pada komponennya. Dapat digunakan
-Qt atau JavaScript untuk mengimplementasikan logik aplikasi.
+Qt atau JavaScript untuk mengimplementasikan logika aplikasi.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{images/Capture1-3}
+\includegraphics[width=0.8\textwidth]{images/Capture1-3.PNG}
 \caption{Gambar UI Designers}
-\end{figure}\label{gambar-ui-designers}
+\label{fig:gambar-ui-designers}
+\end{figure}
 
 \subsection{Bahasa yang di dukung}\label{bahasa-yang-di-dukung}
 
@@ -222,8 +228,13 @@ tersebut pada device, dan meneksekusikannya.
 Qt Creator diintegrasikan dengan kumpulan tool-tool yang bermanfaat dan
 membantu, seperti version control systems dan Qt Simulator. Qt Creator
 menggunakan command line client version control system untuk mengakses
-repositories (\href{https://git-scm.com/}{Git}\footnote{Git adalah tools yang berfungsi sebagai Version Control System (VCS) dan kalau diartikan ke bahasa kita artinya sebuah sistem pelacak perubahan pada file. Git sendiri dibuat oleh orang yang menciptakan Kernel Linux, yup... tidak salah lagi dia adalah yang mulia Linus Torvalds.},
-\href{https://subversion.apache.org/}{subversion}\footnote{Subversion (SVN) adalah salah satu version control system popular yang ada. SVN mula-mula diciptakan sebagai pengganti CVS, software yang popular sebelumnya namun memiliki banyak kelemahan.},
+repositories (\href{https://git-scm.com/}{Git}\footnote{Git adalah tools 
+yang berfungsi sebagai Version Control System (VCS) dan kalau diartikan 
+ke bahasa kita artinya sebuah sistem pelacak perubahan pada file.},
+\href{https://subversion.apache.org/}{subversion}\footnote{Subversion
+(SVN) adalah salah satu version control system popular yang ada. 
+SVN mula-mula diciptakan sebagai pengganti CVS, software yang 
+popular sebelumnya namun memiliki banyak kelemahan.},
 \href{https://www.perforce.com}{Perfoce}\footnote{https://www.perforce.com},
 \href{www.nongnu.org/cvs/}{CVS}\footnote{Computer vision syndrome (CVS) adalah suatu keadaan yang terjadi karena terlalu lama memfokuskan mata pada layar komputer. Umumnya penderita akan mengeluhkan nyeri kepala, pusing, penglihatan kabur, nyeri leher, mata merah, penglihatan ganda, sulit memfokuskan mata, bahkan kelelahan.},
 \href{https://www.mercurial-scm.org}{Mercurial}\footnote{Mercurial adalah salah satu software revision control yang dikembangkan dengan menggunakan Python, dan tersedia untuk beberapa platform seperti Linux, Windows dan MacOS.  Tidak seperti software revision control lain yang sudah lama dipakai seperti CVS dan SVN, Mercurial menggunakan distributed revision control.  Dengan demikian, tidak ada satu server pusat yang berisi repository source-code (koleksi kode program).  Setiap orang dapat mengambil source code dari sebuah repository, kemudian membuat repository-nya sendiri.}).
@@ -249,9 +260,7 @@ Debuggers adalah:
 Dapat menghubungkan mobile devices dengan PC dan memproses debug yang
 berjalan pada devices.
 
-\section{Mengenal macam - macam Teknologi User Interface (UI)
-pada
-QT}\label{mengenal-macam-macam-teknologi-user-interface-ui-pada-qt}
+\section{Mengenal macam - macam Teknologi User Interface (UI) pada QT}\label{mengenal-macam-macam-teknologi-user-interface-ui-pada-qt}
 
 Interaksi antara pengguna dengan logic software dinamakan User Interface
 disingkat dengan UI. UI ini berwujud bisa sebuah window, bisa tombol,
@@ -265,7 +274,7 @@ progam anda. Ingin tahu bedanya? Mari kita simak.
 Sama seperti Visual Studio yang menyediakan beragam Amazing User
 Interface tingkat tinggi sampai pengguna bingung memilihnya, Qt
 menyediakan tiga UI yang dapat kita gunakan. Anda pun bisa menggabungkan
-ketiganya. :)
+ketiganya. \smiley
 
 Qt Creator, sebuah Editor Qt adalah contoh dari perpaduan multiple
 teknologi UI ini. Coba amati Qt Creator yang selalu anda gunakan
@@ -281,8 +290,7 @@ Yup, perhatikan Help Documentation nya, wow, ini seperti halaman web
 yang menyatu dengan softwarenya bukan? Ya, teknologi QtWebKit digunakan
 dalam pembangunan Help Documentation ini.
 
-\subsection{Teknologi User Interface
-QtQuick}\label{teknologi-user-interface-qtquick}
+\subsection{Teknologi User Interface QtQuick}\label{teknologi-user-interface-qtquick}
 
 QtQuick merupakan salah satu Teknologi UI dari Qt yang menggunakan QML
 dan JavaScript sebagai penyusun UI nya.Mirip seperti XAML yang
@@ -306,8 +314,7 @@ Animation, Transition, Visual Effect, Shader Effect dan lain -- lain
 merupakan fasilitas yang dapat anda kembangkan saat menggunakan QtQuick
 sebagai User Interface (UI) aplikasi anda.
 
-\subsection{Teknologi User Interface
-QtWidget}\label{teknologi-user-interface-qtwidget}
+\subsection{Teknologi User Interface QtWidget}\label{teknologi-user-interface-qtwidget}
 
 QtWidget merupakan tradisional User Interface element yang biasanya
 terdapat dalam dekstop environment. Bila anda pengguna linux, maka UI
@@ -347,8 +354,7 @@ Perbedaan dari ketiga Base Class di atas adalah berikut ini:
   ditampilan menubar , toolbar, dan statusbar.
 \end{itemize}
 
-\subsection{Teknologi User Interface
-QtWebkit}\label{teknologi-user-interface-qtwebkit}
+\subsection{Teknologi User Interface QtWebkit}\label{teknologi-user-interface-qtwebkit}
 
 Tahukah anda bahwa web programing adalah kegiatan yang paling berkembang
 di dunia saat ini? Tahukah anda bahwa web koding seperti html, css, js
@@ -374,7 +380,7 @@ unduh di \href{http://www.qt.io/download}{halaman}\footnote{https://www.qt.io/do
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{images/qt-downloads}
+\includegraphics[width=0.8\textwidth]{images/qt-downloads.PNG}
 \label{halaman-web-download-qt}
 \caption{Halaman web Downlaod Qt Creator}
 \end{figure}
@@ -445,7 +451,7 @@ dengan sistem operasi yang Anda miliki.
   gunakanlah 64 bit walaupun dapat menggunakan versi 32 bit.
  
 \begin{center}
-	 \includegraphics[width=0.4\textwidth]{images/install-qt-1}
+	 \includegraphics[width=0.4\textwidth]{images/install-qt-1.PNG}
 \end{center}
  
 
@@ -456,7 +462,7 @@ dengan sistem operasi yang Anda miliki.
   ingin mendatarkan diri dapat di lewati dengan memilih \textbf{skip}.
 
 \begin{center}
-	 \includegraphics[width=0.4\textwidth]{images/install-qt-2}
+	 \includegraphics[width=0.4\textwidth]{images/install-qt-2.PNG}
 \end{center}
  
 
@@ -467,7 +473,7 @@ dengan sistem operasi yang Anda miliki.
 
   
 \begin{center}
-	 \includegraphics[width=0.4\textwidth]{images/install-qt-3}
+	 \includegraphics[width=0.4\textwidth]{images/install-qt-3.PNG}
 \end{center}
  
 
@@ -483,7 +489,7 @@ dengan sistem operasi yang Anda miliki.
 
 \begin{center}
 
-	\includegraphics[width=0.4\textwidth]{images/install-qt-4}
+	\includegraphics[width=0.4\textwidth]{images/install-qt-4.PNG}
 \end{center}
 
 \section{Program Console Pertama dengan Qt
@@ -497,7 +503,7 @@ Creator}\label{program-console-pertama-dengan-qt-creator}
 
   \begin{center}
 
-  \includegraphics[width=0.8\textwidth]{images/qt-console-aplication}
+  \includegraphics[width=0.8\textwidth]{images/qt-console-aplication.PNG}
 
   \end{center}
 
@@ -506,7 +512,7 @@ Creator}\label{program-console-pertama-dengan-qt-creator}
 
   \begin{center}
 
-  \includegraphics[width=0.8\textwidth]{images/qt-console-aplication-2}
+  \includegraphics[width=0.8\textwidth]{images/qt-console-aplication-2.PNG}
 
   \end{center}
 
@@ -515,7 +521,7 @@ Creator}\label{program-console-pertama-dengan-qt-creator}
 
 
 \begin{quotation}
-	\textbf{Tips}
+\includegraphics{images/tips.png}	\textbf{Tips}
 	
 	Simulator 	 atau compiler yang lengkap teridir dari
 	
@@ -535,7 +541,7 @@ Creator}\label{program-console-pertama-dengan-qt-creator}
 
 \begin{center}
 
-\includegraphics[width=0.8\textwidth]{images/qt-console-aplication-3}
+\includegraphics[width=0.8\textwidth]{images/qt-console-aplication-3.PNG}
 
 \end{center}
 
@@ -550,7 +556,7 @@ Creator}\label{program-console-pertama-dengan-qt-creator}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{images/qt-console-aplication-4}
+\includegraphics[width=0.8\textwidth]{images/qt-console-aplication-4.PNG}
 \caption{Langkah 1 Setup Qt Creator }
 \end{figure}
 

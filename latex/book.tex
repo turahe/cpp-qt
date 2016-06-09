@@ -8,7 +8,7 @@
 \usepackage[english, main=bahasa]{babel} % paket bahasa indonesia
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{libertine} % font libertine
+\usepackage{libertine} % font Linux Libertine
 
 % membuat index
 \usepackage{imakeidx}
@@ -87,6 +87,7 @@
 \definecolor{greenidentifier}{rgb}{0,.6,0}
 \definecolor{keyyellow}{cmyk}{0,0,.8,.3}
 \definecolor{cyan}{rgb}{0,0.9,0.9}
+\definecolor{orange}{RGB}{255,127,0}
 %------------------------------------------------------------------------------------
 % paket listing digunakan untuk membuat sintaks highliter pada source kode yang di sisipkan
 \usepackage{listings}
@@ -173,17 +174,24 @@
 	\newpage
 	\fi}
 
+
+\usepackage{tikz}
 %-------------------------------------------
 % Isi konten dari bagian dasar, OOP, interface, widget dan Library
 % memuat  bab
 \begin{document}
 	\dominitoc 
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
 	\begingroup  
 	\thispagestyle{empty}
 	\begin{textblock*}{297mm}(0mm,0mm)
 		\ThisTileWallPaper{\paperwidth}{\paperheight}{../manuscript/images/cover}
 	\end{textblock*}
 	\endgroup
+	\title{Belajar C++ dengan Qt Creator}
+	\author{Nur Wachid}
 	\cleardoublepage
 	\frontmatter
 
@@ -207,20 +215,18 @@
 	\phone  0858 7984 5219
 	
 	\chapter{Tentang Penulis}
-	\input{about-authors}
+	\input{00-about-authors}
 	
 	\endgroup
 	\tableofcontents
 	\lstlistoflistings
 
-	%\listoffigures
-	
-	%\listoftables
-	
 	\clearpage
 	\newpage
 	\chapter{Prakata}
 	\input{00-prakata}
+	\newpage
+	\cleardoublepage
 	\mainmatter
 
 %---------------------------------------------
@@ -228,7 +234,24 @@
 % 1 mukadimah, tipe data, indetifier, operator  control flow
 %	array, string, fungsi, pointer, rekursif
 %----------------------------------------------	
-	\part{Dasar}
+\part{Dasar}
+
+%-------------------------------------------------
+\begingroup
+\thispagestyle{empty}
+\par\normalfont\fontsize{25}{25}\sffamily\selectfont
+
+\textcolor{blue}{PUBLIC} \textcolor{green}{CLASS} \textcolor{red}{LOVE} \textcolor{orange}{\{}
+
+\textcolor{gray}{SYSTEM.OUT.PRINT}\textcolor{orange}{\{}ILOVEYOU \textcolor{orange}{\}}
+
+\textcolor{gray}{RETURN} \textcolor{red}{TRUE} \textcolor{orange}{\{}LOVE \textcolor{orange}{\}}
+
+\textcolor{orange}{\}}
+
+\endgroup
+
+%------------------------------------------------	
 	\chapter{Mukadimah}\label{mukadimah}
 	\input{01-pengenalan}
 	
@@ -249,7 +272,21 @@
 % Operator, overloading, Polymorphism, casting, database
 %--------------------------------------------------------------
 	\part{Objek Oriented Programming (OOP)}
-	
+%-------------------------------------------------
+\begingroup
+\thispagestyle{empty}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+\textcolor{gray}{ \textfractionsolidus{} \textfractionsolidus{} Life Moto}
+
+if (sad() === true){
+
+	sad().stop();
+
+	beAwesome();
+}
+
+\endgroup
+%------------------------------------------------	
 	\chapter{Class dan Object}\label{class-dan-object}
 	\input{06-class-object}
 	
@@ -261,7 +298,7 @@
 	
 	\chapter{Polymorphism}\label{polymorphism}
 	\input{09-Polymorphism}
-	
+
 	\chapter{Casting dan Database}\label{casting-dan-database}
 	\input{10-casting-database}
 
@@ -270,7 +307,26 @@
 % gui secara umum ataupun widgeting xml dan antarmuka
 %----------------------------------- 	
 	\part{Interface}
+%-------------------------------------------------
+\begingroup
+\thispagestyle{empty}
+\vspace*{5cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+SELECT\textcolor{red}{*}
 
+FROM WORLD
+
+WHERE \textcolor{red}{``SOMEONE''}
+
+LIKE \textcolor{red}{`\%lIKE\%'}
+
+YOU
+
+\dots
+
+\textbf{\textfractionsolidus{}\textgreater{}No Result}
+\endgroup
+%------------------------------------------------	
 	\chapter{GUI}
 	\input{14-gui}
 
@@ -297,8 +353,6 @@
 	\part{Lampiran}	
 
 	\chapter{A}
-	
-	
 	
 	\printindex
 \end{document}

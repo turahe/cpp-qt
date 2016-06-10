@@ -71,7 +71,7 @@ QObject.
 
 Dengan menurunkan class dari QObject anda dapat melakukan automatic
 memory management pada program anda, sehingga kemungkinan terjadi memory
-leak dapat dihindari. Pada contoh dibawah ini kita akan membuat dua
+leak dapat dihindari. Pada contoh \ref{contoh11-1} dibawah ini kita akan membuat dua
 program yang berbeda, program pertama tidak menggunakan QObject dan
 program kedua menggunakan QObject.
 
@@ -81,7 +81,7 @@ program kedua menggunakan QObject.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-1}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-1}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption= Alokasi memory dinamis tanpa QObject, label=contoh11-1]
 #include <QtCore/QCoreApplication>
@@ -173,7 +173,7 @@ destroy object
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-2}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-2}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Alokasi memory dinamis dengan QObject, label=contoh11-2]
 #include <QtCore/QCoreApplication>
@@ -257,7 +257,18 @@ return a.exec();
 \end{itemize}
 
 QObject akan disimpan pada stack memory sebagai parent, ketika QObject
-di hapus semua child dari QObject akan ikut dihapus juga.
+di hapus semua child dari QObject akan ikut dihapus juga. seperti pada ilustrasi
+gambar \ref{fig:capture11-1}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{../manuscript/images/Capture11-1.png}
+\caption{QObject akan disimpan pada stack memory sebagai parent}
+\label{fig:capture11-1}
+\end{figure}
+
+
+
 
 \section{Menggunakan Qt String}\label{menggunakan-qt-string}
 
@@ -282,7 +293,7 @@ contoh program dibawah ini.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-3}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-3}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption= Cek apakah nilai QString Null atau Empty, label=contoh11-3]
 #include <QtCore/QCoreApplication>
@@ -349,7 +360,7 @@ testing null
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-4}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-4}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++,caption= Menggunakan Fungsi Left Mid Right, label=contoh11-4]
 #include <QtCore/QCoreApplication>
@@ -400,7 +411,7 @@ midName :  "Kurni"
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-5}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-5}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption= Menggabungkan String, label=contoh11-5]
 #include <QtCore/QCoreApplication>
@@ -449,7 +460,7 @@ return a.exec();
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-6}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-6}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption= Membalik String, label=contoh11-6]
 #include <QtCore/QCoreApplication>
@@ -479,7 +490,7 @@ return a.exec();
 \textbf{Keterangan:}
 
   Karena \index{QString}QString adalah array of \index{QChar}QChar anda dapat mengambil karakter
-  dari QString menggunakan index array, misal pada contoh diatas
+  dari QString menggunakan index array, misal pada contoh \ref{contoh11-6} diatas
   nama{[}i{]} akan menghasilkan karakter pada index ke-i.
 
 \begin{quotation}
@@ -516,7 +527,7 @@ kedalam list tersebut.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-7}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-7}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Menggunakan QList,label=contoh11-7]
 #include <QtCore/QCoreApplication>
@@ -573,7 +584,7 @@ pada QList.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-8}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-8}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Menggunakan object Iterator, label=contoh11-8]
 #include <QtCore/QCoreApplication>
@@ -635,7 +646,7 @@ return a.exec();
 
 Selain untuk membaca data pada list, iterator juga dapat digunakan untuk
 memodifikasi data di list, caranya yaitu dengan menggunakan objek
-QMutableListIterator. Contoh penggunaan QMutableListIterator dapat
+QMutableListIterator. Contoh penggunaan \index{QMutableListIterator}QMutableListIterator dapat
 dilihat pada kode dibawah ini.
 
 \subsubsection*{Contoh  Menggunakan Iterator untuk memodifikasi data di list.}
@@ -644,7 +655,7 @@ dilihat pada kode dibawah ini.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-9}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-9}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption= Menggunakan Iterator untuk memodifikasi data di list, label=contoh11-9]
 #include <QtCore/QCoreApplication>
@@ -698,8 +709,7 @@ return a.exec();
   sudah berubah isinya.
 \end{itemize}
 
-\section{Menambahkan Data pada
-List}\label{menambahkan-data-pada-list}
+\section{Menambahkan Data pada List}\label{menambahkan-data-pada-list}
 
 Ada beberapa cara yang dapat digunakan untuk menambahkan data ke list.
 Anda dapat menambahkan data diawal, diakhir, atau ditengah list.
@@ -712,7 +722,7 @@ berikut.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-10}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-10}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption= Beberapa cara menambahkan data ke list, label=contoh11-10]
 #include <QtCore/QCoreApplication>
@@ -765,7 +775,7 @@ return a.exec();
 \section{Tipe List yang Lain}\label{tipe-list-yang-lain}
 
 Selain menggunakan QList anda juga dapat menggunakan objek collection
-yang lain seperti QVector dan QLinkedList. Perbandingan performa dari
+yang lain seperti \index{QVector}QVector dan \index{QLinkedList}QLinkedList. Perbandingan performa dari
 ketiga jenis collection diatas dapat dilihat pada table berikut.
 
 \section{Special List}\label{special-list}
@@ -773,7 +783,7 @@ ketiga jenis collection diatas dapat dilihat pada table berikut.
 Selain untuk tipe data yang umum Qt juga menyediakan collection untuk
 tipe data khusus seperti QStringList.
 
-Class QStringList diturunkan dari QList dan mempunyai banyak tambahan
+Class \index{QStringList}QStringList diturunkan dari \index{QList}QList dan mempunyai banyak tambahan
 fungsi yang berguna untuk memanipulasi data di dalam QStringList.
 
 \subsubsection*{Contoh Menggunakan QStringList}
@@ -782,7 +792,7 @@ fungsi yang berguna untuk memanipulasi data di dalam QStringList.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-11}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-11}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Menggunakan QStringList,label=contoh11-11]
 #include <QtCore/QCoreApplication>
@@ -863,7 +873,7 @@ untuk LIFO anda dapat menggunakan QStack.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-12}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-12}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Menggunakan Stack dan Queue, label=contoh11-12]
 #include <QtCore/QCoreApplication>
@@ -920,14 +930,14 @@ Queue FIFO :
 \begin{itemize}
 
 \item
-  Untuk menyimpan data dengan metode LIFO (Last In First Out) anda dapat
-  menggunakan QStack.
+  Untuk menyimpan data dengan metode \index{LIFO}LIFO (Last In First Out) anda dapat
+  menggunakan \index{QStack}QStack.
 \item
   Untuk menambahkan data kedalam QStack digunakan method push()
   sedangkan untuk mengambil data dari QStack dapat menggunakan method
   pop().
 \item
-  Untuk menyimpan data dengan metode FIFO (First In First Out) anda
+  Untuk menyimpan data dengan metode \index{FIFO}FIFO (First In First Out) anda
   dapat menggunakan \index{QQueue}QQueue.
 \item
   Untuk menambahkan data kedalam QQueue anda dapat menggunakan method
@@ -947,7 +957,7 @@ anda dapat membuat collection yang index-nya bukan berupa number
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh11-13}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh11-13}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Menggunakan QMap, label=contoh11-13]
 #include <QtCore/QCoreApplication>

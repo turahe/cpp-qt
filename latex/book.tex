@@ -88,6 +88,7 @@
 \definecolor{keyyellow}{cmyk}{0,0,.8,.3}
 \definecolor{cyan}{rgb}{0,0.9,0.9}
 \definecolor{orange}{RGB}{255,127,0}
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
 %------------------------------------------------------------------------------------
 % paket listing digunakan untuk membuat sintaks highliter pada source kode yang di sisipkan
 \usepackage{listings}
@@ -177,13 +178,28 @@
 	\newpage
 	\fi}
 
-
+%---------------------------------------------
+% Paket buat gambar
+%------------------------------------------
 \usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+% Define block styles
+	\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+	\tikzstyle{block} = [rectangle, draw, fill=yellow!20, text width=5em, text centered, rounded corners, minimum height=3em]
+	\tikzstyle{blok} = [rectangle, draw, fill=yellow!20, text width=8em, text centered, rounded corners, minimum height=2em]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,	minimum height=2em]
+	\tikzstyle{kotak} = [rectangle, draw, fill=gray!20, text width=5em, text centered, rounded corners, minimum height=4em]
+	\tikzstyle{ling} =  [draw, circle,fill=red!20, node distance=3cm, minimum height=1em]
+	\tikzstyle{titik} =  [draw]
+
+\usepackage[round]{natbib}
 %-------------------------------------------
 % Isi konten dari bagian dasar, OOP, interface, widget dan Library
 % memuat  bab
 \begin{document}
 	\dominitoc 
+%	\pagecolor{aliceblue}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -348,7 +364,9 @@ YOU
 	\chapter{Library}\label{library}
 	\input{11-library}
 	
-	
+	\appendix
+	\bibliographystyle{plainnat}
+\bibliography{example.bibs}
 %-------------------------------------------------------------
 % Bagian Lampiran berisi tentang index dan biblography
 %------------------------------------------------------------
@@ -358,4 +376,5 @@ YOU
 	\chapter{A}
 	
 	\printindex
+
 \end{document}

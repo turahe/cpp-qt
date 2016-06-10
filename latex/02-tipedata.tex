@@ -178,7 +178,7 @@ diperlakukan sebagai tipe data tersebut.
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh2-1}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh2-1}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Tipe data dan Identifier, label=contoh2-1]
 #include <iostream>
@@ -775,11 +775,19 @@ Sintaks penulisannya sebagai berikut:
 
 Flowchart untuk statment ini adalah :
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{../manuscript/images/Capture2-4.PNG}
-\caption{flowchart percabangan if}
-\end{figure}
+	\begin{tikzpicture}[node distance = 2cm, auto]
+	\node [ling] (init){start};
+	\node [decision, below of=init] (decide) {\textless{}ekspresi \_bool\textgreater{}};
+	\node [block, below of=decide, node distance=3cm] (statement) {Statement};
+	\node [ling, below of=statement] (stop) {stop};
+	
+%	garis
+\path [line] (init) -- (decide);
+\path [line] (init) -- (decide);
+\path [line] (decide) -- node {Yes}(statement);
+%\path [line] (statement) |- node [near start] {No} (decide);
+\path[line] (statement) -- (stop);
+	\end{tikzpicture}
 
 \subsubsection{2. Percabangan dengan if .. else}\label{percabangan-dengan-if-..-else}
 
@@ -808,23 +816,52 @@ Flowchart untuk statment ini adalah :
 	\texttt{nested\ if} (if bersarang).
 \end{quotation}
 
+	\begin{tikzpicture}[node distance = 2cm, auto]
+		\node [ling] (init){start};
+		\node [decision, below of=init, node distance=2cm] (decide) {\textless{}ekspresi \_bool\textgreater{}};
+		\node [block, below of=decide, node distance=3cm] (statement) {Statement};
+		\node [block, right of=decide, node distance=3cm] (statement2) {Statement2};
+		\node [ling, below of=statement, node distance=2cm] (stop) {stop};
+		
+		%	garis
+		\path [line] (init) -- (decide);
+		\path [line] (init) -- (decide);
+		\path [line] (decide) -- node {Ya}(statement);
+		%\path [line] (statement) |- node [near start] {No} (decide);
+		\path[line] (statement) -- (stop);
+		\path[line] (statement) -| node {tidak}(statement2);
+		\path[line] (statement2) -- (decide);
+		\end{tikzpicture}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{../manuscript/images/Capture2-2.PNG}
-\caption{flowchart percabangan if..else}
-\end{figure}
 
 Flowchart untuk statment if bersarang ini adalah :
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{../manuscript/images/Capture2-1.PNG}
-\caption{flowchart percabangan if bersarang}
-\end{figure}
+	\begin{tikzpicture}[node distance = 1cm, auto]
+		\node [ling] (init){start};
+		\node [decision, below of=init, node distance=3cm] (decide) {\textless{}ekspresi \_bool\textgreater{}};
+		\node [block, below of=decide, node distance=3cm] (statement) {Statement};
+		
+		\node [decision, right of=decide, node distance=3cm] (decide1) {\textless{}ekspresi \_bool\textgreater{}};
+		\node [block, below of=decide1, node distance=3cm] (statement1) {Statement1};
+		
+		\node [block, right of=decide1, node distance=6cm] (statement2) {Statement2};
+		\node [ling, below of=statement, node distance=2cm] (stop) {stop};
+		
+		%	garis
+		\path [line] (init) -- (decide);
+		\path [line] (decide) -- node{Tidak}(decide1);
+		\path [line,dashed](decide1) -- node{tidak\dots dst \dots tidak }(statement2);
+		\path [line] (decide) -- node{Ya}(statement);
+		\path [line] (decide1) -- node {Ya} (statement1);
+		\path[line] (statement) -- (stop);
 
-\subsubsection{3. Percabangan dengan
-switch}\label{percabangan-dengan-switch}
+		\path[line] (statement2) |- (stop);
+		\path[line] (statement1) |- (stop);
+		\path [line] (decide) -- node {Ya}(statement);
+		
+		\end{tikzpicture}
+
+\subsubsection{3. Percabangan dengan switch}\label{percabangan-dengan-switch}
 
 Perintah ini digunakan sebagai alternatif pengganti dari statment
 \texttt{if\ \ldots{}\ else} dengan \texttt{else} lebih dari satu. Dengan
@@ -865,13 +902,53 @@ akan membawa proses keluar dari perintah \texttt{switch}. Jika hasil
 dari kondisi tidak ada yang sama dengan konstanta-konstanta yang
 diberikan, maka pernyataan pada \emph{default} yang akan dijalankan.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{../manuscript/images/Capture2-3.PNG}
-\caption{Percabangan dengan switch}
-\end{figure}
-
 Flowchart untuk statement ini adalah :
+
+\begin{tikzpicture}[node distance = 1cm, auto]
+\node [blok] (ekspresi) {\textless{}nilai\_ekspresi1\textgreater{}};
+\node [blok,below of=ekspresi] (ekspresi1) {\textless{}nilai\_ekspresi2\textgreater{}};
+\node [blok,below of=ekspresi1] (ekspresi2) {\textless{}nilai\_ekspresi3\textgreater{}};
+\node [blok,below of=ekspresi2] (ekspresi3) {\textless{}nilai\_ekspresi4\textgreater{}};
+\node [blok,below of=ekspresi3, node distance=2cm] (ekspresi4) {\textless{}nilai\_lainya\textgreater{}};
+
+\node [titik, left of=ekspresi2, node distance=2cm] (titik) {};
+\node [decision, left of=titik, node distance=2cm] (decide) {\textless{}ekspresi\textgreater{}};
+
+\node [blok, right of=ekspresi, node distance=4cm] (statement) {\textless{}statement1\textgreater{}};
+\node [blok,below of=statement] (statement1) {\textless{}statement2\textgreater{}};
+\node [blok,below of=statement1] (statement2) {\textless{}statement3\textgreater{}};
+\node [blok,below of=statement2] (statement3) {\textless{}statement4\textgreater{}};
+\node [blok,below of=statement3, node distance=2cm] (statement4) {\textless{}statement\textgreater{}};
+
+\node [ling, above of=decide, node distance=3cm] (start) {start};
+\node [ling, right of=statement4, node distance=3cm] (stop) {stop};
+
+
+\path[line](start) -- (decide);
+\path[line](titik) |- (ekspresi);
+\path[line](titik) |- (ekspresi1);
+\path[line](titik) |- (ekspresi2);
+\path[line](titik) |- (ekspresi3);
+\path[line](titik) |- (ekspresi4);
+\path[line,dashed](ekspresi3) -- node{dst}(ekspresi4);
+
+\path[line](ekspresi) -- (statement);
+\path[line](ekspresi1) -- (statement1);
+\path[line](ekspresi2) -- (statement2);
+\path[line](ekspresi3) -- (statement3);
+\path[line](ekspresi4) -- (statement4);
+\path[line,dashed](statement3) -- node{dst}(statement4);
+
+\path[line](statement) -| (stop);
+\path[line](statement1) -| (stop);
+\path[line](statement2) -| (stop);
+\path[line](statement3) -| (stop);
+\path[line](statement4) -- (stop);
+
+\path[line](decide) -- (titik);
+\end{tikzpicture}
+
+
 
 \subsubsection{Contoh Tipe data dan Identifier.}
 
@@ -879,7 +956,7 @@ Flowchart untuk statement ini adalah :
 
 \item
   Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama Contoh \ref{contoh2-2}, kemudian tulis kode berikut.
+  nama contoh \ref{contoh2-2}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Tipe data dan Identifier, label=contoh2-2]
 #include <QtCore/QCoreApplication>

@@ -219,12 +219,12 @@ bil[6] = 60 dan alamatnya: 0x28fe80
 \begin{itemize}
 
 \item
-  Program diatas memasukkan nilai-nilai integer kedalam array bernama
+  Program \ref{contoh3-2} memasukkan nilai-nilai integer kedalam array bernama
   bil yang berisi \texttt{7} elemen (dari indeks \texttt{0-6}).
 \item
   Dalam array satu dimensi, suatu elemen array dapat diisi dengan isi
   elemen array pada indeks tertentu seperti pada contoh
-  \texttt{bil{[}2{]}\ =\ bil{[}1{]}\ +\ 20;}. Pada contoh diatas,
+  \texttt{bil{[}2{]}\ =\ bil{[}1{]}\ +\ 20;}. Pada contoh \ref{contoh3-2},
   \texttt{bil{[}2{]}} diisi dengan \texttt{bil{[}1{]}} yang berisi
   \texttt{25} ditambah dengan \texttt{20}, yaitu \texttt{55}.
 \item
@@ -241,15 +241,15 @@ bil[6] = 60 dan alamatnya: 0x28fe80
   operator \texttt{\&}.
 \end{itemize}
 \begin{quotation}
-\includegraphics{../manuscript/images/tips.png}	\textbf{TIPS} 
-	
-	Dalam
-	bahasa C++, tidak terdapat \emph{error handling} terhadap batasan nilai
-	indeks, apakah indeks tersebut berada di dalam indeks array yang sudah
-	didefinisikan atau belum. Hal ini merupakan tanggung jawab programmer.
-	Sehingga jika programmer mengakses indeks yang salah, maka nilai yang
-	dihasilkan akan berbeda atau rusak karena mengakses alamat memori yang
-	tidak sesuai.
+\includegraphics{../manuscript/images/tips.png}\textbf{TIPS} 
+
+Dalam
+bahasa C++, tidak terdapat \emph{error handling} terhadap batasan nilai
+indeks, apakah indeks tersebut berada di dalam indeks array yang sudah
+didefinisikan atau belum. Hal ini merupakan tanggung jawab programmer.
+Sehingga jika programmer mengakses indeks yang salah, maka nilai yang
+dihasilkan akan berbeda atau rusak karena mengakses alamat memori yang
+tidak sesuai.
 \end{quotation}
  
 
@@ -290,8 +290,7 @@ int main(int argc, char *argv[])
   sudah berjalan!
 \end{itemize}
 
-\subsection{Inisialisasi Array Satu
-Dimensi}\label{inisialisasi-array-satu-dimensi}
+\subsection{Inisialisasi Array Satu Dimensi}\label{inisialisasi-array-satu-dimensi}
 
 Array satu dimensi dapat diisi secara langsung ditulis pada program.
 Pengisian data seperti itu sering disebut dengan inisialisasi data
@@ -369,7 +368,7 @@ ditampilkan dengan \texttt{cout}.
 \subsubsection*{Contoh  Inisialisasi Array dua nilai elemen pertama}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan
-nama Contoh \ref{contoh3-1}, kemudian tulis kode berikut.
+nama contoh \ref{contoh3-1}, kemudian tulis kode berikut.
 
 \begin{lstlisting}[language=c++, caption=Inisialisasi Array dua nilai elemen pertama, label=contoh3-5]
 #include <QtCore/QCoreApplication>
@@ -389,13 +388,13 @@ int main(int argc, char *argv[])
 \textbf{Hasil:}
 
 \begin{lcverbatim}
-	Elemen ke-0: 2
-	Elemen ke-1: 5
-	Elemen ke-2: 0
-	Elemen ke-3: 0
-	Elemen ke-4: 0
-	Elemen ke-5: 0
-	Elemen ke-6: 0
+Elemen ke-0: 2
+Elemen ke-1: 5
+Elemen ke-2: 0
+Elemen ke-3: 0
+Elemen ke-4: 0
+Elemen ke-5: 0
+Elemen ke-6: 0
 \end{lcverbatim}
 
 \textbf{Keterangan}
@@ -406,11 +405,11 @@ selanjutnya semua elemen lainnya yang tidak di inisialisasi secara
 otomatis bernilai 0.
 
 \begin{quotation}
-\includegraphics{../manuscript/images/tips.png}	\textbf{TIPS}
-	
-	Untuk
-	semua array pada C++, inisialisasi satu buah elemen saja pada array akan
-	membuat semua elemen array lainnya berisi nilai 0.
+\includegraphics{../manuscript/images/tips.png}\textbf{TIPS}
+
+Untuk
+semua array pada C++, inisialisasi satu buah elemen saja pada array akan
+membuat semua elemen array lainnya berisi nilai 0.
 \end{quotation}
  
 
@@ -479,10 +478,10 @@ masing-masing elemen akan bersifat acak juga seperti pada hasil program
 diatas. Untuk itulah inisialisasi elemen array sangatlah penting.
 
 \begin{quotation}
-\includegraphics{../manuscript/images/tips.png}	 \textbf{TIPS}
-	 
-	 Inisialisasi pada elemen array yang dideklarsikan \textbf{SANGATLAH
-	 	PENTING} untuk menghindari nilai \textbf{ACAK}!
+\includegraphics{../manuscript/images/tips.png} \textbf{TIPS}
+ 
+ Inisialisasi pada elemen array yang dideklarsikan \textbf{SANGATLAH
+ PENTING} untuk menghindari nilai \textbf{ACAK}!
 \end{quotation}
 
 
@@ -680,8 +679,7 @@ Berikut adalah gambar array berdimensi (baris x kolom = 3 x 4)
 \caption{array dimensi 3 x 4}
 \end{figure}
 
-\subsubsection{Deklarasi Array Dua
-Dimensi}\label{deklarasi-array-dua-dimensi}
+\subsection{Deklarasi Array Dua Dimensi}\label{deklarasi-array-dua-dimensi}
 
 \begin{lstlisting}[language=c++, numbers=none]
 tipe_data nama_var_array[batas_baris][batas_kolom];
@@ -699,8 +697,8 @@ Array dua dimensi dapat mewakili bentuk suatu matriks, contoh matriks:
 
 $x=
 \begin{bmatrix}
-	8 &5& 9 & 6 & \\
-	8 & 2 & 1 & 0
+8 &5& 9 & 6 & \\
+8 & 2 & 1 & 0
 \end{bmatrix}$
 
 selanjutnya dapat dideklarasikan sebagai berikut:
@@ -763,11 +761,11 @@ char matriks[3][5] = {"ABCDE",
 Akan ditampilkan sebagai:
 
 \begin{tabular}{|c|c|c|c|c|}
-	\hline
-	A &B &C& D& E \\ \hline
-	F &G &H &I& J \\ \hline
-	K &L &M& N& O \\ \hline
-	
+\hline
+A &B &C& D& E \\ \hline
+F &G &H &I& J \\ \hline
+K &L &M& N& O \\ \hline
+
 \end{tabular}
 
 Array 2 dimensi juga dapat dideklarasikan sebagai berikut:
@@ -783,13 +781,13 @@ char matriks[5][12] = {"Jakarta",
 Array diatas akan ditampilkan sebagai:
 
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-	\hline
-	J & a & k & a & r & t & a & \textbackslash{0} & & & \\ \hline
-	B & a & n & d & u & n & g & \textbackslash{0} & & & \\ \hline
-	S & u & r & a & b & a & y & a &\textbackslash{0}  & &\\ \hline
-	S & e & m & a & r & a & n & g & \textbackslash{0} & & \\ \hline
-	Y & o & g & y & a & k & a & r & t & a &   \textbackslash{0} \\ \hline
-	
+\hline
+J & a & k & a & r & t & a & \textbackslash{0} & & & \\ \hline
+B & a & n & d & u & n & g & \textbackslash{0} & & & \\ \hline
+S & u & r & a & b & a & y & a &\textbackslash{0}  & &\\ \hline
+S & e & m & a & r & a & n & g & \textbackslash{0} & & \\ \hline
+Y & o & g & y & a & k & a & r & t & a &   \textbackslash{0} \\ \hline
+
 \end{tabular}
 
 
@@ -829,7 +827,7 @@ int matriks[3][5] = {{5,12,17,10,7},
 
 
 \begin{figure}
-	\centering
+\centering
 \includegraphics[width=0.8\textwidth]{../manuscript/images/capture3-9.PNG}
 \end{figure}
 
@@ -850,8 +848,8 @@ int matriks[][5] = {{5,12,17,10,7},
 Akan ditampilkan sebagai:
 
 \begin{tabular}{|c|c|c|c|c|}
-	\hline
-	5&12&17&10&7 \\ \hline
+\hline
+5&12&17&10&7 \\ \hline
 15&6&25&2&19 \\ \hline
 4&9&20&22&11 \\ \hline
 \end{tabular}
@@ -873,16 +871,15 @@ ditampilkan sebagai:
 
 
 \begin{tabular}{|c|c|c|c|c|}
-	\hline
-	5 & 12 & 17 & 10 & 7 \\ \hline
-	15 & 6 & 25 & 2 & 19 \\ \hline
-	4 & 9 & 20 & 22 & 11 \\ \hline
-	77 & 88 & 99 & 0 & 0 \\ \hline
-	
+\hline
+5 & 12 & 17 & 10 & 7 \\ \hline
+15 & 6 & 25 & 2 & 19 \\ \hline
+4 & 9 & 20 & 22 & 11 \\ \hline
+77 & 88 & 99 & 0 & 0 \\ \hline
+
 \end{tabular}
 
-\subsubsection{Pengaksesan Array 2
-Dimensi}\label{pengaksesan-array-2-dimensi}
+\subsubsection{Pengaksesan Array 2 Dimensi}\label{pengaksesan-array-2-dimensi}
 
 Pengaksesan elemen-elemen array 2 dimensi dilakukan dengan cara
 perulangan. Perulangan yang dilakukan harus disesuaikan dengan jumlah
@@ -918,9 +915,9 @@ int main(int argc, char *argv[])
 \textbf{Hasil:}
 
 \begin{lcverbatim}
-5	12	17	10	7
-15	6	25	2	19
-4	 9	1	 5	2
+51217107
+15625219
+4 91 52
 \end{lcverbatim}
 
 
@@ -937,7 +934,7 @@ untuk mengakses indeks kolom variabel matriks. Kemudian untuk
 menampilkan data nya digunakan perintah cout dan untuk setiap data
 elemen array diberikan karakter tab yang digunakan untuk memberi jarak
 antar output data. Karakter tab pada bahasa C menggunakan escape
-character '\t'.
+character `\t'.
 
 \subsubsection*{Contoh  Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya}
 
@@ -945,11 +942,11 @@ Misalkan terdapat array 2 dimensi sebagai berikut
 matriks\texttt{{[}3{]}{[}5{]}}
 
 \begin{tabular}{|c|c|c|c|c|}
-	\hline
-	1 & 2 & 3 & 4 & 5 \\ \hline
-	6 & 7 & 8 & 9 & 10 \\ \hline
-	11 & 12 & 13 & 14 & 15 \\ \hline
-	
+\hline
+1 & 2 & 3 & 4 & 5 \\ \hline
+6 & 7 & 8 & 9 & 10 \\ \hline
+11 & 12 & 13 & 14 & 15 \\ \hline
+
 \end{tabular}
 
 Buatlah program berikut:
@@ -981,9 +978,9 @@ int main(int argc, char *argv[])
 \textbf{Hasil:}
 
 \begin{lcverbatim}
-1	2	3	4	5
-6	7	8	9	10
-11	12	13	14	16
+12345
+678910
+1112131416
 \end{lcverbatim}
 
 \textbf{Keterangan:}
@@ -1060,10 +1057,12 @@ int main(int argc, char *argv[])
   sampai dengan 14.
 \end{itemize}
 
-\subsection{Cara Pengaksesan Array dapat dilakukan dengan 2
-cara:}\label{cara-pengaksesan-array-dapat-dilakukan-dengan-2-cara}
+\subsection{Akses Array 2 dimensi}
+ 
+Cara Pengaksesan Array dapat dilakukan dengan 2 cara:
 
-\subsubsection{Pengaksesan Baris demi Baris}\label{pengaksesan-baris-demi-baris}
+\begin{enumerate}
+\item Pengaksesan Baris demi Baris
 
 Cara ini menelusuri elemen array dua dimensi per dimulai dari baris
 pertama lalu kekanan sesuai dengan jumlah kolomnya. Setelah eleman dalam
@@ -1080,26 +1079,26 @@ Berikut adalah contohnya:
 using namespace std;
 int main(int argc, char *argv[])
 {
-  QCoreApplication a(argc, argv);
-  int A[2][3]={{1,2,3},{4,5,6}};
-  for(int baris=0;baris<2;baris++){
-    for(int kolom=0;kolom<3;kolom++){
-      cout<<A[baris][kolom]<<"\t";
-    }
-    cout<<endl;
-  }
-  return a.exec();
+QCoreApplication a(argc, argv);
+int A[2][3]={{1,2,3},{4,5,6}};
+for(int baris=0;baris<2;baris++){
+for(int kolom=0;kolom<3;kolom++){
+cout<<A[baris][kolom]<<"\t";
+}
+cout<<endl;
+}
+return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
 \begin{lcverbatim}
-1	 2 	3
-4 	5 	6
+1 2 3
+4 5 6
 \end{lcverbatim}
 
-\subsubsection{Pengaksesan Kolom demi Kolom}\label{pengaksesan-kolom-demi-kolom}
+\item Pengaksesan Kolom demi Kolom
 
 Cara ini menelusuri elemen array dua dimensi per dimulai dari kolom
 pertama lalu kebawah sesuai dengan jumlah barisnya. Setelah eleman dalam
@@ -1116,41 +1115,49 @@ digunakan untuk mengakses indeks baris.
 using namespace std;
 int main(int argc, char *argv[])
 {
-  QCoreApplication a(argc, argv);
-  int A[2][3]={{1,2,3},{4,5,6}};
-  for(int kolom=0;kolom<3;kolom++){
-    for(int baris=0;baris<2;baris++){
-      cout<<A[baris][kolom]<<"\t";
-    }
-    cout<<endl;
-  }
-  return a.exec();
+QCoreApplication a(argc, argv);
+int A[2][3]={{1,2,3},{4,5,6}};
+for(int kolom=0;kolom<3;kolom++){
+for(int baris=0;baris<2;baris++){
+cout<<A[baris][kolom]<<"\t";
+}
+cout<<endl;
+}
+return a.exec();
 }
 \end{lstlisting}
 
 \textbf{Hasil:}
 
 \begin{lcverbatim}
-1	 4
-2	 5
-3 	6
+1 4
+2 5
+3 6
 \end{lcverbatim}
+
+\end{enumerate}
+
+
+
+
+
+
 
 \section{String}\label{string}
 
 \index{String}String adalah kumpulan dari nilai-nilai karakter yang berurutan dalam
 bentuk satu dimensi, nilai string ini haruslah ditulis didalam tanda
-petik dua (") misalnya: "ini string". Suatu nilai string disimpan di
-memori dengan diakhiri oleh nilai '\textbackslash0'(null), misalnya nilai string
-"ANTO" disimpan dimemori dalam bentuk
+petik dua (") misalnya: ``ini string''. Suatu nilai string disimpan di
+memori dengan diakhiri oleh nilai ``\textbackslash{}''0(null), misalnya nilai string
+``ANTO'' disimpan dimemori dalam bentuk
 
 \begin{tabular}{|c|c|c|c|c|}
-	\hline
-	A & N & T & 0 & \textbackslash{0}\\ \hline
+\hline
+A & N & T & 0 & \textbackslash{0}\\ \hline
 \end{tabular}
 
 
-Dengan mengetahui nilai string diakhiri oleh nilai '\textbackslash0', maka akhir
+Dengan mengetahui nilai string diakhiri oleh nilai `\textbackslash{}0', maka akhir
 nilai dari suatu string dapat dideteksi.
 
 Untuk mendeklarasikan sebuah string terdapat dua cara:
@@ -1159,7 +1166,8 @@ Untuk mendeklarasikan sebuah string terdapat dua cara:
 
 
 \item
-  Menggunakan \index{array of character}array of character yang sering disebut \index{C-style}C-style string
+  Menggunakan \index{array of character}array of character yang sering disebut 
+  \index{C-style}C-style string
 \item
   Menggunakan tipe data string pada C++
 \end{enumerate}
@@ -1174,9 +1182,9 @@ di dalam memory komputer. String berjenis array of character selalu
 dibuat dengan menggunakan array satu dimensi yang dapat terdiri dari
 karakter-karakter yang ditulis dengan menggunakan tanda petik tunggal
 (') atau satu kesatuan string yang ditulis dengan tanda petik ganda
-(").
+('').
 
-Contoh pendeklarasian array of character
+\subsubsection*{Contoh pendeklarasian array of character}
 
 \begin{lstlisting}[language=c++, numbers=none]
 char nama[6]; //tanpa inisialisasi
@@ -1218,7 +1226,7 @@ String
 Program diatas dapat mengetahui kapan berakhirnya suatu string, dalam
 arti kita dapat mengetahui panjang suatu string dengan melakukan
 perulangan untuk setiap karakter yang ada pada array sampai ditemukannya
-katakter '\textbackslash0'.
+katakter `\textbackslash{}0'.
 
 \subsubsection*{Contoh  String tanpa karakter \textbackslash{0}}
 
@@ -1652,56 +1660,56 @@ Kami kelompok belajar Qt C++
 \end{itemize}
 
 \begin{quotation}
-\includegraphics{../manuscript/images/tips.png}	\textbf{TIPS}
-	
-	Beberapa fungsi yang \texttt{\#include\ string.h} dan dapat digunakan
-	untuk memanipulasi \emph{array of character} adalah:
-	
-	\emph{strrev()}
-	
-	Bentuk umum: \texttt{strrev(string)}
-	
-	Digunakan untuk membalik susunan string, misal: anton menjadi notna
-	
-	\emph{strlwr()}
-	
-	Bentuk umum: \texttt{strlwr(string)}
-	
-	Digunakan untuk mengubah string menjadi huruf kecil semua
-	
-	\emph{strupr}
-	
-	Bentuk umum: \texttt{strupr(string)}
-	
-	Digunakan untuk mengubah string menjadi huruf besar semua
-	
-	\emph{strchr()}
-	
-	Bentuk umum: \texttt{strchr(stringsumber,karakter\ yang\ dicari)}
-	
-	Dalam bahasa C++ disediakan suatu fungsi pustaka yaitu \texttt{strchr()}
-	untuk mencari nilai suatu karakter yang ada di suatu string. Hasil dari
-	fungsi ini adalah alamat letak dari karakter pertama di nilai string
-	yang sama dengan karakter yang dicari.
-	
-	\emph{strcmp()}
-	
-	Bentuk umum: \texttt{strcmp(string1,string2);}
-	
-	Untuk membandingkan dua nilai string tidak bisa menggunakan operator
-	hubungan, karena operator tersebut tidak untuk operasi string. Untuk
-	membandingkan dua nilai string kita gunakan fungsi pustaka
-	\texttt{strcmp()} dengan hasil sebagai berikut:
-	
-	\begin{itemize}
-		
-		\item
-		Hasil \textless{} 0, Jika string1 \textless{} string2
-		\item
-		Hasil = 0, Jika string1 = string2
-		\item
-		Hasil \textgreater{} 0, Jika string1 \textgreater{} string2
-	\end{itemize}
+\includegraphics{../manuscript/images/tips.png}\textbf{TIPS}
+
+Beberapa fungsi yang \texttt{\#include\ string.h} dan dapat digunakan
+untuk memanipulasi \emph{array of character} adalah:
+
+\emph{strrev()}
+
+Bentuk umum: \texttt{strrev(string)}
+
+Digunakan untuk membalik susunan string, misal: anton menjadi notna
+
+\emph{strlwr()}
+
+Bentuk umum: \texttt{strlwr(string)}
+
+Digunakan untuk mengubah string menjadi huruf kecil semua
+
+\emph{strupr}
+
+Bentuk umum: \texttt{strupr(string)}
+
+Digunakan untuk mengubah string menjadi huruf besar semua
+
+\emph{strchr()}
+
+Bentuk umum: \texttt{strchr(stringsumber,karakter\ yang\ dicari)}
+
+Dalam bahasa C++ disediakan suatu fungsi pustaka yaitu \texttt{strchr()}
+untuk mencari nilai suatu karakter yang ada di suatu string. Hasil dari
+fungsi ini adalah alamat letak dari karakter pertama di nilai string
+yang sama dengan karakter yang dicari.
+
+\emph{strcmp()}
+
+Bentuk umum: \texttt{strcmp(string1,string2);}
+
+Untuk membandingkan dua nilai string tidak bisa menggunakan operator
+hubungan, karena operator tersebut tidak untuk operasi string. Untuk
+membandingkan dua nilai string kita gunakan fungsi pustaka
+\texttt{strcmp()} dengan hasil sebagai berikut:
+
+\begin{itemize}
+
+\item
+Hasil \textless{} 0, Jika string1 \textless{} string2
+\item
+Hasil = 0, Jika string1 = string2
+\item
+Hasil \textgreater{} 0, Jika string1 \textgreater{} string2
+\end{itemize}
 \end{quotation}
 
 
@@ -1799,22 +1807,22 @@ Halo, Ini string C++
   seperti yang dapat dilihat pada kode program diatas.
 \end{itemize}
 \begin{quotation}
-\includegraphics{../manuscript/images/tips.png}	 \textbf{TIPS} 
-	 
-	 Class
-	 string memiliki beberapa fitur / manfaat, yaitu: 
+\includegraphics{../manuscript/images/tips.png} \textbf{TIPS} 
+ 
+ Class
+ string memiliki beberapa fitur / manfaat, yaitu: 
 \begin{itemize}
-	\item Mengurangi kesulitan dalam upaya penciptaan dan
-	memanipulasi string
-	\item Meningkatkan stabilitas aplikasi
-	yang sedang diprogram dalam pengelolaan dan alokasi memori internal
-	\item Mudah dalam menyalin, memotong, menemukan, dan
-	penghapusan string
-	\item Memberikan kesempatan pada
-	programmer untuk lebih fokus pada pengembangan aplikasi daripada
-	kesulitan dalam manipulasi string
-\end{itemize}	 
-	 
+\item Mengurangi kesulitan dalam upaya penciptaan dan
+memanipulasi string
+\item Meningkatkan stabilitas aplikasi
+yang sedang diprogram dalam pengelolaan dan alokasi memori internal
+\item Mudah dalam menyalin, memotong, menemukan, dan
+penghapusan string
+\item Memberikan kesempatan pada
+programmer untuk lebih fokus pada pengembangan aplikasi daripada
+kesulitan dalam manipulasi string
+\end{itemize} 
+ 
 \end{quotation}
 
 
@@ -1887,8 +1895,8 @@ int main(int argc, char *argv[])
 
 \textbf{Hasil:}
 \begin{lcverbatim}
-Percobaan 1 	Percobaan 2
-Percobaan 1 	Percobaan 2 	Percobaan 3 	Percebaan tampung
+Percobaan 1 Percobaan 2
+Percobaan 1 Percobaan 2 Percobaan 3 Percebaan tampung
 \end{lcverbatim}
 
 

@@ -169,15 +169,6 @@
 	\newpage
 	\fi}
 
-\makeatletter
-\renewcommand{\cleardoublepage}{
-	\clearpage\ifodd\c@page\else
-	\hbox{}
-	\vspace*{\fill}
-	\thispagestyle{empty}
-	\newpage
-	\fi}
-
 %---------------------------------------------
 % Paket buat gambar
 %------------------------------------------
@@ -186,10 +177,12 @@
 % Define block styles
 	\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
 	\tikzstyle{block} = [rectangle, draw, fill=yellow!20, text width=5em, text centered, rounded corners, minimum height=3em]
+	\tikzstyle{bloke} = [rectangle, draw, fill=blue!20, text width=4em, text centered, rounded corners, minimum height=2em]
+	\tikzstyle{bloke} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=2em]
 	\tikzstyle{blok} = [rectangle, draw, fill=yellow!20, text width=8em, text centered, rounded corners, minimum height=2em]
 	\tikzstyle{line} = [draw, -latex']
 	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,	minimum height=2em]
-	\tikzstyle{kotak} = [rectangle, draw, fill=gray!20, text width=5em, text centered, rounded corners, minimum height=4em]
+	\tikzstyle{kotak} = [rectangle, draw, fill=green!20, text width=8em, text centered, rounded corners, minimum height=7em]
 	\tikzstyle{ling} =  [draw, circle,fill=red!20, node distance=3cm, minimum height=1em]
 	\tikzstyle{titik} =  [draw]
 
@@ -374,7 +367,7 @@ YOU
 	\part{Lampiran}	
 
 	\chapter{A}
-	
+	\input{contoh}
 	\printindex
 
 \end{document}

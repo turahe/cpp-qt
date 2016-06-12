@@ -51,25 +51,25 @@ tabel berikut ini.
 
 
 \begin{longtable}[]{@{}lll@{}}
-		\toprule
-		Tipe Data & Ukuran & Jangkauan Nilai Yang dapat Ditampung\tabularnewline
-		\midrule
-		\endhead
-		bool & 1 byte & True or false\tabularnewline
-		unsigned short int & 2 bytes & 0 to 65,535\tabularnewline
-		short int & 2 bytes & --32,768 to 32,767\tabularnewline
-		unsigned long int & 4 bytes & 0 to 4,294,967,295\tabularnewline
-		long int & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
-		int (16 bit) & 2 bytes & --32,768 to 32,767\tabularnewline
-		int (32 bit) & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
-		unsigned int (16 bit) & 2 bytes & 0 to 65,535\tabularnewline
-		unsigned int (32 bit) & 4 bytes & 0 to 4,294,967,295\tabularnewline
-		char & 1 byte & 256 character values\tabularnewline
-		float & 4 bytes & 1.2e--38 to 3.4e38\tabularnewline
-		double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
-		\bottomrule
-		
-	\end{longtable}
+\toprule
+Tipe Data & Ukuran & Jangkauan Nilai Yang dapat Ditampung\tabularnewline
+\midrule
+\endhead
+bool & 1 byte & True or false\tabularnewline
+unsigned short int & 2 bytes & 0 to 65,535\tabularnewline
+short int & 2 bytes & --32,768 to 32,767\tabularnewline
+unsigned long int & 4 bytes & 0 to 4,294,967,295\tabularnewline
+long int & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
+int (16 bit) & 2 bytes & --32,768 to 32,767\tabularnewline
+int (32 bit) & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
+unsigned int (16 bit) & 2 bytes & 0 to 65,535\tabularnewline
+unsigned int (32 bit) & 4 bytes & 0 to 4,294,967,295\tabularnewline
+char & 1 byte & 256 character values\tabularnewline
+float & 4 bytes & 1.2e--38 to 3.4e38\tabularnewline
+double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
+\bottomrule
+
+\end{longtable}
 
 
 \section{Variabel dan Konstanta}\label{variabel-dan-konstanta}
@@ -148,12 +148,12 @@ tidak mengenal konstanta \texttt{kapasitas}, yang dikenal hanyalah
 bilangan 15.
 
 \begin{quotation}
-\includegraphics{../manuscript/images/tips.png}	\textbf{TIPS} 
-	
-	Walaupun
-	dengan memakai preprocessor directive \texttt{\#define} tampak mudah,
-	namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang
-	pada standard C++ .
+\includegraphics{../manuscript/images/tips.png}\textbf{TIPS} 
+
+Walaupun
+dengan memakai preprocessor directive \texttt{\#define} tampak mudah,
+namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang
+pada standard C++ .
 \end{quotation}
  
 
@@ -248,13 +248,13 @@ disebut ekspresi, sedangkan sama dengan (=) dan plus (+) dinamakan
 operator yang akan dibahas berikut ini.
 
 \begin{quotation}
-\includegraphics{../manuscript/images/pencil.png}	 \textbf{CATATAN}
-	 
-	 Operator pengerjaan = akan mengambil nilai apapun yang ada disebelah
-	 kanannya kenudian memberikannya kepada apapun yang berada di sebelah
-	 kirinya. C++ mengenal juga operator pembanding == yang mempunyai
-	 arti berbeda dengan operator sama dengan =, akan dibahas lebih
-	 detail pada sub bab berikut ini.
+\includegraphics{../manuscript/images/pencil.png} \textbf{CATATAN}
+ 
+ Operator pengerjaan = akan mengambil nilai apapun yang ada disebelah
+ kanannya kenudian memberikannya kepada apapun yang berada di sebelah
+ kirinya. C++ mengenal juga operator pembanding == yang mempunyai
+ arti berbeda dengan operator sama dengan =, akan dibahas lebih
+ detail pada sub bab berikut ini.
 \end{quotation}
 
 
@@ -523,11 +523,11 @@ luas = panjang * lebar ;
 \end{itemize}
 
 \begin{quotation}
-\includegraphics{../manuscript/images/tips.png}	\textbf{TIPS}
-	
-	Operator
-	( dan ) dapat dipakai untuk merubah jenjang suatu ekspresi
-	menjadi jenjang tertinggi, sehingga akan diproses terlebih dahulu.
+\includegraphics{../manuscript/images/tips.png}\textbf{TIPS}
+
+Operator
+( dan ) dapat dipakai untuk merubah jenjang suatu ekspresi
+menjadi jenjang tertinggi, sehingga akan diproses terlebih dahulu.
 \end{quotation}
 
 
@@ -775,19 +775,19 @@ Sintaks penulisannya sebagai berikut:
 
 Flowchart untuk statment ini adalah :
 
-	\begin{tikzpicture}[node distance = 2cm, auto]
-	\node [ling] (init){start};
-	\node [decision, below of=init] (decide) {\textless{}ekspresi \_bool\textgreater{}};
-	\node [block, below of=decide, node distance=3cm] (statement) {Statement};
-	\node [ling, below of=statement] (stop) {stop};
-	
-%	garis
+\begin{tikzpicture}[node distance = 2cm, auto]
+\node [ling] (init){start};
+\node [decision, below of=init] (decide) {\textless{}ekspresi \_bool\textgreater{}};
+\node [block, below of=decide, node distance=3cm] (statement) {Statement};
+\node [ling, below of=statement] (stop) {stop};
+
+%garis
 \path [line] (init) -- (decide);
 \path [line] (init) -- (decide);
 \path [line] (decide) -- node {Yes}(statement);
 %\path [line] (statement) |- node [near start] {No} (decide);
 \path[line] (statement) -- (stop);
-	\end{tikzpicture}
+\end{tikzpicture}
 
 \subsubsection{2. Percabangan dengan if .. else}\label{percabangan-dengan-if-..-else}
 
@@ -807,59 +807,59 @@ Sintaks penulisannya sebagai berikut :
 Flowchart untuk statment ini adalah :
 
 \begin{quotation}
-\includegraphics{../manuscript/images/pencil.png}	\textbf{CATATAN} 
-	
-	Di
-	dalam \texttt{if()} maupun di dalam else bisa diisi dengan perintah
-	I\textgreater{} \texttt{if()} lagi. Bentuk \texttt{if()} dalam
-	\texttt{if()} ini sering disebut I\textgreater{} dengan
-	\texttt{nested\ if} (if bersarang).
+\includegraphics{../manuscript/images/pencil.png}\textbf{CATATAN} 
+
+Di
+dalam \texttt{if()} maupun di dalam else bisa diisi dengan perintah
+I\textgreater{} \texttt{if()} lagi. Bentuk \texttt{if()} dalam
+\texttt{if()} ini sering disebut I\textgreater{} dengan
+\texttt{nested\ if} (if bersarang).
 \end{quotation}
 
-	\begin{tikzpicture}[node distance = 2cm, auto]
-		\node [ling] (init){start};
-		\node [decision, below of=init, node distance=2cm] (decide) {\textless{}ekspresi \_bool\textgreater{}};
-		\node [block, below of=decide, node distance=3cm] (statement) {Statement};
-		\node [block, right of=decide, node distance=3cm] (statement2) {Statement2};
-		\node [ling, below of=statement, node distance=2cm] (stop) {stop};
-		
-		%	garis
-		\path [line] (init) -- (decide);
-		\path [line] (init) -- (decide);
-		\path [line] (decide) -- node {Ya}(statement);
-		%\path [line] (statement) |- node [near start] {No} (decide);
-		\path[line] (statement) -- (stop);
-		\path[line] (statement) -| node {tidak}(statement2);
-		\path[line] (statement2) -- (decide);
-		\end{tikzpicture}
+\begin{tikzpicture}[node distance = 2cm, auto]
+\node [ling] (init){start};
+\node [decision, below of=init, node distance=2cm] (decide) {\textless{}ekspresi \_bool\textgreater{}};
+\node [block, below of=decide, node distance=3cm] (statement) {Statement};
+\node [block, right of=decide, node distance=3cm] (statement2) {Statement2};
+\node [ling, below of=statement, node distance=2cm] (stop) {stop};
+
+%garis
+\path [line] (init) -- (decide);
+\path [line] (init) -- (decide);
+\path [line] (decide) -- node {Ya}(statement);
+%\path [line] (statement) |- node [near start] {No} (decide);
+\path[line] (statement) -- (stop);
+\path[line] (statement) -| node {tidak}(statement2);
+\path[line] (statement2) -- (decide);
+\end{tikzpicture}
 
 
 Flowchart untuk statment if bersarang ini adalah :
 
-	\begin{tikzpicture}[node distance = 1cm, auto]
-		\node [ling] (init){start};
-		\node [decision, below of=init, node distance=3cm] (decide) {\textless{}ekspresi \_bool\textgreater{}};
-		\node [block, below of=decide, node distance=3cm] (statement) {Statement};
-		
-		\node [decision, right of=decide, node distance=3cm] (decide1) {\textless{}ekspresi \_bool\textgreater{}};
-		\node [block, below of=decide1, node distance=3cm] (statement1) {Statement1};
-		
-		\node [block, right of=decide1, node distance=6cm] (statement2) {Statement2};
-		\node [ling, below of=statement, node distance=2cm] (stop) {stop};
-		
-		%	garis
-		\path [line] (init) -- (decide);
-		\path [line] (decide) -- node{Tidak}(decide1);
-		\path [line,dashed](decide1) -- node{tidak\dots dst \dots tidak }(statement2);
-		\path [line] (decide) -- node{Ya}(statement);
-		\path [line] (decide1) -- node {Ya} (statement1);
-		\path[line] (statement) -- (stop);
+\begin{tikzpicture}[node distance = 1cm, auto]
+\node [ling] (init){start};
+\node [decision, below of=init, node distance=3cm] (decide) {\textless{}ekspresi \_bool\textgreater{}};
+\node [block, below of=decide, node distance=3cm] (statement) {Statement};
 
-		\path[line] (statement2) |- (stop);
-		\path[line] (statement1) |- (stop);
-		\path [line] (decide) -- node {Ya}(statement);
-		
-		\end{tikzpicture}
+\node [decision, right of=decide, node distance=3cm] (decide1) {\textless{}ekspresi \_bool\textgreater{}};
+\node [block, below of=decide1, node distance=3cm] (statement1) {Statement1};
+
+\node [block, right of=decide1, node distance=6cm] (statement2) {Statement2};
+\node [ling, below of=statement, node distance=2cm] (stop) {stop};
+
+%garis
+\path [line] (init) -- (decide);
+\path [line] (decide) -- node{Tidak}(decide1);
+\path [line,dashed](decide1) -- node{tidak\dots dst \dots tidak }(statement2);
+\path [line] (decide) -- node{Ya}(statement);
+\path [line] (decide1) -- node {Ya} (statement1);
+\path[line] (statement) -- (stop);
+
+\path[line] (statement2) |- (stop);
+\path[line] (statement1) |- (stop);
+\path [line] (decide) -- node {Ya}(statement);
+
+\end{tikzpicture}
 
 \subsubsection{3. Percabangan dengan switch}\label{percabangan-dengan-switch}
 

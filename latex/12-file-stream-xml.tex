@@ -62,25 +62,8 @@ informasi direktori yang ada di komputer anda.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama Contoh \ref{contoh12-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Menampilkan daftar drives dari root directories., label=contoh12-1]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-#include <QDir>
-#include <QFileInfo>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-foreach (QFileInfo drive, QDir::drives()) {
-qDebug() << "Drive : " << drive.absolutePath();
-QDir dir = drive.dir();
-dir.setFilter(QDir::Dirs);
-foreach (QFileInfo rootDirs, dir.entryInfoList()) {
-qDebug() << " " << rootDirs.fileName() ;
-}
-}
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Menampilkan daftar drives dari root directories., label=contoh12-1]{../code/contoh12-1.cpp}
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -186,29 +169,7 @@ anda dapat mengerjakan Contoh \ref{contoh12-2} dibawah ini.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh12-2}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Memeriksa apakah file ada dan bisa diakses, label=contoh12-2]
-#include <QtCore/QCoreApplication>
-#include <QFile>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QFile file("testfile.txt");
-if(!file.exists())
-{
-qDebug() << "File : " << file.fileName() << " tidak ditemukan";
-return a.exec();
-}
-if(!file.open(QIODevice::WriteOnly))
-{
-qDebug() << "Tidak dapat membuka file " << file.fileName() << " untuk ditulis";
-return a.exec();
-}
-qDebug("File berhasil dibuka !");
-file.close();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Memeriksa apakah file ada dan bisa diakses, label=contoh12-2]{../code/contoh12-2.cpp}
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
   ditampilkan output sebagai berikut.
@@ -223,7 +184,7 @@ File :  "testfile.txt"  tidak ditemukan
    Kemudian  jalankan kembali programnya, maka akan tampil output berikut.
   
   \begin{lcverbatim}
-  	File berhasil dibuka !
+File berhasil dibuka !
   \end{lcverbatim}
   
 \end{enumerate}
@@ -268,38 +229,7 @@ contoh \ref{contoh12-3} dibawah ini.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh12-3}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Menggunakan Stream untuk membaca file, label=contoh12-3]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-#include <QFile>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QFile file("D:\\sample.txt");
-if(!file.exists())
-{
-qDebug() << "File " << file.fileName() << " tidak ditemukan !";
-return a.exec();
-}
-if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
-{
-qDebug() << "File " << file.fileName() << " tidak dapat diakses !";
-return a.exec();
-}
-QTextStream stream(&file);
-//membaca semua teks yang ada dalam sample.txt
-QString teks = stream.readAll();
-qDebug() << teks;
-//membaca teks per line
-while(!stream.atEnd())
-{
-QString line = stream.readLine();
-qDebug() << line;
-}
-file.close();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Menggunakan Stream untuk membaca file, label=contoh12-3]{../code/contoh12-3.cpp}
 \item
   Buat file teks pada alamat tertentu (pada contoh \ref{contoh12-3} diatas di drive
   \texttt{D:\textbackslash{}sample.txt}), masukan sembarang teks kedalam
@@ -309,7 +239,7 @@ return a.exec();
   ditampilkan output sebagai berikut.
   
   \begin{lcverbatim}
-  	Buku Pemrograman C++
+Buku Pemrograman C++
   \end{lcverbatim}
 \end{enumerate}
 
@@ -964,7 +894,7 @@ menggunakan fungsi yang mirip seperti state().
   Kemudian ketikan kode berikut pada main.cpp untuk membaca data dari
   dokumen XML.
 
-\begin{lstlisting}[language=c++, caption=Menggunakan QXMLStream Reader untuk membaca XML, label=contoh12-7]
+\begin{lstlisting}[language=c++, caption=Menggunakan QXMLStream Reader untuk membaca XML, label=contoh12-8]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QFile>
@@ -1032,7 +962,7 @@ return a.exec();
   Buat aplikasi console dengan nama contoh \ref{contoh12-8}, kemudian tulis kode
   berikut
 
-\begin{lstlisting}[language=c++, caption=Membuat dokumen XML dengan QXMLStreamWriter, label=contoh12-8]
+\begin{lstlisting}[language=c++, caption=Membuat dokumen XML dengan QXMLStreamWriter, label=contoh12-9]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QFile>

@@ -198,49 +198,49 @@ Mari kita analisa perbaris.
 \begin{itemize}
 
 \item
-  Integer dibagi integer dan dimasukkan ke dalam variabel integer akan
-  menjadi integer, walaupun ada koma dibelakangnya, yaitu 0.5 tapi akan
-  dipotong, karena tipe data integer tidak mampu menerima koma, sehingga
-  akan dipotong.
+Integer dibagi integer dan dimasukkan ke dalam variabel integer akan
+menjadi integer, walaupun ada koma dibelakangnya, yaitu 0.5 tapi akan
+dipotong, karena tipe data integer tidak mampu menerima koma, sehingga
+akan dipotong.
 \item
-  Walaupun kita casting ke dalam float, namun kenyataannya tidak
-  berhasil, karena tipe data integer lebih kecil lebar datanya daripada
-  tipe data float, sehingga ketika kita casting dalam float, datanya
-  sudah terlanjur terpotong, sehingga tidak ada perubahan
+Walaupun kita casting ke dalam float, namun kenyataannya tidak
+berhasil, karena tipe data integer lebih kecil lebar datanya daripada
+tipe data float, sehingga ketika kita casting dalam float, datanya
+sudah terlanjur terpotong, sehingga tidak ada perubahan
 \item
-  Perintah ketiga sama Keterangan:nya dengan no 2.
+Perintah ketiga sama Keterangan:nya dengan no 2.
 \item
-  C bertipe integer, sehingga walaupun x dan y float dan ada koma, namun
-  ketika disimpan didalam integer akan terpotong menjadi bilangan bulat
+C bertipe integer, sehingga walaupun x dan y float dan ada koma, namun
+ketika disimpan didalam integer akan terpotong menjadi bilangan bulat
 \item
-  Sudah jelas, karena x dicasting ke integer dan y juga, berarti semua
-  menjadi integer
+Sudah jelas, karena x dicasting ke integer dan y juga, berarti semua
+menjadi integer
 \item
-  Keterangan: sama dengan alasan no 2
+Keterangan: sama dengan alasan no 2
 \item
-  D bertipe float namun karena aa dan bb bertipe integer, maka hasilnya
-  integer juga dan nilainya sudah terpotong, sehingga ketika disimpan
-  kedalam tipe float sudah terlanjur terpotong nilainya.
+D bertipe float namun karena aa dan bb bertipe integer, maka hasilnya
+integer juga dan nilainya sudah terpotong, sehingga ketika disimpan
+kedalam tipe float sudah terlanjur terpotong nilainya.
 \item
-  Variabel aa dan bb yang bertipe integer dipaksa menjadi float, dan
-  karena disimpan dalam variabel d yang bertipe float, maka hasilnya
-  float
+Variabel aa dan bb yang bertipe integer dipaksa menjadi float, dan
+karena disimpan dalam variabel d yang bertipe float, maka hasilnya
+float
 \item
-  Variabel aa dan bb yang bertipe integer dipaksa menjadi float
-  masing-masing sehingga akan menjadi float, dan disimpan didalam
-  variabel float d.
+Variabel aa dan bb yang bertipe integer dipaksa menjadi float
+masing-masing sehingga akan menjadi float, dan disimpan didalam
+variabel float d.
 \item
-  Sudah jelas, float dibagi float dan disimpan dalam tipe float sehingga
-  sudah benar tampil sebagai float
+Sudah jelas, float dibagi float dan disimpan dalam tipe float sehingga
+sudah benar tampil sebagai float
 \item
-  Variabel x dan y yang bertipe float dipaksa menjadi tipe data yang
-  lebih kecil, yaitu integer, kemudian baru disimpan dalam tipe data
-  integer sehingga hasil akhirnya integer.
+Variabel x dan y yang bertipe float dipaksa menjadi tipe data yang
+lebih kecil, yaitu integer, kemudian baru disimpan dalam tipe data
+integer sehingga hasil akhirnya integer.
 \item
-  Variabel yang dicasting hanya variabel x sehingga variabel y dan d
-  masih float. Tipe data x (integer) dibagi float makan akan tetap
-  menjadi float, karena float tipe datanya lebih besar lebar datanya
-  daripada integer.
+Variabel yang dicasting hanya variabel x sehingga variabel y dan d
+masih float. Tipe data x (integer) dibagi float makan akan tetap
+menjadi float, karena float tipe datanya lebih besar lebar datanya
+daripada integer.
 \end{itemize}
 
 \begin{quotation}
@@ -258,13 +258,13 @@ C++ memiliki cara pengcastingan yang baru, yaitu:
 \begin{itemize}
 
 \item
-  static\_cast
+static\_cast
 \item
-  dynamic\_cast
+dynamic\_cast
 \item
-  reinterpret\_cast
+reinterpret\_cast
 \item
-  const\_cast
+const\_cast
 \end{itemize}
 
 Bentuk umum untuk semuanya adalah:
@@ -301,20 +301,20 @@ CTdkAdaHubungan* pTdkHub = static_cast<CTdkAdaHubungan*>(pInduk); // Error
 \begin{itemize}
 
 \item
-  Pada contoh diatas terlihat bahwa class anak dapat dibuat dari class
-  induk karena ada hubungan pewarisan. Konsep ini merupakan konsep
-  polimorfisme. Kemudian untuk memastikan agar tipe data pInduk
-  benar/valid untuk dimasukkan ke pTurunan yang merupakan obyek
-  CTurunan, maka dilakukan casting dengan static\_casting.
+Pada contoh diatas terlihat bahwa class anak dapat dibuat dari class
+induk karena ada hubungan pewarisan. Konsep ini merupakan konsep
+polimorfisme. Kemudian untuk memastikan agar tipe data pInduk
+benar/valid untuk dimasukkan ke pTurunan yang merupakan obyek
+CTurunan, maka dilakukan casting dengan static\_casting.
 \item
-  Kemudian pada bagian kedua, terlihat bahwa jika kita membuat class
-  yang tidak ada hubungan apapun dengan class Induk maka kita tidak bisa
-  melakukan static\_casting.
+Kemudian pada bagian kedua, terlihat bahwa jika kita membuat class
+yang tidak ada hubungan apapun dengan class Induk maka kita tidak bisa
+melakukan static\_casting.
 \item
-  Dengan demikian, static\_casting digunakan untuk meyakinkan validitas
-  suatu obyek pointer bahwa obyek tersebut ada hubungan dengan obyek
-  yang dicastingnya. Pengcastingan dilakukan dengan mengubah class Induk
-  menjadi class Anak, bukan sebaliknya.
+Dengan demikian, static\_casting digunakan untuk meyakinkan validitas
+suatu obyek pointer bahwa obyek tersebut ada hubungan dengan obyek
+yang dicastingnya. Pengcastingan dilakukan dengan mengubah class Induk
+menjadi class Anak, bukan sebaliknya.
 \end{itemize}
 
 Bagi para programmer C yang beralih ke C++, static casting sangat mirip
@@ -448,7 +448,7 @@ return a.exec();
 }
 void TentukanTipeClass (CAnimal* pAnimal)
 {
-    CDog* pDog = dynamic_cast <CDog*>(pAnimal);
+CDog* pDog = dynamic_cast <CDog*>(pAnimal);
 if (pDog)
 {
 cout << "Binatang Dog!" << endl;
@@ -663,21 +663,21 @@ beberapa basis data yang terkenal, misalnya
 \href{https://www.sqlite.org/about.html}{Sqlite},
 \href{https://en.wikipedia.org/wiki/Oracle_Database}{Oracle},
 \href{https://www.mysql.com/about/}{MySQL}, Db2\footnote{\href{https://en.wikipedia.org/wiki/IBM_DB2}{IBM
-  DB2} adalah produk database server yang dikembangkan oleh IBM.
-  Produk-produk ini mendukung sistem manajemen basis data relasional
-  (relational DBMS), namun belakangan ini sudah mendukung pula sistem
-  manajemen basis data berbasis object-relational (object-relational
-  DBMS) dan juga non-relational seperti XML.}, ODBC\footnote{Open
-  Database Connectivity (ODBC) adalah Application Programming interface
-  (API) database yang khusus digunakan untuk mengakses database
-  relasional. ODBC terdapat dalam setiap komputer yang menggunakan
-  sistem operasi windows, karena ODBC merupakan bagian dari Windows Open
-  System Architecture (WOSA). Dalam ODBC disediakan berbagai Application
-  Programming Interface (API) yang berguna untuk menyediaan dan
-  memberikan stkitar bagi berbagai kegiatan pemrograman. Keuntungan
-  utama menggunakan ODBC ini adalah fleksibilitas, fleksibel disini
-  artinya pengubahan jenis database yang dipergunakan oleh sebuah
-  aplikasi tidak akan mempengaruhi kode program aplikasi tersebut.}, dan
+DB2} adalah produk database server yang dikembangkan oleh IBM.
+Produk-produk ini mendukung sistem manajemen basis data relasional
+(relational DBMS), namun belakangan ini sudah mendukung pula sistem
+manajemen basis data berbasis object-relational (object-relational
+DBMS) dan juga non-relational seperti XML.}, ODBC\footnote{Open
+Database Connectivity (ODBC) adalah Application Programming interface
+(API) database yang khusus digunakan untuk mengakses database
+relasional. ODBC terdapat dalam setiap komputer yang menggunakan
+sistem operasi windows, karena ODBC merupakan bagian dari Windows Open
+System Architecture (WOSA). Dalam ODBC disediakan berbagai Application
+Programming Interface (API) yang berguna untuk menyediaan dan
+memberikan stkitar bagi berbagai kegiatan pemrograman. Keuntungan
+utama menggunakan ODBC ini adalah fleksibilitas, fleksibel disini
+artinya pengubahan jenis database yang dipergunakan oleh sebuah
+aplikasi tidak akan mempengaruhi kode program aplikasi tersebut.}, dan
 \href{https://id.wikipedia.org/wiki/PostgreSQL}{Postgresql}. Secara
 default basis data yang didukung adalah Sqlite dan ODBC saja, sedangkan
 untuk basis data lainnya harus menggunakan driver yang biasanya harus
@@ -703,14 +703,14 @@ berikut:
 
 
 \item
-  Buatlah sebuah database pada MySQL dengan nama: testmhs
+Buatlah sebuah database pada MySQL dengan nama: testmhs
 \item
-  Gunakan gunakan PHPmyAdmin untuk membuat tabel database.
-  
-  \includegraphics[width=0.7\linewidth]{../manuscript/images/phpmyadmin}
-  
+Gunakan gunakan PHPmyAdmin untuk membuat tabel database.
+
+\includegraphics[width=0.7\linewidth]{../manuscript/images/phpmyadmin}
+
 \item
-  Isilah datanya sebagai berikut:
+Isilah datanya sebagai berikut:
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
@@ -728,7 +728,7 @@ Hasil:
 \includegraphics[width=0.7\linewidth]{../manuscript/images/database-mhs}
 
 \item
-  Tulis kode berikut ini:
+Tulis kode berikut ini:
 
 
 \begin{lstlisting}[language=c++, caption=Percobaan koneksi MySQL dengan QtConsole]
@@ -736,7 +736,7 @@ Hasil:
 #include <QtSql/QtSql>
 #include <QtDebug>
 int main(int argc, char *argv[])
-    {
+{
 QCoreApplication a(argc, argv);
 qDebug() << QSqlDatabase::drivers();
 QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
@@ -763,10 +763,10 @@ return a.exec();
 \end{lstlisting}
 
 \item
-  Pada file project yang berekstensi .pro, tambahkan linking ke library
-  sql sebagai berikut:
-  
-  \begin{lstlisting}[language=c++]
+Pada file project yang berekstensi .pro, tambahkan linking ke library
+sql sebagai berikut:
+
+\begin{lstlisting}[language=c++]
 #-------------------------------------------------
 #
 # Project created by QtCreator 2016-01-03T19:58:33
@@ -780,9 +780,9 @@ CONFIG += console
 CONFIG -= app_bundle
 TEMPLATE = app
 SOURCES += main.cpp
-  \end{lstlisting}
+\end{lstlisting}
 \item
-  Kemudian run dan hasilnya adalah sebagai berikut:
+Kemudian run dan hasilnya adalah sebagai berikut:
 
 \begin{lcverbatim}
 ("QSQLITE", "QMYSQL", "QODBC3", "QODBC")
@@ -804,25 +804,25 @@ Koneksi sukses
 \begin{itemize}
 
 \item
-  Program diatas dapat menampilkan driver database yang terinstall dan
-  dapat dikenali oleh system Qt, yaitu QSQLITE, QMYSQL, QODBC3, dan
-  QODBC. Berarti sistem QT dapat mendukung basisdata Sqlite, MySQL, dan
-  ODBC dari Microsoft.
+Program diatas dapat menampilkan driver database yang terinstall dan
+dapat dikenali oleh system Qt, yaitu QSQLITE, QMYSQL, QODBC3, dan
+QODBC. Berarti sistem QT dapat mendukung basisdata Sqlite, MySQL, dan
+ODBC dari Microsoft.
 \item
-  Kemudian langkah pertama yang harus dilakukan adalah membuat
-  QsqlDatabase yang akan meload basis data yang dipilih beserta dengan
-  drivernya. Setelah itu kita harus menentukan nama database yang akan
-  diakses, user, password, dan host lokasi MySQL server.
+Kemudian langkah pertama yang harus dilakukan adalah membuat
+QsqlDatabase yang akan meload basis data yang dipilih beserta dengan
+drivernya. Setelah itu kita harus menentukan nama database yang akan
+diakses, user, password, dan host lokasi MySQL server.
 \item
-  Kemudian akan diperiksa apakah database yang terpilih dapat dibuka
-  atau tidak dengan method open(). Jika berhasil maka akan dilanjutkan,
-  jika tidak maka akan ditampilkan error yang terjadi dengan menggunakan
-  method dari database, yaitu lastError().
+Kemudian akan diperiksa apakah database yang terpilih dapat dibuka
+atau tidak dengan method open(). Jika berhasil maka akan dilanjutkan,
+jika tidak maka akan ditampilkan error yang terjadi dengan menggunakan
+method dari database, yaitu lastError().
 \item
-  Langkah berikutnya adalah melakukan query dengan menggunakan method
-  query(). Setelah perintah SQL dijalankan maka record-record yang
-  dihasilkan dari perintah select tersebut akan diloop satu persatu
-  dengan method next() dari query, dan ditampilkan hasilnya dilayar.
+Langkah berikutnya adalah melakukan query dengan menggunakan method
+query(). Setelah perintah SQL dijalankan maka record-record yang
+dihasilkan dari perintah select tersebut akan diloop satu persatu
+dengan method next() dari query, dan ditampilkan hasilnya dilayar.
 \end{itemize}
 
 \subsection{Koneksi Qt dengan SQLite}\label{koneksi-qt-dengan-sqlite}
@@ -839,14 +839,14 @@ SQLite adalah:
 
 
 \item
-  Jika basis data SQLite akan dibuat langsung dari program, maka file
-  database hasil pembuatan tersebut akan berada di folder simulator pada
-  project kita.
+Jika basis data SQLite akan dibuat langsung dari program, maka file
+database hasil pembuatan tersebut akan berada di folder simulator pada
+project kita.
 \item
-  Jika kita sudah memiliki file database SQLite, maka file tersebut
-  harus diletakkan (dikopikan) ke folder simulator atau simulator \textfractionsolidus debug
+Jika kita sudah memiliki file database SQLite, maka file tersebut
+harus diletakkan (dikopikan) ke folder simulator atau simulator \textfractionsolidus debug
 \item
-  File SQLite yang dibuat harus berjenis SQLite 3 agar bisa diakses.
+File SQLite yang dibuat harus berjenis SQLite 3 agar bisa diakses.
 \end{enumerate}
 
 Untuk melakukan koneksi QtConsole dengan SQLite, maka lakukan Contoh
@@ -858,25 +858,25 @@ berikut:
 
 
 \item
-  Buatlah sebuah database pada Sqlite dengan nama: testmhs.db, ingat
-  harus berjenis SQLite3.
+Buatlah sebuah database pada Sqlite dengan nama: testmhs.db, ingat
+harus berjenis SQLite3.
 
 \includegraphics[width=0.7\linewidth]{../manuscript/images/sqlite-expert}
-  
-  
+
+
 \item
-  Gunakan Sqlite Expert untuk membuatnya
+Gunakan Sqlite Expert untuk membuatnya
 \item
-  Pilih menu File \textgreater{} New Database
-  
-  \includegraphics[width=0.7\linewidth]{../manuscript/images/file-new-database}
-  
+Pilih menu File \textgreater{} New Database
+
+\includegraphics[width=0.7\linewidth]{../manuscript/images/file-new-database}
+
 \item
-  Simpan dengan nama testmhs.db (pilih tipe sqlite 3 database), simpan
-  pada folder project yang akan dibuat.
+Simpan dengan nama testmhs.db (pilih tipe sqlite 3 database), simpan
+pada folder project yang akan dibuat.
 \item
-  Kemudian buat tabel baru dengan klik menu table \textgreater{} New Table,
-  kemudian isikan data berikut:
+Kemudian buat tabel baru dengan klik menu table \textgreater{} New Table,
+kemudian isikan data berikut:
 
 Nama tabel: mahasiswa
 
@@ -885,16 +885,16 @@ Field:
 \begin{itemize}
 
 \item
-  NIM tipe VARCHAR(8), primary key, not null, unique
+NIM tipe VARCHAR(8), primary key, not null, unique
 \item
-  Nama tipe VARCHAR(30), not null
+Nama tipe VARCHAR(30), not null
 \item
-  IPK tipe FLOAT
+IPK tipe FLOAT
 \end{itemize}
 
 
 \item
-  Kemudian isi data sebagai berikut:
+Kemudian isi data sebagai berikut:
 
 
 \begin{longtable}[]{@{}lll@{}}
@@ -910,14 +910,14 @@ NIM & Nama & IPK\tabularnewline
 
 
 \item
-  Setelah itu buatlah project baru pada QtConsole application, dan
-  tulislah kode program berikut:
+Setelah itu buatlah project baru pada QtConsole application, dan
+tulislah kode program berikut:
 
 \begin{lstlisting}[language=c++, caption=Percobaan koneksi SQLite dengan QtConsole]
 #include <QtCore/QCoreApplication>
 #include <QDebug>
 #include <QtSql/QtSql>
-    int main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);
 qDebug() << QSqlDatabase::drivers();
@@ -933,27 +933,27 @@ return a.exec();
 \end{lstlisting}
 
 \item
-  Pada project, pilihlah file berekstensi .pro, kemudian bukalah file
-  tersebut dan tambahkanlah bagian kode berikut:
-  
-  \begin{lstlisting}[language=c++]
-  #-------------------------------------------------
-  #
-  # Project created by QtCreator 2016-01-03T19:58:33
-  #
-  #-------------------------------------------------
-  QT += core
-  QT += gui
-  Qt += sql
-  TARGET = databases
-  CONFIG += console
-  CONFIG -= app_bundle
-  TEMPLATE = app
-  SOURCES += main.cpp
-  \end{lstlisting}
-  
+Pada project, pilihlah file berekstensi .pro, kemudian bukalah file
+tersebut dan tambahkanlah bagian kode berikut:
+
+\begin{lstlisting}[language=c++]
+#-------------------------------------------------
+#
+# Project created by QtCreator 2016-01-03T19:58:33
+#
+#-------------------------------------------------
+QT += core
+QT += gui
+Qt += sql
+TARGET = databases
+CONFIG += console
+CONFIG -= app_bundle
+TEMPLATE = app
+SOURCES += main.cpp
+\end{lstlisting}
+
 \item
-  Build dan run
+Build dan run
 
 \begin{lcverbatim}
 ("QSQLITE")
@@ -966,22 +966,22 @@ Koneksi berhasil
 \begin{itemize}
 
 \item
-  Baris pertama output adalah daftar driver yang didukung oleh Qt dan
-  QtCreator.
+Baris pertama output adalah daftar driver yang didukung oleh Qt dan
+QtCreator.
 \item
-  Baris kedua adalah menggambarkan bahwa koneksi terhadap database
-  Sqlite berhasil!
+Baris kedua adalah menggambarkan bahwa koneksi terhadap database
+Sqlite berhasil!
 \item
-  Program diatas mengharuskan adanya urutan perintah yang harus
-  dilakukan ketika kita akan melakukan koneksi ke database Sqlite,
-  yaitu: 
+Program diatas mengharuskan adanya urutan perintah yang harus
+dilakukan ketika kita akan melakukan koneksi ke database Sqlite,
+yaitu: 
 
 \begin{itemize}
 \item Load driver SQLITE Tambahkan bagian ini
 \item setDatabaseName sesuai dengan nama file Sqlite yang akan diakses 
 \item Kemudian open koneksi dengan memanggil method open 
 \item Jika ada error tampilkan errornya, jika tidak tampilkan bahwa koneksi berhasil
-\end{itemize}  
+\end{itemize}
 
 \end{itemize}
 
@@ -1015,7 +1015,7 @@ pertama (dalam hal ini digunakan indeks 0). Untuk mengambil field
 tertentu pada tabel, misalnya ipk, maka hanya perlu mengganti indeksnya
 menjadi 2 saja.
 
-\subsubsection*{Contoh  Membaca data pada Sqlite.}
+\subsubsection*{ContohMembaca data pada Sqlite.}
 
 Tulislah program berikut:
 
@@ -1034,7 +1034,7 @@ if(!db.open())
 qDebug() << db.lastError();
 qFatal( "Failed to connect." );
 } else qDebug() << "Koneksi berhasil";
-    QSqlQuery query;
+QSqlQuery query;
 bool cek = query.exec("select nim,nama from mahasiswa order by nim desc");
 qDebug() << cek;
 QString nim,nama;
@@ -1064,18 +1064,18 @@ true
 \begin{itemize}
 
 \item
-  Program diatas melakukan koneksi ke SQLite dan kemudian mengirimkan
-  query untuk mengambil data-data dari tabel mahasiswa dengan
-  menggunakan query SQL select.
+Program diatas melakukan koneksi ke SQLite dan kemudian mengirimkan
+query untuk mengambil data-data dari tabel mahasiswa dengan
+menggunakan query SQL select.
 \item
-  Untuk mendapatkan hasil dari query kita gunakan perulangan dari
-  variabel query dan method next(). Didalam perulangan kita ambil
-  masing-masing nilai dari tiap-tiap kolom untuk setiap recordnya dengan
-  menggunakan query.value().toString()
+Untuk mendapatkan hasil dari query kita gunakan perulangan dari
+variabel query dan method next(). Didalam perulangan kita ambil
+masing-masing nilai dari tiap-tiap kolom untuk setiap recordnya dengan
+menggunakan query.value().toString()
 \item
-  Perintah diatas berarti kita mengambil indeks sesuai dengan kolom yang
-  diambil dari SQL, yaitu kolom 0 untuk nim, 1 untuk nama dan
-  seterusnya.
+Perintah diatas berarti kita mengambil indeks sesuai dengan kolom yang
+diambil dari SQL, yaitu kolom 0 untuk nim, 1 untuk nama dan
+seterusnya.
 \end{itemize}
 
 \subsection{Menambah data pada tabel SQLITE}\label{menambah-data-pada-tabel-sqlite}
@@ -1104,7 +1104,7 @@ tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil
 dari akibat penambahan datanya. Jika berhasil maka akan mengembalikan
 nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-\subsubsection*{Contoh  Menambahkan data pada SQLite.}
+\subsubsection*{ContohMenambahkan data pada SQLite.}
 
 Buatlah program berikut:
 
@@ -1144,42 +1144,42 @@ Berhasil ditambahkan
 
 \begin{itemize}
 \item
-  Pada awalnya data pada tabel mahasiswa hanya berjumlah 3 buah data,
-  ketika program dijalankan maka data baru bernama ``mhs baru'' berhasil
-  ditambahkan dan mengubah jumlah record pada tabel sehingga menjadi 4
-  buah. Tampilan perubahan adalah sebagai berikut:
-  
-  \begin{tabular}{|l|l|l|}
-  \hline
-  NIM & Nama & IPK \\ \hline
-  011041 & Wachid & 3.1 \\ \hline
-  012042 & Arif & 3.6 \\ \hline
-  011041 & Eko & 3.4 \\ \hline
-  012011 & Alif & 3.3 \\ \hline
-  013021 & Ananda & 3.8 \\ \hline
-  
-  \end{tabular}
+Pada awalnya data pada tabel mahasiswa hanya berjumlah 3 buah data,
+ketika program dijalankan maka data baru bernama ``mhs baru'' berhasil
+ditambahkan dan mengubah jumlah record pada tabel sehingga menjadi 4
+buah. Tampilan perubahan adalah sebagai berikut:
+
+\begin{tabular}{|l|l|l|}
+\hline
+NIM & Nama & IPK \\ \hline
+011041 & Wachid & 3.1 \\ \hline
+012042 & Arif & 3.6 \\ \hline
+011041 & Eko & 3.4 \\ \hline
+012011 & Alif & 3.3 \\ \hline
+013021 & Ananda & 3.8 \\ \hline
+
+\end{tabular}
 \item
-  Cara menambahkan record pada SQLite sangat mudah, yaitu dengan
-  menggunakan SQL insert into yang harus disesuaikan dengan jumlah field
-  yang ada pada tabel. Setelah itu query akan dijalankan dengan method
-  exec dari obyek QsqlQuery.
+Cara menambahkan record pada SQLite sangat mudah, yaitu dengan
+menggunakan SQL insert into yang harus disesuaikan dengan jumlah field
+yang ada pada tabel. Setelah itu query akan dijalankan dengan method
+exec dari obyek QsqlQuery.
 \item
-  Hasil kembalian dari method exec ini adalah bool yang menghasilkan
-  nilai true atau false. Jika menghasilkan nilai true maka record
-  berhasil ditambahkan, jika false maka record tidak berhasil
-  ditambahkan!
+Hasil kembalian dari method exec ini adalah bool yang menghasilkan
+nilai true atau false. Jika menghasilkan nilai true maka record
+berhasil ditambahkan, jika false maka record tidak berhasil
+ditambahkan!
 \item
-  Jika program diatas dieksekusi sekali lagi (diulangi) maka akan
-  menampilkan tulisan Gagal ditambahkan. Hal ini dikarenakan kita
-  menambahkan record yang sama persis dengan ebelumnya padahal kita
-  sudah menset bahwa field nim bersifat primary, yang artinya tidak
-  boleh ada data nim yang kembar. Hal inilah yang menyebabkan data Gagal
-  ditambahkan.
-  \begin{lcverbatim}
-  ("QSLITE")
-  Koneksi berhasil
-  gagal  ditambahkan
+Jika program diatas dieksekusi sekali lagi (diulangi) maka akan
+menampilkan tulisan Gagal ditambahkan. Hal ini dikarenakan kita
+menambahkan record yang sama persis dengan ebelumnya padahal kita
+sudah menset bahwa field nim bersifat primary, yang artinya tidak
+boleh ada data nim yang kembar. Hal inilah yang menyebabkan data Gagal
+ditambahkan.
+\begin{lcverbatim}
+("QSLITE")
+Koneksi berhasil
+gagalditambahkan
 \end{lcverbatim}
 
 \item Jika kita hendak membaca data pada SQLite, maka tambahkan kode berikut:
@@ -1200,11 +1200,11 @@ qDebug() << nim << " " << nama << " " << ipk;
 \item Sehingga akan dihasilkan:
 
 \begin{lcverbatim}
-"012011"  "Alif"  "3.3"
-"013021"  "Ananda"  "3.8" 
-"011041" "Wachid"  "3.1" 
-"012042"  "Arif"  "3.6" 
-"011012"  "Eko"  "3.4" 
+"012011""Alif""3.3"
+"013021""Ananda""3.8" 
+"011041" "Wachid""3.1" 
+"012042""Arif""3.6" 
+"011012""Eko""3.4" 
 
 \end{lcverbatim}
 \end{itemize}
@@ -1308,13 +1308,13 @@ NIM & Nama & IPK \\ \hline
 \begin{itemize}
 
 \item
-  Program diatas masih sama menggunakan obyek QsqlQuery dan method
-  exec(). Hanya SQL query nya saja yang berbeda dengan Contoh sebelumnya
-  saat penambahan data. SQL query pada saat pengeditan menggunakan SQL
-  UPDATE SET.
+Program diatas masih sama menggunakan obyek QsqlQuery dan method
+exec(). Hanya SQL query nya saja yang berbeda dengan Contoh sebelumnya
+saat penambahan data. SQL query pada saat pengeditan menggunakan SQL
+UPDATE SET.
 \item
-  Untuk mengetahui berapa jumlah record yang terupdate digunakan method
-  numRowsAffected() dari obyek QsqlQuery.
+Untuk mengetahui berapa jumlah record yang terupdate digunakan method
+numRowsAffected() dari obyek QsqlQuery.
 \end{itemize}
 
 \subsection{Menghapus data pada tabel SQLITE}\label{menghapus-data-pada-tabel-sqlite}
@@ -1341,7 +1341,7 @@ tipe data Qstring. Setelah query dijalankan maka akan diperiksa hasil
 dari akibat penghapusan datanya. Jika berhasil maka akan mengembalikan
 nilai true, sedangkan jika gagal maka akan menghasilkan nilai false.
 
-\subsubsection*{Contoh  Menghapus data pada SQLite.}
+\subsubsection*{ContohMenghapus data pada SQLite.}
 
 \begin{enumerate}
 \item Kondisi awal tabel:
@@ -1428,17 +1428,17 @@ menu akan ditampilkan beberapa pilihan seperti:
 
 
 \item
-  Tambah data
+Tambah data
 \item
-  Tampil data
+Tampil data
 \item
-  Hapus data
+Hapus data
 \item
-  Cari nim
+Cari nim
 \item
-  Edit data
+Edit data
 \item
-  Exit
+Exit
 \end{enumerate}
 
 Penjelasan:
@@ -1446,18 +1446,18 @@ Penjelasan:
 \begin{itemize}
 
 \item
-  Menu 1 akan digunakan untuk menambah data mahasiswa
+Menu 1 akan digunakan untuk menambah data mahasiswa
 \item
-  Menu 2 akan digunakan untuk menampilkan data semua mahasiswa
+Menu 2 akan digunakan untuk menampilkan data semua mahasiswa
 \item
-  Menu 3 akan digunakan untuk menghapus data seorang mahasiswa
-  berdasarkan nimnya
+Menu 3 akan digunakan untuk menghapus data seorang mahasiswa
+berdasarkan nimnya
 \item
-  Menu 4 akan digunakan untuk mencari data seorang mahasiswa berdasarkan
-  nimnya
+Menu 4 akan digunakan untuk mencari data seorang mahasiswa berdasarkan
+nimnya
 \item
-  Menu 5 akan digunakan untuk mengedit data seorang mahasiswa
-  berdasarkan nimnya
+Menu 5 akan digunakan untuk mengedit data seorang mahasiswa
+berdasarkan nimnya
 \end{itemize}
 
 Cara yang digunakan adalah dengan membuat sebuah class yang akan
@@ -1469,12 +1469,12 @@ fungsi-fungsi lain diluar class yang digunakan untuk melakukan
 fungsi-fungsi sesuai dengan 5 fungsi yang didefinisikan pada menu. Untuk
 lebih jelasnya silahkan dicoba pada Contoh berikut ini.
 
-\subsubsection*{Contoh  Pembuatan manipulasi data pada SQLite dengan menggunakan menu}
+\subsubsection*{ContohPembuatan manipulasi data pada SQLite dengan menggunakan menu}
 
 \begin{enumerate}
 
 \item
-  Tulislah program berikut:
+Tulislah program berikut:
 
 \begin{lstlisting}[language=c++, caption= Pembuatan manipulasi data pada SQLite dengan menggunakan menu]
 #include <QtCore/QCoreApplication>
@@ -1534,7 +1534,7 @@ for( int c=0; c<cols; c++ )
 temp += myq.value(c).toString() + ((c<cols-1)?"\t":"");
 qDebug() << temp;
 }
-    }
+}
 }
 QString getNamaTabel(){
 return this->namatabel;
@@ -1588,7 +1588,7 @@ nama='"+nama.c_str()+"',ipk="+ipk.c_str()+" where nim='"+nim.c_str()+"'";
 bool hasil = t.jalanQuery(s);
 if(hasil) qDebug() << "Pengeditan berhasil"; else qDebug() << "Pengeditan gagal";
 }
-    int main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 QCoreApplication a(argc, argv);
 int pil;
@@ -1630,8 +1630,8 @@ return a.exec();
 \begin{enumerate}
 
 \item
-  Tampilan menu:
-  
+Tampilan menu:
+
  \begin{lcverbatim}
 MENU:
 1. Tambah data
@@ -1644,8 +1644,8 @@ Pilihan:
  \end{lcverbatim}
 
 \item
-  Menu tambah data dan tampil data:
-  
+Menu tambah data dan tampil data:
+
  \begin{lcverbatim}
  MENU:
  1. Tambah data
@@ -1660,18 +1660,18 @@ Pilihan:
  Penambahan berhasil
  Tekan sembarang tombol . . .
  \end{lcverbatim}
-  
+
 \begin{lcverbatim}
-"NIM  Nama  IPK" 
-"011041  Wachid  3.1" 
-"012042  Arif  3.6 "
-"011041  Eko  3.4"
-"012011  Alif  3.3" 
-"013012 Ramadhani   3.8" 
-  \end{lcverbatim}
+"NIMNamaIPK" 
+"011041Wachid3.1" 
+"012042Arif3.6 "
+"011041Eko3.4"
+"012011Alif3.3" 
+"013012 Ramadhani 3.8" 
+\end{lcverbatim}
 \item
-  Menu hapus data dan tampil data:
-  
+Menu hapus data dan tampil data:
+
  \begin{lcverbatim}
 MENU:
 1. Tambah data
@@ -1686,43 +1686,43 @@ Penghapusan berhasil
 Tekan sembarang tombol . . .
 \end{lcverbatim}
 \begin{lcverbatim}
-"NIM  Nama  IPK" 
-"012042  Arif  3.6 "
-"011041  Eko  3.4"
-"012011  Alif  3.3" 
-"013012 Ramadhani   3.8" 
+"NIMNamaIPK" 
+"012042Arif3.6 "
+"011041Eko3.4"
+"012011Alif3.3" 
+"013012 Ramadhani 3.8" 
 \end{lcverbatim}
-   
+ 
 \item
-  Menu edit data dan tampil data: 
-  
-  Mengedit 011041 menjadi bernama
-  Nur Wachid dan IPK menjadi 3.01
-  
-  \begin{lcverbatim}
-  MENU:
-  1. Tambah data
-  2. Tampil data
-  3. Hapus data
-  4. Cari nim
-  5. Edit data
-  6. Exit
-  Pilihan: 5
-  NIM yang akan diedit: 011042
-  Nama baru: Arif H
-  IPK: 3.01
-  Tekan sembarang tombol . . .
-  \end{lcverbatim}
-  
+Menu edit data dan tampil data: 
+
+Mengedit 011041 menjadi bernama
+Nur Wachid dan IPK menjadi 3.01
+
 \begin{lcverbatim}
-"NIM  Nama  IPK" 
-"012042  Arif H  3.6 "
-"011041  Eko  3.4"
-"012011  Alif  3.3" 
-"013012 Ramadhani   3.8" 
+MENU:
+1. Tambah data
+2. Tampil data
+3. Hapus data
+4. Cari nim
+5. Edit data
+6. Exit
+Pilihan: 5
+NIM yang akan diedit: 011042
+Nama baru: Arif H
+IPK: 3.01
+Tekan sembarang tombol . . .
+\end{lcverbatim}
+
+\begin{lcverbatim}
+"NIMNamaIPK" 
+"012042Arif H3.6 "
+"011041Eko3.4"
+"012011Alif3.3" 
+"013012 Ramadhani 3.8" 
 \end{lcverbatim}
 \item
-  Menu cari data:
+Menu cari data:
 
 \begin{lcverbatim}
 MENU:
@@ -1734,12 +1734,12 @@ MENU:
 6. Exit
 Pilihan: 4
 NIM yang akan dicari: 011042
-"NIM  Nama  IPK" 
-"012042  Arif H  3.6 "
+"NIMNamaIPK" 
+"012042Arif H3.6 "
 Tekan sembarang tombol . . .
 \end{lcverbatim}
 \item
-  Menu Exit
+Menu Exit
 
 \begin{lcverbatim}
 MENU:
@@ -1760,49 +1760,49 @@ Tekan sembarang tombol . . .Good bye
 \begin{itemize}
 
 \item
-  Program diatas merupakan program yang cukup banyak dan kompleks.
-  Program ini dibuat dengan prinsip perulangan. Kita akan mengulang
-  terus menerus bagian menu 1-6 sampai pengguna menginputkan angka yang
-  bukan diantara 1-5. Jika pengguna memasukkan angka 1 maka dipanggil
-  menu pertama, dan seterusnya. Jika pengguna memasukkan angka 6 maka
-  program akan menampilkan Good Bye.
+Program diatas merupakan program yang cukup banyak dan kompleks.
+Program ini dibuat dengan prinsip perulangan. Kita akan mengulang
+terus menerus bagian menu 1-6 sampai pengguna menginputkan angka yang
+bukan diantara 1-5. Jika pengguna memasukkan angka 1 maka dipanggil
+menu pertama, dan seterusnya. Jika pengguna memasukkan angka 6 maka
+program akan menampilkan Good Bye.
 \item
-  Pada awal program kita membuat sebuah class bernama Tabel yang
-  digunakan untuk mengelola data-data pada tabel mahasiswa. Class Tabel
-  harus diinisialisasi terlebih dahulu pada method int main() dengan
-  mengiputkan nama database dan nama tabelnya. Setelah diinisialisai
-  maka class Tabel harus melakukan method connect agar database SQLite
-  terbuka (open).
+Pada awal program kita membuat sebuah class bernama Tabel yang
+digunakan untuk mengelola data-data pada tabel mahasiswa. Class Tabel
+harus diinisialisasi terlebih dahulu pada method int main() dengan
+mengiputkan nama database dan nama tabelnya. Setelah diinisialisai
+maka class Tabel harus melakukan method connect agar database SQLite
+terbuka (open).
 \item
-  Ketika menu penambahan data dipilih, maka method tambahData akan
-  dipanggil dan membutuhkan parameter Tabel yang sudah dibuat dan
-  diinisialisasi terlebih dahulu sebelumnya. Setelah itu berdasarkan
-  obyek Tabel yang sudah dibuat, kita akan menggunakannya untuk
-  memasukkan data.
+Ketika menu penambahan data dipilih, maka method tambahData akan
+dipanggil dan membutuhkan parameter Tabel yang sudah dibuat dan
+diinisialisasi terlebih dahulu sebelumnya. Setelah itu berdasarkan
+obyek Tabel yang sudah dibuat, kita akan menggunakannya untuk
+memasukkan data.
 \item
-  Pada menu tambah, program akan meminta inputan nim, nama, dan ipk
-  kepada pengguna. Setelah pengguna mengiputkan data dengan lengkap,
-  maka method tambahData() akan dipanggil sehingga data dapat masuk ke
-  tabel. Proses memasukkan data dilakukan dengan menggunakan query
-  INSERT.
+Pada menu tambah, program akan meminta inputan nim, nama, dan ipk
+kepada pengguna. Setelah pengguna mengiputkan data dengan lengkap,
+maka method tambahData() akan dipanggil sehingga data dapat masuk ke
+tabel. Proses memasukkan data dilakukan dengan menggunakan query
+INSERT.
 \item
-  Demikian pula dengan menu tampil data, method yang digunakan sama pada
-  contoh-contoh sebelumnya, namun ditambah dengan cara membaca
-  kolom-kolom pada tabel dan menampilkan semua recordnya satu persatu
-  dengan perulangan.
+Demikian pula dengan menu tampil data, method yang digunakan sama pada
+contoh-contoh sebelumnya, namun ditambah dengan cara membaca
+kolom-kolom pada tabel dan menampilkan semua recordnya satu persatu
+dengan perulangan.
 \item
-  Pada menu hapus data, perintah yang digunakan juga hanya mengubah
-  query SQLnya.
+Pada menu hapus data, perintah yang digunakan juga hanya mengubah
+query SQLnya.
 \item
-  Pada menu cari data, kita juga menggunakan SQL select seperti pada
-  menampilkan data. Perbedaannya hanyalah kondisi where yang digunakan.
-  Pada menu pencarian data, kita mencari satu buah record mahasiswa saja
-  berdasarkan nimnya.
+Pada menu cari data, kita juga menggunakan SQL select seperti pada
+menampilkan data. Perbedaannya hanyalah kondisi where yang digunakan.
+Pada menu pencarian data, kita mencari satu buah record mahasiswa saja
+berdasarkan nimnya.
 \item
-  Pada menu edit data, kita juga menggunakan SQL update yang dapat
-  digunakan untuk mengubah data pada tabel. Pada menu edit ini, kita
-  mencari terlebih dahulu nim mahasiswa yang akan diedit baru
-  mengeditnya.
+Pada menu edit data, kita juga menggunakan SQL update yang dapat
+digunakan untuk mengubah data pada tabel. Pada menu edit ini, kita
+mencari terlebih dahulu nim mahasiswa yang akan diedit baru
+mengeditnya.
 \end{itemize}
 
 \begin{quotation}

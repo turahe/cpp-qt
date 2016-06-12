@@ -111,29 +111,7 @@ akan terpesan dan dibiarkan kosong.
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++, caption=Input dan Output Array, label=contoh3-1]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-int main(int argc, char *argv[])
-{
-  QCoreApplication a(argc, argv);
-  int nilai[5], x;
-  cout<<"Memasukkan nilai"<<endl;
-  for(x=0;x<5;x++)
-  {
-    cout<<"Nilai Angka ke - "<<x+1<< ": ";
-    cin>>nilai[x];
-  }
-  cout<<endl;
-  cout<<"Membaca nilai :\n";
-  for(x=0;x<5;x++)
-  {
-    cout<<"Nilai Angka : "<<nilai[x]<<endl;
-  }
-  return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Input dan Output Array, label=contoh3-1]{../code/contoh2-1.cpp}
 
 \textbf{Hasil:}
 \begin{lcverbatim}
@@ -181,25 +159,8 @@ Nilai Angka : 5
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++, caption=Manipulasi Array, label=contoh3-2]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-int main(int argc, char *argv[])
-{
-  QCoreApplication a(argc, argv);
-  int bil[7],i;
-  cout<<"elemen ke-1 ? "; cin>>bil[0];
-  bil[1] = 5;
-  bil[2] = bil[1] + 20;
-  for(i=4;i<7;i++)
-    bil[i] = i*10;
-    bil[3] = bil[bil[1]];
-  for(i=0;i<7;i++)
-    cout<<"bil["<<i<<"] = "<<bil[i]<<" dan alamatnya: "<<&bil[i]<<"\n";
-  return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Manipulasi Array, label=contoh3-2]{../code/contoh3-2.cpp}
+
 
 \textbf{Hasil:}
 

@@ -197,26 +197,8 @@ fungsi dapat menggunakan preprocessor directive \texttt{\#include}.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh4-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Membuat Fungsi yang mengembalikan nilai, label=contoh4-1]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-int absolut(int bil);
-int main(int argc, char *argv[])
-{
-  using namespace std;
-  QCoreApplication a(argc, argv);
-  int bilangan = -10;
-    cout << "Bilangan : " << bilangan << endl;
-    cout << "Dimutlakkan menjadi : " << absolut(bilangan) << endl;
-  return a.exec();
-  }
-  int absolut(int bil){
-    if(bil<0)
-    return - bil;
-    else
-    return bil;
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Membuat Fungsi yang mengembalikan nilai, label=contoh4-1]{../code/contoh4-1.cpp}
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl + R, outputnya
   adalah sebagai berikut.
@@ -291,22 +273,8 @@ return.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh4-2}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Membuat Fungsi yang tidak mengembalikan nilai, label=contoh4-2]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-void hello(int kali);
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-hello(3);
-return a.exec();
-}
-void hello(int kali){
-using namespace std;
-for(int x=0;x<kali;x++)
-cout << "Hello World!" << endl;
-}      
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Membuat Fungsi yang tidak mengembalikan nilai, label=contoh4-2]{../code/contoh4-2.cpp}
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -370,26 +338,8 @@ lokalnya.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh4-3}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Variabel Lokal, label=contoh4-3]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-float kali(float a, float b); /*prototype fungsi*/
-int main(int argc, char *argv[])
-{
-using namespace std;
-QCoreApplication a(argc, argv);
-float hasil;
-hasil = kali(4,7);
-cout << "Hasil = " << hasil << endl;
-return a.exec();
-}
-float kali(float a, float b)
-{
-float c;
-c = a * b;
-return c;
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Variabel Lokal, label=contoh4-3]{../code/contoh4-3.cpp}
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -441,24 +391,9 @@ fungsi-fungsi yang mengguanakanya.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh4-4}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Variabel Global, label=contoh4-4]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-void kali(float a, float b); /*prototype fungsi*/
-float hasil; /*variabel global*/
-int main(int argc, char *argv[])
-{
-  using namespace std;
-  QCoreApplication a(argc, argv);
-  kali(4,7);
-  cout << "Variabel global hasil = " << hasil << endl;
-  return a.exec();
-  }
-  void kali(float a, float b)
-  {
-  hasil = a * b;
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Variabel Global, label=contoh4-4]{../code/contoh4-4.cpp}
+
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -506,33 +441,7 @@ letak pendeklarasianya.
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 contoh \ref{contoh4-5}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Variabel Statik, label=contoh4-5]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-long int kali(long int i); /*prototype*/
-int main(int argc, char *argv[])
-{
-using namespace std;
-QCoreApplication a(argc, argv);
-int i,n;
-long int fak;
-n = 5;
-/*menghitun n faktorial (5!)*/
-if(n<=0)
-fak=0;
-else
-for(i=1;i<=n;i++)
-fak = kali(i);
-cout << n << " Faktorial = " << fak << endl;
-return a.exec();
-}
-/*---Fungsi kali---*/
-long int kali(long int i)
-{
-static long int f=1;
-f = f * i;
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Variabel Statik, label=contoh4-5]{../code/contoh4-5.cpp}
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.

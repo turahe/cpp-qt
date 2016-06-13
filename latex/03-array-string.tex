@@ -129,7 +129,7 @@ Nilai Angka : 4
 Nilai Angka : 5
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 \item
@@ -175,7 +175,7 @@ bil[5] = 50 dan alamatnya: 0x28fe7c
 bil[6] = 60 dan alamatnya: 0x28fe80
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -218,24 +218,9 @@ tidak sesuai.
 
 Buatlah program beikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penanganan Batas Indeks Elemen Array, label=contoh3-3]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-int main(int argc, char *argv[])
-{
-  QCoreApplication a(argc, argv);
-  int angka[5];
-  angka[0] = 0; //batas bawah array
-  angka[4] = 4; //batas atas array
-  angka[5] = 5; //indeks melebihi batas
-  //program akan HANG
-  cout<<angka[5];
-  return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Penanganan Batas Indeks Elemen Array, label=contoh3-3]{../code/contoh3-3.cpp}
 
-\textbf{Hasil dan Keterangan:}
+\subsubsection*{Hasil dan Keterangan.}
 
 \begin{itemize}
 
@@ -291,20 +276,7 @@ lainnya bernilai 0.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Inisialisasi Array dengan nilai \textbackslash{}0, label=contoh3-4]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-int main(int argc, char *argv[])
-{
-  QCoreApplication a(argc, argv);
-  int bil[7] = {0}; //inisialisasi 0
-  for(int i=0;i<7;i++){
-    cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
-  }
-  return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Inisialisasi Array dengan nilai \textbackslash{}0, label=contoh3-4]{../code/contoh3-4.cpp}
 
 \textbf{Hasil:}
 
@@ -318,7 +290,7 @@ Elemen ke-5: 5
 Elemen ke-6: 6
 \end{lcverbatim}
 
-\textbf{Keterangan}
+\subsubsection*{Keterangan}
 
 Pada program diatas elemen array bernama bil yang dipesan sebanyak 7
 elemen, di inisialisasi dengan nilai 0. Setelah di inisialisasi dengan
@@ -331,20 +303,7 @@ ditampilkan dengan \texttt{cout}.
 Buka Qt Creator dan buat project Qt Console Application baru dengan
 nama contoh \ref{contoh3-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Inisialisasi Array dua nilai elemen pertama, label=contoh3-5]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-int main(int argc, char *argv[])
-{
-  QCoreApplication a(argc, argv);
-  int bil[7] = {2,5}; //inisialisasi dua elemen pertama
-  for(int i=0;i<7;i++){
-    cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
-  }
-  return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Inisialisasi Array dua nilai elemen pertama, label=contoh3-5]{../code/contoh3-5.cpp}
 
 \textbf{Hasil:}
 
@@ -358,7 +317,7 @@ Elemen ke-5: 0
 Elemen ke-6: 0
 \end{lcverbatim}
 
-\textbf{Keterangan}
+\subsubsection*{Keterangan}
 
 Inisialisasi elemen array dapat dilakukan hanya pada dua elemen pertama
 saja, hal ini dilakukan dengan cara memberikan dua nilai pertama,
@@ -430,7 +389,7 @@ Elemen ke-3: 0
 Elemen ke-4: v
 \end{lcverbatim}
 
-\textbf{Keterangan}
+\subsubsection*{Keterangan}
 
 Pada program C++, elemen array yang sudah dipesan dimemory pasti sudah
 berisi data. Namun nilai datanya bersifat acak. Sehingga jika kita
@@ -470,7 +429,7 @@ return a.exec();
 Nilai hari selasa adalah = 30
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan.}
 
 Pada program diatas, kita membuat sebuah tipe data enum bernama Hari
 yang memiliki 7 elemen. Masing-masing elemen \texttt{enum} sama saja
@@ -543,7 +502,7 @@ int main(int argc, char *argv[])
 
 \end{figure}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Program tidak bisa dijalankan karena terdapat \textbf{error}, bahwa
 array tidak bisa dilakukan operasi assigment. Artinya kita tidak bisa
@@ -583,7 +542,7 @@ int main(int argc, char *argv[])
 6
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -616,13 +575,13 @@ adalah:
 int papan[8][8];
 \end{lstlisting}
 
-yang digambarkan dalam bentuk gambar \ref{gambar3-2}:
+yang digambarkan dalam bentuk gambar \ref{fig:gambar3-2}.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{../manuscript/images/capture3-11.PNG}
-\label{gambar3-2}
+\includegraphics[width=0.7\linewidth, height=0.5\textheight]{../manuscript/images/capture3-11.PNG}
 \caption{Contoh deklarasi array dua dimensi yang menggambarkan papan catur}
+\label{fig:gambar3-2}
 \end{figure}
 
 Array dua dimensi sering kali digambarkan/dianalogikan sebagai sebuah
@@ -635,7 +594,7 @@ Berikut adalah gambar array berdimensi (baris x kolom = 3 x 4)
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{../manuscript/images/capture3-12.PNG}
+\includegraphics[width=0.5\linewidth, height=0.3\textheight]{../manuscript/images/capture3-12.PNG}
 \label{gambar3-3}
 \caption{array dimensi 3 x 4}
 \end{figure}
@@ -882,7 +841,7 @@ int main(int argc, char *argv[])
 \end{lcverbatim}
 
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Program diatas mendeklarasikan sebuah variabel array 2 dimensi bernama
 matriks berukuran 3 baris dan 5 kolom. Kemudian matriks tersebut
@@ -944,7 +903,7 @@ int main(int argc, char *argv[])
 1112131416
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Program diatas menyalin data dari matriks 2 dimensi ke matriks 2 dimensi
 lainnya dengan menggunakan perulangan bertingkat. Perulangan bertingkat
@@ -1000,7 +959,7 @@ int main(int argc, char *argv[])
 15
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1182,7 +1141,7 @@ int main(int argc, char *argv[])
 String
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Program diatas dapat mengetahui kapan berakhirnya suatu string, dalam
 arti kita dapat mengetahui panjang suatu string dengan melakukan
@@ -1216,7 +1175,7 @@ int main(int argc, char *argv[])
 
 \end{figure}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Terlihat bahwa kita tidak bisa membuat array fa character tepat sesuai
 dengan jumlah karakter yang kita inisialisasikan. Jika dilihat kata
@@ -1252,7 +1211,7 @@ hasil data string: Wachid
 \end{lcverbatim}
 
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1301,7 +1260,7 @@ hasil data string: Nur Wachid
 \end{lcverbatim}
 
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Pada contoh program diatas, kita menggunakan perintah
 \texttt{cin.get(buffer,49)}. Perintah diatas ``memaksa'' agar perintah
@@ -1363,7 +1322,7 @@ panjang huruf adalah: 10 karakter
 \end{lcverbatim}
  
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Fungsi strlen menerima satu parameter yang hanya bertipe array of
 character. Fungsi ini tidak bisa menerima parameter berupa tipe data C++
@@ -1398,7 +1357,7 @@ panjang huruf adalah: 10 karakter
 \end{lcverbatim}
  
 
-\textbf{Keterangan}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1461,7 +1420,7 @@ String Kedua : STRING
 \end{lcverbatim}
 
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 \item
@@ -1518,7 +1477,7 @@ int main(int argc, char *argv[])
 \end{lcverbatim}
 
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1572,7 +1531,7 @@ int main(int argc, char *argv[])
 
 \end{figure}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Opearator + tidak bisa digunakan untuk menggabungkan dua buah string.
 Untuk menggabungkan dua string, digunakan fungsi \texttt{strcat()}.
@@ -1605,7 +1564,7 @@ Kami kelompok belajar Qt C++
 \end{lcverbatim}
 
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1750,7 +1709,7 @@ Isi str1 : Ini string C++
 Halo, Ini string C++
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1826,7 +1785,7 @@ int main(int argc, char *argv[])
  C
  \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Dapat dilihat langsung pada baris komentar program diatas.
 
@@ -1861,7 +1820,7 @@ Percobaan 1 Percobaan 2 Percobaan 3 Percebaan tampung
 \end{lcverbatim}
 
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1925,7 +1884,7 @@ a
 C-style: Indonesia Raya
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -2015,7 +1974,7 @@ Mencari semua karakter 'a'
 'a' ditemukan pada posisi 43
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -2073,7 +2032,7 @@ Setelah dibalik:
 !kilabid naka ini gnirtS
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Untuk membalik kalimat bertipe string, kita harus menggunakan \index{library}library
 header \index{algoritm}algoritm, sehingga kita harus mengincludekan library tersebut
@@ -2123,7 +2082,7 @@ Hasil konversi ke huruf kecil:
 ini kok tulisanya alay banget ya!
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Program diatas menunjukkan function transform pada library algoritm
 dapat digunakan untuk mengkonversi string dari besar ke kecil dan dari

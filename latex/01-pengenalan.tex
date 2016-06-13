@@ -582,7 +582,7 @@ tertentu, jadi bisa dimulai dari kolom/baris manapun. Namun demikian,
 untuk mempermudah pembacaan program dan untukkeperluan dokumentasi,
 sebaiknya penulisan program di bahasa C/C++ diatur sedemikian rupa
 sehingga mudah dan enak dibaca. Berikut adalah struktur dasar program
-yang dibuat dengan bahasa C++:
+yang dibuat dengan bahasa C++.
 
 \begin{lstlisting}[language=c++, caption=Struktur Program C++]
 #include <header>  
@@ -597,9 +597,9 @@ return 0;
 }  
 \end{lstlisting}
 
-\textbf{Penjelasan :}
+\subsection*{Penjelasan :}
 
-\paragraph{ 1. \#include <header>}
+\subsubsection*{ 1. \#include <header>}
 
 \texttt{\#include} adalah salah satu pengarah preprocessor directive
 yang tersedia pada C++. Preprocessor selalu dijalankan terlebih dahulu
@@ -638,14 +638,14 @@ Beberap contoh pengikutsertaan berkas adalah:
   operasi matematika kuadrat.
 \end{itemize}
 
-\paragraph{2. using namespace std;}\label{using-namespace-std}
+\subsubsection*{2. using namespace std;}\label{using-namespace-std}
 
 Semua elemen standard C++ library dinyatakan dalam apa yang disebut
 namespace, namespace tersebut bernama std. Jadi artinya untuk mengakses
 semua fungsionalitas std kita menuliskan bahwa kita menggunakan
 namespace std.
 
-\paragraph{3. int main ()}\label{int-main}
+\subsubsection*{3. int main ()}\label{int-main}
 
 Program C++ terdiri dari satu atau lebih fungsi, dan di antara salah
 satunya harus ada fungsi main dan hanya boleh ada satu main pada tiap
@@ -661,7 +661,7 @@ pada setiap awal dari sebuah fungsi dan tentu saja harus diakhiri dengan
 tanda \}. Tanda ini digunakan untuk menunjukkan cakupan(scope) dari
 sebuah fungsi,dimana untukmenunjukkan fungsi ini dimulai danberakhir.
 
-\paragraph{4. Komentar}\label{komentar}
+\subsubsection*{4. Komentar}\label{komentar}
 
 Komentar tidak pernah dicompile oleh compiler. Dalam C++ terdapat 2
 jenis komentar, yaitu:
@@ -681,13 +681,13 @@ lebih mudah dibaca. Komentar juga membantu orang lain untuk membaca dan
 mengerti isi dari code. Komentar tidak menyebabkan komputer melakukan
 suatu instruksi ketika program dijalankan.
 
-\paragraph{5. Tanda Semicolon (;)}\label{tanda-semicolon}
+\subsubsection*{5. Tanda Semicolon (;)}\label{tanda-semicolon}
 
 Tanda semicolon `` \texttt{;} '' digunakan untuk mengakhiri sebuah
 pernyataan. Setiap pernyataan harus diakhiri dengan sebuah tanda
 semicolon.
 
-\paragraph{9. return 0}\label{return-0}
+\subsubsection*{9. return 0}\label{return-0}
 
 Pernyataan return menyebabkan fungsi utama untuk menyelesaikan
 kegiatannya lalu mengembalikanhasil dari fungsi utama. Kode kembalian
@@ -700,7 +700,7 @@ dengan error.
 Untuk lebih jelasnya silahkan coba ketik program berikut pada project
 baru.
 
-\begin{lstlisting}[language=c++, caption= Contoh struktur program C++]
+\begin{lstlisting}[language=c++, caption= struktur program C++]
 #include <QtCore/QCoreApplication>  
 #include <iostream>  
 using namespace std;  

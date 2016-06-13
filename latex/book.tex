@@ -22,7 +22,6 @@
 % membuat enviroment baru berupa verbatin untuk hasil compile dari setiap
 % listing program yang di buat
 %------------------------------------------------
-
 \usepackage{verbatim}
 
 \definecolor{cverbbg}{gray}{0.93}
@@ -36,6 +35,11 @@
 	}
 	\endflushleft
 }
+%---------------------------
+% membuat itemize bulat menjadi checkmark
+\usepackage{pifont}
+\renewcommand\labelitemi{\ding{52}}
+
 
 %-----------------------------------------------------
 % membuat sebuah label pada hsil output pdf yang dibuat dengan hasil

@@ -18,6 +18,8 @@
 *.ilg
 *.ind
 *.lof
+*.bbl
+*.blg
 
 # remove format mini toc
 *.maf

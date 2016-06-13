@@ -20,6 +20,8 @@
 *.lof
 *.bbl
 *.blg
+*.bcf
+*.run.xml
 
 # remove format mini toc
 *.maf

@@ -123,42 +123,9 @@ Marilah kita melakukan percobaan berikut ini.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh9-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Meletakkan metode kelas turunan di kelas dasar, label=contoh9-1]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kuda{
-public:
-void melompat(){ cout << "Lompat!" << endl;}
-virtual void terbang(){cout <<"kuda tidak bisa terbang" << endl;}
-};
-class Kuda_terbang : public Kuda{
-public:
-void terbang() {cout << "terbang..." << endl;}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kuda* kandang[5];
-Kuda* kudanya;
-int pilih;
-for(int nomor=0; nomor<5; nomor++){
-cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
-cin >> pilih;
-if(pilih==0)
-kudanya = new Kuda();
-else
-kudanya = new Kuda_terbang();
-kandang[nomor] = kudanya;
-}
-cout << endl;
-for(int nomor=0; nomor<5; nomor++){
-kandang[nomor]->terbang();
-delete kandang[nomor];
-}
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption= Meletakkan metode kelas turunan di kelas dasar, label=contoh9-1]{../code/contoh9-1.cpp}
+
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -178,7 +145,7 @@ terbang...
 kuda tidak bisa terbang
 \end{lcverbatim}
 
-\textbf{Analisa Program :}
+\subsubsection*{Analisa Program}
 
 \begin{itemize}
 \item
@@ -312,45 +279,9 @@ Lakukan percobaan berikut ini.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh9-2}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Melakukan Down Casting, label=contoh9-2]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kuda{
-public:
-virtual void melompat(){ cout << "Lompat!" << endl;}
-};
-class Kuda_terbang : public Kuda{
-public:
-virtual void terbang() {cout << "terbang..." << endl;}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kuda* kandang[5];
-Kuda* kudanya;
-int pilih;
-for(int nomor=0; nomor<5; nomor++){
-cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
-cin >> pilih;
-if(pilih==0)
-kudanya = new Kuda();
-else
-kudanya = new Kuda_terbang();
-kandang[nomor] = kudanya;
-}
-cout << endl;
-for(int nomor=0; nomor<5; nomor++){
-Kuda_terbang *pKterb = dynamic_cast<Kuda_terbang*> (kandang[nomor]);
-if (pKterb != NULL)
-pKterb->terbang();
-else
-cout << "Kuda biasa " << endl;
-delete kandang[nomor];
-}
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption= Melakukan Down Casting, label=contoh9-2]{../code/contoh9-2.cpp}
+
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -369,7 +300,7 @@ terbang...
 Kuda biasa
 \end{lcverbatim}
 
-\textbf{Analisa Program :}
+\subsubsection*{Analisa Program}
 
 \begin{itemize}
 
@@ -433,62 +364,9 @@ daftar objek tersebut.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh9-3}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Multiple Inheritance, label=contoh9-3]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kuda{
-public:
-Kuda() {cout << "Konstruktor Kuda ... ";}
-virtual ~Kuda() {cout << "Destruktor Kuda ... \n";}
-virtual void meringkik() const {cout << " Kikikikikkkk...";}
-};
-class Burung{
-public:
-Burung() { cout << "Konstruktor Burung ... "; }
-virtual ~Burung() { cout << "Destruktor Burung ... "; }
-virtual void berkicau() const { cout << " Cicit cuit... "; }
-virtual void terbang() const { cout << " Terbang ... "; }
-};
-class Kuda_terbang : public Kuda, public Burung{
-public:
-void berkicau() const { meringkik(); }
-Kuda_terbang() { cout << "Konstruktor Kuda_terbang ... "; }
-~Kuda_terbang() { cout << "Destruktor Kuda_terbang ... "; }
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kuda* daftar_kuda[2]; //<-- kumpulan Kuda
-Burung* daftar_burung[2]; //<-- kumpulan Burung
-cout << "Menciptakan objek Kuda:" << endl;
-daftar_kuda[0] = new Kuda(); //<-- objek Kuda
-cout << "\nMenciptakan objek Kuda_terbang:" << endl;
-daftar_kuda[1] = new Kuda_terbang(); //<-- objek Kuda_terbang
-cout << "\nMenciptakan objek Burung:" << endl;
-daftar_burung[0] = new Burung(); //<-- objek Burung
-cout << "\nMenciptakan objek Kuda_terbang:" << endl;
-daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
-cout << "\n\nTampilkan daftar_kuda :" << endl;
-daftar_kuda[0]->meringkik(); //<-- berisi objek Kuda
-cout << "\nHapus Kuda : ";
-delete daftar_kuda[0];
-daftar_kuda[1]->meringkik(); //<-- berisi objek Kuda_terbang
-cout << "\nHapus Kuda_terbang : ";
-delete daftar_kuda[1];
-cout << "\nTampilkan daftar_burung :" << endl;
-daftar_burung[0]->berkicau(); //<-- berisi objek Burung
-daftar_burung[0]->terbang(); //<-- berisi objek Burung
-cout << "\nHapus Burung : " ;
-delete daftar_burung[0];
-cout << endl;
-daftar_burung[1]->berkicau(); //<-- berisi objek Kuda_terbang
-daftar_burung[1]->terbang(); //<-- berisi objek Kuda_terbang
-cout << "\nHapus Kuda_terbang : ";
-delete daftar_burung[1];
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Multiple Inheritance, label=contoh9-3]{../code/contoh9-3.cpp}
+
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -500,7 +378,7 @@ return a.exec();
 
 \end{figure}
 
-\textbf{Analisa Program :}
+\subsubsection*{Analisa Program}
 
 \begin{itemize}
 \item
@@ -632,35 +510,8 @@ terlihat sederhana dan mudah dipahami.
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 contoh \ref{contoh9-4}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor Kelas Multiple Inheritance, label=contoh9-4]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kuda{
-public:
-Kuda(string nama){
-cout << "Konstruktor Kuda, nama = " << nama << endl;
-}
-};
-class Burung{
-public:
-Burung(string warna){
-cout << "Konstruktor Burung, warna = " << warna << endl;
-}
-};
-class Kuda_terbang : public Kuda, public Burung{
-public:
-Kuda_terbang():Kuda("Gondrong"),Burung("Merah"){
-cout << "Konstuktor Kuda_terbang";
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kuda_terbang* gondrong = new Kuda_terbang();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Konstruktor Kelas Multiple Inheritance, label=contoh9-4]{../code/contoh9-4.cpp}
+
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
@@ -670,7 +521,7 @@ Konstruktor Kuda, nama = Gondrong
 Konstruktor Burung, warna = Merah
 \end{lcverbatim}
 
-\textbf{Analisa Program :}
+\subsubsection*{Analisa Program}
 
 \begin{itemize}
 \item
@@ -819,59 +670,9 @@ Agar lebih jelas, lakukan pecobaan berikut ini.
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 contoh \ref{contoh9-5}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Penurunan pada umumnya (Common Base Class), label=contoh9-5]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Binatang{
-public:
-Binatang(int umur=5):umur(5){cout << "Konstruktor Binatang\n";}
-~Binatang(){cout << "Destruktor Binatang\n";}
-protected:
-int umur;
-public:
-virtual int const getUmur(){
-cout << "dari Binatang...";
-return umur;
-}
-};
-class Kuda : public Binatang{
-public:
-Kuda(){cout << "Konstruktor Kuda\n";}
-~Kuda(){cout << "Destruktor Kuda\n";}
-virtual int const getUmur(){
-cout << "dari Kuda...";
-return umur;
-}
-                                        
-};
-class Burung : public Binatang{
-public:
-Burung(){cout << "Konstruktor Burung\n";}
-~Burung(){cout << "Destruktor Burung\n";}
-virtual int const getUmur(){
-cout << "dari Burung...";
-return umur;
-}
-};
-class Kuda_terbang : public Kuda, public Burung{
-public:
-Kuda_terbang(){cout << "Konstruktor Kuda_terbang\n";}
-~Kuda_terbang(){cout << "Destruktor Kuda_terbang\n";}
-virtual int const getUmur(){
-cout << "dari Kuda_terbang...";
-return Kuda::getUmur();
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kuda_terbang* gondrong = new Kuda_terbang();
-cout << "Umur : " << gondrong->getUmur() << endl;
-delete gondrong;
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption= Penurunan pada umumnya (Common Base Class), label=contoh9-5]{../code/contoh9-5.cpp}
+
+
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
@@ -882,7 +683,7 @@ A\textgreater{} Konstruktor Burung A\textgreater{} Konstruktor
 Kuda\_terbang A\textgreater{} dari Kuda\_terbang\ldots{}dari
 Kuda\ldots{}Umur : 5
 
-\textbf{Analisa Program :}
+\subsubsection*{Analisa Program}
 
 \begin{itemize}
 \item
@@ -938,47 +739,9 @@ lebih jelas, lakukan pecobaan berikut ini.
   Buka Qt Creator dan buat project Qt Console Application baru dengan
   nama contoh \ref{contoh9-6}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption= Penurunan pada umumnya (Common Base Class), label=contoh9-6]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Binatang{
-public:
-Binatang(int umur=5):umur(5){cout << "Konstruktor Binatang\n";}
-~Binatang(){cout << "Destruktor Binatang\n";}
-protected:
-int umur;
-public:
-virtual int const getUmur(){
-cout << "dari Binatang...";
-return umur;
-}
-};
-class Kuda : virtual public Binatang{
-public:
-Kuda(){cout << "Konstruktor Kuda\n";}
-~Kuda(){cout << "Destruktor Kuda\n";}
-};
-class Burung : virtual public Binatang{
-public:
-Burung(){cout << "Konstruktor Burung\n";}
-~Burung(){cout << "Destruktor Burung\n";}
-};
-class Kuda_terbang : public Kuda, public Burung{
-public:
-Kuda_terbang():Kuda(),Burung(),Binatang(){
-cout << "Konstruktor Kuda_terbang\n";}
-~Kuda_terbang(){cout << "Destruktor Kuda_terbang\n";}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kuda_terbang* gondrong = new Kuda_terbang();
-cout << "Umur : " << gondrong->getUmur() << endl;
-delete gondrong;
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption= Penurunan pada umumnya (Common Base Class), label=contoh9-6]{../code/contoh9-6.cpp}
+
+
 \item
   Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
   adalah sebagai berikut.
@@ -992,7 +755,7 @@ BinatangUmur : 5
 \end{lcverbatim}
 
 
-\textbf{Analisa Program :}
+\subsubsection*{Analisa Program}
 
 \begin{itemize}
 \item

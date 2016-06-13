@@ -4,6 +4,7 @@ _site
 .sass-cache
 .jekyll-metadata
 _gh_pages
+code/
 
 # remove extension
 *.psd

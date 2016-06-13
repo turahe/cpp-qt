@@ -193,10 +193,9 @@ kuda tidak bisa terbang
   ketidakkonsistenan program.
 \end{itemize}
 \begin{quotation}
-\includegraphics{pencil}	\textbf{Catatan:}
+ {\LARGE \ding{45}} 	\textbf{Catatan}
 	
-	Pada
-	percobaan ini kelas telah disederhanakan untuk fokus pada pokok masalah
+	Pada	percobaan ini kelas telah disederhanakan untuk fokus pada pokok masalah
 	yang hendak dijelaskan. Konstruktor, destruktor dan sebagainya
 	dihilangkan supaya program tampak sederhana untuk membahas masalah
 	\emph{single inheritance}. Tidak direkomendasikan untuk menulis program
@@ -236,7 +235,7 @@ ini hanya dipanggil jika pointer menunjuk objek bertipe
 mendeteksi objek tipe apa yang sedang ditunjuk oleh pointer yang dikenal
 sebagai Runtime Type Identification (RTTI).
 \begin{quotation}
-	\includegraphics{pencil} \textbf{Catatan:}
+ {\LARGE \ding{45}}  \textbf{Catatan}
 	 
 	 Hati-hati dalam menggunakan RTTI dalam program. Kebutuhan untuk memakai
 	 RTTI bisa menjadi pertanda adanya desain hirarki pewarisan yang kurang
@@ -802,10 +801,10 @@ Jika dibayangkan, maka ``silsilah kekerabatan'' penurunan virtual ini
 adalah seperti gambar Daimond Inheritance di atas.
 
 \begin{quotation}
-\includegraphics{pencil}\textbf{Catatan:}
+ {\LARGE \ding{45}} \textbf{Catatan}
 	
 \begin{itemize}
-\item Untuk memastikan kelas turunan hanya mempunyai sebuah kelas dasar bersama,
+\item [\ding{45}] Untuk memastikan kelas turunan hanya mempunyai sebuah kelas dasar bersama,
 deklarasikan kelas-kelas turunan secara virtual dari kelas dasar. Contoh:
 
 \begin{lstlisting}[language=c++, numbers=none]
@@ -815,7 +814,7 @@ class Burung : virtual public Binatang //<-- penurunan secara virtual
 class Kuda_terbang : public Kuda, public Burung
 \end{lstlisting}
 
-\item Jika penurunan dilakukan secara virtual seperti di atas, secara otomatis kelas
+\item [\ding{45}] Jika penurunan dilakukan secara virtual seperti di atas, secara otomatis kelas
 Kuda\_terbang akan memanggil konstruktor Binatang() walaupun tidak ditulis
 secara eksplisit, contoh konstruktor Kuda\_terbang() tanpa memanggil konstruktor
 Binatang() berikut ini akan menghasilkan hasil yang sama:
@@ -846,7 +845,7 @@ jika bisa dilakukan dengan cara single inheritance jangan memakai
 multiple inheritance.
 
 \begin{quotation}
-\includegraphics{pencil}	\textbf{Catatan}
+ {\LARGE \ding{45}} 	\textbf{Catatan}
 	\begin{itemize}
 		\item Pakailah multiple inheritance jika suatu kelas baru memerlukan
 		fitur-fitur yang ada di dua kelas yang berbeda.

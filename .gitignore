@@ -4,17 +4,6 @@ _site
 .sass-cache
 .jekyll-metadata
 _gh_pages
-<<<<<<< HEAD
-code/
 
 # remove extension
 *.psd
-=======
-latex/
-manuscript/
-fragment/
-docs/
-
-
-# remove 
->>>>>>> buku

@@ -10,6 +10,8 @@ int main(int argc, char *argv[])
 
     if (x > 10)
         cout << x << " lebih besar dari 10\n";
-    
+    else
+        cout << x << " kurang besar dari 10\n";
+
     return a.exec();
 }

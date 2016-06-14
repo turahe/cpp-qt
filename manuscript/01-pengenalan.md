@@ -397,18 +397,21 @@ T> Simulator atau compiler yang lengkap teridir dari
 ## 1.6 Struktur Program C++
 
 Program Bahasa C/C++ tidak mengenal aturan penulisan di kolom/baris tertentu, jadi bisa dimulai dari kolom/baris manapun. Namun demikian, untuk mempermudah pembacaan program dan untukkeperluan dokumentasi, sebaiknya penulisan program di bahasa C/C++ diatur sedemikian rupa sehingga mudah dan enak dibaca.
+
 Berikut adalah struktur dasar program yang dibuat dengan bahasa C++:
 
-	#include <header>  
-	using namespace std;    
-	int main(int argc, char *argv[])
-	{  
+```cpp
+#include <header>  
+using namespace std;    
+int main(int argc, char *argv[])
+{  
 	deklarasi variabel;   
 	deklarasi konstanta;  
 	perintah âperintah;  
-	//komentar  
+//komentar  
 	return 0;  
-	}  
+}  
+```
 
 **Penjelasan :**
 
@@ -457,6 +460,7 @@ Contoh 1.	Structur program C++
 
 Untuk lebih jelasnya silahkan coba ketik program berikut pada project baru.
 
+```cpp
 	#include <QtCore/QCoreApplication>  
 	#include <iostream>  
 	using namespace std;  
@@ -468,6 +472,7 @@ Untuk lebih jelasnya silahkan coba ketik program berikut pada project baru.
 	cout<<"enter my World";  
 	return a.exec ();  
 	}
+```
 
 Kemudian jalankan dengan menekan tombol Run (CTRL + R)
 

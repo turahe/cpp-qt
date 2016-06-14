@@ -63,20 +63,23 @@ Walaupun demikian, sebaiknya memberikan nama pengenal variabel sesuai dengan isi
 
 Konstanta mirip dengan variabel, hanya saja nilainya konstan, tidak dapat diubah-ubah. Untuk dapat membuat konstanta diperlukan inisialisasi ketika konstanta dibuat dan setelah itu nilainya tidak dapat diubah. C++ mempunyai 2 macam konstanta, yaitu konstanta literal dan konstanta simbolik. Berikut ini adalah contoh deklarasi variabel:
 
-
-	int harga;
+```cpp
+int harga;
+```
 
 Yang dimaksud dengan konstanta literal adalah suatu nilai yang ditulis pada kode program. Sebagai contoh misalnya :
 
-
-	int usiaku = 42;
+```cpp
+int usiaku = 42;
+```
 
 Nilai 42 tidak dapat menerima nilai lain dan nilai tersebut bersifat tetap. Perhatikan dalam hal ini identifier “usiaku” adalah variabel (bukan konstanta), yang dinamakan konstanta literal adalah nilai “42” tersebut.
 
 Konstanta simbolik adalah konstanta yang direpresentasikan dengan suatu nama, sama seperti variabel, namun berbeda dengan variabel setelah suatu konstanta diinisialisasi dengan suatu nilai maka nilainya tidak dapat diubah. Ada 2 cara untuk mendeklarasikan konstanta simbolik, yaitu dengan menggunakan preprocessor directive `#define` dan yang kedua adalah dengan memakai kata kunci `const`. Berikut ini contoh mendeklarasikan dan menginisialisasi konstanta :
 
-
-	#define kapasitas 15
+```cpp
+#define kapasitas 15
+```
 
 Perhatikan bahwa `kapasitas` tidak mempunyai tipe data tertentu (int, char dsb.). Preprosessor akan melakukan substitusi berupa teks, setiap ada akses terhadap kata `kapasitas`, akan digantikan dengan teks 15. Karena preprosesor bekerja sebelum kompiler, kompiler tidak mengenal konstanta `kapasitas`, yang dikenal hanyalah bilangan 15.
 
@@ -86,8 +89,9 @@ T> Walaupun dengan memakai preprocessor directive `#define` tampak mudah, namun 
 
 Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan memakai kata kunci const seperti berikut :
 
-
-	const int usiaku = 42;
+```cpp
+const int usiaku = 42;
+```
 
 Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku bertipe int dan diinisialisasi dengan nilai 42. Setelah baris ini simbol (identifier) bernama usiaku tidak dapat diubah-ubah nilainya. Keuntungan pembuatan konstanta dengan cara ini adalah lebih mudah dipelihara dan mencegah adanya kesalahan dan yang paling penting adalah bahwa konstanta ini mempunyai tipe data dan kompiler dapat mengharuskan konstanta ini diperlakukan sebagai tipe data tersebut.
 
@@ -162,10 +166,11 @@ Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Opera
 
 Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari sebuah variabel maupun kumpulan variabel-variabel yang dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi adalah suatu nilai yang mempunyai besaran dan tipe data tertentu. Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan “panjang * lebar” yang menghasilkan nilai 15, 12 dan 180:
 
-
-	panjang = 15;
-	lebar = 12;
-	luas = panjang * lebar ;
+```cpp
+panjang = 15;
+lebar = 12;
+luas = panjang * lebar ;
+```
 
  **Keterangan :**
 
@@ -236,8 +241,9 @@ Dari contoh di atas terlihat bahwa operator pengerjaan mempunyai jenjang yang le
 
  C++ mengijinkan operator pengerjaan ditulis lebih dari satu kali pada sebuah statement, misalnya :
 
-
-	x = y = a * b;
+```cpp
+x = y = a * b;
+```
 
 Dalam hal ini yang dikerjakan adalah a dikalikan b terlebih dahulu meudian hasilnya diberikan kepada variabel y dan hasil ekspresi y = a * b diberikan kepada variabel x. sehingga misalnya a bernilai 8 dan b bernilai 7, maka baik variabel x maupun y keduanya bernilai 15.
 
@@ -287,8 +293,9 @@ Selain dua operator logika ini, operator unary “!” (logika NOT) dapat diguna
 
 Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai ‘a’ maka ungkapan dibawah ini mempunyai hasil akhir benar (True).
 
-
-	A < B || B == 7 && C > ‘z’
+```cpp
+A < B || B == 7 && C > ‘z’
+```
 
 Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari langkah-langkah sebagai berikut:
 
@@ -313,11 +320,12 @@ Adalah perintah yang memungkinkan pemilihan atas perintah yang akan dijalankan s
 
 Sintaks penulisannya sebagai berikut:
 
-	 if (<ekspresi_boolean>)
-	 {
-	 <statements>
-	 }
-
+```cpp
+ if (<ekspresi_boolean>)
+ {
+ <statements>
+ }
+```
 
 
 Flowchart untuk statment ini adalah :
@@ -328,16 +336,16 @@ Flowchart untuk statment ini adalah :
 
 Sintaks penulisannya sebagai berikut :
 
-
-	 if (<ekspresi_boolean>)
-	 {
-	 <dijalankan jika ekspresi_boolean benar>
-	 }
-	 else
-	 {
-	 < dijalankan jika ekspresi_boolean salah>
-	 }
-
+```cpp
+ if (<ekspresi_boolean>)
+{
+	<dijalankan jika ekspresi_boolean benar>
+}
+ else
+{
+	< dijalankan jika ekspresi_boolean salah>
+}
+```
 
 
 Flowchart untuk statment ini adalah :
@@ -359,18 +367,18 @@ Flowchart untuk statment if bersarang ini adalah :
 
 Perintah ini digunakan sebagai alternatif pengganti dari statment `if … else` dengan `else` lebih dari satu. Dengan perintah ini percabangan dapat diarahkan pada beberapa alternatif pilihan berdasarkan nilai ekspresi. Berbeda dengan `if`, `switch` tidak dapat medeteksi *operator pembanding* (>, <, dsb.), karena ekspresi degan operator ini menghasilkan nilai *boolean*, melainkan hanya dapat mengalihkan alur program ke suatu nilai yang sama, pada statement ini ekspresi yang diminta harus menghasilkan bilangan *bulat*.
 
-
-	 switch (<ekspresi>)
-	 {
-	 case <konst_1>: <pernyataan_1>;
-	 break;
-	 case <konst_2>: <pernyataan_2>;
-	 break;
-	 case <konst_n>: <pernyataan_n>;
-	 break;
-	 default : <pernyataan_default>;
-	 }
-
+```cpp
+switch (<ekspresi>)
+{
+case <konst_1>: <pernyataan_1>;
+	break;
+case <konst_2>: <pernyataan_2>;
+	break;
+case <konst_n>: <pernyataan_n>;
+	break;
+default : <pernyataan_default>;
+	}
+```
 
 Perintah `switch` akan membaca nilai dari `<ekspresi>` kemudian membandingkan hasilnya dengan konstanta-konstanta (`<konst_1>`, `<konst_2>`, `<konst_n>`) yang berada di case. Pembandingan akan dimulai dari `<konst_1>` sampai konstanta `<konst_n>`. Jika hasil dari kondisi sama dengan nilai konstanta tertentu, misalnya `<konst_1>`, maka pernyataan 1 akan dijalankan sampai ditemukan `break`. Pernyataan `break` akan membawa proses keluar dari perintah `switch`. Jika hasil dari kondisi tidak ada yang sama dengan konstanta-konstanta yang diberikan, maka pernyataan pada *default* yang akan dijalankan.
 
@@ -466,13 +474,13 @@ Proses perulangan akan berjalan jika kondisi yang diperiksa di `while` masih ber
 
 Sintaks penulisannya sebagai berikut :
 
-
-	 do
-	 {
-	 <statements>
-	 }
-	 while(<expresi_boolean>)
-
+```cpp
+do
+{
+	<statements>
+}
+while(<expresi_boolean>)
+```
 
 
 ![](images/capture2-10.png)
@@ -485,11 +493,12 @@ Kata kunci `break` digunakan untuk keluar dari suatu blok programn sebelum ekspr
 
 Sintaks penulisan `break` dan `continue` adalah sebagai berikut :
 
-
-	 while(<expresi_boolean1>)
-	 {
-	 <statements>
-	 if(<expresi_boolean2>)
-	 continue;
-	 <statements>
-	 }
+```cpp
+while(<expresi_boolean1>)
+{
+	<statements>
+if(<expresi_boolean2>)
+	continue;
+	<statements>
+}
+```

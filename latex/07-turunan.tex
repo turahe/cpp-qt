@@ -45,62 +45,21 @@ kesalahan kompiler.
 
 \subsubsection*{Contoh Pewarisan (Inheritance).}
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama
+\begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 Contoh \ref{contoh7-1}, kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Pewarisan (Inheritance), label=contoh7-1]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Lingkaran{
-public:
-//Konstruktor
-Lingkaran(float radius = 0){
-Lingkaran::radius = radius;
-}
-//Destruktor
-    ~Lingkaran(){}
-protected :
-float radius;
-public :
-float getLuas(){
-return 3.14 * radius * radius;
-}
-};
-class Silinder : public Lingkaran{
-public:
-//Konstruktor
-Silinder(float radius, float tinggi){
-Silinder::radius = radius; //<-- warisan
-Silinder::tinggi = tinggi; //<-- anggota baru
-}
-//Destruktor
-~Silinder(){}
-private:
-float tinggi; //<-- anggota baru
-public:
-float getVolume(){ //<-- anggota baru
-//getLuas() adalah warisan
-return getLuas() * tinggi;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Silinder drum(50,125);
-cout << "Volume drum = " << drum.getVolume() << " Cm2" << endl;
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Pewarisan (Inheritance), label=contoh7-1]{../code/contoh7-1.cpp}
 
-Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya
+\item Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
 
 \begin{lcverbatim}
 Volume drum = 981250 Cm2
 \end{lcverbatim}
+\end{enumerate}
 
-\textbf{Keterangan Program :}
+\subsubsection*{Keterangan Program}
 
 \begin{itemize}
 
@@ -133,8 +92,7 @@ Volume drum = 981250 Cm2
   anggota milik kelas Lingkaran yang diwariskan kepada kelas Silinder.
 \end{itemize}
 
-\section{Jenis Akses Penurunan
-Kelas}\label{jenis-akses-penurunan-kelas}
+\section{Jenis Akses Penurunan Kelas}\label{jenis-akses-penurunan-kelas}
 
 Deklarasi kelas Silinder di atas adalah :
 \texttt{class\ Silinder\ :\ public\ Lingkaran}, ini berarti semua
@@ -151,7 +109,9 @@ akan berubah menjadi private di dalam kelas Silinder.
 
 \subsubsection*{Contoh  Jenis Akses Public Pada Penurunan.}
 
-Buka project contoh \ref{contoh7-1} di atas, kemudian tambahkan (edit) kode berikut
+\begin{enumerate}
+
+\item Buka project contoh \ref{contoh7-1} di atas, kemudian tambahkan (edit) kode berikut
 pada fungsi
 \texttt{main()\ :\ cout\ \textless{}\textless{}\ ``Milik\ Base\ Class\ -\/-\textgreater{}\ ''\ \textless{}\textless{}\ drum.getLuas()\ \textless{}\textless{}\ endl;}
 
@@ -166,15 +126,15 @@ return a.exec();
 }
 \end{lstlisting}
 
-Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya
+\item Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
 \begin{lcverbatim}
 Volume drum = 981250 Cm2
 Milik Base Class --> 7850
 \end{lcverbatim}
+\end{enumerate}
 
-
-\textbf{Keterangan Program :}
+\subsubsection*{Keterangan Program}
 
 Tampak pada program dapat mengakses metode warisan kelas Lingkaran dari
 dalam program utama (main()). Ini menunjukkan bahwa metode tersebut
@@ -203,7 +163,7 @@ akan ada output karena terjadi kesalahan kompilasi sebagai berikut.
 
 \end{figure}
 
-\textbf{Keterangan Program :}
+\subsubsection*{Keterangan Program}
 
 Tampak pada program metode warisan kelas Lingkaran bernama getLuas()
 tidak dapat diakses dari dalam program utama (main()). Hal ini
@@ -265,8 +225,7 @@ dalam pembentukan objek konstruktor suatu kelas pasti bekerja (oleh
 karena itu diberi nama ``konstruktor'' yang artinya pembentuk). Berikut
 ini hal-hal yang perlu diperhatikan pada pewarisan mengenai konstruktor:
 
-\subsection{Tiap Kelas Mempunyai
-Konstruktor}\label{tiap-kelas-mempunyai-konstruktor}
+\subsection{Tiap Kelas Mempunyai fKonstruktor}\label{tiap-kelas-mempunyai-konstruktor}
 
 Tidak ada kelas yang tidak mempunyai konstruktor. Adalah benar bahwa
 secara eksplisit kita bisa menuliskan sebuah kelas tanpa mendeklarasikan
@@ -289,26 +248,9 @@ apa-apa seperti berikut:
   Buka Qt Creator, buat project Qt Console Application dengan nama
   contoh \ref{contoh7-3}. Kemudian tulis kode berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor default, label=contoh7-3]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kelasku{
-public:
-Kelasku(){} //<-- konstruktor ini boleh tidak ditulis
-public:
-    void hai(){
-cout << "Hai, apa khabar...?" << endl;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kelasku test;
-test.hai();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Konstruktor default, label=contoh7-3]{../code/contoh7-3.cpp}
+{../code/contoh7-3.cpp}
+
 \item
   Tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai
   berikut.
@@ -330,7 +272,7 @@ Hai, apa khabar...?
 
 
 
-\textbf{Keterangan Program:}
+\subsubsection*{Keterangan Program}
 
 Pada contoh program ini tampak bahwa ada konstruktor maupun tidak ada
 konstruktor program di atas tetap bisa dijalankan dan tidak ada
@@ -365,29 +307,9 @@ kelas turunan akan memanggil konstruktor kosong kelas dasarnya.
   contoh \ref{contoh7-4} tadi. Kemudian ubah isi konstruktor kelas Kelasku dan
   tambahkan kelas Turunan berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor default kelas turunan, label=contoh7-4]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kelasku{
-public:
-Kelasku(){
-cout << "Konstruktor Kelas Dasar dijalankan..." << endl;
-}
-public:
-void hai(){
-cout << "Hai, apa khabar...?" << endl;
-}
-};
-class Turunan : public Kelasku{
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Turunan test; //<-- membuat objek dari kelas Turunan saja
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Konstruktor default kelas turunan, label=contoh7-4]{../code/contoh7-4.cpp}
+
+
 \item
   Tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai
   berikut.
@@ -398,7 +320,7 @@ Konstruktor Kelas Dasar dijalankan...
 \end{lcverbatim}
 
 
-\textbf{Keterangan Program:}
+\subsubsection*{Keterangan Program}
 
 \begin{itemize}
 \item
@@ -437,30 +359,8 @@ di dalamnya ada pemanggilan konstruktor kelas dasarnya.
   ontoh \ref{contoh7-5} tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti
   berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor default kelas turunan memanggil konstruktor kelas dasar, label=contoh7-5]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kelasku{
-public:
-Kelasku(string kata){
-cout << "Konstruktor Kelas Dasar" << endl;
-cout << "Mengucapkan : " << kata << endl;
-}
-public:
-void hai(){
-cout << "Hai, apa khabar...?" << endl;
-}
-};
-class Turunan : public Kelasku{
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Turunan test; //<-- membuat objek dari kelas Turunan saja
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Konstruktor default kelas turunan memanggil konstruktor kelas dasar, label=contoh7-5]{../code/contoh7-5.cpp}
+
 \item
   Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output
   karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
@@ -468,11 +368,11 @@ return a.exec();
 
 \begin{figure}[htbp]
 \centering
-\shadowimage[width=8cm]{Capture7-2}
+\includegraphics[width=8cm]{Capture7-2}
 
 \end{figure}
 
-\textbf{Keterangan Program:}
+\subsubsection*{Keterangan Program}
 
 Seperti pada percobaan contoh \ref{contoh7-4}, kelas Turunan tidak mempunyai
 konstruktor secara eksplisit, sehingga dibuatkan konstruktor oleh
@@ -515,31 +415,9 @@ Turunan seperti berikut.
   contoh \ref{contoh7-6} tadi. Kemudian tambahkan konstruktor pada kelas Turunan
   seperti berikut.
 
-\begin{lstlisting}[language=c++, caption=Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar, label=contoh7-6]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kelasku{
-public:
-Kelasku(string kata){
-cout << "Konstruktor Kelas Dasar" << endl;
-cout << "Mengucapkan : " << kata << endl;
-}
-public:
-void hai(){
-cout << "Hai, apa khabar...?" << endl;
-}
-};
-class Turunan : public Kelasku{
-Turunan(){} //<-- membuat konstruktor pada kelas turunan
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Turunan test; //<-- membuat objek dari kelas Turunan saja
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar, label=contoh7-6]{../code/contoh7-6.cpp}
+
+
 \item
   Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output
   karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
@@ -549,11 +427,8 @@ return a.exec();
 \shadowimage[width=8cm]{Capture7-3}
   	
   \end{figure}
-\end{enumerate}
 
-
-
-\textbf{Keterangan Program:}
+\item \textbf{Keterangan Program}
 
 Pada program ini mencoba untuk menghindari pemanggilan kontruktor kelas
 dasar dengan cara membuat sendiri konstruktor pada kelas Turunan yang
@@ -564,7 +439,7 @@ memberikan pesan kesalahan yang sama, yaitu :
 no maching function call to 'Kelasku::Kelasku()' 
 \end{lstlisting}
 
-Padahal jelas pada konstruktor yang ditulis pada kelas Turunan sama
+\item Padahal jelas pada konstruktor yang ditulis pada kelas Turunan sama
 sekali tidak pernah memanggil konstruktor tanpa kelas dasar parameter
 tersebut. Percobaan ini membuktikan bahwa bagaimanapun juga pada kelas
 turunan, konstruktor kelas dasar pasti dipanggil, dan jika secara
@@ -572,9 +447,7 @@ eksplisit tidak dituliskan pemanggilan konstruktor kelas dasar, maka
 kompiler akan menambahkan pemanggilan konstruktor default (konstruktor
 tanpa parameter) pada kelas dasar.
 
-\begin{enumerate}
 
-\setcounter{enumi}{2}
 \item
   Sekarang ubahlah konstruktor kelas Turunan, agar secara eksplisit
   memanggil konstuktor yang ada pada kelas dasar seperti berkut :
@@ -582,7 +455,7 @@ tanpa parameter) pada kelas dasar.
 class Turunan : public Kelasku\{ public: //memanggil konstruktor kelas
 \end{lstlisting}
   
-  dasar dng sebuah parameter Turunan():Kelasku(``Hallo.. :-)'')\{\} \};
+dasar dng sebuah parameter Turunan():Kelasku(``Hallo.. :-)'')\{\} \};
 \end{enumerate}
 
 Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output
@@ -611,8 +484,7 @@ Mengucapkan : Hallo.. :-)
   default kelas dasar.
 \end{itemize}
 
-\section{Mengganti Metode Kelas Dasar Pada Kelas Turunan
-(Overriding)}\label{mengganti-metode-kelas-dasar-pada-kelas-turunan-overriding}
+\section{Mengganti Metode Kelas Dasar Pada Kelas Turunan (Overriding)}\label{mengganti-metode-kelas-dasar-pada-kelas-turunan-overriding}
 
 Ada kalanya kelas turunan mempunyai implementasi lain untuk nama metode
 yang sama dengan kelas dasarnya. Sebagai contoh misalnya, kelas
@@ -626,7 +498,7 @@ seperti gambar ilustrasi berikut:
 
 \begin{figure}[htbp]
 \centering
-\shadowimage[width=8cm]{Capture7-4}
+\includegraphics[width=8cm]{Capture7-4}
 \caption{Ilustrasi metode class dasar pada class turunan dalam objek lingkaran, silinder dan persegi}
 \end{figure}
 
@@ -651,62 +523,9 @@ parameter tersebut.
 	\item Buka project Qt Console Application projek contoh \ref{contoh7-7} yang tadi sudah
 	dibuat, kemudian ubah kode menjadi seperti berikut
 	
-\begin{lstlisting}[language=c++, caption=Melakukan Overriding, label=contoh7-7]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Lingkaran{
-public:
-//Konstruktor
-Lingkaran(float radius = 0){
-Lingkaran::radius = radius;
-}
-//Destruktor
-~Lingkaran(){}
-protected :
-float radius;
-public :
-float getLuas(){
-return 3.14 * radius * radius;
-}
-};
-class Silinder : public Lingkaran{
-public:
-//Konstruktor
-Silinder(float radius, float tinggi){
-Silinder::radius = radius; //<-- warisan
-Silinder::tinggi = tinggi; //<-- anggota baru
-}
-//Destruktor
-~Silinder(){}
-private:
-float tinggi; //<-- anggota baru
-public:
-float getLuas(){ //<-- Overriding
-float luasTutup = 3.14 * this->radius * this->radius;
-float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;
-float luasSilinder = 2 * luasTutup + luasSelimut;
-return luasSilinder;
-}
-float getVolume(){ //<-- anggota baru
-//getLuas() sebenarnya sudah ditimpa
-return getLuas() * tinggi;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Silinder drum(50,125);
-cout << "Luas Silinder = " << drum.getLuas() << " Cm2" << endl;
-cout << "Milik Base Class --> " << drum.getLuas() << endl;
-cout << "Volume drum = " << drum.getVolume() << " Cm3" << endl;
-return a.exec();
-}
-\end{lstlisting}
-	
-	
-		\item
-		Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah
+\lstinputlisting[language=c++, caption=Melakukan Overriding, label=contoh7-7]{../code/contoh7-7.cpp}
+
+\item Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah
 		sebagai berikut.
 
 	
@@ -726,7 +545,7 @@ Milik Base Class –> 7850
 \end{enumerate}
 
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -811,7 +630,7 @@ Milik Base Class --> 54950
 Volume drum = 981250 Cm3
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 \item
@@ -841,8 +660,7 @@ drum.Lingkaran::getLuas()
   memanggil anggota milik kelas dasar.
 \end{itemize}
 
-\section{Penyembunyian Metode Kelas
-Dasar}\label{penyembunyian-metode-kelas-dasar}
+\section{Penyembunyian Metode Kelas Dasar}\label{penyembunyian-metode-kelas-dasar}
 
 Ketika terjadi overriding terhadap suatu metode kelas dasar, maka semua
 metode milik kelas dasar yang bernama sama, yaitu metode-metode yang
@@ -857,65 +675,24 @@ kepada kelas turunan.
   Jalankan Qt Console Application projek, buat projek bernama contoh 
   \ref{contoh7-9}  seperti berikut:
 
-\begin{lstlisting}[language=c++, caption=Penyembunyian metode kelas dasar, label=contoh7-9]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Dasar{
-public:
-void hallo() const{
-cout << "Hallo" << endl;
-}
-void hallo(string kata) const{
-cout << "Hallo " << kata << endl;
-}
-void hallo (string kata, string nama) const{
-cout << "Hallo " << kata << " nama saya " << nama << endl;
-}
-};
-    class Turunan : public Dasar{
-public:
-void hallo() const{ //<-- override terhadap salah satu metode
-cout << "Ni hao ma" << endl;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Turunan agus;
-agus.hallo();
-//agus.hallo("apa kahabar");
-//agus.hallo("apa kahabar","Agus");
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Penyembunyian metode kelas dasar, label=contoh7-9]{../code/contoh7-9.cpp}
+
 \item
   Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah
   sebagai berikut.
-\end{enumerate}
+
 
 \begin{lcverbatim}
 Ni hao ma
 \end{lcverbatim}
 
-\begin{enumerate}
 
-\setcounter{enumi}{2}
 \item
   Hilangkan tanda comment pada pemanggilan metode hallo pada dua baris
-  di progam utama contoh \ref{contoh7-10} menjadi seperti berikut:
+  di progam utama contoh \ref{contoh7-9} menjadi seperti berikut:
 
-\begin{lstlisting}[language=c++, caption=Menghilangkan comment pada metode hallo, label=contoh7-10]
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Turunan agus;
-agus.hallo();
-agus.hallo("apa kahabar");
-agus.hallo("apa kahabar","Agus");
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, firstline=22, caption=Menghilangkan comment pada metode hallo, label=contoh7-10]{../code/contoh7-10.cpp}
+
 \item
   Tekan Ctrl+R untuk menjalankan program diatas, maka tidak akan ada
   output dan menucul pesan kesalahan saat kompilasi sepeti berikut.
@@ -927,7 +704,7 @@ return a.exec();
 
 \end{figure}
 
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 Tampak pada hasil kompilasi kedua tidak dijalankan, pesan kesalahan
 adalah tidak ditemukannya metode dengan sebuah parameter
@@ -966,33 +743,9 @@ memahami metode virtual.
   Jalankan Qt Console Application projek, buat projek bernama contoh \ref{contoh7-11}
   seperti berikut:
 
-\begin{lstlisting}[language=c++, caption=Metode virtual dan non virtual, label=contoh7-11]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Lingkaran{
-public:
-virtual float getLuas(){
-cout << "Luas Lingkaran" << endl;
-return 0;
-}
-};
-class Silinder : public Lingkaran{
-public:
-float getLuas(){
-cout << "Luas Silinder" << endl;
-return 0;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Lingkaran *objek1; //<-- variabel pointer bertipe kelas dasar
-objek1 = new Silinder(); //<-- objek bertipe kelas turunan
-objek1->getLuas(); //<-- memanggil metode yang dioverride
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Metode virtual dan non virtual, label=contoh7-11]{../code/contoh7-11.cpp}
+
+
 \item
   Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
   sepeti berikut.
@@ -1001,18 +754,11 @@ return a.exec();
 Luas Silinder
 \end{lcverbatim} 
 \item
-  Sekarang hapuslah kata kunci pada contoh \ref{contoh7-12} virtual metode getLuas() pada kelas
+  Sekarang hapuslah kata kunci pada contoh \ref{contoh7-11} virtual metode getLuas() pada kelas
   Lingkaran seperti berikut.
 
-\begin{lstlisting}[language=c++, caption=Menghapus methode getluas, label=contoh7-12]
-class Lingkaran{
-public:
-float getLuas(){
-cout << "Luas Lingkaran" << endl;
-return 0;
-}
-};
-\end{lstlisting}
+\lstinputlisting[language=c++, firstline=4, lastline=10, caption=Menghapus methode getluas, label=contoh7-12]{../code/contoh7-12.cpp}
+
 \item
   Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
   sepeti berikut.
@@ -1022,7 +768,7 @@ return 0;
 Luas Lingkaran
 \end{lcverbatim} 
 \end{enumerate}
-\textbf{Keterangan:}
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1049,15 +795,16 @@ Luas Lingkaran
   diperlukan pada proses polimorfisme yang akan dibahas pada bab
   berikutnya.
 \end{itemize}
+
 \begin{quotation}
  {\LARGE \ding{45}} 	\textbf{Catatan} 
 	\begin{itemize}
-		\item Kata
+		\item [\ding{45}] Kata
 		kunci virtual tidak membuat metode tersebut harus dioverride.
-		\item Pada kelas turunan metode virtual yang dioveride
+		\item [\ding{45}] Pada kelas turunan metode virtual yang dioveride
 		otomatis virtual walaupun tidak dtiulis, namun sebaiknya untuk kemudahan
 		perawatan sebaiknya kata kunci virtual ditulis.
-		\item Variabel pointer bertipe kelas dasar jika digunakan untuk menunjuk objek
+		\item [\ding{45}] Variabel pointer bertipe kelas dasar jika digunakan untuk menunjuk objek
 		bertipe kelas turunan, untuk mengakses anggota kelas turunannya, ia
 		hanya bisa memanggil metode virtual yang dioverride oleh kelas
 		turunannya. Dengan kata lain, variabel tersebut tidak bisa memanggil
@@ -1084,7 +831,7 @@ kelas Lingkaran yang dibahas pada contoh \ref{contoh7-10} di atas.
 
 \begin{figure}[htbp]
 \centering
-\shadowimage[width=8cm]{Capture7-6}
+\includegraphics[width=8cm]{Capture7-6}
 \caption{Bagan pemotongan antara lingkaran dan silinder}
 \end{figure}
 
@@ -1093,31 +840,16 @@ Pemotongan (Silicing). Supaya lebih jelas lakukan percobaan berikut ini.
 
 \subsubsection*{Contoh  Metode virtual dan non virtual.}
 
-Jalankan Qt Console Application projek, buka projek bernama contoh \ref{contoh7-13}
+\begin{enumerate}
+
+\item Jalankan Qt Console Application projek, buka projek bernama contoh \ref{contoh7-12}
 yang dibuat tadi, kemudian ubah kode progam pada bagian program utama
 seperti berikut:
 
+\lstinputlisting[language=c++, firstline=18, lastline=32, caption=Metode virtual dan non virtual, label=contoh7-13]{../code/contoh7-13.cpp}
 
 
-\begin{lstlisting}[language=c++, caption=Metode virtual dan non virtual, label=contoh7-13]
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Silinder* s = new Silinder(); //<-- objek bertipe Silinder
-Lingkaran* objek1 = s; //<-- variabel pointer bertipe kelas dasar
-Lingkaran& objek2 = *s; //<-- variabel referensi bertipe kelas dasar
-Lingkaran objek3 = *s; //<-- variabel nilai bertipe kelas dasar
-cout << "Pointer : " ;
-objek1->getLuas(); //<-- memanggil dai variabel pointer
-cout << "Referensi : " ;
-objek2.getLuas(); //<-- memanggil dai variabel referensi
-cout << "Nilai : " ;
-objek3.getLuas(); //<-- memanggil dai variabel nilai
-return a.exec();
-}
-\end{lstlisting}
-
-Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
+\item Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
 sepeti berikut.
 
 \begin{lcverbatim}
@@ -1126,7 +858,9 @@ Referensi : Luas Silinder
 Nilai : Luas Lingkaran
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\end{enumerate}
+
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1180,7 +914,8 @@ Kelas_turunan* variabel2 = static_cast<Kelas_turunan*>(variabel1);
 
 \subsubsection*{Contoh  Memakai static\_cast.}
 
-Jalankan Qt Console Application projek, buka projek bernama contoh \ref{contoh7-14} di
+\begin{enumerate}
+\item Jalankan Qt Console Application projek, buka projek bernama contoh \ref{contoh7-13} di
 atas, ubah pada bagian program utama (main()) menjadi seperti berikut:
 
 \begin{lstlisting}[language=c++, caption=Memakai static\_cast, label=contoh7-14]
@@ -1195,7 +930,7 @@ return a.exec();
 }
 \end{lstlisting}
 
-Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
+\item Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
 sepeti berikut.
 
 \begin{lcverbatim}
@@ -1203,7 +938,9 @@ Luas Silinder
 Volume Silinder
 \end{lcverbatim}
 
-\textbf{Keterangan:}
+\end{enumerate}
+
+\subsubsection*{Keterangan}
 
 \begin{itemize}
 
@@ -1222,10 +959,9 @@ Volume Silinder
 \begin{quotation}
  {\LARGE \ding{45}}  \textbf{Catatan} 
 	\begin{itemize}
-		\item Casting terhadap pointer hanya bisa dilakukan terhadap tipe-tipe yang
+		\item[\ding{45}] Casting terhadap pointer hanya bisa dilakukan terhadap tipe-tipe yang
 		mempunyai hubungan kekerabatan (inheritance).
-		\item  Dengan
-		casting kita bisa memaksa variabel pointer bertipe kelas dasar yang
+		\item[\ding{45}] Dengan casting kita bisa memaksa variabel pointer bertipe kelas dasar yang
 		digunakan untuk menunjuk objek bertipe kelas turunan untuk memanggil
 		metode yang bukan merupakan override dari metode virtual kelas dasar,
 		namun cara ini tidak cukup aman jika objek tersebut bukan dari kelas

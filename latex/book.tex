@@ -171,7 +171,8 @@
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % [1]
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % [2]
-\fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % [3]
+%\fancyhf{} 
+\fancyhead[LE,RO]{\sffamily\normalsize\thepage} % [3]
 \fancyhead[LO]{\rightmark} % [4]
 \fancyhead[RE]{\leftmark} % [5]
 \renewcommand{\headrulewidth}{1.5pt} % [6]
@@ -254,8 +255,8 @@
 \usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,autolang=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
 \usepackage[nottoc]{tocbibind}
 
-\addbibresource{bibliography.bib} % BibTeX bibliography file
-\defbibheading{bibempty}{}
+%\addbibresource{bibliography.bib} % BibTeX bibliography file
+%\defbibheading{bibempty}{}
 
 %-------------------------------------------
 % Isi konten dari bagian dasar, OOP, interface, widget dan Library

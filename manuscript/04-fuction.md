@@ -7,7 +7,7 @@ Fungsi dapat melakukan manipulasi terhadap data dan dapat mengembalikan suatu ni
 
 Setiap fungsi diberi nama, dan ketika dalam suatu program dijumpai nama tersebut, maka eksekusi program akan dialihkan ke tubuh (isi) fungsi tersebut, setelah selesai, yaitu ditandai dengan statemen  `return` atau tanda kurung kurawal tutup, maka akan kembali ke progam utama melanjutkan ke baris  program berikutnya. Peristiwa ini dinamakan pemanggilan fungsi, berikut ini adalah ilustrasi mengenai  pemanggilan fugsi :
 
-![](images/capture4-1.png)
+![](images/Capture4-1.PNG)
 
 Fungsi yang baik mengerjakan sebuah pekerjaan yang spesifik, mudah dipahami dan mudah dikenali berdasarkan nama fungsi tersebut. Pekerjaan yang kompleks seharusnya dipecah-pecah menjadi  beberapa fungsi yang nantinya dapat dipanggil ketika diperlukan.  
 
@@ -373,30 +373,35 @@ Contoh 6. Default Parameter.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	int volume(int,int=1,int=1); /*prototype*/
-	int main(int argc, char *argv[])
-	{
+int volume(int,int=1,int=1); /*prototype*/
+
+int main(int argc, char *argv[])
+{
 	using namespace std;
 	QCoreApplication a(argc, argv);
 	int panjang,lebar,tinggi;
 	panjang = 10;
 	lebar = 15;
 	tinggi = 25;
-	/*menghitun volume*/
+
+/*--- menghitung volume ---*/
 	cout << "Volume 1 --> " << volume(panjang,lebar,tinggi)<< endl;
 	cout << "Volume 2 --> " << volume(panjang,lebar)<< endl;
 	cout << "Volume 3 --> " << volume(panjang)<< endl;
 	return a.exec();
-	}
-	/*---Fungsi volume---*/
-	int volume(int p, int l, int t)
-	{
+}
+
+/*---Fungsi volume---*/
+int volume(int p, int l, int t)
+{
 	return p * l * t;
-	}
-       
+}
+```
+
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut. 
 
 A> {linenos=off}

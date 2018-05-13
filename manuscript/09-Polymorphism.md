@@ -14,7 +14,7 @@ Berikut ini akan dibahas secara lebih mendalam mengenai berbagai aspek polimorfi
 
 Supaya terlihat sederhana, untuk menjelaskan masalah ini marilah kita menggunakan ilustrasi mengenai kelas-kelas dengan perumpamaan kelas binatang dan turunan-turunanya. Misalnya kelas Binatang mempunai hirarki keturuan **Mamalia** dan **Burung**, kelas `Burung` mempunyai member function `terbang()`, sedangkan kelas `Mamalia` sudah diturunkan menjadi beberapa kelas diantaranya `Kuda` dan `Anjing`. Kelas Kuda mempunyai member fucntion `meringkik()` dan `melompat()`. Suatu saat terpikir untuk membuat kelas `Kuda_terbang` yang merupakan kombinasi antara kelas `Burung` dan kelas `Kuda`, karena `Kuda_terbang` bisa `terbang()`, `meringkik()` dan `melompat()`.
 
-![](images/capture8-1.png)
+![](images/Capture8-1.PNG)
 
 Dengan single inheritance hal ini tidak bisa dilakukan dengan mudah, karena hanya bisa menurunkan dari salah satu kelas yang sudah ada, kita bisa membuat `Kuda_terbang` adalah turunan Burung yang bisa `tebang()` tetapi akibatnya tidak bisa `meringkik()` dan `melompat()`, sebaliknya jika dibuat sebagai turunan dari Kuda akan bisa `meringkik()` dan `melompat()` tatapi tidak bisa `terbang()`.
 
@@ -36,43 +36,49 @@ Solusi lainnya untuk membahas keterbatasan *single inheritance* ini adalah membu
 
 Contoh 1. Meletakkan metode kelas turunan di kelas dasar.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-		#include <QtCore/QCoreApplication>
-		#include <iostream>
-		using namespace std;
-		class Kuda{
-		public:
-		void melompat(){ cout << "Lompat!" << endl;}
-		virtual void terbang(){cout <<"kuda tidak bisa terbang" << endl;}
-		};
-		class Kuda_terbang : public Kuda{
-		public:
-		void terbang() {cout << "terbang..." << endl;}
-		};
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		Kuda* kandang[5];
-		Kuda* kudanya;
-		int pilih;
-		for(int nomor=0; nomor<5; nomor++){
-		cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
-		cin >> pilih;
-		if(pilih==0)
-		kudanya = new Kuda();
-		else
-		kudanya = new Kuda_terbang();
-		kandang[nomor] = kudanya;
-		}
-		cout << endl;
-		for(int nomor=0; nomor<5; nomor++){
+using namespace std;
+
+class Kuda{
+	public:
+	void melompat(){ cout << "Lompat!" << endl;}
+	virtual void terbang(){cout <<"kuda tidak bisa terbang" << endl;}
+};
+
+class Kuda_terbang : public Kuda{
+	public:
+	void terbang() {cout << "terbang..." << endl;}
+};
+
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	Kuda* kandang[5];
+	Kuda* kudanya;
+	int pilih;
+	for(int nomor=0; nomor<5; nomor++){
+	cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
+	cin >> pilih;
+	if(pilih==0)
+	kudanya = new Kuda();
+	else
+	kudanya = new Kuda_terbang();
+	kandang[nomor] = kudanya;
+	}
+	cout << endl;
+	
+	for(int nomor=0; nomor<5; nomor++){
 		kandang[nomor]->terbang();
 		delete kandang[nomor];
-		}
-		return a.exec();
-		}
+	}
+	return a.exec();
+}
+```
 
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
@@ -138,45 +144,51 @@ Pada percobaan ini kita tidak melakukan “percolating upward”, yaitu menulisk
 
 Contoh 2. Melakukan Down Casting.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
-		#include <QtCore/QCoreApplication>
-		#include <iostream>
-		using namespace std;
-		class Kuda{
-		public:
-		virtual void melompat(){ cout << "Lompat!" << endl;}
-		};
-		class Kuda_terbang : public Kuda{
-		public:
-		virtual void terbang() {cout << "terbang..." << endl;}
-		};
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		Kuda* kandang[5];
-		Kuda* kudanya;
-		int pilih;
-		for(int nomor=0; nomor<5; nomor++){
-		cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
-		cin >> pilih;
-		if(pilih==0)
-		kudanya = new Kuda();
-		else
-		kudanya = new Kuda_terbang();
-		kandang[nomor] = kudanya;
-		}
-		cout << endl;
-		for(int nomor=0; nomor<5; nomor++){
-		Kuda_terbang *pKterb = dynamic_cast<Kuda_terbang*> (kandang[nomor]);
-		if (pKterb != NULL)
-		pKterb->terbang();
-		else
-		cout << "Kuda biasa " << endl;
-		delete kandang[nomor];
-		}
-		return a.exec();
-		}
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+
+using namespace std;
+
+class Kuda{
+	public:
+	virtual void melompat(){ cout << "Lompat!" << endl;}
+};
+
+class Kuda_terbang : public Kuda{
+	public:
+	virtual void terbang() {cout << "terbang..." << endl;}
+};
+
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	Kuda* kandang[5];
+	Kuda* kudanya;
+	int pilih;
+	for(int nomor=0; nomor<5; nomor++){
+	cout << "Pilih (0) Kuda atau (1) Kuda terbang : ";
+	cin >> pilih;
+	if(pilih==0)
+	kudanya = new Kuda();
+	else
+	kudanya = new Kuda_terbang();
+	kandang[nomor] = kudanya;
+	}
+	cout << endl;
+	for(int nomor=0; nomor<5; nomor++){
+	Kuda_terbang *pKterb = dynamic_cast<Kuda_terbang*> (kandang[nomor]);
+	if (pKterb != NULL)
+	pKterb->terbang();
+	else
+	cout << "Kuda biasa " << endl;
+	delete kandang[nomor];
+	}
+	return a.exec();
+}
+```
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
@@ -216,66 +228,72 @@ Percobaan berikut ini memberikan ilustrasi cara deklarasi kelas `Kuda_terbang` y
 
 Contoh 3. Multiple Inheritance.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
-		#include <QtCore/QCoreApplication>
-		#include <iostream>
-		using namespace std;
-		class Kuda{
-		public:
-		Kuda() {cout << "Konstruktor Kuda ... ";}
-		virtual ~Kuda() {cout << "Destruktor Kuda ... \n";}
-		virtual void meringkik() const {cout << " Kikikikikkkk...";}
-		};
-		class Burung{
-		public:
-		Burung() { cout << "Konstruktor Burung ... "; }
-		virtual ~Burung() { cout << "Destruktor Burung ... "; }
-		virtual void berkicau() const { cout << " Cicit cuit... "; }
-		virtual void terbang() const { cout << " Terbang ... "; }
-		};
-		class Kuda_terbang : public Kuda, public Burung{
-		public:
-		void berkicau() const { meringkik(); }
-		Kuda_terbang() { cout << "Konstruktor Kuda_terbang ... "; }
-		~Kuda_terbang() { cout << "Destruktor Kuda_terbang ... "; }
-		};
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		Kuda* daftar_kuda[2]; //<-- kumpulan Kuda
-		Burung* daftar_burung[2]; //<-- kumpulan Burung
-		cout << "Menciptakan objek Kuda:" << endl;
-		daftar_kuda[0] = new Kuda(); //<-- objek Kuda
-		cout << "\nMenciptakan objek Kuda_terbang:" << endl;
-		daftar_kuda[1] = new Kuda_terbang(); //<-- objek Kuda_terbang
-		cout << "\nMenciptakan objek Burung:" << endl;
-		daftar_burung[0] = new Burung(); //<-- objek Burung
-		cout << "\nMenciptakan objek Kuda_terbang:" << endl;
-		daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
-		cout << "\n\nTampilkan daftar_kuda :" << endl;
-		daftar_kuda[0]->meringkik(); //<-- berisi objek Kuda
-		cout << "\nHapus Kuda : ";
-		delete daftar_kuda[0];
-		daftar_kuda[1]->meringkik(); //<-- berisi objek Kuda_terbang
-		cout << "\nHapus Kuda_terbang : ";
-		delete daftar_kuda[1];
-		cout << "\nTampilkan daftar_burung :" << endl;
-		daftar_burung[0]->berkicau(); //<-- berisi objek Burung
-		daftar_burung[0]->terbang(); //<-- berisi objek Burung
-		cout << "\nHapus Burung : " ;
-		delete daftar_burung[0];
-		cout << endl;
-		daftar_burung[1]->berkicau(); //<-- berisi objek Kuda_terbang
-		daftar_burung[1]->terbang(); //<-- berisi objek Kuda_terbang
-		cout << "\nHapus Kuda_terbang : ";
-		delete daftar_burung[1];
-		return a.exec();
-		}
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
+using namespace std;
+
+class Kuda{
+	public:
+	Kuda() {cout << "Konstruktor Kuda ... ";}
+	virtual ~Kuda() {cout << "Destruktor Kuda ... \n";}
+	virtual void meringkik() const {cout << " Kikikikikkkk...";}
+};
+
+class Burung{
+	public:
+	Burung() { cout << "Konstruktor Burung ... "; }
+	virtual ~Burung() { cout << "Destruktor Burung ... "; }
+	virtual void berkicau() const { cout << " Cicit cuit... "; }
+	virtual void terbang() const { cout << " Terbang ... "; }
+};
+
+class Kuda_terbang : public Kuda, public Burung{
+	public:
+	void berkicau() const { meringkik(); }
+	Kuda_terbang() { cout << "Konstruktor Kuda_terbang ... "; }
+	~Kuda_terbang() { cout << "Destruktor Kuda_terbang ... "; }
+};
+
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	Kuda* daftar_kuda[2]; //<-- kumpulan Kuda
+	Burung* daftar_burung[2]; //<-- kumpulan Burung
+	cout << "Menciptakan objek Kuda:" << endl;
+	daftar_kuda[0] = new Kuda(); //<-- objek Kuda
+	cout << "\nMenciptakan objek Kuda_terbang:" << endl;
+	daftar_kuda[1] = new Kuda_terbang(); //<-- objek Kuda_terbang
+	cout << "\nMenciptakan objek Burung:" << endl;
+	daftar_burung[0] = new Burung(); //<-- objek Burung
+	cout << "\nMenciptakan objek Kuda_terbang:" << endl;
+	daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
+	cout << "\n\nTampilkan daftar_kuda :" << endl;
+	daftar_kuda[0]->meringkik(); //<-- berisi objek Kuda
+	cout << "\nHapus Kuda : ";
+	delete daftar_kuda[0];
+	daftar_kuda[1]->meringkik(); //<-- berisi objek Kuda_terbang
+	cout << "\nHapus Kuda_terbang : ";
+	delete daftar_kuda[1];
+	cout << "\nTampilkan daftar_burung :" << endl;
+	daftar_burung[0]->berkicau(); //<-- berisi objek Burung
+	daftar_burung[0]->terbang(); //<-- berisi objek Burung
+	cout << "\nHapus Burung : " ;
+	delete daftar_burung[0];
+	cout << endl;
+	daftar_burung[1]->berkicau(); //<-- berisi objek Kuda_terbang
+	daftar_burung[1]->terbang(); //<-- berisi objek Kuda_terbang
+	cout << "\nHapus Kuda_terbang : ";
+	delete daftar_burung[1];
+	return a.exec();
+}
+```
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
-![](images/capture9-1.png)
+![](images/Capture9-1.PNG)
 
 **Analisa Program :**
 
@@ -316,7 +334,7 @@ berpolimorfisme dengan sempurna berkat adanya multiple inheritance.
 
 Ketika objek Kuda_terbang diciptakan di memori, kedua kelas dasarnya juga tercipta sebagai bagian pembentuk objek tersebut. Gambar di bawah ini menggambarkan sebuah objek bertipe Kuda_terbang termasuk fitur-fitur baru yang ditambahkan pada kelas Kuda_terbang maupun fitur-fitur warisan kelaskelas dasarnya.
 
-![](images/capture9-2.png)
+![](images/Capture9-2.PNG)
 
 Ada beberapa hal yang perlu diperhatikan pada objek yang merupakan turunan dari beberapa kelas
 dasar. Sebagai contoh misalnya, apa yang terjadi jika kedua kelas dasar tersebut memiliki metode virtual
@@ -348,34 +366,39 @@ berbagai macam anggota yang lain supaya terlihat sederhana dan mudah dipahami.
 Contoh 4. Konstruktor Kelas Multiple Inheritance.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4, kemudian tulis kode berikut.
-	
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kuda{
+
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Kuda{
 	public:
 	Kuda(string nama){
-	cout << "Konstruktor Kuda, nama = " << nama << endl;
+		cout << "Konstruktor Kuda, nama = " << nama << endl;
 	}
-	};
-	class Burung{
+};
+
+class Burung{
 	public:
 	Burung(string warna){
-	cout << "Konstruktor Burung, warna = " << warna << endl;
+		cout << "Konstruktor Burung, warna = " << warna << endl;
 	}
-	};
-	class Kuda_terbang : public Kuda, public Burung{
+};
+
+class Kuda_terbang : public Kuda, public Burung{
 	public:
 	Kuda_terbang():Kuda("Gondrong"),Burung("Merah"){
-	cout << "Konstuktor Kuda_terbang";
+		cout << "Konstuktor Kuda_terbang";
 	}
-	};
-	int main(int argc, char *argv[])
-	{
+};
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Kuda_terbang* gondrong = new Kuda_terbang();
 	return a.exec();
-	}
+}
+```
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
@@ -433,7 +456,7 @@ Jika dua kelas dasar yang dijadikan multiple inheritance merupakan turunan dari 
 
 Sebagai ilustrasi seperti contoh sebelumnya, `Kuda` dan `Burung` merupakan turunan dari sebuah kelas dasar yang sama yaitu kelas `Binatang`, sedangkan `Kuda_terbang` merupakan hasil *multiple inheritance* dari kelas `Kuda` dan `Burung`. Pada saat *instansiasi* kelas `Kuda_terbang` terdapat 2 kemungkinan bentuk kelas yang terjadi:
 
-![](images/capture9-3.png)
+![](images/Capture9-3.PNG)
 
 **Common base class** adalah penurunan seperti biasa yang terjadi, yaitu ketika kelas paling bawah (`Kuda_terbang`) melakukan instansiasi, secara otomatis kelas-kelas dasarnya (Kuda dan Burung) juga terbentuk, dan ketika kedua kelas dasar tersebut terbentuk (`Kuda` dan `Burung`), masing-masing memanggil secara terpisah kostruktor kelas dasar paling atas (Binatang), sehingga terbentuklah objek kelas dasar paling atas untuk masing-masing (sendiri-sendiri). Sedangkan Diamon inheritance terjadi ketika dilakukan penurunan secara virtual, yaitu konstruktor kelas turunan paling bawah (`Kuda_terbang`) memanggil secara langsung konstruktor kelas dasar paling atas (Binatang), sehingga pemanggilan oleh kedua kelas dasarnya (`Kuda` dan `Burung`) terhadap konstruktor kelas dasar paling atas
 (`Binatang`) diabaikan. Hal ini bisa terjadi jika penurunan dilakukan secara virtual yang akan dibahas nanti.
@@ -448,10 +471,13 @@ Contoh 5 Penurunan pada umumnya (Common Base Class).
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Binatang{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+
+using namespace std;
+
+class Binatang{
 	public:
 	Binatang(int umur=5):umur(5){cout << "Konstruktor Binatang\n";}
 	~Binatang(){cout << "Destruktor Binatang\n";}
@@ -462,8 +488,9 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 
 	cout << "dari Binatang...";
 	return umur;
 	}
-	};
-	class Kuda : public Binatang{
+};
+
+class Kuda : public Binatang{
 	public:
 	Kuda(){cout << "Konstruktor Kuda\n";}
 	~Kuda(){cout << "Destruktor Kuda\n";}
@@ -472,17 +499,18 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 
 	return umur;
 	}
 											
-	};
-	class Burung : public Binatang{
+};
+
+class Burung : public Binatang{
 	public:
 	Burung(){cout << "Konstruktor Burung\n";}
 	~Burung(){cout << "Destruktor Burung\n";}
 	virtual int const getUmur(){
-	cout << "dari Burung...";
-	return umur;
+		cout << "dari Burung...";
+		return umur;
 	}
-	};
-	class Kuda_terbang : public Kuda, public Burung{
+};
+class Kuda_terbang : public Kuda, public Burung{
 	public:
 	Kuda_terbang(){cout << "Konstruktor Kuda_terbang\n";}
 	~Kuda_terbang(){cout << "Destruktor Kuda_terbang\n";}
@@ -490,16 +518,17 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 
 	cout << "dari Kuda_terbang...";
 	return Kuda::getUmur();
 	}
-	};
-	int main(int argc, char *argv[])
-	{
+};
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Kuda_terbang* gondrong = new Kuda_terbang();
 	cout << "Umur : " << gondrong->getUmur() << endl;
 	delete gondrong;
 	return a.exec();
-	}
-
+}
+```
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 A> {linenos=off}
@@ -515,11 +544,12 @@ A>	dari Kuda_terbang...dari Kuda...Umur : 5
 - Pada program Utama hanya menciptakan objek bertipe `Kuda_terbang`. Tampak pada hasil keluaran, dilihat dari konstruktornya maka bisa disimpulkan bahwa terbentuk objek `Binatang`, objek `Kuda`, objek `Binatang`, objek `Burung` baru kemudian objek `Kuda_terbang`. Ini menunjukkan bahwa ada 2 objek Binatang yang masing-masing merupakan bagian `Kuda` dan `Burung`.
 - Oleh karena `Kuda_terbang` adalah turunan dari `Kuda` dan `Burung`, maka jika ia memanggil metode `getUmur()` yang merupakan warisan dari mereka, akan terjadi ambiguitas, oleh karena itu pada kelas `Kuda_terbang` dilakukan overriding seperti berikut :
 
-		virtual int const getUmur(){
-		cout << "dari Kuda_terbang...";
-		return Kuda::getUmur();
-		}
-
+```cpp
+virtual int const getUmur(){
+	cout << "dari Kuda_terbang...";
+	return Kuda::getUmur();
+}
+```
 - Tampak pada hasil pemanggilan metode tersebut pada kelas Kuda_terbang:
 dari Kuda_terbang...dari Kuda...Umur : 5
 Ini menunjukkan bahwa metode yang dipanggil adalah metode hasil override pada kelas
@@ -538,48 +568,53 @@ Diamond Inheritance seperti gambar tadi. Supaya lebih jelas, lakukan pecobaan be
 
 Contoh 6. Penurunan pada umumnya (Common Base Class).
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian tulis kode berikut.
 
-		#include <QtCore/QCoreApplication>
-		#include <iostream>
-		using namespace std;
-		class Binatang{
-		public:
-		Binatang(int umur=5):umur(5){cout << "Konstruktor Binatang\n";}
-		~Binatang(){cout << "Destruktor Binatang\n";}
-		protected:
-		int umur;
-		public:
-		virtual int const getUmur(){
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Binatang{
+	public:
+	Binatang(int umur=5):umur(5){cout << "Konstruktor Binatang\n";}
+	~Binatang(){cout << "Destruktor Binatang\n";}
+	protected:
+	int umur;
+	public:
+	virtual int const getUmur(){
 		cout << "dari Binatang...";
 		return umur;
-		}
-		};
-		class Kuda : virtual public Binatang{
-		public:
-		Kuda(){cout << "Konstruktor Kuda\n";}
-		~Kuda(){cout << "Destruktor Kuda\n";}
-		};
-		class Burung : virtual public Binatang{
-		public:
-		Burung(){cout << "Konstruktor Burung\n";}
-		~Burung(){cout << "Destruktor Burung\n";}
-		};
-		class Kuda_terbang : public Kuda, public Burung{
-		public:
-		Kuda_terbang():Kuda(),Burung(),Binatang(){
-		cout << "Konstruktor Kuda_terbang\n";}
-		~Kuda_terbang(){cout << "Destruktor Kuda_terbang\n";}
-		};
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		Kuda_terbang* gondrong = new Kuda_terbang();
-		cout << "Umur : " << gondrong->getUmur() << endl;
-		delete gondrong;
-		return a.exec();
-		}
+	}
+};
 
+class Kuda : virtual public Binatang{
+	public:
+	Kuda(){cout << "Konstruktor Kuda\n";}
+	~Kuda(){cout << "Destruktor Kuda\n";}
+};
+
+class Burung : virtual public Binatang{
+	public:
+	Burung(){cout << "Konstruktor Burung\n";}
+	~Burung(){cout << "Destruktor Burung\n";}
+};
+
+class Kuda_terbang : public Kuda, public Burung{
+	public:
+	Kuda_terbang():Kuda(),Burung(),Binatang(){
+	cout << "Konstruktor Kuda_terbang\n";}
+	~Kuda_terbang(){cout << "Destruktor Kuda_terbang\n";}
+};
+
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	Kuda_terbang* gondrong = new Kuda_terbang();
+	cout << "Umur : " << gondrong->getUmur() << endl;
+	delete gondrong;
+	return a.exec();
+}
+```
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 A> {linenos=off}
@@ -593,14 +628,17 @@ A>	dari Binatang...Umur : 5
 
 - Pada program Utama, sama seperti percobaan Contoh 5, hanya menciptakan objek bertipe Kuda_terbang. Tampak pada hasil keluaran, dilihat dari konstruktornya maka bisa disimpulkan bahwa terbentuk objek Binatang, objek Kuda, objek Binatang, objek Burung baru kemudian objek Kuda_terbang. Ini menunjukkan bahwa ada 2 hanya 1 objek Binatang yang masing-masing merupakan bagian Kuda, dan Burung dan Kuda_terbang.
 - Walaupun Kuda_terbang adalah turunan dari Kuda dan Burung, namun saat instansiasi kelas Kuda_terbang memanggil langsung konstruktor Binatang seperti berikut:
-
-		Kuda_terbang():Kuda(),Burung(),Binatang()
-
+	
+	```cpp
+	Kuda_terbang():Kuda(),Burung(),Binatang()
+	```
+	
 Memang kelas `Kuda_terbang` bukan keturunan langsung kelas Binatang, namun hal ini bisa dimungkinkan karena kelas dasar dari `Kuda_terbang`, yaitu Kuda dan Binatang melakukan penurunan secara virutal :
 
-	class Kuda : virtual public Binatang{}
-	class Burung : virtual public Binatang{}
-
+```cpp
+class Kuda : virtual public Binatang{}
+class Burung : virtual public Binatang{}
+```
 sehingga dimungkinkan konstruktor `Kuda_terbang()` memanggil langsung konstruktor `Binatang()`. Konsekuensinya maka jika ia memanggil metode `getUmur()` yang merupakan warisan dari `Binatang`, metode-metode warisan yang ada pada `Kuda` dan `Burung` akan diabaikan (kecuali mereka melakukan override) dan di-“By pass” langsung ke kelas Binatang. Oleh karena itu pada kelas Kuda_terbang tidak lagi terjadi ambigu seperti tadi.
 - Tampak pada hasil pemanggilan metode `getUmur()` tersebut pada kelas Kuda_terbang: dari Binatang...Umur : 5
 Ini menunjukkan bahwa metode yang dipanggil adalah metode warisan dari kelas Binatang secara langsung.

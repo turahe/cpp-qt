@@ -29,21 +29,25 @@ Contoh 1. Menampilkan alamat memory menggunakan address-of operator.
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
+int main(int argc, char *argv[])
+{
 	using namespace std;
 	QCoreApplication a(argc, argv);
+
 	unsigned short bil1 =20;
 	ulong bil2 = 200000;
 	long bil3 = -670000;
+
 	cout << "bil1 = " << bil1 << " address = " << &bil1 << endl;
 	cout << "bil2 = " << bil2 << " address = " << &bil2 << endl;
 	cout << "bil3 = " << bil3 << " address = " << &bil3 << endl;
 	return a.exec();
-	}
+}
+```
 
 Kemudian jalankan kode diatas dengan menekan tombol <kbd>Ctrl+R</kbd>, outputnya adalah sebagai berikut.
 
@@ -111,31 +115,35 @@ Contoh 2. Memanipulasi data menggunakan Pointer
 
 Buka Qt Creator, buat project Qt Console Application dengan nama Contoh 2. Kemudian tulis kode berikut.
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+int main(int argc, char *argv[])
+{
 	using namespace std;
 	QCoreApplication a(argc, argv);
+
 	ushort umur;
 	ushort *pUmur = 0;
 	umur = 17;
+
 	cout << "Umur : " << umur << endl;
 	pUmur = &umur;
 	cout << "pUmur : " << *pUmur << endl;
 	cout << "Merubah nilai pUmur.." << endl;
+
 	*pUmur = 28;
 	cout << "Umur : " << umur << endl;
 	cout << "pUmur : " << *pUmur << endl;
 	cout << "Merubah nilai umur.." << endl;
+
 	umur = 30;
 	cout << "Umur : " << umur << endl;
 	cout << "pUmur : " << *pUmur << endl;
 	return a.exec();
-	}
-
-Tekan Ctrl+R untuk menjalankan kode diatas, outputnya adalah sebagai berikut.
+}
+```
+Tekan <kbd>Ctrl+R</kbd> untuk menjalankan kode diatas, outputnya adalah sebagai berikut.
 
 A> {linenos=off}
 A>	Umur : 17
@@ -163,11 +171,11 @@ Contoh 3. Mengganti alamat yang di referensi oleh pointer
 
 Buat project Qt Console Application baru, beri nama Contoh 3, kemudian tulis kode berikut
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+int main(int argc, char *argv[])
+{
 	using namespace std;
 	QCoreApplication a(argc, argv);
 	ushort umur1 = 17, umur2 = 28;
@@ -178,7 +186,8 @@ Buat project Qt Console Application baru, beri nama Contoh 3, kemudian tulis kod
 	cout << "umur2 : " << umur2 << " alamat : " << &umur2 << endl;
 	cout << "pUmur : " << *pUmur << " alamat : " << pUmur << endl;
 	return a.exec();
-	}
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah sebagai berikut.
 
@@ -210,31 +219,40 @@ Contoh 4. Pointer dan Array
 
 Buat project Qt Console Application dengan nama Contoh 4, kemudian tulis kode berikut.
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+int main(int argc, char *argv[])
+{
 	using namespace std;
 	QCoreApplication a(argc, argv);
+	
 	const int ARRAY_LENGTH = 5;
 	int numbers[ARRAY_LENGTH] = {100,200,222,111,777};
+	
 	//mengakses alamat pertama dari array (numbers[0])
 	cout << "Alamat numbers[0] : " << numbers << endl;
+	
 	//mengakses nilai dari elemen pertama array (numbers[0])
+	
 	cout << "Nilai numbers[0] : " << *numbers << endl;
+	
 	//mengakses alamat numbers[4]
 	cout << "Alamat numbers[4] : " << numbers+4 << endl;
+
 	//mengakses nilai dari numbers[4]
 	cout << "Nilai numbers[4] : " << *(numbers+4) << endl;
 	const int *pNumber = numbers;
+
 	//menggunakan pointer untuk mencetak semua elemen array
 	for(int i=0; i<ARRAY_LENGTH; i++)
 	{
-	cout << "numbers[" << i << "] = " << *(pNumber+i) << endl;
+		cout << "numbers[" << i << "] = " << *(pNumber+i) << endl;
 	}
+	
 	return a.exec();
-	}
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -286,32 +304,38 @@ Contoh 5. Mengalokasikan, menggunakan, dan mendelete Pointer
 
 Buat project Qt Console Application dengan nama Contoh 5, kemudian tulis kode berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+int main(int argc, char *argv[])
+{
 	using namespace std;
 	QCoreApplication a(argc, argv);
 	int bil = 20;
+
 	//pointer yang menunjuk ke alamat lokal
 	int *pBil = &bil;
 	cout << "bil : " << bil << endl;
 	cout << "pBil : " << *pBil << endl;
+
 	//mengalokasikan memory di heap untuk menyimpan data integer
 	int *pHeap = new int;
+
 	//nilai 19 akan disimpan di heap yg sudah dialokasikan
 	*pHeap = 19;
 	cout << "Nilai pHeap : " << *pHeap << endl;
 	delete pHeap;
+
 	pHeap = 0; //null pointer
+
 	//mengalokasikan memory
 	pHeap = new int;
 	*pHeap = 100;
 	cout << "Nilai pHeap : " << *pHeap << endl;
 	delete pHeap;
 	return a.exec();
-	}
+}
+```
 
 Tekan <kbd>Ctrl+R</kbd> untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -346,29 +370,33 @@ Contoh 6. Membuat dan menghapus objek dari Heap
 
 Buat project Qt Console Application dengan nama Contoh 6, kemudian tulis kode berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Mahasiswa
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Mahasiswa
+{
 	public:
 	Mahasiswa();
 	~Mahasiswa();
 	private:
 	float ipk;
-	};
-	Mahasiswa::Mahasiswa()
-	{
+};
+
+
+Mahasiswa::Mahasiswa()
+{
 	cout << "Konstruktor dipanggil.." << endl;
 	ipk=3.5;
-	}
-	Mahasiswa::~Mahasiswa()
-	{
+}
+
+Mahasiswa::~Mahasiswa()
+{
 	cout << "Destruktor dipanggil.." << endl;
-	}
-	int main(int argc, char *argv[])
-	{
+}
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	cout << "Deklarasi object tanpa pointer " << endl;
 	Mahasiswa mhs1;
@@ -378,7 +406,8 @@ Buat project Qt Console Application dengan nama Contoh 6, kemudian tulis kode be
 	delete mhs2;
 	mhs2 = 0; //null pointer
 	return a.exec();
-	}
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -434,20 +463,24 @@ Contoh 7. Membuat dan Menggunakan Reference.
 
 Buat project Qt Console Application dengan nama Contoh 7, kemudian tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int bil1 = 18;
 	int &rBil = bil1;
 	cout << "Nilai bil1 : " << bil1 << endl;
 	cout << "Nilai &rBil : " << rBil << endl;
+
 	bil1 = 19;
 	cout << "Nilai bil1 : " << bil1 << endl;
 	cout << "Nilai &rBil : " << rBil << endl;
+
 	rBil = 33;
 	cout << "Nilai bil1 : " << bil1 << endl;
 	cout << "Nilai &rBil : " << rBil << endl;
@@ -455,8 +488,8 @@ Buat project Qt Console Application dengan nama Contoh 7, kemudian tulis kode be
 	cout << "&bil1 : " << &bil1 << endl;
 	cout << "&rBil : " << &rBil << endl;
 	return a.exec();
-	}
-
+}
+```
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
 A> {linenos=off}
@@ -486,22 +519,26 @@ Contoh 8. Re-assign Reference Value
 
 Buat project Qt Console Application dengan nama Contoh 8, kemudian tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
+int main(int argc, char *argv[])
+{
 	using namespace std;
 	QCoreApplication a(argc, argv);
+
 	int bil = 14;
 	int &rBil = bil;
 	cout << "rBil : " << rBil << endl;
+	
 	int bil2 = 19;
 	rBil = bil2; //tebak hasilnya !
 	cout << "rBil : " << rBil << endl;
 	cout << "bil : " << bil << endl;
 	return a.exec();
 	}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -525,29 +562,34 @@ Contoh 9. Passing by Value.
 
 Buat project Qt Console Application dengan nama Contoh 9, kemudian tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	void Tukar(int x,int y);
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+void Tukar(int x,int y);
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int x=12, y=21;
 	cout << "Pada main, sebelum ditukar x=" << x << ", y=" << y << endl;
 	Tukar(x,y);
 	cout << "Pada main, setelah ditukar x=" << x << ", y=" << y << endl;
 	return a.exec();
-	}
-	void Tukar(int x,int y)
-	{
+}
+
+void Tukar(int x,int y)
+{
 	int tampung;
 	cout << "Pada fungsi, sebelum ditukar, x=" << x << ", y=" << y << endl;
 	tampung = x;
 	x=y;
 	y=tampung;
 	cout << "Pada fungsi, Setelah ditukar, x=" << x << ", y=" << y << endl;
-	}
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -567,29 +609,34 @@ Contoh 10. Passing by reference dengan pointer
 
 Buat project Qt Console Application dengan nama Contoh 10, kemudian tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	void Tukar(int *x, int *y);
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+void Tukar(int *x, int *y);
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int x=12, y=21;
 	cout << "main func, x=" << x << ", y=" << y << endl;
 	Tukar(&x,&y);
 	cout << "main func, x=" << x << ", y=" << y << endl;
 	return a.exec();
-	}
-	void Tukar(int *x, int *y)
-	{
+}
+
+void Tukar(int *x, int *y)
+{
 	int tampung;
 	cout << "Pada fungsi, sebelum ditukar x=" << *x << ",y=" << *y << endl;
 	tampung = *x;
 	*x = *y;
 	*y = tampung;
 	cout << "Pada fungsi, sesudah ditukar x=" << *x << ",y=" << *y << endl;
-	}
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -607,29 +654,35 @@ Contoh 11. Menjalankan fungsi Tukar() dengan reference
 
 Buat project Qt Console Application dengan nama Contoh 11, kemudian tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	void Tukar(int &x, int &y);
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+void Tukar(int &x, int &y);
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
+
 	int x=12, y=21;
 	cout << "main func, sebelum ditukar x=" << x << ", y=" << y << endl;
 	Tukar(x,y);
 	cout << "main func, setelah ditukar x=" << x << ", y=" << y << endl;
 	return a.exec();
-	}
-	void Tukar(int &x, int &y)
-	{
+}
+
+void Tukar(int &x, int &y)
+{
 	int tampung;
 	cout << "Pada function, sebelum ditukar x=" << x << ", y=" << y << endl;
 	tampung = x;
 	x = y;
 	y = tampung;
 	cout << "Sesudah function, sebelum ditukar x=" << x << ", y=" << y << endl;
-	}
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -651,44 +704,48 @@ Contoh 12. Mengembalikan beberapa nilai dengan pointer
  
 Buat project Qt Console Application dengan nama Contoh 12, kemudian tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int Hitung(int number, int *pLuasPersegi, int *pVolumeKubus);
-	int main(int argc, char *argv[])
+using namespace std;
+
+int Hitung(int number, int *pLuasPersegi, int *pVolumeKubus);
+
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	int number, pLuasPersegi, pVolumeKubus;
+	short error;
+	cout << "Masukan number : ";
+	cin >> number;
+	error = Hitung(number,&pLuasPersegi,&pVolumeKubus);
+	if(!error)
 	{
-		QCoreApplication a(argc, argv);
-		int number, pLuasPersegi, pVolumeKubus;
-		short error;
-		cout << "Masukan number : ";
-		cin >> number;
-		error = Hitung(number,&pLuasPersegi,&pVolumeKubus);
-		if(!error)
-		{
-			cout << "Number : " << number << endl;
-			cout << "pLuasPersegi : " << pLuasPersegi << endl;
-			cout << "pVolumeKubus : " << pVolumeKubus << endl;
-		}
-		else
-			cout << "Terjadi Error !! ";
-		return a.exec();
-		}
-		int Hitung(int number, int *pLuasPersegi, int *pVolumeKubus)
-		{
-		short status;
-		if(number > 0)
-		{
-			*pLuasPersegi = number * number;
-			*pVolumeKubus = number * number * number;
-			status = 0;
-		}
-		else
-		{
-			status = 1;
-		}
-		return status;
+		cout << "Number : " << number << endl;
+		cout << "pLuasPersegi : " << pLuasPersegi << endl;
+		cout << "pVolumeKubus : " << pVolumeKubus << endl;
 	}
+	else
+		cout << "Terjadi Error !! ";
+	return a.exec();
+	}
+	int Hitung(int number, int *pLuasPersegi, int *pVolumeKubus)
+	{
+	short status;
+	if(number > 0)
+	{
+		*pLuasPersegi = number * number;
+		*pVolumeKubus = number * number * number;
+		status = 0;
+	}
+	else
+	{
+		status = 1;
+	}
+	return status;
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -709,43 +766,47 @@ Contoh 13. Mengembalikan beberapa nilai dengan reference variabel
 
 Buat project Qt Console Application dengan nama Contoh 13, kemudian tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	enum ERR_STATUS {SUCCESS, ERROR};
-	ERR_STATUS Hitung(int,int &,int &);
-	int main(int argc, char *argv[])
+using namespace std;
+
+enum ERR_STATUS {SUCCESS, ERROR};
+ERR_STATUS Hitung(int,int &,int &);
+
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	ERR_STATUS status;
+	int number, rLuasPersegi, rVolumeKubus;
+	cout << "Masukan number : ";
+	cin >> number;
+	status = Hitung(number,rLuasPersegi,rVolumeKubus);
+	if(status==SUCCESS)
 	{
-		QCoreApplication a(argc, argv);
-		ERR_STATUS status;
-		int number, rLuasPersegi, rVolumeKubus;
-		cout << "Masukan number : ";
-		cin >> number;
-		status = Hitung(number,rLuasPersegi,rVolumeKubus);
-		if(status==SUCCESS)
-		{
-			cout << "Number : " << number << endl;
-			cout << "pLuasPersegi : " << rLuasPersegi << endl;
-			cout << "pVolumeKubus : " << rVolumeKubus << endl;
-		}
-		else
-			cout << "Terjadi Error !!";
-		return a.exec();
-		}
-		ERR_STATUS Hitung(int number, int &rLuasPersegi, int &rVolumeKubus)
-		{
-		ERR_STATUS status;
-		if(number > 0)
-		{
-			rLuasPersegi = number * number;
-			rVolumeKubus = number * number * number;
-			status = SUCCESS;
-			}
-		else
-			status = ERROR;
-		return status;
+		cout << "Number : " << number << endl;
+		cout << "pLuasPersegi : " << rLuasPersegi << endl;
+		cout << "pVolumeKubus : " << rVolumeKubus << endl;
 	}
+	else
+		cout << "Terjadi Error !!";
+	return a.exec();
+	}
+	ERR_STATUS Hitung(int number, int &rLuasPersegi, int &rVolumeKubus)
+	{
+	ERR_STATUS status;
+	if(number > 0)
+	{
+		rLuasPersegi = number * number;
+		rVolumeKubus = number * number * number;
+		status = SUCCESS;
+		}
+	else
+		status = ERROR;
+	return status;
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -770,42 +831,48 @@ Contoh 14. Passing Object By Value
 Buat project Qt Console Application dengan nama Contoh 14, kemudian tulis kode berikut:
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Mahasiswa
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Mahasiswa
+{
 	public:
 	Mahasiswa();
 	Mahasiswa(Mahasiswa&);
 	~Mahasiswa();
-	};
-	Mahasiswa::Mahasiswa()
-	{
-		cout << "Memanggil Mahasiswa Konstruktor " << endl;
-		}
-	Mahasiswa::Mahasiswa(Mahasiswa &)
-	{
-		cout << "Memanggil Copy Konstruktor " << endl;
+};
+
+Mahasiswa::Mahasiswa()
+{
+	cout << "Memanggil Mahasiswa Konstruktor " << endl;
+}
+
+Mahasiswa::Mahasiswa(Mahasiswa &)
+{
+	cout << "Memanggil Copy Konstruktor " << endl;
+}
+
+Mahasiswa::~Mahasiswa()
+{
+	cout << "Memanggil Mahasiswa Destruktor " << endl;
+}
+
+Mahasiswa FunctionMhs(Mahasiswa objMhs);
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	cout << "Membuat object mahasiswa " << endl;
+	Mahasiswa objMhs1;
+	FunctionMhs(objMhs1);
+	return a.exec();
 	}
-	Mahasiswa::~Mahasiswa()
+	Mahasiswa FunctionMhs(Mahasiswa objMhs)
 	{
-		cout << "Memanggil Mahasiswa Destruktor " << endl;
-	}
-	Mahasiswa FunctionMhs(Mahasiswa objMhs);
-	int main(int argc, char *argv[])
-	{
-		QCoreApplication a(argc, argv);
-		cout << "Membuat object mahasiswa " << endl;
-		Mahasiswa objMhs1;
-		FunctionMhs(objMhs1);
-		return a.exec();
-		}
-		Mahasiswa FunctionMhs(Mahasiswa objMhs)
-		{
-			cout << "Mengembalikan FunctionMhs .." << endl;
-		return objMhs;
-	}
+		cout << "Mengembalikan FunctionMhs .." << endl;
+	return objMhs;
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 
@@ -828,43 +895,52 @@ Contoh 15. Passing Object By Reference
 
 Buat project Qt Console Application dengan nama Contoh 15, kemudian tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Mahasiswa
-	{
+#include <iostream>
+
+using namespace std;
+
+class Mahasiswa
+{
 	public:
 	Mahasiswa();
 	Mahasiswa(Mahasiswa&);
 	~Mahasiswa();
-	};
-	Mahasiswa::Mahasiswa()
-	{
+};
+
+Mahasiswa::Mahasiswa()
+{
 	cout << "Memanggil Mahasiswa Konstruktor " << endl;
-	}
-	Mahasiswa::Mahasiswa(Mahasiswa &)
-	{
+}
+
+Mahasiswa::Mahasiswa(Mahasiswa &)
+{
 	cout << "Memanggil Copy Konstruktor " << endl;
-	}
-	Mahasiswa::~Mahasiswa()
-	{
+}
+
+Mahasiswa::~Mahasiswa()
+{
 	cout << "Memanggil Mahasiswa Destruktor " << endl;
-	}
-	Mahasiswa &FunctionMhs(Mahasiswa &objMhs);
-	int main(int argc, char *argv[])
-	{
+}
+
+Mahasiswa &FunctionMhs(Mahasiswa &objMhs);
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	cout << "Membuat object mahasiswa " << endl;
 	Mahasiswa objMhs1;
 	FunctionMhs(objMhs1);
 	return a.exec();
-	}
-	Mahasiswa &FunctionMhs(Mahasiswa &objMhs)
-	{
+}
+
+Mahasiswa &FunctionMhs(Mahasiswa &objMhs)
+{
 	cout << "Mengembalikan FunctionMhs .." << endl;
 	return objMhs;
-	}
+}
+```
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai berikut.
 

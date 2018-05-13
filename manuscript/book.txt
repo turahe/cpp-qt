@@ -1,4 +1,7 @@
+{frontmatter}
 00-prakata.md
+
+{mainmatter} 
 01-pengenalan.md
 02-tipedata.md
 03-array-string.md
@@ -11,3 +14,6 @@
 10-casting-database.md
 11-library.md
 12-file-stream-xml.md
+
+{backmatter}
+pustaka.md

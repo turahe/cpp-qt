@@ -39,64 +39,72 @@ Dengan menurunkan class dari QObject anda dapat melakukan automatic memory manag
 
 Contoh 1 Alokasi memory dinamis tanpa QObject.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
 
-		#include <QtCore/QCoreApplication>
-		#include <iostream>
-		#include <string>
-		using namespace std;
-		class Mahasiswa
-		{
-		public:
-		Mahasiswa(const string &nim);
-		~Mahasiswa();
-		const string &nim() const;
-		void setNim(const string &nim);
-		int getNimLength() const;
-		private:
-		string _nim;
-		};
-		Mahasiswa::Mahasiswa(const string &nim)
-		{
-		_nim = nim;
-		}
-		Mahasiswa::~Mahasiswa()
-		{
-		cout << "destroy object" << endl;
-		}
-		const string &Mahasiswa::nim() const
-		{
-		return _nim;
-		}
-		void Mahasiswa::setNim(const string &nim)
-		{
-		_nim = nim;
-		}
-		int Mahasiswa::getNimLength() const
-		{
-		return _nim.length();
-		}
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		Mahasiswa *objMhs1,*objMhs2,*objMhs3;
-		objMhs1 = new Mahasiswa("22002321");
-		objMhs2 = new Mahasiswa("22002322");
-		objMhs3 = new Mahasiswa("22002323");
-		cout << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar" << endl;
-		objMhs1->setNim(objMhs2->nim());
-		objMhs2->setNim(objMhs3->nim());
-		cout << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar" << endl;
-		cout << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar" << endl;
-		cout << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar" << endl;
-		delete objMhs1;
-		delete objMhs2;
-		delete objMhs3;
-		return a.exec();
-		}
+using namespace std;
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+class Mahasiswa
+{
+	public:
+	Mahasiswa(const string &nim);
+	~Mahasiswa();
+	const string &nim() const;
+	void setNim(const string &nim);
+	int getNimLength() const;
+	private:
+	string _nim;
+};
+
+Mahasiswa::Mahasiswa(const string &nim)
+{
+	_nim = nim;
+}
+
+Mahasiswa::~Mahasiswa()
+{
+	cout << "destroy object" << endl;
+}
+
+const string &Mahasiswa::nim() const
+{
+	return _nim;
+}
+
+void Mahasiswa::setNim(const string &nim)
+{
+	_nim = nim;
+}
+
+int Mahasiswa::getNimLength() const
+{
+	return _nim.length();
+}
+
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	Mahasiswa *objMhs1,*objMhs2,*objMhs3;
+	objMhs1 = new Mahasiswa("22002321");
+	objMhs2 = new Mahasiswa("22002322");
+	objMhs3 = new Mahasiswa("22002323");
+	cout << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar" << endl;
+	objMhs1->setNim(objMhs2->nim());
+	objMhs2->setNim(objMhs3->nim());
+	cout << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar" << endl;
+	cout << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar" << endl;
+	cout << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar" << endl;
+	delete objMhs1;
+	delete objMhs2;
+	delete objMhs3;
+	return a.exec();
+}
+
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
  **Keterangan:**:
@@ -106,55 +114,63 @@ Contoh 1 Alokasi memory dinamis tanpa QObject.
 
 Contoh 2. Alokasi memory dinamis dengan QObject.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QObject>
+#include <QDebug>
 
-		#include <QtCore/QCoreApplication>
-		#include <QObject>
-		#include <QDebug>
-		using namespace std;
-		class Mahasiswa : QObject
-		{
-		public:
-		Mahasiswa(const QString &nim,QObject *parent=0);
-		const QString &nim() const;
-		void setNim(const QString &nim);
-		int getNimLength() const;
-		private:
-		QString _nim;
-		};
-		Mahasiswa::Mahasiswa(const QString &nim, QObject *parent)
-		{
-		_nim = nim;
-		}
-		const QString &Mahasiswa::nim() const
-		{
-		return _nim;
-		}
-		void Mahasiswa::setNim(const QString &nim)
-		{
-		_nim = nim;
-		}
-		int Mahasiswa::getNimLength() const
-		{
-		return _nim.length();
-		}
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QObject parent;
-		Mahasiswa *objMhs1,*objMhs2,*objMhs3;
-		objMhs1 = new Mahasiswa("22002321", &parent);
-		objMhs2 = new Mahasiswa("22002322", &parent);
-		objMhs3 = new Mahasiswa("22002323", &parent);
-		qDebug() << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar";
-		objMhs1->setNim(objMhs2->nim());
-		objMhs2->setNim(objMhs3->nim());
-		qDebug() << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar";
-		qDebug() << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar";
-		qDebug() << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar";
-		return a.exec();
-		}
+using namespace std;
+
+class Mahasiswa : QObject
+{
+	public:
+	Mahasiswa(const QString &nim,QObject *parent=0);
+	const QString &nim() const;
+	void setNim(const QString &nim);
+	int getNimLength() const;
+	private:
+	QString _nim;
+};
+
+Mahasiswa::Mahasiswa(const QString &nim, QObject *parent)
+{
+	_nim = nim;
+}
+
+const QString &Mahasiswa::nim() const
+{
+	return _nim;
+}
+
+void Mahasiswa::setNim(const QString &nim)
+{
+	_nim = nim;
+}
+
+int Mahasiswa::getNimLength() const
+{
+	return _nim.length();
+}
+
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QObject parent;
+	Mahasiswa *objMhs1,*objMhs2,*objMhs3;
+	objMhs1 = new Mahasiswa("22002321", &parent);
+	objMhs2 = new Mahasiswa("22002322", &parent);
+	objMhs3 = new Mahasiswa("22002323", &parent);
+	qDebug() << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar";
+	objMhs1->setNim(objMhs2->nim());
+	objMhs2->setNim(objMhs3->nim());
+	qDebug() << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar";
+	qDebug() << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar";
+	qDebug() << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar";
+	return a.exec();
+}
+```
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -178,41 +194,43 @@ Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh pro
 
 Contoh 3. Cek apakah nilai QString Null atau Empty
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		//deklarasi string
-		QString nama = "Erick Kurniawan";
-		qDebug() << nama;
-		//cek ukuran string
-		int ukuran = nama.size();
-		qDebug() << "Ukuran string " << ukuran;
-		QString test = "";
-		//cek apakah string null
-		if(test.isNull())
-		qDebug() << "test null";
-		else
-		qDebug() << "test not null";
-		//cek apakah string empty
-		if(test.isEmpty())
-		qDebug() << "test empty";
-		else
-		qDebug() << "test not empty";
-		QString testing;
-		//cek apakah string null
-		if(testing == QString::null)
-		qDebug() << "testing null";
-		else
-		qDebug() << "testing not null";
-		return a.exec();
-		}
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	//deklarasi string
+	QString nama = "Erick Kurniawan";
+	qDebug() << nama;
+	//cek ukuran string
+	int ukuran = nama.size();
+	qDebug() << "Ukuran string " << ukuran;
+	QString test = "";
+	//cek apakah string null
+	if(test.isNull())
+	qDebug() << "test null";
+	else
+	qDebug() << "test not null";
+	//cek apakah string empty
+	if(test.isEmpty())
+	qDebug() << "test empty";
+	else
+	qDebug() << "test not empty";
+	QString testing;
+	//cek apakah string null
+	if(testing == QString::null)
+	qDebug() << "testing null";
+	else
+	qDebug() << "testing not null";
+	return a.exec();
+}
+```
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
  **Keterangan:**:
  
@@ -224,23 +242,24 @@ Contoh 4. Menggunakan Fungsi Left, Mid, Right.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QString nama = "Erick Kurniawan";
-		//menggunakan fungsi left, mid, dan right
-		QString firstName = nama.left(5);
-		qDebug() << "firstName : " << firstName;
-		QString lastName = nama.right(9);
-		qDebug() << "lastName : " << lastName;
-		QString midName = nama.mid(6,5);
-		qDebug() << "midName : " << midName;
-		return a.exec();
-		}
-
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QString nama = "Erick Kurniawan";
+	//menggunakan fungsi left, mid, dan right
+	QString firstName = nama.left(5);
+	qDebug() << "firstName : " << firstName;
+	QString lastName = nama.right(9);
+	qDebug() << "lastName : " << lastName;
+	QString midName = nama.mid(6,5);
+	qDebug() << "midName : " << midName;
+	return a.exec();
+}
+```
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
  **Keterangan:**:
@@ -251,55 +270,59 @@ Contoh 4. Menggunakan Fungsi Left, Mid, Right.
 
 Contoh 5. Menggabungkan String.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QString nama = "Erick";
-		nama.append(" ");
-		nama.append("Kurniawan");
-		nama.append(",M.Kom");
-		nama.prepend("Mr. ");
-		qDebug() << "Nama : " << nama;
-		nama.insert(19,",S.Kom");
-		qDebug() << nama;
-		return a.exec();
-		}
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QString nama = "Erick";
+	nama.append(" ");
+	nama.append("Kurniawan");
+	nama.append(",M.Kom");
+	nama.prepend("Mr. ");
+	qDebug() << "Nama : " << nama;
+	nama.insert(19,",S.Kom");
+	qDebug() << nama;
+	return a.exec();
+}
+```
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
  **Keterangan:**
  
- - Fungsi append() dapat digunakan untuk menambahkan katrakter di akhir string.
- - Fungsi prepend() dapat digunakan untuk menambahkan karakter di awal string.
- - Fungsi insert() dapat digunakan untuk menyisipkan karakter dengan index tertentu pada string.
+ - Fungsi `append()` dapat digunakan untuk menambahkan katrakter di akhir string.
+ - Fungsi `prepend()` dapat digunakan untuk menambahkan karakter di awal string.
+ - Fungsi `insert()` dapat digunakan untuk menyisipkan karakter dengan index tertentu pada string.
 
 Contoh 6. Membalik String.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QString nama = "Erick Kurniawan";
-		QString balik;
-		for(int i=nama.length()-1;i>=0;i--)
-		{
-		balik+=nama[i];
-		}
-		qDebug() << "Balik : " << balik;
-		return a.exec();
-		}
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QString nama = "Erick Kurniawan";
+	QString balik;
+	for(int i=nama.length()-1;i>=0;i--)
+	{
+	balik+=nama[i];
+	}
+	qDebug() << "Balik : " << balik;
+	return a.exec();
+}
+```
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
  **Keterangan:**:
  
@@ -319,28 +342,29 @@ Class QList dapat digunakan untuk membuat type safe object list untuk menyimpan 
 
 Contoh 7 Menggunakan QList.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 7, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 7, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QList<QString> lstNama;
-		lstNama << "Erick" << "Anton" << "Katon" << "Budi";
-		//mengakses data berdasarkan index tertentu
-		qDebug() << lstNama[0];
-		//akan menghasilkan error karena tipe bukan string
-		//lstNama << 12 << 13;
-		//membaca dan menampilkan semua data pada list
-		foreach (QString nama, lstNama) {
-		qDebug() << nama;
-		}
-		return a.exec();
-		}
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QList<QString> lstNama;
+	lstNama << "Erick" << "Anton" << "Katon" << "Budi";
+	//mengakses data berdasarkan index tertentu
+	qDebug() << lstNama[0];
+	//akan menghasilkan error karena tipe bukan string
+	//lstNama << 12 << 13;
+	//membaca dan menampilkan semua data pada list
+	foreach (QString nama, lstNama) {
+	qDebug() << nama;
+	}
+	return a.exec();
+}
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
  **Keterangan:**
@@ -352,32 +376,34 @@ Selain menggunakan keyword foreach untuk mengakses data pada list anda juga dapa
 
 Contoh 8. Menggunakan object Iterator.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 8, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 8, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QList<int> lstNumber;
-		lstNumber << 12 << 24 << 36 << 48 << 60;
-		//menggunakan iterator
-		QListIterator<int> iter(lstNumber);
-		while(iter.hasNext())
-		{
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QList<int> lstNumber;
+	lstNumber << 12 << 24 << 36 << 48 << 60;
+	//menggunakan iterator
+	QListIterator<int> iter(lstNumber);
+	while(iter.hasNext())
+	{
 		qDebug() << iter.next();
-		}
-		//cara lain dengan cara STL
-		QList<int>::const_iterator stlIter;
-		for(stlIter=lstNumber.begin();stlIter!=lstNumber.end();++stlIter)
-		{
+	}
+	//cara lain dengan cara STL
+	QList<int>::const_iterator stlIter;
+	for(stlIter=lstNumber.begin();stlIter!=lstNumber.end();++stlIter)
+	{
 		qDebug() << (*stlIter);
-		}
-		return a.exec();
-		}
+	}
+	return a.exec();
+}
+```
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
  **Keterangan:**
@@ -392,30 +418,31 @@ Selain untuk membaca data pada list, iterator juga dapat digunakan untuk memodif
 
 Contoh 9. Menggunakan Iterator untuk memodifikasi data di list.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 9, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 9, kemudian tulis kode berikut.
 
-
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QList<QString> lstNama;
-		lstNama << "Erick" << "Anton" << "Katon" << "Ricky";
-		QMutableListIterator<QString> iter(lstNama);
-		while(iter.hasNext())
-		{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QList<QString> lstNama;
+	lstNama << "Erick" << "Anton" << "Katon" << "Ricky";
+	QMutableListIterator<QString> iter(lstNama);
+	while(iter.hasNext())
+	{
 		if(iter.next().toLower().contains("rick"))
 		{
-		iter.setValue("update data..");
+			iter.setValue("update data..");
 		}
-		}
-		//baca data setelah diupdate
-		foreach (QString nama, lstNama) {
+	}
+	//baca data setelah diupdate
+	foreach (QString nama, lstNama) {
 		qDebug() << nama;
-		}
-		return a.exec();
-		}
+	}
+	return a.exec();
+}
+```
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -431,28 +458,34 @@ Ada beberapa cara yang dapat digunakan untuk menambahkan data ke list. Anda dapa
 
 Contoh 10. Beberapa cara menambahkan data ke list
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 10, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 10, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QList<QString> lstNama;
-		//menambahkan data di akhir list
-		lstNama << "erick";
-		lstNama.append("katon");
-		//menambahkan data di awal list
-		lstNama.prepend("anton");
-		//menambahkan data pada index tertentu
-		lstNama.insert(2,"budi");
-		lstNama.insert(4,"naren");
-		foreach (QString nama, lstNama) {
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QList<QString> lstNama;
+
+	//menambahkan data di akhir list
+	lstNama << "erick";
+	lstNama.append("katon");
+
+	//menambahkan data di awal list
+	lstNama.prepend("anton");
+
+	//menambahkan data pada index tertentu
+	lstNama.insert(2,"budi");
+	lstNama.insert(4,"naren");
+
+	foreach (QString nama, lstNama) {
 		qDebug() << nama;
-		}
-		return a.exec();
-		}
+	}
+	return a.exec();
+}
+```
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -477,32 +510,37 @@ Contoh 11. Menggunakan QStringList
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 11, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
+#include <QStringList>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		#include <QStringList>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QStringList lstKota;
-		lstKota << "Jogjakarta" << "Jakarta" << "Bandung" << "Semarang";
-		//menggabungkan string dengan tanda ',' sebagai pemisah
-		QString gabung = lstKota.join(",");
-		qDebug() << gabung;
-		//memecah string menjadi QStringList
-		QStringList listSplit = gabung.split(",");
-		foreach (QString kota, listSplit) {
-		qDebug() << kota;
-		}
-		//mengganti elenet dalam array
-		listSplit.replaceInStrings("a","aaa");
-		foreach (QString kota, listSplit) {
-		qDebug() << kota;
-		}
-		return a.exec();
-		}
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QStringList lstKota;
+	lstKota << "Jogjakarta" << "Jakarta" << "Bandung" << "Semarang";
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+	//menggabungkan string dengan tanda ',' sebagai pemisah
+	QString gabung = lstKota.join(",");
+	qDebug() << gabung;
+	
+	//memecah string menjadi QStringList
+	QStringList listSplit = gabung.split(",");
+	foreach (QString kota, listSplit) {
+		qDebug() << kota;
+	}
+	
+	//mengganti elenet dalam array
+	listSplit.replaceInStrings("a","aaa");
+	foreach (QString kota, listSplit) {
+		qDebug() << kota;
+	}
+	return a.exec();
+}
+```
+
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
  **Keterangan:**
@@ -519,42 +557,45 @@ Jika anda ingin menyimpan data pada collection dengan metode FIFO (first in firs
 
 Contoh 12. Menggunakan Stack dan Queue.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 12, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 12, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
+#include <QStack>
+#include <QQueue>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		#include <QStack>
-		#include <QQueue>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QStack<QString> lstStack;
-		lstStack.push(“17rick”);
-		lstStack.push(“anton”);
-		lstStack.push(“katon”);
-		lstStack.push(“budi”);
-		//order LIFO
-		qDebug() << “Stack LIFO : “;
-		while(!lstStack.isEmpty())
-		{
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QStack<QString> lstStack;
+	lstStack.push(“17rick”);
+	lstStack.push(“anton”);
+	lstStack.push(“katon”);
+	lstStack.push(“budi”);
+	//order LIFO
+	qDebug() << “Stack LIFO : “;
+	while(!lstStack.isEmpty())
+	{
 		qDebug() << lstStack.pop();
-		}
-		QQueue<QString> lstQueue;
-		lstQueue.enqueue(“17rick”);
-		lstQueue.enqueue(“anton”);
-		lstQueue.enqueue(“katon”);
-		lstQueue.enqueue(“budi”);
-		//order FIFO
-		qDebug() << “Queue FIFO : “;
-		while(!lstQueue.isEmpty())
-		{
-		qDebug() << lstQueue.dequeue();
-		}
-		return a.exec();
-		}
+	}
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+	QQueue<QString> lstQueue;
+	lstQueue.enqueue(“17rick”);
+	lstQueue.enqueue(“anton”);
+	lstQueue.enqueue(“katon”);
+	lstQueue.enqueue(“budi”);
+	//order FIFO
+	qDebug() << “Queue FIFO : “;
+	while(!lstQueue.isEmpty())
+	{
+		qDebug() << lstQueue.dequeue();
+	}
+	return a.exec();
+}
+```
+
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
  **Keterangan:**
  
@@ -571,29 +612,30 @@ Contoh 13. Menggunakan QMap.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 13, kemudian tulis kode berikut.
 
-
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QMap<QString,int> lstAge;
-		lstAge["erick"] = 29;
-		lstAge["anton"] = 29;
-		lstAge["katon"] = 42;
-		qDebug() << "erick age : " << lstAge["erick"];
-		qDebug() << "menampilkan semua data yg ada di map :";
-		foreach (QString key, lstAge.keys()) {
-		qDebug() << key << " : " << lstAge[key];
-		}
-		//menggunakan iterator
-		qDebug() << "Mengakses data menggunakan iterator";
-		QMap<QString, int>::ConstIterator itr;
-		for (itr=lstAge.constBegin();itr!=lstAge.constEnd();++itr) {
-		qDebug() << itr.key() << " : " << itr.value();
-		}
-		return a.exec();
-		}
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QMap<QString,int> lstAge;
+	lstAge["erick"] = 29;
+	lstAge["anton"] = 29;
+	lstAge["katon"] = 42;
+	qDebug() << "erick age : " << lstAge["erick"];
+	qDebug() << "menampilkan semua data yg ada di map :";
+	foreach (QString key, lstAge.keys()) {
+	qDebug() << key << " : " << lstAge[key];
+	}
+	//menggunakan iterator
+	qDebug() << "Mengakses data menggunakan iterator";
+	QMap<QString, int>::ConstIterator itr;
+	for (itr=lstAge.constBegin();itr!=lstAge.constEnd();++itr) {
+	qDebug() << itr.key() << " : " << itr.value();
+	}
+	return a.exec();
+}
+```
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 

@@ -6,7 +6,7 @@ Array adalah suatu tipe data terstuktur yang berupa sejumlah data sejenis (berti
 
 Array dapat digunakan untuk menyimpan data yang cukup banyak namun memiliki tipe yang sama. Bagaimana array melakukan penyimpanan datanya di memory komputer? Ilustrasi array satu dimensi pada memory komputer adalah sebagai berikut:
 
-![](images/capture3-1.png)
+![](images/Capture3-1.PNG)
 
 Array menyimpan data secara berurutan pada memory komputer. Sekali array dideklarasikan (dibuat), maka akan dialokasikan sejumlah tempat di memory komputer yang selalu letaknya berdekatan (bersebelahan). Array memiliki indeks dan nilai data itu sendiri. Sedangkan jarak antar elemen pada array disesuaikan dengan lebar data untuk masing-masing tipe data array. Misalnya pada tipe data integer, maka jarak antar elemennya bernilai 2 s/d 4 byte. Indeks array pada C++ selalu dimulai dari indeks ke 0, dan seterusnya indeks ke-1, 2, 3, dan lain-lain.
 
@@ -62,28 +62,31 @@ Contoh 1. Contoh Input dan Output Array
 
 Buatlah project baru dan tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int nilai[5], x;
 	cout<<"Memasukkan nilai"<<endl;
 	for(x=0;x<5;x++)
 	{
-	cout<<"Nilai Angka ke - "<<x+1<< ": ";
-	cin>>nilai[x];
-	}
-	cout<<endl;
-	cout<<"Membaca nilai :\n";
-	for(x=0;x<5;x++)
-	{
-	cout<<"Nilai Angka : "<<nilai[x]<<endl;
-	}
+		cout<<"Nilai Angka ke - "<<x+1<< ": ";
+		cin>>nilai[x];
+		}
+		cout<<endl;
+		cout<<"Membaca nilai :\n";
+		for(x=0;x<5;x++)
+		{
+			cout<<"Nilai Angka : "<<nilai[x]<<endl;
+		}
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -113,12 +116,14 @@ Contoh 2. Contoh Manipulasi Array
 
 Buatlah project baru dan tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int bil[7],i;
 	cout<<"elemen ke-1 ? "; cin>>bil[0];
@@ -130,8 +135,8 @@ Buatlah project baru dan tulis kode berikut:
 	for(i=0;i<7;i++)
 	cout<<"bil["<<i<<"] = "<<bil[i]<<" dan alamatnya: "<<&bil[i]<<"\n";
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -161,12 +166,14 @@ Contoh 3. Penanganan Batas Indeks Elemen Array
 
 Buatlah program beikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int angka[5];
 	angka[0] = 0; //batas bawah array
@@ -175,8 +182,8 @@ Buatlah program beikut ini:
 	//program akan HANG
 	cout<<angka[5];
 	return a.exec();
-	}
-
+}
+```
 **Hasil dan Keterangan:**
  
 - Progarm akan HANG-UP. Hal ini terjadi karena compiler tidak bertanggungjawab dengan pengaksesan indeks array yang melebihi batas yang dipesankan di memory.
@@ -209,20 +216,22 @@ Contoh 4. Inisialisasi Array dengan nilai 0
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int bil[7] = {0}; //inisialisasi 0
 	for(int i=0;i<7;i++){
 	cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
 	}
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -243,19 +252,22 @@ Contoh 5. Inisialisasi Array dua nilai elemen pertama
 
 Buatlah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int bil[7] = {2,5}; //inisialisasi dua elemen pertama
 	for(int i=0;i<7;i++){
-	cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
+		cout<<"Elemen ke-"<<i<<": "<<bil[i]<<"\n";
 	}
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -299,19 +311,22 @@ Contoh 6. Tanpa inisialisasi, array langsung ditampilkan
 
 Tulislah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char h[5];
 	for(int i=0;i<5;i++){
-	cout<<"Elemen ke "<<i<<" = "<<h[i]<<endl;
+		cout<<"Elemen ke "<<i<<" = "<<h[i]<<endl;
 	}
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -335,18 +350,21 @@ Contoh 7. Penggunaan tipe data enum pada Array satu dimensi
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	enum Hari { Minggu, Senin, Selasa, Rabu, Kamis, Jumat, Sabtu };
 	int ArrayHari[7] = { 10, 20, 30, 40, 50, 60, 70 };
 	cout << "Nilai Hari Selasa adalah: " << ArrayHari[Selasa];
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -375,22 +393,25 @@ Contoh 8. Percobaan Penyalinan Array 1 dimensi
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int A[6]={1,2,3,4,5,6};
 	int B[6];
 	B = A;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
-![](images/capture3-8.png)
+![](images/Capture3-8.PNG)
 
 **Keterangan:**
  
@@ -400,24 +421,26 @@ Contoh 9. Penyalinan Array 1 dimensi dengan Perulangan
 
 Buatlah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int A[6]={1,2,3,4,5,6};
 	int B[6];
 	for(int i=0;i<6;i++){
-	B[i]=A[i];
+		B[i]=A[i];
 	}
 	for(int j=0;j<6;j++){
-	cout<<B[j]<<endl;
+		cout<<B[j]<<endl;
 	}
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -444,13 +467,13 @@ Contoh deklarasi array dua dimensi yang menggambarkan papan catur adalah:
 
 yang digambarkan dalam bentuk:
 
-![](images/capture3-11.png)
+![](images/Capture3-11.PNG)
 
 Array dua dimensi sering kali digambarkan/dianalogikan sebagai sebuah matriks atau bentuk grid. Jika array berdimensi satu hanya terdiri dari 1 baris dan banyak kolom, array berdimensi dua terdiri dari banyak baris dan banyak kolom yang bertipe sama. Ilustrasi array dua dimensi dapat dilihat sebagai berikut.
 
 Berikut adalah gambar array berdimensi (baris x kolom = 3 x 4)
 
-![](images/capture3-12.png)
+![](images/Capture3-12.PNG)
 
 ### Deklarasi Array Dua Dimensi
 
@@ -465,7 +488,7 @@ Contoh:
 
 Array dua dimensi dapat mewakili bentuk suatu matriks, contoh matriks:
 
-![](images/capture3-13.png)
+![](images/Capture3-13.PNG)
 
 selanjutnya dapat dideklarasikan sebagai berikut:
 
@@ -515,7 +538,7 @@ Array 2 dimensi dapat juga digunakan untuk menyimpan data karakter (character). 
 
 Akan ditampilkan sebagai:
 
-![](images/capture3-14.png)
+![](images/Capture3-14.PNG)
 
 Array 2 dimensi juga dapat dideklarasikan sebagai berikut:
 
@@ -528,7 +551,7 @@ Array 2 dimensi juga dapat dideklarasikan sebagai berikut:
 
 Array diatas akan ditampilkan sebagai:
 
-![](images/capture3-15.png)
+![](images/Capture3-15.PNG)
 
 Jika jumlah nilai character lebih banyak daripada deklarasi
 
@@ -537,7 +560,7 @@ Jika jumlah nilai character lebih banyak daripada deklarasi
 
 E> Akan terjadi ERROR!
 
-![](images/capture3-10.png)
+![](images/Capture3-10.PNG)
 
 Jika data array character yang diinputkan kurang dari deklarasi
 
@@ -557,7 +580,7 @@ Jika data array integer yang diinputkan lebih dari deklarasi
 
 E> Matriks yang jumlah datanya lebih akan menyebabkan ERROR
 
-![](images/capture3-9.png)
+![](images/Capture3-9.PNG)
 
 Array 2 dimensi juga dapat dideklarasikan secara dinamis. Dinamis bisa dilakukan pada baris array 2 dimensi. Namun kita tidak bisa mendeklarasikan array 2 dimensi secara dinamis pada kolom. Contoh pendeklarasian baris dinamis adalah :
 
@@ -568,7 +591,7 @@ Array 2 dimensi juga dapat dideklarasikan secara dinamis. Dinamis bisa dilakukan
 
 Akan ditampilkan sebagai:
 
-![](images/capture3-16.png)
+![](images/Capture3-16.PNG)
 
 Contoh matriks dengan deklarasi baris dinamis lainnya:
 
@@ -579,7 +602,7 @@ Contoh matriks dengan deklarasi baris dinamis lainnya:
 
 Pada contoh diatas, jika kita hitung jumlah datanya adalah 18 buah, padahal jika kita bagi per lima kolom, maka data 18 akan lebih 3 buah (18/5 = 3). Sehingga secara otomatis terdapat 3 baris dan sisa 3 buah data berikutnya akan membuat baris baru. Array dua dimensi tersebut akan ditampilkan sebagai:
 
-![](images/capture3-17.png)
+![](images/Capture3-17.PNG)
 
 ## Pengaksesan Array 2 Dimensi
 
@@ -589,24 +612,27 @@ Contoh 10. Deklarasi dan Menampilkan Array 2 Dimensi
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int matriks[3][5] = {{5,12,17,10,7},
 	{15,6,25,2,19},
 	{4,9,1,5,2}};
 	for(int i=0;i<3;i++){
-	for(int j=0;j<5;j++){
-	cout<<matriks[i][j]<<"\t";
-	}
-	cout<<endl;
+		for(int j=0;j<5;j++){
+			cout<<matriks[i][j]<<"\t";
+		}
+		cout<<endl;
 	}
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -622,33 +648,36 @@ Contoh 11. Penyalinan Array 2 Dimensi ke Array 2 Dimensi lainnya
 
 Misalkan terdapat array 2 dimensi sebagai berikut matriks`[3][5]`
 
-![](images/capture3-18.png)
+![](images/Capture3-18.PNG)
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int matriks[3][5]={{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
 	int matrikshasil[3][5];
 	for(int i=0;i<3;i++){
-	for(int j=0;j<5;j++){
-	matrikshasil[i][j] = matriks[i][j];
-	}
+		for(int j=0;j<5;j++){
+			matrikshasil[i][j] = matriks[i][j];
+		}
 	}
 	for(int i=0;i<3;i++){
-	for(int j=0;j<5;j++){
-	cout<<matrikshasil[i][j]<<"\t";
-	}
+		for(int j=0;j<5;j++){
+			cout<<matrikshasil[i][j]<<"\t";
+		}
 	cout<<endl;
 	}
-	return a.exec();
-	}
 
+	return a.exec();
+}
+```
 **Hasil:**
 
 
@@ -664,28 +693,31 @@ Contoh 12. Penyalinan array 2 dimensi ke dalam array 1 dimensi.
 
 Buatlah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int matriks[3][5]={{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15}};
 	int matrikshasil[15];
 	int counter=-1;
 	for(int i=0;i<3;i++){
-	for(int j=0;j<5;j++){
-	counter++;
-	matrikshasil[counter] = matriks[i][j];
-	}
+		for(int j=0;j<5;j++){
+			counter++;
+			matrikshasil[counter] = matriks[i][j];
+		}
 	}
 	for(int i=0;i<15;i++){
-	cout<<matrikshasil[i]<<endl;
-	}
-	return a.exec();
+		cout<<matrikshasil[i]<<endl;
 	}
 
+	return a.exec();
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -707,8 +739,8 @@ A>	15
 
 **Keterangan:**
  
- * Untuk menyalin array 2 dimensi ke 1 dimensi, maka harus diperlukan sebuah array 1 dimensi baru yang berukuran total sesuai dengan hasil perkalian antara ukuran baris matriks dua dimensi dikalikan kolomnya. Misal array 2 dimensi berukuran 3 x 5, maka harus dibuat array 1 dimensi berukuran minimal 15.
- * Kemudian untuk mengkopikan dari array 2 dimensi matriks ke array 1 dimensi matrikshasil, harus dilakukan perulangan sesuai dengan baris dan kolom matriks. Indeks array matrikshasil diperoleh dari penambahan nilai counter yang diinisialisasi dari -1, dan berjalan mulai dari 0 sampai dengan 14.
+ - Untuk menyalin array 2 dimensi ke 1 dimensi, maka harus diperlukan sebuah array 1 dimensi baru yang berukuran total sesuai dengan hasil perkalian antara ukuran baris matriks dua dimensi dikalikan kolomnya. Misal array 2 dimensi berukuran 3 x 5, maka harus dibuat array 1 dimensi berukuran minimal 15.
+ - Kemudian untuk mengkopikan dari array 2 dimensi matriks ke array 1 dimensi matrikshasil, harus dilakukan perulangan sesuai dengan baris dan kolom matriks. Indeks array matrikshasil diperoleh dari penambahan nilai counter yang diinisialisasi dari -1, dan berjalan mulai dari 0 sampai dengan 14.
 
 ### Cara Pengaksesan Array dapat dilakukan dengan 2 cara:
 
@@ -718,22 +750,25 @@ Cara ini menelusuri elemen array dua dimensi per dimulai dari baris pertama lalu
 
 Berikut adalah contohnya:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int A[2][3]={{1,2,3},{4,5,6}};
 	for(int baris=0;baris<2;baris++){
-	for(int kolom=0;kolom<3;kolom++){
-	cout<<A[baris][kolom]<<"\t";
-	}
+		for(int kolom=0;kolom<3;kolom++){
+			cout<<A[baris][kolom]<<"\t";
+		}
 	cout<<endl;
 	}
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -747,22 +782,25 @@ Cara ini menelusuri elemen array dua dimensi per dimulai dari kolom pertama lalu
 
 **Contoh:**
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int A[2][3]={{1,2,3},{4,5,6}};
 	for(int kolom=0;kolom<3;kolom++){
-	for(int baris=0;baris<2;baris++){
-	cout<<A[baris][kolom]<<"\t";
-	}
+		for(int baris=0;baris<2;baris++){
+			cout<<A[baris][kolom]<<"\t";
+		}
 	cout<<endl;
 	}
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -775,7 +813,7 @@ A>	3	6
 
 String adalah kumpulan dari nilai-nilai karakter yang berurutan dalam bentuk satu dimensi, nilai string ini haruslah ditulis didalam tanda petik dua (“) misalnya: “ini string”. Suatu nilai string disimpan di memori dengan diakhiri oleh nilai ‘\0’(null), misalnya nilai string “ANTO” disimpan dimemori dalam bentuk 
 
-![](images/capture3-19.png)
+![](images/Capture3-19.PNG)
 
 Dengan mengetahui nilai string diakhiri oleh nilai ‘\0’, maka akhir nilai dari suatu string dapat dideteksi.
 
@@ -802,20 +840,20 @@ Contoh 13. Penggunaan karakter \0
 
 Buatlah program berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char string[100]="String";
 	int K;
 	for(K=0;string[K]!='\0';K++)
 	cout<<string[K];
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -829,23 +867,24 @@ Contoh 14. String tanpa karakter \0
 
 Buatlah program berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char string[6]="String";
 	int K;
 	for(K=0;string[K]!='\0';K++)
 	cout<<string[K];
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
-![](images/capture2-7.png)
+![](images/Capture2-7.PNG)
 
 **Keterangan:**
  
@@ -855,19 +894,22 @@ Contoh 15. Mengisi Array of Character
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char buffer[50] = {'\0'};
 	cout << "Isi data string: ";
 	cin >> buffer;
 	cout << "Hasil data string: " << buffer << endl;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -890,19 +932,22 @@ Contoh 16. Pengisian variabel array of character dengan maksimum jumlah karakter
 
 Tulislah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char buffer[50] = {'\0'};
 	cout << "Isi data string: ";
 	cin.get(buffer,49); //ambil sebanyak 50 karakter atau diakhiri tanda enter
 	cout << "Hasil data string: " << buffer << endl;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -938,19 +983,22 @@ Contoh 17. Penggunaan fungsi strlen()
 
 Buatlah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char data[100];
 	cout<<"Masukkan kalimat apapun yang anda sukai (max 100 huruf): ";
 	cin.get(data,99);
 	cout<<"panjang huruf adalah: "<<strlen(data)<<" karakter";
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -966,20 +1014,23 @@ Contoh 17. Penggunaan fungsi length pada tipe data string C++
 
 Buatlah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	string data2;
 	cout<<"Masukkan kalimat apapun yang anda sukai (max 100 huruf): ";
 	getline(cin,data2);
 	cout<<"panjang huruf adalah: "<<data2.length()<<" karakter";
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -1006,13 +1057,15 @@ Contoh 18. Penggunaan fungsi strcpy()
 
 Buatlah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char data[100] = {'\0’};
 	char data2[]="STRING";
@@ -1020,7 +1073,8 @@ Buatlah program berikut ini:
 	cout<<"string pertama: "<<data<<"\n";
 	cout<<"string kedua : "<<data2;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -1043,13 +1097,15 @@ Contoh 19. Penggunaan fungsi strncpy()
 
 Buatlah program beriku:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char data[6] = {'\0'};
 	char data2[]="STRINGKU";
@@ -1057,7 +1113,8 @@ Buatlah program beriku:
 	cout<<"string pertama: "<<data<<"\n";
 	cout<<"string kedua : "<<data2;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -1080,24 +1137,27 @@ Contoh 20. Penggunaan fungsi strcat()
 
 Buatlah program beriku:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+
+{
 	QCoreApplication a(argc, argv);
 	char str[6] = "anton";
 	char str2[7];
 	char str3[14];
 	str3 = str + str2;
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
-![](images/capture3-6.png)
+![](images/capture3-6.PNG)
 
 **Keterangan:**
  
@@ -1107,20 +1167,23 @@ Contoh 21. Penggunaan fungsi strcat()
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	char string1[100]="Kami kelompok ";
 	char string2[]=" belajar Qt C++";
 	strcat(string1,string2);
 	cout<<"Jadi gabungannya adalah: "<<string1;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -1199,13 +1262,13 @@ Contoh 22. Pembuatan variabel string C++, penyalinan string, dan penggabungan st
 
 Buatlah program berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
+using namespace std;
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	string str1("Ini string C++");
 	cout<<"Isi str1 = "<<str1<<endl;
@@ -1220,8 +1283,8 @@ Buatlah program berikut:
 	strhasil = str2 + str1;
 	cout<<strhasil;
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -1248,13 +1311,13 @@ Contoh 23. Penggunaan class string untuk manipulasi data
 
 Buatlah program berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
+using namespace std;
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	//buat var nama dgn C-style string
 	char nama[10] = "Halooooooo";
@@ -1272,8 +1335,8 @@ Buatlah program berikut:
 	string ulang(10,'a');
 	cout<<ulang;
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -1289,13 +1352,13 @@ Contoh 24. Penggabungan string dengan menggunakan class string
 
 Buatlah program berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
+using namespace std;
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	string satu("Percobaan 1 ");
 	string dua("Percobaan 2 ");
@@ -1306,8 +1369,8 @@ Buatlah program berikut:
 	satu.append(tampung);
 	cout<<satu;
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -1323,23 +1386,25 @@ Contoh 25. Pengaksesan isi nilai class string
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	string satu("Indonesia Raya");
 	for(size_t i=0;i<satu.length();i++){
-	cout<<satu[i]<<endl;
+		cout<<satu[i]<<endl;
 	}
 	cout<<endl;
 	cout<<"C-sytle: "<<satu.c_str();
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -1368,13 +1433,15 @@ Contoh 26. Menemukan substring pada sebuah string besar
 
 Tulislah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	string strSample ("Kata pak Hari, \"hari ini matahari cerah sekali!\"");
 	cout << "Contoh string adalah: " << endl;
@@ -1409,8 +1476,8 @@ Tulislah program berikut ini:
 	nCharacterOffset = strSample.find(chCharToSearch,nCharSearchOffset);
 	}
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -1447,14 +1514,16 @@ Contoh 27. Membalik kata / kalimat.
 
 Tulislah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
+#include <algorithm>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	#include <algorithm>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	string strSample ("String ini akan dibalik!");
 	cout << "String asli: " << endl;
@@ -1463,7 +1532,8 @@ Tulislah program berikut ini:
 	cout << "Setelah dibalik: " << endl;
 	cout << strSample;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -1482,14 +1552,14 @@ Contoh 28. Konversi huruf besar dan kecil.
 
 Tulislah program berikut ini:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <string>
-	#include <algorithm>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	cout << "Masukkan sebuah string: " << endl;
 	string strInput;
@@ -1502,7 +1572,8 @@ Tulislah program berikut ini:
 	cout << "Hasil konversi ke huruf kecil: " << endl;
 	cout << strInput << endl << endl;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 

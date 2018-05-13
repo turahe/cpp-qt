@@ -9,18 +9,19 @@ membutuhkan operator casting. Namun kenyataannya pada dunia nyata yang kita hada
 
 Contoh nyatanya terdapat pada bahasa C dan C++. Pada bahasa C tidak terdapat tipe data bool (boolean) sehingga kita harus menggunakan kata kunci typedef.
 
-
-	typedef unsigned int BOOL;
-	BOOL mybool = 0;
-	BOOL isTrue(){
+```cpp
+typedef unsigned int BOOL;
+BOOL mybool = 0;
+BOOL isTrue(){
 	return mybool;
-	}
+}
+```
 
 Pada contoh diatas maka kita harus membuat tipe data baru bertipe unsigned int yang kita definisikan sebagai BOOL. Nah setelah kita mendefinisikan tipe data baru BOOL pada C, bagaimana jika kemudian dikembangkan dengan bahasa C++? Kita harus melakukan konversi BOOL pada bahasa C ke bahasa C++, dimana bahasa C++ sudah ada tipe data bool yang tentunya berbeda “persepsi” dengan BOOL dari bahasa C. Maka dari itu dilakukan casting. Berikut adalah contoh castingnya:
 
-
-	bool hasilku = (bool) isTrue(); // C-Style cast
-
+```cpp
+bool hasilku = (bool) isTrue(); // C-Style cast
+```
 ## Data Type Casting (Conversion)
 
 Mengubah sebuah ekspresi dari tipe yang diberikan dalam jenis lain dikenal sebagai tipe-casting. Konversi tersebut ada dua jenis:
@@ -31,22 +32,25 @@ Jenis ini tidak membutuhkan operator khusus. Tipe data yang jangkauannya besar b
 
 **Contoh:**
 
-
-	short a=2000;
-	int b;
-	b=a;
+```cpp
+short a=2000;
+int b;
+b=a;
+```
 
 Pada contoh diatas, tipe data `short` yang berjarak jangkau kecil dapat ditampung oleh tipe data `int` yang jarak jangkaunya lebih besar, walaupun tipe datanya berbeda. Hal ini karena keduanya sama-sama data numerik dan memang termasuk dalam konversi implisit. *Implisit conversion* juga dapat diterpakan pada *constrctor* sebuah *class*, sehingga ketika kita memanggil konstruktor tersebut, maka konversi akan dilakukan. Contoh:
 
+```cpp
+class A {
+};
 
-	class A {
-	};
-	class B {
+class B {
 	public:
 	B (A a)
 	{
 	}
-	};
+};
+```
 
 Proses instansiasi adalah:
 
@@ -67,12 +71,12 @@ Konversi tipe ini harus dituliskan pada kode program dengan menggunakan tanda ku
 
 **Contoh:**
 
-
-	short a=2000;
-	int b;
-	b = (int) a; // c-like cast notation
-	b = int (a); // functional notation
-
+```cpp
+short a=2000;
+int b;
+b = (int) a; // c-like cast notation
+b = int (a); // functional notation
+```
 Cara pertama dengan menegunakan *C-cast like notation*. Pada contoh diatas, kita memaksa / mengcasting variabel a yang bertipe `short` agar diperlakukan seperti tipe data `integer` dengan cara memberi tanda kurung (int) sebelum variabel a. Dengan demikian variabel a akan dianggap / diperlakukan oleh kompiler menjadi tipe data integer dan bisa di assign ke dalam variabel b yang bertipe integer.
 
 
@@ -82,43 +86,59 @@ Contoh 1. Contoh Explicit Casting pada Tipe Data Numerik.
 
 Tulislah kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	int aa=5;
 	int bb=2;
 	float x = 5.0;
 	float y = 2.0;
+
 	int c=aa/bb;
 	cout<<"1. c="<<c<<endl;
+	
 	c = (float) aa/bb;
 	cout<<"2. c="<<c<<endl;
+	
 	c = (float) aa / (float) bb;
 	cout<<"3. c="<<c<<endl;
+	
 	c = x / y;
 	cout<<"4. c="<<c<<endl;
+	
 	c = (int) x / (int) y;
 	cout<<"5. c="<<c<<endl;
+	
 	c = (float) x/y;
 	cout<<"6. c="<<c<<endl;
+	
 	float d=aa/bb;
 	cout<<"7. d="<<d<<endl;
+	
 	d = (float) aa/bb;
 	cout<<"8. d="<<d<<endl;
+	
 	d = (float) aa / (float) bb;
 	cout<<"9. d="<<d<<endl;
+	
 	d = x / y;
 	cout<<"10. d="<<d<<endl;
+	
 	d = (int) x/ (int) y;
 	cout<<"11. d="<<d<<endl;
+	
 	d = (int) x/y;
 	cout<<"12. d="<<d<<endl;
+	
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -165,12 +185,13 @@ Bentuk umum untuk semuanya adalah:
 
 *Static_cast* adalah mekanisme yang dapat digunakan untuk mengkonversi pointer diantara tipe data/class terkait dan melakukan konversi tipe data tersebut secara eksplisit untuk tipe data standar yang jika tidak dilakukan konversi akan terjadi secara otomatis (implisit). Dengan menggunakan konsep pointer, `static_cast` menerapkan pengecekan casting pada saat compile-time dengan melakukan pemeriksaan untuk memastikan bahwa pointer dicasting ke tipe yang benar/sesuai. Hal Ini merupakan perbaikan dari casting yang berjenis C-style, dimana memungkinkan casting ke obyek yang tidak ada relasinya sama sekali. Dengan menggunakan `static_cast`, pointer bisa dicaskting ke class induknya atau dapat down-case menjadi class turunannya. Berikut contohnya:
 
-
-	CInduk* pInduk = new CTurunan (); // membuat obyek Cturunan dari Cinduk (polymorfisme)
-	CTurunan* pTurunan = static_cast<CTurunan*>(pInduk); // mengcasting pInduk menjadi Cturunan, valid!
-	// CTdkAdaHubungan merupakan class yang tidak ada hubungannya dengan CInduk melalui inheritance
-	CTdkAdaHubungan* pTdkHub = static_cast<CTdkAdaHubungan*>(pInduk); // Error
-	//karena casting tidak diperbolehkan, tidak ada hubungan class!
+```cpp
+CInduk* pInduk = new CTurunan (); // membuat obyek Cturunan dari Cinduk (polymorfisme)
+CTurunan* pTurunan = static_cast<CTurunan*>(pInduk); // mengcasting pInduk menjadi Cturunan, valid!
+// CTdkAdaHubungan merupakan class yang tidak ada hubungannya dengan CInduk melalui inheritance
+CTdkAdaHubungan* pTdkHub = static_cast<CTdkAdaHubungan*>(pInduk); // Error
+//karena casting tidak diperbolehkan, tidak ada hubungan class!
+```
 
  **Keterangan:**
  
@@ -188,9 +209,10 @@ secara eksplisit tipe data yang dicastingnya. Sintaks umunya adalah:
 
 **Berikut contohnya:**
 
-
-	double myphi = 3.14;
-	int angka = static_cast<int>(myphi);
+```cpp
+double myphi = 3.14;
+int angka = static_cast<int>(myphi);
+```
 
 ### Penggunaan dynamic_cast
 
@@ -198,10 +220,11 @@ Fungsi dynamic_cast merupakan kebalikan dari static_cast, hal ini karena proses 
 
 **Bentuk umumnya adalah:**
 
-
-	tipe_tujuan* pTujuan = dynamic_cast <tipe_class*> (pSumber);
-	if (pTujuan) // apakah proses casting sukses?
-	pTujuan->CallFunc ();
+```cpp
+tipe_tujuan* pTujuan = dynamic_cast <tipe_class*> (pSumber);
+if (pTujuan) // apakah proses casting sukses?
+pTujuan->CallFunc ();
+```
 
 **Contoh penggunaan:**
 
@@ -225,59 +248,67 @@ Casting ini tidak boleh menghasilkan kembalian NULL. Sintaksnya:
 
 **Contoh:**
 
-
-	class CBase { };
-	class CDerived: public CBase { };
-	CBase b; CBase* pb;
-	CDerived d; CDerived* pd;
-	pb = dynamic_cast<CBase*>(&d); // ok: derived-to-base
-	pd = dynamic_cast<CDerived*>(&b); // wrong: base-to-derived
+```cpp
+class CBase { };
+class CDerived: public CBase { };
+CBase b; CBase* pb;
+CDerived d; CDerived* pd;
+pb = dynamic_cast<CBase*>(&d); // ok: derived-to-base
+pd = dynamic_cast<CDerived*>(&b); // wrong: base-to-derived
+```
 
 Contoh 2. Contoh Dynamic Casting.
 
 Buatlah program berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class CAnimal
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class CAnimal
+{
 	public:
 	virtual void Bersuara () = 0;
-	};
-	class CDog : public CAnimal
-	{
+};
+
+class CDog : public CAnimal
+{
 	public:
 	void KibasEkor () {
-	cout << "Dog: Kibas-kibas ekor!" << endl;
+		cout << "Dog: Kibas-kibas ekor!" << endl;
 	}
 	void Bersuara () {
-	cout << "Dog: Guk-guk!" << endl;
+		cout << "Dog: Guk-guk!" << endl;
 	}
-	};
-	class CCat : public CAnimal
-	{
+};
+
+class CCat : public CAnimal
+{
 	public:
 	void TangkapTikus () {
-	cout << "Cat: tikus tertangkap!" << endl;
+		cout << "Cat: tikus tertangkap!" << endl;
 	}
 	void Bersuara () {
-	cout << "Cat: Meong!" << endl;
+		cout << "Cat: Meong!" << endl;
 	}
-	};
-	void TentukanTipeClass (CAnimal* pAnimal);
-	int main(int argc, char *argv[])
-	{
+};
+
+void TentukanTipeClass (CAnimal* pAnimal);
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
+
 	// pAnimal1 berupa obyek Dog
 	CAnimal* pAnimal1 = new CDog ();
+
 	// pAnimal2 berupa obyek Cat
 	CAnimal* pAnimal2 = new CCat ();
 	cout << "Penggunaan dynamic_cast untuk menentukan jenis Animal 1" << endl;
 	TentukanTipeClass(pAnimal1);
 	cout << "Penggunaan dynamic_cast untuk menentukan jenis Animal 2" << endl;
 	TentukanTipeClass (pAnimal2);
+
 	// Penggunaan virtual function override
 	cout << "Verifikasi tipe: Animal 1 Besuara!" << endl;
 	pAnimal1->Bersuara ();
@@ -285,22 +316,25 @@ Buatlah program berikut:
 	pAnimal2->Bersuara ();
 	return a.exec();
 	}
+
 	void TentukanTipeClass (CAnimal* pAnimal)
 	{
 		CDog* pDog = dynamic_cast <CDog*>(pAnimal);
 	if (pDog)
 	{
-	cout << "Binatang Dog!" << endl;
-	// panggil fungsi dog
-	pDog->KibasEkor();
+		cout << "Binatang Dog!" << endl;
+		// panggil fungsi dog
+		pDog->KibasEkor();
 	}
+
 	CCat* pCat = dynamic_cast <CCat*>(pAnimal);
 	if (pCat)
 	{
-	cout << "Binatang kucing!" << endl;
-	pCat->TangkapTikus();
+		cout << "Binatang kucing!" << endl;
+		pCat->TangkapTikus();
 	}
-	}
+}
+```
 
 **Hasil:**
 
@@ -357,34 +391,38 @@ Const_cast digunakan untuk menghilangkan sifat const-ness atau sifat volatile-an
 
 **Contoh:**
 
+```cpp
+void func(char *);
+const char *x = "abcd";
+func(const_cast<char *>(x));
+```
 
-	void func(char *);
-	const char *x = "abcd";
-	func(const_cast<char *>(x));
+`const_cast` juga memungkinkan kita untuk menonaktifkan method const pada suatu objek. Mengapa diperlukan? Karena kadang-kadang programmer melupakan penggunaan const pada method yang seharusnya berjenis const method. Contoh:
 
-const_cast juga memungkinkan kita untuk menonaktifkan method const pada suatu objek. Mengapa diperlukan? Karena kadang-kadang programmer melupakan penggunaan const pada method yang seharusnya berjenis const method. Contoh:
-
-
-	ContohClass
-	{
+```cpp
+ContohClass
+{
 	public:
 	// ...
 	void tampilkanAnggota (); // method ini berjenis const
-	};
-	void tampilkanData (const ContohClass& mData)
-	{
+};
+
+void tampilkanData (const ContohClass& mData)
+{
 	mData.tampilkanAnggota (); // compile error, karena “call to a non-const member using
 	a const reference”
-	}
+}
+```
 
 Kita dapat menggunakan const_cast untuk mengubah a adalah:
 
-
-	void tampilkanData (const ContohClass& mData)
-	{
+```cpp
+void tampilkanData (const ContohClass& mData)
+{
 	ContohClass& refData = const_cast <ContohClass&>(mData);
 	refData.tampilkanAnggota(); // OK!
-	}
+}
+```
 
 Kita juga dapat menggunakan pointer:
 
@@ -398,20 +436,22 @@ Kita juga dapat menggunakan pointer:
 
 Contoh lain:
 
+```
+// const_cast
+#include <iostream>
+using namespace std;
 
-	// const_cast
-	#include <iostream>
-	using namespace std;
-	void print (char * str)
-	{
+void print (char * str)
+{
 	cout << str << endl;
-	}
-	int main () {
+}
+
+int main () {
 	const char * c = "sample text";
 	print ( const_cast<char *> (c) );
 	return 0;
-	}
-
+}
+```
 ## Pemrograman Basisdata dengan QtConsole Application
 
 Pada bagian kedua ini kita akan berkenalan dengan bagaimana mengakses basisdata dengan menggunakan Qt. Basis data adalah suatu kumpulan tabel-tabel yang berisi data-data yang saling berelasi satu sama lain secara logika. Basis data tersusun dari tabel, sedangkan tabel tersusun dari baris record-record yang memiliki atribut (kolom) dan nilainya.
@@ -770,7 +810,7 @@ Kondisi akhir tabel:
 
 ### Menghapus data pada tabel SQLITE
 
-Cara menghapus data pada tabel Sqlite adalah dengan menggunakan perintah query SQL UPDATE. Sintaksnya adalah DELETE FROM <namatabel> WHERE <kriteri Perintah diatas tidak menghasilkan record sama sekali, namun dapat menghasilkan berapa jumlah record yang terpengaruh (affected rows) dan juga mengembalikan nilai bool yang akan bernilai true atau false. Nilai true jika penghapusan data berhasil, nilai false jika penghapusan data gagal.
+Cara menghapus data pada tabel Sqlite adalah dengan menggunakan perintah query SQL UPDATE. Sintaksnya adalah `DELETE FROM <namatabel> WHERE <kriteri>` Perintah diatas tidak menghasilkan record sama sekali, namun dapat menghasilkan berapa jumlah record yang terpengaruh (affected rows) dan juga mengembalikan nilai bool yang akan bernilai true atau false. Nilai true jika penghapusan data berhasil, nilai false jika penghapusan data gagal.
 
 Pada Qt cara yang digunakan untuk menghapus data adalah dengan menggunakan class QSqlQuery dan method query seperti berikut ini:
 
@@ -789,30 +829,33 @@ Kita akan menghapus data “mhs baru”.
 
 Buatlah program sebagai berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
+#include <QtSql/QtSql>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <QDebug>
-	#include <QtSql/QtSql>
-	#include <iostream>
-	using namespace std;
-	int main(int argc, char *argv[])
-	{
+using namespace std;
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	qDebug() << QSqlDatabase::drivers();
 	QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 	db.setDatabaseName("testmhs.db");
 	if(!db.open())
 	{
-	qDebug() << db.lastError();
-	qFatal( "Failed to connect." );
+		qDebug() << db.lastError();
+		qFatal( "Failed to connect." );
 	} else qDebug() << "Koneksi berhasil";
+	
 	QSqlQuery query;
 	bool hasil = query.exec("delete from mahasiswa where nim='22334455'");
 	if(hasil) qDebug() << "Berhasil dihapus"; else qDebug() << "Gagal dihapus";
 	qDebug() << "Jumlah record yang dihapus: " << query.numRowsAffected();
 	return a.exec();
-	}
-
+}
+```
 
 **Hasil:**
 
@@ -846,154 +889,167 @@ Cara yang digunakan adalah dengan membuat sebuah class yang akan digunakan untuk
 
 Contoh 9. Pembuatan manipulasi data pada SQLite dengan menggunakan menu
 
-1. Tulislah program berikut:
+Tulislah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
+#include <QtSql/QtSql>
+#include <iostream>
+#include <conio.h>
+using namespace std;
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		#include <QtSql/QtSql>
-		#include <iostream>
-		#include <conio.h>
-		using namespace std;
-		class Tabel{
-		private:
-		QString namadb;
-		QString namatabel;
-		QString strquery;
-		QSqlDatabase db;
-		public:
-		//konstruktor
-		Tabel(QString namadb, QString namatabel){
+class Tabel{
+	private:
+	QString namadb;
+	QString namatabel;
+	QString strquery;
+	QSqlDatabase db;
+	public:
+
+	//konstruktor
+	Tabel(QString namadb, QString namatabel){
 		this->namadb = namadb;
 		this->namatabel = namatabel;
-		}
-		bool connect(){
+	}
+	bool connect(){
 		this->db = QSqlDatabase::addDatabase("QSQLITE");
 		this->db.setDatabaseName(this->namadb);
 		if(!this->db.open())
 		{
-		qDebug() << "No";
-		return false;
+			qDebug() << "No";
+			return false;
 		} else {
-		qDebug() << "Yes";
-		return true;
+			qDebug() << "Yes";
+			return true;
 		}
-		}
-		bool jalanQuery(QString query){
+	}
+
+	bool jalanQuery(QString query){
 		this->strquery = query;
 		bool hasil = false;
-		if(this->db.isOpen()){
+	if(this->db.isOpen()){
 		QSqlQuery myq(this->db);
 		hasil = myq.exec(this->strquery);
-		}
+	}
 		return hasil;
-		}
-		void ambilData(QString query){
+	}
+
+	void ambilData(QString query){
 		this->strquery = query;
 		if(this->db.isOpen()){
-		QSqlQuery myq(this->db);
-		myq.exec(this->strquery);
-		QSqlRecord rec = myq.record();
-		int cols = rec.count();
-		QString temp;
-		for( int c=0; c<cols; c++ )
-		temp += rec.fieldName(c) + ((c<cols-1)?"\t":"");
-		qDebug() << temp;
-		while( myq.next() )
+			QSqlQuery myq(this->db);
+			myq.exec(this->strquery);
+			QSqlRecord rec = myq.record();
+			int cols = rec.count();
+			QString temp;
+			for( int c=0; c<cols; c++ )
+			temp += rec.fieldName(c) + ((c<cols-1)?"\t":"");
+			qDebug() << temp;
+			while( myq.next() )
 		{
-		temp = "";
-		for( int c=0; c<cols; c++ )
-		temp += myq.value(c).toString() + ((c<cols-1)?"\t":"");
-		qDebug() << temp;
-		}
+			temp = "";
+			for( int c=0; c<cols; c++ )
+			temp += myq.value(c).toString() + ((c<cols-1)?"\t":"");
+			qDebug() << temp;
 			}
 		}
-		QString getNamaTabel(){
+	}
+	
+	QString getNamaTabel(){
 		return this->namatabel;
-		}
-		QString getNamaDb(){
+	}
+	
+	QString getNamaDb(){
 		return this->namadb;
-		}
-		QSqlDatabase getDb(){
+	}
+
+	QSqlDatabase getDb(){
 		return this->db;
-		}
-		};
-		void tambahData(Tabel t){
-		string nim,nama,ipk;
-		getline(cin,nim);
-		cout << "NIM: "; getline(cin,nim);
-		cout << "Nama: "; getline(cin,nama);
-		cout << "IPK: "; getline(cin,ipk);
-		QString s = "insert into "+t.getNamaTabel()+" values
-		('"+nim.c_str()+"','"+nama.c_str()+"',"+ipk.c_str()+")";
-		bool hasil = t.jalanQuery(s);
-		if(hasil) qDebug() << "Penambahan berhasil"; else qDebug() << "Penambahan gagal";
-		}
-		void hapusData(Tabel t){
-		string nim;
-		getline(cin,nim);
-		cout << "NIM yang akan dihapus: "; getline(cin,nim);
-		QString s = "delete from "+t.getNamaTabel()+" where nim='"+nim.c_str()+"'";
-		bool hasil = t.jalanQuery(s);
-		if(hasil) qDebug() << "Penghapusan berhasil"; else qDebug() << "Penghapusan
-		gagal";
-		}
-		void tampilData(Tabel t){
-		QString s = "select * from "+t.getNamaTabel()+" order by nim asc";
-		t.ambilData(s);
-		}
-		void cariNim(Tabel t){
-		string nim;
-		getline(cin,nim);
-		cout << "NIM yang akan dicari: "; getline(cin,nim);
-		QString s = "select * from "+t.getNamaTabel()+" where nim='"+nim.c_str()+"'";
-		t.ambilData(s);
-		}
-		void editData(Tabel t){
-		string nim,nama,ipk;
-		getline(cin,nim);
-		cout << "NIM yang akan diedit: "; getline(cin,nim);
-		cout << "Nama baru: "; getline(cin,nama);
-		cout << "IPK baru: "; getline(cin,ipk);
-		QString s = "update "+t.getNamaTabel()+" set
-		nama='"+nama.c_str()+"',ipk="+ipk.c_str()+" where nim='"+nim.c_str()+"'";
-		bool hasil = t.jalanQuery(s);
-		if(hasil) qDebug() << "Pengeditan berhasil"; else qDebug() << "Pengeditan gagal";
-		}
-			int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		int pil;
-		Tabel t("testmhs.db","mahasiswa");
-		t.connect();
-		do {
+	}
+};
+
+void tambahData(Tabel t){
+	string nim,nama,ipk;
+	getline(cin,nim);
+	cout << "NIM: "; getline(cin,nim);
+	cout << "Nama: "; getline(cin,nama);
+	cout << "IPK: "; getline(cin,ipk);
+	QString s = "insert into "+t.getNamaTabel()+" values
+	('"+nim.c_str()+"','"+nama.c_str()+"',"+ipk.c_str()+")";
+	bool hasil = t.jalanQuery(s);
+	if(hasil) qDebug() << "Penambahan berhasil"; else qDebug() << "Penambahan gagal";
+}
+
+void hapusData(Tabel t){
+	string nim;
+	getline(cin,nim);
+	cout << "NIM yang akan dihapus: "; getline(cin,nim);
+	QString s = "delete from "+t.getNamaTabel()+" where nim='"+nim.c_str()+"'";
+	bool hasil = t.jalanQuery(s);
+	if(hasil) qDebug() << "Penghapusan berhasil"; else qDebug() << "Penghapusan
+	gagal";
+}
+
+void tampilData(Tabel t){
+	QString s = "select * from "+t.getNamaTabel()+" order by nim asc";
+	t.ambilData(s);
+}
+
+void cariNim(Tabel t){
+	string nim;
+	getline(cin,nim);
+	cout << "NIM yang akan dicari: "; getline(cin,nim);
+	QString s = "select * from "+t.getNamaTabel()+" where nim='"+nim.c_str()+"'";
+	t.ambilData(s);
+}
+
+void editData(Tabel t){
+	string nim,nama,ipk;
+	getline(cin,nim);
+	cout << "NIM yang akan diedit: "; getline(cin,nim);
+	cout << "Nama baru: "; getline(cin,nama);
+	cout << "IPK baru: "; getline(cin,ipk);
+	QString s = "update "+t.getNamaTabel()+" set
+	nama='"+nama.c_str()+"',ipk="+ipk.c_str()+" where nim='"+nim.c_str()+"'";
+	bool hasil = t.jalanQuery(s);
+	if(hasil) qDebug() << "Pengeditan berhasil"; else qDebug() << "Pengeditan gagal";
+}
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	int pil;
+	Tabel t("testmhs.db","mahasiswa");
+	t.connect();
+	do {
 		system("cls");
-		cout << "MENU" <<endl;
-		cout << "1. Tambah data\n";
-		cout << "2. Tampil data\n";
-		cout << "3. Hapus data\n";
-		cout << "4. Cari nim\n";
-		cout << "5. Edit data\n";
-		cout << "6. Exit\n";
-		cout << "Pilihan : "; cin >> pil;
-		cout << endl;
-		switch (pil) {
-		case 1:
-		tambahData(t);break;
-		case 2:
-		tampilData(t);break;
-		case 3:
-		hapusData(t);break;
-		case 4:
-		cariNim(t);break;
-		case 5:
-		editData(t);
+			cout << "MENU" <<endl;
+			cout << "1. Tambah data\n";
+			cout << "2. Tampil data\n";
+			cout << "3. Hapus data\n";
+			cout << "4. Cari nim\n";
+			cout << "5. Edit data\n";
+			cout << "6. Exit\n";
+			cout << "Pilihan : "; cin >> pil;
+			cout << endl;
+			switch (pil) {
+			case 1:
+			tambahData(t);break;
+			case 2:
+			tampilData(t);break;
+			case 3:
+			hapusData(t);break;
+			case 4:
+			cariNim(t);break;
+			case 5:
+			editData(t);
 		}
 		cout << "Tekan sembarang tombol..."; getch();
-		} while (pil >=1 && pil<=5);
-		cout << "Good bye";
-		return a.exec();
-		}
+	} while (pil >=1 && pil<=5);
+	cout << "Good bye";
+	return a.exec();
+}
+```
 
 **Hasil:**
 
@@ -1023,15 +1079,16 @@ T> **TIPS:**
 T> 
 T> Untuk mengkonversi dari tipe data string menuju ke Qstring, digunakan `<variabel string bias.c_str()` Perintah cin tidak bisa digunakan setelah fungsi getline, karena akan membuat inputan menjadi bertumpuk seperti pada contoh ini:
 
-
-	int main(){
+```cpp
+int main(){
 	int id, age;
 	string name, address;
 	cout<<”Enter ID : “; cin>>id;
 	cout<<”Enter Name: “; getline(cin,name);
 	cout<<”Enter Address : “; getline(cin, address);
 	cout<<”Enter Age: “; cin>>age;
-	}
+}
+```
 
 **Hasil:**
 
@@ -1042,15 +1099,16 @@ T> Untuk mengkonversi dari tipe data string menuju ke Qstring, digunakan `<varia
 
 Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu. Untuk mencegahnya kita bisa menukar posisi bahwa cin diletakkan dibawah getline, seperti berikut:
 
-{lang="c++"}
-	int main(){
+```cpp
+int main(){
 	int id, age;
 	string name, address;
 	cout<<”Enter Name: “; getline(cin,name);
 	cout<<”Enter Address : “; getline(cin, address);
 	cout<<”Enter ID : “; cin>>id;
 	cout<<”Enter Age: “; cin>>age;
-	}
+}
+```
 
 **Sehingga tampilan:**
 
@@ -1062,8 +1120,8 @@ Terlihat bahwa Enter Name dan Enter Address tergabung dan menjadi satu. Untuk me
 
 Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan dengan cara:
 
-
-	int main(){
+```cpp
+int main(){
 	int id, age;
 	string name, address;
 	cout<<”Enter ID : “; cin>>id;
@@ -1071,7 +1129,8 @@ Jika cin tetap harus didahulukan sebelum getline, maka bisa dilakukan dengan car
 	cout<<”Enter Name: “; getline(cin,name);
 	cout<<”Enter Address : “; getline(cin, address);
 	cout<<”Enter Age: “; cin>>age;
-	}
+}
+```
 
 **Sehingga tampilan:**
 

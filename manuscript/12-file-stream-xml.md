@@ -4,9 +4,7 @@
 
 **Agenda**
 
-Pada chapter ini kita akan membahas tentang beberapa class khusus
-pada Qt Framework yang digunakan untuk bekerja dengan File dan
-dokumen XML. Adapun materi yang akan dibahas pada HOL ini adalah:
+Pada chapter ini kita akan membahas tentang beberapa class khusus pada Qt Framework yang digunakan untuk bekerja dengan File dan dokumen XML. Adapun materi yang akan dibahas pada HOL ini adalah:
 
 - Bekerja dengan QDir dan QFileInfo.
 - Bekerja dengan QFile dan QTextStream.
@@ -16,14 +14,10 @@ dokumen XML. Adapun materi yang akan dibahas pada HOL ini adalah:
 
 ## Bekerja dengan Paths
 
-QDir digunakan untuk bekerja dengan paths dan drives pada aplikasi
-Qt. QDir memiliki beberapa static method yang memudahkan anda
-bekerja dengan file sistem. Misal `QDir::current()` dapat digunakan
-untuk mengembalikan QDir dari direktori kerja anda, `QDir::home()`
-akan mengembalikan QDir dari home direktori pengguna, `QDir::root()` akan mengembalikan root direktori, dan `QDir::drives()` akan mengembalikan objek `QList<QFileInfo>` yang mewakili root dari semua drive yang ada. Objek QFileInfo menyimpan informasi tentang file dan direktori, ada beberapa method penting yang sering digunakan yaitu:
+QDir digunakan untuk bekerja dengan paths dan drives pada aplikasi Qt. QDir memiliki beberapa static method yang memudahkan anda bekerja dengan file sistem. Misal `QDir::current()` dapat digunakan untuk mengembalikan QDir dari direktori kerja anda, `QDir::home()` akan mengembalikan QDir dari home direktori pengguna, `QDir::root()` akan mengembalikan root direktori, dan `QDir::drives()` akan mengembalikan objek `QList<QFileInfo>` yang mewakili root dari semua drive yang ada. Objek QFileInfo menyimpan informasi tentang file dan direktori, ada beberapa method penting yang sering digunakan yaitu:
 
 - `isDir()`, `isFile()`, dan `isSymLink()` akan mengembalikan nilai true jika objek yang dicek berupa direktori, file, atau symbolic link (shortcut pada window).
-- `dir()` dan `absoluteDir()` akan mengembalikan `QDir` yang mengandung informasi dari objek file. Method `dir()` akan mengembalikan direktori relatif dari direktori aktif, dan method `absoluteDir()` mengembalikan path direktori yang dimulai dari root.
+- `dir()` dan `absoluteDir()` akan mengembalikan `QDir`  yang mengandung informasi dari objek file. Method `dir()` akan mengembalikan direktori relatif dari direktori aktif, dan method `absoluteDir()` mengembalikan path direktori yang dimulai dari root.
 - `exists()` akan menghasilkan nilai true jika objek tersebut ada.
 - `isHidden()`, `isReadable()`, `isWritable()`, dan `isExecutable()` mengembalikan status hak akses dari file.
 - `fileName()` akan mengembalikan QString berupa nama file tanpa path.
@@ -36,28 +30,30 @@ Program dibawah ini akan menunjukan cara penggunaan QDir untuk mengambil informa
 
 Contoh 1. Menampilkan daftar drives dari root directories.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
-
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		#include <QDir>
-		#include <QFileInfo>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		foreach (QFileInfo drive, QDir::drives()) {
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
+#include <QDir>
+#include <QFileInfo>
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	foreach (QFileInfo drive, QDir::drives()) {
 		qDebug() << "Drive : " << drive.absolutePath();
 		QDir dir = drive.dir();
 		dir.setFilter(QDir::Dirs);
+		
 		foreach (QFileInfo rootDirs, dir.entryInfoList()) {
-		qDebug() << " " << rootDirs.fileName() ;
+			qDebug() << " " << rootDirs.fileName() ;
+			}
 		}
-		}
-		return a.exec();
-		}
+	return a.exec();
+}
+```
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
 
  **Keterangan:**:
@@ -145,41 +141,45 @@ Untuk membuat text stream pada file, buat objek QFile dan buka file seperti bias
 
 Contoh 3 Menggunakan Stream untuk membaca file.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QDebug>
+#include <QFile>
 
-		#include <QtCore/QCoreApplication>
-		#include <QDebug>
-		#include <QFile>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QFile file("D:\\sample.txt");
-		if(!file.exists())
-		{
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QFile file("D:\\sample.txt");
+	
+	if(!file.exists())
+	{
 		qDebug() << "File " << file.fileName() << " tidak ditemukan !";
 		return a.exec();
-		}
-		if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
-		{
+	}
+
+	if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+	{
 		qDebug() << "File " << file.fileName() << " tidak dapat diakses !";
 		return a.exec();
-		}
+	}
 		QTextStream stream(&file);
 		//membaca semua teks yang ada dalam sample.txt
 		QString teks = stream.readAll();
 		qDebug() << teks;
 		//membaca teks per line
 		while(!stream.atEnd())
-		{
+	{
 		QString line = stream.readLine();
 		qDebug() << line;
-		}
-		file.close();
-		return a.exec();
-		}
+	}
+	file.close();
+	return a.exec();
+}
+```
 
-2. Buat file teks pada alamat tertentu (pada contoh diatas di drive `D:\sample.txt`), masukan sembarang teks kedalam file tersebut.
+Buat file teks pada alamat tertentu (pada contoh diatas di drive `D:\sample.txt`), masukan sembarang teks kedalam file tersebut.
 
 3. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 

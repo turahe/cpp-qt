@@ -2,30 +2,11 @@
 
 ## 2.1 Tipe Data dan Identifier
 
-Program adalah kumpulan instruksi yang disusun sedemikian rupa
-sehingga mempunyai urutan nalar yang tepat untuk menyelesaikan
-suatu persoalan. Instruksi-instruksi yang digunakan dalam
-pemrograman mengacu pada suatu bahasa pemrograman tertentu,
-pada buku ini menggunakan bahasa pemrograman C++, sehingga
-penulisan program pada buku ini mengikuti tata bahasa C++.
+Program adalah kumpulan instruksi yang disusun sedemikian rupa sehingga mempunyai urutan nalar yang tepat untuk menyelesaikan suatu persoalan. Instruksi-instruksi yang digunakan dalam pemrograman mengacu pada suatu bahasa pemrograman tertentu, pada buku ini menggunakan bahasa pemrograman C++, sehingga penulisan program pada buku ini mengikuti tata bahasa C++.
 
-Segala sesuatu yang diproses oleh program adalah data.
-Dalam hal ini data adalah elemen-elemen yang digunakan
-untuk menjelaskan segala sesuatu yang mempunyai besaran
-(ukuran/ nilai), seperti misalnya **umur** besarannya
-bisa berupa biangan desimal **42.5** (maksudnya 42½ tahun),
-**golongan** seorang karyawan besarannya bisa berupa
-sebuah karakter A (maksudnya goongan A) dan sebagainya.
-Bahasa C++ menyimpan besaran-besaran tersebut di memori
-utama untuk dikelola oleh program, sehingga perlu dilakukan
-pengaturan pemakaian memori, oleh karena itu dalam bahasa
-pemrograman selalu terdapat istilah-istilah yang bernama
-**Tipe Data**, **Variabel** dan **Konstanta**.
+Segala sesuatu yang diproses oleh program adalah data. Dalam hal ini data adalah elemen-elemen yang digunakan untuk menjelaskan segala sesuatu yang mempunyai besaran (ukuran/ nilai), seperti misalnya **umur** besarannya bisa berupa biangan desimal **42.5** (maksudnya 42½ tahun), **golongan** seorang karyawan besarannya bisa berupa sebuah karakter A (maksudnya goongan A) dan sebagainya. Bahasa C++ menyimpan besaran-besaran tersebut di memori utama untuk dikelola oleh program, sehingga perlu dilakukan pengaturan pemakaian memori, oleh karena itu dalam bahasa pemrograman selalu terdapat istilah-istilah yang bernama **Tipe Data**, **Variabel** dan **Konstanta**.
 
-Identifier (pengenal) adalah suatu nama yang digunakan
-program untuk merujuk ke suatu lokasi memori tertentu
-agar nilai pada lokasi tersebut dapat diakses. Alamat
-lokasi memori sebenarnya berupa angka angka heksadesimal[^heks], namun pada bahasa pemrograman setingkat C++ (middle level programming language) dan di atasnya, telah mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf atau kata (label) sehingga kita tidak perlu mengetahu alamat yang sesungguhnya dan dengan identifier (label) akan lebih mudah untuk diingat.
+Identifier (pengenal) adalah suatu nama yang digunakan program untuk merujuk ke suatu lokasi memori tertentu agar nilai pada lokasi tersebut dapat diakses. Alamat lokasi memori sebenarnya berupa angka angka heksadesimal[^heks], namun pada bahasa pemrograman setingkat C++ (middle level programming language) dan di atasnya, telah mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf atau kata (label) sehingga kita tidak perlu mengetahu alamat yang sesungguhnya dan dengan identifier (label) akan lebih mudah untuk diingat.
 
 [^heks]:
 
@@ -83,7 +64,8 @@ Konstanta simbolik adalah konstanta yang direpresentasikan dengan suatu nama, sa
 
 Perhatikan bahwa `kapasitas` tidak mempunyai tipe data tertentu (int, char dsb.). Preprosessor akan melakukan substitusi berupa teks, setiap ada akses terhadap kata `kapasitas`, akan digantikan dengan teks 15. Karena preprosesor bekerja sebelum kompiler, kompiler tidak mengenal konstanta `kapasitas`, yang dikenal hanyalah bilangan 15.
 
-T> **TIPS**
+
+T> ### TIPS
 T>
 T> Walaupun dengan memakai preprocessor directive `#define` tampak mudah, namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang pada standard C++ .
 
@@ -100,21 +82,23 @@ Contoh 1. Tipe data dan Identifier.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
-
-		#include <iostream>
-		int main(int argc, char *argv[])
-		{
+	```cpp
+	#include <iostream>
+	int main(int argc, char *argv[])
+	{
 		using namespace std;
 		QCoreApplication a(argc, argv);
+		
 		int panjang, lebar;
+		
 		panjang = 15; //<-- nilai diubah menjadi 15
 		lebar = 12; //<-- nilai diubah menjadi 12
 		cout << "Panjang = " << panjang << endl;
-
-
+		
 		cout << "Lebar = " << lebar << endl;
 		return a.exec();
-		}
+	}
+	```
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
@@ -330,7 +314,7 @@ Sintaks penulisannya sebagai berikut:
 
 Flowchart untuk statment ini adalah :
 
-![](images/capture2-4.png)
+![](images/Capture2-4.PNG)
 
 #### 2. Percabangan dengan if .. else
 
@@ -357,11 +341,11 @@ I> `if()` lagi. Bentuk `if()` dalam `if()` ini sering disebut
 I> dengan `nested if` (if bersarang).
 
 
-![](images/capture2-2.png)
+![](images/Capture2-2.PNG)
 
 Flowchart untuk statment if bersarang ini adalah :
 
-![](images/capture2-1.png)
+![](images/Capture2-1.PNG)
 
 #### 3. Percabangan dengan switch
 
@@ -382,7 +366,7 @@ default : <pernyataan_default>;
 
 Perintah `switch` akan membaca nilai dari `<ekspresi>` kemudian membandingkan hasilnya dengan konstanta-konstanta (`<konst_1>`, `<konst_2>`, `<konst_n>`) yang berada di case. Pembandingan akan dimulai dari `<konst_1>` sampai konstanta `<konst_n>`. Jika hasil dari kondisi sama dengan nilai konstanta tertentu, misalnya `<konst_1>`, maka pernyataan 1 akan dijalankan sampai ditemukan `break`. Pernyataan `break` akan membawa proses keluar dari perintah `switch`. Jika hasil dari kondisi tidak ada yang sama dengan konstanta-konstanta yang diberikan, maka pernyataan pada *default* yang akan dijalankan.
 
-![](images/capture2-3.png)
+![](images/Capture2-3.PNG)
 
 Flowchart untuk statement ini adalah :
 
@@ -391,33 +375,36 @@ Contoh.2 Tipe data dan Identifier.
 
 1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
-
+	```cpp
 		#include <QtCore/QCoreApplication>
 		#include <iostream>
 		int main(int argc, char *argv[])
 		{
-		using namespace std;
-		QCoreApplication a(argc, argv);
-		int hari = 6;
-		switch(hari){
-		case 1 : cout << "Senin" << endl;
-		break;
-		case 2 : cout << "Selasa" << endl;
-		break;
-		case 3 : cout << "Rabu" << endl;
-		break;
-		case 4 : cout << "Kamis" << endl;
-		break;
-		case 5 : cout << "Jumat" << endl;
-		break;
-		case 6 : cout << "Sabtu" << endl;
-		break;
-		case 7 : cout << "Minggu" << endl;
-		break;
-		default: cout << "Tidak ada..." << endl;
+			using namespace std;
+			QCoreApplication a(argc, argv);
+			
+			int hari = 6;
+			
+			switch(hari){
+				case 1 : cout << "Senin" << endl;
+				break;
+				case 2 : cout << "Selasa" << endl;
+				break;
+				case 3 : cout << "Rabu" << endl;
+				break;
+				case 4 : cout << "Kamis" << endl;
+				break;
+				case 5 : cout << "Jumat" << endl;
+				break;
+				case 6 : cout << "Sabtu" << endl;
+				break;
+				case 7 : cout << "Minggu" << endl;
+				break;
+				default: cout << "Tidak ada..." << endl;
+				}
+				return a.exec();
 		}
-		return a.exec();
-		}
+	```
 
 
 3. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
@@ -450,7 +437,7 @@ Bentuk umum penulisannya sebagai berikut :
 
 
 
-![](images/capture2-8.png)
+![](images/Capture2-8.PNG)
 
 #### 2. Perulangan dengan while
 
@@ -466,7 +453,7 @@ Sintaks penulisannya sebagai berikut :
 	}
 
 
-![](images/capture2-9.png)
+![](images/Capture2-9.PNG)
 
 #### 3. Perulangan dengan do … while
 
@@ -483,7 +470,7 @@ while(<expresi_boolean>)
 ```
 
 
-![](images/capture2-10.png)
+![](images/Capture2-10.PNG)
 
 Perbedaan antara perintah `while` dengan `do … while` adalah terletak dari kondisi yang diperiksa. Pada perintah `while`, kondisi yang diperiksa terletak diawal perulangan, sehingga sebelum masuk ke dalam perulangan `while` kondisi harus bernilai benar. Sedangkan pada perintah `do … while`, kondisi diperiksa di akhir perulangan. Ini berarti bahwa paling sedikit sebuah perulangan akan dilakukan oleh perintah `do … while`, karena untuk masuk ke dalam perulangan tidak ada kondisi yang harus dipenuhi.
 

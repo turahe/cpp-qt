@@ -125,11 +125,13 @@ Contoh  1. Pembuatan class Sepeda
 
 Buatlah project baru dan tulis kode berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Sepeda{
+using namespace std;
+
+class Sepeda{
 	private:
 	int kecepatan;
 	int gigi;
@@ -139,23 +141,28 @@ Buatlah project baru dan tulis kode berikut:
 	void ubahGigi(int g);
 	void setMerk(string m);
 	void tampilSepeda();
-	};
-	void Sepeda::ubahKecepatan(int kec){
+};
+
+void Sepeda::ubahKecepatan(int kec){
 	this->kecepatan = kec;
-	}
-	void Sepeda::ubahGigi(int g){
+}
+
+void Sepeda::ubahGigi(int g){
 	this->gigi = g;
-	}
-	void Sepeda::setMerk(string m){
+}
+
+void Sepeda::setMerk(string m){
 	this->merk = m;
-	}
-	void Sepeda::tampilSepeda(){
+}
+
+void Sepeda::tampilSepeda(){
 	cout <<"Kecepatan: "<<this->kecepatan<<endl<<
 	"Merk: "<<this->merk<<endl<<
 	"Gigi: "<<this->gigi;
-	}
-	int main(int argc, char *argv[])
-	{
+}
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Sepeda objSpd;
 	objSpd.ubahGigi(2);
@@ -163,7 +170,8 @@ Buatlah project baru dan tulis kode berikut:
 	objSpd.setMerk("Federal");
 	objSpd.tampilSepeda();
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -194,11 +202,11 @@ Contoh  2. Pembuatan obyek Sepeda.
 
 Buatlah project baru dan tulis kode berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Sepeda{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Sepeda{
 	private:
 	int kecepatan;
 	int gigi;
@@ -208,23 +216,27 @@ Buatlah project baru dan tulis kode berikut:
 	void ubahGigi(int g);
 	void setMerk(string m);
 	void tampilSepeda();
-	};
-	void Sepeda::ubahKecepatan(int kec){
+};
+
+void Sepeda::ubahKecepatan(int kec){
 	this->kecepatan = kec;
-	}
-	void Sepeda::ubahGigi(int g){
+}
+
+void Sepeda::ubahGigi(int g){
 	this->gigi = g;
-	}
-	void Sepeda::setMerk(string m){
+}
+
+void Sepeda::setMerk(string m){
 	this->merk = m;
-	}
-	void Sepeda::tampilSepeda(){
+}
+
+void Sepeda::tampilSepeda(){
 	cout <<"Kecepatan: "<<this->kecepatan<<endl<<
 	"Merk: "<<this->merk<<endl<<
 	"Gigi: "<<this->gigi;
-	}
-	int main(int argc, char *argv[])
-	{
+}
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	cout<<"Sepeda pertama:\n";
 	Sepeda objSpd;
@@ -239,8 +251,8 @@ Buatlah project baru dan tulis kode berikut:
 	objSpd2.setMerk("Polygon");
 	objSpd2.tampilSepeda();
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> {linenos=off}
@@ -262,11 +274,14 @@ Contoh  3. Pembuatan Obyek Array Sepeda
 
 Buatlah program beikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Sepeda{
+#include <iostream>
+
+using namespace std;
+
+class Sepeda{
 	private:
 	int kecepatan;
 	int gigi;
@@ -276,38 +291,48 @@ Buatlah program beikut ini:
 	void ubahGigi(int g);
 	void setMerk(string m);
 	void tampilSepeda();
-	};
-	void Sepeda::ubahKecepatan(int kec){
+};
+
+void Sepeda::ubahKecepatan(int kec){
 	this->kecepatan = kec;
-	}
-	void Sepeda::ubahGigi(int g){
+}
+
+void Sepeda::ubahGigi(int g){
 	this->gigi = g;
-	}
-	void Sepeda::setMerk(string m){
+}
+
+void Sepeda::setMerk(string m){
 	this->merk = m;
-	}
-	void Sepeda::tampilSepeda(){
+
+}
+void Sepeda::tampilSepeda(){
 	cout <<"Kecepatan: "<<this->kecepatan<<endl<<
 	"Merk: "<<this->merk<<endl<<
 	"Gigi: "<<this->gigi;
-	}
-	int main(int argc, char *argv[])
-	{
+}
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	cout<<"Sepeda pertama:\n";
 	Sepeda objSpdArray[5];
+
 	for(int i=0;i<5;i++){
-	objSpdArray[i].setMerk("Merk-"+i);
-	objSpdArray[i].ubahGigi(i+10);
-	objSpdArray[i].ubahKecepatan(i+30);
+		objSpdArray[i].setMerk("Merk-"+i);
+		objSpdArray[i].ubahGigi(i+10);
+		objSpdArray[i].ubahKecepatan(i+30);
 	}
+
 	for(int i=0;i<5;i++){
-	cout<<"Tampilan Sepeda ke-"<<(i+1)<<endl;
-	objSpdArray[i].tampilSepeda();
-	cout<<endl;
-	}
-	return a.exec();
-	}
+		cout<<"Tampilan Sepeda ke-"<<(i+1)<<endl;
+		objSpdArray[i].tampilSepeda();
+		cout<<endl;
+}
+
+return a.exec();
+
+}
+```
 
 **Hasil:**
 
@@ -374,11 +399,13 @@ Contoh  4. Perbedaan private dan public pada member variabel
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Sepeda{
+using namespace std;
+
+class Sepeda{
 	private:
 	int kecepatan;
 	int gigi;
@@ -387,9 +414,10 @@ Buatlah program berikut:
 	int pkecepatan;
 	int pgigi;
 	string pmerk;
-	};
-	int main(int argc, char *argv[])
-	{
+};
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	cout<<"Pengaksesan public:\n";
 	Sepeda s;
@@ -400,7 +428,8 @@ Buatlah program berikut:
 	cout<<"Kecepatan: "<<s.pkecepatan<<endl;
 	cout<<"Merk: "<<s.pmerk<<endl;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -415,11 +444,14 @@ Buatlah program berikut:
 
 Ubahlah program pada Contoh  5 diatas menjadi seperti berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Sepeda{
+#include <iostream>
+
+using namespace std;
+
+class Sepeda{
 	private:
 	int kecepatan;
 	int gigi;
@@ -428,9 +460,10 @@ Ubahlah program pada Contoh  5 diatas menjadi seperti berikut ini:
 	int pkecepatan;
 	int pgigi;
 	string pmerk;
-	};
-	int main(int argc, char *argv[])
-	{
+};
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	cout<<"Pengaksesan public:\n";
 	Sepeda s;
@@ -441,11 +474,12 @@ Ubahlah program pada Contoh  5 diatas menjadi seperti berikut ini:
 	cout<<"Kecepatan: "<<s.kecepatan<<endl;
 	cout<<"Merk: "<<s.merk<<endl;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
-![](images/capture6-1.png)
+![](images/Capture6-1.PNG)
 
 **Keterangan:**:
  
@@ -455,8 +489,8 @@ Akan terjadi compile time error, karena kita mengakses variabel member yang bers
 
 Seperti yang sudah dijelaskan, member method merupakan bagian yang harus dideklarasikan sebagai bagian public. Salah satu kegunaan member function adalah mengakses semua member variabel dan tetap mendukung enkapsulasi. Cara untuk membuat member method adalah dengan mendeklarasikannya pada bagian public, sedangkan implementasi kodingnya berada diluar kelas. Berikut adalah contohya.
 
-
-	class Sepeda{
+```cpp
+class Sepeda{
 	private:
 	int kecepatan;
 	int gigi;
@@ -465,7 +499,8 @@ Seperti yang sudah dijelaskan, member method merupakan bagian yang harus didekla
 	void setKecepatan(int k);
 	void setGigi(int g);
 	void setMerk(string m);
-	};
+};
+``
 
 Di dalam pemrograman beriorientasi obyek pada umumnya member function minimal selalu mewakili semua member variabelnya. Misal kita memiliki 1 buah member variabel bernama umur, maka minimal kita akan memiliki satu buah member function, misalnya bernama ubahUmur(int u).
 
@@ -473,50 +508,58 @@ Contoh  5. Member function dan implementasinya.
 
 Buatlah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	//pembuatan class Sepeda
-	class Sepeda{
+using namespace std;
+
+//pembuatan class Sepeda
+class Sepeda{
 	private:
+
 	//daftar member variabel
 	int kecepatan;
 	int gigi;
 	string merk;
 	public:
+
 	//daftar member function
 	void ubahKecepatan(int kec);
 	void ubahGigi(int g);
 	void setMerk(string m);
 	void tampilSepeda();
-	};
-	//implementasi member function berada diluar class Sepeda
-	//function ubahKecepatan menerima input jumlah kecepatan
-	//mengubah kecepatan Sepeda
-	void Sepeda::ubahKecepatan(int kec){
+};
+
+//implementasi member function berada diluar class Sepeda
+//function ubahKecepatan menerima input jumlah kecepatan
+//mengubah kecepatan Sepeda
+
+void Sepeda::ubahKecepatan(int kec){
 	this->kecepatan = kec;
-	}
-	//function ubahGigi menerima input jumlah gigi
-	//mengubah gigi Sepeda
-	void Sepeda::ubahGigi(int g){
+}
+
+//function ubahGigi menerima input jumlah gigi
+//mengubah gigi Sepeda
+void Sepeda::ubahGigi(int g){
 	this->gigi = g;
-	}
-	//function setMerk menerima input string merk
-	//mengisi merk Sepeda
-	void Sepeda::setMerk(string m){
+}
+//function setMerk menerima input string merk
+//mengisi merk Sepeda
+void Sepeda::setMerk(string m){
 	this->merk = m;
-	}
-	//function tampilSepeda tidak menerima input
-	//fungsinya hanya untuk menampilkan informasi obyek Sepeda
-	void Sepeda::tampilSepeda(){
+}
+//function tampilSepeda tidak menerima input
+//fungsinya hanya untuk menampilkan informasi obyek Sepeda
+void Sepeda::tampilSepeda(){
 	cout <<"Kecepatan: "<<this->kecepatan<<endl<<
 	"Merk: "<<this->merk<<endl<<
 	"Gigi: "<<this->gigi;
-	}
-	//function main
-	int main(int argc, char *argv[])
-	{
+}
+
+//function main
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Sepeda objSpd;
 	objSpd.ubahGigi(2);
@@ -524,8 +567,9 @@ Buatlah program berikut ini:
 	objSpd.setMerk("Federal");
 	objSpd.tampilSepeda();
 	return a.exec();
-	
-	}
+
+}
+```
 
 **Hasil:**
 
@@ -578,51 +622,63 @@ Contoh  6. Penggunaan accessor dan mutator method
 
 Tulislah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kucing{
+using namespace std;
+
+class Kucing{
 	private:
 	int umur;
 	float berat;
 	string nama;
 	public:
+
 	//asesor method
 	int getUmur();
 	float getBerat();
 	string getNama();
+
 	//mutator method
 	void setUmur(int u);
 	void setBerat(float b);
 	void setNama(string s);
+
 	//method tambahan
 	void berlari();
-	};
-	//implementasi
-	int Kucing::getUmur(){
+};
+//implementasi
+int Kucing::getUmur(){
 	return this->umur;
-	}
-	float Kucing::getBerat(){
+}
+
+float Kucing::getBerat(){
 	return this->berat;
-	}
-	string Kucing::getNama(){
+}
+
+string Kucing::getNama(){
 	return this->nama;
-	}
-	void Kucing::setUmur(int u){
+}
+
+void Kucing::setUmur(int u){
 	this->umur = u;
-	}
-	void Kucing::setBerat(float b){
+}
+
+void Kucing::setBerat(float b){
 	this->berat = b;
-	}
-	void Kucing::setNama(string s){
+}
+
+void Kucing::setNama(string s){
 	this->nama = s;
-	}
-	void Kucing::berlari(){
+}
+
+void Kucing::berlari(){
 	cout<<"Kucing "<<this->getNama()<<" sedang berlari!";
-	}
-	int main(int argc, char *argv[])
-	{
+}
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Kucing mycat;
 	mycat.setNama("Katty");;
@@ -633,7 +689,8 @@ Tulislah program berikut ini:
 		<<" tahun sekarang."<<endl;
 	mycat.berlari();
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -661,17 +718,19 @@ Desktruktor method merupakan method kebalikan dari constructor yang juga bernama
 
 Contoh jika kita memiliki class bernama Sepeda, maka kita dapat membuat constructor dengan nama Sepeda() juga. Sedangkan destructor method sama dengan constructor namun diawali dengan tanda `~` didepannya. Contoh:
 
-
-	class Sepeda{
+```cpp
+class Sepeda{
 	private:
 	//member variabel
+
 	public:
 	//konstruktor
 	Sepeda();
+
 	//destruktor
 	~Sepeda();
-	};
-
+};
+```
 ## Default Constructor
 
 Pada bahasa C++ semua class yang telah dibuat PASTI memiliki constructor walaupun tidak kita buat. Compiler bahasa C++ pasti membuatnya walau secara implisit. Constructor yang bernama sama dengan nama classnya dan tidak berparameter disebut default constructor. Secara default pasti semua class ada default constructornya. Kapan kita menggunakan constructor? Setiap kali kita membuat obyek baru (melakukan instansiasi obyek), maka kita memanggil constructor default.
@@ -697,56 +756,70 @@ Contoh  7. Menggunakan Constructor dan Destructor.
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kucing{
+using namespace std;
+
+class Kucing{
 	private:
 	int umur;
 	float berat;
 	string nama;
 	public:
+
 	//konstruktor
 	Kucing(int umur);
+
 	//desktruktor
 	~Kucing();
-		//asesor method
+
+	//asesor method
 	int getUmur();
 	float getBerat();
 	string getNama();
+
 	//mutator method
 	void setUmur(int u);
 	void setBerat(float b);
 	void setNama(string s);
-	};
-	//implementasi konstruktor dan desktruktor
-	Kucing::Kucing(int u){
+};
+
+//implementasi konstruktor dan desktruktor
+Kucing::Kucing(int u){
 	this->umur = u;
-	}
-	Kucing::~Kucing(){
-	}
-	//implementasi function
-	int Kucing::getUmur(){
+}
+Kucing::~Kucing(){
+}
+
+//implementasi function
+int Kucing::getUmur(){
 	return this->umur;
-	}
-	float Kucing::getBerat(){
+}
+
+float Kucing::getBerat(){
 	return this->berat;
-	}
-	string Kucing::getNama(){
+}
+
+string Kucing::getNama(){
 	return this->nama;
-	}
-	void Kucing::setUmur(int u){
+}
+
+void Kucing::setUmur(int u){
 	this->umur = u;
-	}
-	void Kucing::setBerat(float b){
+}
+
+void Kucing::setBerat(float b){
 	this->berat = b;
-	}
-	void Kucing::setNama(string s){
+}
+
+void Kucing::setNama(string s){
 	this->nama = s;
-	}
-	int main(int argc, char *argv[])
-	{
+}
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Kucing mycat(2);
 	mycat.setNama("Katty");;
@@ -758,7 +831,8 @@ Buatlah program berikut:
 	cout<<"Lima tahun telah berlalu, sekarang kucingku sudah berumur:
 	"<<mycat.getUmur()<<" tahun";
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -781,7 +855,7 @@ Contoh, tambahkan satu baris berikut ini pada bagian akhir kode pada Contoh  7 s
 
 Ketika dilakukan kompilasi akan menghasilkan error sebagai berikut:
 
-![](images/capture6-2.png)
+![](images/Capture6-2.PNG)
 
 Error diatas mengatakan bahwa class Kucing tidak memiliki function yang bernama `Kucing::Kucing()`, yang artinya method constructor defaultnya sudah hilang. Agar kita dapat menggunakan baris `Kucing kucingku2;` maka kita harus menambah method constructor lagi yang tidak berparameter.
 
@@ -789,60 +863,73 @@ Contoh  8. Percobaan Menambah Constructor Method.
 
 Buatlah program berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kucing{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Kucing{
 	private:
 	int umur;
 	float berat;
 	string nama;
 	public:
+	
 	//konstruktor
 	Kucing(int umur);
 	Kucing();
+
 	//desktruktor
 	~Kucing();
+	
 	//asesor method
 	int getUmur();
+	
 	float getBerat();
 	string getNama();
+	
 	//mutator method
-		void setUmur(int u);
+	void setUmur(int u);
 	void setBerat(float b);
 	void setNama(string s);
-	};
-	//implementasi konstruktor dan desktruktor
-	Kucing::Kucing(int u){
+};
+
+//implementasi konstruktor dan desktruktor
+Kucing::Kucing(int u){
 	this->umur = u;
-	}
-	Kucing::Kucing(){
-	}
-	Kucing::~Kucing(){
+}
+Kucing::Kucing(){
+}
+
+Kucing::~Kucing(){
 	cout<<"Obyek sudah dihancurkan!";
-	}
-	//implementasi function
-	int Kucing::getUmur(){
+}
+//implementasi function
+int Kucing::getUmur(){
 	return this->umur;
-	}
-	float Kucing::getBerat(){
+}
+
+float Kucing::getBerat(){
 	return this->berat;
-	}
-	string Kucing::getNama(){
+}
+
+string Kucing::getNama(){
 	return this->nama;
-	}
-	void Kucing::setUmur(int u){
+}
+
+void Kucing::setUmur(int u){
 	this->umur = u;
-	}
-	void Kucing::setBerat(float b){
+}
+
+void Kucing::setBerat(float b){
 	this->berat = b;
-	}
-	void Kucing::setNama(string s){
+}
+
+void Kucing::setNama(string s){
 	this->nama = s;
-	}
-	int main(int argc, char *argv[])
-	{
+}
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Kucing mycat(2);
 	mycat.setNama("Katty");;
@@ -857,7 +944,8 @@ Buatlah program berikut:
 	kucingku2.setNama("Frizky");
 	cout<<"Nama kucing keduaku: "<<kucingku2.getNama();
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -878,29 +966,33 @@ Contoh 9. Penggunaan Constructor dengan Nilai Default
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Buku{
+using namespace std;
+
+class Buku{
 	private:
 	int jmlhal;
 	string pengarang;
 	string judul;
 	public:
 	Buku(string pengarang="unknown", string judul="unknown",int jmlhal=1){
-	Buku::jmlhal = jmlhal;
-	Buku::pengarang = pengarang;
-	Buku::judul = judul;
+		Buku::jmlhal = jmlhal;
+		Buku::pengarang = pengarang;
+		Buku::judul = judul;
 	}
+
 	void tampilInfo(){
-	cout<<"Judul: "<<Buku::judul<<endl;
-	cout<<"Pengarang: "<<Buku::pengarang<<endl;
-	cout<<"Jumlah halaman: "<<Buku::jmlhal<<endl;
+		cout<<"Judul: "<<Buku::judul<<endl;
+		cout<<"Pengarang: "<<Buku::pengarang<<endl;
+		cout<<"Jumlah halaman: "<<Buku::jmlhal<<endl;
 	}
-	};
-	int main(int argc, char *argv[])
-	{
+};
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Buku b1;
 	Buku b2("Antonius");
@@ -911,7 +1003,8 @@ Buatlah program berikut:
 	b3.tampilInfo();
 	b4.tampilInfo();
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -942,11 +1035,11 @@ T> **TIPS**
 T>
 T> Kita juga dapat memberi nilai default dengan cara lain, perhatikan contoh berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Contoh{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Contoh{
 	private:
 	int x;
 	int y;
@@ -957,14 +1050,16 @@ T> Kita juga dapat memberi nilai default dengan cara lain, perhatikan contoh ber
 		void tampilInfo(){
 	cout<<"x="<<x<<" y="<<y<<" z="<<z;
 	}
-	};
-	int main(int argc, char *argv[])
-	{
+};
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Contoh aa;
 	aa.tampilInfo();
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -989,11 +1084,11 @@ Contoh  10. Penggunaan const method.
 
 Buatlah program berikut ini:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Kucing{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Kucing{
 	private:
 	int umur;
 	float berat;
@@ -1012,37 +1107,47 @@ Buatlah program berikut ini:
 	void setUmur(int u);
 	void setBerat(float b);
 	void setNama(string s);
-	};
-	//implementasi konstruktor dan desktruktor
-	Kucing::Kucing(int u){
+};
+
+//implementasi konstruktor dan desktruktor
+Kucing::Kucing(int u){
 	this->umur = u;
-	}
-	Kucing::Kucing(){
-	}
-	Kucing::~Kucing(){
+}
+
+Kucing::Kucing(){
+}
+
+Kucing::~Kucing(){
 	cout<<"Obyek sudah dihancurkan!";
-	}
-	//implementasi function
-	int Kucing::getUmur() const{
+}
+
+//implementasi function
+int Kucing::getUmur() const{
 	return this->umur;
-	}
-	float Kucing::getBerat() const{
+}
+
+float Kucing::getBerat() const{
 	return this->berat;
-	}
-	string Kucing::getNama() const{
+}
+
+string Kucing::getNama() const{
 	return this->nama;
-	}
-	void Kucing::setUmur(int u){
+}
+
+void Kucing::setUmur(int u){
 	this->umur = u;
-	}
-	void Kucing::setBerat(float b){
+}
+
+void Kucing::setBerat(float b){
 	this->berat = b;
-	}
-	void Kucing::setNama(string s){
+}
+
+void Kucing::setNama(string s){
 	this->nama = s;
-	}
-	int main(int argc, char *argv[])
-	{
+}
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Kucing mycat(2);
 	mycat.setNama("Katty");;
@@ -1057,7 +1162,8 @@ Buatlah program berikut ini:
 	kucingku2.setNama("Frizky");
 	cout<<"Nama kucing keduaku: "<<kucingku2.getNama();
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -1083,7 +1189,7 @@ Kode lengkapnya adalah:
  
 Jika kita kompilasi program diatas, maka akan terjadi error sebagai berikut:
  
-![](images/capture6-3.png)
+![](images/Capture6-3.PNG)
 
 Mengapa hal ini terjadi? Karena method `getUmur` sudah dibuat menjadi *konstan*, yang artinya *readonly*. Di dalam  *method read-only* kita tidak diperbolehkan melakukan operasi *assigment* atau *pemberian nilai*. Namun jika kita buang kata kunci `const`, maka method `getUmur` ini tetap dapat diubah nilainya. Dengan demikian kata kunci const benar-benar mampu mengamankan method dari hal yang tidak diinginkan, karena pada dasarnya method *asesor* memang tidak boleh mengubah nilai, hanya boleh membaca/mengambil nilai saja.
 
@@ -1091,18 +1197,19 @@ Mengapa hal ini terjadi? Karena method `getUmur` sudah dibuat menjadi *konstan*,
 
 Selama ini kita mendefinisikan method member pada luar class. Selain cara diatas, kita juga bisa mendefinsikan method di dalam class itu sendiri secara langsung. Hal tersebut dinamakan inline implementation. Contoh inline implementation adalah:
 
-
-	class Manusia{
+```cpp
+class Manusia{
 	private:
 	string nama;
 	public:
-	void setNama(string n){
-		this->nama = n;
-		}
-		string getNama() const{
-		return this->nama;
-		}
+void setNama(string n){
+	this->nama = n;
 	}
+	string getNama() const{
+	return this->nama;
+	}
+}
+```
 
 Pada contoh diatas terlihat bahwa pada class Manusia implementasi kode method setNama dan getNama langsung dituliskan didalam program tersebut. Hal itu disebut inline implementation.
 
@@ -1110,46 +1217,56 @@ Contoh  11. Inline Implementation.
 
 Buatlah program berikut:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Manusia{
+using namespace std;
+
+class Manusia{
 	private:
 	string nama;
 	char jenis_kelamin;
 	public:
 	//konstruktor
+
 	Manusia(){
 	}
 	Manusia(string nama){
 	this->nama = nama;
 	}
+
 	//desktruktor
 	~Manusia(){
 	}
+
 	//accessor method
 	string getNama() const{
 	return this->nama;
 	}
+
 	char getJenis_Kelamin() const{
 	return this->jenis_kelamin;
 	}
+
 	//mutator method
 	void setNama(string n){
 	this->nama = n;
 	}
+
 	void setJenis_Kelamin(char jk){
 	this->jenis_kelamin = jk;
 	}
+
 	//method lain
-		void tampilSemua(){
+	void tampilSemua(){
 	cout<<"Nama: "<<this->getNama()<<", "<<
 	"Jenis Kelamin: "<<this->getJenis_Kelamin()<<endl;
 	}
-	};
-	int main(int argc, char *argv[])
-	{
+};
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Manusia suami;
 	suami.setNama("Susanto");
@@ -1162,8 +1279,8 @@ Buatlah program berikut:
 	istri.tampilSemua();
 	anak.tampilSemua();
 	return a.exec();
-	}
-
+}
+```
 **Hasil:**
 
 A> Nama: Susanto, Jenis Kelamin: L
@@ -1186,11 +1303,11 @@ Contoh  12. Class Mobil dan Class Roda.
 
 Buatlah program berikut:
 
-
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	using namespace std;
-	class Roda{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+using namespace std;
+class Roda{
 	private:
 	string merk_roda;
 	int diameter;
@@ -1274,9 +1391,9 @@ Buatlah program berikut:
 	cout<<"Merk: "<<this->getMerkMobil()<<endl;
 	this->tampilRoda();
 	}
-	};
-	int main(int argc, char *argv[])
-	{
+};
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Roda r1("Bridgestone",40);
 	Roda r2("Bridgestone",40);
@@ -1286,7 +1403,8 @@ Buatlah program berikut:
 	m1.setMerkMobil("Innova");
 	m1.tampilSemua();
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -1317,34 +1435,43 @@ Contoh  12. Contoh Class Titik dan Garis.
 
 Buatlah program berikut ini:
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+#include <math.h>
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	#include <math.h>
-	using namespace std;
-	class Titik{
+using namespace std;
+
+class Titik{
 	private:
 	int x;
 	int y;
 	public:
+
 	Titik(int x,int y){
 	this->x = x;
 	this->y = y;
 	}
+
 	Titik(){
 	}
+
 	int getX(){
 	return this->x;
-		}
+	}
+
 	int getY(){
 	return this->y;
 	}
+	
 	void setX(int x){
 	this->x=x;
 	}
+	
 	void setY(int y){
 	this->y=y;
 	}
+	
 	//method tambahan
 	void printPoint(){
 	cout<<"("<<this->x<<" , "<<this->y<<")"<<endl;
@@ -1398,9 +1525,10 @@ Buatlah program berikut ini:
 	>p2.getX()) + (this->p1.getY() - this->p2.getY())*(this->p1.getY() - this-
 	>p2.getY()));
 	}
-	};
-	int main(int argc, char *argv[])
-	{
+};
+
+int main(int argc, char *argv[])
+{
 	QCoreApplication a(argc, argv);
 	Titik A(1,1);
 	cout<<"A ";
@@ -1431,7 +1559,8 @@ Buatlah program berikut ini:
 	da.printLine();
 	cout<<"Panjang garis da: "<<da.getLength()<<endl;
 	return a.exec();
-	}
+}
+```
 
 **Hasil:**
 
@@ -1466,22 +1595,25 @@ T> Pada bahasa C++ kita tidak dapat memanggil konstruktor dari dalam konstruktor
 
 Contoh:
 
-
-	class Halaman{
+```cpp
+class Halaman{
 	private:
 	int nohal;
 	int jenishal;
 	//1 -> halaman biasa, 2 -> halaman header
 	public:
+
 	Halaman(){
 	}
+
 	Halaman(int nohal){
 	this->nohal = nohal;
 	}
+
 	Halaman(int nohal,int jenishal){
 	Halaman(nohal); //memanggil konstruktor Halaman diatasnya!
 	this->jenishal = jenishal;
-		}
-	};
-
+	}
+};
+```
 E> Akan menghasilkan error!

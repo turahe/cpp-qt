@@ -78,11 +78,9 @@ untuk mengembangkan atau menambahkan konten maka anda bisa fork
 repository saya di <https://github.com/turahe/cpp-qt>.
 
 ## Kontribusi {#kontribusi}
-==========
 
 Jika Anda ingin berkontribusi dalam penyusunan buku ini Anda dapat
 mengirimkan beberapa artikel pendukung ke email saya
 
 ## Dukungan {#dukungan}
-========
 

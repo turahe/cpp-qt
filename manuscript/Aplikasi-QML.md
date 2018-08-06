@@ -11,13 +11,14 @@ Berikut ini adalah salah satu contoh kode sederhana dari dasar QML.
 ```qml
 Import Qt Quick 1.0
 Rectangle {
-Width : 200
-Height : 200
-Color : “blue”
+    Width : 200
+    Height : 200
+    Color : “blue”
+
 Image {
-source: “pics/logo.png”
-anchors.centerIn: parent
-}
+    source: “pics/logo.png”
+    anchors.centerIn: parent
+    }
 }
 ```
 Dalam kode diatas, kita telah membuat dua buah objek, yaitu rectangle dan image. Objek Image memiliki sebuah property yang kemudian diberi nama source. Property tersebut diberi masukkan “pics/logo.png”. property dan nilainya dapat dipisahkan dengan sebuah tanda titik dua . property juga dapat dispesifikasikan secara perbaris atau dalam satu baris.

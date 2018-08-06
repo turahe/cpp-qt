@@ -80,27 +80,27 @@ Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku bertipe i
 Contoh 1. Tipe data dan Identifier.
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
 
-	```cpp
-	#include <iostream>
-	int main(int argc, char *argv[])
-	{
-		using namespace std;
-		QCoreApplication a(argc, argv);
-		
-		int panjang, lebar;
-		
-		panjang = 15; //<-- nilai diubah menjadi 15
-		lebar = 12; //<-- nilai diubah menjadi 12
-		cout << "Panjang = " << panjang << endl;
-		
-		cout << "Lebar = " << lebar << endl;
-		return a.exec();
-	}
-	```
+```cpp
+#include <iostream>
+int main(int argc, char *argv[])
+{
+	using namespace std;
+	QCoreApplication a(argc, argv);
+	
+	int panjang, lebar;
+	
+	panjang = 15; //<-- nilai diubah menjadi 15
+	lebar = 12; //<-- nilai diubah menjadi 12
+	cout << "Panjang = " << panjang << endl;
+	
+	cout << "Lebar = " << lebar << endl;
+	return a.exec();
+}
+```
 
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 A> {linenos=off}
 A>	Panjang		=15
@@ -129,7 +129,7 @@ I> Operator pengerjaan “=“ akan mengambil nilai apapun yang ada disebelah ka
 
 Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Operator mempunyai beberapa kategori, antara lain : Aritmatika, Pengerjaan, Hubungan dan Logika. Operator Aritmatika adalah operator yang digunakan untuk melakukan operasi aritmatika seperti misalnya penjumlahan, pengurangan, perkalian dan pembagian. Simbol untuk operator aritmatika ini adalah : +, -, *, / dan %. Berikut ini adalah operator-operator yang dikenal pada bahasa pemrograman C++.
 
-|Kategori 													|Operator 			|Arah Proses |Jenjang
+|Kategori 													|Operator 			|Arah Proses 	|Jenjang
 |-----------------------------------------------------------|-------------------|---------------|-----
 |Kurung, indeks larik dan elemen struktur data 				|() [] . -> 		|Kiri - Kanan 	|1
 |Operator Unary 											|! ~ - ++ -- 		|Kanan – Kiri 	|2
@@ -159,11 +159,15 @@ luas = panjang * lebar ;
  **Keterangan :**
 
  * Pada baris pertama dan kedua di atas digunakan hanya sebuah operator “`= `“ (yaitu jenjang ke 14), arah proses dari kanan ke kiri, sehingga yang dilakukan :
- * Ekspresi : `15`, diberikan kepada variabel `panjang` (dibaca dari kanan ke kiri).
- * Ekspresi : `12`, diberikan kepada variabel `lebar` (dibaca dari kanan ke kiri).
- * Pada baris ketiga terdapat 2 operator, yaitu operator “= “ (jenjang ke 14) dan “`*`” operator “= “ (yaitu jenjang ke 3). Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu, jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator. Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator “`*`” baru kemudian operator “=”, sehingga yang dilakukan:
- 		- Ekspresi : `panjang * lebar` , berarti `panjang` dikalikan `lebar` (dibaca dari kiri ke kanan), menghasilkan nilai integer `180`.
- 		- Berikutnya operator “=” mengoperasikan hasil ekspresi tersebut, yaitu nilai integer `180` diberikan kepada variabel `luas` (dibaca dari kanan ke kiri).
+
+	* Ekspresi : `15`, diberikan kepada variabel `panjang` (dibaca dari kanan ke kiri).
+	
+	* Ekspresi : `12`, diberikan kepada variabel `lebar` (dibaca dari kanan ke kiri).
+
+	* Pada baris ketiga terdapat 2 operator, yaitu operator “= “ (jenjang ke 14) dan “`*`” operator “= “ (yaitu jenjang ke 3). Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu, jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator. Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator “`*`” baru kemudian operator “=”, sehingga yang dilakukan:
+
+		- Ekspresi : `panjang * lebar` , berarti `panjang` dikalikan `lebar` (dibaca dari kiri ke kanan), menghasilkan nilai integer `180`.
+		- Berikutnya operator “=” mengoperasikan hasil ekspresi tersebut, yaitu nilai integer `180` diberikan kepada variabel `luas` (dibaca dari kanan ke kiri).
 
 T> **TIPS**
 T>
@@ -373,41 +377,40 @@ Flowchart untuk statement ini adalah :
 Contoh.2 Tipe data dan Identifier.
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
-	```cpp
-		#include <QtCore/QCoreApplication>
-		#include <iostream>
-		int main(int argc, char *argv[])
-		{
-			using namespace std;
-			QCoreApplication a(argc, argv);
-			
-			int hari = 6;
-			
-			switch(hari){
-				case 1 : cout << "Senin" << endl;
-				break;
-				case 2 : cout << "Selasa" << endl;
-				break;
-				case 3 : cout << "Rabu" << endl;
-				break;
-				case 4 : cout << "Kamis" << endl;
-				break;
-				case 5 : cout << "Jumat" << endl;
-				break;
-				case 6 : cout << "Sabtu" << endl;
-				break;
-				case 7 : cout << "Minggu" << endl;
-				break;
-				default: cout << "Tidak ada..." << endl;
-				}
-				return a.exec();
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+int main(int argc, char *argv[])
+{
+	using namespace std;
+	QCoreApplication a(argc, argv);
+	
+	int hari = 6;
+	
+	switch(hari){
+		case 1 : cout << "Senin" << endl;
+		break;
+		case 2 : cout << "Selasa" << endl;
+		break;
+		case 3 : cout << "Rabu" << endl;
+		break;
+		case 4 : cout << "Kamis" << endl;
+		break;
+		case 5 : cout << "Jumat" << endl;
+		break;
+		case 6 : cout << "Sabtu" << endl;
+		break;
+		case 7 : cout << "Minggu" << endl;
+		break;
+		default: cout << "Tidak ada..." << endl;
 		}
-	```
+		return a.exec();
+}
+```
 
-
-3. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 A> {linenos=off}
 A>	sabtu
@@ -429,11 +432,12 @@ Digunakan untuk mengulangi perintah dengan jumlah perulangan yang sudah diketahu
 Bentuk umum penulisannya sebagai berikut :
 
 
-
-	 for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
-	 {
-	 <statmemnts>
-	 }
+```cpp
+for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
+{
+<statmemnts>
+}
+```
 
 
 
@@ -447,10 +451,12 @@ Sintaks penulisannya sebagai berikut :
 
 
 
-	for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
-	{
-	<statmemnts>
-	}
+```cpp
+for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
+{
+<statmemnts>
+}
+```
 
 
 ![](images/Capture2-9.PNG)

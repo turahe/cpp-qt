@@ -51,20 +51,20 @@ Class pada C++ bisa dianggap sebagai tipe data baru. Selain tipe data yang sudah
 
 Struktur sederhana sebuah class pada C++:
 
-
-	class <namaclass>{
+```cpp
+class <namaclass>{
 	//bagian member variabel / property class
 	<tipedat <namavariabel>;
 	//bagian member function / method
 	<tipedat <namafunction>(<parameter>){
-	//isi program dalam fungsi
-	}
-	};
-
+		//isi program dalam fungsi
+		}
+};
+```
 Contoh class:
 
-
-	class Kucing{
+```cpp
+class Kucing{
 	//bagian member variabel yang bersifat private
 	private:
 	int umur;
@@ -72,10 +72,12 @@ Contoh class:
 	string jenis_kelamin;
 	string nama_kucing;
 	//bagian member function/method yang bersifat public
+	
 	public:
 	void Bersuara();
 	int tampilkanUmur();
-	}
+}
+```
 
 T> TIPS
 T> 

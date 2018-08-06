@@ -35,26 +35,27 @@ Suatu fungsi harus diberi nama supaya dapat dipanggil dari bagian program yang m
 
 Secara umum, fungsi terdiri dari dua komponen yaitu definisi fungsi dan tubuh fungsi. Isi dari definisi  fungsi adalah : tipe dari fungsi, nama dari suatu fungsi dan paramter-parameter yang digunakan. Tubuh  dari fungsi berisikan statemen-statemen yang akan melakukan tugas yang diberikan oleh fungsi  tersebut. Tubuh suatu fungsi diawali dengan tanda kurung kurawal buka dan diakhiri dengan tanda  kurung kurawal tutup. Beikut ini adalah bentuk umum dari suatu fungsi:  
 
-
-    <tipe> <nama_fungsi>([<paramter1>, <paramter2> ,...])
-    {
-    <tubuh fungsi>
-    [return <ekspresi>]
-    }
-  
+```cpp
+<tipe> <nama_fungsi>([<paramter1>, <paramter2> ,...])
+{
+<tubuh fungsi>
+[return <ekspresi>]
+}
+```
 
 Definisi fungsi ditulis sebelum dituliskan tubuh fungsi dan tidak diakhiri dengan tanda titik koma. Tipe  dari definisi fungsi sesuai dengan tipe data dari nilai yang dikembalikan jika fungsi itu mempunyai  statment `return`, jika tidak terdapat statement `return` tipe ini diberi tipe `void`. Nama suatu fungsi  dibentuk sendiri oleh pemrogram sesuai dengan syarat penamaan identifier yang telah dibahas pada  bab 2 dan nama fungsi yang baik mencerminkan pekerjaan dari fungsi tersebut. Parameter suatu fungsi  dapat dituliskan dengan dipisahkan oleh tanda koma, bisa mempunyai beberapa parameter namun  dapat juga tidak mempunyai parameter sama sekali. Parameter dibutuhkan jika dalam tubuh fungsi  memerlukan nilai dari luar fungsi. Parameter ini dinamakan parameter formal. Berikut ini adalah contoh  cara mendefinisikan fungsi.  
 
-
-    int terbesar(int bil1, int bil2)
-    {
-    int hasil;
-    if (bil1>bil2)
-    kembali = bil1;
-    else
-    kembali = bil2;
-    return kembali;
-    }
+```cpp
+int terbesar(int bil1, int bil2)
+{
+	int hasil;
+	if (bil1>bil2)
+	kembali = bil1;
+	else
+	kembali = bil2;
+	return kembali;
+}
+```
 
 ## Deklarasi Fungsi (Prototype)  
 
@@ -79,29 +80,30 @@ Prototype fungsi standard berada di file-file judulnya, dalam fungsi pustaka seb
 Contoh 1. Membuat Fungsi yang mengembalikan nilai.
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.  
 
-	    #include <QtCore/QCoreApplication>
-	    #include <iostream>
-	    int absolut(int bil);
-	    int main(int argc, char *argv[])
-	    {
-	      using namespace std;
-	      QCoreApplication a(argc, argv);
-	      int bilangan = -10;
-	        cout << "Bilangan : " << bilangan << endl;
-	        cout << "Dimutlakkan menjadi : " << absolut(bilangan) << endl;
-	      return a.exec();
-	      }
-	      int absolut(int bil){
-	        if(bil<0)
-	        return - bil;
-	        else
-	        return bil;
-	    }
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+int absolut(int bil);
+int main(int argc, char *argv[])
+{
+	using namespace std;
+	QCoreApplication a(argc, argv);
+	int bilangan = -10;
+	cout << "Bilangan : " << bilangan << endl;
+	cout << "Dimutlakkan menjadi : " << absolut(bilangan) << endl;
+	return a.exec();
+	}
+	int absolut(int bil){
+	if(bil<0)
+	return - bil;
+	else
+	return bil;
+}
+```
 
-
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 A> {linenos=off}
 A> Bilangan : -10
@@ -136,25 +138,26 @@ Suatu fungsi dalam menyelesaikan tugasnya, dapat hanya melakukan suatu tugas tan
 
 Contoh 2 Membuat Fungsi yang tidak mengembalikan nilai.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+void hello(int kali);
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	hello(3);
+	return a.exec();
+}
+void hello(int kali){
+	using namespace std;
+	for(int x=0;x<kali;x++)
+	cout << "Hello World!" << endl;
+}      
+```
 
-	    #include <QtCore/QCoreApplication>
-	    #include <iostream>
-	    void hello(int kali);
-	    int main(int argc, char *argv[])
-	    {
-	    QCoreApplication a(argc, argv);
-	    hello(3);
-	    return a.exec();
-	    }
-	    void hello(int kali){
-	    using namespace std;
-	    for(int x=0;x<kali;x++)
-	    cout << "Hello World!" << endl;
-	    }      
-
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
 
 A> {linenos=off}
 A> Hello World!
@@ -188,27 +191,31 @@ Variable lokal merupakan variable yang hanya berlaku untuk pernyataan di dalam s
 Contoh 3. Variabel Lokal.
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
 
-		#include <QtCore/QCoreApplication>
-		#include <iostream>
-		float kali(float a, float b); /*prototype fungsi*/
-		int main(int argc, char *argv[])
-		{
-		using namespace std;
-		QCoreApplication a(argc, argv);
-		float hasil;
-		hasil = kali(4,7);
-		cout << "Hasil = " << hasil << endl;
-		return a.exec();
-		}
-		float kali(float a, float b)
-		{
-		float c;
-		c = a * b;
-		return c;
-		}
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+
+float kali(float a, float b); /*prototype fungsi*/
+
+int main(int argc, char *argv[])
+{
+	using namespace std;
+	QCoreApplication a(argc, argv);
+	float hasil;
+	hasil = kali(4,7);
+	cout << "Hasil = " << hasil << endl;
+	return a.exec();
+}
+float kali(float a, float b)
+{
+	float c;
+	c = a * b;
+	return c;
+}
+```
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
@@ -228,26 +235,28 @@ Sesuai dengan namanya, variable global maksudnya adalah suatu variable yang dapa
 Contoh 4. Variabel Global.   
 
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.  
 
 
-	    #include <QtCore/QCoreApplication>
-	    #include <iostream>
-	    void kali(float a, float b); /*prototype fungsi*/
-	    float hasil; /*variabel global*/
-	    int main(int argc, char *argv[])
-	    {
-	      using namespace std;
-	      QCoreApplication a(argc, argv);
-	      kali(4,7);
-	      cout << "Variabel global hasil = " << hasil << endl;
-	      return a.exec();
-	      }
-	      void kali(float a, float b)
-	      {
-	      hasil = a * b;
-	    }
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+void kali(float a, float b); /*prototype fungsi*/
+float hasil; /*variabel global*/
 
+int main(int argc, char *argv[])
+{
+	using namespace std;
+	QCoreApplication a(argc, argv);
+	kali(4,7);
+	cout << "Variabel global hasil = " << hasil << endl;
+	return a.exec();
+	}
+	void kali(float a, float b)
+	{
+	hasil = a * b;
+}
+```
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  
 
 A> {linenos=off}
@@ -269,11 +278,12 @@ Contoh 5. Variabel Statik.
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 2, kemudian tulis kode berikut.  
 
 
-	#include <QtCore/QCoreApplication>
-	#include <iostream>
-	long int kali(long int i); /*prototype*/
-	int main(int argc, char *argv[])
-	{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <iostream>
+long int kali(long int i); /*prototype*/
+int main(int argc, char *argv[])
+{
 	using namespace std;
 	QCoreApplication a(argc, argv);
 	int i,n;
@@ -287,14 +297,15 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama contoh 
 	fak = kali(i);
 	cout << n << " Faktorial = " << fak << endl;
 	return a.exec();
-	}
-	/*---Fungsi kali---*/
-	long int kali(long int i)
-	{
+}
+
+/*---Fungsi kali---*/
+long int kali(long int i)
+{
 	static long int f=1;
 	f = f * i;
-	}
-
+}
+```
 
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.  

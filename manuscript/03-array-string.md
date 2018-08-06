@@ -6,7 +6,7 @@ Array adalah suatu tipe data terstuktur yang berupa sejumlah data sejenis (berti
 
 Array dapat digunakan untuk menyimpan data yang cukup banyak namun memiliki tipe yang sama. Bagaimana array melakukan penyimpanan datanya di memory komputer? Ilustrasi array satu dimensi pada memory komputer adalah sebagai berikut:
 
-![](images/Capture3-1.PNG)
+![Array](images/Capture3-1.PNG)
 
 Array menyimpan data secara berurutan pada memory komputer. Sekali array dideklarasikan (dibuat), maka akan dialokasikan sejumlah tempat di memory komputer yang selalu letaknya berdekatan (bersebelahan). Array memiliki indeks dan nilai data itu sendiri. Sedangkan jarak antar elemen pada array disesuaikan dengan lebar data untuk masing-masing tipe data array. Misalnya pada tipe data integer, maka jarak antar elemennya bernilai 2 s/d 4 byte. Indeks array pada C++ selalu dimulai dari indeks ke 0, dan seterusnya indeks ke-1, 2, 3, dan lain-lain.
 
@@ -31,11 +31,12 @@ Bentuk umum deklarasi array satu dimensi:
 
 Contoh:
 
-
-	char huruf[9];
-	int umur[10];
-	int kondisi[2] = {0,1};
-	int arr_dinamis[] = {1,2,3};
+```cpp
+char huruf[9];
+int umur[10];
+int kondisi[2] = {0,1};
+int arr_dinamis[] = {1,2,3};
+```
 
 Artinya:
 
@@ -193,21 +194,24 @@ int main(int argc, char *argv[])
 
 Array satu dimensi dapat diisi secara langsung ditulis pada program. Pengisian data seperti itu sering disebut dengan inisialisasi data array. Cara menginisialisasi data pada array adalah dengan menuliskannya secara langsung pada source code program. Berikut contohnya:
 
-
-	// An array of 5 integers, all elements initialized to 0
-	int IntegerArray[5] = {0};
-
+```cpp
+// An array of 5 integers, all elements initialized to 0
+int IntegerArray[5] = {0};
+```
 Pada contoh diatas, semua elemen array bertipe integer yang berjumlah 5 buah tersebut diisi dengan nilai 0 semuanya. Cara lain menginisialisasi array satu dimensi adalah sebagai berikut:
 
-
-	// An array of 5 integers initialized to zero
-	int IntegerArray[5] = { 0, 0, 0, 0, 0 };
+```cpp
+// An array of 5 integers initialized to zero
+int IntegerArray[5] = { 0, 0, 0, 0, 0 };
+```
 
 Nah, bagaimana jika kita ingin menginisialisasi elemen terakhirnya saja? Kita tidak bisa melakukannya secara langsung. Yang harus dilakukan adalah dengan menginisialisasinya satu-persatu seperti contoh berikut:
 
 
-	// An array of 5 integers initialized to zero
-	int IntegerArray[5] = { 0, 0, 0, 0, 6 };
+```cpp
+// An array of 5 integers initialized to zero
+int IntegerArray[5] = { 0, 0, 0, 0, 6 };
+```
 
 Pada contoh diatas, elemen terakhir diinilisasi dengan nilai 6. Kita tidak bisa langsung mengisi dengan cara `int IntegerArray[5] = {6}`, karena jika di isi dengan cara demikian, maka isi elemen indeks ke-0 bernilai 6, sedangkan elemen lainnya bernilai 0.
 
@@ -290,8 +294,9 @@ T> Untuk semua array pada C++, inisialisasi satu buah elemen saja pada array aka
 
 **Contoh:**
 
-	int angka[100] = {1};
-
+```cpp
+int angka[100] = {1};
+```
  Maka hasilnya adalah:
 
 	angka[0] = 1,
@@ -303,9 +308,10 @@ Pada array satu dimensi, kita juga dapat membuat array 1 dimensi tanpa menyebutk
 
 Contoh:
 
-
-	int data[5] = {1,2,3,4,5,6}; //error
-	int data2[] = {10,20}; //terpesan 2 tempat dimemory
+```cpp
+int data[5] = {1,2,3,4,5,6}; //error
+int data2[] = {10,20}; //terpesan 2 tempat dimemory
+```
 
 Contoh 6. Tanpa inisialisasi, array langsung ditampilkan
 
@@ -477,14 +483,16 @@ Berikut adalah gambar array berdimensi (baris x kolom = 3 x 4)
 
 ### Deklarasi Array Dua Dimensi
 
-
-	tipe_data nama_var_array[batas_baris][batas_kolom];
+```cpp
+tipe_data nama_var_array[batas_baris][batas_kolom];
+```
 
 Contoh:
 
-
-	int matriks[3][4];
-	int matriks2[3][4] = { {5,20,1,11}, {4,7,67,-9}, {9,0,45,3} };
+```cpp
+int matriks[3][4];
+int matriks2[3][4] = { {5,20,1,11}, {4,7,67,-9}, {9,0,45,3} };
+```
 
 Array dua dimensi dapat mewakili bentuk suatu matriks, contoh matriks:
 
@@ -1157,7 +1165,7 @@ int main(int argc, char *argv[])
 ```
 **Hasil:**
 
-![](images/capture3-6.PNG)
+![](images/Capture3-6.PNG)
 
 **Keterangan:**
  

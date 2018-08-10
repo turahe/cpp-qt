@@ -36,7 +36,7 @@ Nilai yang tersimpan di memori dan dikenal melalui identifier tersebut terdiri d
 Sebelum suatu variabel atau konstanta dapat digunakan, tempat pada memori harus dipesan terlebih dahulu, mekanisme ini dinamalan deklarasi. Deklarasi dilakukan dengan cara menuliskan tipe data (ukuran memori yang dibutuhkan) dan diikuti dengan nama pengenal (nama variabel), jika dikehendaki bisa juga suatu variabel langsung diinisialisasi dengan suatu nilai. Pengenal (identifier) bisa terdiri dari sebuah huruf atau kombinasi antara huruf dengan angka dengan syarat.
 
 - Harus diawali dengan huruf
-- Tidak boleh memakai karakter khusus kecuali \$ dan garis bawah (\_)
+- Tidak boleh memakai karakter khusus kecuali \$ dan garis bawah (&#95;)
 - Tidak boleh sama dengan kata kunci yang digunakan pada C++
 - Bersifat case sensitif (huruf besar dan kecil dibedakan)
 
@@ -140,12 +140,12 @@ Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Opera
 |Operator Hubungan Kesamaan dan Ketidaksamaan 				|== != 				|Kiri – Kanan 	|7
 |Operator Bitwise AND 										|& 					|Kiri – Kanan 	|8
 |Operator Bitwise XOR 										|^ 					|Kiri – Kanan 	|9
-|Operator Bitwise OR 										|`|`				|Kiri – Kanan 	|10
+|Operator Bitwise OR 										|&#124;				|Kiri – Kanan 	|10
 |Operator Kondisi AND 										|&& 				|Kiri – Kanan 	|11
-|Operator Kondisi OR 										| `||` 				|Kiri – Kanan 	|12
-|Operator Ternary ? 										| `| `				|Kanan – Kiri 	|13
+|Operator Kondisi OR 										| &#124;&#124;		|Kiri – Kanan 	|12
+|Operator Ternary ? 										| &#124;			|Kanan – Kiri 	|13
 |Operator Pengerjaan Aritmatika 							|= += -= *= /= %= 	|Kanan – Kiri 	|14
-|Operator Pengerjaan Bitwise 								|`&= ^= |= <<= >>=`	|Kanan – Kiri 	|15
+|Operator Pengerjaan Bitwise 								|&= ^= &#124;= <<= >>=	|Kanan – Kiri 	|15
 |Operator Koma 												|, 					|Kiri – Kanan 	|16
 
 Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari sebuah variabel maupun kumpulan variabel-variabel yang dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi adalah suatu nilai yang mempunyai besaran dan tipe data tertentu. Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan “panjang * lebar” yang menghasilkan nilai 15, 12 dan 180:
@@ -265,19 +265,19 @@ Berikut ini contoh hasil ekspresi jika a bernilai 5, b bernilai 7 dan c bernilai
 
 Jika operator hubungan membandingkan hubungan antara dua buah operand, maka operator logika (*logical operator*) digunakan untuk menggabungkan logika hasil dari operator-operator hubungan. Operator logika menggabungkan __dua buah__ nilai logika. Nilai logika adalah nilai benar (True) atau salah (False).
 
-|Operator	|Jenjang|Arti
-|-----------|-------|---------------------
-|&& 		|11 	|Logika DAN (AND)
-|`||` 		|12 	|Logika ATAU (OR)
+|Operator		|Jenjang|Arti
+|---------------|-------|---------------------
+|&& 			|11 	|Logika DAN (AND)
+|&#124;&#124; 	|12 	|Logika ATAU (OR)
 
 Selain dua operator logika ini, operator unary “!” (logika NOT) dapat digunakan untuk operasi logika.
 
-|x		|y 		|x && y |x `||` y 	|!x
-|-------|-------|-------|-----------|----------
-|TRUE	|TRUE	|TRUE	|TRUE		|FALSE
-|TRUE	|FALSE	|FALSE	|TRUE		|FALSE
-|FALSE	|TRUE	|FALSE	|TRUE		|TRUE
-|FALSE	|FALSE	|FALSE	|FALSE		|TRUE
+|x		|y 		|x && y |x &#124;&#124; y 	|!x
+|-------|-------|-------|-------------------|----------
+|TRUE	|TRUE	|TRUE	|TRUE				|FALSE
+|TRUE	|FALSE	|FALSE	|TRUE				|FALSE
+|FALSE	|TRUE	|FALSE	|TRUE				|TRUE
+|FALSE	|FALSE	|FALSE	|FALSE				|TRUE
 
 Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai ‘a’ maka ungkapan dibawah ini mempunyai hasil akhir benar (True).
 

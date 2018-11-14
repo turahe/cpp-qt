@@ -54,9 +54,10 @@ class B {
 
 Proses instansiasi adalah:
 
-
-	A a;
-	B b=a;
+```
+A a;
+B b=a;
+```
 
 Pada contoh diatas, terlihat bahwa ketika kita membuat obyek class B, maka otomatis konstruktor class B dijalankan dan menerima parameter obyek A. Sehingga kita bisa memasukkan parameter bertipe class A kedalam class B.
 
@@ -66,9 +67,9 @@ Konversi tipe ini harus dituliskan pada kode program dengan menggunakan tanda ku
 
 **Sintaks:**
 
-
-	(<type>)<value>
-
+```
+(<type>)<value>
+```
 **Contoh:**
 
 ```cpp
@@ -77,6 +78,7 @@ int b;
 b = (int) a; // c-like cast notation
 b = int (a); // functional notation
 ```
+
 Cara pertama dengan menegunakan *C-cast like notation*. Pada contoh diatas, kita memaksa / mengcasting variabel a yang bertipe `short` agar diperlakukan seperti tipe data `integer` dengan cara memberi tanda kurung (int) sebelum variabel a. Dengan demikian variabel a akan dianggap / diperlakukan oleh kompiler menjadi tipe data integer dan bisa di assign ke dalam variabel b yang bertipe integer.
 
 
@@ -176,9 +178,9 @@ C++ memiliki cara pengcastingan yang baru, yaitu:
 
 Bentuk umum untuk semuanya adalah:
 
-
-	tipe_tujuan hasil = tipe_casting <tipe_tujuan> (obyek_yg_mau_dicasting);
-
+```
+tipe_tujuan hasil = tipe_casting <tipe_tujuan> (obyek_yg_mau_dicasting);
+```
 
 
 ### Pengunaan static_cast
@@ -196,7 +198,9 @@ CTdkAdaHubungan* pTdkHub = static_cast<CTdkAdaHubungan*>(pInduk); // Error
  **Keterangan:**
  
  - Pada contoh diatas terlihat bahwa class anak dapat dibuat dari class induk karena ada hubungan pewarisan. Konsep ini merupakan konsep polimorfisme. Kemudian untuk memastikan agar tipe data pInduk benar/valid untuk dimasukkan ke pTurunan yang merupakan obyek CTurunan, maka dilakukan casting dengan static_casting.
+
  - Kemudian pada bagian kedua, terlihat bahwa jika kita membuat class yang tidak ada hubungan apapun dengan class Induk maka kita tidak bisa melakukan static_casting.
+ 
  - Dengan demikian, static_casting digunakan untuk meyakinkan validitas suatu obyek pointer bahwa obyek tersebut ada hubungan dengan obyek yang dicastingnya. Pengcastingan dilakukan dengan mengubah class Induk menjadi class Anak, bukan sebaliknya.
 
 Bagi para programmer C yang beralih ke C++, static casting sangat mirip dengan C-style casting dan sangat disarankan untuk mengganti C-style casting karena static casting lebih aman dan tampak tertulis dengan jelas. Kita dapat melakukan `static_casting` pada tipe data biasa agar programmer dapat melihat
@@ -204,8 +208,9 @@ Bagi para programmer C yang beralih ke C++, static casting sangat mirip dengan C
 
 secara eksplisit tipe data yang dicastingnya. Sintaks umunya adalah:
 
-
-	static_cast<<type>>(<value>);
+```
+static_cast<<type>>(<value>);
+```
 
 **Berikut contohnya:**
 
@@ -228,12 +233,13 @@ pTujuan->CallFunc ();
 
 **Contoh penggunaan:**
 
-
-	CInduk* pInduk = new CTurunan();
-	// Melakukan down casting
-	CTurunan* pTurunan = dynamic_cast <CTurunan*> (pInduk);
-	if (pTurunan) // cek apakah sukses?
-	pTurunan->CallFungsiClassTurunan ();
+```
+CInduk* pInduk = new CTurunan();
+// Melakukan down casting
+CTurunan* pTurunan = dynamic_cast <CTurunan*> (pInduk);
+if (pTurunan) // cek apakah sukses?
+pTurunan->CallFungsiClassTurunan ();
+```
 
  **Keterangan:**
  
@@ -243,8 +249,9 @@ Dynamic_cast juga dapat digunakan untuk referensi pointer. Caranya dengan menggu
 
 Casting ini tidak boleh menghasilkan kembalian NULL. Sintaksnya:
 
-
-	<type> subclass = dynamic_cast<<type> &>( ref_obj );
+```
+<type> subclass = dynamic_cast<<type> &>( ref_obj );
+```
 
 **Contoh:**
 
@@ -346,35 +353,40 @@ int main(int argc, char *argv[])
 
 Penggunaan casting ini benar-benar tidak memungkinkan programmer untuk mengcasting dari satu obyek ke jenis obyek lain, terlepas dari apakah jenis obyeknya berhubungan atau tidak. Casting ini tidak boleh digunakan untuk melakukan down casting pada hierarki kelas atau untuk menghapus const volatile. Sintaks:
 
-
-	reinterpret_cast<<type>>( <val> );
+```
+reinterpret_cast<<type>>( <val> );
+```
 
 **Contoh:**
 
-
-	reinterpret_cast<int*>(100);
+```
+reinterpret_cast<int*>(100);
+```
 
 Reinterpret_cast pada class menggunakan syntax sebagai berikut:
 
-
-	CInduk * pInduk = new CInduk ();
-	CTdkAdaHubungan * pTdkHubung = reinterpret_cast<CTdkAdaHubungan*>(pInduk);
-	// program diatas bisa dikompile tapi sangat tidak disarankan karena class CtdkAdaHubungan bukanlah turunan dari Cinduk.
+```
+CInduk * pInduk = new CInduk ();
+CTdkAdaHubungan * pTdkHubung = reinterpret_cast<CTdkAdaHubungan*>(pInduk);
+// program diatas bisa dikompile tapi sangat tidak disarankan karena class CtdkAdaHubungan bukanlah turunan dari Cinduk.
+```
 
 Casting model ini sebenarnya memaksa compiler untuk menerima situasi dimana pada static_cast tidak diijinkan. Casting model ini biasanya ditemukan pada pemrograman aplikasi tingkat rendah tertentu (seperti driver) dimana harus dilakukan konversi ke tipe sederhana dimana API dapat menerimanya.
 
-
-	CSomeClass* pObject = new CSomeClass ();
-	// harus dikirimkan dalam bentuk byte (unsigned char)
-	unsigned char* pBytes = reinterpret_cast <unsigned char*>(pObject);
+```
+CSomeClass* pObject = new CSomeClass ();
+// harus dikirimkan dalam bentuk byte (unsigned char)
+unsigned char* pBytes = reinterpret_cast <unsigned char*>(pObject);
+```
 
 **Contoh lain:**
 
-
-	class A {};
-	class B {};
-	A * a = new A;
-	B * b = reinterpret_cast<B*>(a);
+```
+class A {};
+class B {};
+A * a = new A;
+B * b = reinterpret_cast<B*>(a);
+```
 
 T> **TIPS**
 T>
@@ -386,8 +398,9 @@ Const_cast digunakan untuk menghilangkan sifat const-ness atau sifat volatile-an
 
 **Sintaks:**
 
-
-	const_cast<<type>>(<value>);
+```
+const_cast<<type>>(<value>);
+```
 
 **Contoh:**
 
@@ -540,7 +553,7 @@ Koneksi Qt dengan Mysql ddan menampilkan datanya
  - Program diatas dapat menampilkan driver database yang terinstall dan dapat dikenali oleh system Qt, yaitu QSQLITE, QMYSQL, QODBC3, dan QODBC. Berarti sistem QT dapat mendukung basisdata Sqlite, MySQL, dan ODBC dari Microsoft.
  - Kemudian langkah pertama yang harus dilakukan adalah membuat QsqlDatabase yang akan meload basis data yang dipilih beserta dengan drivernya. Setelah itu kita harus menentukan nama database yang akan diakses, user, password, dan host lokasi MySQL server.
  - Kemudian akan diperiksa apakah database yang terpilih dapat dibuka atau tidak dengan method open(). Jika berhasil maka akan dilanjutkan, jika tidak maka akan ditampilkan error yang terjadi dengan menggunakan method dari database, yaitu lastError().
- - Langkah berikutnya adalah melakukan query dengan menggunakan method query(<string SQL>). Setelah perintah SQL dijalankan maka record-record yang dihasilkan dari perintah select tersebut akan diloop satu persatu dengan method next() dari query, dan ditampilkan hasilnya dilayar.
+ - Langkah berikutnya adalah melakukan query dengan menggunakan method query(`<string SQL>`). Setelah perintah SQL dijalankan maka record-record yang dihasilkan dari perintah select tersebut akan diloop satu persatu dengan method next() dari query, dan ditampilkan hasilnya dilayar.
 
 ### Koneksi Qt dengan SQLite
 

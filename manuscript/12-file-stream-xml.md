@@ -95,31 +95,33 @@ Agar lebih jelas bagaimana cara menggunakan QFile untuk membuka file, anda dapat
 
 Contoh 2. Memeriksa apakah file ada dan bisa diakses.
 
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
+Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
 
-
-		#include <QtCore/QCoreApplication>
-		#include <QFile>
-		#include <QDebug>
-		int main(int argc, char *argv[])
-		{
-		QCoreApplication a(argc, argv);
-		QFile file("testfile.txt");
-		if(!file.exists())
-		{
+```cpp
+#include <QtCore/QCoreApplication>
+#include <QFile>
+#include <QDebug>
+int main(int argc, char *argv[])
+{
+	QCoreApplication a(argc, argv);
+	QFile file("testfile.txt");
+	
+	if(!file.exists())
+	{
 		qDebug() << "File : " << file.fileName() << " tidak ditemukan";
 		return a.exec();
-		}
-		if(!file.open(QIODevice::WriteOnly))
+	}
+	
+	if(!file.open(QIODevice::WriteOnly))
 		{
-		qDebug() << "Tidak dapat membuka file " << file.fileName() << " untuk
-		ditulis";
-		return a.exec();
+			qDebug() << "Tidak dapat membuka file " << file.fileName() << " untuk ditulis";
+			return a.exec();
 		}
-		qDebug("File berhasil dibuka !");
-		file.close();
-		return a.exec();
-		}
+	qDebug("File berhasil dibuka !");
+	file.close();
+	return a.exec();
+}
+```
 
 2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
 
@@ -309,9 +311,9 @@ XML adalah meta-language yang dapat digunakan untuk menyimpan data terstruktur b
 	</document>
 
 
-Pada dokumen XML diatas document tag mengandung author tag dan teks . Tag document diawali dengan <document> dan diakhiri dengan closing tag </document>. Kedua tag document dan author memiliki attribute yang sama yaitu name.
+Pada dokumen XML diatas document tag mengandung author tag dan teks . Tag document diawali dengan `<document>` dan diakhiri dengan closing tag `</document>`. Kedua tag document dan author memiliki attribute yang sama yaitu name.
 
-Author tag tidak memiliki tag penutup karena tidak memiliki elemen lain didalamnya, cara penulisannya adalah <author />, ini sama dengan menuliskan <author></author>.
+Author tag tidak memiliki tag penutup karena tidak memiliki elemen lain didalamnya, cara penulisannya adalah `<author />`, ini sama dengan menuliskan `<author></author>`.
 
 Qt mendukung tiga cara untuk memanipulasi dokumen XML yaitu QStreamReader, DOM, dan SAX.
 

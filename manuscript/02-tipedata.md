@@ -8,7 +8,7 @@ Segala sesuatu yang diproses oleh program adalah data. Dalam hal ini data adalah
 
 Identifier (pengenal) adalah suatu nama yang digunakan program untuk merujuk ke suatu lokasi memori tertentu agar nilai pada lokasi tersebut dapat diakses. Alamat lokasi memori sebenarnya berupa angka angka heksadesimal[^heks], namun pada bahasa pemrograman setingkat C++ (middle level programming language) dan di atasnya, telah mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf atau kata (label) sehingga kita tidak perlu mengetahu alamat yang sesungguhnya dan dengan identifier (label) akan lebih mudah untuk diingat.
 
-[^heks]:
+[^heks]: Heksadesimal adalah sebuah sistem bilangan yang menggunakan 16 simbol. Simbol yang digunakan adalah 8 digit bilangan angka yaitu 0 sampai 9 ditambah dengan 6 simbol huruf yaitu huruf A hingga F. Dimana A = 10, B = 11, C= 12, D = 13 , E = 14 dan F = 15.
 
 ## 2.2 Tipe Data Bahasa C++
 
@@ -129,24 +129,24 @@ I> Operator pengerjaan “=“ akan mengambil nilai apapun yang ada disebelah ka
 
 Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Operator mempunyai beberapa kategori, antara lain : Aritmatika, Pengerjaan, Hubungan dan Logika. Operator Aritmatika adalah operator yang digunakan untuk melakukan operasi aritmatika seperti misalnya penjumlahan, pengurangan, perkalian dan pembagian. Simbol untuk operator aritmatika ini adalah : +, -, *, / dan %. Berikut ini adalah operator-operator yang dikenal pada bahasa pemrograman C++.
 
-|Kategori 													|Operator 			|Arah Proses 	|Jenjang
-|-----------------------------------------------------------|-------------------|---------------|-----
-|Kurung, indeks larik dan elemen struktur data 				|() [] . -> 		|Kiri - Kanan 	|1
-|Operator Unary 											|! ~ - ++ -- 		|Kanan – Kiri 	|2
-|Operator Aritmatika Perkalian, Pembagian dan Sisa Pembagian|* / % 				|Kiri – Kanan 	|3
-|Operator aritmatika Pertambahan dan Pengurangan 			|+ - 				|Kiri – Kanan 	|4
-|Operator Bitwise Pergeseran Bit 							|<< >> 				|Kiri – Kanan 	|5
-|Operator Hubungan 											|< <= > >= 			|Kiri – Kanan 	|6
-|Operator Hubungan Kesamaan dan Ketidaksamaan 				|== != 				|Kiri – Kanan 	|7
-|Operator Bitwise AND 										|& 					|Kiri – Kanan 	|8
-|Operator Bitwise XOR 										|^ 					|Kiri – Kanan 	|9
-|Operator Bitwise OR 										|&#124;				|Kiri – Kanan 	|10
-|Operator Kondisi AND 										|&& 				|Kiri – Kanan 	|11
-|Operator Kondisi OR 										| &#124;&#124;		|Kiri – Kanan 	|12
-|Operator Ternary ? 										| &#124;			|Kanan – Kiri 	|13
-|Operator Pengerjaan Aritmatika 							|= += -= *= /= %= 	|Kanan – Kiri 	|14
+|Kategori 													|Operator 				|Arah Proses 	|Jenjang
+|-----------------------------------------------------------|-----------------------|---------------|-----
+|Kurung, indeks larik dan elemen struktur data 				|() [] . -> 			|Kiri - Kanan 	|1
+|Operator Unary 											|! ~ - ++ -- 			|Kanan – Kiri 	|2
+|Operator Aritmatika Perkalian, Pembagian dan Sisa Pembagian|* / % 					|Kiri – Kanan 	|3
+|Operator aritmatika Pertambahan dan Pengurangan 			|+ - 					|Kiri – Kanan 	|4
+|Operator Bitwise Pergeseran Bit 							|<< >> 					|Kiri – Kanan 	|5
+|Operator Hubungan 											|< <= > >= 				|Kiri – Kanan 	|6
+|Operator Hubungan Kesamaan dan Ketidaksamaan 				|== != 					|Kiri – Kanan 	|7
+|Operator Bitwise AND 										|& 						|Kiri – Kanan 	|8
+|Operator Bitwise XOR 										|^ 						|Kiri – Kanan 	|9
+|Operator Bitwise OR 										|&#124;					|Kiri – Kanan 	|10
+|Operator Kondisi AND 										|&& 					|Kiri – Kanan 	|11
+|Operator Kondisi OR 										| &#124;&#124;			|Kiri – Kanan 	|12
+|Operator Ternary ? 										| &#124;				|Kanan – Kiri 	|13
+|Operator Pengerjaan Aritmatika 							|= += -= *= /= %= 		|Kanan – Kiri 	|14
 |Operator Pengerjaan Bitwise 								|&= ^= &#124;= <<= >>=	|Kanan – Kiri 	|15
-|Operator Koma 												|, 					|Kiri – Kanan 	|16
+|Operator Koma 												|, 						|Kiri – Kanan 	|16
 
 Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari sebuah variabel maupun kumpulan variabel-variabel yang dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi adalah suatu nilai yang mempunyai besaran dan tipe data tertentu. Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan “panjang * lebar” yang menghasilkan nilai 15, 12 dan 180:
 
@@ -288,7 +288,9 @@ A < B || B == 7 && C > ‘z’
 Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari langkah-langkah sebagai berikut:
 
 1. Jenjang operator hubungan lebih tinggi dibandingkan dengan operator logika, jadi operator hubungan dikerjakan terlebih dahulu.
+
 2. Operator logika “&&” mempunyai jenjang lebih tinggi dari operator “||”, sehingga operator “&&” dikerjakan terlebih dahulu.
+
 3. Bagian yang paling akhir dikerjakan adalah operator “||”, sehingga hasil akhir logika bernilai logika benar atau True.
 
 

@@ -73,14 +73,11 @@ Bab 14. Library
 
 ## Apakah buku ini telah selesai? {#apakah-buku-ini-telah-selesai}
 
-Belum, buku ini jauh dari sempurna, maka dari itu jika Anda tertarik
-untuk mengembangkan atau menambahkan konten maka anda bisa fork
-repository saya di <https://github.com/turahe/cpp-qt>.
+Belum, buku ini jauh dari sempurna, maka dari itu jika Anda tertarik untuk mengembangkan atau menambahkan konten maka anda bisa fork repository saya di <https://github.com/turahe/cpp-qt>.
 
 ## Kontribusi {#kontribusi}
 
-Jika Anda ingin berkontribusi dalam penyusunan buku ini Anda dapat
-mengirimkan beberapa artikel pendukung ke email saya
+Jika Anda ingin berkontribusi dalam penyusunan buku ini Anda dapat mengirimkan beberapa artikel pendukung ke email saya
 
 ## Dukungan {#dukungan}
 

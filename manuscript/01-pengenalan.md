@@ -165,25 +165,32 @@ Kunjungi website Qt untuk mendowload Qt Crator sesui dengan versi sisem operasi 
 
 Contoh:
 
-	wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x86-online.run
+```sh
+wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x86-online.run
+```
 
 jika menggunakan sistem operasi beberbasis 64 bit
 
-	wget http://download.qt.io/official_releases/qt/5.6/5.6.0/qt-opensource-linux-x64-5.6.0.run
+```sh
+wget http://download.qt.io/official_releases/qt/5.6/5.6.0/qt-opensource-linux-x64-5.6.0.run
+```
 
 #### 2. Install
 
 Atur permisi, jalankan installer dan ikuti perintah berikut ini untuk mnginstall Qt Creator secara lengkap.
 
-	chmod +x qt-opensource-linux-x64-5.6.0.run
-	./qt-opensource-linux-x64-5.6.0.run
+```sh
+chmod +x qt-opensource-linux-x64-5.6.0.run
+./qt-opensource-linux-x64-5.6.0.run
+```
 
 ####  3.  Install g++
 
 Buka terminal untuk menginstal g++:
 
-	sudo apt-get install build-essential
-
+```sh
+sudo apt-get install build-essential
+```
 #### 4. K0nfigurasi Kompiler
 
 Buka Qt Creator klik tool > Options. Klik build & run dan pilih tab Kit. Konfigurasikan kompiler jka belum terdeteksi secara otomatis.
@@ -192,8 +199,9 @@ Buka Qt Creator klik tool > Options. Klik build & run dan pilih tab Kit. Konfigu
 
 Jalankan Perintah berikut ini mengintall Pustaka OpenGL:
 
-	sudo apt-get install mesa-common-dev
-
+```sh
+sudo apt-get install mesa-common-dev
+```
 
 ### B. Install Qt di Windows
 
@@ -292,9 +300,9 @@ Semua elemen standard C++ library dinyatakan dalam apa yang disebut namespace, n
 #### 3.	int main ()
 
 Program C++ terdiri dari satu atau lebih fungsi, dan di antara salah satunya harus ada fungsi main dan hanya boleh ada satu main pada tiap program C++. Setiap program C++ akan dan pasti akan memulai eksekusi programnya pada fungsi main ini, meskipun main bukan fungsi yang pertama ditulis di program.
-Melihat bentuk seperti itu dapat kita ambil kesimpulan bahwa batang tubuh program utama berada didalam fungsi main(). Berarti dalam setiap pembuatan program utama, maka dapat dipastikan seorangpemrogram menggunakan minimal sebuah fungsi.
+Melihat bentuk seperti itu dapat kita ambil kesimpulan bahwa batang tubuh program utama berada didalam fungsi `main()`. Berarti dalam setiap pembuatan program utama, maka dapat dipastikan seorangpemrogram menggunakan minimal sebuah fungsi.
 
-Tanda { dan pada akhir program terdapat tanda }. Tanda { harus ada pada setiap awal dari sebuah fungsi dan tentu saja harus diakhiri dengan tanda }. Tanda ini digunakan untuk menunjukkan cakupan(scope) dari sebuah fungsi,dimana untukmenunjukkan fungsi ini dimulai danberakhir.
+Tanda `{` dan pada akhir program terdapat tanda `}`. Tanda `{` harus ada pada setiap awal dari sebuah fungsi dan tentu saja harus diakhiri dengan tanda `}`. Tanda ini digunakan untuk menunjukkan cakupan(scope) dari sebuah fungsi,dimana untukmenunjukkan fungsi ini dimulai danberakhir.
 
 #### 4.	Komentar
 

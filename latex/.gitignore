@@ -1,0 +1,28 @@
+# file to ignore
+#=======================#
+
+# file image
+*.psd
+
+# file latex
+*.bib
+*.aux
+*.log
+*.pdf
+*.gz
+*.toc
+*.out
+*.lol
+*.lot
+*.idx
+*.ilg
+*.ind
+*.lof
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# remove format mini toc
+*.maf
+*.mtc*

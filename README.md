@@ -1,5 +1,8 @@
 # Buku Pemrograman C++ dengan Qt Creator
-
+[![GitHub issues](https://img.shields.io/github/issues/turahe/cpp-qt)](https://github.com/turahe/cpp-qt/issues)
+[![GitHub forks](https://img.shields.io/github/forks/turahe/cpp-qt)](https://github.com/turahe/cpp-qt/network)
+[![GitHub stars](https://img.shields.io/github/stars/turahe/cpp-qt)](https://github.com/turahe/cpp-qt/stargazers)
+[![GitHub license](https://img.shields.io/github/license/turahe/cpp-qt)](https://github.com/turahe/cpp-qt/blob/master/LICENSE)
 
 **Bab:**
 

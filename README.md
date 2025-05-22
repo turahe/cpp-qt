@@ -20,3 +20,9 @@
 10. GUI
 11. File Stream dan XML
 12. Library
+
+## Compile
+
+```
+docker exec latex pdflatex latex/book.tex
+```

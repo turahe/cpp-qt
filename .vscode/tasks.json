@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build LaTeX PDF",
+      "type": "shell",
+      "command": "docker exec latex pdflatex latex/book.tex",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

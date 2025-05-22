@@ -1,0 +1,23 @@
+services:
+  code-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: code-server
+    environment:
+      - PASSWORD=secret
+      - DOCKER_USER=wachid
+    volumes:
+      - ./:/home/coder/project
+    ports:
+      - "8443:8080"
+    restart: unless-stopped
+
+  latex:
+    image: danteev/texlive:latest
+    container_name: latex
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    entrypoint: tail -f /dev/null
+    restart: unless-stopped

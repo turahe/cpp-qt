@@ -1,0 +1,1 @@
+Kelas_dasar* variabel1 = new Kelas_turunan();

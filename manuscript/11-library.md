@@ -1,646 +1,592 @@
+**📋 Apa yang akan dipelajari**
 
+Pada bab ini kita akan mempelajari tentang Qt Library dan class-class penting yang disediakan oleh Qt:
 
-# Qt Library
+- Qt Core Module dan class-class dasarnya
+- QObject dan automatic memory management
+- QString dan manipulasi string
+- Collection classes (QList, QMap, QStack, QQueue)
+- Iterator dan cara mengakses data
 
-Agenda
+\minitoc
 
-Pada chapter ini kita akan membahas tentang beberapa class khusus yang ada pada Qt Core Module yang dapat digunakan untuk melengkapi library standar C++ yang sebelumnya sudah kita gunakan. Adapun beberapa topik yang akan kita bahas pada chapter ini adalah.
+## 📚 Pengenalan Qt Library
 
-- Qt Object
-- Qt String
-- Collection dan Iterator (QList, QStringList, QStack, QQueue, dan QMap)
+### Apa itu Qt Library?
 
-## Qt Library
+Qt Library adalah kumpulan class-class C++ yang disediakan oleh Qt untuk mempercepat pengembangan aplikasi. Library ini menyediakan berbagai fitur siap pakai seperti:
 
-Qt SDK menyediakan beberapa class library yang dapat anda gunakan untuk mempercepat pembuatan program, misalnya library untuk membuat GUI (Graphical User Interface), network programming, dan library untuk bekerja dengan XML. Beberapa class library yang disediakan oleh Qt dapat dilihat pada gambar dibawah ini.
+- **GUI Components** - Widget untuk membuat antarmuka grafis
+- **Network Programming** - Class untuk komunikasi jaringan
+- **Database Access** - Class untuk mengakses database
+- **File I/O** - Class untuk membaca dan menulis file
+- **Data Structures** - Collection classes untuk menyimpan data
 
-Pada chapter ini kita akan membahas beberapa class dalam Qt Core Module yang sering digunakan seperti QObject, QString dan QStringList.
+### Keunggulan Qt Library
 
-Qt Core Module adalah library yang dibutuhkan oleh setiap aplikasi Qt. Qt Core Module sendiri dapat berisi :
+- **Cross-platform** - Sama di Windows, Mac, Linux
+- **Type-safe** - Mencegah kesalahan tipe data
+- **Memory Management** - Otomatis mengelola memory
+- **Rich Features** - Banyak fitur siap pakai
+- **Documentation** - Dokumentasi lengkap dan contoh
 
-- Basic Data Type seperti QString dan QByteArray.
-- Basic Data Structure seperti QList, QVector, dan QHash.
-- Input/Output class seperti QIODevice, QTextStream, dan QFile.
-- Class untuk pemrograman multithread seperti Qthread.
-- Class Object dan QCoreApplication (base class dari QApplication).
+### Qt Core Module
 
+Qt Core Module adalah library dasar yang dibutuhkan oleh setiap aplikasi Qt. Module ini berisi:
 
-## Menurunkan objek dari class QObject
+- **Basic Data Types** - QString, QByteArray, QChar
+- **Data Structures** - QList, QVector, QHash, QMap
+- **I/O Classes** - QIODevice, QTextStream, QFile
+- **Object System** - QObject, QCoreApplication
+- **Threading** - QThread untuk pemrograman multi-thread
 
-QObject class merupakan base class dari sebagian class yang ada di Qt library. Dengan menurunkan class dari QObject maka anda dapat menggunakan fitur automatic memory management dan mekanisme signal/slot yang disediakan oleh Qt.
+## 🏗️ QObject - Base Class Penting
 
-Beberapa class pada Qt yang diturunkan dari class QObject diantaranya QWidget, QLayout, dan QThread. Ada juga class yang tidak diturunkan dari class QObject seperti QString dan QColor. 
+### Apa itu QObject?
 
-Gambar dibawah ini menunjukan contoh beberapa class yang diturunkan dari QObject.
+QObject adalah base class yang sangat penting dalam Qt. Hampir semua class Qt diturunkan dari QObject. Class ini menyediakan:
 
-## Automatic Memory Management dengan QObject
+- **Automatic Memory Management** - Otomatis menghapus objek
+- **Signal-Slot Mechanism** - Komunikasi antar objek
+- **Object Tree** - Hierarki parent-child
+- **Event System** - Sistem event handling
+- **Property System** - Sistem properti dinamis
 
-Dengan menurunkan class dari QObject anda dapat melakukan automatic memory management pada program anda, sehingga kemungkinan terjadi memory leak dapat dihindari. Pada contoh dibawah ini kita akan membuat dua program yang berbeda, program pertama tidak menggunakan QObject dan program kedua menggunakan QObject.
+### Class Hierarchy Qt
 
-Contoh 1 Alokasi memory dinamis tanpa QObject.
+<div align="center">
+| \hline
+**Class** | **Inherits from** | **Purpose** |
+|---|---|---|
+| \hline
+QObject | - | Base class untuk semua objek Qt |
+| \hline
+QWidget | QObject | Base class untuk GUI widgets |
+| \hline
+QString | - | Class untuk string handling |
+| \hline
+QList | - | Template class untuk list |
+| \hline
+QMap | - | Template class untuk map |
+| \hline |
+</div>
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+### Keuntungan Menggunakan QObject
 
-```cpp
-#include <QtCore/QCoreApplication>
-#include <iostream>
-#include <string>
+- **Memory Safety** - Tidak perlu manual delete
+- **Object Tree** - Parent-child relationship
+- **Signal-Slot** - Event-driven programming
+- **Properties** - Dynamic property system
+- **Events** - Event handling system
 
-using namespace std;
+## 🧠 Automatic Memory Management
 
-class Mahasiswa
-{
-	public:
-	Mahasiswa(const string &nim);
-	~Mahasiswa();
-	const string &nim() const;
-	void setNim(const string &nim);
-	int getNimLength() const;
-	private:
-	string _nim;
-};
+### Masalah Memory Management
 
-Mahasiswa::Mahasiswa(const string &nim)
-{
-	_nim = nim;
-}
-
-Mahasiswa::~Mahasiswa()
-{
-	cout << "destroy object" << endl;
-}
-
-const string &Mahasiswa::nim() const
-{
-	return _nim;
-}
-
-void Mahasiswa::setNim(const string &nim)
-{
-	_nim = nim;
-}
-
-int Mahasiswa::getNimLength() const
-{
-	return _nim.length();
-}
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	Mahasiswa *objMhs1,*objMhs2,*objMhs3;
-	objMhs1 = new Mahasiswa("22002321");
-	objMhs2 = new Mahasiswa("22002322");
-	objMhs3 = new Mahasiswa("22002323");
-	cout << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar" << endl;
-	objMhs1->setNim(objMhs2->nim());
-	objMhs2->setNim(objMhs3->nim());
-	cout << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar" << endl;
-	cout << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar" << endl;
-	cout << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar" << endl;
-	delete objMhs1;
-	delete objMhs2;
-	delete objMhs3;
-	return a.exec();
-}
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
-
- **Keterangan:**:
- 
- - Class Mahasiswa yang kita buat diatas tidak diturunkan dari class QObject, sehingga kita harus menghapus memory di heap yang sudah tidak digunakan kembali secara manual untuk menghindari memory leak.
- - Penanganan secara manual menuntut programmer untuk lebih teliti dan akan menyulitkan bila membangun aplikasi yang kompleks dan memiliki banyak objek.
-
-Contoh 2. Alokasi memory dinamis dengan QObject.
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QObject>
-#include <QDebug>
-
-using namespace std;
-
-class Mahasiswa : QObject
-{
-	public:
-	Mahasiswa(const QString &nim,QObject *parent=0);
-	const QString &nim() const;
-	void setNim(const QString &nim);
-	int getNimLength() const;
-	private:
-	QString _nim;
-};
-
-Mahasiswa::Mahasiswa(const QString &nim, QObject *parent)
-{
-	_nim = nim;
-}
-
-const QString &Mahasiswa::nim() const
-{
-	return _nim;
-}
-
-void Mahasiswa::setNim(const QString &nim)
-{
-	_nim = nim;
-}
-
-int Mahasiswa::getNimLength() const
-{
-	return _nim.length();
-}
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QObject parent;
-	Mahasiswa *objMhs1,*objMhs2,*objMhs3;
-	objMhs1 = new Mahasiswa("22002321", &parent);
-	objMhs2 = new Mahasiswa("22002322", &parent);
-	objMhs3 = new Mahasiswa("22002323", &parent);
-	qDebug() << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar";
-	objMhs1->setNim(objMhs2->nim());
-	objMhs2->setNim(objMhs3->nim());
-	qDebug() << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar";
-	qDebug() << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar";
-	qDebug() << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar";
-	return a.exec();
-}
-```
-
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
- **Keterangan:**
- 
- - Untuk menggunakan QObject anda harus menambahkan header file <QObject>.
-- Karena class Mahasiswa diturunkan dari class QObject, maka secara otomatis class Mahasiswa dapat menggunakan fitur automatic memory management.
- - Dengan menggunakan class QObject dalam aplikasi, anda tidak perlu mendelete satu-persatu object yang anda buat, karena QObject akan secara otomatis melakukannya untuk anda.
- - Method qDebug() lebih disarankan untuk menampilkan input dibandingkan dengan cout, hasil output dari qDebug() lebih kompatibel disemua platform. Dan dengan qDebug() anda tidak perlu menambahkan stl untuk menambahkan enter.
-
-QObject akan disimpan pada stack memory sebagai parent, ketika QObject di hapus semua child dari QObject akan ikut dihapus juga.
-
-
-## Menggunakan Qt String
-
-Salah satu langkah yang harus dilakukan jika anda mengembangkan aplikasi berbasis Qt adalah ganti semua STL (standar class library) C++ dengan class pada Qt (walaupun anda tetap dapat menggunakan STL). Keuntungan menggunakan class-class yang ada pada Qt adalah lebih kompatibel jika anda berpidah platform.
-
-STL C++ yang paling sering digunakan adalah string, pada Qt anda dapat menggunakan QString. Anda dapat menggabungkan penggunaan string dan QString, namun QString akan lebih baik secara performa dan memiliki lebih banyak fitur, misal QString sudah mendukung unicode pada semua platform yang memudahkan membuat aplikasi dalam bahasa yang berbeda.
-
-Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada contoh program dibawah ini.
-
-Contoh 3. Cek apakah nilai QString Null atau Empty
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 3, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	//deklarasi string
-	QString nama = "Erick Kurniawan";
-	qDebug() << nama;
-	//cek ukuran string
-	int ukuran = nama.size();
-	qDebug() << "Ukuran string " << ukuran;
-	QString test = "";
-	//cek apakah string null
-	if(test.isNull())
-	qDebug() << "test null";
-	else
-	qDebug() << "test not null";
-	//cek apakah string empty
-	if(test.isEmpty())
-	qDebug() << "test empty";
-	else
-	qDebug() << "test not empty";
-	QString testing;
-	//cek apakah string null
-	if(testing == QString::null)
-	qDebug() << "testing null";
-	else
-	qDebug() << "testing not null";
-	return a.exec();
-}
-```
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
- **Keterangan:**:
- 
- - Class QString memiliki method size untuk mengetahui ukuran panjang string.
- - Method isNull() dapat digunakan untuk memeriksa apakah string masih belum diinisialisasi.
- - Method isEmpty() dapat digunakan untuk memeriksa apakah string kosong.
-
-Contoh 4. Menggunakan Fungsi Left, Mid, Right.
-
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 4, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QString nama = "Erick Kurniawan";
-	//menggunakan fungsi left, mid, dan right
-	QString firstName = nama.left(5);
-	qDebug() << "firstName : " << firstName;
-	QString lastName = nama.right(9);
-	qDebug() << "lastName : " << lastName;
-	QString midName = nama.mid(6,5);
-	qDebug() << "midName : " << midName;
-	return a.exec();
-}
-```
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
- **Keterangan:**:
- 
- - Class QString memiliki fungsi left() untuk mengambil sejumlah karakter tertentu dari kiri.
- - Fungsi right() digunakan untuk mengambil sejumlah karakter tertentu dari kanan.
- - Fungsi mid() digunakan untuk mengambil sejumlah karakter tertentu dari tengah.
-
-Contoh 5. Menggabungkan String.
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 5, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QString nama = "Erick";
-	nama.append(" ");
-	nama.append("Kurniawan");
-	nama.append(",M.Kom");
-	nama.prepend("Mr. ");
-	qDebug() << "Nama : " << nama;
-	nama.insert(19,",S.Kom");
-	qDebug() << nama;
-	return a.exec();
-}
-```
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
-
- **Keterangan:**
- 
- - Fungsi `append()` dapat digunakan untuk menambahkan katrakter di akhir string.
- - Fungsi `prepend()` dapat digunakan untuk menambahkan karakter di awal string.
- - Fungsi `insert()` dapat digunakan untuk menyisipkan karakter dengan index tertentu pada string.
-
-Contoh 6. Membalik String.
-
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 6, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QString nama = "Erick Kurniawan";
-	QString balik;
-	for(int i=nama.length()-1;i>=0;i--)
-	{
-	balik+=nama[i];
-	}
-	qDebug() << "Balik : " << balik;
-	return a.exec();
-}
-```
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
- **Keterangan:**:
- 
- - Karena QString adalah array of QChar anda dapat mengambil karakter dari QString menggunakan index array, misal pada contoh diatas nama[i] akan menghasilkan karakter pada index ke-i.
-
-T> TIPS
-T>
-T> Anda dapat menggunakan method toStdString() dan fromStdString() untuk mengkonversi dari string ke QString dan sebaliknya.
-
-## Collection dan Iterator
-
-Qt Core Module juga memiliki class-class collection seperti : list, stack, queue, map, dan hash list. Untuk mengakses data pada object collection anda dapat menggunakan Iterator.
-
-### Menggunakan QList
-
-Class QList dapat digunakan untuk membuat type safe object list untuk menyimpan data collection. Untuk mempermudah mengakses semua data pada list anda dapat menggunakan keywor foreach. Dengan QList anda dapat menambahkan data secara dinamis dan anda juga dapat menentukan tipe data ketika mendeklatasikan QList (type safe object) sehingga bila nanti objek yang anda buat diberi nilai yang tipenya berbeda dengan tipe data yang ditentukan program dapat mendeteksi kesalahan tersebut pada saat compile time. Misal jika anda medeklarasikan QList dengan tipe data QString (QList<QString>) maka anda tidak dapat memasukan nilai bertipe int kedalam list tersebut.
-
-Contoh 7 Menggunakan QList.
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 7, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QList<QString> lstNama;
-	lstNama << "Erick" << "Anton" << "Katon" << "Budi";
-	//mengakses data berdasarkan index tertentu
-	qDebug() << lstNama[0];
-	//akan menghasilkan error karena tipe bukan string
-	//lstNama << 12 << 13;
-	//membaca dan menampilkan semua data pada list
-	foreach (QString nama, lstNama) {
-	qDebug() << nama;
-	}
-	return a.exec();
-}
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
-
- **Keterangan:**
- 
- - Pertama kita mendeklarasikan objek lstNama yang bertipe QList<QString>, kemudian objek lstNama diberi beberapa data.
- - Untuk mengakses data yang ada pada lstNama anda dapat menggunakan keyword foreach Iterators
-
-Selain menggunakan keyword foreach untuk mengakses data pada list anda juga dapat menggunakan iterator. Pada program dibawah ini ditunjukan penggunaan iterator dengan QListIterator untuk mengakses data yang ada pada QList.
-
-Contoh 8. Menggunakan object Iterator.
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 8, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QList<int> lstNumber;
-	lstNumber << 12 << 24 << 36 << 48 << 60;
-	//menggunakan iterator
-	QListIterator<int> iter(lstNumber);
-	while(iter.hasNext())
-	{
-		qDebug() << iter.next();
-	}
-	//cara lain dengan cara STL
-	QList<int>::const_iterator stlIter;
-	for(stlIter=lstNumber.begin();stlIter!=lstNumber.end();++stlIter)
-	{
-		qDebug() << (*stlIter);
-	}
-	return a.exec();
-}
-```
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
-
- **Keterangan:**
- 
- - QListIterator digunakan untuk mengakses data yang ada pada QList.
- - Method hasNext() pada iterator digunakan untuk mendeteksi apakah masih ada data di dalam QList dan method next() pada iterator digunakan untuk berpindah data.
- - Cara kedua untuk membaca data pada QList adalah dengan menggunakan const iterator
-
-QList<int>::const_iterator
-
-Selain untuk membaca data pada list, iterator juga dapat digunakan untuk memodifikasi data di list, caranya yaitu dengan menggunakan objek QMutableListIterator. Contoh penggunaan QMutableListIterator dapat dilihat pada kode dibawah ini.
-
-Contoh 9. Menggunakan Iterator untuk memodifikasi data di list.
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 9, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QList<QString> lstNama;
-	lstNama << "Erick" << "Anton" << "Katon" << "Ricky";
-	QMutableListIterator<QString> iter(lstNama);
-	while(iter.hasNext())
-	{
-		if(iter.next().toLower().contains("rick"))
-		{
-			iter.setValue("update data..");
-		}
-	}
-	//baca data setelah diupdate
-	foreach (QString nama, lstNama) {
-		qDebug() << nama;
-	}
-	return a.exec();
-}
-```
-
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
- **Keterangan:**
- 
- - Dengan menggunakan QMutableListIterator<QString> anda dapat memodifikasi data yang anda akses dengan menggunakan iterator.
- - Pada program diatas list akan dibaca dan akan dicari data yang mengandung kata “rick”, kemudian data yang mengandung kata tersebut akan diganti dengan kata “update data..”.
- - Setelah selesai dimodifikasi dengan iterator data akan dibaca kembali menggunakan foreach, dan anda dapat melihat bahwa ada 2 data yang sudah berubah isinya.
-
-### Menambahkan Data pada List
-
-Ada beberapa cara yang dapat digunakan untuk menambahkan data ke list. Anda dapat menambahkan data diawal, diakhir, atau ditengah list. Beberapa cara penulisan kode untuk menambahkan list adalah sebagai berikut.
-
-Contoh 10. Beberapa cara menambahkan data ke list
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 10, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QList<QString> lstNama;
-
-	//menambahkan data di akhir list
-	lstNama << "erick";
-	lstNama.append("katon");
-
-	//menambahkan data di awal list
-	lstNama.prepend("anton");
-
-	//menambahkan data pada index tertentu
-	lstNama.insert(2,"budi");
-	lstNama.insert(4,"naren");
-
-	foreach (QString nama, lstNama) {
-		qDebug() << nama;
-	}
-	return a.exec();
-}
-```
-
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
- **Keterangan:**
- 
- - Keyword << dan method append digunakan untuk manambahkan data di akhir list.
- - Method prepend digunakan untuk menambahkan data di awal list.
- - Method insert digunakan untuk menambahkan data pada index tertentu di list.
-
-## Tipe List yang Lain
-
-Selain menggunakan QList anda juga dapat menggunakan objek collection yang lain seperti QVector dan QLinkedList. Perbandingan performa dari ketiga jenis collection diatas dapat dilihat pada table berikut.
-
-
-## Special List
-
-Selain untuk tipe data yang umum Qt juga menyediakan collection untuk tipe data khusus seperti QStringList.
-
-Class QStringList diturunkan dari QList<QString> dan mempunyai banyak tambahan fungsi yang berguna untuk memanipulasi data di dalam QStringList.
-
-Contoh 11. Menggunakan QStringList
-
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 11, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-#include <QStringList>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QStringList lstKota;
-	lstKota << "Jogjakarta" << "Jakarta" << "Bandung" << "Semarang";
-
-	//menggabungkan string dengan tanda ',' sebagai pemisah
-	QString gabung = lstKota.join(",");
-	qDebug() << gabung;
-	
-	//memecah string menjadi QStringList
-	QStringList listSplit = gabung.split(",");
-	foreach (QString kota, listSplit) {
-		qDebug() << kota;
-	}
-	
-	//mengganti elenet dalam array
-	listSplit.replaceInStrings("a","aaa");
-	foreach (QString kota, listSplit) {
-		qDebug() << kota;
-	}
-	return a.exec();
-}
-```
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
-
- **Keterangan:**
- 
- - Dengan menggunakan list QStringList anda akan lebih mudah untuk memanipulasi list yang bertipe string, misalnya anda ingin menggabungkan semua data di dalam list tersebut dengan karakter tertentu menjadi satu string, atau sebaliknya memecah string berdasarkan karakter tententu kemudian datanya dimasukan kedalam list.
- - Untuk memecah string berdasarkan karakter tertentu untuk dimasukan kedalam list anda dapat menggunakan method split().
- - Untuk menggabungkan data yang ada di dalam list dengan karakter tertentu menjadi sebuah string anda dapat menggunakan method join().
- - Pada kode diatas data pada lstKota digabungkan dengan menggunakan karakter ‘,’ menjadi string gabung.
- - Pada kode diatas list lstSplit diisi data hasil pemecahan string gabung, pemecahan string berdasarkan karakter ‘,’
-
-## Stack dan Queue
-
-Jika anda ingin menyimpan data pada collection dengan metode FIFO (first in first out) atau LIFO (last in first out) maka anda dapat menggunakan class QStack dan QQueue. Untuk FIFO anda dapat menggunakan QQueue dan untuk LIFO anda dapat menggunakan QStack.
-
-Contoh 12. Menggunakan Stack dan Queue.
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 12, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-#include <QStack>
-#include <QQueue>
-
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QStack<QString> lstStack;
-	lstStack.push(“17rick”);
-	lstStack.push(“anton”);
-	lstStack.push(“katon”);
-	lstStack.push(“budi”);
-	//order LIFO
-	qDebug() << “Stack LIFO : “;
-	while(!lstStack.isEmpty())
-	{
-		qDebug() << lstStack.pop();
-	}
-
-	QQueue<QString> lstQueue;
-	lstQueue.enqueue(“17rick”);
-	lstQueue.enqueue(“anton”);
-	lstQueue.enqueue(“katon”);
-	lstQueue.enqueue(“budi”);
-	//order FIFO
-	qDebug() << “Queue FIFO : “;
-	while(!lstQueue.isEmpty())
-	{
-		qDebug() << lstQueue.dequeue();
-	}
-	return a.exec();
-}
-```
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
- **Keterangan:**
- 
- - Untuk menyimpan data dengan metode LIFO (Last In First Out) anda dapat menggunakan QStack.
- - Untuk menambahkan data kedalam QStack digunakan method push() sedangkan untuk mengambil data dari QStack dapat menggunakan method pop().
- - Untuk menyimpan data dengan metode FIFO (First In First Out) anda dapat menggunakan QQueue.
- - Untuk menambahkan data kedalam QQueue anda dapat menggunakan method enqueue, dan untuk mengambil data dari QQueue anda dapat menggunakan method dequeue.
-
-## Mapping
-
-Untuk membuat object map dan hash Qt menyediakan class QMap. Dengan QMap anda dapat membuat collection yang index-nya bukan berupa number (key-value pair).
-
-Contoh 13. Menggunakan QMap.
-
-1. Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 13, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-	QCoreApplication a(argc, argv);
-	QMap<QString,int> lstAge;
-	lstAge["erick"] = 29;
-	lstAge["anton"] = 29;
-	lstAge["katon"] = 42;
-	qDebug() << "erick age : " << lstAge["erick"];
-	qDebug() << "menampilkan semua data yg ada di map :";
-	foreach (QString key, lstAge.keys()) {
-	qDebug() << key << " : " << lstAge[key];
-	}
-	//menggunakan iterator
-	qDebug() << "Mengakses data menggunakan iterator";
-	QMap<QString, int>::ConstIterator itr;
-	for (itr=lstAge.constBegin();itr!=lstAge.constEnd();++itr) {
-	qDebug() << itr.key() << " : " << itr.value();
-	}
-	return a.exec();
-}
-```
-
-2. Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan ditampilkan output sebagai berikut.
-
-
- **Keterangan:**
- 
- - Dengan menggunakan QMap anda dapat membuat collection yang index-nya tidak berupa bilangan. Misal anda dapat menggunakan index yang tipenya QString, pada contoh diatas anda dapat menuliskan lstAge[“erick”].
- - Untuk mengambil semua data pada lstAge anda dapat menggunakan foreach atau menggunakan ConstIterator.
+Dalam C++ tradisional, programmer harus manual mengelola memory:
+
+- **Memory Leak** - Lupa delete objek
+- **Dangling Pointer** - Pointer ke objek yang sudah dihapus
+- **Double Delete** - Menghapus objek yang sudah dihapus
+- **Complex Management** - Sulit dalam aplikasi besar
+
+### QObject Memory Management
+
+QObject menyediakan automatic memory management:
+
+- **Parent-Child Relationship** - Objek child dihapus otomatis
+- **Object Tree** - Hierarki objek yang terorganisir
+- **Automatic Cleanup** - Tidak perlu manual delete
+- **Stack-based Parent** - Parent disimpan di stack
+
+### Contoh Memory Management
+
+#### ❌ Tanpa QObject (Manual Management)
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Alokasi memory dinamis tanpa QObject, label=contoh11-1]{../code/11-library-contoh11-1.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+22002321 : 8 kar
+22002322 : 8 kar
+22002323 : 8 kar
+22002323 : 8 kar
+destroy object
+destroy object
+destroy object
+\end{lcverbatim}
+
+**Analisis Program:**
+
+- Class Mahasiswa tidak diturunkan dari QObject
+- Harus manual delete setiap objek
+- Risk memory leak jika lupa delete
+- Sulit dalam aplikasi kompleks
+
+#### ✅ Dengan QObject (Automatic Management)
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Alokasi memory dinamis dengan QObject, label=contoh11-2]{../code/11-library-contoh11-2.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+"22002321"  :  8  kar
+"22002322"  :  8  kar
+"22002323"  :  8  kar
+"22002323"  :  8  kar
+\end{lcverbatim}
+
+**Analisis Program:**
+
+- Class Mahasiswa diturunkan dari QObject
+- Memory dihapus otomatis saat program selesai
+- Tidak perlu manual delete
+- Lebih aman dan mudah
+
+### Parent-Child Relationship
+
+QObject menggunakan sistem parent-child untuk memory management:
+
+- **Parent** - Objek yang memiliki child
+- **Child** - Objek yang dimiliki parent
+- **Automatic Deletion** - Child dihapus saat parent dihapus
+- **Object Tree** - Hierarki objek yang terorganisir
+
+## 📝 QString - String Handling
+
+### Mengapa Menggunakan QString?
+
+QString adalah class untuk menangani string dalam Qt. Keunggulannya:
+
+- **Unicode Support** - Mendukung semua bahasa
+- **Rich Features** - Banyak method untuk manipulasi
+- **Cross-platform** - Sama di semua platform
+- **Type-safe** - Mencegah kesalahan tipe data
+- **Performance** - Optimized untuk Qt
+
+### Perbandingan QString vs std::string
+
+<div align="center">
+| \hline
+**Aspek** | **QString** | **std::string** |
+|---|---|---|
+| \hline
+Unicode | Full support | Limited |
+| \hline
+Qt Integration | Native | Requires conversion |
+| \hline
+Platform | Cross-platform | Platform dependent |
+| \hline
+Features | Rich | Basic |
+| \hline
+Performance | Optimized | Standard |
+| \hline |
+</div>
+
+### Basic String Operations
+
+#### Checking String Properties
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Cek apakah nilai QString Null atau Empty, label=contoh11-3]{../code/11-library-contoh11-3.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+"Erick Kurniawan"
+Ukuran string  15
+test not null
+test empty
+testing null
+\end{lcverbatim}
+
+**Method yang Digunakan:**
+
+- **size()** - Mendapatkan panjang string
+- **isNull()** - Cek apakah string belum diinisialisasi
+- **isEmpty()** - Cek apakah string kosong
+- **length()** - Mendapatkan jumlah karakter
+
+#### String Extraction
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Menggunakan Fungsi Left Mid Right, label=contoh11-4]{../code/11-library-contoh11-4.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+firstName :  "Erick"
+lastName :  "Kurniawan"
+midName :  "Kurni"
+\end{lcverbatim}
+
+**Method yang Digunakan:**
+
+- **left(n)** - Ambil n karakter dari kiri
+- **right(n)** - Ambil n karakter dari kanan
+- **mid(pos, n)** - Ambil n karakter dari posisi pos
+- **mid(pos)** - Ambil semua karakter dari posisi pos
+
+#### String Concatenation
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Menggabungkan String, label=contoh11-5]{../code/11-library-contoh11-5.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+Nama :  "Pak. Slamet ,BA"
+"Pak. Slamet ,BA ,SE"
+\end{lcverbatim}
+
+**Method yang Digunakan:**
+
+- **append(str)** - Tambah string di akhir
+- **prepend(str)** - Tambah string di awal
+- **insert(pos, str)** - Sisip string di posisi tertentu
+- **operator+()** - Gabung string dengan operator +
+
+#### String Reversal
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Membalik String, label=contoh11-6]{../code/11-library-contoh11-6.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+Balik :  "dihcaW ruN"
+\end{lcverbatim}
+
+**Method yang Digunakan:**
+
+- **operator[]()** - Akses karakter dengan index
+- **size()** - Mendapatkan panjang string
+- **Manual Loop** - Loop untuk membalik string
+
+### Advanced String Operations
+
+#### String Conversion
+
+- **toStdString()** - Konversi ke std::string
+- **fromStdString()** - Konversi dari std::string
+- **toInt()** - Konversi ke integer
+- **toDouble()** - Konversi ke double
+- **toLower()** - Konversi ke huruf kecil
+- **toUpper()** - Konversi ke huruf besar
+
+#### String Searching
+
+- **contains()** - Cek apakah string mengandung substring
+- **indexOf()** - Cari posisi substring
+- **lastIndexOf()** - Cari posisi terakhir substring
+- **startsWith()** - Cek apakah string dimulai dengan substring
+- **endsWith()** - Cek apakah string diakhiri dengan substring
+
+## 📦 Collection Classes
+
+### Apa itu Collection Classes?
+
+Collection classes adalah class-class untuk menyimpan dan mengelola kumpulan data. Qt menyediakan berbagai collection yang type-safe dan optimized.
+
+### Jenis Collection Classes
+
+- **QList** - Dynamic array, paling umum digunakan
+- **QVector** - Array dengan akses cepat
+- **QLinkedList** - Linked list untuk operasi insert/delete
+- **QMap** - Key-value pair, terurut
+- **QHash** - Key-value pair, tidak terurut, lebih cepat
+- **QSet** - Set of unique values
+- **QStack** - LIFO (Last In First Out)
+- **QQueue** - FIFO (First In First Out)
+
+### QList - Dynamic Array
+
+QList adalah collection yang paling sering digunakan. Keunggulannya:
+
+- **Dynamic Size** - Ukuran berubah otomatis
+- **Fast Access** - Akses elemen dengan index
+- **Type-safe** - Mencegah kesalahan tipe data
+- **Rich API** - Banyak method untuk manipulasi
+
+#### Basic QList Operations
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Menggunakan QList, label=contoh11-7]{../code/11-library-contoh11-7.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+"Erick"
+"Erick"
+"Anton"
+"Katon"
+"Budi"
+\end{lcverbatim}
+
+**Method yang Digunakan:**
+
+- **append()** - Tambah elemen di akhir
+- **prepend()** - Tambah elemen di awal
+- **insert()** - Sisip elemen di posisi tertentu
+- **foreach** - Loop untuk mengakses semua elemen
+
+### Iterator - Mengakses Data
+
+Iterator adalah cara untuk mengakses data dalam collection secara berurutan.
+
+#### QListIterator - Read-only Iterator
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Menggunakan object Iterator, label=contoh11-8]{../code/11-library-contoh11-8.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+12
+24
+36
+48
+60
+12
+24
+36
+48
+60
+\end{lcverbatim}
+
+**Method Iterator:**
+
+- **hasNext()** - Cek apakah masih ada elemen berikutnya
+- **next()** - Pindah ke elemen berikutnya
+- **hasPrevious()** - Cek apakah masih ada elemen sebelumnya
+- **previous()** - Pindah ke elemen sebelumnya
+
+#### QMutableListIterator - Modifiable Iterator
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Menggunakan Iterator untuk memodifikasi data di list, label=contoh11-9]{../code/11-library-contoh11-9.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+"update data.."
+"Anton"
+"Katon"
+"update data.."
+\end{lcverbatim}
+
+**Method Mutable Iterator:**
+
+- **setValue()** - Ubah nilai elemen saat ini
+- **insert()** - Sisip elemen baru
+- **remove()** - Hapus elemen saat ini
+
+### Adding Data to List
+
+Ada berbagai cara untuk menambahkan data ke QList:
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Beberapa cara menambahkan data ke list, label=contoh11-10]{../code/11-library-contoh11-10.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+"anton"
+"erick"
+"budi"
+"katon"
+"naren"
+\end{lcverbatim}
+
+**Cara Menambah Data:**
+
+- **append()** - Tambah di akhir list
+- **prepend()** - Tambah di awal list
+- **insert()** - Sisip di posisi tertentu
+- **operator<<()** - Operator untuk append
+- **push_back()** - Tambah di akhir (STL style)
+
+### QStringList - Special String List
+
+QStringList adalah class khusus untuk list of strings. Class ini diturunkan dari QList dan memiliki method tambahan untuk manipulasi string.
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Menggunakan QStringList, label=contoh11-11]{../code/11-library-contoh11-11.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+"Jogjakarta,Jakarta,Bandung,Semarang"
+"Jogjakarta"
+"Jakarta"
+"Bandung"
+"Semarang"
+"Jogjaaakaaartaaa"
+"Jaaakaaartaaa"
+"Baaandung"
+"Semaaaraaang"
+\end{lcverbatim}
+
+**Method QStringList:**
+
+- **split()** - Pecah string berdasarkan delimiter
+- **join()** - Gabung list menjadi string
+- **replaceInStrings()** - Ganti substring dalam semua elemen
+- **filter()** - Filter elemen berdasarkan kondisi
+
+## 🗂️ Stack dan Queue
+
+### Stack - LIFO (Last In First Out)
+
+QStack adalah collection yang menggunakan prinsip LIFO. Elemen terakhir yang masuk akan keluar pertama.
+
+### Queue - FIFO (First In First Out)
+
+QQueue adalah collection yang menggunakan prinsip FIFO. Elemen pertama yang masuk akan keluar pertama.
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Menggunakan Stack dan Queue, label=contoh11-12]{../code/11-library-contoh11-12.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+Stack LIFO : 
+"budi"
+"katon"
+"anton"
+"17rick"
+Queue FIFO : 
+"17rick"
+"anton"
+"katon"
+"budi"
+\end{lcverbatim}
+
+**Perbedaan Stack dan Queue:**
+
+<div align="center">
+| \hline
+**Aspek** | **QStack (LIFO)** | **QQueue (FIFO)** |
+|---|---|---|
+| \hline
+Prinsip | Last In First Out | First In First Out |
+| \hline
+Add | push() | enqueue() |
+| \hline
+Remove | pop() | dequeue() |
+| \hline
+Peek | top() | head() |
+| \hline
+Use Case | Undo/Redo | Task Queue |
+| \hline |
+</div>
+
+## 🗺️ QMap - Key-Value Pair
+
+### Apa itu QMap?
+
+QMap adalah collection yang menyimpan data dalam bentuk key-value pair. Setiap elemen memiliki key unik dan value yang terkait.
+
+### Keunggulan QMap
+
+- **Key-Value Pair** - Data terorganisir dengan key
+- **Ordered** - Data terurut berdasarkan key
+- **Fast Lookup** - Akses cepat dengan key
+- **Type-safe** - Mencegah kesalahan tipe data
+
+- Buka Qt Creator dan buat project Qt Console Application baru
+- Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Menggunakan QMap, label=contoh11-13]{../code/11-library-contoh11-13.c++}
+
+- Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
+erick age :  29
+menampilkan semua data yg ada di map :
+"anton"  :  29
+"erick"  :  29
+"katon"  :  42
+Mengakses data menggunakan iterator
+"anton"  :  29
+"erick"  :  29
+"katon"  :  42
+\end{lcverbatim}
+
+**Method QMap:**
+
+- **insert(key, value)** - Tambah key-value pair
+- **operator[]()** - Akses value dengan key
+- **contains()** - Cek apakah key ada
+- **keys()** - Dapatkan semua key
+- **values()** - Dapatkan semua value
+- **remove()** - Hapus key-value pair
+
+## 🔧 Best Practices Qt Library
+
+### Tips Menggunakan Qt Library
+
+- **Gunakan QString** - Jangan campur dengan std::string
+- **Pilih Collection yang Tepat** - QList untuk umum, QMap untuk key-value
+- **Gunakan Iterator** - Untuk akses berurutan dan modifikasi
+- **Memory Management** - Manfaatkan QObject automatic memory
+- **Type Safety** - Gunakan template dengan tipe yang tepat
+
+### Kesalahan Umum
+
+- **Mixing STL and Qt** - Campur std::string dengan QString
+- **Wrong Collection** - Gunakan QList untuk key-value
+- **Manual Memory** - Lupa manfaatkan QObject
+- **Type Mismatch** - Masukkan tipe data salah ke collection
+- **Inefficient Access** - Tidak gunakan iterator untuk loop
+
+## 📚 Referensi dan Bacaan Lanjutan
+
+Qt Library adalah topik yang luas dan terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
+
+- **Qt Documentation** - Dokumentasi resmi Qt[^1]: Qt Company. (2023). "Qt Core Module". https://doc.qt.io/qt-6/qtcore-index.html
+- **C++ GUI Programming with Qt 4** oleh Jasmin Blanchette[^1]: Blanchette, J., & Summerfield, M. (2006). "C++ GUI Programming with Qt 4". Prentice Hall.
+- **Qt 5 C++ GUI Programming Cookbook** oleh Lee Zhi Eng[^1]: Eng, L. Z. (2016). "Qt 5 C++ GUI Programming Cookbook". Packt Publishing.
+- **Qt Core Module** - Module dasar Qt[^1]: Qt Company. (2023). "Qt Core Module". https://doc.qt.io/qt-6/qtcore-index.html
+
+## 🎉 Kesimpulan
+
+Qt Library menyediakan class-class yang powerful dan type-safe untuk pengembangan aplikasi. Dengan memahami QObject, QString, dan collection classes, Anda dapat membuat aplikasi yang robust dan maintainable.
+
+<div align="center">
+**Selamat! Anda telah menguasai dasar-dasar Qt Library** 📚
+</div>
+
+
+
+
+<div align="center">
+*--- Bab selanjutnya: File, Stream, dan XML ---*
+</div>

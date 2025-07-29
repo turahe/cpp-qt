@@ -1,102 +1,131 @@
-\textbf{Agenda}
+\textbf{📋 Apa yang akan dipelajari}
 
-Pada bab ini kita akan mempelajari konsep dari Pemrograman Berorientasi Objek
-tentang class dan objek seperti berikut ini.
+Pada bab ini kita akan mempelajari konsep Pemrograman Berorientasi Objek (OOP) dalam C++:
+
+\begin{itemize}
+\item Pengenalan OOP dan paradigma pemrograman
+\item Konsep Class dan Object
+\item Encapsulation dan data hiding
+\item Method dan constructor
+\end{itemize}
 
 \minitoc
 
-\section{Pemrograman Berorientasi
-Obyek}\label{pemrograman-berorientasi-obyek}
+\section{🎯 Pemrograman Berorientasi Objek (OOP)}\label{pemrograman-berorientasi-obyek}
 
-Bahasa C++ memang berbeda dengan bahasa C. Bahasa C++ memiliki
-keunggulan dan perubahan yang besar dibandingkan dengan bahasa C. Salah
-satu perubahan mendasarnya adalah bahasa C++ dibuat untuk mendukung
-pemrograman berorientasi obyek.
+\subsection{Perbedaan C dan C++}
 
-Program adalah kumpulan instruksi yang disusun dengan urutan nalar yang
-tepat untuk menyelesaikan suatu persoalan. Dalam pembuatan program,
-pemrogram mempunyai cara pandang terhadap eksekusi sebuah program yang
-disebut sebagai paradigma pemrograman. Sebagai contoh dalam paradigma
-pemrograman berorientasi objek (OOP), pemrogram bisa melihat bahwa
-sebuah program adalah kumpulan objek yang saling berinteraksi, sedangkan
-dalam paradigma pemrograman terstruktur, pemrogram melihat bahwa sebuah
-program adalah suatu urutan instruksi yang dieksekusi secara berurutan.
+Bahasa C++ memiliki keunggulan dan perubahan yang besar dibandingkan dengan bahasa C. Salah satu perubahan mendasarnya adalah bahasa C++ dibuat untuk mendukung \textbf{pemrograman berorientasi objek}.
 
-Pemrograman Berorientasi Objek merupakan suatu paradigma pemrograman
-yang sudah sangat populer, meskipun metodologi pemrograman ini lebih
-baru dibandingkan dengan metodologi pemrograman terstruktur, tidak
-berarti pemrograman terstruktur harus ditinggalkan, karena sebenarnya
-secara internal pemrograman berorientasi objek juga dibangun dengan
-teknik pemrograman terstruktur, selain itu logika pemanipulasian objek
-kadang-kadang diekspresikan dengan pemrograman terstruktur juga.
-Pemrograman berorientasi obyek memiliki kelebihan, yaitu:
+\subsection{Apa itu Paradigma Pemrograman?}
 
+Paradigma pemrograman adalah cara pandang pemrogram terhadap eksekusi sebuah program:
 \begin{itemize}
-
-\item
-  Membuat suatu representasi teknis sedekat mungkin dengan pandangan
-  konseptual dari dunia nyata.
-\item
-  membuat kerangka analisis dan spesifikasi yang stabil.
-\item
-  Memudahkan pengembangan dan perubahan programmer.
+\item \textbf{OOP} - program adalah kumpulan objek yang saling berinteraksi
+\item \textbf{Pemrograman terstruktur} - program adalah urutan instruksi yang dieksekusi berurutan
 \end{itemize}
 
-Tanpa kita sadari, dunia ini penuh dengan obyek. Obyek yang ada
-misalnya: sepeda, matahari, rumah, orang, anjing, topi, meja, dan masih
-banyak lagi. Ciri khas dari masing-masing obyek yang ada adalah dapat
-dilihat dan dapat digunakan. Setiap obyek pada dunia nyata juga memiliki
-ciri khas yang membedakannya dengan obyek lain terutama yang berbeda
-jenis. Sebagai contoh, obyek meja tulis, meja makan, dan meja belajar
-memiliki ciri yang sama, yaitu memiliki berat, memiliki kaki meja,
-memiliki warna meja, dan lain-lain. Kemudian obyek-obyek meja tersebut
-juga dapat menerima dan dilakukan operasi/kegiatan terhadapnya, misalnya
-kegiatan mengubah warna meja, kegiatan memotong atau menambah kaki meja
-dan lain-lain. Jadi sebuah obyek memiliki sifat yang melekat padanya dan
-memiliki hal yang dapat dikenakan atau dilakukannya. Antara obyek meja
-dengan obyek mobil memiliki perbedaan yang sangat besar.
+\subsection{Keunggulan OOP}
 
-Pemrograman berorientasi objek adalah suatu cara yang dipakai untuk
-mengorganisasikan program kedalam suatu komponen logis (kelas), yang
-pada saat akan digunakan harus diinstansiasi menjadi sebuah objek (yaitu
-sebuah instan/ instance dari sebuah kelas). Sebuah kelas mempunyai
-anggota (data) dan metoda (fungsi yang bekerja untuk data tersebut),
-dengan kata lain Pemrograman Berorientasi Objek mengemas data (variabel
-/ data member) dan prosedur (fungsi / function member / method) dalam
-sebuah objek sehingga kode program menjadi lebih fleksibel dan mudah
-dipelihara. Dalam Pemrograman Berorientasi Objek, objek yang dibuat
-melakukan suatu proses terhadap masukan tertentu dan mengeluarkan hasil
-tertentu dan pemakai tidak melihat bagaimana cara objek tersebut
-melakukan proses (karena program dibungkus di dalam objek).
+Pemrograman Berorientasi Objek adalah paradigma pemrograman yang sangat populer. Meskipun lebih baru dari pemrograman terstruktur, keduanya saling melengkapi.
 
-\section{Kelas}\label{kelas}
-
-Kelas adalah Blue Print dari objek, yaitu prototype yang mendefinisikan
-variabel-variabel dan metodametoda (sub program) secara umum. Untuk
-dapat digunakan, suatu kelas harus diinstansiasi menjadi objek. Setiap
-objek yang diinstansiasi dari kelas yang sama akan mempunyai sifat dan
-tingkah laku yang sama.
-
-Secara umum, ada dua bagian utama pada sebuah class C++, yaitu class
-declaration dan class body. Deklarasi kelas mendefinisikan nama class
-dan attributnya, sedangkan class body mendeklarasikan variabel dan
-method.
-
-\section{Object}\label{object}
-
-Objek adalah suatu pengenal (identifier) yang menyatukan atribut (sering
-juga disebut property atau state) dengan tingkah laku (yang disebut
-behaviour atau method). Penyatuan State dan Behaviour ini pada konsep
-Pemrograman Berorientasi Objek disebut dengan istilah enkapsulasi
-(encapsulation). Object mempunyai dua karakteristik, yaitu :
+\subsubsection{Kelebihan OOP}
 
 \begin{itemize}
+\item \textbf{Representasi dunia nyata} - membuat representasi teknis sedekat mungkin dengan pandangan konseptual dari dunia nyata
+\item \textbf{Kerangka yang stabil} - membuat kerangka analisis dan spesifikasi yang stabil
+\item \textbf{Mudah dikembangkan} - memudahkan pengembangan dan perubahan program
+\end{itemize}
 
-\item
-  Memiliki attribut, sebagai status (keadaan), yang kemudain disebut
-  state.
-\item
-  Memiliki tingkah laku, yang disebut behaviour.
+\subsection{Objek dalam Dunia Nyata}
+
+Dunia ini penuh dengan objek. Contoh objek: sepeda, matahari, rumah, orang, anjing, topi, meja, dan masih banyak lagi.
+
+\subsubsection{Karakteristik Objek}
+
+\begin{itemize}
+\item \textbf{Dapat dilihat} - objek memiliki bentuk fisik
+\item \textbf{Dapat digunakan} - objek memiliki fungsi tertentu
+\item \textbf{Memiliki ciri khas} - setiap objek memiliki karakteristik unik
+\end{itemize}
+
+\subsubsection{Contoh Objek Meja}
+
+Objek meja tulis, meja makan, dan meja belajar memiliki ciri yang sama:
+\begin{itemize}
+\item Memiliki berat
+\item Memiliki kaki meja
+\item Memiliki warna meja
+\end{itemize}
+
+Objek meja juga dapat menerima operasi:
+\begin{itemize}
+\item Mengubah warna meja
+\item Memotong atau menambah kaki meja
+\end{itemize}
+
+Jadi sebuah objek memiliki \textbf{sifat} yang melekat padanya dan \textbf{hal yang dapat dilakukan} terhadapnya.
+
+\subsection{Konsep OOP dalam Pemrograman}
+
+Pemrograman berorientasi objek adalah cara untuk mengorganisasikan program ke dalam komponen logis (kelas), yang saat digunakan harus diinstansiasi menjadi objek.
+
+\subsubsection{Komponen OOP}
+
+\begin{itemize}
+\item \textbf{Kelas} - blueprint/template untuk membuat objek
+\item \textbf{Objek} - instance/realisasi dari kelas
+\item \textbf{Data member} - variabel yang menyimpan data
+\item \textbf{Method} - fungsi yang bekerja dengan data tersebut
+\end{itemize}
+
+\subsubsection{Keunggulan OOP}
+
+\begin{itemize}
+\item \textbf{Fleksibel} - kode program lebih fleksibel
+\item \textbf{Mudah dipelihara} - program lebih mudah dipelihara
+\item \textbf{Encapsulation} - data dan prosedur dikemas dalam objek
+\item \textbf{Abstraction} - pengguna tidak melihat proses internal objek
+\end{itemize}
+
+\section{🏗️ Kelas (Class)}\label{kelas}
+
+\subsection{Apa itu Kelas?}
+
+Kelas adalah \textbf{blueprint} dari objek, yaitu prototype yang mendefinisikan variabel-variabel dan method-method secara umum.
+
+\subsection{Karakteristik Kelas}
+
+\begin{itemize}
+\item \textbf{Template} - kelas adalah template untuk membuat objek
+\item \textbf{Instansiasi} - kelas harus diinstansiasi menjadi objek untuk digunakan
+\item \textbf{Konsistensi} - setiap objek dari kelas yang sama memiliki sifat dan tingkah laku yang sama
+\end{itemize}
+
+\subsection{Struktur Kelas C++}
+
+Secara umum, ada dua bagian utama pada sebuah class C++:
+\begin{itemize}
+\item \textbf{Class declaration} - mendefinisikan nama class dan atributnya
+\item \textbf{Class body} - mendeklarasikan variabel dan method
+\end{itemize}
+
+\section{🎯 Objek (Object)}\label{object}
+
+\subsection{Apa itu Objek?}
+
+Objek adalah pengenal (identifier) yang menyatukan atribut (property/state) dengan tingkah laku (behaviour/method).
+
+\subsection{Encapsulation}
+
+Penyatuan State dan Behaviour ini pada konsep OOP disebut dengan istilah \textbf{encapsulation} (enkapsulasi).
+
+\subsection{Karakteristik Objek}
+
+Objek mempunyai dua karakteristik utama:
+\begin{itemize}
+\item \textbf{Atribut (State)} - status/keadaan objek
+\item \textbf{Tingkah laku (Behaviour)} - method/fungsi yang dapat dilakukan objek
 \end{itemize}
 
 \textbf{Contoh:}
@@ -141,33 +170,11 @@ merupakan konsep berorientasi obyek.
 
 Struktur sederhana sebuah class pada C++:
 
-\begin{lstlisting}[language=c++, numbers=none]
-class <namaclass>{
-//bagian member variabel / property class
-<tipedat <namavariabel>;
-//bagian member function / method
-<tipedat <namafunction>(<parameter>){
-//isi program dalam fungsi
-}
-};
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-1.c++}
 
 Contoh class:
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Kucing{
-//bagian member variabel yang bersifat private
-private:
-int umur;
-int berat;
-string jenis_kelamin;
-string nama_kucing;
-//bagian member function/method yang bersifat public
-public:
-void Bersuara();
-int tampilkanUmur();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-2.c++}
 
 \begin{quotation}
 {\LARGE \ding{46}} 		\textbf{TIPS}
@@ -212,11 +219,7 @@ class tersebut adalah dengan menginisialisasinya (dengan membuat sebuah
 atau beberapa obyek) dari class tersebut. Membuat obyek bisa dianggap
 seperti membuat variabel yang bertipe class yang kita buat. Contoh:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Kucing kucingku;
-Orang anton;
-Mobil kijang;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-3.c++}
 
 Class dan obyek adalah berbeda. Class merupakan template dari member
 variabel dan member function yang dapat dibuat wujud nyatanya dalam
@@ -231,25 +234,17 @@ katty adalah obyek dari class Kucing yang dapat digunakan dalam program.
 
 Setelah kita membuat obyek seperti:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Kucing katty;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-4.c++}
 
 Cara mengakses member variabel adalah dengan menggunakan tanda titik
 (.). Contoh jika kita hendak mengisi data berat badan katty dengan nilai
 8 kg, maka yang harus dilakukan adalah:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Katty.berat = 8;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-5.c++}
 
 Demikian juga dengan nama, umur, dan jenis kelamin.
 
-\begin{lstlisting}[language=c++, numbers=none]
-Katty.nama = "Katty";
-Katty.jenis_kelamin = "jantan";
-Katty.umur = 2;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-6.c++}
 
 \section{Mengakses Member
 Function/Method}\label{mengakses-member-functionmethod}
@@ -257,55 +252,13 @@ Function/Method}\label{mengakses-member-functionmethod}
 Sedangkan cara untuk mengakses member function dari suatu class adalah
 dengan juga menggunakan tanda titik pada obyeknya. Contoh:
 
-\begin{lstlisting}[language=c++, numbers=none]
-katty.Bersuara();
-katty.tampilkanUmur();
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-7.c++}
 
 \subsubsection*{Contoh  Pembuatan class Sepeda}
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++, caption=Pembuatan class Sepeda, label=contoh6-1]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Sepeda{
-private:
-int kecepatan;
-int gigi;
-string merk;
-public:
-void ubahKecepatan(int kec);
-void ubahGigi(int g);
-void setMerk(string m);
-void tampilSepeda();
-};
-void Sepeda::ubahKecepatan(int kec){
-this->kecepatan = kec;
-}
-void Sepeda::ubahGigi(int g){
-this->gigi = g;
-}
-void Sepeda::setMerk(string m){
-this->merk = m;
-}
-void Sepeda::tampilSepeda(){
-cout <<"Kecepatan: "<<this->kecepatan<<endl<<
-"Merk: "<<this->merk<<endl<<
-"Gigi: "<<this->gigi;
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Sepeda objSpd;
-objSpd.ubahGigi(2);
-objSpd.ubahKecepatan(30);
-objSpd.setMerk("Federal");
-objSpd.tampilSepeda();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Pembuatan class Sepeda, label=contoh6-1]{../code/06-class-object-contoh6-1.c++}
 
 \textbf{Hasil:}
 
@@ -357,63 +310,13 @@ Kecepatan: 30 Merk: Federal
 
 Contoh :
 
-\begin{lstlisting}[language=c++, numbers=none]
-void Sepeda::ubahKecepatan(int kec){
-Sepeda::kecepatan = kec;
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-9.c++}
 
 \subsubsection*{Contoh  Pembuatan obyek Sepeda.}
 
 Buatlah project baru dan tulis kode berikut:
 
-\begin{lstlisting}[language=c++, caption=Pembuatan obyek Sepeda, label=contoh6-2]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Sepeda{
-private:
-int kecepatan;
-int gigi;
-string merk;
-public:
-void ubahKecepatan(int kec);
-void ubahGigi(int g);
-void setMerk(string m);
-void tampilSepeda();
-};
-void Sepeda::ubahKecepatan(int kec){
-this->kecepatan = kec;
-}
-void Sepeda::ubahGigi(int g){
-this->gigi = g;
-}
-void Sepeda::setMerk(string m){
-this->merk = m;
-}
-void Sepeda::tampilSepeda(){
-cout <<"Kecepatan: "<<this->kecepatan<<endl<<
-"Merk: "<<this->merk<<endl<<
-"Gigi: "<<this->gigi;
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-cout<<"Sepeda pertama:\n";
-Sepeda objSpd;
-objSpd.ubahGigi(2);
-objSpd.ubahKecepatan(30);
-objSpd.setMerk("Federal");
-objSpd.tampilSepeda();
-cout<<"\nSepeda kedua:\n";
-Sepeda objSpd2;
-objSpd2.ubahGigi(1);
-objSpd2.ubahKecepatan(45);
-objSpd2.setMerk("Polygon");
-objSpd2.tampilSepeda();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Pembuatan obyek Sepeda, label=contoh6-2]{../code/06-class-object-contoh6-2.c++}
 
 \textbf{Hasil:}
 
@@ -448,53 +351,7 @@ Merk: Polygon
 
 Buatlah program beikut ini:
 
-\begin{lstlisting}[language=c++, caption=Pembuatan Obyek Array Sepeda, label=contoh6-3]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Sepeda{
-private:
-int kecepatan;
-int gigi;
-string merk;
-public:
-void ubahKecepatan(int kec);
-void ubahGigi(int g);
-void setMerk(string m);
-void tampilSepeda();
-};
-void Sepeda::ubahKecepatan(int kec){
-this->kecepatan = kec;
-}
-void Sepeda::ubahGigi(int g){
-this->gigi = g;
-}
-void Sepeda::setMerk(string m){
-this->merk = m;
-}
-void Sepeda::tampilSepeda(){
-cout <<"Kecepatan: "<<this->kecepatan<<endl<<
-"Merk: "<<this->merk<<endl<<
-"Gigi: "<<this->gigi;
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-cout<<"Sepeda pertama:\n";
-Sepeda objSpdArray[5];
-for(int i=0;i<5;i++){
-objSpdArray[i].setMerk("Merk-"+i);
-objSpdArray[i].ubahGigi(i+10);
-objSpdArray[i].ubahKecepatan(i+30);
-}
-for(int i=0;i<5;i++){
-cout<<"Tampilan Sepeda ke-"<<(i+1)<<endl;
-objSpdArray[i].tampilSepeda();
-cout<<endl;
-}
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Pembuatan Obyek Array Sepeda, label=contoh6-3]{../code/06-class-object-contoh6-3.c++}
 
 \textbf{Hasil:}
 \begin{lcverbatim}
@@ -615,34 +472,7 @@ akses dari luar class.
 
 	\item Buatlah program berikut:
 	
-\begin{lstlisting}[language=c++, caption=Public pada member variabel, label=contoh6-4]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Sepeda{
-private:
-int kecepatan;
-int gigi;
-string merk;
-public:
-int pkecepatan;
-int pgigi;
-string pmerk;
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-cout<<"Pengaksesan public:\n";
-Sepeda s;
-s.pgigi = 3;
-s.pkecepatan = 30;
-s.pmerk = "Polygon";
-cout<<"Gigi: "<<s.pgigi<<endl;
-cout<<"Kecepatan: "<<s.pkecepatan<<endl;
-cout<<"Merk: "<<s.pmerk<<endl;
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Public pada member variabel, label=contoh6-4]{../code/06-class-object-contoh6-4.c++}
 	
 \item 	\textbf{Hasil:}
 	
@@ -663,34 +493,7 @@ Merk: Polygon
 	
 \item 	Ubahlah program pada Contoh \ref{contoh6-4} diatas menjadi seperti berikut ini:
 	
-\begin{lstlisting}[language=c++, caption=Privat pada member variabel, label=contoh6-5]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Sepeda{
-private:
-int kecepatan;
-int gigi;
-string merk;
-public:
-int pkecepatan;
-int pgigi;
-string pmerk;
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-cout<<"Pengaksesan public:\n";
-Sepeda s;
-s.gigi = 3;
-s.kecepatan = 30;
-s.merk = "Federal";
-cout<<"Gigi: "<<s.gigi<<endl;
-cout<<"Kecepatan: "<<s.kecepatan<<endl;
-cout<<"Merk: "<<s.merk<<endl;
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Privat pada member variabel, label=contoh6-5]{../code/06-class-object-contoh6-5.c++}
 	
 \item 	\textbf{Hasil:}
 	
@@ -721,18 +524,7 @@ enkapsulasi. Cara untuk membuat member method adalah dengan
 mendeklarasikannya pada bagian public, sedangkan implementasi kodingnya
 berada diluar kelas. Berikut adalah contohya.
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Sepeda{
-private:
-int kecepatan;
-int gigi;
-string merk;
-public:
-void setKecepatan(int k);
-void setGigi(int g);
-void setMerk(string m);
-};
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-16.c++}
 
 Di dalam pemrograman beriorientasi obyek pada umumnya member function
 minimal selalu mewakili semua member variabelnya. Misal kita memiliki 1
@@ -743,60 +535,7 @@ buah member function, misalnya bernama ubahUmur(int u).
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Member function dan implementasinya, label=contoh6-6]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-//pembuatan class Sepeda
-class Sepeda{
-private:
-//daftar member variabel
-int kecepatan;
-int gigi;
-string merk;
-public:
-//daftar member function
-void ubahKecepatan(int kec);
-void ubahGigi(int g);
-void setMerk(string m);
-void tampilSepeda();
-};
-//implementasi member function berada diluar class Sepeda
-//function ubahKecepatan menerima input jumlah kecepatan
-//mengubah kecepatan Sepeda
-void Sepeda::ubahKecepatan(int kec){
-this->kecepatan = kec;
-}
-//function ubahGigi menerima input jumlah gigi
-//mengubah gigi Sepeda
-void Sepeda::ubahGigi(int g){
-this->gigi = g;
-}
-//function setMerk menerima input string merk
-//mengisi merk Sepeda
-void Sepeda::setMerk(string m){
-this->merk = m;
-}
-//function tampilSepeda tidak menerima input
-//fungsinya hanya untuk menampilkan informasi obyek Sepeda
-void Sepeda::tampilSepeda(){
-cout <<"Kecepatan: "<<this->kecepatan<<endl<<
-"Merk: "<<this->merk<<endl<<
-"Gigi: "<<this->gigi;
-}
-//function main
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Sepeda objSpd;
-objSpd.ubahGigi(2);
-objSpd.ubahKecepatan(30);
-objSpd.setMerk("Federal");
-objSpd.tampilSepeda();
-return a.exec();
-
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Member function dan implementasinya, label=contoh6-6]{../code/06-class-object-contoh6-6.c++}
 
 \textbf{Hasil:}
 \begin{lcverbatim}
@@ -848,15 +587,11 @@ variabel.
 method ini berfungsi untuk mengambil nilai dari sebuah member variabel.
 Asesor method biasanya dinamai :
 
-\begin{lstlisting}[language=c++, numbers=none]
-<tipedataMemberVariabel> get<NamaMemberVariabel>();
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-18.c++}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++, numbers=none]
-int getUmur();
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-19.c++}
 
 \subsection{Mutator method}\label{mutator-method}
 
@@ -865,77 +600,17 @@ variabel
 
 Mutator method biasanya dinamai :
 
-\begin{lstlisting}[language=c++, numbers=none]
-void set<NamaMemberVariabel>(<tipedataMemberVariabel> <namavariabel>);
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-20.c++}
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++, numbers=none]
-void setUmur(int u);
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-21.c++}
 
 \subsubsection*{Contoh  Penggunaan accessor dan mutator method}
 
 Tulislah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan accessor dan mutator method, label=contoh6-7]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kucing{
-private:
-int umur;
-float berat;
-string nama;
-public:
-//asesor method
-int getUmur();
-float getBerat();
-string getNama();
-//mutator method
-void setUmur(int u);
-void setBerat(float b);
-void setNama(string s);
-//method tambahan
-void berlari();
-};
-//implementasi
-int Kucing::getUmur(){
-return this->umur;
-}
-float Kucing::getBerat(){
-return this->berat;
-}
-string Kucing::getNama(){
-return this->nama;
-}
-void Kucing::setUmur(int u){
-this->umur = u;
-}
-void Kucing::setBerat(float b){
-this->berat = b;
-}
-void Kucing::setNama(string s){
-this->nama = s;
-}
-void Kucing::berlari(){
-cout<<"Kucing "<<this->getNama()<<" sedang berlari!";
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kucing mycat;
-mycat.setNama("Katty");;
-mycat.setBerat(4);
-mycat.setUmur(2);
-cout<<"Kucingku bernama "<<mycat.getNama()<<", dia berbobot "<<
-mycat.getBerat()<<" kg dan sudah berumur "<<mycat.getUmur()
-    <<" tahun sekarang."<<endl;
-mycat.berlari();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Penggunaan accessor dan mutator method, label=contoh6-7]{../code/06-class-object-contoh6-7.c++}
 
 \textbf{Hasil:}
 \begin{lstlisting}
@@ -970,9 +645,7 @@ Destructor}\label{constructor-dan-destructor}
 Kita dapat mendeklarasikan variabel biasa dan kemudian melakukan
 inisialisasi terhadap variabel tersebut dengan mudah. Contoh:
 
-\begin{lstlisting}[language=c++, numbers=none]
-int umur = 5;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-24.c++}
 
 Inisialisasi variabel berfungsi untuk mengisi suatu nilai awal terhadap
 suatu variabel yang kita deklarasikan. Variabel tersebut masih bisa kita
@@ -999,17 +672,7 @@ constructor dengan nama Sepeda() juga. Sedangkan destructor method sama
 dengan constructor namun diawali dengan tanda \texttt{\textasciitilde{}}
 didepannya. Contoh:
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Sepeda{
-private:
-//member variabel
-public:
-//konstruktor
-Sepeda();
-//destruktor
-~Sepeda();
-};
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-25.c++}
 
 \subsection{Default Constructor}\label{default-constructor}
 
@@ -1023,23 +686,17 @@ obyek), maka kita memanggil constructor default.
 
 \textbf{Contoh:}
 
-\begin{lstlisting}[language=c++, numbers=none]
-Sepeda sepedaku;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-26.c++}
 
 Berarti kita memanggil default konstruktor bernama Sepeda() tanpa
 parameter apapun. Jika kita membuat konsruktor dengan menggunakan
 parameter seperti misalnya:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Sepeda(string merk, int berat);
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-27.c++}
 
 Maka pada saat instansiasi kita menggunakan cara sebagai berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Sepeda sepedaku("Federal",2);
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-28.c++}
 
 Arti instasiasi diatas adalah kita memanggil konstruktor yang
 berparameter dua buah, string dan integer.
@@ -1048,69 +705,7 @@ berparameter dua buah, string dan integer.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Menggunakan Constructor dan Destructor, label=contoh6-8]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kucing{
-private:
-int umur;
-float berat;
-string nama;
-public:
-//konstruktor
-Kucing(int umur);
-//desktruktor
-~Kucing();
-    //asesor method
-int getUmur();
-float getBerat();
-string getNama();
-//mutator method
-void setUmur(int u);
-void setBerat(float b);
-void setNama(string s);
-};
-//implementasi konstruktor dan desktruktor
-Kucing::Kucing(int u){
-this->umur = u;
-}
-Kucing::~Kucing(){
-}
-//implementasi function
-int Kucing::getUmur(){
-return this->umur;
-}
-float Kucing::getBerat(){
-return this->berat;
-}
-string Kucing::getNama(){
-return this->nama;
-}
-void Kucing::setUmur(int u){
-this->umur = u;
-}
-void Kucing::setBerat(float b){
-this->berat = b;
-}
-void Kucing::setNama(string s){
-this->nama = s;
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kucing mycat(2);
-mycat.setNama("Katty");;
-mycat.setBerat(4);
-cout<<"Kucingku bernama "<<mycat.getNama()<<", dia berbobot "<<
-mycat.getBerat()<<" kg dan sudah berumur "<<mycat.getUmur()
-<<" tahun sekarang."<<endl;
-mycat.setUmur(7);
-cout<<"Lima tahun telah berlalu, sekarang kucingku sudah berumur:
-"<<mycat.getUmur()<<" tahun";
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Menggunakan Constructor dan Destructor, label=contoh6-8]{../code/06-class-object-contoh6-8.c++}
 
 \textbf{Hasil:}
 \begin{lstlisting}
@@ -1147,9 +742,7 @@ return a.exec();
 Contoh, tambahkan satu baris berikut ini pada bagian akhir kode pada
 Contoh \ref{contoh6-1} sebelum \texttt{return\ a.exec()}.
 
-\begin{lstlisting}[language=c++, numbers=none]
-Kucing kucingku2;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-31.c++}
 
 Ketika dilakukan kompilasi akan menghasilkan error sebagai berikut:
 
@@ -1169,76 +762,7 @@ lagi yang tidak berparameter.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Percobaan Menambah Constructor Method, label=contoh6-9]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kucing{
-private:
-int umur;
-float berat;
-string nama;
-public:
-//konstruktor
-Kucing(int umur);
-Kucing();
-//desktruktor
-~Kucing();
-//asesor method
-int getUmur();
-float getBerat();
-string getNama();
-//mutator method
-    void setUmur(int u);
-void setBerat(float b);
-void setNama(string s);
-};
-//implementasi konstruktor dan desktruktor
-Kucing::Kucing(int u){
-this->umur = u;
-}
-Kucing::Kucing(){
-}
-Kucing::~Kucing(){
-cout<<"Obyek sudah dihancurkan!";
-}
-//implementasi function
-int Kucing::getUmur(){
-return this->umur;
-}
-float Kucing::getBerat(){
-return this->berat;
-}
-string Kucing::getNama(){
-return this->nama;
-}
-void Kucing::setUmur(int u){
-this->umur = u;
-}
-void Kucing::setBerat(float b){
-this->berat = b;
-}
-void Kucing::setNama(string s){
-this->nama = s;
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kucing mycat(2);
-mycat.setNama("Katty");;
-mycat.setBerat(4);
-cout<<"Kucingku bernama "<<mycat.getNama()<<", dia berbobot "<<
-mycat.getBerat()<<" kg dan sudah berumur "<<mycat.getUmur()
-<<" tahun sekarang."<<endl;
-mycat.setUmur(7);
-cout<<"Lima tahun telah berlalu, sekarang kucingku sudah berumur:
-"<<mycat.getUmur()<<" tahun"<<endl;
-Kucing kucingku2;
-kucingku2.setNama("Frizky");
-cout<<"Nama kucing keduaku: "<<kucingku2.getNama();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Percobaan Menambah Constructor Method, label=contoh6-9]{../code/06-class-object-contoh6-9.c++}
 
 \textbf{Hasil:}
 
@@ -1277,41 +801,7 @@ parameter pada pemanggilan konstruktor.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan Constructor dengan Nilai Default, label=contoh6-10]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Buku{
-private:
-int jmlhal;
-string pengarang;
-string judul;
-public:
-Buku(string pengarang="unknown", string judul="unknown",int jmlhal=1){
-Buku::jmlhal = jmlhal;
-Buku::pengarang = pengarang;
-Buku::judul = judul;
-}
-void tampilInfo(){
-cout<<"Judul: "<<Buku::judul<<endl;
-cout<<"Pengarang: "<<Buku::pengarang<<endl;
-cout<<"Jumlah halaman: "<<Buku::jmlhal<<endl;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Buku b1;
-Buku b2("Antonius");
-Buku b3("Robert","Membuat aplikasi C++");
-Buku b4("Walter","Pemrograman C",100);
-    b1.tampilInfo();
-b2.tampilInfo();
-b3.tampilInfo();
-b4.tampilInfo();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Penggunaan Constructor dengan Nilai Default, label=contoh6-10]{../code/06-class-object-contoh6-10.c++}
 
 \textbf{Hasil:}
 
@@ -1361,30 +851,7 @@ Jumlah halaman: 100
 	Kita juga
 	dapat memberi nilai default dengan cara lain, perhatikan contoh berikut:
 	
-\begin{lstlisting}[language=c++, caption=Memberi nilai default pada constructor, label=contoh6-11]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Contoh{
-private:
-int x;
-int y;
-int z;
-public:
-Contoh():x(0),y(2),z(4){
-}
-void tampilInfo(){
-cout<<"x="<<x<<" y="<<y<<" z="<<z;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Contoh aa;
-aa.tampilInfo();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Memberi nilai default pada constructor, label=contoh6-11]{../code/06-class-object-contoh6-11.c++}
 	
 	\textbf{Hasil:}
 	
@@ -1418,87 +885,13 @@ mengubah nilai dari member function. Sehingga cara yang tepat untuk
 mendeklarasikan asesor method adalah dengan cara memberi kata kunci
 const pada akhir nama method tersebut. Contoh:
 
-\begin{lstlisting}[language=c++, numbers=none]
-//mutator
-void setUmur(int u);
-//asesor
-int getUmur() const;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-35.c++}
 
 \subsubsection*{Contoh  Penggunaan const method.}
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Penggunaan const method, label=contoh6-12]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Kucing{
-private:
-int umur;
-float berat;
-string nama;
-public:
-//konstruktor
-Kucing(int umur);
-Kucing();
-//desktruktor
-~Kucing();
-//asesor method
-int getUmur() const;
-float getBerat() const;
-string getNama() const;
-//mutator method
-void setUmur(int u);
-void setBerat(float b);
-void setNama(string s);
-};
-//implementasi konstruktor dan desktruktor
-Kucing::Kucing(int u){
-this->umur = u;
-}
-Kucing::Kucing(){
-}
-Kucing::~Kucing(){
-cout<<"Obyek sudah dihancurkan!";
-}
-//implementasi function
-int Kucing::getUmur() const{
-return this->umur;
-}
-float Kucing::getBerat() const{
-return this->berat;
-}
-string Kucing::getNama() const{
-return this->nama;
-}
-void Kucing::setUmur(int u){
-this->umur = u;
-}
-void Kucing::setBerat(float b){
-this->berat = b;
-}
-void Kucing::setNama(string s){
-this->nama = s;
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Kucing mycat(2);
-mycat.setNama("Katty");;
-mycat.setBerat(4);
-cout<<"Kucingku bernama "<<mycat.getNama()<<", dia berbobot "<<
-mycat.getBerat()<<" kg dan sudah berumur "<<mycat.getUmur()
-<<" tahun sekarang."<<endl;
-mycat.setUmur(7);
-cout<<"Lima tahun telah berlalu, sekarang kucingku sudah berumur:
-"<<mycat.getUmur()<<" tahun"<<endl;
-Kucing kucingku2;
-kucingku2.setNama("Frizky");
-cout<<"Nama kucing keduaku: "<<kucingku2.getNama();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Penggunaan const method, label=contoh6-12]{../code/06-class-object-contoh6-12.c++}
 
 \textbf{Hasil:}
 \begin{lcverbatim}
@@ -1563,19 +956,7 @@ cara diatas, kita juga bisa mendefinsikan method di dalam class itu
 sendiri secara langsung. Hal tersebut dinamakan inline implementation.
 Contoh inline implementation adalah:
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Manusia{
-private:
-string nama;
-public:
-void setNama(string n){
-    this->nama = n;
-    }
-    string getNama() const{
-    return this->nama;
-    }
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-38.c++}
 
 Pada contoh diatas terlihat bahwa pada class Manusia implementasi kode
 method setNama dan getNama langsung dituliskan didalam program tersebut.
@@ -1585,60 +966,7 @@ Hal itu disebut inline implementation.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Implementasi inline, label=contoh6-13]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Manusia{
-private:
-string nama;
-char jenis_kelamin;
-public:
-//konstruktor
-Manusia(){
-}
-Manusia(string nama){
-this->nama = nama;
-}
-//desktruktor
-~Manusia(){
-}
-//accessor method
-string getNama() const{
-return this->nama;
-}
-char getJenis_Kelamin() const{
-return this->jenis_kelamin;
-}
-//mutator method
-void setNama(string n){
-this->nama = n;
-}
-void setJenis_Kelamin(char jk){
-this->jenis_kelamin = jk;
-}
-//method lain
-    void tampilSemua(){
-cout<<"Nama: "<<this->getNama()<<", "<<
-"Jenis Kelamin: "<<this->getJenis_Kelamin()<<endl;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Manusia suami;
-suami.setNama("Susanto");
-suami.setJenis_Kelamin('L');
-Manusia istri("Susanti");
-istri.setJenis_Kelamin('P');
-Manusia anak("Rudi");
-anak.setJenis_Kelamin('L');
-suami.tampilSemua();
-istri.tampilSemua();
-anak.tampilSemua();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Implementasi inline, label=contoh6-13]{../code/06-class-object-contoh6-13.c++}
 
 \textbf{Hasil:}
 \begin{lcverbatim}
@@ -1680,108 +1008,7 @@ method yang tentunya sangat berguna.
 
 Buatlah program berikut:
 
-\begin{lstlisting}[language=c++, caption=Class Mobil dan Roda, label=contoh6-14]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-using namespace std;
-class Roda{
-private:
-string merk_roda;
-int diameter;
-public:
-Roda(string merk,int diamtr){
-this->diameter = diamtr;
-this->merk_roda = merk;
-}
-Roda(){
-}
-string getMerk(){
-return this->merk_roda;
-}
-int getDiameter(){
-return this->diameter;
-}
-void setMerkRoda(string m){
-this->merk_roda = m;
-}
-void setDiameter(int d){
-this->diameter = d;
-}
-};
-class Mobil{
-private:
-string merk_mobil;
-Roda roda_depan1;
-Roda roda_depan2;
-Roda roda_belakang1;
-Roda roda_belakang2;
-public:
-//konstruktor
-Mobil(){
-}
-Mobil(string merk, Roda roda[4]){
-this->merk_mobil = merk;
-this->roda_depan1 = roda[0];
-this->roda_depan2 = roda[1];
-this->roda_belakang1 = roda[2];
-this->roda_belakang2 = roda[3];
-}
-Mobil(Roda r1, Roda r2, Roda r3, Roda r4){
-this->roda_depan1 = r1;
-this->roda_depan2 = r2;
-this->roda_belakang1 = r3;
-this->roda_belakang2 = r4;
-}
-//desktruktor
-~Mobil(){
-}
-//accessor method
-string getMerkMobil() const{
-return this->merk_mobil;
-    }
-//mutator method
-void setMerkMobil(string m){
-this->merk_mobil = m;
-}
-void setRoda(Roda rd[4]){
-this->roda_depan1 = rd[0];
-this->roda_depan2 = rd[1];
-this->roda_belakang1 = rd[2];
-this->roda_belakang2 = rd[3];
-}
-//method lain
-void tampilRoda(){
-cout<<"Roda depan1:"<<endl;
-cout<<"Merk: "<<this->roda_depan1.getMerk()<<endl;
-cout<<"Diameter: "<<this->roda_depan1.getDiameter()<<endl;
-cout<<"Roda depan2:"<<endl;
-cout<<"Merk: "<<this->roda_depan2.getMerk()<<endl;
-cout<<"Diameter: "<<this->roda_depan2.getDiameter()<<endl;
-cout<<"Roda belakang1:"<<endl;
-cout<<"Merk: "<<this->roda_belakang1.getMerk()<<endl;
-cout<<"Diameter: "<<this->roda_belakang1.getDiameter()<<endl;
-cout<<"Roda belakang2:"<<endl;
-cout<<"Merk: "<<this->roda_belakang2.getMerk()<<endl;
-cout<<"Diameter: "<<this->roda_belakang2.getDiameter()<<endl;
-}
-void tampilSemua(){
-cout<<"Merk: "<<this->getMerkMobil()<<endl;
-this->tampilRoda();
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Roda r1("Bridgestone",40);
-Roda r2("Bridgestone",40);
-Roda r3("Bridgestone",40);
-Roda r4("Bridgestone",40);
-Mobil m1(r1,r2,r3,r4);
-m1.setMerkMobil("Innova");
-m1.tampilSemua();
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Class Mobil dan Roda, label=contoh6-14]{../code/06-class-object-contoh6-14.c++}
 
 \textbf{Hasil:}
 
@@ -1834,122 +1061,7 @@ Merk: Bridgestone
 
 Buatlah program berikut ini:
 
-\begin{lstlisting}[language=c++, caption=Class titik dan Garis, label=class-titik-garis, label=contoh6-15]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-#include <math.h>
-using namespace std;
-class Titik{
-private:
-int x;
-int y;
-public:
-Titik(int x,int y){
-this->x = x;
-this->y = y;
-}
-Titik(){
-}
-int getX(){
-return this->x;
-    }
-int getY(){
-return this->y;
-}
-void setX(int x){
-this->x=x;
-}
-void setY(int y){
-this->y=y;
-}
-//method tambahan
-void printPoint(){
-cout<<"("<<this->x<<" , "<<this->y<<")"<<endl;
-}
-bool isOrigin(){
-return (this->x == 0 && this->y == 0);
-}
-};
-class Garis{
-private:
-Titik p1;
-Titik p2;
-public:
-Garis(int x1,int y1,int x2,int y2) {
-p1.setX(x1);
-p1.setY(y1);
-p2.setX(x2);
-p2.setY(y2);
-}
-Garis(){
-}
-Garis(Titik t1,Titik t2){
-p1=t1;
-p2=t2;
-}
-void setPoint1(Titik p1){
-this->p1 = p1;
-}
-void setPoint2(Titik p2){
-this->p2 = p2;
-}
-void setPoints(Titik p1,Titik p2){
-this->p1 = p1;
-this->p2 = p2;
-}
-Titik getPoint1(){
-return this->p1;
-}
-Titik getPoint2(){
-return this->p2;
-}
-void printLine(){
-cout<<"awal: ";
-this->p1.printPoint();
-    cout<<"akhir: ";
-this->p2.printPoint();
-}
-//Hitung panjang garis
-float getLength(){
-return sqrt((this->p1.getX() - this->p2.getX())*(this->p1.getX() - this-
->p2.getX()) + (this->p1.getY() - this->p2.getY())*(this->p1.getY() - this-
->p2.getY()));
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Titik A(1,1);
-cout<<"A ";
-A.printPoint();
-Titik B(5,1);
-cout<<"B ";
-B.printPoint();
-Titik C(5,6);
-cout<<"C ";
-C.printPoint();
-Titik D(1,6);
-cout<<"D ";
-D.printPoint();
-Garis ab(A,B);
-cout<<"ab ";
-ab.printLine();
-cout<<"Panjang garis ab: "<<ab.getLength()<<endl;
-Garis bc(B,C);
-cout<<"bc ";
-bc.printLine();
-cout<<"Panjang garis bc: "<<bc.getLength()<<endl;
-Garis cd(D,C);
-cout<<"cd ";
-cd.printLine();
-cout<<"Panjang garis cd: "<<cd.getLength()<<endl;
-Garis da(D,A);
-cout<<"da ";
-da.printLine();
-cout<<"Panjang garis da: "<<da.getLength()<<endl;
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Class titik dan Garis, label=class-titik-garis]{../code/06-class-object-class-titik-garis.c++}
 
 \textbf{Hasil:}
 
@@ -2007,24 +1119,7 @@ lain yang berada dalam satu class.
 	
 \textbf{Contoh:}
 	
-\begin{lstlisting}[language=c++, numbers=none]
-class Halaman{
-private:
-int nohal;
-int jenishal;
-//1 -> halaman biasa, 2 -> halaman header
-public:
-Halaman(){
-}
-Halaman(int nohal){
-this->nohal = nohal;
-}
-Halaman(int nohal,int jenishal){
-Halaman(nohal); //memanggil konstruktor Halaman diatasnya!
-this->jenishal = jenishal;
-}
-};
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/06-class-object-code-42.c++}
 	
  Akan menghasilkan error!
 \end{quotation}

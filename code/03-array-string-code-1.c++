@@ -1,0 +1,1 @@
+tipe_data nama_array[ukuran];

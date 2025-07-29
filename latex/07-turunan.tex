@@ -1,95 +1,93 @@
-\textbf{Agenda}
+\textbf{📋 Apa yang akan dipelajari}
 
-Pada bab ini kita akan mempelajari konsep dari Pemrograman Berorientasi Objek
-tentang Pewarisan (Inheritance) seperti berikut ini.
+Pada bab ini kita akan mempelajari konsep Pewarisan (Inheritance) dalam Pemrograman Berorientasi Objek:
+
+\begin{itemize}
+\item Pengenalan inheritance dan konsepnya
+\item Cara membuat kelas turunan
+\item Jenis akses dalam inheritance
+\item Code reuse dan fungsionalitas
+\end{itemize}
 
 \minitoc
 
-\section{Pewarisan (Inheritance)}\label{pewarisan-inheritance}
+\section{🔄 Pewarisan (Inheritance)}\label{pewarisan-inheritance}
 
-Pemrograman Berorientasi Objek mempunyai fitur penting yang memudahkan
-pemrogram dalam membuat program yaitu pewarisan (inheritance). Aspek
-penting pewarisan dalam pemrograman berorientasi objek adalah pemakaian
-kode program yang sudah ada (code reuse), yang akan dibahas pada bab ini
-dan polimorfisme (polymorhism) yang akan dibahas pada bab berikutnya.
-Kelas yang sudah ada dapat digunakan lagi untuk dikembangkan menjadi
-kelas yang baru, dalam hal ini kelas yang sudah ada dinamakan kelas
-dasar (base class) sedang kelas baru yang akan dibuat dinamakan kelas
-turunan (derived class). Dengan demikian, semua anggota kelas dasar yang
-tidak bersifat privat akan diwarisi oleh kelas turunannya dan pemrogram
-tinggal menambahkan anggota-anggota baru untuk menambahkan
-fungsionalitas kelas tersebut.
+\subsection{Apa itu Inheritance?}
 
-\section{Penulisan Penurunan}\label{penulisan-penurunan}
+Pewarisan adalah fitur penting OOP yang memudahkan pemrogram dalam membuat program. Inheritance memungkinkan kita menggunakan kode yang sudah ada (code reuse) dan mengembangkannya menjadi kelas baru.
 
-Untuk membuat kelas turunan dapat dilakukan dengan cara sama seperti
-mendeklarasikan kelas biasa dengan menambahkan titik dua (:) setelah
-nama kelas dan diikuti dengan jenis penurunan (public dsb.) dan nama
-kelas dasar yang akan diturunkan, bentuk umum adalah seperti berikut:
+\subsection{Konsep Inheritance}
 
-\begin{lstlisting}[language=c++, numbers=none]
-class <kelas_turunan> : <jenis_penurunan> <kelas_dasar>
-\end{lstlisting}
+\begin{itemize}
+\item \textbf{Base Class} - kelas yang sudah ada (kelas dasar)
+\item \textbf{Derived Class} - kelas baru yang dibuat dari kelas dasar
+\item \textbf{Code Reuse} - menggunakan kode yang sudah ada
+\item \textbf{Extensibility} - menambah fungsionalitas baru
+\end{itemize}
 
-Sebagai contoh misalnya akan dibuat kelas turunan Silinder dari kelas
-dasar Lingkaran, maka dapat dituliskan :
+\subsection{Cara Kerja Inheritance}
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Silinder : public Lingkaran
-\end{lstlisting}
+\begin{itemize}
+\item Kelas yang sudah ada dapat dikembangkan menjadi kelas baru
+\item Semua anggota kelas dasar (yang tidak private) diwarisi oleh kelas turunan
+\item Pemrogram tinggal menambahkan anggota baru untuk fungsionalitas tambahan
+\item Inheritance akan dibahas bersama dengan polimorfisme di bab berikutnya
+\end{itemize}
 
-Mengenai jenis akses public ini akan dibahas nanti, sekarang kita akan
-memakai public. Kelas dasar yang akan diturunkan harus sudah
-dideklarasikan lebih dahulu, jika tidak maka kita akan menjumpai pesan
-kesalahan kompiler.
+\section{📝 Penulisan Inheritance}\label{penulisan-penurunan}
 
-\subsubsection*{Contoh Pewarisan (Inheritance).}
+\subsection{Sintaks Inheritance}
+
+Untuk membuat kelas turunan, gunakan sintaks yang sama seperti mendeklarasikan kelas biasa dengan menambahkan titik dua (:) setelah nama kelas, diikuti dengan jenis penurunan dan nama kelas dasar.
+
+\subsubsection{Bentuk Umum}
+
+\lstinputlisting[language=c++]{../code/07-turunan-code-1.c++}
+
+\subsubsection{Contoh Inheritance}
+
+Sebagai contoh, jika akan dibuat kelas turunan Silinder dari kelas dasar Lingkaran:
+
+\lstinputlisting[language=c++]{../code/07-turunan-code-2.c++}
+
+\subsection{Penting untuk Diingat}
+
+\begin{itemize}
+\item Jenis akses \textbf{public} akan dibahas lebih detail nanti
+\item Kelas dasar harus sudah dideklarasikan sebelum kelas turunan
+\item Jika tidak, akan muncul pesan kesalahan kompiler
+\end{itemize}
+
+\subsubsection*{💡 Contoh Inheritance}
 
 \begin{enumerate}
-\item Buka Qt Creator dan buat project Qt Console Application baru dengan nama
-Contoh \ref{contoh7-1}, kemudian tulis kode berikut.
+\item Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
+\item Tulis kode berikut:
 
-\lstinputlisting[language=c++, caption=Pewarisan (Inheritance), label=contoh7-1]{../code/contoh7-1.cpp}
+\lstinputlisting[language=c++, caption=Contoh Inheritance, label=contoh7-1]{../code/contoh7-1.cpp}
 
-\item Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya
-adalah sebagai berikut.
+\item Jalankan program dengan menekan Ctrl + R. Outputnya:
 
 \begin{lcverbatim}
 Volume drum = 981250 Cm2
 \end{lcverbatim}
 \end{enumerate}
 
-\subsubsection*{Keterangan Program}
+\subsubsection*{Penjelasan Program}
 
 \begin{itemize}
+\item \textbf{Kelas Lingkaran} - memiliki variabel anggota \texttt{radius} bertipe \texttt{float} dan fungsi \texttt{getLuas()} yang mengembalikan nilai \texttt{float}
 
-\item
-  Pada program diatas sudah dibuat kelas \texttt{Lingkaran}, dengan
-  variabel anggota \texttt{radius} bertipe \texttt{float} dan fungsi
-  anggota \texttt{getLuas()} yang mengembalikan nilai \texttt{float}.
-\item
-  Kelas kedua adalah \texttt{Silinder} yang merupakan turunan dari kelas
-  \texttt{Lingkaran}, oleh karena itu deklarasi dituliskan :
-  \texttt{class\ Silinder\ :\ Lingkaran}, dengan demikian kelas
-  \texttt{Silinder} akan mewarisi anggota kelas \texttt{Lingkaran} yang
-  tidak private, yaitu : variabel anggota \texttt{radius} bertipe
-  \texttt{float} dan fungsi anggota \texttt{getLuas()} yang mengemalikan
-  nilai \texttt{float}.
-\item
-  Tampak pada kelas \texttt{Silinder} ditambahkan variabel anggota
-  tinggi bertipe \texttt{float} dan fungsi anggota \texttt{getVolume()}
-  yang mengembalikan nilai \texttt{float}. Ini memberikan contoh
-  penambahan fungsionalitas dari kelas yang sudah ada.
-\item
-  Pada fungsi anggota \texttt{getVolume()} pada kelas \texttt{Silinder},
-  nilai kembalian dirumuskan \texttt{return\ getLuas()\ *\ tinggi}, ini
-  menjelaskan bahwa fungsi \texttt{getLuas()} tersebut sekarang juga
-  menjadi milik kelas \texttt{Silinder} (\emph{mendapat warisan}).
-\item
-  Pada hasil eksekusi, tampak bahwa fungsi \texttt{getVolume()}
-  menghitung \emph{(3.14 * 50 * 50 )* 125} dan menghasilkan nilai
-  981250. Ini berarti perhitungan \texttt{getLuas()} memakai fungsi
-  anggota milik kelas Lingkaran yang diwariskan kepada kelas Silinder.
+\item \textbf{Kelas Silinder} - turunan dari kelas \texttt{Lingkaran}, ditulis: \texttt{class Silinder : Lingkaran}. Kelas ini mewarisi anggota kelas \texttt{Lingkaran} yang tidak private
+
+\item \textbf{Inheritance} - kelas \texttt{Silinder} mewarisi variabel \texttt{radius} dan fungsi \texttt{getLuas()} dari kelas \texttt{Lingkaran}
+
+\item \textbf{Penambahan Fungsionalitas} - kelas \texttt{Silinder} menambahkan variabel \texttt{tinggi} dan fungsi \texttt{getVolume()}
+
+\item \textbf{Code Reuse} - fungsi \texttt{getVolume()} menggunakan \texttt{getLuas()} yang diwarisi: \texttt{return getLuas() * tinggi}
+
+\item \textbf{Hasil Eksekusi} - program menghitung volume silinder dengan rumus \emph{(3.14 * 50 * 50) * 125} = 981250
 \end{itemize}
 
 \section{Jenis Akses Penurunan Kelas}\label{jenis-akses-penurunan-kelas}
@@ -115,16 +113,7 @@ akan berubah menjadi private di dalam kelas Silinder.
 pada fungsi
 \texttt{main()\ :\ cout\ \textless{}\textless{}\ ``Milik\ Base\ Class\ -\/-\textgreater{}\ ''\ \textless{}\textless{}\ drum.getLuas()\ \textless{}\textless{}\ endl;}
 
-\begin{lstlisting}[language=c++, caption=Jenis Akses Public Pada Penurunan, label=contoh7-2]
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Silinder drum(50,125);
-cout << "Milik Base Class --> " << drum.getLuas() << endl;
-cout << "Volume drum = " << drum.getVolume() << " Cm2" << endl;
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Jenis Akses Public Pada Penurunan, label=contoh7-2]{../code/07-turunan-contoh7-2.c++}
 
 \item Kemudian jalankan kode di atas dengan menekan tombol Ctrl+R, outputnya
 adalah sebagai berikut.
@@ -144,15 +133,11 @@ public.
 Kemudian hapuslah jenis akses penurunan public (atau gantilah dengan
 private) pada deklarasi kelas Silinder yang tadinya:
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Silinder : public Lingkaran
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-2.c++}
 
 Sehingga menjadi:
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Silinder : Lingkaran
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-5.c++}
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka tidak
 akan ada output karena terjadi kesalahan kompilasi sebagai berikut.
@@ -236,9 +221,7 @@ kompilasi dari kode program tersebut. Pada waktu dikompilasi, kompiler
 akan menambahkan konstruktor tanpa parameter yang tidak melakukan
 apa-apa seperti berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-<nama_kelas>(){}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-6.c++}
 
 \subsubsection*{Contoh  Konstruktor default.}
 
@@ -339,10 +322,7 @@ Konstruktor Kelas Dasar dijalankan...
   maka kompiler akan menambahakan konstukor kosong tanpa parameter yang
   memanggil konstruktor kelas dasarnya seperti berikut :
 
-\begin{lstlisting}[language=c++, numbers=none]
-Turunan():Kelasku()\{\} //<-- Konstruktor default kelas
-Turunan
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-7.c++}
   
 \end{itemize}
 
@@ -378,16 +358,12 @@ Seperti pada percobaan contoh \ref{contoh7-4}, kelas Turunan tidak mempunyai
 konstruktor secara eksplisit, sehingga dibuatkan konstruktor oleh
 kompiler berupa :
 
-\begin{lstlisting}[language=c++, numbers=none]
-Turunan():Kelasku(){} //<-- Konstruktor default kelas Turunan
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-8.c++}
 
 Namun masalahnya sekarang pada kelas dasar tidak mempunyai konstruktor
 tanpa parameter seperti itu, sehingga kompiler manampilkan pesan :
 
-\begin{lstlisting}[language=c++, numbers=none]
-no maching function call to 'Kelasku::Kelasku()'
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-9.c++}
 
 Maksud pesan ini adalah bahwa pada kelas Kelasku tidak terdapat
 konstruktor Kelasku() dengan tanpa parameter. Ini juga membuktikan bahwa
@@ -451,9 +427,7 @@ tanpa parameter) pada kelas dasar.
 \item
   Sekarang ubahlah konstruktor kelas Turunan, agar secara eksplisit
   memanggil konstuktor yang ada pada kelas dasar seperti berkut :
-\begin{lstlisting}[language=c++, numbers=none]
-class Turunan : public Kelasku\{ public: //memanggil konstruktor kelas
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-11.c++}
   
 dasar dng sebuah parameter Turunan():Kelasku(``Hallo.. :-)'')\{\} \};
 \end{enumerate}
@@ -583,9 +557,7 @@ hal ini diperlukan suatu cara untuk tetap dapat mengakses anggota milik
 kelas dasar, yaitu dengan cara menyebutkan nama kelas dasar kemudian
 diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
 
-\begin{lstlisting}[language=c++, numbers=none]
-<kelas_dasar>::<anggot
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-12.c++}
 
 \subsubsection*{Contoh  Mengakses metode kelas dasar.}
 
@@ -597,28 +569,7 @@ diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
   \texttt{getVolume()} dan program utama. Berikut ini adalah potongan
   program yang mengalami perubahan saja:
 
-\begin{lstlisting}[language=c++, caption=Mengakses metode kelas dasar, label=contoh7-8]
-public:
-float getLuas(){ //<-- Overriding
-float luasSelimut = 2 * 3.14 * this->radius * this->tinggi;
-float luasSilinder = 2 * Lingkaran::getLuas() + luasSelimut;
-return luasSilinder;
-}
-float getVolume(){ //<-- anggota baru
-//getLuas() milik kelas dasar
-return Lingkaran::getLuas() * tinggi;
-}
-};
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Silinder drum(50,125);
-cout << "Luas Silinder = " << drum.getLuas() << " Cm2" << endl;
-cout << "Milik Base Class --> " << drum.Lingkaran::getLuas() << endl;
-cout << "Volume drum = " << drum.getVolume() << " Cm3" << endl;
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Mengakses metode kelas dasar, label=contoh7-8]{../code/07-turunan-contoh7-8.c++}
 \item
   Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah
   sebagai berikut.
@@ -642,9 +593,7 @@ Volume drum = 981250 Cm3
   penulisan nama metode ditambahkan nama kelas dasar dan dua titik dua
   (::) didepannya seperti berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-drum.Lingkaran::getLuas()
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-14.c++}
 \item
   Pada waktu menghitung \texttt{getLuas()} pada kelas Silinder, bisa
   memanfaatkan metode \texttt{getLuas()} milik kelas dasar dengan cara
@@ -901,16 +850,12 @@ tipe kelas dasar, atau bisa pula di-``down-casted'' menjadi bertipe
 kelas turunan. Jika suatu variabel bertipe kelas dasar diberi nilai
 objek bertipe kelas turunan sebagai berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Kelas_dasar* variabel1 = new Kelas_turunan();
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-15.c++}
 
 Maka tipe data variabel tersebut bisa di-``down-casted'' menjadi tipe
 data kelas turunan dengan cara:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Kelas_turunan* variabel2 = static_cast<Kelas_turunan*>(variabel1);
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/07-turunan-code-16.c++}
 
 \subsubsection*{Contoh  Memakai static\_cast.}
 
@@ -918,17 +863,7 @@ Kelas_turunan* variabel2 = static_cast<Kelas_turunan*>(variabel1);
 \item Jalankan Qt Console Application projek, buka projek bernama contoh \ref{contoh7-13} di
 atas, ubah pada bagian program utama (main()) menjadi seperti berikut:
 
-\begin{lstlisting}[language=c++, caption=Memakai static\_cast, label=contoh7-14]
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Lingkaran* objek1; //<-- variabel pointer bertipe kelas dasar
-objek1 = new Silinder(); //<-- objek bertipe kelas turunan
-objek1->getLuas(); //<-- memanggil metode yang dioverride
-static_cast<Silinder*>(objek1)->getVolume(); //<-- casting mjd Silinder
-return a.exec();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++, caption=Memakai static\_cast, label=contoh7-14]{../code/07-turunan-contoh7-14.c++}
 
 \item Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
 sepeti berikut.

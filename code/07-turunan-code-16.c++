@@ -1,0 +1,1 @@
+Kelas_turunan* variabel2 = static_cast<Kelas_turunan*>(variabel1);

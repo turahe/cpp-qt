@@ -1,0 +1,1 @@
+int fungsiku(int a, int b, int c);

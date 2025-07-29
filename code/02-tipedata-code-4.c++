@@ -1,0 +1,1 @@
+const int usiaku = 42;

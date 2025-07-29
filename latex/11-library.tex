@@ -1,472 +1,132 @@
-\textbf{Agenda}
+\textbf{📋 Apa yang akan dipelajari}
 
-Pada chapter ini kita akan membahas tentang beberapa class khusus yang
-ada pada Qt Core Module yang dapat digunakan untuk melengkapi library
-standar C++ yang sebelumnya sudah kita gunakan. Adapun beberapa topik
-yang akan kita bahas pada chapter ini adalah.
+Pada bab ini kita akan mempelajari tentang Qt Library dan class-class penting yang disediakan oleh Qt:
+
+\begin{itemize}
+\item Qt Core Module dan class-class dasarnya
+\item QObject dan automatic memory management
+\item QString dan manipulasi string
+\item Collection classes (QList, QMap, QStack, QQueue)
+\item Iterator dan cara mengakses data
+\end{itemize}
 
 \minitoc
 
-\section{Qt Library}\label{qt-library-1}
+\section{📚 Pengenalan Qt Library}
 
-Qt SDK menyediakan beberapa class library yang dapat anda gunakan untuk
-mempercepat pembuatan program, misalnya \index{library}library untuk membuat GUI\index{GUI}
-(Graphical User Interface), network programming, dan library untuk
-bekerja dengan \index{XML}XML. Beberapa class library yang disediakan oleh Qt dapat
-dilihat pada gambar \ref{fig:qt-library}.
+\subsection{Apa itu Qt Library?}
 
-\begin{figure}[htbp]
-\centering
-\shadowimage[width=8cm]{qt-library}
-\caption{Class libray yang di sediakan oleh Qt}
-\label{fig:qt-library}
-\end{figure}
-
-
-Pada bab ini kita akan membahas beberapa class dalam Qt Core Module
-yang sering digunakan seperti \index{QObject}QObject, \index{QString}QString 
-dan \index{QStringList}QStringList.
-
-Qt Core Module adalah library yang dibutuhkan oleh setiap aplikasi Qt.
-Qt Core Module sendiri dapat berisi :
+Qt Library adalah kumpulan class-class C++ yang disediakan oleh Qt untuk mempercepat pengembangan aplikasi. Library ini menyediakan berbagai fitur siap pakai seperti:
 
 \begin{itemize}
-
-\item
-  Basic Data Type seperti QString dan \index{QbyteArray}QByteArray.
-\item
-  Basic Data Structure seperti QList, \index{QVector}QVector, dan \index{QHash}QHash.
-\item
-  Input/Output class seperti \index{QIODevice}QIODevice, \index{QTextStream}QTextStream, dan \index{QFile}QFile.
-\item
-  Class untuk pemrograman multithread seperti \index{Qthread}Qthread.
-\item
-  Class Object dan QCoreApplication (base class dari QApplication).
+\item \textbf{GUI Components} - Widget untuk membuat antarmuka grafis
+\item \textbf{Network Programming} - Class untuk komunikasi jaringan
+\item \textbf{Database Access} - Class untuk mengakses database
+\item \textbf{File I/O} - Class untuk membaca dan menulis file
+\item \textbf{Data Structures} - Collection classes untuk menyimpan data
 \end{itemize}
 
-\section{Menurunkan objek dari class QObject}\label{menurunkan-objek-dari-class-qobject}
+\subsection{Keunggulan Qt Library}
 
-QObject class merupakan base class dari sebagian class yang ada di Qt
-library. Dengan menurunkan class dari QObject maka anda dapat
-menggunakan fitur automatic memory management dan mekanisme signal/slot
-yang disediakan oleh Qt.
+\begin{itemize}
+\item \textbf{Cross-platform} - Sama di Windows, Mac, Linux
+\item \textbf{Type-safe} - Mencegah kesalahan tipe data
+\item \textbf{Memory Management} - Otomatis mengelola memory
+\item \textbf{Rich Features} - Banyak fitur siap pakai
+\item \textbf{Documentation} - Dokumentasi lengkap dan contoh
+\end{itemize}
 
-Beberapa class pada Qt yang diturunkan dari class QObject diantaranya
-\index{QWidget}QWidget, \index{QLayout}QLayout, dan \index{QThread}QThread.
-Ada juga class yang tidak diturunkan dari
-class QObject seperti QString dan \index{QColor}QColor.
+\subsection{Qt Core Module}
 
-Gambar \ref{fig:qobjek} menunjukan contoh beberapa class yang diturunkan dari
-QObject.
+Qt Core Module adalah library dasar yang dibutuhkan oleh setiap aplikasi Qt. Module ini berisi:
 
+\begin{itemize}
+\item \textbf{Basic Data Types} - QString, QByteArray, QChar
+\item \textbf{Data Structures} - QList, QVector, QHash, QMap
+\item \textbf{I/O Classes} - QIODevice, QTextStream, QFile
+\item \textbf{Object System} - QObject, QCoreApplication
+\item \textbf{Threading} - QThread untuk pemrograman multi-thread
+\end{itemize}
 
-\begin{figure}
-\centering
-% Graphic for TeX using PGF
-% Title: Diagram 1
-% Creator: Dia v0.97.2
-% CreationDate: Sat Jun 11 20:27:52 2016
-% For: wachid
-% \usepackage{tikz}
-% The following commands are not supported in PSTricks at present
-% We define them conditionally, so when they are implemented,
-% this pgf file will use them.
-\ifx\du\undefined
-  \newlength{\du}
-\fi
-\setlength{\du}{15\unitlength}
-\begin{tikzpicture}
-\pgftransformxscale{1.000000}
-\pgftransformyscale{-1.000000}
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (11.000000\du,8.075000\du)--(11.000000\du,9.975000\du)--(15.350000\du,9.975000\du)--(15.350000\du,8.075000\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (11.000000\du,8.075000\du)--(11.000000\du,9.975000\du)--(15.350000\du,9.975000\du)--(15.350000\du,8.075000\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (13.175000\du,9.220000\du){QObject};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (16.150000\du,8.175000\du)--(16.150000\du,10.075000\du)--(20.000000\du,10.075000\du)--(20.000000\du,8.175000\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (16.150000\du,8.175000\du)--(16.150000\du,10.075000\du)--(20.000000\du,10.075000\du)--(20.000000\du,8.175000\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (18.075000\du,9.320000\du){QString};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (21.100000\du,8.075000\du)--(21.100000\du,9.975000\du)--(25.050000\du,9.975000\du)--(25.050000\du,8.075000\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (21.100000\du,8.075000\du)--(21.100000\du,9.975000\du)--(25.050000\du,9.975000\du)--(25.050000\du,8.075000\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (23.075000\du,9.220000\du){QColor};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (3.750655\du,12.061463\du)--(3.750655\du,13.961463\du)--(8.289956\du,13.961463\du)--(8.289956\du,12.061463\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (3.750655\du,12.061463\du)--(3.750655\du,13.961463\du)--(8.289956\du,13.961463\du)--(8.289956\du,12.061463\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (6.020306\du,13.206463\du){QWidget};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (14.100000\du,11.975000\du)--(14.100000\du,13.925000\du)--(17.950000\du,13.925000\du)--(17.950000\du,11.975000\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (14.100000\du,11.975000\du)--(14.100000\du,13.925000\du)--(17.950000\du,13.925000\du)--(17.950000\du,11.975000\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (16.025000\du,13.145000\du){Qlayout};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (19.196250\du,11.875000\du)--(19.196250\du,13.775000\du)--(23.053750\du,13.775000\du)--(23.053750\du,11.875000\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (19.196250\du,11.875000\du)--(19.196250\du,13.775000\du)--(23.053750\du,13.775000\du)--(23.053750\du,11.875000\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (21.125000\du,13.020000\du){QThread};
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (6.020306\du,12.061463\du)--(6.035153\du,10.979617\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (16.025000\du,11.975000\du)--(16.021616\du,10.914770\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (21.161581\du,11.825142\du)--(21.192952\du,10.967668\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (6.013537\du,11.044464\du)--(21.250000\du,10.925000\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\pgfsetarrowsend{to}
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (12.970149\du,10.954469\du)--(12.954864\du,10.037392\du);
-}
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (13.444269\du,15.929617\du)--(13.444269\du,17.918263\du)--(18.569269\du,17.918263\du)--(18.569269\du,15.929617\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (13.444269\du,15.929617\du)--(13.444269\du,17.918263\du)--(18.569269\du,17.918263\du)--(18.569269\du,15.929617\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (16.006769\du,17.118940\du){QGridLayout};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (5.181785\du,15.998394\du)--(5.181785\du,17.898394\du)--(11.614285\du,17.898394\du)--(11.614285\du,15.998394\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (5.181785\du,15.998394\du)--(5.181785\du,17.898394\du)--(11.614285\du,17.898394\du)--(11.614285\du,15.998394\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (8.398035\du,17.143394\du){QAbstractButton};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (0.263745\du,15.998394\du)--(0.263745\du,17.898394\du)--(3.908745\du,17.898394\du)--(3.908745\du,15.998394\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (0.263745\du,15.998394\du)--(0.263745\du,17.898394\du)--(3.908745\du,17.898394\du)--(3.908745\du,15.998394\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (2.086245\du,17.143394\du){QFrame};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (0.032751\du,19.476778\du)--(0.032751\du,21.376778\du)--(3.923581\du,21.376778\du)--(3.923581\du,19.476778\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (0.032751\du,19.476778\du)--(0.032751\du,21.376778\du)--(3.923581\du,21.376778\du)--(3.923581\du,19.476778\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (1.978166\du,20.621778\du){QLabel};
-\definecolor{dialinecolor}{rgb}{1.000000, 1.000000, 1.000000}
-\pgfsetfillcolor{dialinecolor}
-\fill (5.047598\du,19.476778\du)--(5.047598\du,21.376778\du)--(11.402620\du,21.376778\du)--(11.402620\du,19.476778\du)--cycle;
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetmiterjoin
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (5.047598\du,19.476778\du)--(5.047598\du,21.376778\du)--(11.402620\du,21.376778\du)--(11.402620\du,19.476778\du)--cycle;
-% setfont left to latex
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\node at (8.225109\du,20.621778\du){QPushButton};
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\pgfsetarrowsend{stealth}
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (1.978166\du,19.476778\du)--(1.891703\du,17.875032\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\pgfsetarrowsend{stealth}
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (8.225109\du,19.476778\du)--(8.246725\du,17.961495\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\pgfsetarrowsend{stealth}
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (16.006769\du,15.929617\du)--(16.025000\du,13.925000\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (2.086245\du,15.998394\du)--(2.107861\du,15.108220\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (8.398035\du,15.998394\du)--(8.419651\du,15.108220\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\pgfsetarrowsend{stealth}
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (5.946865\du,15.066042\du)--(6.020306\du,13.961463\du);
-}
-\pgfsetlinewidth{0.100000\du}
-\pgfsetdash{}{0pt}
-\pgfsetdash{}{0pt}
-\pgfsetbuttcap
-{
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetfillcolor{dialinecolor}
-% was here!!!
-\definecolor{dialinecolor}{rgb}{0.000000, 0.000000, 0.000000}
-\pgfsetstrokecolor{dialinecolor}
-\draw (2.079476\du,15.086604\du)--(8.484112\du,15.066042\du);
-}
-\end{tikzpicture}
+\section{🏗️ QObject - Base Class Penting}
 
-\caption{Turunan objek dari class QObject}
-\label{fig:qobjek}
-\end{figure}
+\subsection{Apa itu QObject?}
 
+QObject adalah base class yang sangat penting dalam Qt. Hampir semua class Qt diturunkan dari QObject. Class ini menyediakan:
 
-\section{Automatic Memory Management dengan QObject}\label{automatic-memory-management-dengan-qobject}
+\begin{itemize}
+\item \textbf{Automatic Memory Management} - Otomatis menghapus objek
+\item \textbf{Signal-Slot Mechanism} - Komunikasi antar objek
+\item \textbf{Object Tree} - Hierarki parent-child
+\item \textbf{Event System} - Sistem event handling
+\item \textbf{Property System} - Sistem properti dinamis
+\end{itemize}
 
-Dengan menurunkan class dari QObject anda dapat melakukan automatic
-memory management pada program anda, sehingga kemungkinan terjadi memory
-leak dapat dihindari. Pada contoh \ref{contoh11-1} dibawah ini kita akan membuat dua
-program yang berbeda, program pertama tidak menggunakan QObject dan
-program kedua menggunakan QObject.
+\subsection{Class Hierarchy Qt}
 
-\subsubsection*{Contoh  Alokasi memory dinamis tanpa QObject.}
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Class} & \textbf{Inherits from} & \textbf{Purpose} \\
+\hline
+QObject & - & Base class untuk semua objek Qt \\
+\hline
+QWidget & QObject & Base class untuk GUI widgets \\
+\hline
+QString & - & Class untuk string handling \\
+\hline
+QList & - & Template class untuk list \\
+\hline
+QMap & - & Template class untuk map \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Keuntungan Menggunakan QObject}
 
 \begin{enumerate}
+\item \textbf{Memory Safety} - Tidak perlu manual delete
+\item \textbf{Object Tree} - Parent-child relationship
+\item \textbf{Signal-Slot} - Event-driven programming
+\item \textbf{Properties} - Dynamic property system
+\item \textbf{Events} - Event handling system
+\end{enumerate}
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-1}, kemudian tulis kode berikut.
+\section{🧠 Automatic Memory Management}
 
-\begin{lstlisting}[language=c++, caption= Alokasi memory dinamis tanpa QObject, label=contoh11-1]
-#include <QtCore/QCoreApplication>
-#include <iostream>
-#include <string>
-using namespace std;
-class Mahasiswa
-{
-public:
-Mahasiswa(const string &nim);
-~Mahasiswa();
-const string &nim() const;
-void setNim(const string &nim);
-int getNimLength() const;
-private:
-string _nim;
-};
-Mahasiswa::Mahasiswa(const string &nim)
-{
-_nim = nim;
-}
-Mahasiswa::~Mahasiswa()
-{
-cout << "destroy object" << endl;
-}
-const string &Mahasiswa::nim() const
-{
-return _nim;
-}
-void Mahasiswa::setNim(const string &nim)
-{
-_nim = nim;
-}
-int Mahasiswa::getNimLength() const
-{
-return _nim.length();
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-Mahasiswa *objMhs1,*objMhs2,*objMhs3;
-objMhs1 = new Mahasiswa("22002321");
-objMhs2 = new Mahasiswa("22002322");
-objMhs3 = new Mahasiswa("22002323");
-cout << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar" << endl;
-objMhs1->setNim(objMhs2->nim());
-objMhs2->setNim(objMhs3->nim());
-cout << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar" << endl;
-cout << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar" << endl;
-cout << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar" << endl;
-delete objMhs1;
-delete objMhs2;
-delete objMhs3;
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
-  
+\subsection{Masalah Memory Management}
+
+Dalam C++ tradisional, programmer harus manual mengelola memory:
+\begin{itemize}
+\item \textbf{Memory Leak} - Lupa delete objek
+\item \textbf{Dangling Pointer} - Pointer ke objek yang sudah dihapus
+\item \textbf{Double Delete} - Menghapus objek yang sudah dihapus
+\item \textbf{Complex Management} - Sulit dalam aplikasi besar
+\end{itemize}
+
+\subsection{QObject Memory Management}
+
+QObject menyediakan automatic memory management:
+
+\begin{itemize}
+\item \textbf{Parent-Child Relationship} - Objek child dihapus otomatis
+\item \textbf{Object Tree} - Hierarki objek yang terorganisir
+\item \textbf{Automatic Cleanup} - Tidak perlu manual delete
+\item \textbf{Stack-based Parent} - Parent disimpan di stack
+\end{itemize}
+
+\subsection{Contoh Memory Management}
+
+\subsubsection{❌ Tanpa QObject (Manual Management)}
+
+\begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
+
+\lstinputlisting[language=c++, caption=Alokasi memory dinamis tanpa QObject, label=contoh11-1]{../code/11-library-contoh11-1.c++}
+
+\item Jalankan program dan perhatikan output:
+
 \begin{lcverbatim}
 22002321 : 8 kar
 22002322 : 8 kar
@@ -478,79 +138,23 @@ destroy object
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Analisis Program:}
 \begin{itemize}
-
-\item
-  Class Mahasiswa yang kita buat diatas tidak diturunkan dari class
-  QObject, sehingga kita harus menghapus memory di heap yang sudah tidak
-  digunakan kembali secara manual untuk menghindari memory leak.
-\item
-  Penanganan secara manual menuntut programmer untuk lebih teliti dan
-  akan menyulitkan bila membangun aplikasi yang kompleks dan memiliki
-  banyak objek.
+\item Class Mahasiswa tidak diturunkan dari QObject
+\item Harus manual delete setiap objek
+\item Risk memory leak jika lupa delete
+\item Sulit dalam aplikasi kompleks
 \end{itemize}
 
-\subsubsection*{Contoh  Alokasi memory dinamis dengan QObject.}
+\subsubsection{✅ Dengan QObject (Automatic Management)}
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-2}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Alokasi memory dinamis dengan QObject, label=contoh11-2]{../code/11-library-contoh11-2.c++}
 
-\begin{lstlisting}[language=c++, caption=Alokasi memory dinamis dengan QObject, label=contoh11-2]
-#include <QtCore/QCoreApplication>
-#include <QObject>
-#include <QDebug>
-using namespace std;
-class Mahasiswa : QObject
-{
-public:
-Mahasiswa(const QString &nim,QObject *parent=0);
-const QString &nim() const;
-void setNim(const QString &nim);
-int getNimLength() const;
-private:
-QString _nim;
-};
-Mahasiswa::Mahasiswa(const QString &nim, QObject *parent)
-{
-_nim = nim;
-}
-const QString &Mahasiswa::nim() const
-{
-return _nim;
-}
-void Mahasiswa::setNim(const QString &nim)
-{
-_nim = nim;
-}
-int Mahasiswa::getNimLength() const
-{
-return _nim.length();
-}
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QObject parent;
-Mahasiswa *objMhs1,*objMhs2,*objMhs3;
-objMhs1 = new Mahasiswa("22002321", &parent);
-objMhs2 = new Mahasiswa("22002322", &parent);
-objMhs3 = new Mahasiswa("22002323", &parent);
-qDebug() << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar";
-objMhs1->setNim(objMhs2->nim());
-objMhs2->setNim(objMhs3->nim());
-qDebug() << objMhs1->nim() << " : " << objMhs1->getNimLength() << " kar";
-qDebug() << objMhs2->nim() << " : " << objMhs2->getNimLength() << " kar";
-qDebug() << objMhs3->nim() << " : " << objMhs3->getNimLength() << " kar";
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
 "22002321"  :  8  kar
@@ -560,323 +164,222 @@ return a.exec();
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Analisis Program:}
 \begin{itemize}
-
-\item
-  Untuk menggunakan QObject anda harus menambahkan header file .
-\item
-  Karena class Mahasiswa diturunkan dari class QObject, maka secara
-  otomatis class Mahasiswa dapat menggunakan fitur automatic memory
-  management.
-\item
-  Dengan menggunakan class QObject dalam aplikasi, anda tidak perlu
-  mendelete satu-persatu object yang anda buat, karena QObject akan
-  secara otomatis melakukannya untuk anda.
-\item
-  Method qDebug() lebih disarankan untuk menampilkan input dibandingkan
-  dengan cout, hasil output dari qDebug() lebih kompatibel disemua
-  platform. Dan dengan qDebug() anda tidak perlu menambahkan stl untuk
-  menambahkan enter.
+\item Class Mahasiswa diturunkan dari QObject
+\item Memory dihapus otomatis saat program selesai
+\item Tidak perlu manual delete
+\item Lebih aman dan mudah
 \end{itemize}
 
-QObject akan disimpan pada stack memory sebagai parent, ketika QObject
-di hapus semua child dari QObject akan ikut dihapus juga. seperti pada ilustrasi
-gambar \ref{fig:capture11-1}.
+\subsection{Parent-Child Relationship}
 
-\begin{figure}
-\centering
-\shadowimage[width=8cm]{Capture11-1}
-\caption{QObject akan disimpan pada stack memory sebagai parent}
-\label{fig:capture11-1}
-\end{figure}
+QObject menggunakan sistem parent-child untuk memory management:
 
+\begin{itemize}
+\item \textbf{Parent} - Objek yang memiliki child
+\item \textbf{Child} - Objek yang dimiliki parent
+\item \textbf{Automatic Deletion} - Child dihapus saat parent dihapus
+\item \textbf{Object Tree} - Hierarki objek yang terorganisir
+\end{itemize}
 
+\section{📝 QString - String Handling}
 
+\subsection{Mengapa Menggunakan QString?}
 
-\section{Menggunakan Qt String}\label{menggunakan-qt-string}
+QString adalah class untuk menangani string dalam Qt. Keunggulannya:
 
-Salah satu langkah yang harus dilakukan jika anda mengembangkan aplikasi
-berbasis Qt adalah ganti semua STL (standar class library) C++ dengan
-class pada Qt (walaupun anda tetap dapat menggunakan STL). Keuntungan
-menggunakan class-class yang ada pada Qt adalah lebih kompatibel jika
-anda berpidah platform.
+\begin{itemize}
+\item \textbf{Unicode Support} - Mendukung semua bahasa
+\item \textbf{Rich Features} - Banyak method untuk manipulasi
+\item \textbf{Cross-platform} - Sama di semua platform
+\item \textbf{Type-safe} - Mencegah kesalahan tipe data
+\item \textbf{Performance} - Optimized untuk Qt
+\end{itemize}
 
-STL C++ yang paling sering digunakan adalah string, pada Qt anda dapat
-menggunakan QString. Anda dapat menggabungkan penggunaan string dan
-QString, namun QString akan lebih baik secara performa dan memiliki
-lebih banyak fitur, misal QString sudah mendukung unicode pada semua
-platform yang memudahkan membuat aplikasi dalam bahasa yang berbeda.
+\subsection{Perbandingan QString vs std::string}
 
-Penggunaan fungsi-fungsi yang dimiliki oleh QString akan dibahas pada
-contoh program dibawah ini.
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Aspek} & \textbf{QString} & \textbf{std::string} \\
+\hline
+Unicode & Full support & Limited \\
+\hline
+Qt Integration & Native & Requires conversion \\
+\hline
+Platform & Cross-platform & Platform dependent \\
+\hline
+Features & Rich & Basic \\
+\hline
+Performance & Optimized & Standard \\
+\hline
+\end{tabular}
+\end{center}
 
-\subsubsection*{Contoh  Cek apakah nilai QString Null atau Empty}
+\subsection{Basic String Operations}
+
+\subsubsection{Checking String Properties}
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-3}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Cek apakah nilai QString Null atau Empty, label=contoh11-3]{../code/11-library-contoh11-3.c++}
 
-\begin{lstlisting}[language=c++, caption= Cek apakah nilai QString Null atau Empty, label=contoh11-3]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-//deklarasi string
-QString nama = "Erick Kurniawan";
-qDebug() << nama;
-//cek ukuran string
-int ukuran = nama.size();
-qDebug() << "Ukuran string " << ukuran;
-QString test = "";
-//cek apakah string null
-if(test.isNull())
-qDebug() << "test null";
-else
-qDebug() << "test not null";
-//cek apakah string empty
-if(test.isEmpty())
-qDebug() << "test empty";
-else
-qDebug() << "test not empty";
-QString testing;
-//cek apakah string null
-if(testing == QString::null)
-qDebug() << "testing null";
-else
-qDebug() << "testing not null";
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
-  \begin{lcverbatim}
+\begin{lcverbatim}
 "Erick Kurniawan"
 Ukuran string  15
 test not null
 test empty
 testing null
-  \end{lcverbatim}
+\end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Method yang Digunakan:}
 \begin{itemize}
-
-\item
-  Class QString memiliki method size untuk mengetahui ukuran panjang
-  string.
-\item
-  Method isNull() dapat digunakan untuk memeriksa apakah string masih
-  belum diinisialisasi.
-\item
-  Method isEmpty() dapat digunakan untuk memeriksa apakah string kosong.
+\item \textbf{size()} - Mendapatkan panjang string
+\item \textbf{isNull()} - Cek apakah string belum diinisialisasi
+\item \textbf{isEmpty()} - Cek apakah string kosong
+\item \textbf{length()} - Mendapatkan jumlah karakter
 \end{itemize}
 
-\subsubsection*{Contoh  Menggunakan Fungsi Left, Mid, Right.}
+\subsubsection{String Extraction}
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-4}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Menggunakan Fungsi Left Mid Right, label=contoh11-4]{../code/11-library-contoh11-4.c++}
 
-\begin{lstlisting}[language=c++,caption= Menggunakan Fungsi Left Mid Right, label=contoh11-4]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QString nama = "Erick Kurniawan";
-//menggunakan fungsi left, mid, dan right
-QString firstName = nama.left(5);
-qDebug() << "firstName : " << firstName;
-QString lastName = nama.right(9);
-qDebug() << "lastName : " << lastName;
-QString midName = nama.mid(6,5);
-qDebug() << "midName : " << midName;
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
-  \begin{lcverbatim}
+\begin{lcverbatim}
 firstName :  "Erick"
 lastName :  "Kurniawan"
 midName :  "Kurni"
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Method yang Digunakan:}
 \begin{itemize}
-
-\item
-  Class QString memiliki fungsi left() untuk mengambil sejumlah karakter
-  tertentu dari kiri.
-\item
-  Fungsi right() digunakan untuk mengambil sejumlah karakter tertentu
-  dari kanan.
-\item
-  Fungsi mid() digunakan untuk mengambil sejumlah karakter tertentu dari
-  tengah.
+\item \textbf{left(n)} - Ambil n karakter dari kiri
+\item \textbf{right(n)} - Ambil n karakter dari kanan
+\item \textbf{mid(pos, n)} - Ambil n karakter dari posisi pos
+\item \textbf{mid(pos)} - Ambil semua karakter dari posisi pos
 \end{itemize}
 
-\subsubsection*{Contoh Menggabungkan String.}
+\subsubsection{String Concatenation}
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-5}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Menggabungkan String, label=contoh11-5]{../code/11-library-contoh11-5.c++}
 
-\begin{lstlisting}[language=c++, caption= Menggabungkan String, label=contoh11-5]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QString nama = "Slamet ";
-nama.append("");
-nama.append(",BA");
-nama.prepend("Pak. ");
-qDebug() << "Nama : " << nama;
-nama.insert(16,",SE");
-qDebug() << nama;
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
-  
-  \begin{lcverbatim}
+\item Jalankan program dan perhatikan output:
+
+\begin{lcverbatim}
 Nama :  "Pak. Slamet ,BA"
 "Pak. Slamet ,BA ,SE"
-  \end{lcverbatim}
+\end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Method yang Digunakan:}
 \begin{itemize}
-
-\item
-  Fungsi append() dapat digunakan untuk menambahkan katrakter di akhir
-  string.
-\item
-  Fungsi prepend() dapat digunakan untuk menambahkan karakter di awal
-  string.
-\item
-  Fungsi insert() dapat digunakan untuk menyisipkan karakter dengan
-  index tertentu pada string.
+\item \textbf{append(str)} - Tambah string di akhir
+\item \textbf{prepend(str)} - Tambah string di awal
+\item \textbf{insert(pos, str)} - Sisip string di posisi tertentu
+\item \textbf{operator+()} - Gabung string dengan operator +
 \end{itemize}
 
-\subsubsection*{Contoh  Membalik String.}
+\subsubsection{String Reversal}
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-6}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Membalik String, label=contoh11-6]{../code/11-library-contoh11-6.c++}
 
-\begin{lstlisting}[language=c++, caption= Membalik String, label=contoh11-6]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QString nama = "Nur Wachid";
-QString balik;
-for(int i=nama.length()-1;i>=0;i--)
-{
-balik+=nama[i];
-}
-qDebug() << "Balik : " << balik;
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
-  \begin{lcverbatim}
+\begin{lcverbatim}
 Balik :  "dihcaW ruN"
-  \end{lcverbatim}
+\end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
+\textbf{Method yang Digunakan:}
+\begin{itemize}
+\item \textbf{operator[]()} - Akses karakter dengan index
+\item \textbf{size()} - Mendapatkan panjang string
+\item \textbf{Manual Loop} - Loop untuk membalik string
+\end{itemize}
 
-  Karena \index{QString}QString adalah array of \index{QChar}QChar anda dapat mengambil karakter
-  dari QString menggunakan index array, misal pada contoh \ref{contoh11-6} diatas
-  nama{[}i{]} akan menghasilkan karakter pada index ke-i.
+\subsection{Advanced String Operations}
 
-\begin{quotation}
-{\LARGE \ding{46}}  	\textbf{TIPS} 
-	
-	Anda dapat
-	menggunakan method\texttt{ toStdString()} dan \texttt{fromStdString()} untuk mengkonversi
-	dari string ke QString dan sebaliknya.
-\end{quotation}
- 
+\subsubsection{String Conversion}
 
-\section{Collection dan Iterator}\label{collection-dan-iterator}
+\begin{itemize}
+\item \textbf{toStdString()} - Konversi ke std::string
+\item \textbf{fromStdString()} - Konversi dari std::string
+\item \textbf{toInt()} - Konversi ke integer
+\item \textbf{toDouble()} - Konversi ke double
+\item \textbf{toLower()} - Konversi ke huruf kecil
+\item \textbf{toUpper()} - Konversi ke huruf besar
+\end{itemize}
 
-Qt Core Module juga memiliki class-class collection seperti : list,
-stack, queue, map, dan hash list. Untuk mengakses data pada object
-collection anda dapat menggunakan Iterator.
+\subsubsection{String Searching}
 
-\subsection{Menggunakan QList}\label{menggunakan-qlist}
+\begin{itemize}
+\item \textbf{contains()} - Cek apakah string mengandung substring
+\item \textbf{indexOf()} - Cari posisi substring
+\item \textbf{lastIndexOf()} - Cari posisi terakhir substring
+\item \textbf{startsWith()} - Cek apakah string dimulai dengan substring
+\item \textbf{endsWith()} - Cek apakah string diakhiri dengan substring
+\end{itemize}
 
-Class QList dapat digunakan untuk membuat type safe object list untuk
-menyimpan data collection. Untuk mempermudah mengakses semua data pada
-list anda dapat menggunakan keywor foreach. Dengan QList anda dapat
-menambahkan data secara dinamis dan anda juga dapat menentukan tipe data
-ketika mendeklatasikan QList (type safe object) sehingga bila nanti
-objek yang anda buat diberi nilai yang tipenya berbeda dengan tipe data
-yang ditentukan program dapat mendeteksi kesalahan tersebut pada saat
-compile time. Misal jika anda medeklarasikan QList dengan tipe data
-QString (QList) maka anda tidak dapat memasukan nilai bertipe int
-kedalam list tersebut.
+\section{📦 Collection Classes}
 
-\subsubsection*{Contoh Menggunakan QList.}
+\subsection{Apa itu Collection Classes?}
+
+Collection classes adalah class-class untuk menyimpan dan mengelola kumpulan data. Qt menyediakan berbagai collection yang type-safe dan optimized.
+
+\subsection{Jenis Collection Classes}
+
+\begin{itemize}
+\item \textbf{QList} - Dynamic array, paling umum digunakan
+\item \textbf{QVector} - Array dengan akses cepat
+\item \textbf{QLinkedList} - Linked list untuk operasi insert/delete
+\item \textbf{QMap} - Key-value pair, terurut
+\item \textbf{QHash} - Key-value pair, tidak terurut, lebih cepat
+\item \textbf{QSet} - Set of unique values
+\item \textbf{QStack} - LIFO (Last In First Out)
+\item \textbf{QQueue} - FIFO (First In First Out)
+\end{itemize}
+
+\subsection{QList - Dynamic Array}
+
+QList adalah collection yang paling sering digunakan. Keunggulannya:
+
+\begin{itemize}
+\item \textbf{Dynamic Size} - Ukuran berubah otomatis
+\item \textbf{Fast Access} - Akses elemen dengan index
+\item \textbf{Type-safe} - Mencegah kesalahan tipe data
+\item \textbf{Rich API} - Banyak method untuk manipulasi
+\end{itemize}
+
+\subsubsection{Basic QList Operations}
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-7}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Menggunakan QList, label=contoh11-7]{../code/11-library-contoh11-7.c++}
 
-\begin{lstlisting}[language=c++, caption=Menggunakan QList,label=contoh11-7]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QList<QString> lstNama;
-lstNama << "Erick" << "Anton" << "Katon" << "Budi";
-//mengakses data berdasarkan index tertentu
-qDebug() << lstNama[0];
-//akan menghasilkan error karena tipe bukan string
-//lstNama << 12 << 13;
-//membaca dan menampilkan semua data pada list
-foreach (QString nama, lstNama) {
-qDebug() << nama;
-}
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
-  
+\item Jalankan program dan perhatikan output:
+
 \begin{lcverbatim}
 "Erick"
 "Erick"
@@ -886,57 +389,27 @@ return a.exec();
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Method yang Digunakan:}
 \begin{itemize}
-
-\item
-  Pertama kita mendeklarasikan objek lstNama yang bertipe QList,
-  kemudian objek lstNama diberi beberapa data.
-\item
-  Untuk mengakses data yang ada pada lstNama anda dapat menggunakan
-  keyword foreach Iterators
+\item \textbf{append()} - Tambah elemen di akhir
+\item \textbf{prepend()} - Tambah elemen di awal
+\item \textbf{insert()} - Sisip elemen di posisi tertentu
+\item \textbf{foreach} - Loop untuk mengakses semua elemen
 \end{itemize}
 
-Selain menggunakan keyword foreach untuk mengakses data pada list anda
-juga dapat menggunakan iterator. Pada program dibawah ini ditunjukan
-penggunaan iterator dengan QListIterator untuk mengakses data yang ada
-pada QList.
+\subsection{Iterator - Mengakses Data}
 
-\subsubsection*{Contoh  Menggunakan object Iterator.}
+Iterator adalah cara untuk mengakses data dalam collection secara berurutan.
+
+\subsubsection{QListIterator - Read-only Iterator}
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-8}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Menggunakan object Iterator, label=contoh11-8]{../code/11-library-contoh11-8.c++}
 
-\begin{lstlisting}[language=c++, caption=Menggunakan object Iterator, label=contoh11-8]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QList<int> lstNumber;
-lstNumber << 12 << 24 << 36 << 48 << 60;
-//menggunakan iterator
-QListIterator<int> iter(lstNumber);
-while(iter.hasNext())
-{
-qDebug() << iter.next();
-}
-//cara lain dengan cara STL
-QList<int>::const_iterator stlIter;
-for(stlIter=lstNumber.begin();stlIter!=lstNumber.end();++stlIter)
-{
-qDebug() << (*stlIter);
-}
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
 12
@@ -952,62 +425,23 @@ return a.exec();
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Method Iterator:}
 \begin{itemize}
-
-\item
-  QListIterator digunakan untuk mengakses data yang ada pada QList.
-\item
-  Method hasNext() pada iterator digunakan untuk mendeteksi apakah masih
-  ada data di dalam QList dan method next() pada iterator digunakan
-  untuk berpindah data.
-\item
-  Cara kedua untuk membaca data pada QList adalah dengan menggunakan
-  const iterator
+\item \textbf{hasNext()} - Cek apakah masih ada elemen berikutnya
+\item \textbf{next()} - Pindah ke elemen berikutnya
+\item \textbf{hasPrevious()} - Cek apakah masih ada elemen sebelumnya
+\item \textbf{previous()} - Pindah ke elemen sebelumnya
 \end{itemize}
 
-\subsection{QList::const\_iterator}
-
-Selain untuk membaca data pada list, iterator juga dapat digunakan untuk
-memodifikasi data di list, caranya yaitu dengan menggunakan objek
-QMutableListIterator. Contoh penggunaan \index{QMutableListIterator}QMutableListIterator dapat
-dilihat pada kode dibawah ini.
-
-\subsubsection*{Contoh  Menggunakan Iterator untuk memodifikasi data di list.}
+\subsubsection{QMutableListIterator - Modifiable Iterator}
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-9}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Menggunakan Iterator untuk memodifikasi data di list, label=contoh11-9]{../code/11-library-contoh11-9.c++}
 
-\begin{lstlisting}[language=c++, caption= Menggunakan Iterator untuk memodifikasi data di list, label=contoh11-9]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QList<QString> lstNama;
-lstNama << "Erick" << "Anton" << "Katon" << "Ricky";
-QMutableListIterator<QString> iter(lstNama);
-while(iter.hasNext())
-{
-if(iter.next().toLower().contains("rick"))
-{
-iter.setValue("update data..");
-}
-}
-//baca data setelah diupdate
-foreach (QString nama, lstNama) {
-qDebug() << nama;
-}
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
 "update data.."
@@ -1017,62 +451,24 @@ return a.exec();
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Method Mutable Iterator:}
 \begin{itemize}
-
-\item
-  Dengan menggunakan QMutableListIterator anda dapat memodifikasi data
-  yang anda akses dengan menggunakan iterator.
-\item
-  Pada program diatas list akan dibaca dan akan dicari data yang
-  mengandung kata ``rick'', kemudian data yang mengandung kata tersebut
-  akan diganti dengan kata ``update data..''.
-\item
-  Setelah selesai dimodifikasi dengan iterator data akan dibaca kembali
-  menggunakan foreach, dan anda dapat melihat bahwa ada 2 data yang
-  sudah berubah isinya.
+\item \textbf{setValue()} - Ubah nilai elemen saat ini
+\item \textbf{insert()} - Sisip elemen baru
+\item \textbf{remove()} - Hapus elemen saat ini
 \end{itemize}
 
-\section{Menambahkan Data pada List}\label{menambahkan-data-pada-list}
+\subsection{Adding Data to List}
 
-Ada beberapa cara yang dapat digunakan untuk menambahkan data ke list.
-Anda dapat menambahkan data diawal, diakhir, atau ditengah list.
-Beberapa cara penulisan kode untuk menambahkan list adalah sebagai
-berikut.
-
-\subsubsection*{Contoh Beberapa cara menambahkan data ke list}
+Ada berbagai cara untuk menambahkan data ke QList:
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-10}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Beberapa cara menambahkan data ke list, label=contoh11-10]{../code/11-library-contoh11-10.c++}
 
-\begin{lstlisting}[language=c++, caption= Beberapa cara menambahkan data ke list, label=contoh11-10]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QList<QString> lstNama;
-//menambahkan data di akhir list
-lstNama << "erick";
-lstNama.append("katon");
-//menambahkan data di awal list
-lstNama.prepend("anton");
-//menambahkan data pada index tertentu
-lstNama.insert(2,"budi");
-lstNama.insert(4,"naren");
-foreach (QString nama, lstNama) {
-qDebug() << nama;
-}
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
 "anton"
@@ -1083,70 +479,26 @@ return a.exec();
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Cara Menambah Data:}
 \begin{itemize}
-
-\item
-  Keyword \textless{}\textless{} dan method append digunakan untuk
-  manambahkan data di akhir list.
-\item
-  Method prepend digunakan untuk menambahkan data di awal list.
-\item
-  Method insert digunakan untuk menambahkan data pada index tertentu di
-  list.
+\item \textbf{append()} - Tambah di akhir list
+\item \textbf{prepend()} - Tambah di awal list
+\item \textbf{insert()} - Sisip di posisi tertentu
+\item \textbf{operator<<()} - Operator untuk append
+\item \textbf{push_back()} - Tambah di akhir (STL style)
 \end{itemize}
 
-\section{Tipe List yang Lain}\label{tipe-list-yang-lain}
+\subsection{QStringList - Special String List}
 
-Selain menggunakan QList anda juga dapat menggunakan objek collection
-yang lain seperti \index{QVector}QVector dan \index{QLinkedList}QLinkedList. Perbandingan performa dari
-ketiga jenis collection diatas dapat dilihat pada table berikut.
-
-\section{Special List}\label{special-list}
-
-Selain untuk tipe data yang umum Qt juga menyediakan collection untuk
-tipe data khusus seperti QStringList.
-
-Class \index{QStringList}QStringList diturunkan dari \index{QList}QList dan mempunyai banyak tambahan
-fungsi yang berguna untuk memanipulasi data di dalam QStringList.
-
-\subsubsection*{Contoh Menggunakan QStringList}
+QStringList adalah class khusus untuk list of strings. Class ini diturunkan dari QList dan memiliki method tambahan untuk manipulasi string.
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-11}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Menggunakan QStringList, label=contoh11-11]{../code/11-library-contoh11-11.c++}
 
-\begin{lstlisting}[language=c++, caption=Menggunakan QStringList,label=contoh11-11]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-#include <QStringList>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QStringList lstKota;
-lstKota << "Jogjakarta" << "Jakarta" << "Bandung" << "Semarang";
-//menggabungkan string dengan tanda ',' sebagai pemisah
-QString gabung = lstKota.join(",");
-qDebug() << gabung;
-//memecah string menjadi QStringList
-QStringList listSplit = gabung.split(",");
-foreach (QString kota, listSplit) {
-qDebug() << kota;
-}
-//mengganti elenet dalam array
-listSplit.replaceInStrings("a","aaa");
-foreach (QString kota, listSplit) {
-qDebug() << kota;
-}
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
 "Jogjakarta,Jakarta,Bandung,Semarang"
@@ -1161,81 +513,32 @@ return a.exec();
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
-
+\textbf{Method QStringList:}
 \begin{itemize}
-
-\item
-  Dengan menggunakan list QStringList anda akan lebih mudah untuk
-  memanipulasi list yang bertipe string, misalnya anda ingin
-  menggabungkan semua data di dalam list tersebut dengan karakter
-  tertentu menjadi satu string, atau sebaliknya memecah string
-  berdasarkan karakter tententu kemudian datanya dimasukan kedalam list.
-\item
-  Untuk memecah string berdasarkan karakter tertentu untuk dimasukan
-  kedalam list anda dapat menggunakan method split().
-\item
-  Untuk menggabungkan data yang ada di dalam list dengan karakter
-  tertentu menjadi sebuah string anda dapat menggunakan method join().
-\item
-  Pada kode diatas data pada lstKota digabungkan dengan menggunakan
-  karakter `,' menjadi string gabung.
-\item
-  Pada kode diatas list lstSplit diisi data hasil pemecahan string
-  gabung, pemecahan string berdasarkan karakter `,'
+\item \textbf{split()} - Pecah string berdasarkan delimiter
+\item \textbf{join()} - Gabung list menjadi string
+\item \textbf{replaceInStrings()} - Ganti substring dalam semua elemen
+\item \textbf{filter()} - Filter elemen berdasarkan kondisi
 \end{itemize}
 
-\section{Stack dan Queue}\label{stack-dan-queue}
+\section{🗂️ Stack dan Queue}
 
-Jika anda ingin menyimpan data pada collection dengan metode \index{FIFO}FIFO (first
-in first out) atau \index{LIFO}LIFO (last in first out) maka anda dapat menggunakan
-class QStack dan QQueue. Untuk FIFO anda dapat menggunakan QQueue dan
-untuk LIFO anda dapat menggunakan QStack.
+\subsection{Stack - LIFO (Last In First Out)}
 
-\subsection*{Contoh Menggunakan Stack dan Queue.}
+QStack adalah collection yang menggunakan prinsip LIFO. Elemen terakhir yang masuk akan keluar pertama.
+
+\subsection{Queue - FIFO (First In First Out)}
+
+QQueue adalah collection yang menggunakan prinsip FIFO. Elemen pertama yang masuk akan keluar pertama.
 
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-12}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Menggunakan Stack dan Queue, label=contoh11-12]{../code/11-library-contoh11-12.c++}
 
-\begin{lstlisting}[language=c++, caption=Menggunakan Stack dan Queue, label=contoh11-12]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-#include <QStack>
-#include <QQueue>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QStack<QString> lstStack;
-lstStack.push("17rick");
-lstStack.push("anton");
-lstStack.push("katon");
-lstStack.push("budi");
-//order LIFO
-qDebug() << "Stack LIFO : ";
-while(!lstStack.isEmpty())
-{
-qDebug() << lstStack.pop();
-}
-QQueue<QString> lstQueue;
-lstQueue.enqueue("17rick");
-lstQueue.enqueue("anton");
-lstQueue.enqueue("katon");
-lstQueue.enqueue("budi");
-//order FIFO
-qDebug() << "Queue FIFO : ";
-while(!lstQueue.isEmpty())
-{
-qDebug() << lstQueue.dequeue();
-}
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
+
 \begin{lcverbatim}
 Stack LIFO : 
 "budi"
@@ -1250,67 +553,48 @@ Queue FIFO :
 \end{lcverbatim}
 \end{enumerate}
 
-\textbf{Keterangan:}
+\textbf{Perbedaan Stack dan Queue:}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Aspek} & \textbf{QStack (LIFO)} & \textbf{QQueue (FIFO)} \\
+\hline
+Prinsip & Last In First Out & First In First Out \\
+\hline
+Add & push() & enqueue() \\
+\hline
+Remove & pop() & dequeue() \\
+\hline
+Peek & top() & head() \\
+\hline
+Use Case & Undo/Redo & Task Queue \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{🗺️ QMap - Key-Value Pair}
+
+\subsection{Apa itu QMap?}
+
+QMap adalah collection yang menyimpan data dalam bentuk key-value pair. Setiap elemen memiliki key unik dan value yang terkait.
+
+\subsection{Keunggulan QMap}
 
 \begin{itemize}
-
-\item
-  Untuk menyimpan data dengan metode \index{LIFO}LIFO (Last In First Out) anda dapat
-  menggunakan \index{QStack}QStack.
-\item
-  Untuk menambahkan data kedalam QStack digunakan method push()
-  sedangkan untuk mengambil data dari QStack dapat menggunakan method
-  pop().
-\item
-  Untuk menyimpan data dengan metode \index{FIFO}FIFO (First In First Out) anda
-  dapat menggunakan \index{QQueue}QQueue.
-\item
-  Untuk menambahkan data kedalam QQueue anda dapat menggunakan method
-  enqueue, dan untuk mengambil data dari QQueue anda dapat menggunakan
-  method dequeue.
+\item \textbf{Key-Value Pair} - Data terorganisir dengan key
+\item \textbf{Ordered} - Data terurut berdasarkan key
+\item \textbf{Fast Lookup} - Akses cepat dengan key
+\item \textbf{Type-safe} - Mencegah kesalahan tipe data
 \end{itemize}
 
-\section{Mapping}\label{mapping}
-
-Untuk membuat object map dan hash Qt menyediakan class \index{QMap}QMap. Dengan QMap
-anda dapat membuat collection yang index-nya bukan berupa number
-(key-value pair).
-
-\subsubsection*{Contoh  Menggunakan QMap.}
-
 \begin{enumerate}
+\item Buka Qt Creator dan buat project Qt Console Application baru
+\item Tulis kode berikut:
 
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh11-13}, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Menggunakan QMap, label=contoh11-13]{../code/11-library-contoh11-13.c++}
 
-\begin{lstlisting}[language=c++, caption=Menggunakan QMap, label=contoh11-13]
-#include <QtCore/QCoreApplication>
-#include <QDebug>
-int main(int argc, char *argv[])
-{
-QCoreApplication a(argc, argv);
-QMap<QString,int> lstAge;
-lstAge["erick"] = 29;
-lstAge["anton"] = 29;
-lstAge["katon"] = 42;
-qDebug() << "erick age : " << lstAge["erick"];
-qDebug() << "menampilkan semua data yg ada di map :";
-foreach (QString key, lstAge.keys()) {
-qDebug() << key << " : " << lstAge[key];
-}
-//menggunakan iterator
-qDebug() << "Mengakses data menggunakan iterator";
-QMap<QString, int>::ConstIterator itr;
-for (itr=lstAge.constBegin();itr!=lstAge.constEnd();++itr) {
-qDebug() << itr.key() << " : " << itr.value();
-}
-return a.exec();
-}
-\end{lstlisting}
-\item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, maka akan
-  ditampilkan output sebagai berikut.
+\item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
 erick age :  29
@@ -1323,19 +607,61 @@ Mengakses data menggunakan iterator
 "erick"  :  29
 "katon"  :  42
 \end{lcverbatim}
-
 \end{enumerate}
 
-\textbf{Keterangan:}
+\textbf{Method QMap:}
+\begin{itemize}
+\item \textbf{insert(key, value)} - Tambah key-value pair
+\item \textbf{operator[]()} - Akses value dengan key
+\item \textbf{contains()} - Cek apakah key ada
+\item \textbf{keys()} - Dapatkan semua key
+\item \textbf{values()} - Dapatkan semua value
+\item \textbf{remove()} - Hapus key-value pair
+\end{itemize}
+
+\section{🔧 Best Practices Qt Library}
+
+\subsection{Tips Menggunakan Qt Library}
+
+\begin{enumerate}
+\item \textbf{Gunakan QString} - Jangan campur dengan std::string
+\item \textbf{Pilih Collection yang Tepat} - QList untuk umum, QMap untuk key-value
+\item \textbf{Gunakan Iterator} - Untuk akses berurutan dan modifikasi
+\item \textbf{Memory Management} - Manfaatkan QObject automatic memory
+\item \textbf{Type Safety} - Gunakan template dengan tipe yang tepat
+\end{enumerate}
+
+\subsection{Kesalahan Umum}
 
 \begin{itemize}
-
-\item
-  Dengan menggunakan QMap anda dapat membuat collection yang index-nya
-  tidak berupa bilangan. Misal anda dapat menggunakan index yang tipenya
-  QString, pada contoh diatas anda dapat menuliskan
-  lstAge{[}``erick''{]}.
-\item
-  Untuk mengambil semua data pada lstAge anda dapat menggunakan foreach
-  atau menggunakan ConstIterator.
+\item \textbf{Mixing STL and Qt} - Campur std::string dengan QString
+\item \textbf{Wrong Collection} - Gunakan QList untuk key-value
+\item \textbf{Manual Memory} - Lupa manfaatkan QObject
+\item \textbf{Type Mismatch} - Masukkan tipe data salah ke collection
+\item \textbf{Inefficient Access} - Tidak gunakan iterator untuk loop
 \end{itemize}
+
+\section{📚 Referensi dan Bacaan Lanjutan}
+
+Qt Library adalah topik yang luas dan terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
+
+\begin{itemize}
+\item \textbf{Qt Documentation} - Dokumentasi resmi Qt\footnote{Qt Company. (2023). "Qt Core Module". https://doc.qt.io/qt-6/qtcore-index.html}
+\item \textbf{C++ GUI Programming with Qt 4} oleh Jasmin Blanchette\footnote{Blanchette, J., \& Summerfield, M. (2006). "C++ GUI Programming with Qt 4". Prentice Hall.}
+\item \textbf{Qt 5 C++ GUI Programming Cookbook} oleh Lee Zhi Eng\footnote{Eng, L. Z. (2016). "Qt 5 C++ GUI Programming Cookbook". Packt Publishing.}
+\item \textbf{Qt Core Module} - Module dasar Qt\footnote{Qt Company. (2023). "Qt Core Module". https://doc.qt.io/qt-6/qtcore-index.html}
+\end{itemize}
+
+\section{🎉 Kesimpulan}
+
+Qt Library menyediakan class-class yang powerful dan type-safe untuk pengembangan aplikasi. Dengan memahami QObject, QString, dan collection classes, Anda dapat membuat aplikasi yang robust dan maintainable.
+
+\begin{center}
+\textbf{Selamat! Anda telah menguasai dasar-dasar Qt Library} 📚
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\textit{--- Bab selanjutnya: File, Stream, dan XML ---}
+\end{center}

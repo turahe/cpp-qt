@@ -1,154 +1,478 @@
-# Tipe Data, Identifier, Operator dan Control Statement
+**📋 Apa yang akan dipelajari**
 
-## 2.1 Tipe Data dan Identifier
+Pada bab ini kita akan mempelajari tentang Tipe Data dan Identifier dalam C++:
 
-Program adalah kumpulan instruksi yang disusun sedemikian rupa sehingga mempunyai urutan nalar yang tepat untuk menyelesaikan suatu persoalan. Instruksi-instruksi yang digunakan dalam pemrograman mengacu pada suatu bahasa pemrograman tertentu, pada buku ini menggunakan bahasa pemrograman C++, sehingga penulisan program pada buku ini mengikuti tata bahasa C++.
+- Pengenalan tipe data dan identifier
+- Jenis-jenis tipe data dalam C++
+- Variabel dan konstanta
+- Operator dan ekspresi
 
-Segala sesuatu yang diproses oleh program adalah data. Dalam hal ini data adalah elemen-elemen yang digunakan untuk menjelaskan segala sesuatu yang mempunyai besaran (ukuran/ nilai), seperti misalnya **umur** besarannya bisa berupa biangan desimal **42.5** (maksudnya 42½ tahun), **golongan** seorang karyawan besarannya bisa berupa sebuah karakter A (maksudnya goongan A) dan sebagainya. Bahasa C++ menyimpan besaran-besaran tersebut di memori utama untuk dikelola oleh program, sehingga perlu dilakukan pengaturan pemakaian memori, oleh karena itu dalam bahasa pemrograman selalu terdapat istilah-istilah yang bernama **Tipe Data**, **Variabel** dan **Konstanta**.
+\minitoc
 
-Identifier (pengenal) adalah suatu nama yang digunakan program untuk merujuk ke suatu lokasi memori tertentu agar nilai pada lokasi tersebut dapat diakses. Alamat lokasi memori sebenarnya berupa angka angka heksadesimal[^heks], namun pada bahasa pemrograman setingkat C++ (middle level programming language) dan di atasnya, telah mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf atau kata (label) sehingga kita tidak perlu mengetahu alamat yang sesungguhnya dan dengan identifier (label) akan lebih mudah untuk diingat.
+## 🎯 Tipe Data dan Identifier<a name="tipe-data-dan-identifier"></a>
 
-[^heks]: Heksadesimal adalah sebuah sistem bilangan yang menggunakan 16 simbol. Simbol yang digunakan adalah 8 digit bilangan angka yaitu 0 sampai 9 ditambah dengan 6 simbol huruf yaitu huruf A hingga F. Dimana A = 10, B = 11, C= 12, D = 13 , E = 14 dan F = 15.
+### Apa itu Program?
 
-## 2.2 Tipe Data Bahasa C++
+Program adalah kumpulan instruksi yang disusun dengan urutan logis yang tepat untuk menyelesaikan suatu masalah. Dalam buku ini, kita menggunakan bahasa pemrograman C++.
 
-Data yang dapat dikelola oleh program bisa bermacam-macam, seperti misalnya bilangan bulat (*integer*), bilangan dengan desimal (*floating point*), huruf (*character*), dan sebagainya. Oleh sebab itu ketika kita akan memakai suatu lokasi memori tertentu untuk menyimpan nilai diperlukan 2 hal, yaitu `identifier` sebagai pengenal (label) lokasi memori yang digunakan dan `tipe data`, yaitu besaran yang menentukan ukuran memori yang dialokasikan. Sekali suatu identifier sudah dialokasikan dengan tipe data tertentu besarnya ruang yang digunakan tidak bisa diubah. Bahasa C++ mengenal tipe-tipe data berikut ini :
+### Apa itu Data?
 
-|Tipe Data 				|Ukuran 	|Jangkauan Nilai Yang dapat Ditampung
-|-----------------------|-----------|----------------------------------------
-|bool 					|1 byte 	|True or false
-|unsigned short int 	|2 bytes 	|0 to 65,535
-|short int 				|2 bytes 	|–32,768 to 32,767
-|unsigned long int 		|4 bytes 	|0 to 4,294,967,295
-|long int 				|4 bytes 	|–2,147,483,648 to 2,147,483,647
-|int (16 bit) 			|2 bytes 	|–32,768 to 32,767
-|int (32 bit) 			|4 bytes 	|–2,147,483,648 to 2,147,483,647
-|unsigned int (16 bit) 	|2 bytes 	|0 to 65,535
-|unsigned int (32 bit) 	|4 bytes 	|0 to 4,294,967,295
-|char 					|1 byte 	|256 character values
-|float 					|4 bytes 	|1.2e–38 to 3.4e38
-|double 				|8 bytes 	|2.2e–308 to 1.8e308
+Segala sesuatu yang diproses oleh program adalah **data**. Data adalah elemen-elemen yang memiliki nilai atau besaran, misalnya:
 
-## 2.3 Variabel dan Konstanta
+- **Umur** - bisa berupa angka 42.5 (42½ tahun)
+- **Golongan** - bisa berupa karakter 'A'
+- **Nama** - bisa berupa teks "John Doe"
 
-Nilai yang tersimpan di memori dan dikenal melalui identifier tersebut terdiri dari variabel dan konstanta. Perbedaan diantara keduanya adalah bahwa variabel (sesuai dengan namanya) nilainya dapat diubah-ubah pada saat program dieksekusi, sedangkan konstanta nilainya tidak dapat diubah (`konstan = tetap`).
+### Penyimpanan Data
 
-Sebelum suatu variabel atau konstanta dapat digunakan, tempat pada memori harus dipesan terlebih dahulu, mekanisme ini dinamalan deklarasi. Deklarasi dilakukan dengan cara menuliskan tipe data (ukuran memori yang dibutuhkan) dan diikuti dengan nama pengenal (nama variabel), jika dikehendaki bisa juga suatu variabel langsung diinisialisasi dengan suatu nilai. Pengenal (identifier) bisa terdiri dari sebuah huruf atau kombinasi antara huruf dengan angka dengan syarat.
+C++ menyimpan data di memori utama untuk dikelola oleh program. Untuk mengatur penggunaan memori, C++ menggunakan konsep:
+
+- **Tipe Data** - menentukan jenis dan ukuran data
+- **Variabel** - tempat menyimpan data yang bisa berubah
+- **Konstanta** - tempat menyimpan data yang tetap
+
+### Apa itu Identifier?
+
+Identifier (pengenal) adalah nama yang digunakan program untuk merujuk ke lokasi memori tertentu agar nilai pada lokasi tersebut dapat diakses.
+
+#### Mengapa Perlu Identifier?
+
+- Alamat memori sebenarnya berupa angka heksadesimal yang sulit diingat
+- C++ menggunakan identifier berupa huruf atau kata sebagai label
+- Dengan identifier, kita tidak perlu mengetahui alamat memori yang sebenarnya
+- Identifier membuat program lebih mudah dibaca dan dipahami
+
+## 📊 Tipe Data Bahasa C++<a name="tipe-data-bahasa-c"></a>
+
+### Apa itu Tipe Data?
+
+Data yang dapat dikelola program bisa bermacam-macam:
+
+- Bilangan bulat (integer)
+- Bilangan desimal (floating point)
+- Karakter (character)
+- Dan lainnya
+
+### Mengapa Perlu Tipe Data?
+
+Ketika menyimpan nilai di memori, diperlukan 2 hal:
+
+- **Identifier** - nama untuk mengakses lokasi memori
+- **Tipe Data** - menentukan jenis dan ukuran memori yang dialokasikan
+
+### Pentingnya Tipe Data
+
+- Sekali identifier dialokasikan dengan tipe data tertentu, ukuran ruang tidak bisa diubah
+- Tipe data menentukan operasi apa yang bisa dilakukan
+- Tipe data mempengaruhi efisiensi penggunaan memori
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Tipe Data & Ukuran & Jangkauan Nilai Yang dapat Ditampung\tabularnewline
+\midrule
+\endhead
+bool & 1 byte & True or false\tabularnewline
+unsigned short int & 2 bytes & 0 to 65,535\tabularnewline
+short int & 2 bytes & --32,768 to 32,767\tabularnewline
+unsigned long int & 4 bytes & 0 to 4,294,967,295\tabularnewline
+long int & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
+int (16 bit) & 2 bytes & --32,768 to 32,767\tabularnewline
+int (32 bit) & 4 bytes & --2,147,483,648 to 2,147,483,647\tabularnewline
+unsigned int (16 bit) & 2 bytes & 0 to 65,535\tabularnewline
+unsigned int (32 bit) & 4 bytes & 0 to 4,294,967,295\tabularnewline
+char & 1 byte & 256 character values\tabularnewline
+float & 4 bytes & 1.2e--38 to 3.4e38\tabularnewline
+double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
+\bottomrule
+
+\end{longtable}
+
+## 🔧 Variabel dan Konstanta<a name="variabel-dan-konstanta"></a>
+
+### Apa itu Variabel dan Konstanta?
+
+Nilai yang tersimpan di memori dan dikenal melalui identifier terdiri dari variabel dan konstanta.
+
+### Perbedaan Variabel dan Konstanta
+
+- **Variabel** - nilainya dapat diubah-ubah saat program dieksekusi
+- **Konstanta** - nilainya tidak dapat diubah (tetap/konstan)
+
+### Analoginya
+
+- **Variabel** seperti kotak yang bisa diisi dengan barang berbeda
+- **Konstanta** seperti kotak yang hanya bisa diisi dengan satu barang tertentu
+
+Sebelum suatu variabel atau konstanta dapat digunakan, tempat pada
+memori harus dipesan terlebih dahulu, mekanisme ini dinamalan deklarasi.
+Deklarasi dilakukan dengan cara menuliskan tipe data (ukuran memori yang
+dibutuhkan) dan diikuti dengan nama pengenal (nama variabel), jika
+dikehendaki bisa juga suatu variabel langsung diinisialisasi dengan
+suatu nilai. Pengenal (identifier) bisa terdiri dari sebuah huruf atau
+kombinasi antara huruf dengan angka dengan syarat.
 
 - Harus diawali dengan huruf
-- Tidak boleh memakai karakter khusus kecuali \$ dan garis bawah (&#95;)
+- Tidak boleh memakai karakter khusus kecuali $ dan garis bawah (_)
 - Tidak boleh sama dengan kata kunci yang digunakan pada C++
 - Bersifat case sensitif (huruf besar dan kecil dibedakan)
 
-Walaupun demikian, sebaiknya memberikan nama pengenal variabel sesuai dengan isi dari variabel tersebut, sebab walaupun nama variabel “**c21i8k**” untuk menyimpan nama mahasiswa adalah valid (diperbolehkan), namun akan lebih mudah dimengerti jika identifier yang dipilih adalah “**nama**”.
+Walaupun demikian, sebaiknya memberikan nama pengenal variabel sesuai
+dengan isi dari variabel tersebut, sebab walaupun nama variabel
+``**c21i8k**'' untuk menyimpan nama mahasiswa adalah valid
+(diperbolehkan), namun akan lebih mudah dimengerti jika identifier yang
+dipilih adalah ``**nama**''.
 
-Konstanta mirip dengan variabel, hanya saja nilainya konstan, tidak dapat diubah-ubah. Untuk dapat membuat konstanta diperlukan inisialisasi ketika konstanta dibuat dan setelah itu nilainya tidak dapat diubah. C++ mempunyai 2 macam konstanta, yaitu konstanta literal dan konstanta simbolik. Berikut ini adalah contoh deklarasi variabel:
+Konstanta mirip dengan variabel, hanya saja nilainya konstan, tidak
+dapat diubah-ubah. Untuk dapat membuat konstanta diperlukan inisialisasi
+ketika konstanta dibuat dan setelah itu nilainya tidak dapat diubah. C++
+mempunyai 2 macam konstanta, yaitu konstanta literal dan konstanta
+simbolik. Berikut ini adalah contoh deklarasi variabel:
 
 ```cpp
 int harga;
 ```
 
-Yang dimaksud dengan konstanta literal adalah suatu nilai yang ditulis pada kode program. Sebagai contoh misalnya :
+Yang dimaksud dengan konstanta literal adalah suatu nilai yang ditulis
+pada kode program. Sebagai contoh misalnya :
 
 ```cpp
 int usiaku = 42;
 ```
 
-Nilai 42 tidak dapat menerima nilai lain dan nilai tersebut bersifat tetap. Perhatikan dalam hal ini identifier “usiaku” adalah variabel (bukan konstanta), yang dinamakan konstanta literal adalah nilai “42” tersebut.
+Nilai 42 tidak dapat menerima nilai lain dan nilai tersebut bersifat
+tetap. Perhatikan dalam hal ini identifier ``usiaku'' adalah variabel
+(bukan konstanta), yang dinamakan konstanta literal adalah nilai ``42''
+tersebut.
 
-Konstanta simbolik adalah konstanta yang direpresentasikan dengan suatu nama, sama seperti variabel, namun berbeda dengan variabel setelah suatu konstanta diinisialisasi dengan suatu nilai maka nilainya tidak dapat diubah. Ada 2 cara untuk mendeklarasikan konstanta simbolik, yaitu dengan menggunakan preprocessor directive `#define` dan yang kedua adalah dengan memakai kata kunci `const`. Berikut ini contoh mendeklarasikan dan menginisialisasi konstanta :
+Konstanta simbolik adalah konstanta yang direpresentasikan dengan suatu
+nama, sama seperti variabel, namun berbeda dengan variabel setelah suatu
+konstanta diinisialisasi dengan suatu nilai maka nilainya tidak dapat
+diubah. Ada 2 cara untuk mendeklarasikan konstanta simbolik, yaitu
+dengan menggunakan preprocessor directive `#define` dan yang
+kedua adalah dengan memakai kata kunci `const`. Berikut ini
+contoh mendeklarasikan dan menginisialisasi konstanta :
 
 ```cpp
 #define kapasitas 15
 ```
 
-Perhatikan bahwa `kapasitas` tidak mempunyai tipe data tertentu (int, char dsb.). Preprosessor akan melakukan substitusi berupa teks, setiap ada akses terhadap kata `kapasitas`, akan digantikan dengan teks 15. Karena preprosesor bekerja sebelum kompiler, kompiler tidak mengenal konstanta `kapasitas`, yang dikenal hanyalah bilangan 15.
+Perhatikan bahwa `kapasitas` tidak mempunyai tipe data tertentu
+(int, char dsb.). Preprosessor akan melakukan substitusi berupa teks,
+setiap ada akses terhadap kata `kapasitas`, akan digantikan
+dengan teks 15. Karena preprosesor bekerja sebelum kompiler, kompiler
+tidak mengenal konstanta `kapasitas`, yang dikenal hanyalah
+bilangan 15.
 
+\begin{quotation}
+{\LARGE \ding{46}}**TIPS** 
 
-T> ### TIPS
-T>
-T> Walaupun dengan memakai preprocessor directive `#define` tampak mudah, namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang pada standard C++ .
+Walaupun
+dengan memakai preprocessor directive `#define` tampak mudah,
+namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang
+pada standard C++ .
+\end{quotation}
+ 
 
-Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan memakai kata kunci const seperti berikut :
+Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan
+memakai kata kunci const seperti berikut :
 
 ```cpp
 const int usiaku = 42;
 ```
 
-Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku bertipe int dan diinisialisasi dengan nilai 42. Setelah baris ini simbol (identifier) bernama usiaku tidak dapat diubah-ubah nilainya. Keuntungan pembuatan konstanta dengan cara ini adalah lebih mudah dipelihara dan mencegah adanya kesalahan dan yang paling penting adalah bahwa konstanta ini mempunyai tipe data dan kompiler dapat mengharuskan konstanta ini diperlakukan sebagai tipe data tersebut.
+Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku
+bertipe int dan diinisialisasi dengan nilai 42. Setelah baris ini simbol
+(identifier) bernama usiaku tidak dapat diubah-ubah nilainya. Keuntungan
+pembuatan konstanta dengan cara ini adalah lebih mudah dipelihara dan
+mencegah adanya kesalahan dan yang paling penting adalah bahwa konstanta
+ini mempunyai tipe data dan kompiler dapat mengharuskan konstanta ini
+diperlakukan sebagai tipe data tersebut.
 
-Contoh 1. Tipe data dan Identifier.
+#### Contoh Tipe data dan Identifier.
 
+- Buka Qt Creator dan buat project Qt Console Application baru dengan
+  nama contoh [contoh2-1](#contoh2-1), kemudian tulis kode berikut.
 
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 1, kemudian tulis kode berikut.
+\lstinputlisting[language=c++, caption=Tipe data dan Identifier, label=contoh2-1]{../code/contoh2-1.cpp}
+
+- Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+  adalah sebagai berikut.
+
+\begin{lcverbatim}
+Panjang =15
+lebar =12
+\end{lcverbatim}
+
+#### Keterangan
+
+- Pada program di atas variabel panjang dan lebar dideklarasikan bertipe
+  int.
+- Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi
+  nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat
+  diubah.
+- Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak
+  ke layar.
+
+## Statement<a name="statement"></a>
+
+Dalam bahasa C++, sebuah statement mengontrol urutan pengerjaan
+eksekusi, mengevaluasi ekspresi atau tidak mengejakan apapun (*null
+statement*). Semua statement C++ diakhiri dengan titik koma (;), sebagai
+contoh misalnya :
 
 ```cpp
-#include <iostream>
-int main(int argc, char *argv[])
-{
-	using namespace std;
-	QCoreApplication a(argc, argv);
-	
-	int panjang, lebar;
-	
-	panjang = 15; //<-- nilai diubah menjadi 15
-	lebar = 12; //<-- nilai diubah menjadi 12
-	cout << "Panjang = " << panjang << endl;
-	
-	cout << "Lebar = " << lebar << endl;
-	return a.exec();
-}
+x = a + b;
 ```
 
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
+Pernyataan tersebut bukanlah suatu pernyataan persamaan aljabar dalam
+matematika yang artinya x sama dengan a + b, melainkan memberi nilai x
+dengan hasil penjumlahan a dengan b. Pada statement ini terjadi 2 urutan
+pengerjaan, yaitu pertama menambahkan a dengan b, kemudian yang kedua
+memberikan hasil perhitungan tersebut ke variabel x dengan operator
+pengerjaan (=). Walaupun pada pernyataan tersebut terdapat 2 pekerjaan,
+namun merupakan sebuah statement dan oleh karena itu diakhiri hanya
+dengan sebuah titik koma (;) saja. Hasil penjumlahan a dengan b ini
+disebut ekspresi, sedangkan sama dengan (=) dan plus (+) dinamakan
+operator yang akan dibahas berikut ini.
 
-A> {linenos=off}
-A>	Panjang		=15
-A>	lebar		=12
+\begin{quotation}
+ {\LARGE \ding{45}} **CATATAN**
+ 
+ Operator pengerjaan = akan mengambil nilai apapun yang ada disebelah
+ kanannya kenudian memberikannya kepada apapun yang berada di sebelah
+ kirinya. C++ mengenal juga operator pembanding == yang mempunyai
+ arti berbeda dengan operator sama dengan =, akan dibahas lebih
+ detail pada sub bab berikut ini.
+\end{quotation}
 
- **Keterangan:**
+## Operator dan Ekspresi<a name="operator-dan-ekspresi"></a>
 
- - Pada program di atas variabel panjang dan lebar dideklarasikan bertipe int.
- - Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat diubah.
- - Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak ke layar.
+Operator adalah suatu simbol yang digunakan untuk melakukan suatu
+operasi. Operator mempunyai beberapa kategori, antara lain : Aritmatika,
+Pengerjaan, Hubungan dan Logika. Operator Aritmatika adalah operator
+yang digunakan untuk melakukan operasi aritmatika seperti misalnya
+penjumlahan, pengurangan, perkalian dan pembagian. Simbol untuk operator
+aritmatika ini adalah : +, -, *, / dan %. Berikut ini adalah
+operator-operator yang dikenal pada bahasa pemrograman C++.
 
-## 2.4 Statement
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\begin{minipage}[b]{0.52\columnwidth}\raggedright\strut
+Kategori
+\strut\end{minipage} &
+\begin{minipage}[b]{0.17\columnwidth}\raggedright\strut
+Operator
+\strut\end{minipage} &
+\begin{minipage}[b]{0.14\columnwidth}\raggedright\strut
+Arah Proses
+\strut\end{minipage} &
+\begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+Jenjang
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Kurung, indeks larik dan elemen struktur data
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+() {[}{]} . ->{}
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri - Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+1
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Unary
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+! ~{} - ++ --
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kanan -- Kiri
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+2
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Aritmatika Perkalian, Pembagian dan Sisa Pembagian
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+* / %
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+3
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator aritmatika Pertambahan dan Pengurangan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
++ -
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+4
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Bitwise Pergeseran Bit
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+<{}<{} >{}>{}
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+5
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Hubungan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+<{} <{}= >{} >{}=
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+6
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Hubungan Kesamaan dan Ketidaksamaan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+== !=
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+7
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Bitwise AND
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+&
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+8
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Bitwise XOR
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+^{}
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+9
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Bitwise OR
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+`|{`}
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+10
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Kondisi AND
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+&&
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+11
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Kondisi OR
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+`|{`|{}}
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+12
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Ternary ?
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+`|{`}
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kanan -- Kiri
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+13
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Pengerjaan Aritmatika
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+= += -= *= /= %=
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kanan -- Kiri
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+14
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Pengerjaan Bitwise
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+`&=\ ^{`=\ |{}=\ <{}<{}=\ >{}>{}=}
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kanan -- Kiri
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+15
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.52\columnwidth}\raggedright\strut
+Operator Koma
+\strut\end{minipage} &
+\begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
+,
+\strut\end{minipage} &
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Kiri -- Kanan
+\strut\end{minipage} &
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+16
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
-Dalam bahasa C++, sebuah statement mengontrol urutan pengerjaan eksekusi, mengevaluasi ekspresi atau tidak mengejakan apapun (*null statement*). Semua statement C++ diakhiri dengan titik koma (;), sebagai contoh misalnya :
+Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa
+berasal dari sebuah variabel maupun kumpulan variabel-variabel yang
+dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi
+adalah suatu nilai yang mempunyai besaran dan tipe data tertentu.
 
-
-	x = a + b;
-
-Pernyataan tersebut bukanlah suatu pernyataan persamaan aljabar dalam matematika yang artinya x sama dengan a + b, melainkan memberi nilai x dengan hasil penjumlahan a dengan b. Pada statement ini terjadi 2 urutan pengerjaan, yaitu pertama menambahkan a dengan b, kemudian yang kedua memberikan hasil perhitungan tersebut ke variabel x dengan operator pengerjaan (=). Walaupun pada pernyataan tersebut terdapat 2 pekerjaan, namun merupakan sebuah statement dan oleh karena itu diakhiri hanya dengan sebuah titik koma (;) saja. Hasil penjumlahan a dengan b ini disebut ekspresi, sedangkan sama dengan (=) dan plus (+) dinamakan operator yang akan dibahas berikut ini.
-
-I> **CATATAN**
-I>
-I> Operator pengerjaan “=“ akan mengambil nilai apapun yang ada disebelah kanannya kenudian memberikannya kepada apapun yang berada di sebelah kirinya. C++ mengenal juga operator pembanding “==“ yang mempunyai arti berbeda dengan operator sama dengan “=”, akan dibahas lebih detail pada sub bab berikut ini.
-
-## 2.5 Operator dan Ekspresi
-
-Operator adalah suatu simbol yang digunakan untuk melakukan suatu operasi. Operator mempunyai beberapa kategori, antara lain : Aritmatika, Pengerjaan, Hubungan dan Logika. Operator Aritmatika adalah operator yang digunakan untuk melakukan operasi aritmatika seperti misalnya penjumlahan, pengurangan, perkalian dan pembagian. Simbol untuk operator aritmatika ini adalah : +, -, *, / dan %. Berikut ini adalah operator-operator yang dikenal pada bahasa pemrograman C++.
-
-|Kategori 													|Operator 				|Arah Proses 	|Jenjang
-|-----------------------------------------------------------|-----------------------|---------------|-----
-|Kurung, indeks larik dan elemen struktur data 				|() [] . -> 			|Kiri - Kanan 	|1
-|Operator Unary 											|! ~ - ++ -- 			|Kanan – Kiri 	|2
-|Operator Aritmatika Perkalian, Pembagian dan Sisa Pembagian|* / % 					|Kiri – Kanan 	|3
-|Operator aritmatika Pertambahan dan Pengurangan 			|+ - 					|Kiri – Kanan 	|4
-|Operator Bitwise Pergeseran Bit 							|<< >> 					|Kiri – Kanan 	|5
-|Operator Hubungan 											|< <= > >= 				|Kiri – Kanan 	|6
-|Operator Hubungan Kesamaan dan Ketidaksamaan 				|== != 					|Kiri – Kanan 	|7
-|Operator Bitwise AND 										|& 						|Kiri – Kanan 	|8
-|Operator Bitwise XOR 										|^ 						|Kiri – Kanan 	|9
-|Operator Bitwise OR 										|&#124;					|Kiri – Kanan 	|10
-|Operator Kondisi AND 										|&& 					|Kiri – Kanan 	|11
-|Operator Kondisi OR 										| &#124;&#124;			|Kiri – Kanan 	|12
-|Operator Ternary ? 										| &#124;				|Kanan – Kiri 	|13
-|Operator Pengerjaan Aritmatika 							|= += -= *= /= %= 		|Kanan – Kiri 	|14
-|Operator Pengerjaan Bitwise 								|&= ^= &#124;= <<= >>=	|Kanan – Kiri 	|15
-|Operator Koma 												|, 						|Kiri – Kanan 	|16
-
-Ekspresi adalah suatu peryataan yang menghasilkan suatu nilai, bisa berasal dari sebuah variabel maupun kumpulan variabel-variabel yang dioperasikan dengan suatu operator, jadi hasil akhir dari suatu ekspresi adalah suatu nilai yang mempunyai besaran dan tipe data tertentu. Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan “panjang * lebar” yang menghasilkan nilai 15, 12 dan 180:
+Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan ``panjang
+* lebar'' yang menghasilkan nilai 15, 12 dan 180:
 
 ```cpp
 panjang = 15;
@@ -156,344 +480,227 @@ lebar = 12;
 luas = panjang * lebar ;
 ```
 
- **Keterangan :**
+**Keterangan :**
 
- * Pada baris pertama dan kedua di atas digunakan hanya sebuah operator “`= `“ (yaitu jenjang ke 14), arah proses dari kanan ke kiri, sehingga yang dilakukan :
+- Pada baris pertama dan kedua di atas digunakan hanya sebuah operator
+  `=` (yaitu jenjang ke 14), arah proses dari kanan ke kiri,
+  sehingga yang dilakukan :
+- Ekspresi : `15`, diberikan kepada variabel `panjang`
+  (dibaca dari kanan ke kiri).
+- Ekspresi : `12`, diberikan kepada variabel `lebar`
+  (dibaca dari kanan ke kiri).
+- Pada baris ketiga terdapat 2 operator, yaitu operator =  (jenjang
+  ke 14) dan `*` operator = (yaitu jenjang ke 3).
+  Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu,
+  jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator.
+  Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada
+  pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator
+  `*` baru kemudian operator =, sehingga yang dilakukan:
+  - Ekspresi : `panjang\ *\ lebar` , berarti `panjang`
+  dikalikan `lebar` (dibaca dari kiri ke kanan), menghasilkan
+  nilai integer `180`. - Berikutnya operator = mengoperasikan
+  hasil ekspresi tersebut, yaitu nilai integer `180` diberikan
+  kepada variabel `luas` (dibaca dari kanan ke kiri).
 
-	* Ekspresi : `15`, diberikan kepada variabel `panjang` (dibaca dari kanan ke kiri).
-	
-	* Ekspresi : `12`, diberikan kepada variabel `lebar` (dibaca dari kanan ke kiri).
+\begin{quotation}
+{\LARGE \ding{46}} **TIPS**
 
-	* Pada baris ketiga terdapat 2 operator, yaitu operator “= “ (jenjang ke 14) dan “`*`” operator “= “ (yaitu jenjang ke 3). Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu, jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator. Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator “`*`” baru kemudian operator “=”, sehingga yang dilakukan:
+Operator
+( dan ) dapat dipakai untuk merubah jenjang suatu ekspresi
+menjadi jenjang tertinggi, sehingga akan diproses terlebih dahulu.
+\end{quotation}
 
-		- Ekspresi : `panjang * lebar` , berarti `panjang` dikalikan `lebar` (dibaca dari kiri ke kanan), menghasilkan nilai integer `180`.
-		- Berikutnya operator “=” mengoperasikan hasil ekspresi tersebut, yaitu nilai integer `180` diberikan kepada variabel `luas` (dibaca dari kanan ke kiri).
+###  Operator Unary<a name="a-operator-unary"></a>
 
-T> **TIPS**
-T>
-T> Operator “(“ dan “)” dapat dipakai untuk merubah jenjang suatu ekspresi menjadi jenjang tertinggi, sehingga akan diproses terlebih dahulu.
+Operator unary adalah operator yang hanya menggunakan sebuah operand
+saja, operator unary yang dipakai pada kebanyakan bahasa pemrograman
+adalah operator unary minus (-). Operator unary ditulis sebelum operand,
+operator unary ``-'' berbeda dengan operator aritmatika ``-'' yang
+membutuhkan dua operand. Dalam bahasa C++ disediakan bermacam-macam
+operator unary.
 
-### a) Operator Unary
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Operator & Arti\tabularnewline
+\midrule
+\endhead
+- & Unary minus\tabularnewline
+++ & Peningkatan dengan nilai penambahan 1\tabularnewline
+-- & Penurunan dengan nilai pengurangan 1\tabularnewline
+! & Unary not\tabularnewline
+~{} & Operator unary komplemen satu (bitwise
+NOT)\tabularnewline
+\bottomrule
+\end{longtable}
 
-Operator unary adalah operator yang hanya menggunakan sebuah operand saja, operator unary yang dipakai pada kebanyakan bahasa pemrograman adalah operator unary minus (-). Operator unary ditulis sebelum operand, operator unary “-“ berbeda dengan operator aritmatika “-“ yang membutuhkan dua operand. Dalam bahasa C++ disediakan bermacam-macam operator unary.
+### Operator Unary Minus<a name="b-operator-unary-minus"></a>
 
-|Operator 	|Arti
-|-----------|---------------------------------------
-|- 			|Unary minus
-|++ 		|Peningkatan dengan nilai penambahan 1
-|-- 		|Penurunan dengan nilai pengurangan 1
-|! 			|Unary not
-|~ 			|Operator unary komplemen satu (bitwise NOT)
+Operator ini dipakai untuk memberi nilai minus suatu nilai numerik
+(bukan pengurangan). Misalnya ungkapan : `A\ +\ -\ B\ *\ C` akan
+diartikan `A\ +\ (-B)\ *\ C`. Operator unary ``-'' ditulis di
+depan operand.
 
-### b) Operator Unary Minus
+### Operator Unary ++ dan --<a name="c-operator-unary-dan"></a>
 
-Operator ini dipakai untuk memberi nilai minus suatu nilai numerik (bukan pengurangan). Misalnya ungkapan : `A + - B * C` akan diartikan `A + (-B) * C`. Operator unary “-“ ditulis di depan operand.
+Operator unary ``++'' dan ``--'' merupakan operator khusus yang ada di
+bahasa C. Operator ``++'' akan menambahkan nilai 1 ke pengenal yang
+menggunakannya sedangkan operator ``--'' akan mengurangi dengan nilai
+numerik 1. Operator unary tersebut jika dituliskan sebelum operand
+disebut *pre increment* sedangkan jika ditulis setelah operand
+disebut *post increment*. Perhatikan perbedaannya pada contoh
+dibawah ini :
 
-### c) Operator Unary ++ dan --
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Post Increment & Pre Increment\tabularnewline
+\midrule
+\endhead
+x = 5; & x = 5;\tabularnewline
+a = x++; & a = ++x;\tabularnewline
+------------------- & ----------------\tabularnewline
+**Hasil:** & **Hasil:**\tabularnewline
+x = 6 dan a = 5 & x = 6 dan a = 6\tabularnewline
+\bottomrule
+\end{longtable}
 
-Operator unary “++“ dan “--“ merupakan operator khusus yang ada di bahasa C. Operator “++“ akan menambahkan nilai 1 ke pengenal yang menggunakannya sedangkan operator “--“ akan mengurangi dengan nilai numerik 1. Operator unary tersebut jika dituliskan sebelum operand disebut _pre increment_ sedangkan jika ditulis setelah operand disebut _post increment_. Perhatikan perbedaannya pada contoh dibawah ini :
+### Operator Pengerjaan<a name="d-operator-pengerjaan"></a>
 
-|Post Increment 	|Pre Increment
-|-------------------|---------------
-|x = 5;				|x = 5;
-|a = x++;			|a = ++x;
-|-------------------|----------------
-|**Hasil:**			| **Hasil:**
-|x = 6 dan a = 5	|x = 6 dan a = 6
+Operator pengerjaan atau disebut assignment operator, digunakan untuk
+menempatkan nilai dari suatu ekspresi ke suatu pengenal. Operator yang
+umum dipakai pada bahasa pemrograman adalah operator pengerjaan ``=''.
+Selain operator pengerjaan ``='', bahasa C++ menyediakan beberapa
+operator pengerjaan yang lain seperti tabel di bawah ini.
 
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Operator & Contoh & Maksud/ Ekuivalen dengan\tabularnewline
+\midrule
+\endhead
+= & a = b + c & Mengerjakan b+c ke a\tabularnewline
++= & a += 1 & a = a + 1\tabularnewline
+-= & a -= b & a = a -- b\tabularnewline
+*= & a *= b & a = a * b\tabularnewline
+/= & a /= b & a = a / b\tabularnewline
+%= & a %= b & a = a % b\tabularnewline
+\bottomrule
+\end{longtable}
 
+Tabel berikut ini memberikan contoh pemakaian operator-operator di atas,
+misalnya variabel a dan b bernilai 10.
 
-### d) Operator Pengerjaan
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Statement & Ekuivalen dengan & Hasil Ungkapan\tabularnewline
+\midrule
+\endhead
+a += 3 & a = a + 3 & a = 10 + 3 = 13\tabularnewline
+a -= 2 & a = a - 2 & a = 10 -- 2 = 8\tabularnewline
+a *= b/2 & a = a * (b/2) & a = 10 * (10/2) = 50\tabularnewline
+a /= b -- 8 & a = a / (j -- 8) & a = 10 / (10-8) = 5\tabularnewline
+\bottomrule
+\end{longtable}
 
-Operator pengerjaan atau disebut assignment operator, digunakan untuk menempatkan nilai dari suatu ekspresi ke suatu pengenal. Operator yang umum dipakai pada bahasa pemrograman adalah operator pengerjaan “=”. Selain operator pengerjaan “=”, bahasa C++ menyediakan beberapa operator pengerjaan yang lain seperti tabel di bawah ini.
+Dari contoh di atas terlihat bahwa operator pengerjaan mempunyai jenjang
+yang lebih rendah dibanding operator aritmatika, sehingga operator
+aritmatika dikerjakan terlebih dahulu.
 
-|Operator 	|Contoh 		|Maksud/ Ekuivalen dengan
-|-----------|---------------|---------------------------------
-|= 			|a = b + c 		|Mengerjakan b+c ke a
-|+= 		|a += 1 		|a = a + 1
-|-= 		|a -= b 		|a = a – b
-|*= 		|a *= b 		|a = a * b
-|/= 		|a /= b 		|a = a / b
-|%= 		|a %= b 		|a = a % b
-
-Tabel berikut ini memberikan contoh pemakaian operator-operator di atas, misalnya variabel a dan b bernilai 10.
-
-|Statement 	|Ekuivalen dengan 	|Hasil Ungkapan
-|-----------|-------------------|---------------------
-|a += 3 	|a = a + 3 			|a = 10 + 3 = 13
-|a -= 2 	|a = a - 2 			|a = 10 – 2 = 8
-|a *= b/2 	|a = a * (b/2) 		|a = 10 * (10/2) = 50
-|a /= b – 8 |a = a / (j – 8) 	|a = 10 / (10-8) = 5
-
-Dari contoh di atas terlihat bahwa operator pengerjaan mempunyai jenjang yang lebih rendah dibanding operator aritmatika, sehingga operator aritmatika dikerjakan terlebih dahulu.
-
- C++ mengijinkan operator pengerjaan ditulis lebih dari satu kali pada sebuah statement, misalnya :
+C++ mengijinkan operator pengerjaan ditulis lebih dari satu kali pada
+sebuah statement, misalnya :
 
 ```cpp
 x = y = a * b;
 ```
 
-Dalam hal ini yang dikerjakan adalah a dikalikan b terlebih dahulu meudian hasilnya diberikan kepada variabel y dan hasil ekspresi y = a * b diberikan kepada variabel x. sehingga misalnya a bernilai 8 dan b bernilai 7, maka baik variabel x maupun y keduanya bernilai 15.
+Dalam hal ini yang dikerjakan adalah a dikalikan b terlebih dahulu
+meudian hasilnya diberikan kepada variabel y dan hasil ekspresi y = a *
+b diberikan kepada variabel x. sehingga misalnya a bernilai 8 dan b
+bernilai 7, maka baik variabel x maupun y keduanya bernilai 15.
 
-### e) Operator Hubungan
+### Operator Hubungan<a name="e-operator-hubungan"></a>
 
-Operator hubungan (*relational operator*) digunakan untuk menunjukkan hubungan antara dua buah operand, hasil dari operator ini adalah True atau False.
+Operator hubungan (*relational operator*) digunakan untuk
+menunjukkan hubungan antara dua buah operand, hasil dari operator ini
+adalah True atau False.
 
-|Operator 	|Jenjang|Arti
-|-----------|-------|--------------
-|< 			|6 		|Lebih kecil dari
-|<= 		|6 		|Lebih kecil atau sama dengan
-|> 			|6 		|Lebih besar dari
-|>= 		|6 		|Lebih besar atau sama dengan
-|== 		|7 		|Sama dengan
-|!= 		|7 		|Tidak sama dengan
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Operator & Jenjang & Arti\tabularnewline
+\midrule
+\endhead
+<{} & 6 & Lebih kecil dari\tabularnewline
+<{}= & 6 & Lebih kecil atau sama dengan\tabularnewline
+>{} & 6 & Lebih besar dari\tabularnewline
+>{}= & 6 & Lebih besar atau sama dengan\tabularnewline
+== & 7 & Sama dengan\tabularnewline
+!= & 7 & Tidak sama dengan\tabularnewline
+\bottomrule
+\end{longtable}
 
+Berikut ini contoh hasil ekspresi jika a bernilai 5, b bernilai 7 dan c
+bernilai `a'
 
-Berikut ini contoh hasil ekspresi jika a bernilai 5, b bernilai 7 dan c bernilai ‘a’
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Ungkapan Hubungan & Hasil & Nilai\tabularnewline
+\midrule
+\endhead
+a == 5 & Benar & 1\tabularnewline
+a == b & Salah & 0\tabularnewline
+b <{} 7 & Salah & 0\tabularnewline
+a <{}= 7 & Benar & 1\tabularnewline
+(a+b) != 35 & Benar & 1\tabularnewline
+c != `A' & Benar & 1\tabularnewline
+c <{}= `z' & Benar & 1\tabularnewline
+\bottomrule
+\end{longtable}
 
-|Ungkapan Hubungan 	|Hasil 	|Nilai
-|-------------------|-------|------------------
-|a == 5 			|Benar 	|1
-|a == b 			|Salah 	|0
-|b < 7 				|Salah 	|0
-|a <= 7 			|Benar 	|1
-|(a+b) != 35 		|Benar 	|1
-|c != ‘A’ 			|Benar 	|1
-|c <= ‘z’ 			|Benar 	|1
+### Operator Logika<a name="f-operator-logika"></a>
 
-### f) Operator Logika
+Jika operator hubungan membandingkan hubungan antara dua buah operand,
+maka operator logika (*logical operator*) digunakan untuk
+menggabungkan logika hasil dari operator-operator hubungan. Operator
+logika menggabungkan **dua buah** nilai logika. Nilai logika adalah
+nilai benar (True) atau salah (False).
 
-Jika operator hubungan membandingkan hubungan antara dua buah operand, maka operator logika (*logical operator*) digunakan untuk menggabungkan logika hasil dari operator-operator hubungan. Operator logika menggabungkan __dua buah__ nilai logika. Nilai logika adalah nilai benar (True) atau salah (False).
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Operator & Jenjang & Arti\tabularnewline
+\midrule
+\endhead
+&& & 11 & Logika DAN (AND)\tabularnewline
+`|{`|{}} & 12 & Logika ATAU (OR)\tabularnewline
+\bottomrule
+\end{longtable}
 
-|Operator		|Jenjang|Arti
-|---------------|-------|---------------------
-|&& 			|11 	|Logika DAN (AND)
-|&#124;&#124; 	|12 	|Logika ATAU (OR)
+Selain dua operator logika ini, operator unary "left ! "right (logika NOT) dapat digunakan untuk operasi logika.
 
-Selain dua operator logika ini, operator unary “!” (logika NOT) dapat digunakan untuk operasi logika.
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+x & y & x && y & x `|{`|{}} y & !x\tabularnewline
+\midrule
+\endhead
+TRUE & TRUE & TRUE & TRUE & FALSE\tabularnewline
+TRUE & FALSE & FALSE & TRUE & FALSE\tabularnewline
+FALSE & TRUE & FALSE & TRUE & TRUE\tabularnewline
+FALSE & FALSE & FALSE & FALSE & TRUE\tabularnewline
+\bottomrule
+\end{longtable}
 
-|x		|y 		|x && y |x &#124;&#124; y 	|!x
-|-------|-------|-------|-------------------|----------
-|TRUE	|TRUE	|TRUE	|TRUE				|FALSE
-|TRUE	|FALSE	|FALSE	|TRUE				|FALSE
-|FALSE	|TRUE	|FALSE	|TRUE				|TRUE
-|FALSE	|FALSE	|FALSE	|FALSE				|TRUE
-
-Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai ‘a’ maka ungkapan dibawah ini mempunyai hasil akhir benar (True).
-
-```cpp
-A < B || B == 7 && C > ‘z’
-```
-
-Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari langkah-langkah sebagai berikut:
-
-1. Jenjang operator hubungan lebih tinggi dibandingkan dengan operator logika, jadi operator hubungan dikerjakan terlebih dahulu.
-
-2. Operator logika “&&” mempunyai jenjang lebih tinggi dari operator “||”, sehingga operator “&&” dikerjakan terlebih dahulu.
-
-3. Bagian yang paling akhir dikerjakan adalah operator “||”, sehingga hasil akhir logika bernilai logika benar atau True.
-
-
-## 2.6 Control Statement
-
-Aliran program tidak selalu berjalan secara sekuensial berurutan dari atas ke bawah, kadang-kadang diperlukan **percabangan** atau **perulangan** atau kombinasi dari keduanya. Semua bahasa pemrograman mempunyai struktur kendali (*control statement*) demikian juga bahasa C++. Struktur kendali merupakan pengatur aliran program, mempunyai rangkaian perintah yang harus ditulis untuk memenuhi beberapa keadaan, yaitu:
-
-- Mengulang suatu perintah jika suatu kondisi dipenuhi.
-- Melanjutkan sebuah pernyataan bila kondisi terpenuhi.
-- Memilih sebuah pilihan dari beberapa alternatif bila kondisi terpenuhi.
-
-###  A. Percabangan
-
-Adalah perintah yang memungkinkan pemilihan atas perintah yang akan dijalankan sesuai dengan kondisi tertentu. Ada tiga macam perintah percabangan dalam C++, yaitu `if`, `if … else`, dan `switch`. Dengan percabangan, suatu baris program akan dikerjakan jika suatu kondisi dipenuhi (benar) atau tidak (else), jadi tidak semua baris program akan dieksekusi.
-
-#### 1. Percabangan dengan if
-
-Sintaks penulisannya sebagai berikut:
-
-```cpp
- if (<ekspresi_boolean>)
- {
- <statements>
- }
-```
-
-
-Flowchart untuk statment ini adalah :
-
-![](images/Capture2-4.PNG)
-
-#### 2. Percabangan dengan if .. else
-
-Sintaks penulisannya sebagai berikut :
+Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai "left a "right maka ungkapan dibawah ini mempunyai hasil akhir benar (True).
 
 ```cpp
- if (<ekspresi_boolean>)
-{
-	<dijalankan jika ekspresi_boolean benar>
-}
- else
-{
-	< dijalankan jika ekspresi_boolean salah>
-}
+A < B || B == 7 && C > 'z'
 ```
 
+Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari
+langkah-langkah sebagai berikut:
 
-Flowchart untuk statment ini adalah :
+- Jenjang operator hubungan lebih tinggi dibandingkan dengan operator
+  logika, jadi operator hubungan dikerjakan terlebih dahulu.
+- Operator logika ``&&'' mempunyai jenjang lebih tinggi dari operator
+  ``|{}|{}'', sehingga operator ``&&'' dikerjakan
+  terlebih dahulu.
+- Bagian yang paling akhir dikerjakan adalah operator
+  ``|{}|{}'', sehingga hasil akhir logika bernilai logika
+  benar atau True.
 
-I> **CATATAN**
-I>
-I> Di dalam `if()` maupun di dalam else bisa diisi dengan perintah
-I> `if()` lagi. Bentuk `if()` dalam `if()` ini sering disebut
-I> dengan `nested if` (if bersarang).
-
-
-![](images/Capture2-2.PNG)
-
-Flowchart untuk statment if bersarang ini adalah :
-
-![](images/Capture2-1.PNG)
-
-#### 3. Percabangan dengan switch
-
-Perintah ini digunakan sebagai alternatif pengganti dari statment `if … else` dengan `else` lebih dari satu. Dengan perintah ini percabangan dapat diarahkan pada beberapa alternatif pilihan berdasarkan nilai ekspresi. Berbeda dengan `if`, `switch` tidak dapat medeteksi *operator pembanding* (>, <, dsb.), karena ekspresi degan operator ini menghasilkan nilai *boolean*, melainkan hanya dapat mengalihkan alur program ke suatu nilai yang sama, pada statement ini ekspresi yang diminta harus menghasilkan bilangan *bulat*.
-
-```cpp
-switch (<ekspresi>)
-{
-case <konst_1>: <pernyataan_1>;
-	break;
-case <konst_2>: <pernyataan_2>;
-	break;
-case <konst_n>: <pernyataan_n>;
-	break;
-default : <pernyataan_default>;
-	}
-```
-
-Perintah `switch` akan membaca nilai dari `<ekspresi>` kemudian membandingkan hasilnya dengan konstanta-konstanta (`<konst_1>`, `<konst_2>`, `<konst_n>`) yang berada di case. Pembandingan akan dimulai dari `<konst_1>` sampai konstanta `<konst_n>`. Jika hasil dari kondisi sama dengan nilai konstanta tertentu, misalnya `<konst_1>`, maka pernyataan 1 akan dijalankan sampai ditemukan `break`. Pernyataan `break` akan membawa proses keluar dari perintah `switch`. Jika hasil dari kondisi tidak ada yang sama dengan konstanta-konstanta yang diberikan, maka pernyataan pada *default* yang akan dijalankan.
-
-![](images/Capture2-3.PNG)
-
-Flowchart untuk statement ini adalah :
-
-Contoh.2 Tipe data dan Identifier.
-
-
-Buka Qt Creator dan buat project Qt Console Application baru dengan nama Contoh 2, kemudian tulis kode berikut.
-
-```cpp
-#include <QtCore/QCoreApplication>
-#include <iostream>
-int main(int argc, char *argv[])
-{
-	using namespace std;
-	QCoreApplication a(argc, argv);
-	
-	int hari = 6;
-	
-	switch(hari){
-		case 1 : cout << "Senin" << endl;
-		break;
-		case 2 : cout << "Selasa" << endl;
-		break;
-		case 3 : cout << "Rabu" << endl;
-		break;
-		case 4 : cout << "Kamis" << endl;
-		break;
-		case 5 : cout << "Jumat" << endl;
-		break;
-		case 6 : cout << "Sabtu" << endl;
-		break;
-		case 7 : cout << "Minggu" << endl;
-		break;
-		default: cout << "Tidak ada..." << endl;
-		}
-		return a.exec();
-}
-```
-
-Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya adalah sebagai berikut.
-
-A> {linenos=off}
-A>	sabtu
-
-
-**Keterangan Program :**
-
- - Pada program di atas variabel `hari` dideklarasikan bertipe `int` dan diinisialisasi dengan nilai `6`.
- - Kemudian pada bagian ekspresi di dalam `switch` di isi variabel `hari`, hasil ekspresi tersebut di evaluasi, karena menghasilkan nilai 6, maka yang dicetak ke layar adalah “**Sabtu**”.
-
-### B. Perulangan
-
-Perulangan digunakan untuk mengulang suatu perintah sebanyak yang diinginkan tanpa harus menulis ulang. C++ mengenal tiga jenis perintah perulangan, yaitu `for`, `while` dan `do ..while`.
-
-#### 1. Perulangan dengan for
-
-Digunakan untuk mengulangi perintah dengan jumlah perulangan yang sudah diketahui. Pada statement for ini perlu dituliskan suatu kondisi untuk diuji yang berupa ekspresi boolean, nilai awal dan perintah yang dipakai untuk penghitung (counter). Nilai variabel penghitung akan secara otomatis bertambah atau berkurang tiap kali sebuah perulangan dilaksanakan tergantung perintah yang ditulis pada argumen ini.
-
-Bentuk umum penulisannya sebagai berikut :
-
-
-```cpp
-for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
-{
-<statmemnts>
-}
-```
-
-
-
-![](images/Capture2-8.PNG)
-
-#### 2. Perulangan dengan while
-
-Perintah ini digunakan untuk mengulangi suatu perintah sampai kondisi tertentu. Perulangan akan terus berjalan selama kondisi masih bernilai benar.
-
-Sintaks penulisannya sebagai berikut :
-
-
-
-```cpp
-for(<nilai_awal>; <ekspresi_boolean>; <penambahan/penurunan>)
-{
-<statmemnts>
-}
-```
-
-
-![](images/Capture2-9.PNG)
-
-#### 3. Perulangan dengan do … while
-
-Proses perulangan akan berjalan jika kondisi yang diperiksa di `while` masih bernilai benar dan perulangan akan dihentikan jika kondisinya sudah bernilai salah.
-
-Sintaks penulisannya sebagai berikut :
-
-```cpp
-do
-{
-	<statements>
-}
-while(<expresi_boolean>)
-```
-
-
-![](images/Capture2-10.PNG)
-
-Perbedaan antara perintah `while` dengan `do … while` adalah terletak dari kondisi yang diperiksa. Pada perintah `while`, kondisi yang diperiksa terletak diawal perulangan, sehingga sebelum masuk ke dalam perulangan `while` kondisi harus bernilai benar. Sedangkan pada perintah `do … while`, kondisi diperiksa di akhir perulangan. Ini berarti bahwa paling sedikit sebuah perulangan akan dilakukan oleh perintah `do … while`, karena untuk masuk ke dalam perulangan tidak ada kondisi yang harus dipenuhi.
-
-#### 4. Kata kunci continue dan break
-
-Kata kunci `break` digunakan untuk keluar dari suatu blok programn sebelum ekspresi _boloean_ yang ada pada statement tersebut menghentikan, sedangkan kata kunci `continue` dugunakan untuk mengabaikan baris perintah suatu perintah di bawahnya dan melanjutkan ke perulangan selanjutnya.
-
-Sintaks penulisan `break` dan `continue` adalah sebagai berikut :
-
-```cpp
-while(<expresi_boolean1>)
-{
-	<statements>
-if(<expresi_boolean2>)
-	continue;
-	<statements>
-}
-```

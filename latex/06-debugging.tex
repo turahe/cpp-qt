@@ -1,0 +1,448 @@
+\textbf{📋 Apa yang akan dipelajari}
+
+Pada bab ini kita akan mempelajari tentang debugging - seni menemukan dan memperbaiki bug dalam program:
+
+\begin{itemize}
+\item Jenis-jenis kesalahan dalam pemrograman
+\item Menggunakan debugger di Qt Creator
+\item Teknik debugging yang efektif
+\item Tips menemukan dan memperbaiki bug
+\item Best practices untuk debugging
+\end{itemize}
+
+\minitoc
+
+\section{🐛 Pengenalan Debugging}
+
+\subsection{Apa itu Debugging?}
+
+Debugging adalah proses menemukan, menganalisis, dan memperbaiki kesalahan (bug) dalam program komputer. Istilah "debugging" berasal dari tahun 1947 ketika Grace Hopper menemukan seekor ngengat (bug) yang menyebabkan komputer Harvard Mark II mengalami kerusakan.
+
+\begin{quote}
+\textit{"Debugging adalah dua kali lebih sulit daripada menulis kode. Jika Anda menulis kode secerdas mungkin, Anda tidak cukup pintar untuk debug-nya."} - Brian Kernighan
+\end{quote}
+
+\subsection{Mengapa Debugging Penting?}
+
+\begin{itemize}
+\item \textbf{Memastikan program berjalan dengan benar} - Program yang bebas bug
+\item \textbf{Meningkatkan kualitas kode} - Kode yang lebih robust
+\item \textbf{Menghemat waktu} - Mencegah bug di masa depan
+\item \textbf{Meningkatkan skill pemrograman} - Belajar dari kesalahan
+\end{itemize}
+
+\section{🚨 Jenis-jenis Kesalahan dalam Pemrograman}
+
+\subsection{1. Syntax Error (Kesalahan Sintaks)}
+
+Syntax error adalah kesalahan dalam penulisan kode yang melanggar aturan bahasa pemrograman.
+
+\subsubsection{Contoh Syntax Error}
+
+\begin{lstlisting}[language=c++, caption=Contoh Syntax Error]
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello World"  // Lupa semicolon
+    int x = 5;
+    if (x == 5 {          // Lupa kurung tutup
+        cout << "x adalah 5";
+    }
+    return 0;
+}
+\end{lstlisting}
+
+\subsubsection{Cara Mengatasi Syntax Error}
+
+\begin{itemize}
+\item \textbf{Baca pesan error} - Compiler akan memberitahu lokasi error
+\item \textbf{Periksa tanda baca} - Semicolon, kurung, kurawal
+\item \textbf{Periksa nama variabel} - Case sensitive
+\item \textbf{Periksa include} - Header yang diperlukan
+\end{itemize}
+
+\subsection{2. Logic Error (Kesalahan Logika)}
+
+Logic error adalah kesalahan dalam logika program yang menyebabkan program berjalan tapi menghasilkan hasil yang salah.
+
+\subsubsection{Contoh Logic Error}
+
+\begin{lstlisting}[language=c++, caption=Contoh Logic Error]
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10, b = 5;
+    int hasil = a - b;  // Seharusnya a + b
+    
+    cout << "Hasil: " << hasil << endl;  // Output: 5 (salah)
+    return 0;
+}
+\end{lstlisting}
+
+\subsubsection{Cara Mengatasi Logic Error}
+
+\begin{itemize}
+\item \textbf{Trace program} - Ikuti alur program step by step
+\item \textbf{Tambahkan output debug} - Print nilai variabel
+\item \textbf{Gunakan debugger} - Set breakpoint dan inspect
+\item \textbf{Review logika} - Periksa algoritma
+\end{itemize}
+
+\subsection{3. Runtime Error (Kesalahan Waktu Jalankan)}
+
+Runtime error adalah kesalahan yang terjadi saat program sedang berjalan.
+
+\subsubsection{Jenis Runtime Error}
+
+\begin{enumerate}
+\item \textbf{Segmentation Fault} - Akses memory yang tidak valid
+\item \textbf{Division by Zero} - Pembagian dengan nol
+\item \textbf{Array Out of Bounds} - Akses array di luar batas
+\item \textbf{Null Pointer} - Akses pointer yang null
+\end{enumerate}
+
+\subsubsection{Contoh Runtime Error}
+
+\begin{lstlisting}[language=c++, caption=Contoh Runtime Error]
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    cout << arr[10] << endl;  // Array out of bounds
+    
+    int x = 10, y = 0;
+    int hasil = x / y;  // Division by zero
+    
+    return 0;
+}
+\end{lstlisting}
+
+\section{🔧 Menggunakan Debugger di Qt Creator}
+
+\subsection{Apa itu Debugger?}
+
+Debugger adalah tool yang memungkinkan kita untuk:
+\begin{itemize}
+\item \textbf{Menghentikan program} pada titik tertentu
+\item \textbf{Melihat nilai variabel} saat program berjalan
+\item \textbf{Mengikuti alur program} step by step
+\item \textbf{Mengidentifikasi lokasi bug} dengan tepat
+\end{itemize}
+
+\subsection{Debugger di Qt Creator}
+
+Qt Creator menyediakan debugger yang terintegrasi dengan fitur-fitur:
+
+\begin{itemize}
+\item \textbf{Breakpoint} - Titik berhenti program
+\item \textbf{Step Over} - Jalankan baris saat ini
+\item \textbf{Step Into} - Masuk ke dalam fungsi
+\item \textbf{Step Out} - Keluar dari fungsi
+\item \textbf{Continue} - Lanjutkan sampai breakpoint berikutnya
+\end{itemize}
+
+\subsection{Cara Menggunakan Debugger}
+
+\subsubsection{Langkah 1: Set Breakpoint}
+
+\begin{enumerate}
+\item Buka file source code
+\item Klik di sebelah kiri nomor baris (area merah)
+\item Breakpoint akan muncul sebagai titik merah
+\end{enumerate}
+
+\subsubsection{Langkah 2: Jalankan Debug}
+
+\begin{enumerate}
+\item Klik tombol "Debug" (icon bug) atau tekan F5
+\item Program akan berhenti di breakpoint
+\item Panel debug akan muncul di bawah
+\end{enumerate}
+
+\subsubsection{Langkah 3: Inspect Variabel}
+
+\begin{itemize}
+\item \textbf{Locals} - Lihat variabel lokal
+\item \textbf{Watch} - Tambahkan variabel untuk di-monitor
+\item \textbf{Call Stack} - Lihat fungsi yang dipanggil
+\end{itemize}
+
+\subsection{Contoh Program untuk Debug}
+
+\begin{lstlisting}[language=c++, caption=Program untuk Latihan Debug]
+#include <iostream>
+using namespace std;
+
+int hitungFaktorial(int n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * hitungFaktorial(n - 1);
+}
+
+int main() {
+    int angka;
+    cout << "Masukkan angka: ";
+    cin >> angka;
+    
+    int hasil = hitungFaktorial(angka);
+    cout << "Faktorial dari " << angka << " adalah: " << hasil << endl;
+    
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Langkah Debug Program Faktorial}
+
+\begin{enumerate}
+\item \textbf{Set breakpoint} di baris `int hasil = hitungFaktorial(angka);`
+\item \textbf{Jalankan debug} dengan F5
+\item \textbf{Step Into} untuk masuk ke fungsi faktorial
+\item \textbf{Monitor variabel} n dan hasil rekursi
+\item \textbf{Step Over} untuk melihat alur rekursi
+\end{enumerate}
+
+\section{🔍 Teknik Debugging yang Efektif}
+
+\subsection{1. Print Debugging}
+
+Menambahkan output untuk melihat nilai variabel:
+
+\begin{lstlisting}[language=c++, caption=Print Debugging]
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 10, y = 5;
+    
+    cout << "DEBUG: x = " << x << ", y = " << y << endl;
+    
+    int hasil = x + y;
+    cout << "DEBUG: hasil = " << hasil << endl;
+    
+    cout << "Hasil: " << hasil << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{2. Assert Statements}
+
+Menggunakan assert untuk memverifikasi kondisi:
+
+\begin{lstlisting}[language=c++, caption=Assert Debugging]
+#include <iostream>
+#include <cassert>
+using namespace std;
+
+int bagi(int a, int b) {
+    assert(b != 0 && "Pembagian dengan nol!");
+    return a / b;
+}
+
+int main() {
+    int hasil = bagi(10, 2);
+    cout << "Hasil: " << hasil << endl;
+    
+    // hasil = bagi(10, 0); // Akan crash dengan pesan assert
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{3. Logging}
+
+Menggunakan sistem logging untuk debug:
+
+\begin{lstlisting}[language=c++, caption=Logging Debug]
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void logDebug(const string& message) {
+    ofstream logFile("debug.log", ios::app);
+    logFile << "[DEBUG] " << message << endl;
+    logFile.close();
+}
+
+int main() {
+    logDebug("Program dimulai");
+    
+    int x = 10;
+    logDebug("x = " + to_string(x));
+    
+    int hasil = x * 2;
+    logDebug("hasil = " + to_string(hasil));
+    
+    logDebug("Program selesai");
+    return 0;
+}
+\end{lstlisting}
+
+\section{💡 Tips Menemukan dan Memperbaiki Bug}
+
+\subsection{Tips Umum}
+
+\begin{enumerate}
+\item \textbf{Baca pesan error dengan teliti} - Seringkali solusi ada di pesan error
+\item \textbf{Periksa kode secara sistematis} - Dari atas ke bawah
+\item \textbf{Gunakan pencarian} - Cari nama variabel atau fungsi
+\item \textbf{Periksa dokumentasi} - Baca manual fungsi yang digunakan
+\item \textbf{Tanya teman atau forum} - Fresh eyes sering menemukan bug
+\end{enumerate}
+
+\subsection{Tips untuk Syntax Error}
+
+\begin{itemize}
+\item \textbf{Periksa tanda baca} - Semicolon, kurung, kurawal
+\item \textbf{Periksa case} - C++ case sensitive
+\item \textbf{Periksa include} - Header yang diperlukan
+\item \textbf{Periksa namespace} - using namespace std
+\end{itemize}
+
+\subsection{Tips untuk Logic Error}
+
+\begin{itemize}
+\item \textbf{Trace program} - Ikuti alur step by step
+\item \textbf{Tambahkan output debug} - Print nilai variabel
+\item \textbf{Gunakan debugger} - Set breakpoint dan inspect
+\item \textbf{Review algoritma} - Periksa logika program
+\item \textbf{Test dengan input sederhana} - Mulai dari kasus mudah
+\end{itemize}
+
+\subsection{Tips untuk Runtime Error}
+
+\begin{itemize}
+\item \textbf{Periksa array bounds} - Jangan akses di luar batas
+\item \textbf{Periksa pointer} - Pastikan tidak null
+\item \textbf{Periksa division} - Jangan bagi dengan nol
+\item \textbf{Periksa memory} - Pastikan alokasi berhasil
+\end{itemize}
+
+\section{🛠️ Best Practices untuk Debugging}
+
+\subsection{1. Tulis Kode yang Bersih}
+
+\begin{lstlisting}[language=c++, caption=Kode yang Bersih]
+// Kode yang sulit di-debug
+int x=5,y=10,z;z=x+y;cout<<z;
+
+// Kode yang mudah di-debug
+int x = 5;
+int y = 10;
+int hasil = x + y;
+cout << "Hasil: " << hasil << endl;
+\end{lstlisting}
+
+\subsection{2. Gunakan Nama Variabel yang Bermakna}
+
+\begin{lstlisting}[language=c++, caption=Nama Variabel yang Bermakna]
+// Buruk
+int a, b, c;
+
+// Baik
+int umur, tinggi, berat;
+\end{lstlisting}
+
+\subsection{3. Tambahkan Komentar}
+
+\begin{lstlisting}[language=c++, caption=Komentar yang Berguna]
+// Hitung rata-rata dari array
+int hitungRataRata(int arr[], int ukuran) {
+    int total = 0;
+    
+    // Jumlahkan semua elemen
+    for(int i = 0; i < ukuran; i++) {
+        total += arr[i];
+    }
+    
+    // Bagi dengan jumlah elemen
+    return total / ukuran;
+}
+\end{lstlisting}
+
+\subsection{4. Gunakan Version Control}
+
+\begin{itemize}
+\item \textbf{Commit secara teratur} - Setiap fitur selesai
+\item \textbf{Tulis pesan commit yang jelas} - Jelaskan perubahan
+\item \textbf{Gunakan branch} - Pisahkan development dan bug fix
+\item \textbf{Review kode} - Minta teman review kode Anda
+\end{itemize}
+
+\section{🎯 Latihan Debugging}
+
+\subsection{Latihan 1: Debug Program Sederhana}
+
+Debug program berikut yang memiliki beberapa bug:
+
+\begin{lstlisting}[language=c++, caption=Program dengan Bug]
+#include <iostream>
+using namespace std;
+
+int main() {
+    int angka;
+    cout << "Masukkan angka: ";
+    cin >> angka;
+    
+    if (angka > 0) {
+        cout << "Angka positif" << endl;
+    } else if (angka < 0) {
+        cout << "Angka negatif" << endl;
+    } else {
+        cout << "Angka nol" << endl;
+    }
+    
+    return 0;
+}
+\end{lstlisting}
+
+\subsection{Latihan 2: Debug Program Array}
+
+Debug program array berikut:
+
+\begin{lstlisting}[language=c++, caption=Program Array dengan Bug]
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    
+    // Hitung rata-rata
+    int total = 0;
+    for(int i = 0; i <= 5; i++) {  // Bug: seharusnya < 5
+        total += arr[i];
+    }
+    
+    int rataRata = total / 5;
+    cout << "Rata-rata: " << rataRata << endl;
+    
+    return 0;
+}
+\end{lstlisting}
+
+\section{📚 Referensi dan Bacaan Lanjutan}
+
+Untuk pemahaman yang lebih mendalam tentang debugging, pembaca dapat merujuk pada:
+
+\begin{itemize}
+\item \textbf{Qt Creator Debugging Manual} - Dokumentasi resmi Qt\footnote{Qt Company. (2023). "Debugging in Qt Creator". https://doc.qt.io/qtcreator/creator-debugging.html}
+\item \textbf{GDB Manual} - GNU Debugger documentation\footnote{Free Software Foundation. (2023). "GDB: The GNU Project Debugger". https://www.gnu.org/software/gdb/}
+\item \textbf{Effective C++ Debugging} - Best practices\footnote{Meyers, S. (2005). "Effective C++: 55 Specific Ways to Improve Your Programs and Designs". Addison-Wesley.}
+\item \textbf{Debugging Techniques} - Artikel online\footnote{Stack Overflow. (2023). "Debugging Techniques". https://stackoverflow.com/questions/tagged/debugging}
+\end{itemize}
+
+\section{🎉 Kesimpulan}
+
+Debugging adalah skill penting yang harus dikuasai oleh setiap programmer. Dengan memahami jenis-jenis kesalahan dan menggunakan tools debugging yang tepat, Anda dapat menjadi programmer yang lebih efektif dan produktif.
+
+\begin{center}
+\textbf{Ingat: Debugging adalah bagian dari proses pemrograman, bukan tanda kegagalan!} 🐛✨
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\textit{--- Bab selanjutnya: Array dan String ---}
+\end{center} 

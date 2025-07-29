@@ -1,0 +1,1 @@
+int number = *pBil; //mengambil nilai variabel yg alamatnya disimpan padapointer pBil

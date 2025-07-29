@@ -1,0 +1,1 @@
+<tipedataMemberVariabel> get<NamaMemberVariabel>();

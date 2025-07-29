@@ -1,0 +1,1 @@
+daftar_burung[1]->berkicau(); //<-- berisi objek Kuda_terbang

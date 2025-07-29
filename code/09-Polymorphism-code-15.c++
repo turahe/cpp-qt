@@ -1,0 +1,1 @@
+Member is ambiguous: 'Kuda::makan; and 'Burung::makan'

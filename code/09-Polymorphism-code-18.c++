@@ -1,0 +1,1 @@
+pKterbang->Burung::makan();

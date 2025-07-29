@@ -1,0 +1,35 @@
+FROM danteev/texlive:latest
+
+# Install additional packages and tools
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    make \
+    git \
+    curl \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install code-server
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+# Create workspace directory
+WORKDIR /workspace
+
+# Copy build scripts
+COPY build-latex.sh /usr/local/bin/build-latex.sh
+COPY Makefile /workspace/Makefile
+RUN chmod +x /usr/local/bin/build-latex.sh
+
+# Copy LaTeX files
+COPY latex/ /workspace/latex/
+COPY manuscript/ /workspace/manuscript/
+
+# Create output directory
+RUN mkdir -p /workspace/output
+
+# Expose port for code-server
+EXPOSE 8080
+
+# Default command
+CMD ["code-server", "--bind-addr", "0.0.0.0:8080", "--auth", "none"] 

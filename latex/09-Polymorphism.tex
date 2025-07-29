@@ -1,64 +1,100 @@
-\textbf{Agenda}
+\textbf{📋 Apa yang akan dipelajari}
 
-Pada chapter ini kita akan membahas beberapa topik tentang 
-teknis polimorfisme, adapun topik yang akan dibahas
-adalah
+Pada bab ini kita akan membahas tentang teknik polimorfisme dalam C++:
+
+\begin{itemize}
+\item Pengenalan polimorfisme dan konsepnya
+\item Single inheritance dan multiple inheritance
+\item Virtual methods dan overriding
+\item Abstract data types
+\end{itemize}
 
 \minitoc
 
-Secara teknis polimorfisme merupakan suatu konsep untuk merelasikan
-diatara kelas-kelas C++ melalui overriding metode-metode virtual,
-sehingga dengan demikian satu tipe kelas dapat konversikan menjadi kelas
-lain. Aspek penting pertama dalam Pewarisan (\emph{Inheritance}) adalah
-pengoganisasian kelas yang mengijinkan kelas lain berbagi program dan
-data (\emph{code reuse}) sehingga progam tidak harus dibangun ulang dari
-awal. Aspek penting kedua dari Pewarisan (\emph{Inheritance}) adalah
-pengelompokan fitur-fitur kelas yang serupa kedalam sebuah kelas dasar
-(\emph{base class}) dan kemudian membuat kelas lain dengan cara
-menurunkan kelas tersebut sehingga bentuk utama/ pokok dari kelas-kelas
-turunan menjadi serupa dengan kelas dasar sedemikian rupa sehingga
-\texttt{pointer} atau referensi bertipe kelas dasar dapat menerima nilai
-berbagai macam bentuk objek bertipe kelas turunannya (berubah tipe
-kelas) dan dapat mengeksekusi fitur-fitur yang serupa tesebut. Inilah
-yang disebut dengan polimorfisme.
+\section{🔄 Polimorfisme (Polymorphism)}\label{polymorphism}
 
-Berbeda dengan tipe data standard (int, float, double, bool, dsb.) yang
-jenisnya terbatas dan sudah pasti dikenal dalam pemrograman C++, kelas
-adalah tipe data terstruktur yang bisa dibuat sendiri oleh programer,
-sehingga tidak terbatas ada berapa macam kelas dalam C++. Namun di sisi
-lain, dalam pemrograman kita pasti perlu untuk dapat berhubungan antara
-kelas satu dengan yang lain, sehingga diperlukan suatu kerangka yang
-dapat memberikan arahan mengenai bentuk dan fitur dari suatu kelas
-sehingga dengan demikian ada suatu pointer atau referensi yang dapat
-menerima berbagai macam bentuk yang dinamakan polimorfisme.
+\subsection{Apa itu Polimorfisme?}
 
-Mekanisme untuk dapat terjadi polimorfisme adalah pewarisan
-(inheritance), oleh karena itu polimorfisme hanya bisa terjadi diantara
-kelas-kelas yang mempunyai hubungan kekerabatan, tepatnya pointer atau
-referensi bertipe kelas dasar hanya dapat menerima berbagai macam bentuk
-objek yang bertipe kelas-kelas turunannya, sehingga pointer atau
-referensi tersebut dapat mengeksekusi fitur-fitur yang serupa dengannya.
-Contoh sederhana dari polimorfisme adalah seperti sudah dibahas pada bab
-\ref{inheritance} yaitu mengenai metode vitual pada percobaan contoh \ref{contoh7-10}.
+Polimorfisme adalah konsep untuk merelasikan antar kelas C++ melalui overriding metode-metode virtual, sehingga satu tipe kelas dapat dikonversikan menjadi kelas lain.
 
-Berikut ini akan dibahas secara lebih mendalam mengenai berbagai aspek
-polimorfisme dari problem pada \texttt{single\ inheritance},
-\texttt{multiple\ inheritance} hingga \texttt{abstract\ data\ type}.
+\subsection{Aspek Penting Inheritance}
 
-\section{Problema Pewarisan Tunggal (Single Inheritance)}\label{problema-pewarisan-tunggal-single-inheritance}
+\begin{itemize}
+\item \textbf{Code Reuse} - pengorganisasian kelas yang mengizinkan kelas lain berbagi program dan data
+\item \textbf{Pengelompokan} - fitur-fitur kelas yang serupa dikelompokkan dalam kelas dasar
+\item \textbf{Polimorfisme} - pointer atau referensi bertipe kelas dasar dapat menerima berbagai bentuk objek turunan
+\end{itemize}
 
-Supaya terlihat sederhana, untuk menjelaskan masalah ini marilah kita
-menggunakan ilustrasi mengenai kelas-kelas dengan perumpamaan kelas
-binatang dan turunan-turunanya. Misalnya kelas Binatang mempunai hirarki
-keturuan \textbf{Mamalia} dan \textbf{Burung}, kelas \texttt{Burung}
-mempunyai member function \texttt{terbang()}, sedangkan kelas
-\texttt{Mamalia} sudah diturunkan menjadi beberapa kelas diantaranya
-\texttt{Kuda} dan \texttt{Anjing}. Kelas Kuda mempunyai member fucntion
-\texttt{meringkik()} dan \texttt{melompat()}. Suatu saat terpikir untuk
-membuat kelas \texttt{Kuda\_terbang} yang merupakan kombinasi antara
-kelas \texttt{Burung} dan kelas \texttt{Kuda}, karena
-\texttt{Kuda\_terbang} bisa \texttt{terbang()}, \texttt{meringkik()} dan
-\texttt{melompat()}.
+\subsection{Cara Kerja Polimorfisme}
+
+\begin{itemize}
+\item Kelas turunan memiliki bentuk utama yang serupa dengan kelas dasar
+\item Pointer/referensi kelas dasar dapat menerima objek kelas turunan
+\item Dapat mengeksekusi fitur-fitur yang serupa
+\item Ini yang disebut dengan \textbf{polimorfisme}
+\end{itemize}
+
+\subsection{Perbedaan Tipe Data Standard dan Kelas}
+
+\begin{itemize}
+\item \textbf{Tipe data standard} (int, float, double, bool, dll.) - jenisnya terbatas dan sudah dikenal dalam C++
+\item \textbf{Kelas} - tipe data terstruktur yang bisa dibuat sendiri oleh programmer, tidak terbatas jumlahnya
+\end{itemize}
+
+\subsection{Kebutuhan Polimorfisme}
+
+Dalam pemrograman kita perlu berhubungan antar kelas, sehingga diperlukan kerangka yang dapat memberikan arahan mengenai bentuk dan fitur dari suatu kelas.
+
+\subsection{Mekanisme Polimorfisme}
+
+\begin{itemize}
+\item \textbf{Inheritance} - mekanisme untuk terjadinya polimorfisme
+\item \textbf{Hubungan kekerabatan} - polimorfisme hanya terjadi antar kelas yang berhubungan
+\item \textbf{Pointer/referensi} - bertipe kelas dasar dapat menerima objek kelas turunan
+\end{itemize}
+
+\subsection{Contoh Polimorfisme}
+
+Contoh sederhana polimorfisme sudah dibahas pada bab \ref{inheritance} mengenai metode virtual pada percobaan contoh \ref{contoh7-10}.
+
+\subsection{Topik yang Akan Dibahas}
+
+Berikut ini akan dibahas secara lebih mendalam mengenai berbagai aspek polimorfisme:
+\begin{itemize}
+\item \texttt{single inheritance}
+\item \texttt{multiple inheritance}
+\item \texttt{abstract data type}
+\end{itemize}
+
+\section{🎯 Problema Pewarisan Tunggal (Single Inheritance)}\label{problema-pewarisan-tunggal-single-inheritance}
+
+\subsection{Ilustrasi Masalah}
+
+Untuk menjelaskan masalah ini, mari kita gunakan ilustrasi kelas binatang dan turunannya.
+
+\subsection{Hirarki Kelas Binatang}
+
+\begin{itemize}
+\item \textbf{Kelas Binatang} memiliki hirarki keturunan:
+  \begin{itemize}
+  \item \textbf{Mamalia} - memiliki member function \texttt{terbang()}
+  \item \textbf{Burung} - memiliki member function \texttt{terbang()}
+  \end{itemize}
+\item \textbf{Kelas Mamalia} diturunkan menjadi:
+  \begin{itemize}
+  \item \texttt{Kuda} - memiliki member function \texttt{meringkik()} dan \texttt{melompat()}
+  \item \texttt{Anjing} - kelas turunan lainnya
+  \end{itemize}
+\end{itemize}
+
+\subsection{Problema Kuda Terbang}
+
+Suatu saat terpikir untuk membuat kelas \texttt{Kuda\_terbang} yang merupakan kombinasi antara kelas \texttt{Burung} dan kelas \texttt{Kuda}, karena \texttt{Kuda\_terbang} bisa:
+\begin{itemize}
+\item \texttt{terbang()}
+\item \texttt{meringkik()}
+\item \texttt{melompat()}
+\end{itemize}
 
 \begin{figure}[htbp]
 \centering
@@ -95,15 +131,7 @@ melakukan pekerjaan \texttt{melompat()}. Kemudian karena seharusnya
 \texttt{Kuda\_terbang} tetap dapat melompat kita membatasi jika jarak
 dekat melompat jika jarak jauh terbang seperti berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Kuda_terbang::berpindah(long jarak)
-{
-if (jarak > sangat_jauh)
-terbang(jarak);
-else
-melompat(jarak);
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-1.c++}
 
 Tapi ini menjadikan terbatas, bagaimana jika nanti ternyata
 Kuda\_terbang bisa \texttt{melompat()} lebih jauh atau
@@ -176,13 +204,7 @@ Kandang[4] <-- berisi objek Kuda
 
   Sehingga hasil keluaran berikutnya:
 
-\begin{lstlisting}[language=c++, numbers=none]
-kuda tidak bisa terbang 
-kuda tidak bisa terbang 
-terbang... 
-terbang... 
-kuda tidak bisa terbang
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-3.c++}
 \item
   Dari percobaan ini tampak \emph{polimorfisme} bisa berhasil dengan
   baik. Namun seperti sudah dijelaskan di atas, harga yang harus dibayar
@@ -346,9 +368,7 @@ inheritance). Penurunan lebih dari satu kelas dasar dilakukan dengan
 cara menuliskan kelas dasar berikutnya dipisahkan dengan tanda koma (,)
 seperti berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-class KelasTurunan : public KelasDasar1, public KelasDasar2{}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-4.c++}
 
 Percobaan berikut ini memberikan ilustrasi cara deklarasi kelas
 \texttt{Kuda\_terbang} yang mewarisi kelas dasar Kuda dan Burung,
@@ -385,18 +405,14 @@ daftar objek tersebut.
   inheritance, yaitu pada deklarasikelas \texttt{Kuda\_terbang} yang
   merupakan keturunan dari Kuda dan Burung :
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Kuda_terbang : public Kuda, public Burung
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-5.c++}
 \item
   Kemudian kelas ini melakukan override terhadap metode
   \texttt{berkicau()}, metode \texttt{berkicau()} pada
   \texttt{Kuda\_terbang} ini mengerjakan pemanggilan metode
   \texttt{meringkik()}, yaitu metode warisan dari kelas Kuda:
 
-\begin{lstlisting}[language=c++, numbers=none]
-void berkicau() const { meringkik(); }
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-6.c++}
 \item
   Tampak pada percobaan Contoh \ref{contoh9-3} ini ketika diciptakan objek bertipe
   Kuda maka yang bekerja adalah konstruktor \texttt{Kuda}, demikian juga
@@ -418,18 +434,12 @@ void berkicau() const { meringkik(); }
   sebenarnya yang pertama berisi objek Kuda sedangkan yang kedua berisi
   objek \texttt{Kuda\_terbang} :
 
-\begin{lstlisting}[language=c++, numbers=none]
-daftar_kuda[0] = new Kuda(); //<-- objek Kuda
-daftar_kuda[1] = new Kuda_terbang(); //<-- objek Kuda_terbang
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-7.c++}
 \item
   Demikian juga pada daftar\_burung, yang pertama berisi objek Burung
   sedangkan yang kedua berisi Kuda\_terbang :
 
-\begin{lstlisting}[language=c++, numbers=none]
-daftar_burung[0] = new Burung(); //<-- objek Burung
-daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-8.c++}
 \item
   Ini menunjukkan bahwa baik \texttt{daftar\_kuda{[}{]}} maupun
   \texttt{daftar\_burung{[}{]}} dapat berpolimorfisme dengan sempurna
@@ -438,9 +448,7 @@ daftar_burung[1] = new Kuda_terbang();//<-- objek Kuda_terbang
   Pada waktu \texttt{daftar\_burung} berisi objek Kuda\_terbang, ketika
   dipanggil metode berkicau berikut :
 
-\begin{lstlisting}[language=c++, numbers=none]
-daftar_burung[1]->berkicau(); //<-- berisi objek Kuda_terbang
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-9.c++}
 \item
   Maka yang menanggapi adalah metode hasil override di dalam kelas
   \texttt{Kuda\_terbang} yaitu pemanggilan metode \texttt{meringkik()},
@@ -482,16 +490,12 @@ Jika bentuk konstruktor default (konstruktor yang diciptakan secara
 otomatis oleh kompiler jika kelas turunan tidak menuliskan konstruktor
 secara eksplisit) pada single inheritance yaitu:
 
-\begin{lstlisting}[language=c++, numbers=none]
-KelasTurunan():KelasDasar(){} //<-- Konstruktor default kelas Turunan tunggal
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-10.c++}
 
 Maka konstruktor default kelas banyak turunan (mutiple inheritance)
 adalah :
 
-\begin{lstlisting}[language=c++, numbers=none]
-KelasTurunan():KelasDasar1(),KelasDasar2(){}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-11.c++}
 
 Jadi pada waktu membuat kelas banyak turunan, khususnya jika kelas
 dasarnya tidak mempunyai konstruktor tanpa parameter, maka konstruktor
@@ -533,17 +537,13 @@ Konstruktor Burung, warna = Merah
   inheritance, yaitu pada deklarasi kelas \texttt{Kuda\_terbang} yang
   merupakan keturunan dari Kuda dan Burung :
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Kuda_terbang : public Kuda, public Burung
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-5.c++}
 \item
   Oleh karena itu konstruktor kelas \texttt{Kuda\_terbang} ini harus
   memanggil secara eksplisit konstruktor-konstruktor kelas dasarnya
   seperti berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Kuda_terbang():Kuda("Gondrong"),Burung("Merah")
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-13.c++}
 \item
   Tampak pada hasil output, instansiasi kelas Kuda\_terbang menjalankan
   konstruktor Kuda dengan satu parameter dan konstruktor Burung dengan
@@ -563,23 +563,17 @@ metode \texttt{virutal\ makan()}dam jika kita memanggil metode dari
 objek Kuda\_terbang yang merupakan multi inheritance dari kedua kelas
 tersebut di atas.
 
-\begin{lstlisting}[language=c++, numbers=none]
-pKterbang->makan();
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-14.c++}
 
 Maka kompile akan menampilkan pesan kesalahan :
 
-\begin{lstlisting}[language=c++, numbers=none]
-Member is ambiguous: 'Kuda::makan; and 'Burung::makan'
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-15.c++}
 
 Untuk memecahkan masalah ini dengan pemanggilan secara eksplisit bisa
 dilakukan dengan cara menyebutkan nama kelas dasar pemilik metode
 virtual yang akan dieksekusi, misalnya:
 
-\begin{lstlisting}[language=c++, numbers=none]
-pKterbang->Kuda::makan();
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-16.c++}
 
 Kapan saja kita ingin mengeksekusi fungsi anggota atau variabel anggota
 kelas mana yang akan diakses, kita dapat melakukan dengan cara tersebut
@@ -587,9 +581,7 @@ di atas. Jika kelas Kuda\_terbang akan melakukan overriding fungsi
 tersebut, maka pemanggilan tersebut bisa dilakukan di dalam fungsi
 anggota Kuda\_terbang:
 
-\begin{lstlisting}[language=c++, numbers=none]
-virtual void makan() const { Kuda::makan() }
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-17.c++}
 
 Dengan cara ini kita bisa menyembunyikan masalah ambiguitas ini dari
 pemakai kelas Kuda\_terbang dengan cara mengenkapsulasi di dalam kelas
@@ -597,9 +589,7 @@ Kuda\_terbang mengenai kelas dasar mana yang diambil warisan fungsi
 makan()-nya. Namun pemakai tetap saja bebas untuk dapat memanggil waisan
 lainnya dengan menulis :
 
-\begin{lstlisting}[language=c++, numbers=none]
-pKterbang->Burung::makan();
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-18.c++}
 
 \section{Penurunan dari Kelas Dasar
 Bersama}\label{penurunan-dari-kelas-dasar-bersama}
@@ -658,9 +648,7 @@ dengan cara melakukan override terhadap metode \texttt{getUmur()} kemudian di
 dalamnya memilih metode yang akan merespon, misalnya dipilih \texttt{getUmur()}
 dari Kuda seperti berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-virtual int getUmur() const { return Kuda::getUmur() }
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-19.c++}
 
 Agar lebih jelas, lakukan pecobaan berikut ini.
 
@@ -700,12 +688,7 @@ Kuda\ldots{}Umur : 5
   karena itu pada kelas \texttt{Kuda\_terbang} dilakukan overriding
   seperti berikut :
 
-\begin{lstlisting}[language=c++, numbers=none]
-virtual int const getUmur(){
-cout << "dari Kuda_terbang...";
-return Kuda::getUmur();
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-20.c++}
 \item
   Tampak pada hasil pemanggilan metode tersebut pada kelas
   Kuda\_terbang: dari Kuda\_terbang\ldots{}dari Kuda\ldots{}Umur : 5 Ini
@@ -769,9 +752,7 @@ BinatangUmur : 5
   instansiasi kelas Kuda\_terbang memanggil langsung konstruktor
   Binatang seperti berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-Kuda_terbang():Kuda(),Burung(),Binatang()
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-21.c++}
 \end{itemize}
 
 Memang kelas \texttt{Kuda\_terbang} bukan keturunan langsung kelas
@@ -779,10 +760,7 @@ Binatang, namun hal ini bisa dimungkinkan karena kelas dasar dari
 \texttt{Kuda\_terbang}, yaitu Kuda dan Binatang melakukan penurunan
 secara virutal :
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Kuda : virtual public Binatang{}
-class Burung : virtual public Binatang{}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-22.c++}
 
 sehingga dimungkinkan konstruktor \texttt{Kuda\_terbang()} memanggil
 langsung konstruktor \texttt{Binatang()}. Konsekuensinya maka jika ia
@@ -807,22 +785,14 @@ adalah seperti gambar Daimond Inheritance di atas.
 \item [\ding{45}] Untuk memastikan kelas turunan hanya mempunyai sebuah kelas dasar bersama,
 deklarasikan kelas-kelas turunan secara virtual dari kelas dasar. Contoh:
 
-\begin{lstlisting}[language=c++, numbers=none]
-class Binatang //<-- common base class (kelas dasar bersama)
-class Kuda : virtual public Binatang //<-- penurunan secara virtual
-class Burung : virtual public Binatang //<-- penurunan secara virtual
-class Kuda_terbang : public Kuda, public Burung
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-23.c++}
 
 \item [\ding{45}] Jika penurunan dilakukan secara virtual seperti di atas, secara otomatis kelas
 Kuda\_terbang akan memanggil konstruktor Binatang() walaupun tidak ditulis
 secara eksplisit, contoh konstruktor Kuda\_terbang() tanpa memanggil konstruktor
 Binatang() berikut ini akan menghasilkan hasil yang sama:
 		
-\begin{lstlisting}[language=c++, numbers=none]
-Kuda_terbang(){//<-- pemanggilan Kuda(), Burung() dan Binatang() implisit
-cout << "Konstruktor Kuda_terbang\n";}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/09-Polymorphism-code-24.c++}
 \end{itemize}
 
 \end{quotation}

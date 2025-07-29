@@ -1,0 +1,2 @@
+katty.Bersuara();
+katty.tampilkanUmur();

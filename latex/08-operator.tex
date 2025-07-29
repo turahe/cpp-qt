@@ -1,100 +1,100 @@
-\textbf{Agenda}
+\textbf{📋 Apa yang akan dipelajari}
 
-Pada chapter ini kita akan membahas beberapa topik tentang penggunaan
-Operator Types dan Operator Overloading, adapun topik yang akan dibahas
-adalah
+Pada bab ini kita akan membahas tentang Operator Types dan Operator Overloading dalam C++:
+
+\begin{itemize}
+\item Pengenalan operator overloading
+\item Unary dan binary operators
+\item Cara membuat operator custom
+\item Contoh penggunaan operator
+\end{itemize}
 
 \minitoc
 
-\section{Operator pada C++}\label{operator-pada-cpp}
+\section{⚙️ Operator pada C++}\label{operator-pada-cpp}
 
-Pada bab awal kita sudah mempelajari berbagai macam operator (+, -, /,
-\textgreater{}, \textless{}) yang dapat digunakan pada tipe data yang
-sudah ada di C++ seperti \texttt{int}, \texttt{float}, \texttt{bool},
-dll. Namun jika anda ingin menggunakan operator tersebut pada tipe data
-yang anda definisikan sendiri seperti tipe data Class, maka anda dapat
-menggunakan keyword operator .
+\subsection{Apa itu Operator Overloading?}
 
-\begin{lstlisting}[language=c++, numbers=none]
-return_type operator operator_symbol (...parameter list...);
-\end{lstlisting}
+Pada bab awal kita sudah mempelajari berbagai macam operator (+, -, /, >, <) yang dapat digunakan pada tipe data yang sudah ada di C++ seperti \texttt{int}, \texttt{float}, \texttt{bool}, dll.
 
-Penggunaan keyword operator sebenarnya mirip dengan penggunaan fungsi ,
-hanya anda dapat menggunakan operator symbol seperti (+, -,
-\textgreater{},\textless{} , =, dll). Mungkin anda bertanya kenapa harus
-menggunakan keyword operator jika anda dapat menggunakan fungsi ?
-Ilustrasi dibawah ini akan menunjukan kenapa kita membutuhkan operator.
+Namun jika Anda ingin menggunakan operator tersebut pada tipe data yang Anda definisikan sendiri seperti tipe data Class, maka Anda dapat menggunakan keyword \textbf{operator}.
 
-\begin{lstlisting}[language=c++, numbers=none]
-CKataString strKata1("Hello");
-CKataString strKata2("World");
-\end{lstlisting}
+\subsection{Sintaks Operator Overloading}
 
-Jika anda menginginkan untuk menggabungkan kedua kata tersebut anda
-dapat membuat function \texttt{Concatenate} seperti berikut:
+\lstinputlisting[language=c++]{../code/08-operator-code-1.c++}
 
-\begin{lstlisting}[language=c++, numbers=none]
-CKataString strGabung;
-strGabung = strKata1.Concatenate(strKata2);
-\end{lstlisting}
+\subsection{Mengapa Perlu Operator Overloading?}
 
-Selain cara seperti diatas akan lebih natural jika anda menulis kode
-sebagai berikut:
+Penggunaan keyword operator mirip dengan fungsi, tetapi Anda dapat menggunakan operator symbol seperti (+, -, >, <, =, dll).
 
-\begin{lstlisting}[language=c++, numbers=none]
-CKataString strGabung;
-strGabung = strKata1 + strKata2;
-\end{lstlisting}
+Mungkin Anda bertanya: "Kenapa harus menggunakan keyword operator jika bisa menggunakan fungsi?"
 
-Walaupun hasil dari kedua cara penulisan diatas sama, namun penggunaan
-operator + untuk menggabungkan string akan lebih intuitif dan mudah
-dipahami.
+Ilustrasi di bawah ini akan menunjukkan mengapa kita membutuhkan operator overloading.
 
-Ada 2 macam operator yang terdapat di C++ yaitu unary dan binary.
+\subsection{Contoh Perbandingan}
 
-\subsection{Unary Operator}\label{unary-operator}
+\lstinputlisting[language=c++]{../code/08-operator-code-2.c++}
 
-Unary operator hanya mempunyai single operand saja, cara penulisan unary
-operator adalah sebagai berikut.
+Jika Anda ingin menggabungkan kedua kata tersebut, Anda dapat membuat function \texttt{Concatenate}:
 
-\begin{lstlisting}[language=c++, numbers=none]
-return_type operator operator_type (parameter_type)
-{
-// ... implementation
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/08-operator-code-3.c++}
 
-Tipe dari unary operator yang dapat digunakan adalah
+Atau dengan operator overloading, lebih natural:
+
+\lstinputlisting[language=c++]{../code/08-operator-code-4.c++}
+
+\subsection{Keunggulan Operator Overloading}
+
+\begin{itemize}
+\item \textbf{Intuitif} - penggunaan operator + untuk menggabungkan string lebih mudah dipahami
+\item \textbf{Natural} - kode terlihat lebih alami dan mudah dibaca
+\item \textbf{Konsisten} - menggunakan operator yang sudah familiar
+\end{itemize}
+
+\subsection{Jenis Operator}
+
+Ada 2 macam operator yang terdapat di C++:
+\begin{itemize}
+\item \textbf{Unary} - operator dengan satu operand
+\item \textbf{Binary} - operator dengan dua operand
+\end{itemize}
+
+\subsection{🔢 Unary Operator}\label{unary-operator}
+
+Unary operator hanya mempunyai satu operand saja.
+
+\subsubsection{Sintaks Unary Operator}
+
+\lstinputlisting[language=c++]{../code/08-operator-code-5.c++}
+
+\subsubsection{Jenis Unary Operator}
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Operator & Name\tabularnewline
+\textbf{Operator} & \textbf{Name} \\
 \midrule
 \endhead
-++ & Increment\tabularnewline
--- & Decerement\tabularnewline
-* & Pointer Dereference\tabularnewline
--\textgreater{} & Member Selection\tabularnewline
-! & Logika NOT\tabularnewline
-\& & Address-of\tabularnewline
-\textasciitilde{} & One's Complement\tabularnewline
-+ & Unary Plus\tabularnewline
-- & Unary Negation\tabularnewline
+++ & Increment \\
+-- & Decrement \\
+* & Pointer Dereference \\
+-> & Member Selection \\
+! & Logika NOT \\
+\& & Address-of \\
+\textasciitilde{} & One's Complement \\
++ & Unary Plus \\
+- & Unary Negation \\
 \bottomrule
 \end{longtable}
 
-Pada Labs1 akan ditunjukan penggunaan operator increment. Pada contoh
-dibawah ini kita akan membuat Class Kalender yang mempunyai tiga class
-member yang merepresentasikan hari, bulan, dan tahun (tipe integer),
-anda dapat menggunakan operator ++ untuk menambahkan hari.
+\subsection{Contoh Penggunaan Increment Operator}
 
-\subsubsection*{Contoh  Menggunakan Increment Operator (Notasi prefix).}
+Pada contoh di bawah ini kita akan membuat Class Kalender yang mempunyai tiga class member yang merepresentasikan hari, bulan, dan tahun (tipe integer). Anda dapat menggunakan operator ++ untuk menambahkan hari.
+
+\subsubsection*{💡 Contoh Increment Operator (Notasi prefix)}
 
 \begin{enumerate}
-
-\item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh8-1}, kemudian tulis kode berikut.
+\item Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
+\item Tulis kode berikut:
 
 \lstinputlisting[language=c++, caption=Menggunakan Increment Operator (Notasi prefix), label=contoh8-1]{../code/contoh8-1.cpp}
 
@@ -136,14 +136,7 @@ Tanggal setelah notasi prefik dijalankan
 Ada perbedaan penulisan notasi prefix dan postfix, sebagai contoh anda
 dapat melihat kode dibawah ini.
 
-\begin{lstlisting}[language=c++, numbers=none]
-int bil1 = 22;
-int bil2 = bil1++;
-//mengcopy nilai lama dari bil1
-cout << "bil2 : " << bil2;
-//nilai bil1 setelah di increment
-cout << "bil1 : " << bil1;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/08-operator-code-6.c++}
 
 Nilai \texttt{bil2} adalah \texttt{22}, karena yang dimasukan kedalam
 \texttt{bil2} adalah nilai lama dari \texttt{bil1}, baru setelah itu
@@ -202,20 +195,12 @@ yang hanya menerima parameter bertipe integer.
 Anda dapat melakukan konversi diatas dengan menggunakan conversion
 operator yang mempunyai syntax sebagai berikut:
 
-\begin{lstlisting}[language=c++, numbers=none]
-operator conversion_type();
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/08-operator-code-7.c++}
 
 Jadi jika anda menghendaki mengkonversi tipe Kalender menjadi int anda
 dapat menggunakan operator berikut.
 
-\begin{lstlisting}[language=c++, numbers=none]
-operator int()
-{
-// implementation
-return intValue;
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/08-operator-code-8.c++}
 
 Contoh \ref{contoh8-3} dibawah ini akan menunjukan bagaimana penggunaan conversion
 operator untuk mengkonversi tipe Kalender menjadi int.
@@ -261,9 +246,7 @@ Operator yang mengoperasikan dua operand disebut dengan binary operator,
 cara penulisan binary operator sama dengan penulisan oprator yang
 sebelumnya.
 
-\begin{lstlisting}[language=c++, numbers=none]
-return_type operator_type (parameter);
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/08-operator-code-9.c++}
 
 Ada beberapa macam binary operator yang dapat digunakan pada C++,
 diantaranya :
@@ -372,16 +355,7 @@ Kalender, anda dapat menuliskan kode \texttt{objKal\ +=\ 25;}
 Pada kasus tertentu dimana anda ingin membandingkan dua objek bertipe
 Kalender ada dapat menggunakan comparison operator.
 
-\begin{lstlisting}[language=c++, numbers=none]
-if (objKal1 == objKal2)
-{
-// Do something
-}
-else
-{
-// Do something else
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/08-operator-code-10.c++}
 
 Anda dapat menggunakan equality operator (==) atau inequality operator
 (!=). Anda juga dapat membuat lebih dari satu equality atau inequality

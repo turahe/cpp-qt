@@ -1,0 +1,1 @@
+class Turunan : public Kelasku\{ public: //memanggil konstruktor kelas

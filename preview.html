@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Qt Learning Book - LaTeX Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .build-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #007bff;
+        }
+
+        .build-section h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .build-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .build-option {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .build-option:hover {
+            border-color: #007bff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.2);
+        }
+
+        .build-option h3 {
+            color: #007bff;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .build-option p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .command {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .pdf-section {
+            background: #e8f5e8;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid #28a745;
+        }
+
+        .pdf-section h2 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .pdf-link {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-link:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40,167,69,0.3);
+        }
+
+        .structure-section {
+            background: #fff3cd;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #ffc107;
+        }
+
+        .structure-section h2 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .chapter-list {
+            list-style: none;
+        }
+
+        .chapter-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ffeaa7;
+        }
+
+        .chapter-list li:last-child {
+            border-bottom: none;
+        }
+
+        .part-title {
+            font-weight: bold;
+            color: #856404;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .status.ready {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.building {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .build-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 C++ Qt Learning Book</h1>
+            <p>LaTeX Document Preview & Build System</p>
+        </div>
+
+        <div class="main-content">
+            <div class="build-section">
+                <h2>🚀 Build Options</h2>
+                <div class="build-options">
+                    <div class="build-option" onclick="buildDocument('all')">
+                        <h3>📄 Build PDF</h3>
+                        <p>Generate the complete PDF document</p>
+                        <div class="command">make all</div>
+                    </div>
+                    <div class="build-option" onclick="buildDocument('index')">
+                        <h3>📑 Build with Index</h3>
+                        <p>Generate PDF with table of contents and index</p>
+                        <div class="command">make index</div>
+                    </div>
+                    <div class="build-option" onclick="buildDocument('bib')">
+                        <h3>📚 Build with Bibliography</h3>
+                        <p>Generate PDF with bibliography</p>
+                        <div class="command">make bib</div>
+                    </div>
+                    <div class="build-option" onclick="buildDocument('clean')">
+                        <h3>🧹 Clean Files</h3>
+                        <p>Remove auxiliary files</p>
+                        <div class="command">make clean</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pdf-section">
+                <h2>📖 Generated PDF</h2>
+                <p>Once built, you can view the generated PDF document:</p>
+                <a href="output/book.pdf" class="pdf-link" target="_blank">
+                    📄 Open Book PDF
+                </a>
+                <div id="pdf-status" class="status ready">Ready to build</div>
+                <div id="installation-help" style="display: none; margin-top: 15px; padding: 15px; background: #fff3cd; border-radius: 5px; border-left: 4px solid #ffc107;"></div>
+            </div>
+
+            <div class="structure-section">
+                <h2>📋 Book Structure</h2>
+                <ul class="chapter-list">
+                    <div class="part-title">Part 1: Dasar (Basics)</div>
+                    <li>Chapter 1: Mukadimah (Introduction)</li>
+                    <li>Chapter 2: Tipe Data, Identifier dan Operator</li>
+                    <li>Chapter 3: Control Statement</li>
+                    <li>Chapter 4: Array dan String</li>
+                    <li>Chapter 5: Fungsi</li>
+                    <li>Chapter 6: Pointer dan References</li>
+                    
+                    <div class="part-title">Part 2: OOP</div>
+                    <li>Chapter 7: Class dan Object</li>
+                    <li>Chapter 8: Inheritance</li>
+                    <li>Chapter 9: Operator Types dan Operator Overloading</li>
+                    <li>Chapter 10: Polymorphism</li>
+                    <li>Chapter 11: Casting dan Database</li>
+                    
+                    <div class="part-title">Part 3: Interface</div>
+                    <li>Chapter 12: GUI</li>
+                    
+                    <div class="part-title">Part 4: Widget</div>
+                    <li>Chapter 13: File, Stream, dan XML</li>
+                    <li>Chapter 14: Qt Webkit</li>
+                    
+                    <div class="part-title">Part 5: Library</div>
+                    <li>Chapter 15: Library</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Nur Wachid - C++ Qt Learning Book</p>
+            <p>Built with ❤️ using LaTeX</p>
+        </div>
+    </div>
+
+    <script>
+        function buildDocument(type) {
+            const status = document.getElementById('pdf-status');
+            status.textContent = 'Building...';
+            status.className = 'status building';
+            
+            // Call the build API
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ type: type })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Build response:', data);
+                
+                if (data.status === 'error') {
+                    status.textContent = 'LaTeX not installed';
+                    status.className = 'status error';
+                    showInstallationHelp(data.suggestions);
+                } else {
+                    // Poll for completion
+                    pollBuildStatus();
+                }
+            })
+            .catch(error => {
+                console.error('Build error:', error);
+                status.textContent = 'Build failed';
+                status.className = 'status error';
+            });
+        }
+        
+        function showInstallationHelp(suggestions) {
+            const helpDiv = document.getElementById('installation-help');
+            if (helpDiv && suggestions) {
+                helpDiv.innerHTML = '<h3>📋 Installation Options:</h3><ul>' + 
+                    suggestions.map(s => '<li>' + s + '</li>').join('') + '</ul>';
+                helpDiv.style.display = 'block';
+            }
+        }
+        
+        function pollBuildStatus() {
+            const status = document.getElementById('pdf-status');
+            let attempts = 0;
+            const maxAttempts = 30; // 30 seconds
+            
+            const poll = () => {
+                attempts++;
+                fetch('output/book.pdf', { method: 'HEAD' })
+                    .then(response => {
+                        if (response.ok) {
+                            status.textContent = 'Build completed!';
+                            status.className = 'status ready';
+                            
+                            // Update PDF link to refresh
+                            const pdfLink = document.querySelector('.pdf-link');
+                            pdfLink.href = 'output/book.pdf?' + new Date().getTime();
+                        } else if (attempts < maxAttempts) {
+                            setTimeout(poll, 1000);
+                        } else {
+                            status.textContent = 'Build timeout';
+                            status.className = 'status error';
+                        }
+                    })
+                    .catch(() => {
+                        if (attempts < maxAttempts) {
+                            setTimeout(poll, 1000);
+                        } else {
+                            status.textContent = 'Build failed';
+                            status.className = 'status error';
+                        }
+                    });
+            };
+            
+            poll();
+        }
+
+        // Check if PDF exists
+        function checkPDFStatus() {
+            fetch('output/book.pdf', { method: 'HEAD' })
+                .then(response => {
+                    const status = document.getElementById('pdf-status');
+                    if (response.ok) {
+                        status.textContent = 'PDF available';
+                        status.className = 'status ready';
+                    } else {
+                        status.textContent = 'PDF not found';
+                        status.className = 'status error';
+                    }
+                })
+                .catch(() => {
+                    const status = document.getElementById('pdf-status');
+                    status.textContent = 'PDF not found';
+                    status.className = 'status error';
+                });
+        }
+
+        // Check status on page load
+        window.addEventListener('load', checkPDFStatus);
+    </script>
+</body>
+</html> 

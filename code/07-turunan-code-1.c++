@@ -1,0 +1,1 @@
+class <kelas_turunan> : <jenis_penurunan> <kelas_dasar>

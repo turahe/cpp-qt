@@ -1,0 +1,79 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-interaction=nonstopmode",
+                "-synctex=1",
+                "-output-directory=../output",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "makeindex",
+            "command": "makeindex",
+            "args": [
+                "-o",
+                "../output/%DOCFILE%.ind",
+                "../output/%DOCFILE%.idx"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> makeindex -> pdflatex",
+            "tools": [
+                "pdflatex",
+                "makeindex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> biber -> pdflatex",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.outDir": "../output",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.internal.synctex.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.bcf",
+        "*.run.xml",
+        "*.fdb_latexmk",
+        "*.synctex.gz"
+    ],
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false
+} 

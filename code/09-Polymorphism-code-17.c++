@@ -1,0 +1,1 @@
+virtual void makan() const { Kuda::makan() }

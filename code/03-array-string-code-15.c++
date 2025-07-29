@@ -1,0 +1,1 @@
+tipe_data nama_var_array[batas_baris][batas_kolom];

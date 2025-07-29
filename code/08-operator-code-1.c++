@@ -1,0 +1,1 @@
+return_type operator operator_symbol (...parameter list...);

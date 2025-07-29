@@ -1,0 +1,1 @@
+KelasTurunan():KelasDasar(){} //<-- Konstruktor default kelas Turunan tunggal

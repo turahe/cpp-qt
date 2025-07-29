@@ -1,0 +1,1 @@
+Sepeda(string merk, int berat);

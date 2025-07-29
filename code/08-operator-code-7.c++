@@ -1,0 +1,1 @@
+operator conversion_type();

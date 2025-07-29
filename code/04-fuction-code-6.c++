@@ -1,0 +1,1 @@
+int fungsiku(int nilaiInt, float nilaiFloat);

@@ -1,0 +1,1 @@
+bool hasilku = (bool) isTrue(); // C-Style cast 

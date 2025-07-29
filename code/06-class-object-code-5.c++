@@ -1,0 +1,1 @@
+Katty.berat = 8;

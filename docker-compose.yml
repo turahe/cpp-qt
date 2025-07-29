@@ -1,23 +1,32 @@
 services:
-  code-server:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: code-server
-    environment:
-      - PASSWORD=secret
-      - DOCKER_USER=wachid
+  # Simple LaTeX service using existing image (no build required)
+  latex-simple:
+    image: danteev/texlive:latest
+    container_name: latex-simple
     volumes:
-      - ./:/home/coder/project
+      - ./:/workspace
+      - ./output:/workspace/output
+    working_dir: /workspace
     ports:
       - "8443:8080"
+    command: >
+      sh -c "
+        echo 'Installing additional packages...' &&
+        apt-get update &&
+        apt-get install -y python3 python3-pip make git curl wget &&
+        echo 'Starting code-server...' &&
+        curl -fsSL https://code-server.dev/install.sh | sh &&
+        code-server --bind-addr 0.0.0.0:8080 --auth none
+      "
     restart: unless-stopped
 
+  # Standalone LaTeX service for command-line builds
   latex:
     image: danteev/texlive:latest
     container_name: latex
     volumes:
       - ./:/workspace
+      - ./output:/workspace/output
     working_dir: /workspace
     entrypoint: tail -f /dev/null
     restart: unless-stopped

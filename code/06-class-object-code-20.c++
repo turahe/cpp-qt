@@ -1,0 +1,1 @@
+void set<NamaMemberVariabel>(<tipedataMemberVariabel> <namavariabel>);

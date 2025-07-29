@@ -1,0 +1,1 @@
+*pBil = 20; //nilai dari variabel bil juga akan berubah menjadi 20

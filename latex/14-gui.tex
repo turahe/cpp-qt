@@ -1,65 +1,383 @@
+\textbf{📋 Apa yang akan dipelajari}
+
+Pada bab ini kita akan mempelajari tentang pemrograman GUI (Graphical User Interface) dengan Qt:
+
+\begin{itemize}
+\item Pengenalan GUI dan Qt Widgets
+\item Signal dan Slot mechanism
+\item Membuat aplikasi GUI sederhana
+\item Layout management
+\item Event handling
+\end{itemize}
+
 \minitoc
 
-\section{Pemrograman aplikasi GUI}
+\section{🎨 Pengenalan GUI (Graphical User Interface)}
 
-Tulisan ini ingin memamparkan bagaimana membuat sebuah aplikasi GUI sederhana dengan mudah
-menggunakan Qt Creator . Aplikasi sederhana dengan fungsi  dasar tombol dan label (untuk gambar).
-Jika tombol pertama di klik, maka gamabr A muncul. Jika tombol kedua di klik, maka gambar 
-B muncul. Dengan contoh dasar tersebut di harapakan mamou memahamai dasar-dasar dari sebuah 
-pemrograman GUI di Qt Creator yakni signal dan slot.
+\subsection{Apa itu GUI?}
 
-\subsection{Menyiapkan Proyek}
+GUI (Graphical User Interface) adalah antarmuka pengguna yang menggunakan elemen grafis seperti ikon, tombol, menu, dan jendela untuk berinteraksi dengan pengguna. GUI membuat aplikasi lebih user-friendly dibandingkan dengan aplikasi berbasis teks (command line).
+
+\subsection{Keunggulan GUI}
+
+\begin{itemize}
+\item \textbf{User-friendly} - Mudah digunakan bahkan untuk pemula
+\item \textbf{Visual} - Informasi ditampilkan secara grafis
+\item \textbf{Intuitif} - Pengguna dapat langsung memahami fungsi
+\item \textbf{Modern} - Sesuai dengan standar aplikasi masa kini
+\end{itemize}
+
+\subsection{Qt sebagai Framework GUI}
+
+Qt adalah framework C++ yang powerful untuk membuat aplikasi GUI cross-platform. Qt menyediakan:
+\begin{itemize}
+\item \textbf{QtWidgets} - Widget tradisional untuk desktop
+\item \textbf{QtQuick} - Framework modern untuk UI yang dinamis
+\item \textbf{Qt Designer} - Tool visual untuk membuat UI
+\item \textbf{Signal-Slot} - Mekanisme komunikasi antar komponen
+\end{itemize}
+
+\section{🏗️ Komponen Dasar Qt GUI}
+
+\subsection{QWidget - Base Class}
+
+QWidget adalah kelas dasar untuk semua elemen GUI dalam Qt. Setiap widget dapat:
+\begin{itemize}
+\item Memiliki parent widget
+\item Menampilkan konten
+\item Merespons event
+\item Memiliki layout
+\end{itemize}
+
+\subsection{Jenis-jenis Widget}
+
+\subsubsection{Widget Input}
+\begin{itemize}
+\item \textbf{QPushButton} - Tombol yang dapat diklik
+\item \textbf{QLineEdit} - Kotak input teks satu baris
+\item \textbf{QTextEdit} - Area input teks multi-baris
+\item \textbf{QComboBox} - Dropdown list
+\item \textbf{QCheckBox} - Checkbox untuk pilihan
+\item \textbf{QRadioButton} - Radio button untuk pilihan tunggal
+\end{itemize}
+
+\subsubsection{Widget Display}
+\begin{itemize}
+\item \textbf{QLabel} - Menampilkan teks atau gambar
+\item \textbf{QTextBrowser} - Menampilkan teks dengan format
+\item \textbf{QProgressBar} - Bar progress
+\item \textbf{QSlider} - Slider untuk nilai numerik
+\end{itemize}
+
+\subsubsection{Container Widget}
+\begin{itemize}
+\item \textbf{QGroupBox} - Mengelompokkan widget
+\item \textbf{QTabWidget} - Tab untuk multiple pages
+\item \textbf{QScrollArea} - Area dengan scroll
+\item \textbf{QFrame} - Frame untuk border dan styling
+\end{itemize}
+
+\section{🔗 Signal dan Slot}
+
+\subsection{Konsep Signal dan Slot}
+
+Signal dan Slot adalah mekanisme komunikasi antar objek dalam Qt yang memungkinkan:
+\begin{itemize}
+\item \textbf{Signal} - Event yang dikirim oleh widget
+\item \textbf{Slot} - Fungsi yang merespons signal
+\item \textbf{Connection} - Menghubungkan signal dengan slot
+\end{itemize}
+
+\subsection{Cara Kerja Signal-Slot}
 
 \begin{enumerate}
-	\item Buka Qt Creator dan buat proyek baru. Pilih Application \textgreater{} Qt Widget Application\footnote{gunakan pilihan ini untuk membuat applikasi GUI untuk proyek masa mendatang}.
-	
-		\shadowimage[width=8cm]{Capture14-1}
-		
-		\item Beri nama Aplikasi yang akan di buat
-		
-		\shadowimage[width=8cm]{Capture14-2}
-		
-		\item Pilih compiler yang di gunakan, jika mengginginkan aplikasi Cross Platform, maka sebaiknya menggunakan MinGW sebagai compilernya, tapi jika ingin aplikasi full support terhadap windows maka gunakan MSC.
-		
-		\shadowimage[width=8cm]{Capture14-3}
-		
-		\item  Pada Class Information berikan nama class yang di gunakan, disini penulis menggunakan guibaru.
-		
-		\shadowimage[width=8cm]{Capture14-4}
-		
-		\item Kemudain langkah terakgir adalah project management, silahkan gunakan subversion\footnote{Anda bisa menggunakan Git, subversion, mercurial, bazaar, ClearCase, Perfoce atau CVS} yang Anda gunakan.
-		
-		\shadowimage[width=8cm]{Capture14-5}
-		
-		\item Finish, maka tampilan Qt Creator Anda akan seperti berikut ini
-		
-		\shadowimage[width=8cm]{Capture14-6}
-		
-		\item Perhatikan bahwa dalam proyek ini akan ada berkas yang terload secara otomatis oleh Qt creator yaitu
-		
-		\begin{itemize}
-			\item \texttt{gui.pro} (berkas proyek Qt Creator yang bisa dipakai OS manapun)
-			\item  \texttt{guibaru.cpp} (berkas kode inti tempat signal dan slot dituliskan)
-			\item \texttt{guibaru.h} (berkas header)
-			\item \texttt{guibaru.ui} (berkas GUI)
-			\item \texttt{main.cpp} (berkas berisi fungsi yang selalu ada dalam semua program C/C++ yakni \texttt{main()})
-			
-		\end{itemize}
-	
+\item Widget mengirim signal ketika event terjadi
+\item Signal terhubung ke slot melalui connection
+\item Slot dijalankan untuk merespons event
+\item Program dapat merespons interaksi pengguna
 \end{enumerate}
 
-\subsection{Membuat aplikasi}
+\subsection{Sintaks Signal-Slot}
+
+\lstinputlisting[language=c++]{../code/14-gui-code-1.c++}
+
+\section{💻 Membuat Aplikasi GUI Sederhana}
+
+\subsection{Struktur Program GUI}
+
+Program GUI Qt terdiri dari:
+\begin{itemize}
+\item \textbf{Header file} (.h) - Deklarasi kelas dan slot
+\item \textbf{Source file} (.cpp) - Implementasi kelas dan slot
+\item \textbf{UI file} (.ui) - Desain antarmuka (opsional)
+\item \textbf{Main file} - Entry point aplikasi
+\end{itemize}
+
+\subsection{Contoh Program GUI Sederhana}
+
+\subsubsection{Header File (mainwindow.h)}
+
+\lstinputlisting[language=c++, caption=Header file untuk aplikasi GUI, label=gui-header]{../code/gui-mainwindow.h}
+
+\subsubsection{Source File (mainwindow.cpp)}
+
+\begin{lstlisting}[language=c++, caption=Source file untuk aplikasi GUI, label=gui-source]{../code/gui-mainwindow.cpp}
+#include "mainwindow.h"
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QWidget>
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+{
+    // Set window properties
+    setWindowTitle("Aplikasi GUI Sederhana");
+    setFixedSize(400, 300);
+
+    // Create central widget
+    QWidget *centralWidget = new QWidget(this);
+    setCentralWidget(centralWidget);
+
+    // Create layout
+    QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
+
+    // Create buttons
+    buttonA = new QPushButton("Tampilkan Gambar A", this);
+    buttonB = new QPushButton("Tampilkan Gambar B", this);
+
+    // Create image label
+    imageLabel = new QLabel("Klik tombol untuk menampilkan gambar", this);
+    imageLabel->setAlignment(Qt::AlignCenter);
+    imageLabel->setStyleSheet("QLabel { border: 2px solid gray; padding: 10px; }");
+
+    // Add widgets to layout
+    mainLayout->addWidget(buttonA);
+    mainLayout->addWidget(buttonB);
+    mainLayout->addWidget(imageLabel);
+
+    // Connect signals to slots
+    connect(buttonA, SIGNAL(clicked()), this, SLOT(onButtonAClicked()));
+    connect(buttonB, SIGNAL(clicked()), this, SLOT(onButtonBClicked()));
+}
+
+MainWindow::~MainWindow()
+{
+}
+
+void MainWindow::onButtonAClicked()
+{
+    imageLabel->setText("Gambar A ditampilkan");
+    imageLabel->setStyleSheet("QLabel { border: 2px solid blue; padding: 10px; background-color: lightblue; }");
+}
+
+void MainWindow::onButtonBClicked()
+{
+    imageLabel->setText("Gambar B ditampilkan");
+    imageLabel->setStyleSheet("QLabel { border: 2px solid red; padding: 10px; background-color: lightcoral; }");
+}
+\end{lstlisting}
+
+\subsubsection{Main File (main.cpp)}
+
+\begin{lstlisting}[language=c++, caption=Main file untuk aplikasi GUI, label=gui-main]{../code/gui-main.cpp}
+#include <QApplication>
+#include "mainwindow.h"
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+    
+    MainWindow window;
+    window.show();
+    
+    return app.exec();
+}
+\end{lstlisting}
+
+\section{📐 Layout Management}
+
+\subsection{Pentingnya Layout}
+
+Layout management memastikan:
+\begin{itemize}
+\item Widget tersusun rapi dan teratur
+\item Aplikasi responsive terhadap perubahan ukuran
+\item UI konsisten di berbagai platform
+\item Mudah untuk maintenance dan modifikasi
+\end{itemize}
+
+\subsection{Jenis-jenis Layout}
+
+\subsubsection{QVBoxLayout (Vertical Layout)}
+\begin{itemize}
+\item Menyusun widget secara vertikal
+\item Widget ditumpuk dari atas ke bawah
+\item Cocok untuk form atau menu vertikal
+\end{itemize}
+
+\subsubsection{QHBoxLayout (Horizontal Layout)}
+\begin{itemize}
+\item Menyusun widget secara horizontal
+\item Widget disusun dari kiri ke kanan
+\item Cocok untuk toolbar atau status bar
+\end{itemize}
+
+\subsubsection{QGridLayout (Grid Layout)}
+\begin{itemize}
+\item Menyusun widget dalam bentuk grid/tabel
+\item Widget dapat menempati multiple cell
+\item Cocok untuk form yang kompleks
+\end{itemize}
+
+\subsubsection{QFormLayout (Form Layout)}
+\begin{itemize}
+\item Khusus untuk form input
+\item Label dan input field otomatis tersusun
+\item Cocok untuk dialog atau form pengaturan
+\end{itemize}
+
+\section{🎯 Event Handling}
+
+\subsection{Konsep Event}
+
+Event adalah kejadian yang terjadi dalam aplikasi GUI:
+\begin{itemize}
+\item \textbf{Mouse events} - klik, drag, scroll
+\item \textbf{Keyboard events} - tekan tombol, release
+\item \textbf{Window events} - resize, close, focus
+\item \textbf{Custom events} - event yang dibuat sendiri
+\end{itemize}
+
+\subsection{Cara Menangani Event}
+
+\subsubsection{Menggunakan Signal-Slot}
+\lstinputlisting[language=c++]{../code/14-gui-code-2.c++}
+
+\subsubsection{Override Event Handler}
+\lstinputlisting[language=c++]{../code/14-gui-code-3.c++}
+
+\section{🎨 Styling dan Theming}
+
+\subsection{Qt Style Sheets}
+
+Qt Style Sheets (QSS) memungkinkan styling widget menggunakan CSS-like syntax:
+\begin{itemize}
+\item \textbf{Selector} - Memilih widget yang akan di-style
+\item \textbf{Property} - Properti visual (warna, font, border)
+\item \textbf{Value} - Nilai dari properti
+\end{itemize}
+
+\subsection{Contoh Style Sheet}
+
+\lstinputlisting[language=c++]{../code/14-gui-code-4.c++}
+
+\section{🔧 Best Practices GUI Programming}
+
+\subsection{Tips Menulis GUI yang Baik}
 
 \begin{enumerate}
-	\item Buka \texttt{guibaru.ui}. guibaru.ui merupakan berkas XML Qt Creator, jika di klik maka GUI builder milik Qt Creator akan muncul.
-	\item Drag dan drop Push button ke dalam layer kemudian doble klik pada label tersebut untuk membuat nama baru.
-	
-	\shadowimage[width=8cm]{Capture14-7}
-	
-	\item Berikan nama objek utuk label ini property panel di samping kanan. di bagian atas terdapat \texttt{QObjeck}. Tepat di bawahnya ada ObjeckName, pada label PushButton ganti dengan img.
-	
-	\shadowimage[width=8cm]{Capture14-8}
-	
-	\item Di bagian a
-	
+\item \textbf{Gunakan layout manager} - Jangan set posisi widget secara manual
+\item \textbf{Berikan nama yang jelas} - Nama widget dan fungsi yang deskriptif
+\item \textbf{Gunakan signal-slot} - Hindari polling atau callback manual
+\item \textbf{Handle error dengan baik} - Validasi input dan error handling
+\item \textbf{Test di berbagai platform} - Pastikan konsisten di Windows, Mac, Linux
 \end{enumerate}
+
+\subsection{Kesalahan Umum}
+
+\begin{itemize}
+\item \textbf{Lupa connect signal-slot} - Widget tidak merespons event
+\item \textbf{Manual positioning} - UI tidak responsive
+\item \textbf{Memory leak} - Lupa delete widget yang dibuat
+\item \textbf{Blocking UI thread} - Aplikasi freeze saat operasi berat
+\end{itemize}
+
+\section{📱 Membuat Aplikasi Modern}
+
+\subsection{Qt Quick vs Qt Widgets}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Aspek} & \textbf{Qt Widgets} & \textbf{Qt Quick} \\
+\hline
+Target platform & Desktop & Desktop, Mobile, Embedded \\
+\hline
+Performance & C++ native & QML + JavaScript \\
+\hline
+Learning curve & Moderate & Steep (QML) \\
+\hline
+Animation & Limited & Rich \\
+\hline
+Touch support & Basic & Excellent \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{QML untuk UI Modern}
+
+QML (Qt Modeling Language) adalah bahasa deklaratif untuk membuat UI modern:
+\begin{itemize}
+\item \textbf{Declarative} - UI dideklarasikan, bukan diprogram
+\item \textbf{Animation} - Animasi yang smooth dan natural
+\item \textbf{Responsive} - UI yang responsive terhadap input
+\item \textbf{Cross-platform} - Sama di semua platform
+\end{itemize}
+
+\section{🔍 Latihan dan Project}
+
+\subsection{📝 Latihan 1: Kalkulator Sederhana}
+
+Buat aplikasi kalkulator dengan GUI yang memiliki:
+\begin{itemize}
+\item Display untuk menampilkan angka
+\item Tombol angka 0-9
+\item Tombol operator (+, -, *, /)
+\item Tombol equals (=) dan clear (C)
+\end{itemize}
+
+\subsection{📝 Latihan 2: Text Editor Sederhana}
+
+Buat text editor dengan fitur:
+\begin{itemize}
+\item Area text untuk menulis
+\item Menu File (New, Open, Save)
+\item Menu Edit (Copy, Paste, Cut)
+\item Status bar untuk informasi
+\end{itemize}
+
+\subsection{📝 Latihan 3: Image Viewer}
+
+Buat image viewer dengan:
+\begin{itemize}
+\item Area untuk menampilkan gambar
+\item Tombol untuk load image
+\item Tombol untuk zoom in/out
+\item Tombol untuk rotate image
+\end{itemize}
+
+\section{📚 Referensi dan Bacaan Lanjutan}
+
+Qt GUI programming adalah topik yang luas dan terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
+
+\begin{itemize}
+\item \textbf{Qt Documentation} - Dokumentasi resmi Qt\footnote{Qt Company. (2023). "Qt Documentation". https://doc.qt.io/}
+\item \textbf{C++ GUI Programming with Qt 4} oleh Jasmin Blanchette\footnote{Blanchette, J., \& Summerfield, M. (2006). "C++ GUI Programming with Qt 4". Prentice Hall.}
+\item \textbf{Qt 5 C++ GUI Programming Cookbook} oleh Lee Zhi Eng\footnote{Eng, L. Z. (2016). "Qt 5 C++ GUI Programming Cookbook". Packt Publishing.}
+\item \textbf{Qt Quick} - Framework modern untuk UI\footnote{Qt Company. (2023). "Qt Quick". https://doc.qt.io/qt-6/qtquick-index.html}
+\end{itemize}
+
+\section{🎉 Kesimpulan}
+
+Pemrograman GUI dengan Qt membuka dunia kemungkinan untuk membuat aplikasi desktop yang powerful dan user-friendly. Dengan memahami konsep widget, signal-slot, layout management, dan event handling, Anda dapat membuat aplikasi GUI yang profesional.
+
+\begin{center}
+\textbf{Selamat! Anda telah menguasai dasar-dasar GUI Programming dengan Qt} 🎨
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\textit{--- Bab selanjutnya: File, Stream, dan XML ---}
+\end{center}
+

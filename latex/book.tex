@@ -53,17 +53,19 @@
 %----------------------------------------------------------------------	
 \usepackage[pdfpagelabels,colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
 \hypersetup{
-	pdftitle=Belajar C++ dengan Qt Creator ,
-	pdfauthor=Nur Wachid,
-	pdfsubject=C++ Qt Creator,
-	pdfkeywords=C++ Qt Creator,
+	pdftitle={Belajar C++ dengan Qt Creator},
+	pdfauthor={Nur Wachid},
+	pdfsubject={C++ Qt Creator},
+	pdfkeywords={C++ Qt Creator},
 	bookmarksnumbered=true,     
 	bookmarksopen=true,         
-	bookmarksopenlevel=1,       
+	bookmarksopenlevel=2,       
 	colorlinks=true,            
 	pdfstartview=Fit,           
-	pdfpagemode=UseOutlines,    % this is the option you were lookin for
-	pdfpagelayout=TwoPageRight
+	pdfpagemode=UseOutlines,    
+	pdfpagelayout=TwoPageRight,
+	hypertexnames=false,
+	bookmarks=true
 }
 %-------------------------------------------------------------
 
@@ -303,11 +305,14 @@
 	\endgroup
 	\tableofcontents
 	\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Bibliography}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Bibliography}
 	\lstlistoflistings
 
 	\clearpage
+	\newpage
+	\chapter{Tentang Penulis}
+	\input{00-about-authors}
 	\newpage
 	\chapter{Prakata}
 	\input{00-prakata}
@@ -317,36 +322,39 @@
 
 %---------------------------------------------
 % Dasar dari pemrograman C++ yakni mengenai
-% 1 mukadimah, tipe data, indetifier, operator  control flow
-%	array, string, fungsi, pointer, rekursif
+% pengenalan, tipe data, control statement, array, string, 
+% fungsi, pointer, dan referensi
 %----------------------------------------------	
-\part{Dasar}
+	\part{Dasar Pemrograman C++}\label{part-dasar}
 %-------------------------------------------------
 \input{1-dasar}
 %------------------------------------------------	
-	\chapter{Mukadimah}\label{mukadimah}
+	\chapter{Pengenalan C++ dan Qt Creator}\label{pengenalan}
 	\input{01-pengenalan}
 	
-	\chapter{Tipe Data, Identifier dan Operator}
+	\chapter{Tipe Data, Identifier dan Operator}\label{tipe-data}
 	\input{02-tipedata}
 	
-	\chapter{Control Statement}
+	\chapter{Control Statement}\label{control-statement}
 	\input{02-control-statement}
 	
 	\chapter{Array dan String}\label{array-dan-string}
 	\input{03-array-string}
 	
-	\chapter{Fungsi}
+	\chapter{Fungsi}\label{fungsi}
 	\input{04-fuction}
 	
 	\chapter{Pointer dan References}\label{pointer-dan-references}
 	\input{05-pointer-referensi}
+	
+	\chapter{Debugging}\label{debugging}
+	\input{06-debugging}
 
 %--------------------------------------------------------
-% Bagian OOP mempelajari tentang class, objek, inherinitance,
-% Operator, overloading, Polymorphism, casting, database
+% Bagian OOP mempelajari tentang class, objek, inheritance,
+% operator overloading, polymorphism, casting, dan database
 %--------------------------------------------------------------
-	\part{Objek Oriented Programming (OOP)}
+	\part{Pemrograman Berorientasi Objek}\label{part-oop}
 %-------------------------------------------------
 \input{2-oop}
 %------------------------------------------------	
@@ -356,51 +364,54 @@
 	\chapter{Inheritance}\label{inheritance}
 	\input{07-turunan}
 	
-	\chapter{Operator Types dan Operator Overloading}\label{operator-types-dan-operator-overloading}
+	\chapter{Operator Overloading}\label{operator-overloading}
 	\input{08-operator}
 	
 	\chapter{Polymorphism}\label{polymorphism}
 	\input{09-Polymorphism}
 
+	\chapter{Design Patterns}\label{design-patterns}
+	\input{11-design-patterns}
+
 	\chapter{Casting dan Database}\label{casting-dan-database}
 	\input{10-casting-database}
 
 %-------------------------------------------
-% mempelajari tentang antarmuka menggunakan Qt Creator
-% gui secara umum ataupun widgeting xml dan antarmuka
+% mempelajari tentang Qt Library dan komponen-komponennya
 %----------------------------------- 	
-	\part{Interface}
+	\part{Qt Library dan Komponen}\label{part-qt-library}
 %-------------------------------------------------
 \input{3-interface}
 %------------------------------------------------	
-	\chapter{GUI}
-	\input{14-gui}
+	\chapter{Qt Library}\label{qt-library}
+	\input{11-library}
 
-%-----------------------------------------------------
-% mempelajari tentang widget dari Qt CReator dan bagaimaan cara menggunakanya
-%--------------------------------------------------------- 	
-	\part{Widget}
-	
 	\chapter{File, Stream, dan XML}\label{file-stream-dan-xml}
 	\input{12-file-stream-xml}
 
-	\chapter{Qt Webkit}
+	\chapter{Qt WebKit}\label{qt-webkit}
 	\input{13-qt-webkit}	
-		
-	\part{Library}
-	\chapter{Library}\label{library}
-	\input{11-library}
+
+%-------------------------------------------
+% mempelajari tentang antarmuka pengguna (GUI)
+%----------------------------------- 	
+	\part{Antarmuka Pengguna}\label{part-interface}
+%-------------------------------------------------
+\input{4-gui-intro}
+%------------------------------------------------
+	\chapter{GUI dengan Qt}\label{gui}
+	\input{14-gui}
 	
 	\appendix
 
 %-------------------------------------------------------------
-% Bagian Lampiran berisi tentang index dan biblography
+% Bagian Lampiran berisi tentang index dan bibliography
 %------------------------------------------------------------
 	\backmatter
-	\part{Lampiran}	
+	\part{Lampiran}\label{part-lampiran}	
 
-	\chapter{A}
+	\chapter{Contoh Program}
 	\input{contoh}
 	\printindex
-\input{daftar-pustaka}
+	\input{daftar-pustaka}
 \end{document}

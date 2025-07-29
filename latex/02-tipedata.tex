@@ -1,53 +1,80 @@
-\textbf{Agenda}
+\textbf{📋 Apa yang akan dipelajari}
 
-Pada bab ini kita akan membahas beberapa topik yang berhubungan dengan tipe data dan Indentifier yaitu:
+Pada bab ini kita akan mempelajari tentang Tipe Data dan Identifier dalam C++:
+
+\begin{itemize}
+\item Pengenalan tipe data dan identifier
+\item Jenis-jenis tipe data dalam C++
+\item Variabel dan konstanta
+\item Operator dan ekspresi
+\end{itemize}
 
 \minitoc
 
-\section{Tipe Data dan Identifier}\label{tipe-data-dan-identifier}
+\section{🎯 Tipe Data dan Identifier}\label{tipe-data-dan-identifier}
 
-\index{Program}Program adalah kumpulan instruksi yang disusun sedemikian rupa sehingga
-mempunyai urutan nalar yang tepat untuk menyelesaikan suatu persoalan.
-Instruksi-instruksi yang digunakan dalam pemrograman mengacu pada suatu
-bahasa pemrograman tertentu, pada buku ini menggunakan bahasa
-pemrograman C++, sehingga penulisan program pada buku ini mengikuti tata
-bahasa C++.
+\subsection{Apa itu Program?}
 
-Segala sesuatu yang diproses oleh program adalah data. Dalam hal ini
-data adalah elemen-elemen yang digunakan untuk menjelaskan segala
-sesuatu yang mempunyai besaran (ukuran/ nilai), seperti misalnya
-\textbf{umur} besarannya bisa berupa biangan desimal \textbf{42.5}
-(maksudnya 42\textonehalf{} tahun), \textbf{golongan} seorang karyawan besarannya
-bisa berupa sebuah karakter A (maksudnya goongan A) dan sebagainya.
-Bahasa C++ menyimpan besaran-besaran tersebut di memori utama untuk
-dikelola oleh program, sehingga perlu dilakukan pengaturan pemakaian
-memori, oleh karena itu dalam bahasa pemrograman selalu terdapat
-istilah-istilah yang bernama \textbf{Tipe Data}, \textbf{Variabel} dan
-\textbf{Konstanta}\index{konstanta}.
+Program adalah kumpulan instruksi yang disusun dengan urutan logis yang tepat untuk menyelesaikan suatu masalah. Dalam buku ini, kita menggunakan bahasa pemrograman C++.
 
-Identifier (pengenal) adalah suatu nama yang digunakan program untuk
-merujuk ke suatu lokasi memori tertentu agar nilai pada lokasi tersebut
-dapat diakses. Alamat lokasi memori sebenarnya berupa angka angka
-heksadesimal\index{heksadesimal}, namun pada bahasa pemrograman
-setingkat C++ (middle level programming language)
-\index{middle level programming language} dan di atasnya, telah
-mengubahnya dalam bentuk identifier (pengenal) yaitu berupa suatu huruf
-atau kata (label) sehingga kita tidak perlu mengetahu alamat yang
-sesungguhnya dan dengan identifier\index{identifier} (label) akan lebih mudah untuk
-diingat.
+\subsection{Apa itu Data?}
 
-\section{Tipe Data Bahasa C++}\label{tipe-data-bahasa-c}
+Segala sesuatu yang diproses oleh program adalah \textbf{data}. Data adalah elemen-elemen yang memiliki nilai atau besaran, misalnya:
+\begin{itemize}
+\item \textbf{Umur} - bisa berupa angka 42.5 (42½ tahun)
+\item \textbf{Golongan} - bisa berupa karakter 'A'
+\item \textbf{Nama} - bisa berupa teks "John Doe"
+\end{itemize}
 
-Data yang dapat dikelola oleh program bisa bermacam-macam, seperti
-misalnya bilangan bulat (\emph{integer}), bilangan dengan desimal
-(\emph{floating point}), huruf (\emph{character}), dan sebagainya. Oleh
-sebab itu ketika kita akan memakai suatu lokasi memori tertentu untuk
-menyimpan nilai diperlukan 2 hal, yaitu \texttt{identifier} sebagai
-pengenal (label) lokasi memori yang digunakan dan \texttt{tipe\ data},
-yaitu besaran yang menentukan ukuran memori yang dialokasikan. Sekali
-suatu identifier sudah dialokasikan dengan tipe data tertentu besarnya
-ruang yang digunakan tidak bisa diubah. Bahasa C++ mengenal tipe-tipe
-tabel berikut ini.
+\subsection{Penyimpanan Data}
+
+C++ menyimpan data di memori utama untuk dikelola oleh program. Untuk mengatur penggunaan memori, C++ menggunakan konsep:
+\begin{itemize}
+\item \textbf{Tipe Data} - menentukan jenis dan ukuran data
+\item \textbf{Variabel} - tempat menyimpan data yang bisa berubah
+\item \textbf{Konstanta} - tempat menyimpan data yang tetap
+\end{itemize}
+
+\subsection{Apa itu Identifier?}
+
+Identifier (pengenal) adalah nama yang digunakan program untuk merujuk ke lokasi memori tertentu agar nilai pada lokasi tersebut dapat diakses.
+
+\subsubsection{Mengapa Perlu Identifier?}
+
+\begin{itemize}
+\item Alamat memori sebenarnya berupa angka heksadesimal yang sulit diingat
+\item C++ menggunakan identifier berupa huruf atau kata sebagai label
+\item Dengan identifier, kita tidak perlu mengetahui alamat memori yang sebenarnya
+\item Identifier membuat program lebih mudah dibaca dan dipahami
+\end{itemize}
+
+\section{📊 Tipe Data Bahasa C++}\label{tipe-data-bahasa-c}
+
+\subsection{Apa itu Tipe Data?}
+
+Data yang dapat dikelola program bisa bermacam-macam:
+\begin{itemize}
+\item Bilangan bulat (integer)
+\item Bilangan desimal (floating point)
+\item Karakter (character)
+\item Dan lainnya
+\end{itemize}
+
+\subsection{Mengapa Perlu Tipe Data?}
+
+Ketika menyimpan nilai di memori, diperlukan 2 hal:
+\begin{itemize}
+\item \textbf{Identifier} - nama untuk mengakses lokasi memori
+\item \textbf{Tipe Data} - menentukan jenis dan ukuran memori yang dialokasikan
+\end{itemize}
+
+\subsection{Pentingnya Tipe Data}
+
+\begin{itemize}
+\item Sekali identifier dialokasikan dengan tipe data tertentu, ukuran ruang tidak bisa diubah
+\item Tipe data menentukan operasi apa yang bisa dilakukan
+\item Tipe data mempengaruhi efisiensi penggunaan memori
+\end{itemize}
 
 
 \begin{longtable}[]{@{}lll@{}}
@@ -72,13 +99,25 @@ double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
 \end{longtable}
 
 
-\section{Variabel dan Konstanta}\label{variabel-dan-konstanta}
+\section{🔧 Variabel dan Konstanta}\label{variabel-dan-konstanta}
 
-Nilai yang tersimpan di memori dan dikenal melalui identifier tersebut
-terdiri dari variabel dan konstanta. Perbedaan diantara keduanya adalah
-bahwa variabel (sesuai dengan namanya) nilainya dapat diubah-ubah pada
-saat program dieksekusi, sedangkan konstanta nilainya tidak dapat diubah
-(\texttt{konstan\ =\ tetap}).
+\subsection{Apa itu Variabel dan Konstanta?}
+
+Nilai yang tersimpan di memori dan dikenal melalui identifier terdiri dari variabel dan konstanta.
+
+\subsection{Perbedaan Variabel dan Konstanta}
+
+\begin{itemize}
+\item \textbf{Variabel} - nilainya dapat diubah-ubah saat program dieksekusi
+\item \textbf{Konstanta} - nilainya tidak dapat diubah (tetap/konstan)
+\end{itemize}
+
+\subsection{Analoginya}
+
+\begin{itemize}
+\item \textbf{Variabel} seperti kotak yang bisa diisi dengan barang berbeda
+\item \textbf{Konstanta} seperti kotak yang hanya bisa diisi dengan satu barang tertentu
+\end{itemize}
 
 Sebelum suatu variabel atau konstanta dapat digunakan, tempat pada
 memori harus dipesan terlebih dahulu, mekanisme ini dinamalan deklarasi.
@@ -112,16 +151,12 @@ ketika konstanta dibuat dan setelah itu nilainya tidak dapat diubah. C++
 mempunyai 2 macam konstanta, yaitu konstanta literal dan konstanta
 simbolik. Berikut ini adalah contoh deklarasi variabel:
 
-\begin{lstlisting}[language=c++, numbers=none]
-int harga;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/02-tipedata-code-1.c++}
 
 Yang dimaksud dengan konstanta literal adalah suatu nilai yang ditulis
 pada kode program. Sebagai contoh misalnya :
 
-\begin{lstlisting}[language=c++, numbers=none]
-int usiaku = 42;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/02-tipedata-code-2.c++}
 
 Nilai 42 tidak dapat menerima nilai lain dan nilai tersebut bersifat
 tetap. Perhatikan dalam hal ini identifier ``usiaku'' adalah variabel
@@ -136,9 +171,7 @@ dengan menggunakan preprocessor directive \texttt{\#define} dan yang
 kedua adalah dengan memakai kata kunci \texttt{const}. Berikut ini
 contoh mendeklarasikan dan menginisialisasi konstanta :
 
-\begin{lstlisting}[language=c++, numbers=none]
-#define kapasitas 15
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/02-tipedata-code-3.c++}
 
 Perhatikan bahwa \texttt{kapasitas} tidak mempunyai tipe data tertentu
 (int, char dsb.). Preprosessor akan melakukan substitusi berupa teks,
@@ -160,9 +193,7 @@ pada standard C++ .
 Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan
 memakai kata kunci const seperti berikut :
 
-\begin{lstlisting}[language=c++, numbers=none]
-const int usiaku = 42;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/02-tipedata-code-4.c++}
 
 Contoh diatas adalah mendeklarasikan konstanta simbolik bernama usiaku
 bertipe int dan diinisialisasi dengan nilai 42. Setelah baris ini simbol
@@ -217,9 +248,7 @@ eksekusi, mengevaluasi ekspresi atau tidak mengejakan apapun (\emph{null
 statement}). Semua statement C++ diakhiri dengan titik koma (;), sebagai
 contoh misalnya :
 
-\begin{lstlisting}[language=c++, numbers=none]
-x = a + b;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/02-tipedata-code-5.c++}
 
 Pernyataan tersebut bukanlah suatu pernyataan persamaan aljabar dalam
 matematika yang artinya x sama dengan a + b, melainkan memberi nilai x
@@ -472,11 +501,7 @@ adalah suatu nilai yang mempunyai besaran dan tipe data tertentu.
 Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan ``panjang
 * lebar'' yang menghasilkan nilai 15, 12 dan 180:
 
-\begin{lstlisting}[language=c++, numbers=none]
-panjang = 15;
-lebar = 12;
-luas = panjang * lebar ;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/02-tipedata-code-6.c++}
 
 \textbf{Keterangan :}
 
@@ -613,9 +638,7 @@ aritmatika dikerjakan terlebih dahulu.
 C++ mengijinkan operator pengerjaan ditulis lebih dari satu kali pada
 sebuah statement, misalnya :
 
-\begin{lstlisting}[language=c++, numbers=none]
-x = y = a * b;
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/02-tipedata-code-7.c++}
 
 Dalam hal ini yang dikerjakan adalah a dikalikan b terlebih dahulu
 meudian hasilnya diberikan kepada variabel y dan hasil ekspresi y = a *
@@ -694,9 +717,7 @@ FALSE & FALSE & FALSE & FALSE & TRUE\tabularnewline
 
 Contoh : Misalnya A bernilai 5, B bernilai 7 dan C bernilai \textquotedblleft a \textquotedblright maka ungkapan dibawah ini mempunyai hasil akhir benar (True).
 
-\begin{lstlisting}[language=c++, numbers=none]
-A < B || B == 7 && C > 'z'
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/02-tipedata-code-8.c++}
 
 Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari
 langkah-langkah sebagai berikut:

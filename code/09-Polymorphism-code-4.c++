@@ -1,0 +1,1 @@
+class KelasTurunan : public KelasDasar1, public KelasDasar2{}

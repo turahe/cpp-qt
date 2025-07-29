@@ -1,0 +1,1 @@
+class Silinder : Lingkaran

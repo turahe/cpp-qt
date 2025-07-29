@@ -1,30 +1,51 @@
-\textbf{Agenda}
+\textbf{📋 Apa yang akan dipelajari}
 
-Pada Bab ini kita akan mempelajari tentang funtion bahasa C++ seperti berikut ini
+Pada bab ini kita akan mempelajari tentang Fungsi dalam C++:
+
+\begin{itemize}
+\item Konsep dasar fungsi
+\item Cara mendefinisikan fungsi
+\item Parameter dan return value
+\item Jenis-jenis fungsi
+\end{itemize}
 
 \minitoc
 
-\index{Fungsi}Fungsi (Function) adalah sekumpulan program yang diberi nama, sehingga
-dengan demikian jika program itu diperlukan dapat dipanggil kembali.
-Walaupun \index{Pemrograman Berorientasi Objek}Pemrograman Berorientasi Objek telah menggeser perhatian dari
-fungsi ini, namun fungsi tetap saja merupakan bagian paling inti dalam
-suatu program. Fungsi global bisa berada di luar kelas maupun objek.
+\section{🔧 Fungsi (Function)}\label{fungsi}
 
-Fungsi dapat melakukan manipulasi terhadap data dan dapat mengembalikan
-suatu nilai. Semua program yang ditulis dengan bahasa C++ paling tidak
-mempunyai sebuah fungsi, yaitu \texttt{main()}, fungsi ini akan
-dipanggil secara otomatis ketika program dieksekusi, sedangkan fungsi
-yang lain baru akan bekerja ketia fungsi tersebut dipanggil. Karena
-fungsi ini bukan merupakan bagian dari objek, maka fungsi ini dipanggil
-secara global, dapat diakses dari manapun dalam program yang ditulis
+\subsection{Apa itu Fungsi?}
 
-Setiap fungsi diberi nama, dan ketika dalam suatu program dijumpai nama
-tersebut, maka eksekusi program akan dialihkan ke tubuh (isi) fungsi
-tersebut, setelah selesai, yaitu ditandai dengan statemen
-\texttt{return} atau tanda kurung kurawal tutup, maka akan kembali ke
-progam utama melanjutkan ke baris program berikutnya. Peristiwa ini
-dinamakan pemanggilan fungsi, berikut ini adalah ilustrasi mengenai
-pemanggilan fungsi seperti gambar \ref{gambar4-1}.
+Fungsi adalah sekumpulan program yang diberi nama dan dapat dipanggil kembali ketika diperlukan. Fungsi adalah bagian inti dalam pemrograman C++.
+
+\subsection{Karakteristik Fungsi}
+
+\begin{itemize}
+\item \textbf{Bernama} - setiap fungsi memiliki nama unik
+\item \textbf{Dapat dipanggil} - fungsi bisa digunakan berulang kali
+\item \textbf{Mengembalikan nilai} - fungsi dapat memberikan hasil
+\item \textbf{Manipulasi data} - fungsi dapat memproses data
+\end{itemize}
+
+\subsection{Fungsi main()}
+
+\begin{itemize}
+\item Setiap program C++ memiliki fungsi \texttt{main()}
+\item Fungsi ini dipanggil otomatis saat program dijalankan
+\item Fungsi lain hanya bekerja ketika dipanggil
+\item Fungsi \texttt{main()} dapat diakses dari mana saja dalam program
+\end{itemize}
+
+\subsection{Cara Kerja Fungsi}
+
+\begin{itemize}
+\item Ketika nama fungsi dipanggil, eksekusi program dialihkan ke tubuh fungsi
+\item Setelah selesai (ditandai dengan \texttt{return} atau kurung kurawal tutup), program kembali ke baris berikutnya
+\item Peristiwa ini disebut \textbf{pemanggilan fungsi}
+\end{itemize}
+
+\subsubsection{Ilustrasi Pemanggilan Fungsi}
+
+Ilustrasi pemanggilan fungsi seperti gambar \ref{gambar4-1}.
 
 \begin{figure}[htbp]
 \centering
@@ -33,82 +54,89 @@ pemanggilan fungsi seperti gambar \ref{gambar4-1}.
 \caption{Ilustrasi penanganan fungsi}
 \end{figure}
 
-Fungsi yang baik mengerjakan sebuah pekerjaan yang spesifik, mudah
-dipahami dan mudah dikenali berdasarkan nama fungsi tersebut. Pekerjaan
-yang kompleks seharusnya dipecah-pecah menjadi beberapa fungsi yang
-nantinya dapat dipanggil ketika diperlukan.
+\subsection{Karakteristik Fungsi yang Baik}
 
-Fungsi terdiri dari 2 macam, yaitu fungsi yang dibuat sendiri
-(\emph{user-defined}) dan fungsi standard (\emph{built-in}).Fungsi
-standard merupakan bagian dari paket kompiler yang kita pakai yang sudah
-tersedia untuk digunakan, sedangkan fungsi yang dibuat sendiri adalah
-fungsi yang kita tulis sebelum dapat dipergunakan.
+\begin{itemize}
+\item \textbf{Spesifik} - mengerjakan satu pekerjaan tertentu
+\item \textbf{Mudah dipahami} - logika yang jelas
+\item \textbf{Nama yang jelas} - mudah dikenali berdasarkan namanya
+\item \textbf{Terpecah} - pekerjaan kompleks dipecah menjadi beberapa fungsi
+\end{itemize}
 
-\section{Konsep Dasar Fungsi}\label{konsep-dasar-fungsi}
+\subsection{Jenis-jenis Fungsi}
 
-Fungsi sebenarnya mirip dengan prosedur (pada bhs. Pascal), dan kedua
-hal ini disebut sebagai \texttt{Subrutin}. Kedua jenis subrutin ini
-(fungsi dan prosedur) memiliki kegunaan yang sama, yaitu melakukan tugas
-tertentu. Perbedaannya fungsi selalu mengembalikan suatu nilai setelah
-dipanggil sedangkan prosedur tidak.
+\begin{itemize}
+\item \textbf{Fungsi Standard (Built-in)} - sudah tersedia dalam kompiler
+\item \textbf{Fungsi User-defined} - dibuat sendiri oleh programmer
+\end{itemize}
 
-Kita memerlukan subrutin, karena dalam program yang besar akan lebih
-baik jika tugas tertentu dilakukan oleh subrutin tertentu, dengan
-demikian program akan menjadi lebih mudah dibaca dan dipelihara.
+\section{🎯 Konsep Dasar Fungsi}\label{konsep-dasar-fungsi}
+
+\subsection{Fungsi vs Prosedur}
+
+Fungsi mirip dengan prosedur (dalam bahasa Pascal), keduanya disebut \textbf{Subrutin}.
+
+\subsubsection{Perbedaan Fungsi dan Prosedur}
+
+\begin{itemize}
+\item \textbf{Fungsi} - selalu mengembalikan nilai setelah dipanggil
+\item \textbf{Prosedur} - tidak mengembalikan nilai
+\end{itemize}
+
+\subsection{Mengapa Perlu Subrutin?}
+
+\begin{itemize}
+\item \textbf{Program besar} - lebih baik jika tugas tertentu dilakukan oleh subrutin tertentu
+\item \textbf{Mudah dibaca} - program menjadi lebih terstruktur
+\item \textbf{Mudah dipelihara} - perubahan hanya perlu dilakukan di satu tempat
+\end{itemize}
 \begin{quotation}
- {\LARGE \ding{45}} \textbf{Catatan}
-	
-	Fungsi bisa dikatakan sebagai bentuk
-	lain dari instruksi yang dapat memberikan sebuah nilai apabila diberi
-	masukan yang dibutuhkan. Masukan tersebut dikenal dengan istiah
-	Parameter.
+{\LARGE \ding{45}} \textbf{💡 Catatan Penting}
+
+Fungsi bisa dikatakan sebagai bentuk lain dari instruksi yang dapat memberikan sebuah nilai apabila diberi masukan yang dibutuhkan. Masukan tersebut dikenal dengan istilah \textbf{Parameter}.
 \end{quotation}
  
 
-Fungsi-fungsi merupakan elemen utama dari program bahasa C++. Program
-dari bahasa C++ dibentuk dari kumpulan fungsi, mulai dari fungsi utama
-dengan nama \texttt{main()}, fungsi-fungsi pustaka (standar) dan
-fungsi-fungsi yang dibuat sendiri oleh pemrogram (UDF = \emph{User
-Defined Function}). Fungsi-fungsi banyak digunakan dengan dua alasan
-utama, yaitu:
+\subsection{Fungsi dalam Program C++}
+
+Fungsi adalah elemen utama dari program C++. Program C++ dibentuk dari kumpulan fungsi:
+\begin{itemize}
+\item Fungsi utama \texttt{main()}
+\item Fungsi pustaka (standar)
+\item Fungsi yang dibuat sendiri (UDF = User Defined Function)
+\end{itemize}
+
+\subsection{Alasan Menggunakan Fungsi}
 
 \begin{enumerate}
-
-\item
-  Fungsi-fungsi menjadikan program C++ mempunyai struktur yang jelas.
-  Dengan memisahkan langkah--langkah detail ke satu atau lebih
-  fungsi--fungsi, maka fungsi utama (\texttt{main()}) akan menjadi lebih
-  pendek, jelas dan mudah dimengerti. Hal seperti ini menunjukan suatu
-  struktur program yang baik.
-\item
-  Fungsi-fungsi dapat digunakan untuk menghindari penulisan program yang
-  sama ditulis secara berulang-ulang. Selanjutnya bagian program yang
-  membutuhkan langkah-langkah yang sama tidak perlu selalu dituliskan,
-  melainkan cukup memanggil fungsi-fungsi tersebut.
+\item \textbf{Struktur yang jelas} - memisahkan langkah-langkah detail ke fungsi-fungsi, membuat \texttt{main()} lebih pendek dan mudah dimengerti
+\item \textbf{Menghindari pengulangan} - program yang sama tidak perlu ditulis berulang-ulang, cukup memanggil fungsi
 \end{enumerate}
 
-Suatu fungsi harus diberi nama supaya dapat dipanggil dari bagian
-program yang membutuhkannya. Tugas yang dilakukan oleh suatu fungsi
-dapat berupa tugas input/output, penyeleksian atau tugas-tugas
-perhitungan dan sebagainya.
+\subsection{Tugas Fungsi}
 
-\section{Mendefinisikan Fungsi}\label{mendefinisikan-fungsi}
+Fungsi dapat melakukan berbagai tugas:
+\begin{itemize}
+\item Input/output
+\item Penyeleksian
+\item Perhitungan
+\item Dan tugas-tugas lainnya
+\end{itemize}
 
-Secara umum, fungsi terdiri dari dua komponen yaitu definisi fungsi dan
-tubuh fungsi. Isi dari definisi fungsi adalah : tipe dari fungsi, nama
-dari suatu fungsi dan paramter-parameter yang digunakan. Tubuh dari
-fungsi berisikan statemen-statemen yang akan melakukan tugas yang
+\section{📝 Mendefinisikan Fungsi}\label{mendefinisikan-fungsi}
+
+\subsection{Komponen Fungsi}
+
+Fungsi terdiri dari dua komponen utama:
+\begin{itemize}
+\item \textbf{Definisi fungsi} - tipe fungsi, nama fungsi, dan parameter
+\item \textbf{Tubuh fungsi} - statemen-statemen yang melakukan tugas
+\end{itemize}
 diberikan oleh fungsi tersebut. Tubuh suatu fungsi diawali dengan tanda
 kurung kurawal buka dan diakhiri dengan tanda kurung kurawal tutup.
 Beikut ini adalah bentuk umum dari suatu fungsi:
 
-\begin{lstlisting}[language=c++, numbers=none]
-<tipe> <nama_fungsi>([<paramter1>, <paramter2> ,...])
-{
-<tubuh fungsi>
-[return <ekspresi>]
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/04-fuction-code-1.c++}
 
 Definisi fungsi ditulis sebelum dituliskan tubuh fungsi dan tidak
 diakhiri dengan tanda titik koma. Tipe dari definisi fungsi sesuai
@@ -124,17 +152,7 @@ jika dalam tubuh fungsi memerlukan nilai dari luar fungsi. Parameter ini
 dinamakan parameter formal. Berikut ini adalah contoh cara
 mendefinisikan fungsi.
 
-\begin{lstlisting}[language=c++, numbers=none]
-int terbesar(int bil1, int bil2)
-{
-int hasil;
-if (bil1>bil2)
-kembali = bil1;
-else
-kembali = bil2;
-return kembali;
-}
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/04-fuction-code-2.c++}
 
 \section{Deklarasi Fungsi (Prototype)}\label{deklarasi-fungsi-prototype}
 
@@ -244,9 +262,7 @@ nilai 10, yaitu nilai kembalian fungsi, ini menunjukkan bahwa fungsi
 		harus sama dengan nama parameter pada definisi fungsi, oleh karena itu
 		prototype tersebut di atas boleh juga dituliskan seperti berikut :
 		
-\begin{lstlisting}[language=c++, numbers=none]
-int absolut(int x);
-\end{lstlisting}
+\lstinputlisting[language=c++]{../code/04-fuction-code-4.c++}
 	
 	 
 \end{quotation}

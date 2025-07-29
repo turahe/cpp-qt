@@ -1,0 +1,1 @@
+KelasTurunan():KelasDasar1(),KelasDasar2(){}

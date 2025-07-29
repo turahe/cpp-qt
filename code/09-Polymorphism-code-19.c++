@@ -1,0 +1,1 @@
+virtual int getUmur() const { return Kuda::getUmur() }

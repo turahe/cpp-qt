@@ -1,0 +1,1 @@
+Kuda_terbang():Kuda(),Burung(),Binatang()

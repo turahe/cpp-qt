@@ -1,0 +1,1 @@
+Hasil = fungsiku(10, 12.5);

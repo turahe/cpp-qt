@@ -1,372 +1,364 @@
-\textbf{Agenda}
+\textbf{📋 Apa yang akan dipelajari}
 
-Pada Bab ini kita akan mempelajari tentang module bawaan Qt Creator yaitu
-Qt Webkit seperti berikut ini
+Pada bab ini kita akan mempelajari tentang Qt WebKit dan cara membuat browser web sederhana:
+
+\begin{itemize}
+\item Pengenalan Qt WebKit dan QWebView
+\item Membuat browser sederhana dengan Qt WebKit
+\item Menambahkan kontrol navigasi (back, forward, refresh)
+\item Menggunakan URL bar dan tombol Go
+\item Best practices untuk pengembangan browser
+\end{itemize}
 
 \minitoc
 
-\section{Qt Webkit}\label{qt-webkit}
+\section{🌐 Pengenalan Qt WebKit}
 
-Pada contoh ini kita akan membuat sebuah browser dengan menggunakan 
-Qt Webkit 
+\subsection{Apa itu Qt WebKit?}
 
-pertama,kita akan mencoba memuat sebuah url untuk menampilkan halaman
-kemudian 
-First, we'll just try to load a url to display a web page, then start to
-build the more refined browser.
+Qt WebKit adalah module Qt yang menyediakan engine untuk menampilkan konten web. Module ini memungkinkan Anda untuk:
 
-In my opinion, one of the most important pieces of Qt Webkit is
-QWebView. The Qt document also says:
+\begin{itemize}
+\item \textbf{Menampilkan halaman web} - Render HTML, CSS, JavaScript
+\item \textbf{Embed browser} - Integrasi browser dalam aplikasi Qt
+\item \textbf{Web content} - Akses konten internet
+\item \textbf{Cross-platform} - Sama di semua platform
+\end{itemize}
+
+\subsection{QWebView - Widget Utama}
+
+QWebView adalah widget utama dari Qt WebKit yang dapat digunakan untuk menampilkan konten web dalam aplikasi Qt.
 
 \begin{quote}
-Qwebview merupakan komponen widget utama dari module web browser Qtwebkit
-yang dapat digunakan dalam beberapa aplikasi untuk menampilkan konten
-pada internet 
+\textbf{QWebView} merupakan komponen widget utama dari module web browser Qt WebKit yang dapat digunakan dalam beberapa aplikasi untuk menampilkan konten pada internet
 \end{quote}
 
-\subsubsection*{Contoh membuat browser dengan Qt Webkit dengan meload url}\label{my-web-browser-version-1}
+\subsection{Keunggulan Qt WebKit}
 
-Sebuah website dapat di muat kedalam sebuah browser dengan menggunakan Qwebview 
-dengan fungsi load() fungsi ini merupakan bagian core dari peting untuk menampilkan 
-konten statis pada browser
+\begin{itemize}
+\item \textbf{Full web support} - HTML5, CSS3, JavaScript
+\item \textbf{Cross-platform} - Sama di Windows, Mac, Linux
+\item \textbf{Qt integration} - Terintegrasi dengan Qt framework
+\item \textbf{Customizable} - Dapat dikustomisasi sesuai kebutuhan
+\item \textbf{Performance} - Rendering yang cepat
+\end{itemize}
 
-\begin{lstlisting}[language=c++, numbers=none]
-QWebView *view = new QWebView(parent);
-view->load(QUrl("http://google.com/"));
-view->show();
-\end{lstlisting}
+\section{🚀 Browser Sederhana - Versi 1}
 
-We make a QWebView object, and load a page using load(). Like all Qt
-widgets, to display QWebView, the show() function must be invoked.
+\subsection{Membuat Browser Dasar}
 
-To make it work, we need a module from webkit (actually, webkitwidgets),
-and we will set it in .pro file.
+Mari kita mulai dengan membuat browser sederhana yang dapat menampilkan halaman web.
 
-Though it's not necessary for this simple project, we'll use Creator.
+\subsubsection{Setup Project}
 
-File-\textgreater{}New File or Project\ldots{}-\textgreater{}Other
-Project-\textgreater{}Empty Qt Project-\textgreater{}Choose\ldots{}
+\begin{enumerate}
+\item Buka Qt Creator
+\item File → New File or Project → Other Project → Empty Qt Project
+\item Beri nama project "Browser1"
+\item Klik Choose untuk melanjutkan
+\end{enumerate}
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{Browser1_Empty_Project}
-\caption{}
+\caption{Setup project browser sederhana}
 \end{figure}
 
-Paste the following lines to the Browser1.pro:
+\subsubsection{Konfigurasi Project File}
 
-\begin{lstlisting}[language=c++, numbers=none]
-QT       += core gui
-QT       += webkitwidgets
+Tambahkan konfigurasi berikut ke file Browser1.pro:
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+\lstinputlisting[language=c++]{../code/13-qt-webkit-code-2.c++}
 
-TARGET = Browser1
-TEMPLATE = app
+\subsubsection{Menambahkan Source File}
 
-SOURCES += main.cpp
-Then we need a main().
-\end{lstlisting}
+\begin{enumerate}
+\item Klik kanan pada nama project
+\item Add new → C++ → C++ Source File
+\item Beri nama "main.cpp"
+\end{enumerate}
 
-Right click on the Project name and select Add
-new\ldots{}-\textgreater{}C++-\textgreater{}C++ Source
-File-\textgreater{}Choose\ldots{}
-
-
+\begin{figure}[htbp]
+\centering
 \shadowimage[width=8cm]{main_cpp}
+\caption{Menambahkan file main.cpp}
+\end{figure}
 
+\begin{figure}[htbp]
+\centering
 \shadowimage[width=8cm]{Browser1_files}
+\caption{Struktur file project}
+\end{figure}
 
+\subsubsection{Menulis Kode Browser}
 
-Copy the following code for the main.cpp:
+Tulis kode berikut di main.cpp:
 
-\begin{lstlisting}[language=c++, numbers=none]
-#include <QApplication>
-#include <QWebView>
+\lstinputlisting[language=c++]{../code/13-qt-webkit-code-3.c++}
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-    QWebView view;
-    view.show();
-    view.load(QUrl("http://google.com"));
+\subsubsection{Menjalankan Browser}
 
-    return a.exec();
-}
-\end{lstlisting}
-
-Run qmake-\textgreater{}Run, then we'll get our browser with the page
-loaded:
+Jalankan program dengan Ctrl+R atau klik tombol Run. Hasilnya:
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{Browser1_Run}
-\caption{}
+\caption{Browser sederhana berhasil dibuat}
 \end{figure}
 
-NOTE: The linking against the Webkit does not seem to be needed. So, I
-dropped the following line from the Browser1.pro file.
+\textbf{Analisis Kode:}
+\begin{itemize}
+\item \textbf{QWebView} - Widget untuk menampilkan halaman web
+\item \textbf{load()} - Method untuk memuat URL
+\item \textbf{show()} - Menampilkan widget
+\item \textbf{QApplication} - Aplikasi Qt
+\end{itemize}
 
-\begin{lstlisting}[language=c++, numbers=none]
-QT       += webkit
-\end{lstlisting}
+\subsection{Penjelasan Kode}
 
-\section{My Web Browser version 2}\label{my-web-browser-version-2}
+\begin{itemize}
+\item \textbf{QWebView webView} - Membuat objek web view
+\item \textbf{webView.load(QUrl("http://www.google.com"))} - Memuat URL Google
+\item \textbf{webView.show()} - Menampilkan browser
+\item \textbf{app.exec()} - Menjalankan event loop
+\end{itemize}
 
-Though our browser version 1 is able to display a page, it does not have
-controls such as backward, forward, or refresh etc.
+\section{🎛️ Browser dengan Kontrol - Versi 2}
 
-So, in the next tutorial, we'll put some UI elements so that our browser
-become more closer to the real one.
+\subsection{Mengapa Perlu Kontrol?}
 
-\subsection{Starting the Project}\label{starting-the-project}
+Browser versi 1 hanya bisa menampilkan halaman web, tetapi tidak memiliki kontrol navigasi seperti:
+\begin{itemize}
+\item \textbf{Back button} - Kembali ke halaman sebelumnya
+\item \textbf{Forward button} - Maju ke halaman berikutnya
+\item \textbf{Refresh button} - Muat ulang halaman
+\item \textbf{URL bar} - Masukkan URL manual
+\item \textbf{Go button} - Buka URL yang dimasukkan
+\end{itemize}
 
-Right click on the Project name and select Add
-new\ldots{}-\textgreater{}Applications-\textgreater{}Qt Gui
-Application-\textgreater{}Choose\ldots{}
+\subsection{Setup Project Browser dengan UI}
 
-(Note) Depending on the version, we may want to select Add
-new\ldots{}-\textgreater{}Qt-\textgreater{}Qt Designer Form
-Class-\textgreater{}Dialog without Buttons
+\begin{enumerate}
+\item Klik kanan pada nama project
+\item Add new → Applications → Qt GUI Application
+\item Beri nama "Browser2"
+\end{enumerate}
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{QDialog}
-\caption{}
+\caption{Setup GUI application}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{Browser2_Files}
-\caption{}
+\caption{Struktur file GUI project}
 \end{figure}
 
-.pro File To link against Webkit, we need to add one line to the .pro
-file (with Qt5.3, the line will be added automatically):
+\subsection{Konfigurasi Project File}
 
-\begin{lstlisting}[language=c++, numbers=none]
-QT       += core gui
-QT       += webkitwidgets
+Tambahkan library WebKit ke file .pro:
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+\lstinputlisting[language=c++]{../code/13-qt-webkit-code-5.c++}
 
-TARGET = Browser2
-TEMPLATE = app
+\subsection{Designing UI}
 
+Mari kita buat interface browser dengan kontrol navigasi:
 
-SOURCES += main.cpp\
-        dialog.cpp
+\begin{enumerate}
+\item Buka file dialog.ui di Qt Designer
+\item Tambahkan widget berikut:
+\end{enumerate}
 
-HEADERS  += dialog.h
-
-FORMS    += dialog.ui
-\end{lstlisting}
-
-\subsection{Working on UI}\label{working-on-ui}
-
-Let's add ``urlEdit,''backButton``,''forwardButton``,''refreshButton,
-and ``goButton''. Also the key widget which is ``webView'' for QWebView:
+\begin{itemize}
+\item \textbf{urlEdit} - Line edit untuk URL
+\item \textbf{backButton} - Tombol kembali
+\item \textbf{forwardButton} - Tombol maju
+\item \textbf{refreshButton} - Tombol refresh
+\item \textbf{goButton} - Tombol go
+\item \textbf{webView} - QWebView untuk menampilkan halaman
+\end{itemize}
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{AddingWebView}
-\caption{}
+\caption{Menambahkan QWebView ke UI}
 \end{figure}
 
-Slots for the buttons and urlEdit To make the Creator to write a code
-for us, right click on the ``backButton''-\textgreater{}GO to
-slot\ldots{}-\textgreater{}clicked()
+\subsection{Membuat Signal-Slot Connections}
+
+Untuk membuat kode otomatis, gunakan fitur "Go to slot":
+
+\begin{enumerate}
+\item Klik kanan pada backButton
+\item Go to slot → clicked()
+\end{enumerate}
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{GoToSlotBrowser}
-\caption{}
+\caption{Membuat signal-slot connection}
 \end{figure}
 
-Then, in the dialog.cpp, it will write a slot function for us for the
-``backButton'' click:
+Lakukan hal yang sama untuk tombol lainnya:
+\begin{itemize}
+\item \textbf{forwardButton} → clicked()
+\item \textbf{refreshButton} → clicked()
+\item \textbf{goButton} → clicked()
+\item \textbf{urlEdit} → returnPressed()
+\end{itemize}
 
-void Dialog::on\_backButton\_clicked() \{
+\section{💻 Menulis Kode untuk Slot}
 
-\} Also, the Creator will write the prototype declaration into the
-dialog.h as well.
+\subsection{Menambahkan Header}
 
-We need to do the same for the other three buttons.
+Pertama, tambahkan include QWebView di dialog.h:
 
-For the ``urlEdit'' button, we may want to select returnPressed(),
-instead.
+\begin{lstlisting}[language=c++]
+#include <QWebView>
+\end{lstlisting}
 
-\section{Writing Code for the
-Slots}\label{writing-code-for-the-slots}
+\subsection{Menulis Kode Slot}
 
-We need to tell our Browser what to do when those buttons are clicked or
-return key is pressed on the urlEdit.
-
-First we need to include QWebView into the dialog.h.
-
-Then, let's start coding for the to-do list.
-
-Fortunately, the Creator intelligence gives us some hints on what to do:
+Qt Creator akan memberikan hint untuk menulis kode:
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{BackButtonCoding}
-\caption{}
+\caption{Hint untuk menulis kode slot}
 \end{figure}
 
-So, the finished coding, our slots in dialog.cpp look like this:
+Tulis kode berikut di dialog.cpp:
 
-\begin{lstlisting}[language=c++, numbers=none]
-void Dialog::on_backButton_clicked()
-{
-    ui->webView->back();
-}
+\lstinputlisting[language=c++]{../code/13-qt-webkit-code-6.c++}
 
-void Dialog::on_forwardButton_clicked()
-{
-    ui->webView->forward();
-}
+\subsection{Menjalankan Browser dengan Kontrol}
 
-void Dialog::on_refreshButton_clicked()
-{
-    ui->webView->reload();
-}
-
-void Dialog::on_goButton_clicked()
-{
-    // We just type the domain without "http://"
-    ui->webView->load(("http://"+ui->urlEdit->text()));
-}
-
-void Dialog::on_urlEdit_returnPressed()
-{
-    // Same as goButton click
-    on_goButton_clicked();
-}
-\end{lstlisting}
-
-\subsection{Running the Code}\label{running-the-code}
-
-Let's run our code.
+Jalankan program dan test fitur-fitur:
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{Browser2RunA}
-\caption{}
+\caption{Browser dengan kontrol navigasi}
 \end{figure}
 
-If we type in another site:
+Test dengan URL lain:
 
 \begin{figure}[htbp]
 \centering
 \shadowimage[width=8cm]{Browser2RunB}
-\caption{}
+\caption{Test dengan URL yang berbeda}
 \end{figure}
 
-\subsection{Source Code}\label{source-code}
+\section{📁 Source Code Lengkap}
 
-Here is the source code: Browser2.zip.
+\subsection{Header File (dialog.h)}
 
-\begin{lstlisting}[language=c++, numbers=none]
-main.cpp.
+\lstinputlisting[language=c++]{../code/13-qt-webkit-code-7.c++}
 
-#include "dialog.h"
-#include <QApplication>
+\subsection{Source File (dialog.cpp)}
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-    Dialog w;
-    w.setWindowTitle("Browser2");
-    w.show();
+\lstinputlisting[language=c++]{../code/13-qt-webkit-code-8.c++}
 
-    return a.exec();
-}
+\subsection{Main File (main.cpp)}
+
+\lstinputlisting[language=c++]{../code/13-qt-webkit-code-9.c++}
+
+\section{🔧 Fitur Lanjutan Browser}
+
+\subsection{Fitur yang Bisa Ditambahkan}
+
+Browser kita masih bisa ditingkatkan dengan menambahkan:
+
+\begin{itemize}
+\item \textbf{Bookmarks} - Simpan URL favorit
+\item \textbf{History} - Riwayat browsing
+\item \textbf{Downloads} - Manajemen download
+\item \textbf{Settings} - Pengaturan browser
+\item \textbf{Tabs} - Multiple tab browsing
+\item \textbf{Progress bar} - Indikator loading
+\item \textbf{Status bar} - Informasi status
+\item \textbf{Context menu} - Menu klik kanan
+\end{itemize}
+
+\subsection{Event Handling}
+
+Tambahkan event handling untuk interaksi user:
+
+\begin{itemize}
+\item \textbf{loadStarted()} - Saat mulai loading
+\item \textbf{loadProgress()} - Progress loading
+\item \textbf{loadFinished()} - Saat selesai loading
+\item \textbf{titleChanged()} - Saat judul berubah
+\item \textbf{urlChanged()} - Saat URL berubah
+\end{itemize}
+
+\subsection{JavaScript Integration}
+
+QWebView mendukung eksekusi JavaScript:
+
+\begin{lstlisting}[language=c++]
+// Eksekusi JavaScript
+webView->page()->mainFrame()->evaluateJavaScript("alert('Hello from Qt!')");
+
+// Akses JavaScript dari C++
+webView->page()->mainFrame()->addToJavaScriptWindowObject("qt", this);
 \end{lstlisting}
 
-dialog.h.
+\section{🔧 Best Practices Qt WebKit}
 
-\begin{lstlisting}[language=c++, numbers=none]
-#ifndef DIALOG_H
-#define DIALOG_H
+\subsection{Tips Pengembangan Browser}
 
-#include <QDialog>
-#include <QWebView>
+\begin{enumerate}
+\item \textbf{Gunakan QWebView} - Widget utama untuk web content
+\item \textbf{Error handling} - Tangani error loading halaman
+\item \textbf{Progress indication} - Tampilkan progress loading
+\item \textbf{Memory management} - Perhatikan penggunaan memory
+\item \textbf{Security} - Perhatikan keamanan web content
+\end{enumerate}
 
-namespace Ui {
-class Dialog;
-}
+\subsection{Kesalahan Umum}
 
-class Dialog : public QDialog
-{
-    Q_OBJECT
+\begin{itemize}
+\item \textbf{Lupa include WebKit} - Library tidak ter-link
+\item \textbf{Wrong URL format} - URL tidak valid
+\item \textbf{No error handling} - Tidak tangani error loading
+\item \textbf{Memory leak} - QWebView tidak dihapus dengan benar
+\item \textbf{Cross-platform issues} - Perbedaan platform
+\end{itemize}
 
-public:
-    explicit Dialog(QWidget *parent = 0);
-    ~Dialog();
+\subsection{Performance Tips}
 
-private slots:
-    void on_backButton_clicked();
+\begin{itemize}
+\item \textbf{Disable images} - Untuk loading lebih cepat
+\item \textbf{Use cache} - Manfaatkan web cache
+\item \textbf{Limit resources} - Batasi resource loading
+\item \textbf{Async loading} - Gunakan asynchronous loading
+\item \textbf{Memory monitoring} - Monitor penggunaan memory
+\end{itemize}
 
-    void on_forwardButton_clicked();
+\section{📚 Referensi dan Bacaan Lanjutan}
 
-    void on_refreshButton_clicked();
+Qt WebKit adalah teknologi yang terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
 
-    void on_goButton_clicked();
+\begin{itemize}
+\item \textbf{Qt WebKit Documentation} - Dokumentasi resmi Qt\footnote{Qt Company. (2023). "Qt WebKit Module". https://doc.qt.io/qt-6/qtwebkit-index.html}
+\item \textbf{WebKit Documentation} - Dokumentasi WebKit engine\footnote{WebKit Project. (2023). "WebKit Documentation". https://webkit.org/}
+\item \textbf{Qt WebEngine} - Modern web engine untuk Qt\footnote{Qt Company. (2023). "Qt WebEngine". https://doc.qt.io/qt-6/qtwebengine-index.html}
+\item \textbf{Browser Development} - Tutorial pengembangan browser\footnote{Mozilla Developer Network. (2023). "Browser Development". https://developer.mozilla.org/}
+\end{itemize}
 
-    void on_urlEdit_returnPressed();
+\section{🎉 Kesimpulan}
 
-private:
-    Ui::Dialog *ui;
-};
+Qt WebKit menyediakan cara yang powerful untuk mengintegrasikan konten web ke dalam aplikasi Qt. Dengan memahami QWebView dan kontrol navigasi, Anda dapat membuat browser sederhana hingga aplikasi web yang kompleks.
 
-#endif // DIALOG_H
-\end{lstlisting}
+\begin{center}
+\textbf{Selamat! Anda telah menguasai dasar-dasar Qt WebKit} 🌐
+\end{center}
 
-dialog.cpp.
+\vspace{1cm}
 
-\begin{lstlisting}[language=c++, numbers=none]
-#include "dialog.h"
-#include "ui_dialog.h"
-
-Dialog::Dialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Dialog)
-{
-    ui->setupUi(this);
-}
-
-Dialog::~Dialog()
-{
-    delete ui;
-}
-
-void Dialog::on_backButton_clicked()
-{
-    ui->webView->back();
-}
-
-void Dialog::on_forwardButton_clicked()
-{
-    ui->webView->forward();
-}
-
-void Dialog::on_refreshButton_clicked()
-{
-    ui->webView->reload();
-}
-
-void Dialog::on_goButton_clicked()
-{
-    // We just type the domain without "http://"
-    ui->webView->load(("http://"+ui->urlEdit->text()));
-}
-
-void Dialog::on_urlEdit_returnPressed()
-{
-    // Same as goButton click
-    on_goButton_clicked();
-}
-\end{lstlisting}
-
-There are lots of things to be done to make our browser better.
+\begin{center}
+\textit{--- Bab selanjutnya: GUI Programming ---}
+\end{center}

@@ -1,0 +1,1 @@
+class Kuda_terbang : public Kuda, public Burung

@@ -1,0 +1,1 @@
+<type> subclass = dynamic_cast<<type> &>( ref_obj );

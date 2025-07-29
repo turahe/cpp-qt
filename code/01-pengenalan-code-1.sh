@@ -1,0 +1,1 @@
+wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x86-online.run

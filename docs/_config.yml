@@ -1,0 +1,187 @@
+# GitHub Pages Configuration
+# C++ dan Qt Programming Guide
+
+# Site settings
+title: "C++ dan Qt Programming Guide"
+description: "Buku panduan lengkap untuk belajar C++ dan Qt Framework"
+author: "Nur Wachid"
+email: "contact@wach.id"
+url: "https://your-username.github.io"
+baseurl: "/cpp-qt"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Collections
+collections:
+  manuscript:
+    output: true
+    permalink: /manuscript/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "manuscript"
+    values:
+      layout: "page"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include
+include:
+  - _pages
+  - assets
+  - manuscript
+
+# Social media
+social:
+  name: "C++ dan Qt Programming Guide"
+  links:
+    - https://github.com/your-username/cpp-qt
+    - https://www.wach.id
+
+# SEO
+google_analytics: GA_MEASUREMENT_ID
+lang: id
+
+# Theme settings
+theme_settings:
+  # Meta
+  title: "C++ dan Qt Programming Guide"
+  description: "Buku panduan lengkap untuk belajar C++ dan Qt Framework"
+  
+  # Header
+  header_text: "C++ dan Qt Programming Guide"
+  header_text_feature_image: assets/header-bg.jpg
+  
+  # Sidebar
+  sidebar: true
+  sidebar_about_description: "Buku panduan lengkap untuk belajar C++ dan Qt Framework"
+  sidebar_avatar: assets/avatar.jpg
+  
+  # Footer
+  footer_text: "© 2024 C++ dan Qt Programming Guide. Creative Commons Attribution-NonCommercial 4.0 International License."
+  
+  # Social
+  github_username: your-username
+  twitter_username: your-twitter
+  email: contact@wach.id
+  
+  # Comments
+  comments: false
+  
+  # Search
+  search: true
+  search_full_content: true
+  
+  # Pagination
+  paginate: 10
+  paginate_path: "/page/:num/"
+  
+  # Categories
+  category_archive:
+    type: liquid
+    path: /category/
+  tag_archive:
+    type: liquid
+    path: /tag/
+  
+  # Links
+  links:
+    - title: "GitHub Repository"
+      url: "https://github.com/your-username/cpp-qt"
+    - title: "Download PDF"
+      url: "https://github.com/your-username/cpp-qt/releases/latest"
+    - title: "Author Website"
+      url: "https://www.wach.id"
+    - title: "Qt Documentation"
+      url: "https://doc.qt.io/"
+    - title: "C++ Reference"
+      url: "https://en.cppreference.com/"
+
+# Kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+      start_line: 1
+      mark: 1,2,3,4,5
+      bold_every: 10
+      css: class
+      css_class: highlight
+      span:
+        css: class
+        css_class: highlight
+      default_lang: cpp
+
+# Rouge
+rouge:
+  theme: github
+  line_numbers: true
+  start_line: 1
+  mark: 1,2,3,4,5
+  bold_every: 10
+  css: class
+  css_class: highlight
+
+# Sitemap
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+  lastmod: 2024-01-01
+
+# Feed
+feed:
+  path: atom.xml
+  limit: 10
+
+# SEO
+seo:
+  title: "C++ dan Qt Programming Guide"
+  description: "Buku panduan lengkap untuk belajar C++ dan Qt Framework"
+  author: "Nur Wachid"
+  image: "assets/og-image.png"
+  type: "website"
+  twitter:
+    card: "summary_large_image"
+    creator: "@your-twitter"
+    site: "@your-twitter"
+  facebook:
+    app_id: "your-facebook-app-id"
+    pages: "your-facebook-page-id"
+  google_plus:
+    publisher: "your-google-plus-publisher"
+  open_graph:
+    locale: "id_ID"
+    type: "website"
+    site_name: "C++ dan Qt Programming Guide"
+    title: "C++ dan Qt Programming Guide"
+    description: "Buku panduan lengkap untuk belajar C++ dan Qt Framework"
+    url: "https://your-username.github.io/cpp-qt"
+    image: "assets/og-image.png"
+    image_width: 1200
+    image_height: 630 

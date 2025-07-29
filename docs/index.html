@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ dan Qt Programming Guide</title>
+    <meta name="description" content="Buku panduan lengkap untuk belajar C++ dan Qt Framework. Dirancang khusus untuk pemula yang ingin menguasai pemrograman C++ dan pengembangan aplikasi dengan Qt.">
+    
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="C++ dan Qt Programming Guide">
+    <meta property="og:description" content="Buku panduan lengkap untuk belajar C++ dan Qt Framework">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-username.github.io/cpp-qt">
+    <meta property="og:image" content="assets/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C++ dan Qt Programming Guide">
+    <meta name="twitter:description" content="Buku panduan lengkap untuk belajar C++ dan Qt Framework">
+    <meta name="twitter:image" content="assets/og-image.png">
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">C++</span>
+                        </div>
+                        <span class="text-xl font-bold text-slate-900">Qt Guide</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-slate-600 hover:text-blue-600 transition-colors">Fitur</a>
+                    <a href="#chapters" class="text-slate-600 hover:text-blue-600 transition-colors">Bab</a>
+                    <a href="#download" class="text-slate-600 hover:text-blue-600 transition-colors">Download</a>
+                    <a href="https://github.com/your-username/cpp-qt" target="_blank" class="text-slate-600 hover:text-blue-600 transition-colors">GitHub</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#features" class="block px-3 py-2 text-slate-600 hover:text-blue-600">Fitur</a>
+                <a href="#chapters" class="block px-3 py-2 text-slate-600 hover:text-blue-600">Bab</a>
+                <a href="#download" class="block px-3 py-2 text-slate-600 hover:text-blue-600">Download</a>
+                <a href="https://github.com/your-username/cpp-qt" target="_blank" class="block px-3 py-2 text-slate-600 hover:text-blue-600">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-6 animate-fade-in">
+                    C++ dan Qt
+                    <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        Programming Guide
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto animate-slide-up">
+                    Buku panduan lengkap untuk belajar C++ dan Qt Framework. 
+                    Dirancang khusus untuk pemula yang ingin menguasai pemrograman C++ dan pengembangan aplikasi dengan Qt.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+                    <a href="#download" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+                        📖 Download PDF
+                    </a>
+                    <a href="https://github.com/your-username/cpp-qt" target="_blank" class="bg-slate-100 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:bg-slate-200 transition-colors">
+                        💻 View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 animate-bounce-gentle"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-purple-200 rounded-full opacity-20 animate-bounce-gentle" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-green-200 rounded-full opacity-20 animate-bounce-gentle" style="animation-delay: 2s;"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">🎯 Fitur Utama</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Buku ini dirancang dengan pendekatan pembelajaran yang menyenangkan dan efektif
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-white text-xl">📖</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Pembelajaran Bertahap</h3>
+                    <p class="text-slate-600">Dari dasar hingga lanjutan dengan konsep yang mudah dipahami</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-white text-xl">💻</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">333+ Contoh Kode</h3>
+                    <p class="text-slate-600">Contoh program siap jalankan dengan Qt Creator</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-white text-xl">🎨</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">GUI Programming</h3>
+                    <p class="text-slate-600">Membuat aplikasi dengan antarmuka grafis yang modern</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-white text-xl">🗄️</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Database Integration</h3>
+                    <p class="text-slate-600">SQLite dan MySQL dengan Qt Database</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-white text-xl">🌐</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Web Integration</h3>
+                    <p class="text-slate-600">Qt WebKit untuk integrasi web dalam aplikasi</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <span class="text-white text-xl">🏗️</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-900 mb-4">Design Patterns</h3>
+                    <p class="text-slate-600">Singleton, Observer, MVC dan pattern lainnya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section id="chapters" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">📚 Struktur Buku</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Pembelajaran terstruktur dari dasar hingga mahir
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Part I -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">I</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900">Dasar Pemrograman C++</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Pengenalan C++ dan Qt Creator
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Tipe data, variabel, dan operator
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Control statement (if, switch, loop)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Array dan string manipulation
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Fungsi dan modularisasi
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Pointer dan references
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                            Debugging techniques
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Part II -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">II</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900">Object-Oriented Programming</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Class dan object
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Inheritance dan polymorphism
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Operator overloading
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Design patterns
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                            Casting dan database
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Part III -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">III</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900">Qt Library dan Komponen</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                            Qt Library fundamentals
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                            File, stream, dan XML
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                            Qt WebKit integration
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Part IV -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">IV</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900">Antarmuka Pengguna</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                            GUI programming dengan Qt
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                            Signal dan slot
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                            Layout management
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                            Modern UI development
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 bg-gradient-to-br from-blue-600 to-purple-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">📖 Download Buku</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                Dapatkan buku dalam format PDF yang lengkap dengan semua contoh kode dan penjelasan detail
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Latest Release -->
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Latest Release</h3>
+                    <p class="text-blue-100 mb-6">Versi terbaru dengan semua fitur dan perbaikan</p>
+                    <a href="https://github.com/your-username/cpp-qt/releases/latest" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block">
+                        Download PDF
+                    </a>
+                </div>
+                
+                <!-- GitHub Repository -->
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Source Code</h3>
+                    <p class="text-blue-100 mb-6">Akses semua file LaTeX, Markdown, dan contoh kode</p>
+                    <a href="https://github.com/your-username/cpp-qt" target="_blank" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block">
+                        View Repository
+                    </a>
+                </div>
+                
+                <!-- Online Reading -->
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-xl font-semibold text-white mb-4">Online Reading</h3>
+                    <p class="text-blue-100 mb-6">Baca buku online dalam format Markdown</p>
+                    <a href="manuscript/book.md" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block">
+                        Read Online
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                <h3 class="text-2xl font-bold text-white mb-4">💡 Cara Menggunakan</h3>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-3">📖 Untuk Pembaca</h4>
+                        <ul class="text-blue-100 space-y-2">
+                            <li>• Download PDF untuk membaca offline</li>
+                            <li>• Baca online di GitHub Pages</li>
+                            <li>• Ikuti urutan bab untuk pembelajaran optimal</li>
+                            <li>• Praktikkan contoh kode di setiap bab</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-3">👨‍💻 Untuk Developer</h4>
+                        <ul class="text-blue-100 space-y-2">
+                            <li>• Clone repository untuk akses penuh</li>
+                            <li>• Install Qt Creator untuk development</li>
+                            <li>• Jalankan contoh kode langsung</li>
+                            <li>• Kontribusi dengan Pull Request</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">👨‍💻 Tentang Penulis</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Dibuat dengan passion untuk pendidikan dan pengembangan software
+                </p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <span class="text-white text-4xl font-bold">NW</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Nur Wachid</h3>
+                        <p class="text-lg text-slate-600 mb-6">
+                            <strong>Head of Software Engineering</strong> di PT. Lingkar Kreasi Teknologi
+                        </p>
+                        <p class="text-slate-600 mb-8 leading-relaxed">
+                            Experienced programmer dengan background yang kuat dalam software development dan passion untuk problem-solving. 
+                            Proficient dalam designing, coding, testing, dan maintaining software applications. 
+                            Specialized dalam web development dan mobile app development.
+                        </p>
+                        
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                            <a href="https://www.wach.id" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                                🌐 Website
+                            </a>
+                            <a href="https://github.com/your-username" target="_blank" class="bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-900 transition-colors">
+                                💻 GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/your-profile" target="_blank" class="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors">
+                                💼 LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">C++</span>
+                        </div>
+                        <span class="text-xl font-bold">Qt Guide</span>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        Buku panduan lengkap untuk belajar C++ dan Qt Framework. 
+                        Dirancang khusus untuk pemula yang ingin menguasai pemrograman C++ dan pengembangan aplikasi dengan Qt.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/your-username/cpp-qt" target="_blank" class="text-slate-300 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">📚 Buku</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="#features" class="hover:text-white transition-colors">Fitur</a></li>
+                        <li><a href="#chapters" class="hover:text-white transition-colors">Bab</a></li>
+                        <li><a href="#download" class="hover:text-white transition-colors">Download</a></li>
+                        <li><a href="manuscript/book.md" class="hover:text-white transition-colors">Baca Online</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">🔗 Links</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="https://doc.qt.io/" target="_blank" class="hover:text-white transition-colors">Qt Documentation</a></li>
+                        <li><a href="https://en.cppreference.com/" target="_blank" class="hover:text-white transition-colors">C++ Reference</a></li>
+                        <li><a href="https://www.qt.io/product/development-tools" target="_blank" class="hover:text-white transition-colors">Qt Creator</a></li>
+                        <li><a href="https://github.com/your-username/cpp-qt/issues" target="_blank" class="hover:text-white transition-colors">Report Issues</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
+                <p>&copy; 2024 C++ dan Qt Programming Guide. Creative Commons Attribution-NonCommercial 4.0 International License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 

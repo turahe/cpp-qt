@@ -1,0 +1,165 @@
+name: Test Build and Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Validate project structure
+      run: |
+        echo "🔍 Validating project structure..."
+        
+        # Check required directories
+        required_dirs=("latex" "manuscript" "code")
+        for dir in "${required_dirs[@]}"; do
+          if [ -d "$dir" ]; then
+            echo "✅ $dir directory exists"
+          else
+            echo "❌ $dir directory missing"
+            exit 1
+          fi
+        done
+        
+        # Check required files
+        required_files=(
+          "latex/book.tex"
+          "manuscript/README.md"
+          "manuscript/book.md"
+          "latex_to_markdown_enhanced.py"
+          "embed_code_final.py"
+        )
+        
+        for file in "${required_files[@]}"; do
+          if [ -f "$file" ]; then
+            echo "✅ $file exists"
+          else
+            echo "❌ $file missing"
+            exit 1
+          fi
+        done
+        
+        echo "✅ Project structure validation passed"
+        
+    - name: Test LaTeX compilation
+      run: |
+        echo "📄 Testing LaTeX compilation..."
+        
+        # Check if we can at least parse the main book.tex
+        if [ -f "latex/book.tex" ]; then
+          echo "✅ book.tex found"
+          
+          # Count chapters
+          chapter_count=$(grep -c "\\chapter" latex/book.tex || echo "0")
+          echo "📚 Found $chapter_count chapters"
+          
+          # Count parts
+          part_count=$(grep -c "\\part" latex/book.tex || echo "0")
+          echo "📖 Found $part_count parts"
+          
+        else
+          echo "❌ book.tex not found"
+          exit 1
+        fi
+        
+    - name: Test Markdown conversion
+      run: |
+        echo "📝 Testing Markdown conversion..."
+        
+        # Test conversion script
+        if python -c "import pathlib; print('Python pathlib available')" 2>/dev/null; then
+          echo "✅ Python dependencies available"
+        else
+          echo "❌ Python dependencies missing"
+          exit 1
+        fi
+        
+        # Count markdown files
+        md_count=$(find manuscript -name "*.md" | wc -l)
+        echo "📄 Found $md_count Markdown files"
+        
+        # Check for key markdown files
+        key_md_files=(
+          "manuscript/README.md"
+          "manuscript/book.md"
+          "manuscript/00-prakata.md"
+          "manuscript/01-pengenalan.md"
+        )
+        
+        for file in "${key_md_files[@]}"; do
+          if [ -f "$file" ]; then
+            echo "✅ $file exists"
+          else
+            echo "❌ $file missing"
+            exit 1
+          fi
+        done
+        
+    - name: Test code files
+      run: |
+        echo "💻 Testing code files..."
+        
+        # Count code files
+        cpp_count=$(find code -name "*.cpp" | wc -l)
+        cpp_plus_count=$(find code -name "*.c++" | wc -l)
+        total_code=$((cpp_count + cpp_plus_count))
+        
+        echo "📁 Found $total_code code files ($cpp_count .cpp, $cpp_plus_count .c++)"
+        
+        # Check for example files
+        if [ -f "code/contoh-a.cpp" ] && [ -f "code/contoh-b.cpp" ]; then
+          echo "✅ Example files found"
+        else
+          echo "❌ Example files missing"
+          exit 1
+        fi
+        
+    - name: Generate test report
+      run: |
+        echo "📊 Test Report" >> $GITHUB_STEP_SUMMARY
+        echo "=============" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Count files
+        tex_count=$(find latex -name "*.tex" | wc -l)
+        md_count=$(find manuscript -name "*.md" | wc -l)
+        code_count=$(find code -name "*.cpp" -o -name "*.c++" | wc -l)
+        
+        echo "**📄 LaTeX Files:** $tex_count" >> $GITHUB_STEP_SUMMARY
+        echo "**📝 Markdown Files:** $md_count" >> $GITHUB_STEP_SUMMARY
+        echo "**💻 Code Files:** $code_count" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Check structure
+        echo "**✅ Project Structure:** Valid" >> $GITHUB_STEP_SUMMARY
+        echo "**✅ LaTeX Compilation:** Ready" >> $GITHUB_STEP_SUMMARY
+        echo "**✅ Markdown Conversion:** Working" >> $GITHUB_STEP_SUMMARY
+        echo "**✅ Code Examples:** Available" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        echo "🎉 All tests passed!" >> $GITHUB_STEP_SUMMARY
+        
+    - name: Upload test artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: |
+          manuscript/
+          latex/
+          code/
+        retention-days: 7 

@@ -1,252 +1,313 @@
-# C++ Qt Learning Book
+# C++ dan Qt Programming Guide
 
-This repository contains a comprehensive C++ and Qt Creator learning book written in LaTeX.
+[![Build PDF](https://github.com/your-username/cpp-qt/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/your-username/cpp-qt/actions/workflows/build-pdf.yml)
+[![Markdown Validation](https://github.com/your-username/cpp-qt/actions/workflows/build-markdown.yml/badge.svg)](https://github.com/your-username/cpp-qt/actions/workflows/build-markdown.yml)
+[![Test Build](https://github.com/your-username/cpp-qt/actions/workflows/test-build.yml/badge.svg)](https://github.com/your-username/cpp-qt/actions/workflows/test-build.yml)
 
-## 📚 Book Content
+📚 **Buku panduan lengkap untuk belajar C++ dan Qt Framework**
 
-The book covers:
-- **Dasar (Basics)**: Introduction, data types, control statements, arrays, strings, functions, pointers
-- **OOP**: Classes, objects, inheritance, operators, polymorphism, casting, databases
-- **Interface**: GUI development
-- **Widget**: File handling, streams, XML, Qt WebKit
-- **Library**: Qt libraries and utilities
+## 🎯 Tentang Buku Ini
 
-## ✅ System Status
+Buku ini dirancang khusus untuk pemula yang ingin menguasai pemrograman C++ dan pengembangan aplikasi dengan Qt Framework. Dengan pendekatan pembelajaran bertahap dan contoh kode yang lengkap, Anda akan belajar dari dasar hingga mahir.
 
-### What's Working Now:
-- ✅ **Web Preview Interface** - Beautiful UI at `http://localhost:8000`
-- ✅ **Python Server** - Handles build requests and serves files
-- ✅ **Makefile** - Complete build automation
-- ✅ **Docker Setup** - Ready to use with LaTeX
-- ✅ **File Structure** - All LaTeX files and assets in place
-- ✅ **Documentation** - Comprehensive guides and setup instructions
+## 🚀 Fitur Utama
 
-### What Requires LaTeX Installation:
-- ❌ **PDF Generation** - Requires LaTeX distribution (TeX Live, MiKTeX, or MacTeX)
-- ❌ **Local Build** - Needs pdflatex command in PATH
+- **📖 Pembelajaran Bertahap** - Dari dasar hingga lanjutan
+- **💻 333+ Contoh Kode** - Siap jalankan dengan Qt Creator
+- **🎨 GUI Programming** - Membuat aplikasi dengan antarmuka grafis
+- **🗄️ Database Integration** - SQLite dan MySQL
+- **🌐 Web Integration** - Qt WebKit untuk browser
+- **🐛 Debugging Guide** - Teknik debugging yang efektif
+- **🏗️ Design Patterns** - Singleton, Observer, MVC
+- **📱 Cross-Platform** - Windows, macOS, Linux
 
-### Quick Test:
+## 📖 Struktur Buku
+
+### Part I: Dasar Pemrograman C++
+- **Pengenalan C++ dan Qt Creator** - Sejarah dan setup
+- **Tipe Data dan Operator** - Fondasi programming
+- **Control Statement** - Struktur kontrol (if, switch, loop)
+- **Array dan String** - Koleksi data dan manipulasi teks
+- **Fungsi** - Modularisasi program
+- **Pointer dan References** - Memory management
+- **Debugging** - Teknik debugging
+
+### Part II: Object-Oriented Programming
+- **Class dan Object** - OOP fundamentals
+- **Inheritance** - Pewarisan sifat
+- **Operator Overloading** - Custom operators
+- **Polymorphism** - Fleksibilitas objek
+- **Design Patterns** - Solusi terbukti
+- **Casting dan Database** - Konversi dan data
+
+### Part III: Qt Library dan Komponen
+- **Qt Library** - Library fundamentals
+- **File, Stream, dan XML** - Data handling
+- **Qt WebKit** - Web integration
+
+### Part IV: Antarmuka Pengguna
+- **GUI dengan Qt** - Antarmuka grafis
+
+## 🛠️ Cara Menggunakan
+
+### 📖 Membaca Buku
+
+#### **Format LaTeX (PDF)**
 ```bash
-python test-build.py
-```
-
-## 🚀 Quick Start
-
-### Option 1: Web Preview (Works Now!)
-
-1. **Start the preview server:**
-   ```bash
-   python server.py
-   ```
-
-2. **Open your browser:**
-   - Go to `http://localhost:8000`
-   - You'll see the beautiful preview interface with build options
-
-3. **Explore the interface:**
-   - View the complete book structure
-   - See build options (PDF generation requires LaTeX installation)
-   - Navigate through chapters and sections
-
-### Option 2: Using Docker (For PDF Generation)
-
-1. **Start the LaTeX environment:**
-   ```bash
-   docker-compose up latex-simple
-   ```
-
-2. **Access the development environment:**
-   - Open your browser and go to `http://localhost:8443`
-   - Login with password: `secret`
-
-3. **Build the LaTeX document:**
-   ```bash
-   # Using the build script with bookmarks (recommended)
-   ./docker-build-bookmarks.sh
-   
-   # Or using make with bookmarks
-   docker exec latex make bookmarks
-   
-   # Or using the original build script
-   ./build-latex.sh
-   
-   # Or using make
-   make all
-   
-   # Or using make with index
-   make index
-   ```
-
-4. **View the generated PDF:**
-   - The PDF will be generated in the `output/` directory
-   - Open `output/book.pdf` to view the document
-
-### Option 2: Local LaTeX Installation
-
-If you have LaTeX installed locally:
-
-1. **Install required LaTeX packages:**
-   ```bash
-   # Ubuntu/Debian
-   sudo apt-get install texlive-full texlive-latex-extra texlive-fonts-extra texlive-lang-indonesian texlive-bibtex-extra biber makeindex latexmk
-   
-   # macOS
-   brew install --cask mactex
-   
-   # Windows
-   # Install MiKTeX or TeX Live
-   ```
-
-2. **Build the document:**
-   ```bash
-   make all
-   ```
-
-## 🛠️ Build Commands
-
-### Using Makefile
-```bash
-make all          # Build the PDF document
-make index        # Build with index
-make bib          # Build with bibliography
-make bookmarks    # Build with bookmarks (recommended)
-make clean        # Clean auxiliary files
-make distclean    # Clean everything including PDF
-make open         # Open the generated PDF
-make watch        # Watch for changes and rebuild
-make help         # Show help message
-```
-
-### Using Build Script
-```bash
-./build-latex.sh          # Build the complete document
-./build-with-bookmarks.sh # Build with bookmarks (local)
-./docker-build-bookmarks.sh # Build with bookmarks (Docker)
-```
-
-### Manual LaTeX Commands
-```bash
+# Build PDF locally
 cd latex
-pdflatex -interaction=nonstopmode -output-directory=../output book.tex
-pdflatex -interaction=nonstopmode -output-directory=../output book.tex
-makeindex -o ../output/book.ind ../output/book.idx
-pdflatex -interaction=nonstopmode -output-directory=../output book.tex
+pdflatex book.tex
+# PDF akan tersedia di latex/book.pdf
 ```
+
+#### **Format Markdown**
+```bash
+# Baca file Markdown di folder manuscript/
+open manuscript/book.md
+```
+
+### 💻 Menjalankan Contoh Kode
+
+1. **Install Qt Creator**
+   ```bash
+   # Download dari https://www.qt.io/download
+   # Atau gunakan package manager
+   ```
+
+2. **Clone repository**
+   ```bash
+   git clone https://github.com/your-username/cpp-qt.git
+   cd cpp-qt
+   ```
+
+3. **Buka contoh kode**
+   ```bash
+   # Contoh kode tersedia di folder code/
+   # Buka dengan Qt Creator
+   ```
+
+## 🔧 Development
+
+### 📋 Requirements
+
+- **Qt Creator 5.15+** atau Qt 6.x
+- **C++ compiler** (GCC, MSVC, Clang)
+- **Python 3.9+** (untuk script konversi)
+- **TeX Live** (untuk build PDF)
+
+### 🚀 Setup Development
+
+```bash
+# Clone repository
+git clone https://github.com/your-username/cpp-qt.git
+cd cpp-qt
+
+# Install Python dependencies
+pip install pathlib
+
+# Sync LaTeX to Markdown
+python latex_to_markdown_enhanced.py
+python embed_code_final.py
+```
+
+### 📝 Menambah Konten
+
+1. **Edit file LaTeX** di folder `latex/`
+2. **Jalankan sync script** untuk update Markdown
+3. **Commit perubahan**
+4. **Push ke repository**
+
+```bash
+# Edit LaTeX file
+vim latex/01-pengenalan.tex
+
+# Sync to Markdown
+python latex_to_markdown_enhanced.py
+python embed_code_final.py
+
+# Commit changes
+git add .
+git commit -m "Update chapter 1"
+git push
+```
+
+## 🔄 CI/CD Pipeline
+
+### 📊 GitHub Actions Workflows
+
+#### **1. Build PDF (`build-pdf.yml`)**
+- **Trigger**: Push tags (v*)
+- **Action**: Build PDF from LaTeX
+- **Output**: Create GitHub release with PDF attachment
+
+#### **2. Markdown Validation (`build-markdown.yml`)**
+- **Trigger**: Push to main/master
+- **Action**: Validate Markdown files
+- **Output**: Generate documentation
+
+#### **3. LaTeX to Markdown Sync (`sync-latex-markdown.yml`)**
+- **Trigger**: Changes in latex/ or code/
+- **Action**: Auto-sync LaTeX to Markdown
+- **Output**: Updated Markdown files
+
+#### **4. Test Build (`test-build.yml`)**
+- **Trigger**: Push/PR to main/master
+- **Action**: Validate project structure
+- **Output**: Test report
+
+### 🏷️ Creating Releases
+
+#### **Automatic Release (Recommended)**
+```bash
+# Create and push tag
+git tag -a v1.0.0 -m "Release v1.0.0"
+git push origin v1.0.0
+
+# GitHub Actions will automatically:
+# 1. Build PDF
+# 2. Create release
+# 3. Attach PDF to release
+```
+
+#### **Manual Release**
+```bash
+# Use the release script
+chmod +x scripts/create-release.sh
+./scripts/create-release.sh v1.0.0 "Initial release"
+```
+
+### 📋 Release Process
+
+1. **Update version** in LaTeX files
+2. **Create git tag** with version
+3. **Push tag** to trigger workflow
+4. **GitHub Actions** builds PDF
+5. **Release created** with PDF attachment
+6. **Share release** with community
 
 ## 📁 Project Structure
 
 ```
 cpp-qt/
-├── latex/                    # LaTeX source files
-│   ├── book.tex             # Main document
-│   ├── 01-pengenalan.tex    # Chapter files
+├── 📄 latex/                 # LaTeX source files
+│   ├── book.tex             # Main book file
+│   ├── 01-pengenalan.tex   # Chapter files
 │   └── ...
-├── code/                    # C++ example code
-├── manuscript/              # Markdown source files
-├── output/                  # Generated PDF and auxiliary files
-├── images/                  # Book images
-├── build-latex.sh          # Build script
-├── Makefile                # Build automation
-├── docker-compose.yml      # Docker configuration
-└── README.md               # This file
+├── 📝 manuscript/           # Markdown files
+│   ├── README.md           # Book documentation
+│   ├── book.md             # Main book structure
+│   ├── 01-pengenalan.md    # Chapter files
+│   └── ...
+├── 💻 code/                # Code examples
+│   ├── contoh-a.cpp        # Example files
+│   ├── contoh-b.cpp
+│   └── ...
+├── 🔧 .github/workflows/   # CI/CD workflows
+│   ├── build-pdf.yml       # PDF build workflow
+│   ├── build-markdown.yml  # Markdown validation
+│   └── ...
+├── 📜 scripts/             # Utility scripts
+│   └── create-release.sh   # Release script
+└── 📋 README.md            # This file
 ```
 
-## 🔧 Development
+## 🎯 Learning Path
 
-### VS Code with LaTeX Workshop
+### 🚀 Untuk Pemula
+1. **Baca Prakata** - `manuscript/00-prakata.md`
+2. **Install Qt Creator** - Setup development environment
+3. **Ikuti Bab 1** - Pengenalan C++ dan Qt Creator
+4. **Praktik Kode** - Jalankan contoh di setiap bab
 
-The project is configured for VS Code with the LaTeX Workshop extension:
+### 🎯 Untuk Intermediate
+1. **Review OOP** - Part II chapters
+2. **Praktik Design Patterns** - Bab 11
+3. **Buat Project GUI** - Part IV
+4. **Integrasi Database** - Bab 10
 
-1. Install the LaTeX Workshop extension
-2. Open the project in VS Code
-3. Open `latex/book.tex`
-4. The document will auto-build on save
-5. Use `Ctrl+Alt+B` to build manually
-6. Use `Ctrl+Alt+V` to view the PDF
+### 🏆 Untuk Advanced
+1. **Custom Qt Components** - Extend Qt
+2. **Performance Optimization** - Advanced C++
+3. **Cross-Platform Development** - Multi-platform apps
+4. **Contribute to Qt** - Open source contribution
 
-### Docker Development
+## 📚 Referensi
 
-The Docker setup includes:
-- **code-server**: Web-based VS Code with LaTeX Workshop
-- **latex**: Dedicated LaTeX compilation service
-- **latex-full**: Alternative service with full TeXLive installation
+### 🔗 Link Penting
+- **[Qt Documentation](https://doc.qt.io/)** - Official Qt docs
+- **[C++ Reference](https://en.cppreference.com/)** - C++ standard library
+- **[Qt Creator](https://www.qt.io/product/development-tools)** - IDE download
 
-## 📖 Book Chapters
+### 📖 Buku Pendukung
+- "The C++ Programming Language" - Bjarne Stroustrup
+- "Qt 5.9 C++ Development Guide" - The Qt Company
+- "Effective C++" - Scott Meyers
 
-### Part 1: Dasar (Basics)
-- Chapter 1: Mukadimah (Introduction)
-- Chapter 2: Tipe Data, Identifier dan Operator
-- Chapter 3: Control Statement
-- Chapter 4: Array dan String
-- Chapter 5: Fungsi
-- Chapter 6: Pointer dan References
+## 👨‍💻 Tentang Penulis
 
-### Part 2: OOP
-- Chapter 7: Class dan Object
-- Chapter 8: Inheritance
-- Chapter 9: Operator Types dan Operator Overloading
-- Chapter 10: Polymorphism
-- Chapter 11: Casting dan Database
+**Nur Wachid** - Head of Software Engineering di PT. Lingkar Kreasi Teknologi
 
-### Part 3: Interface
-- Chapter 12: GUI
+- **🌐 Website**: https://www.wach.id
+- **📧 Email**: [email protected]
+- **💼 LinkedIn**: [LinkedIn Profile]
 
-### Part 4: Widget
-- Chapter 13: File, Stream, dan XML
-- Chapter 14: Qt Webkit
+## 🤝 Kontribusi
 
-### Part 5: Library
-- Chapter 15: Library
+### 📝 Cara Berkontribusi
+1. **Fork repository** ini
+2. **Buat branch** untuk fitur baru
+3. **Edit LaTeX files** untuk konten
+4. **Jalankan sync script** untuk update Markdown
+5. **Commit dan push** perubahan
+6. **Buat Pull Request**
 
-## 🐛 Troubleshooting
+### 🐛 Melaporkan Bug
+- Buat issue baru di repository
+- Jelaskan masalah dengan detail
+- Sertakan screenshot jika diperlukan
 
-### Common Issues
+### 💡 Saran Fitur
+- Buat issue dengan label "enhancement"
+- Jelaskan fitur yang diinginkan
+- Berikan contoh use case
 
-1. **Missing LaTeX packages:**
-   ```bash
-   # Install additional packages
-   sudo apt-get install texlive-lang-indonesian
-   ```
+## 📄 Lisensi
 
-2. **Font issues:**
-   ```bash
-   # Install Libertine font
-   sudo apt-get install texlive-fonts-extra
-   ```
+Buku ini menggunakan lisensi **Creative Commons Attribution-NonCommercial 4.0 International License**.
 
-3. **Image not found:**
-   - Ensure images are in the correct path: `manuscript/images/`
-   - Check image file names match the LaTeX references
+### 📋 Lisensi Detail
+- **✅ Boleh**: Copy, distribute, adapt, remix
+- **❌ Tidak boleh**: Commercial use
+- **📝 Wajib**: Attribution to author
 
-4. **Bibliography issues:**
-   ```bash
-   # Use biber instead of bibtex
-   biber book
-   ```
+## 🎉 Acknowledgments
 
-### Docker Issues
-
-1. **Container not starting:**
-   ```bash
-   docker-compose down
-   docker-compose up -d --build
-   ```
-
-2. **Permission issues:**
-   ```bash
-   sudo chown -R $USER:$USER .
-   ```
-
-## 📄 License
-
-This book is licensed under Creative Commons Attribution-NonCommercial (CC BY-NC).
-
-## 👨‍💻 Author
-
-**Nur Wachid**
-- Website: https://wach.id
-- Email: wachid (at) outlook dot com
+- **Qt Company** - Untuk framework yang luar biasa
+- **C++ Community** - Untuk bahasa pemrograman yang powerful
+- **Open Source Contributors** - Untuk kontribusi dan feedback
+- **Readers** - Untuk dukungan dan semangat belajar
 
 ---
 
-Happy learning! 📚✨
+## 🚀 Quick Start
+
+```bash
+# Clone repository
+git clone https://github.com/your-username/cpp-qt.git
+cd cpp-qt
+
+# Install Qt Creator
+# Download dari https://www.qt.io/download
+
+# Baca buku
+open manuscript/book.md
+
+# Jalankan contoh
+# Buka code/contoh-a.cpp di Qt Creator
+```
+
+**Selamat belajar dan happy coding! 🎉**
+
+---
+
+*"Programming is not about typing, it's about thinking."* - Rich Hickey

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - C++ dan Qt Programming Guide</title>
+    <meta name="description" content="Anda sedang offline. C++ dan Qt Programming Guide">
+    
+    <!-- Tailwind CSS v4 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen font-sans flex items-center justify-center">
+    <div class="max-w-md mx-auto text-center px-4">
+        <!-- Offline Icon -->
+        <div class="w-24 h-24 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-8">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.172L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+        </div>
+        
+        <!-- Title -->
+        <h1 class="text-3xl font-bold text-slate-900 mb-4">Anda Sedang Offline</h1>
+        
+        <!-- Description -->
+        <p class="text-lg text-slate-600 mb-8">
+            Maaf, Anda tidak terhubung ke internet. 
+            Beberapa fitur mungkin tidak tersedia.
+        </p>
+        
+        <!-- Actions -->
+        <div class="space-y-4">
+            <button onclick="window.location.reload()" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-200">
+                🔄 Coba Lagi
+            </button>
+            
+            <button onclick="window.history.back()" class="w-full bg-slate-100 text-slate-700 px-6 py-3 rounded-lg font-semibold hover:bg-slate-200 transition-colors">
+                ⬅️ Kembali
+            </button>
+        </div>
+        
+        <!-- Offline Features -->
+        <div class="mt-12 bg-white/50 backdrop-blur-md rounded-xl p-6">
+            <h2 class="text-lg font-semibold text-slate-900 mb-4">📚 Fitur Offline</h2>
+            <ul class="text-left text-slate-600 space-y-2">
+                <li class="flex items-center">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Baca buku yang sudah di-cache
+                </li>
+                <li class="flex items-center">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Lihat contoh kode
+                </li>
+                <li class="flex items-center">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Navigasi antar bab
+                </li>
+                <li class="flex items-center">
+                    <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                    Download PDF (perlu internet)
+                </li>
+                <li class="flex items-center">
+                    <span class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></span>
+                    Update konten (perlu internet)
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Tips -->
+        <div class="mt-8 bg-blue-50 rounded-xl p-6">
+            <h3 class="text-lg font-semibold text-blue-900 mb-3">💡 Tips</h3>
+            <p class="text-blue-800 text-sm">
+                Untuk pengalaman terbaik, pastikan Anda terhubung ke internet saat pertama kali mengakses situs ini. 
+                Setelah itu, konten akan tersimpan di cache dan dapat diakses offline.
+            </p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="mt-8 text-sm text-slate-500">
+            <p>C++ dan Qt Programming Guide</p>
+            <p>© 2024 Nur Wachid</p>
+        </div>
+    </div>
+    
+    <script>
+        // Check online status
+        function updateOnlineStatus() {
+            if (navigator.onLine) {
+                window.location.href = '/';
+            }
+        }
+        
+        // Listen for online/offline events
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', () => {
+            console.log('User went offline');
+        });
+        
+        // Check connection every 5 seconds
+        setInterval(() => {
+            if (navigator.onLine) {
+                updateOnlineStatus();
+            }
+        }, 5000);
+    </script>
+</body>
+</html> 

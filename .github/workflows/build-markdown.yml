@@ -1,0 +1,207 @@
+name: Build and Validate Markdown
+
+on:
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'manuscript/**'
+      - 'latex/**'
+      - 'code/**'
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'manuscript/**'
+      - 'latex/**'
+      - 'code/**'
+
+jobs:
+  validate-markdown:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        pip install markdown
+        pip install pymdown-extensions
+        pip install beautifulsoup4
+        
+    - name: Validate Markdown files
+      run: |
+        echo "🔍 Validating Markdown files..."
+        
+        # Check if all markdown files exist
+        if [ ! -d "manuscript" ]; then
+          echo "❌ manuscript directory not found"
+          exit 1
+        fi
+        
+        # Count markdown files
+        md_count=$(find manuscript -name "*.md" | wc -l)
+        echo "✅ Found $md_count Markdown files"
+        
+        # Check for required files
+        required_files=(
+          "manuscript/README.md"
+          "manuscript/book.md"
+          "manuscript/00-prakata.md"
+          "manuscript/01-pengenalan.md"
+        )
+        
+        for file in "${required_files[@]}"; do
+          if [ -f "$file" ]; then
+            echo "✅ $file exists"
+          else
+            echo "❌ $file missing"
+            exit 1
+          fi
+        done
+        
+        echo "✅ All required files present"
+        
+    - name: Check code references
+      run: |
+        echo "🔍 Checking code references..."
+        
+        # Count code files
+        code_count=$(find code -name "*.cpp" -o -name "*.c++" | wc -l)
+        echo "✅ Found $code_count code files"
+        
+        # Check if code directory exists
+        if [ ! -d "code" ]; then
+          echo "❌ code directory not found"
+          exit 1
+        fi
+        
+        echo "✅ Code directory structure valid"
+        
+    - name: Generate documentation
+      run: |
+        echo "📚 Generating documentation..."
+        
+        # Create a simple HTML index
+        cat > manuscript/index.html << 'EOF'
+        <!DOCTYPE html>
+        <html lang="id">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>C++ dan Qt Programming Guide</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 40px; }
+                h1 { color: #2c3e50; }
+                .chapter { margin: 20px 0; padding: 15px; border-left: 4px solid #3498db; }
+                .chapter a { color: #2980b9; text-decoration: none; }
+                .chapter a:hover { text-decoration: underline; }
+                .part { margin: 30px 0; }
+                .part h2 { color: #e74c3c; border-bottom: 2px solid #e74c3c; padding-bottom: 10px; }
+            </style>
+        </head>
+        <body>
+            <h1>📚 C++ dan Qt Programming Guide</h1>
+            <p>Buku panduan lengkap untuk belajar C++ dan Qt Framework.</p>
+            
+            <div class="part">
+                <h2>📖 Part I: Dasar Pemrograman C++</h2>
+                <div class="chapter">
+                    <a href="00-prakata.html">Prakata</a> - Pengantar dan panduan belajar
+                </div>
+                <div class="chapter">
+                    <a href="01-pengenalan.html">Pengenalan C++ dan Qt Creator</a> - Sejarah dan setup
+                </div>
+                <div class="chapter">
+                    <a href="02-tipedata.html">Tipe Data dan Operator</a> - Fondasi programming
+                </div>
+                <div class="chapter">
+                    <a href="02-control-statement.html">Control Statement</a> - Struktur kontrol
+                </div>
+                <div class="chapter">
+                    <a href="03-array-string.html">Array dan String</a> - Koleksi data
+                </div>
+                <div class="chapter">
+                    <a href="04-fuction.html">Fungsi</a> - Modularisasi program
+                </div>
+                <div class="chapter">
+                    <a href="05-pointer-referensi.html">Pointer dan References</a> - Memory management
+                </div>
+                <div class="chapter">
+                    <a href="06-debugging.html">Debugging</a> - Teknik debugging
+                </div>
+            </div>
+            
+            <div class="part">
+                <h2>🏗️ Part II: Object-Oriented Programming</h2>
+                <div class="chapter">
+                    <a href="06-class-object.html">Class dan Object</a> - OOP fundamentals
+                </div>
+                <div class="chapter">
+                    <a href="07-turunan.html">Inheritance</a> - Pewarisan sifat
+                </div>
+                <div class="chapter">
+                    <a href="08-operator.html">Operator Overloading</a> - Custom operators
+                </div>
+                <div class="chapter">
+                    <a href="09-Polymorphism.html">Polymorphism</a> - Fleksibilitas objek
+                </div>
+                <div class="chapter">
+                    <a href="11-design-patterns.html">Design Patterns</a> - Solusi terbukti
+                </div>
+                <div class="chapter">
+                    <a href="10-casting-database.html">Casting dan Database</a> - Konversi dan data
+                </div>
+            </div>
+            
+            <div class="part">
+                <h2>🎨 Part III: Qt Library dan Komponen</h2>
+                <div class="chapter">
+                    <a href="11-library.html">Qt Library</a> - Library fundamentals
+                </div>
+                <div class="chapter">
+                    <a href="12-file-stream-xml.html">File, Stream, dan XML</a> - Data handling
+                </div>
+                <div class="chapter">
+                    <a href="13-qt-webkit.html">Qt WebKit</a> - Web integration
+                </div>
+            </div>
+            
+            <div class="part">
+                <h2>🖥️ Part IV: Antarmuka Pengguna</h2>
+                <div class="chapter">
+                    <a href="14-gui.html">GUI dengan Qt</a> - Antarmuka grafis
+                </div>
+            </div>
+            
+            <div class="part">
+                <h2>📋 Referensi</h2>
+                <div class="chapter">
+                    <a href="contoh.html">Contoh Program Lengkap</a> - Kumpulan contoh
+                </div>
+                <div class="chapter">
+                    <a href="daftar-pustaka.html">Daftar Pustaka</a> - Referensi dan bacaan
+                </div>
+                <div class="chapter">
+                    <a href="00-about-authors.html">Tentang Penulis</a> - Profil penulis
+                </div>
+            </div>
+            
+            <hr>
+            <p><em>Generated by GitHub Actions - C++ dan Qt Programming Guide</em></p>
+        </body>
+        </html>
+        EOF
+        
+        echo "✅ Documentation generated"
+        
+    - name: Upload documentation artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: documentation
+        path: manuscript/index.html
+        retention-days: 30 

@@ -1,6 +1,6 @@
 # Prakata
 
-Selamat datang di perjalanan belajar C++ dan Qt yang menyenangkan! 🎉
+Selamat datang di perjalanan belajar C++ dan Qt yang menyenangkan!
 
 ## Mengapa C++ dan Qt?
 
@@ -12,16 +12,16 @@ Qt adalah framework yang luar biasa yang membuat C++ menjadi lebih mudah dan men
 
 Buku ini dirancang khusus untuk Anda yang:
 
-- 🔰 **Pemula total** - Belum pernah programming sama sekali
-- 🎯 **Pelajar** - Mahasiswa atau siswa yang ingin belajar C++ dan Qt
-- 💼 **Profesional** - Yang ingin menambah skill programming
-- 🚀 **Entrepreneur** - Yang ingin membuat aplikasi sendiri
+- **Pemula total** - Belum pernah programming sama sekali
+- **Pelajar** - Mahasiswa atau siswa yang ingin belajar C++ dan Qt
+- **Profesional** - Yang ingin menambah skill programming
+- **Entrepreneur** - Yang ingin membuat aplikasi sendiri
 
 ## Apa yang Akan Anda Pelajari?
 
 Perjalanan belajar ini akan membawa Anda dari dasar hingga mahir:
 
-### 📚 Bagian 1: Dasar-dasar C++
+### Bagian 1: Dasar-dasar C++
 
 - **Bab 1: Mukadimah** - Pengenalan C++ dan Qt Creator
 - **Bab 2: Tipe Data dan Operator** - Fondasi programming
@@ -30,7 +30,7 @@ Perjalanan belajar ini akan membawa Anda dari dasar hingga mahir:
 - **Bab 5: Fungsi** - Membuat kode yang terorganisir
 - **Bab 6: Pointer dan References** - Menguasai memory management
 
-### 🏗️ Bagian 2: Object-Oriented Programming
+### Bagian 2: Object-Oriented Programming
 
 - **Bab 7: Class dan Object** - Paradigma programming modern
 - **Bab 8: Inheritance** - Code reuse yang cerdas
@@ -38,7 +38,7 @@ Perjalanan belajar ini akan membawa Anda dari dasar hingga mahir:
 - **Bab 10: Polymorphism** - Fleksibilitas dalam programming
 - **Bab 11: Casting dan Database** - Konversi data dan database
 
-### 🎨 Bagian 3: Interface dan Widget
+### Bagian 3: Interface dan Widget
 
 - **Bab 12: GUI** - Membuat aplikasi dengan antarmuka grafis
 - **Bab 13: File, Stream, dan XML** - Mengelola file dan data
@@ -47,14 +47,14 @@ Perjalanan belajar ini akan membawa Anda dari dasar hingga mahir:
 
 ## Keunggulan C++ dan Qt
 
-### 🚀 C++ - Bahasa yang Powerful
+### C++ - Bahasa yang Powerful
 
 - **Performance tinggi** - Secepat bahasa assembly
 - **Portable** - Bisa jalan di Windows, Mac, Linux, Android, iOS
 - **Fleksibel** - Bisa untuk sistem, aplikasi, game, embedded
 - **Industry standard** - Digunakan oleh Google, Microsoft, Adobe
 
-### 🎨 Qt - Framework yang Amazing
+### Qt - Framework yang Amazing
 
 - **Cross-platform** - Satu kode untuk semua platform
 - **Easy to learn** - API yang intuitif dan dokumentasi lengkap
@@ -63,7 +63,7 @@ Perjalanan belajar ini akan membawa Anda dari dasar hingga mahir:
 
 ## Cara Belajar yang Efektif
 
-### 💡 Tips untuk Pemula
+### Tips untuk Pemula
 
 - **Praktik setiap hari** - 30 menit sehari lebih baik dari 5 jam seminggu
 - **Buat project kecil** - Mulai dari yang sederhana, lalu tingkatkan
@@ -71,7 +71,7 @@ Perjalanan belajar ini akan membawa Anda dari dasar hingga mahir:
 - **Gunakan Qt Creator** - IDE yang user-friendly untuk pemula
 - **Gabung komunitas** - Belajar dari pengalaman orang lain
 
-### 🎯 Metode Belajar dalam Buku Ini
+### Metode Belajar dalam Buku Ini
 
 - **Teori + Praktik** - Setiap konsep disertai contoh kode
 - **Step-by-step** - Langkah demi langkah yang jelas
@@ -80,14 +80,14 @@ Perjalanan belajar ini akan membawa Anda dari dasar hingga mahir:
 
 ## Persiapan Sebelum Mulai
 
-### 🛠️ Tools yang Diperlukan
+### Tools yang Diperlukan
 
 - **Qt Creator** - IDE untuk development
 - **Qt SDK** - Framework dan library
 - **Compiler** - GCC, MSVC, atau Clang
 - **Text editor** - VS Code atau editor favorit Anda
 
-### 💻 Sistem Operasi
+### Sistem Operasi
 
 - **Windows** - Qt Creator + MinGW atau MSVC
 - **macOS** - Qt Creator + Clang
@@ -97,26 +97,26 @@ Perjalanan belajar ini akan membawa Anda dari dasar hingga mahir:
 
 Saya berharap buku ini bisa menjadi teman belajar yang menyenangkan dalam perjalanan Anda menguasai C++ dan Qt. Setiap bab dirancang dengan hati-hati agar Anda bisa:
 
-- 🎯 **Memahami konsep** dengan mudah
-- 💻 **Mempraktikkan** langsung di komputer
-- 🚀 **Mengembangkan** skill secara bertahap
-- 🎨 **Membuat aplikasi** yang berguna
+- **Memahami konsep** dengan mudah
+- **Mempraktikkan** langsung di komputer
+- **Mengembangkan** skill secara bertahap
+- **Membuat aplikasi** yang berguna
 
 ## Kontribusi dan Dukungan
 
 Buku ini adalah project open source yang terus berkembang. Jika Anda ingin berkontribusi:
 
-- 🌟 **Fork repository** di [https://github.com/turahe/cpp-qt](https://github.com/turahe/cpp-qt)
-- 📧 **Kirim feedback** ke email penulis
-- 🐛 **Report bugs** jika menemukan kesalahan
-- 📝 **Submit improvements** untuk konten yang lebih baik
+- **Fork repository** di [https://github.com/turahe/cpp-qt](https://github.com/turahe/cpp-qt)
+- **Kirim feedback** ke email penulis
+- **Report bugs** jika menemukan kesalahan
+- **Submit improvements** untuk konten yang lebih baik
 
 ## Terima Kasih
 
 Terima kasih telah memilih buku ini sebagai teman belajar Anda. Mari kita mulai perjalanan yang menyenangkan ini bersama-sama!
 
 <div align="center">
-**Selamat belajar dan happy coding! 🎉**
+**Selamat belajar dan happy coding! **
 
 
 

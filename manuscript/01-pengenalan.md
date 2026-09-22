@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari dasar-dasar yang perlu diketahui sebelum mulai belajar C++ dan Qt:
 
@@ -12,7 +12,7 @@ Pada bab ini kita akan mempelajari dasar-dasar yang perlu diketahui sebelum mula
 
 \minitoc
 
-## 🌍 Sejarah Bahasa C++
+## Sejarah Bahasa C++
 
 ### Awal Mula Bahasa C
 
@@ -51,48 +51,48 @@ Bahasa C++ mengalami evolusi yang signifikan:
 - **2017:** Standar C++17 (fitur baru)
 - **2020:** Standar C++20 (fitur modern)
 
-## ⭐ Keunggulan Bahasa C++
+## Keunggulan Bahasa C++
 
 Berikut adalah keunggulan-keunggulan bahasa C++ dibandingkan bahasa pemrograman lainnya:
 
 \begin{description}
 
-- [🎯 **Pemrograman Berorientasi Objek (OOP)**]
+- [**Pemrograman Berorientasi Objek (OOP)**]
 C++ mendukung pemrograman berorientasi objek yang memungkinkan kita melihat masalah sebagai objek-objek yang saling berinteraksi, bukan sebagai prosedur-prosedur yang berurutan.
 
 - **Encapsulation** - Penggabungan data dan fungsi
 - **Inheritance** - Pewarisan sifat dari class lain
 - **Polymorphism** - Kemampuan objek berperilaku berbeda
 
-- [🌍 **Portabilitas**]
+- [**Portabilitas**]
 Kode C++ yang sama bisa dikompilasi dan dijalankan di berbagai jenis komputer dan sistem operasi tanpa perubahan.
 
 - **Cross-platform** - Windows, Linux, macOS
 - **Standard library** - Konsisten di semua platform
 - **Compiler support** - Didukung semua compiler utama
 
-- [⚡ **Kecepatan dan Efisiensi**]
+- [**Kecepatan dan Efisiensi**]
 C++ memberikan kontrol penuh atas memory dan resources.
 
 - **Direct memory access** - Akses langsung ke memory
 - **No garbage collection** - Tidak ada overhead GC
 - **Optimized compilation** - Kode yang sangat efisien
 
-- [🔧 **Pemrograman Modular**]
+- [**Pemrograman Modular**]
 Program C++ bisa terdiri dari beberapa file yang terpisah dan kemudian digabungkan.
 
 - **Header files** - Deklarasi fungsi dan class
 - **Source files** - Implementasi fungsi dan class
 - **Libraries** - Kode yang bisa digunakan ulang
 
-- [🔄 **Kompatibilitas dengan C**]
+- [**Kompatibilitas dengan C**]
 C++ sangat kompatibel dengan bahasa C. Kode program yang ditulis dalam C bisa digabungkan dengan C++ dengan mudah.
 
 - **C functions** - Bisa dipanggil dari C++
 - **C libraries** - Bisa digunakan di C++
 - **Gradual migration** - Migrasi bertahap dari C ke C++
 
-- [📝 **Keringkasan dan Fleksibilitas**]
+- [**Keringkasan dan Fleksibilitas**]
 C++ adalah bahasa tingkat tinggi yang ringkas dan fleksibel.
 
 - **Multiple paradigms** - OOP, procedural, generic
@@ -101,7 +101,7 @@ C++ adalah bahasa tingkat tinggi yang ringkas dan fleksibel.
 
 \end{description}
 
-## 🛠️ Pengenalan Qt Creator
+## Pengenalan Qt Creator
 
 ### Apa itu Qt Creator?
 
@@ -156,7 +156,7 @@ Project bisa dibuat dengan dua cara:
 - **Import** - Menggunakan project yang sudah ada
 
 \begin{figure}[htbp]
-\centering 
+\centering
 \shadowimage[width=8cm]{Capture1-1}
 \caption{Projek pada Qt Creator}
 <a name="fig:projek-pada-qt-creator"></a>
@@ -245,7 +245,7 @@ Qt Creator mempunyai plugin debugger yang bekerja sebagai interface antara Qt Cr
 - **LLDB** - Debugger modern dari LLVM
 - **JavaScript debugger** - Untuk QML dan JavaScript
 
-## 🎨 Teknologi User Interface (UI) Qt
+## Teknologi User Interface (UI) Qt
 
 ### Apa itu User Interface?
 
@@ -265,9 +265,9 @@ Qt Creator sendiri adalah contoh bagus dari penggunaan multiple teknologi UI:
 - **Welcome Screen** menggunakan QtQuick (tampilan modern dengan animasi)
 - **Help Documentation** menggunakan QtWebKit (seperti halaman web)
 
-Anda bisa menggabungkan ketiga teknologi ini dalam satu aplikasi! 😊
+Anda bisa menggabungkan ketiga teknologi ini dalam satu aplikasi!
 
-### 🚀 QtQuick - UI Modern dengan Animasi
+### QtQuick - UI Modern dengan Animasi
 
 QtQuick adalah teknologi UI modern Qt yang menggunakan **QML** (Qt Meta-Object Language) dan **JavaScript** untuk membuat antarmuka pengguna.
 
@@ -291,7 +291,7 @@ QtQuick adalah teknologi UI modern Qt yang menggunakan **QML** (Qt Meta-Object L
 
 QtQuick membutuhkan dukungan OpenGL dari kartu grafis. Jika OpenGL tidak tersedia, Anda perlu menginstal driver VGA yang sesuai dengan motherboard Anda.
 
-### 🖥️ QtWidget - UI Tradisional Desktop
+### QtWidget - UI Tradisional Desktop
 
 QtWidget adalah teknologi UI tradisional Qt yang menyediakan komponen-komponen standar untuk aplikasi desktop seperti button, text area, menu, dan lainnya.
 
@@ -319,7 +319,7 @@ Saat membuat aplikasi QtWidget, Anda akan diminta memilih Base Class:
 - Aplikasi yang tidak memerlukan animasi kompleks
 - Aplikasi yang membutuhkan stabilitas tinggi
 
-### 🌐 QtWebKit - UI Berbasis Web
+### QtWebKit - UI Berbasis Web
 
 QtWebKit memungkinkan Anda membuat aplikasi desktop menggunakan teknologi web seperti HTML, CSS, dan JavaScript.
 
@@ -346,7 +346,7 @@ QtWebKit memungkinkan Anda membuat aplikasi desktop menggunakan teknologi web se
 - Prototype cepat dengan teknologi web
 - Aplikasi hybrid web-desktop
 
-### 📊 Perbandingan Teknologi UI Qt
+### Perbandingan Teknologi UI Qt
 
 <div align="center">
 | \hline
@@ -367,7 +367,7 @@ Learning Curve | Rendah | Sedang | Rendah |
 | \hline |
 </div>
 
-## 📥 Install Qt Creator
+## Install Qt Creator
 
 Pada tutorial ini kita akan menginstall Qt Creator di berbagai platform. Qt Creator dapat diunduh di \href{http://www.qt.io/download}{halaman resmi Qt}[^1]: https://www.qt.io/download-open-source/#section-2.
 
@@ -407,7 +407,7 @@ Buka terminal untuk menginstal g++:
 
 #### Langkah 4: Konfigurasi Kompiler
 
-Buka Qt Creator, klik Tools → Options. Klik Build & Run dan pilih tab Kit. Konfigurasikan kompiler jika belum terdeteksi secara otomatis.
+Buka Qt Creator, klik Tools $\rightarrow$ Options. Klik Build & Run dan pilih tab Kit. Konfigurasikan kompiler jika belum terdeteksi secara otomatis.
 
 #### Langkah 5: Install Pustaka OpenGL
 
@@ -421,27 +421,27 @@ Jalankan perintah berikut untuk menginstall Pustaka OpenGL:
 #### Langkah 1: Download
 
 Anda dapat mendownload Qt Creator di halaman website Qt dan memilih versi yang sesuai dengan sistem operasi Anda (64-bit atau 32-bit).
- 
+
 <div align="center">
-	 ![install-qt-1](images/install-qt-1)
+ ![install-qt-1](images/install-qt-1)
 </div>
- 
+
 #### Langkah 2: Install
 
 Jika Anda telah mendownload Qt Creator, jalankan installer. Pilih versi yang sesuai dengan sistem operasi Anda.
 
 <div align="center">
-	 ![install-qt-2](images/install-qt-2)
+ ![install-qt-2](images/install-qt-2)
 </div>
- 
+
 #### Langkah 3: Setup
-  
+
 Pilih "Next" dan ikuti langkah-langkah setup. Jika tidak ingin mendaftar, Anda dapat memilih "Skip".
-  
+
 <div align="center">
-	 ![install-qt-3](images/install-qt-3)
+ ![install-qt-3](images/install-qt-3)
 </div>
- 
+
 #### Langkah 4: Selesai
 
 Installer akan menginstall aplikasi sampai selesai. Klik "Finish" untuk mengakhiri proses pemasangan.
@@ -450,28 +450,28 @@ Installer akan menginstall aplikasi sampai selesai. Klik "Finish" untuk mengakhi
 	![install-qt-4](images/install-qt-4)
 </div>
 
-## 🚀 Program Console Pertama dengan Qt Creator
+## Program Console Pertama dengan Qt Creator
 
 ### Membuat Project Console
 
 Untuk mencoba membuat aplikasi dengan Qt Creator, ikuti langkah-langkah berikut:
 
 - Buka Qt Creator
-- Klik File → New Project
-- Pilih Application → Qt Console Application
+- Klik File $\rightarrow$ New Project
+- Pilih Application $\rightarrow$ Qt Console Application
 - Klik "Choose"
 
-  <div align="center">
-  ![qt-console-aplication](images/qt-console-aplication)
-  </div>
+ <div align="center">
+ ![qt-console-aplication](images/qt-console-aplication)
+ </div>
 
 ### Konfigurasi Project
 
 Beri nama project dan pilih direktori tempat aplikasi akan disimpan:
 
-  <div align="center">
-  ![qt-console-aplication-2](images/qt-console-aplication-2)
-  </div>
+ <div align="center">
+ ![qt-console-aplication-2](images/qt-console-aplication-2)
+ </div>
 
 ### Pilih Kompiler
 
@@ -510,7 +510,7 @@ Apabila dilakukan dengan benar, akan muncul Qt Editor seperti berikut:
 ![qt-creator](images/qt-creator)
 </div>
 
-## 📝 Struktur Program C++
+## Struktur Program C++
 
 ### Pengenalan Struktur Program
 
@@ -521,16 +521,16 @@ Program Bahasa C/C++ tidak mengenal aturan penulisan di kolom/baris tertentu, ja
 Berikut adalah struktur dasar program yang dibuat dengan bahasa C++:
 
 ```cpp
-#include <header>  
-using namespace std;    
+#include <header>
+using namespace std;
 int main(int argc, char *argv[])
-{  
-deklarasi variabel;   
-deklarasi konstanta;  
-perintah perintah;  
-//komentar  
-return 0;  
-}  
+{
+deklarasi variabel;
+deklarasi konstanta;
+perintah perintah;
+//komentar
+return 0;
+}
 ```
 
 ### Penjelasan Komponen
@@ -576,11 +576,11 @@ Program C++ terdiri dari satu atau lebih fungsi, dan di antara salah satunya har
 Komentar tidak pernah dicompile oleh compiler. Dalam C++ terdapat 2 jenis komentar:
 
 ```cpp
-  /* Komentar anda diletakkan
-   di dalam ini bisa mengapit
-    lebih dari satu baris */
+ /* Komentar anda diletakkan
+ di dalam ini bisa mengapit
+ lebih dari satu baris */
 
-  // Komentar anda diletakkan disini
+ // Komentar anda diletakkan disini
 // (hanya bisa sebaris)
 ```
 
@@ -621,7 +621,7 @@ Selamat belajar C/C++ enter my world
 - **Selamat belajar C/C++ enter my world** - Output dari cout kedua
 - **Tidak ada spasi** - Karena tidak ada spasi dalam string
 
-## 🎯 Best Practices untuk Pemula
+## Best Practices untuk Pemula
 
 ### Tips Menulis Kode
 
@@ -639,7 +639,7 @@ Selamat belajar C/C++ enter my world
 - **Salah case** - C++ case sensitive
 - **Lupa include** - Header yang diperlukan
 
-## 📚 Referensi dan Bacaan Lanjutan
+## Referensi dan Bacaan Lanjutan
 
 Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
 
@@ -648,12 +648,12 @@ Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
 - **Bjarne Stroustrup** - Pencipta C++[^1]: Stroustrup, B. (2013). "The C++ Programming Language Fourth Edition". Addison-Wesley.
 - **Qt Tutorial** - Tutorial resmi Qt[^1]: Qt Company. (2023). "Qt Tutorials". https://doc.qt.io/qt-6/tutorials.html
 
-## 🎉 Kesimpulan
+## Kesimpulan
 
 Pada bab ini kita telah mempelajari dasar-dasar C++ dan Qt Creator. Dengan memahami sejarah, keunggulan, dan cara menggunakan Qt Creator, Anda siap untuk mulai menulis program C++ yang lebih kompleks.
 
 <div align="center">
-**Selamat! Anda telah siap untuk belajar C++ dan Qt** 🚀
+**Selamat! Anda telah siap untuk belajar C++ dan Qt**
 </div>
 
 

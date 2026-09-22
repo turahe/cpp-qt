@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari tentang design patterns - solusi yang sudah terbukti untuk masalah umum dalam pemrograman:
 
@@ -11,7 +11,7 @@ Pada bab ini kita akan mempelajari tentang design patterns - solusi yang sudah t
 
 \minitoc
 
-## 🎨 Pengenalan Design Patterns
+## Pengenalan Design Patterns
 
 ### Apa itu Design Pattern?
 
@@ -36,7 +36,7 @@ Design patterns dibagi menjadi tiga kategori utama:
 - **Structural Patterns** - Cara menyusun objek
 - **Behavioral Patterns** - Cara objek berkomunikasi
 
-## 🏭 Singleton Pattern
+## Singleton Pattern
 
 ### Pengenalan Singleton
 
@@ -57,58 +57,58 @@ using namespace std;
 
 class Singleton {
 private:
-    static Singleton* instance;
-    string data;
-    
-    // Constructor private
-    Singleton() {
-        data = "Singleton instance created";
-    }
-    
+ static Singleton* instance;
+ string data;
+
+ // Constructor private
+ Singleton() {
+ data = "Singleton instance created";
+ }
+
 public:
-    // Mencegah copy constructor
-    Singleton(const Singleton&) = delete;
-    
-    // Mencegah assignment operator
-    Singleton& operator=(const Singleton&) = delete;
-    
-    // Method untuk mendapatkan instance
-    static Singleton* getInstance() {
-        if (instance == nullptr) {
-            instance = new Singleton();
-        }
-        return instance;
-    }
-    
-    void setData(string value) {
-        data = value;
-    }
-    
-    string getData() {
-        return data;
-    }
-    
-    void showMessage() {
-        cout << "Data: " << data << endl;
-    }
+ // Mencegah copy constructor
+ Singleton(const Singleton&) = delete;
+
+ // Mencegah assignment operator
+ Singleton& operator=(const Singleton&) = delete;
+
+ // Method untuk mendapatkan instance
+ static Singleton* getInstance() {
+ if (instance == nullptr) {
+ instance = new Singleton();
+ }
+ return instance;
+ }
+
+ void setData(string value) {
+ data = value;
+ }
+
+ string getData() {
+ return data;
+ }
+
+ void showMessage() {
+ cout << "Data: " << data << endl;
+ }
 };
 
 // Inisialisasi static member
 Singleton* Singleton::instance = nullptr;
 
 int main() {
-    // Mendapatkan instance
-    Singleton* obj1 = Singleton::getInstance();
-    obj1->setData("Hello from Singleton!");
-    obj1->showMessage();
-    
-    // Mendapatkan instance yang sama
-    Singleton* obj2 = Singleton::getInstance();
-    obj2->showMessage(); // Akan menampilkan data yang sama
-    
-    cout << "obj1 == obj2: " << (obj1 == obj2) << endl; // true
-    
-    return 0;
+ // Mendapatkan instance
+ Singleton* obj1 = Singleton::getInstance();
+ obj1->setData("Hello from Singleton!");
+ obj1->showMessage();
+
+ // Mendapatkan instance yang sama
+ Singleton* obj2 = Singleton::getInstance();
+ obj2->showMessage(); // Akan menampilkan data yang sama
+
+ cout << "obj1 == obj2: " << (obj1 == obj2) << endl; // true
+
+ return 0;
 }
 ```
 
@@ -121,17 +121,17 @@ Qt menggunakan Singleton pattern dalam beberapa komponen:
 #include <QCoreApplication>
 
 int main(int argc, char *argv[]) {
-    // QApplication adalah singleton
-    QApplication app(argc, argv);
-    
-    // QCoreApplication::instance() memberikan akses ke instance
-    QCoreApplication* instance = QCoreApplication::instance();
-    
-    return app.exec();
+ // QApplication adalah singleton
+ QApplication app(argc, argv);
+
+ // QCoreApplication::instance() memberikan akses ke instance
+ QCoreApplication* instance = QCoreApplication::instance();
+
+ return app.exec();
 }
 ```
 
-## 👁️ Observer Pattern
+## Observer Pattern
 
 ### Pengenalan Observer
 
@@ -155,81 +155,81 @@ using namespace std;
 // Abstract Observer
 class Observer {
 public:
-    virtual void update(string message) = 0;
+ virtual void update(string message) = 0;
 };
 
 // Concrete Observer
 class NewsSubscriber : public Observer {
 private:
-    string name;
-    
+ string name;
+
 public:
-    NewsSubscriber(string n) : name(n) {}
-    
-    void update(string message) override {
-        cout << name << " received: " << message << endl;
-    }
+ NewsSubscriber(string n) : name(n) {}
+
+ void update(string message) override {
+ cout << name << " received: " << message << endl;
+ }
 };
 
 // Subject
 class NewsAgency {
 private:
-    vector<Observer*> observers;
-    string news;
-    
+ vector<Observer*> observers;
+ string news;
+
 public:
-    void attach(Observer* observer) {
-        observers.push_back(observer);
-    }
-    
-    void detach(Observer* observer) {
-        // Remove observer dari vector
-        for (auto it = observers.begin(); it != observers.end(); ++it) {
-            if (*it == observer) {
-                observers.erase(it);
-                break;
-            }
-        }
-    }
-    
-    void notify() {
-        for (Observer* observer : observers) {
-            observer->update(news);
-        }
-    }
-    
-    void setNews(string n) {
-        news = n;
-        notify(); // Notify semua observer
-    }
+ void attach(Observer* observer) {
+ observers.push_back(observer);
+ }
+
+ void detach(Observer* observer) {
+ // Remove observer dari vector
+ for (auto it = observers.begin(); it != observers.end(); ++it) {
+ if (*it == observer) {
+ observers.erase(it);
+ break;
+ }
+ }
+ }
+
+ void notify() {
+ for (Observer* observer : observers) {
+ observer->update(news);
+ }
+ }
+
+ void setNews(string n) {
+ news = n;
+ notify(); // Notify semua observer
+ }
 };
 
 int main() {
-    NewsAgency agency;
-    
-    NewsSubscriber* alice = new NewsSubscriber("Alice");
-    NewsSubscriber* bob = new NewsSubscriber("Bob");
-    NewsSubscriber* charlie = new NewsSubscriber("Charlie");
-    
-    // Attach observers
-    agency.attach(alice);
-    agency.attach(bob);
-    agency.attach(charlie);
-    
-    // Set news - semua observer akan diberitahu
-    agency.setNews("Breaking: C++ is awesome!");
-    
-    // Detach observer
-    agency.detach(bob);
-    
-    // Set news lagi - hanya Alice dan Charlie yang diberitahu
-    agency.setNews("Update: Qt is powerful!");
-    
-    return 0;
+ NewsAgency agency;
+
+ NewsSubscriber* alice = new NewsSubscriber("Alice");
+ NewsSubscriber* bob = new NewsSubscriber("Bob");
+ NewsSubscriber* charlie = new NewsSubscriber("Charlie");
+
+ // Attach observers
+ agency.attach(alice);
+ agency.attach(bob);
+ agency.attach(charlie);
+
+ // Set news - semua observer akan diberitahu
+ agency.setNews("Breaking: C++ is awesome!");
+
+ // Detach observer
+ agency.detach(bob);
+
+ // Set news lagi - hanya Alice dan Charlie yang diberitahu
+ agency.setNews("Update: Qt is powerful!");
+
+ return 0;
 }
 ```
 
-## 🔗 Signal-Slot sebagai Observer Pattern
+## Signal-Slot sebagai Observer Pattern
 
 ### Relevansi Signal-Slot dengan Observer
 
@@ -245,33 +245,33 @@ Qt's signal-slot mechanism adalah implementasi dari Observer pattern. Signal ber
 #include <QWidget>
 
 class MyWidget : public QWidget {
-    Q_OBJECT
-    
+ Q_OBJECT
+
 private:
-    QPushButton* button;
-    QLabel* label;
-    int counter = 0;
-    
+ QPushButton* button;
+ QLabel* label;
+ int counter = 0;
+
 public:
-    MyWidget(QWidget* parent = nullptr) : QWidget(parent) {
-        // Setup UI
-        QVBoxLayout* layout = new QVBoxLayout(this);
-        
-        button = new QPushButton("Click Me!", this);
-        label = new QLabel("Counter: 0", this);
-        
-        layout->addWidget(button);
-        layout->addWidget(label);
-        
-        // Connect signal to slot (Observer pattern)
-        connect(button, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
-    }
-    
+ MyWidget(QWidget* parent = nullptr) : QWidget(parent) {
+ // Setup UI
+ QVBoxLayout* layout = new QVBoxLayout(this);
+
+ button = new QPushButton("Click Me!", this);
+ label = new QLabel("Counter: 0", this);
+
+ layout->addWidget(button);
+ layout->addWidget(label);
+
+ // Connect signal to slot (Observer pattern)
+ connect(button, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
+ }
+
 private slots:
-    void onButtonClicked() {
-        counter++;
-        label->setText("Counter: " + QString::number(counter));
-    }
+ void onButtonClicked() {
+ counter++;
+ label->setText("Counter: " + QString::number(counter));
+ }
 };
 ```
 
@@ -282,7 +282,7 @@ private slots:
 - **Automatic memory management** - Qt menangani cleanup
 - **Thread safety** - Bisa digunakan di multi-threading
 
-## 🏗️ MVC Pattern
+## MVC Pattern
 
 ### Pengenalan MVC
 
@@ -303,88 +303,88 @@ using namespace std;
 // Model - Data dan business logic
 class StudentModel {
 private:
-    vector<string> students;
-    
+ vector<string> students;
+
 public:
-    void addStudent(string name) {
-        students.push_back(name);
-    }
-    
-    void removeStudent(string name) {
-        for (auto it = students.begin(); it != students.end(); ++it) {
-            if (*it == name) {
-                students.erase(it);
-                break;
-            }
-        }
-    }
-    
-    vector<string> getAllStudents() {
-        return students;
-    }
-    
-    int getStudentCount() {
-        return students.size();
-    }
+ void addStudent(string name) {
+ students.push_back(name);
+ }
+
+ void removeStudent(string name) {
+ for (auto it = students.begin(); it != students.end(); ++it) {
+ if (*it == name) {
+ students.erase(it);
+ break;
+ }
+ }
+ }
+
+ vector<string> getAllStudents() {
+ return students;
+ }
+
+ int getStudentCount() {
+ return students.size();
+ }
 };
 
 // View - Tampilan
 class StudentView {
 public:
-    void displayStudents(vector<string> students) {
-        cout << "=== Daftar Mahasiswa ===" << endl;
-        for (int i = 0; i < students.size(); i++) {
-            cout << (i + 1) << ". " << students[i] << endl;
-        }
-        cout << "Total: " << students.size() << " mahasiswa" << endl;
-        cout << "========================" << endl;
-    }
-    
-    void displayMessage(string message) {
-        cout << "Info: " << message << endl;
-    }
+ void displayStudents(vector<string> students) {
+ cout << "=== Daftar Mahasiswa ===" << endl;
+ for (int i = 0; i < students.size(); i++) {
+ cout << (i + 1) << ". " << students[i] << endl;
+ }
+ cout << "Total: " << students.size() << " mahasiswa" << endl;
+ cout << "========================" << endl;
+ }
+
+ void displayMessage(string message) {
+ cout << "Info: " << message << endl;
+ }
 };
 
 // Controller - Menangani input dan mengupdate model/view
 class StudentController {
 private:
-    StudentModel* model;
-    StudentView* view;
-    
+ StudentModel* model;
+ StudentView* view;
+
 public:
-    StudentController(StudentModel* m, StudentView* v) : model(m), view(v) {}
-    
-    void addStudent(string name) {
-        model->addStudent(name);
-        view->displayMessage("Mahasiswa " + name + " ditambahkan");
-        view->displayStudents(model->getAllStudents());
-    }
-    
-    void removeStudent(string name) {
-        model->removeStudent(name);
-        view->displayMessage("Mahasiswa " + name + " dihapus");
-        view->displayStudents(model->getAllStudents());
-    }
-    
-    void showAllStudents() {
-        view->displayStudents(model->getAllStudents());
-    }
+ StudentController(StudentModel* m, StudentView* v) : model(m), view(v) {}
+
+ void addStudent(string name) {
+ model->addStudent(name);
+ view->displayMessage("Mahasiswa " + name + " ditambahkan");
+ view->displayStudents(model->getAllStudents());
+ }
+
+ void removeStudent(string name) {
+ model->removeStudent(name);
+ view->displayMessage("Mahasiswa " + name + " dihapus");
+ view->displayStudents(model->getAllStudents());
+ }
+
+ void showAllStudents() {
+ view->displayStudents(model->getAllStudents());
+ }
 };
 
 int main() {
-    StudentModel model;
-    StudentView view;
-    StudentController controller(&model, &view);
-    
-    // Menambah mahasiswa
-    controller.addStudent("Alice");
-    controller.addStudent("Bob");
-    controller.addStudent("Charlie");
-    
-    // Menghapus mahasiswa
-    controller.removeStudent("Bob");
-    
-    return 0;
+ StudentModel model;
+ StudentView view;
+ StudentController controller(&model, &view);
+
+ // Menambah mahasiswa
+ controller.addStudent("Alice");
+ controller.addStudent("Bob");
+ controller.addStudent("Charlie");
+
+ // Menghapus mahasiswa
+ controller.removeStudent("Bob");
+
+ return 0;
 }
 ```
 
@@ -401,57 +401,57 @@ Qt menggunakan konsep MVC dalam beberapa komponen:
 #include <QWidget>
 
 class StudentManager : public QWidget {
-    Q_OBJECT
-    
+ Q_OBJECT
+
 private:
-    QStringListModel* model;
-    QListView* view;
-    QPushButton* addButton;
-    QPushButton* removeButton;
-    
+ QStringListModel* model;
+ QListView* view;
+ QPushButton* addButton;
+ QPushButton* removeButton;
+
 public:
-    StudentManager(QWidget* parent = nullptr) : QWidget(parent) {
-        // Model
-        QStringList students;
-        students << "Alice" << "Bob" << "Charlie";
-        model = new QStringListModel(students, this);
-        
-        // View
-        view = new QListView(this);
-        view->setModel(model);
-        
-        // Controller (buttons)
-        addButton = new QPushButton("Add Student", this);
-        removeButton = new QPushButton("Remove Student", this);
-        
-        // Layout
-        QVBoxLayout* layout = new QVBoxLayout(this);
-        layout->addWidget(view);
-        layout->addWidget(addButton);
-        layout->addWidget(removeButton);
-        
-        // Connect signals to slots
-        connect(addButton, SIGNAL(clicked()), this, SLOT(addStudent()));
-        connect(removeButton, SIGNAL(clicked()), this, SLOT(removeStudent()));
-    }
-    
+ StudentManager(QWidget* parent = nullptr) : QWidget(parent) {
+ // Model
+ QStringList students;
+ students << "Alice" << "Bob" << "Charlie";
+ model = new QStringListModel(students, this);
+
+ // View
+ view = new QListView(this);
+ view->setModel(model);
+
+ // Controller (buttons)
+ addButton = new QPushButton("Add Student", this);
+ removeButton = new QPushButton("Remove Student", this);
+
+ // Layout
+ QVBoxLayout* layout = new QVBoxLayout(this);
+ layout->addWidget(view);
+ layout->addWidget(addButton);
+ layout->addWidget(removeButton);
+
+ // Connect signals to slots
+ connect(addButton, SIGNAL(clicked()), this, SLOT(addStudent()));
+ connect(removeButton, SIGNAL(clicked()), this, SLOT(removeStudent()));
+ }
+
 private slots:
-    void addStudent() {
-        QStringList list = model->stringList();
-        list << "New Student";
-        model->setStringList(list);
-    }
-    
-    void removeStudent() {
-        QModelIndex currentIndex = view->currentIndex();
-        if (currentIndex.isValid()) {
-            model->removeRow(currentIndex.row());
-        }
-    }
+ void addStudent() {
+ QStringList list = model->stringList();
+ list << "New Student";
+ model->setStringList(list);
+ }
+
+ void removeStudent() {
+ QModelIndex currentIndex = view->currentIndex();
+ if (currentIndex.isValid()) {
+ model->removeRow(currentIndex.row());
+ }
+ }
 };
 ```
 
-## 🎯 Best Practices Design Patterns
+## Best Practices Design Patterns
 
 ### Kapan Menggunakan Design Patterns
 
@@ -467,7 +467,7 @@ private slots:
 - **Golden Hammer** - Menggunakan satu pattern untuk semua masalah
 - **Over-Engineering** - Solusi yang terlalu kompleks
 
-## 🔧 Implementasi Design Patterns dalam Qt
+## Implementasi Design Patterns dalam Qt
 
 ### Qt's Built-in Patterns
 
@@ -488,63 +488,63 @@ Qt sudah mengimplementasikan beberapa design patterns:
 
 // Abstract Observer
 class Observer : public QObject {
-    Q_OBJECT
-    
+ Q_OBJECT
+
 public:
-    virtual void update(const QString& message) = 0;
+ virtual void update(const QString& message) = 0;
 };
 
 // Subject
 class Subject : public QObject {
-    Q_OBJECT
-    
+ Q_OBJECT
+
 private:
-    QList<Observer*> observers;
-    QString state;
-    
+ QList<Observer*> observers;
+ QString state;
+
 public:
-    void attach(Observer* observer) {
-        observers.append(observer);
-    }
-    
-    void detach(Observer* observer) {
-        observers.removeOne(observer);
-    }
-    
-    void setState(const QString& newState) {
-        state = newState;
-        notify();
-    }
-    
-    QString getState() const {
-        return state;
-    }
-    
+ void attach(Observer* observer) {
+ observers.append(observer);
+ }
+
+ void detach(Observer* observer) {
+ observers.removeOne(observer);
+ }
+
+ void setState(const QString& newState) {
+ state = newState;
+ notify();
+ }
+
+ QString getState() const {
+ return state;
+ }
+
 private slots:
-    void notify() {
-        for (Observer* observer : observers) {
-            observer->update(state);
-        }
-    }
+ void notify() {
+ for (Observer* observer : observers) {
+ observer->update(state);
+ }
+ }
 };
 
 // Concrete Observer
 class ConcreteObserver : public Observer {
-    Q_OBJECT
-    
+ Q_OBJECT
+
 private:
-    QString name;
-    
+ QString name;
+
 public:
-    ConcreteObserver(const QString& n) : name(n) {}
-    
-    void update(const QString& message) override {
-        qDebug() << name << "received:" << message;
-    }
+ ConcreteObserver(const QString& n) : name(n) {}
+
+ void update(const QString& message) override {
+ qDebug() << name << "received:" << message;
+ }
 };
 ```
 
-## 📚 Referensi dan Bacaan Lanjutan
+## Referensi dan Bacaan Lanjutan
 
 Untuk pemahaman yang lebih mendalam tentang design patterns, pembaca dapat merujuk pada:
 
@@ -553,12 +553,12 @@ Untuk pemahaman yang lebih mendalam tentang design patterns, pembaca dapat meruj
 - **Head First Design Patterns** - Freeman & Robson[^1]: Freeman, E., & Robson, E. (2004). "Head First Design Patterns". O'Reilly Media.
 - **Modern C++ Design** - Alexandrescu[^1]: Alexandrescu, A. (2001). "Modern C++ Design: Generic Programming and Design Patterns Applied". Addison-Wesley.
 
-## 🎉 Kesimpulan
+## Kesimpulan
 
 Design patterns adalah alat yang powerful untuk membuat kode yang lebih baik, lebih maintainable, dan lebih reusable. Qt sudah mengimplementasikan banyak pattern yang bisa kita pelajari dan gunakan.
 
 <div align="center">
-**Design patterns membantu kita menulis kode yang lebih baik dan lebih mudah dipahami!** 🎨✨
+**Design patterns membantu kita menulis kode yang lebih baik dan lebih mudah dipahami!**
 </div>
 
 

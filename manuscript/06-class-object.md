@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari konsep Pemrograman Berorientasi Objek (OOP) dalam C++:
 
@@ -9,7 +9,7 @@ Pada bab ini kita akan mempelajari konsep Pemrograman Berorientasi Objek (OOP) d
 
 \minitoc
 
-## 🎯 Pemrograman Berorientasi Objek (OOP)<a name="pemrograman-berorientasi-obyek"></a>
+## Pemrograman Berorientasi Objek (OOP)<a name="pemrograman-berorientasi-obyek"></a>
 
 ### Perbedaan C dan C++
 
@@ -75,7 +75,7 @@ Pemrograman berorientasi objek adalah cara untuk mengorganisasikan program ke da
 - **Encapsulation** - data dan prosedur dikemas dalam objek
 - **Abstraction** - pengguna tidak melihat proses internal objek
 
-## 🏗️ Kelas (Class)<a name="kelas"></a>
+## Kelas (Class)<a name="kelas"></a>
 
 ### Apa itu Kelas?
 
@@ -94,7 +94,7 @@ Secara umum, ada dua bagian utama pada sebuah class C++:
 - **Class declaration** - mendefinisikan nama class dan atributnya
 - **Class body** - mendeklarasikan variabel dan method
 
-## 🎯 Objek (Object)<a name="object"></a>
+## Objek (Object)<a name="object"></a>
 
 ### Apa itu Objek?
 
@@ -116,9 +116,9 @@ Objek mempunyai dua karakteristik utama:
 Object Sepeda
 
 - Object Sepeda memiliki attribut (state) : pedal, roda, jeruji, warna,
-  stang, jumlah roda.
+ stang, jumlah roda.
 - Object Sepeda memiliki tingkah laku (behaviour): kecepatan menaik,
-  kecepatan menurun, memberhentikan, menjalankan, mengganti gigi.
+ kecepatan menurun, memberhentikan, menjalankan, mengganti gigi.
 
 ## Class dan Object<a name="class-dan-object-1"></a>
 
@@ -177,15 +177,15 @@ int tampilkanUmur();
 ```
 
 \begin{quotation}
-{\LARGE \ding{46}} 		**TIPS**
+{\LARGE \ding{46}} **TIPS**
 
 - Untuk membuat
 nama class, biasakanlah menggunakan huruf besar.
-				
-** Contohnya:**
-				
+
+**Contohnya:**
+
  Kucing,Rumah, Handphone, dan lain-lain.
-				
+
 - Untuk membuat nama
 variabel biasakanlah menggunakan nama yang mewakili property yang
 dimiliki dan melekat pada nama kelasnya. Pada contoh diatas, class
@@ -196,18 +196,18 @@ nama variabel hanya terdiri dari satu kata gunakanlah huruf kecil,
 sedangkan jika terdiri dari lebih dari satu kata, gunakan huruf kecil
 pada huruf kata pertama, sedangkan untuk kata selanjutnya gunakan huruf
 besar pada huruf-huruf pertamanya.
-				
+
  **Contoh: **string namaKucing, float
 ipkMahasiswa, int berat, dan lain-lain.
-				
+
 - Untuk membuat
 nama member function, gunakanlah cara penulisan yang tepat untuk
 menggambarkan secara benar setiap nama function yang ada. Biasakanlah
 memberi nama function sesuai dengan behaviour yang memang dikerjakannya.
 Contohnya: `void\ cariData(string\ judul)`, atau
-				`int\ ambilNilai()` dan lain-lain.
-			
-			
+ `int\ ambilNilai()` dan lain-lain.
+ 
+
 	\end{quotation}
 
 ## Mendefinisikan Obyek<a name="mendefinisikan-obyek"></a>
@@ -267,7 +267,7 @@ katty.Bersuara();
 katty.tampilkanUmur();
 ```
 
-#### Contoh  Pembuatan class Sepeda
+#### Contoh Pembuatan class Sepeda
 
 Buatlah project baru dan tulis kode berikut:
 
@@ -282,26 +282,26 @@ Kecepatan: 30 Merk: Federal
 **Keterangan:**
 
 - Program diatas membuat sebuah class bernama Sepeda. Di dalam class
-  Sepeda, terdapat dua bagian, bagian pertama berisi semua member
-  variabel yang bersifat private, yaitu kecepatan, gigi, dan merk. Pada
-  bagian kedua terdapat member function yang hanya beisi judul method
-  saja sedangkan implementasinya diletakkan diluar class Sepeda.
+ Sepeda, terdapat dua bagian, bagian pertama berisi semua member
+ variabel yang bersifat private, yaitu kecepatan, gigi, dan merk. Pada
+ bagian kedua terdapat member function yang hanya beisi judul method
+ saja sedangkan implementasinya diletakkan diluar class Sepeda.
 - Diluar kelas Sepeda, kita mendefinisikan semua implementasi method
-  dari semua member function yang sudah kita definisikan diatas. Untuk
-  mengakses member function dari luar kelasnya, digunakan tanda
-  `::` setelah nama class. Implementasi method bisa menggunakan
-  cara lain yang akan dijelaskan dibagian-bagian berikutnya.
+ dari semua member function yang sudah kita definisikan diatas. Untuk
+ mengakses member function dari luar kelasnya, digunakan tanda
+ `::` setelah nama class. Implementasi method bisa menggunakan
+ cara lain yang akan dijelaskan dibagian-bagian berikutnya.
 - Pada function main, kita membuat obyek dari class Sepeda yang bernama
-  objSpd dan kemudian kita akses semua member functionnya.
+ objSpd dan kemudian kita akses semua member functionnya.
 - Sebelum menampilkan hasil kita isi terlebih dahulu kecepatan, gigi,
-  dan merk dari Sepeda yang kita buat.
+ dan merk dari Sepeda yang kita buat.
 - Keyword this mengacu pada class itu sendiri (class Sepeda) dan
-  merupakan variabel pointer. Keyword tersebut digunakan untuk mengakses
-  semua member variabel dan member method class Sepeda.
+ merupakan variabel pointer. Keyword tersebut digunakan untuk mengakses
+ semua member variabel dan member method class Sepeda.
 
 \begin{quotation}
-{\LARGE \ding{46}} 	**TIPS** 
-	
+{\LARGE \ding{46}} **TIPS**
+
 	Keyword
 	`this` pada class Sepeda merupakan kata kunci untuk mengakses
 	class yang didefinisikan (kelas dirinya sendiri). Tanda
@@ -310,9 +310,6 @@ Kecepatan: 30 Merk: Federal
 	menggunakan `<{`namakelas>{}::} diikuti nama
 	method / variabel member .
 \end{quotation}
- 
- 
-  
 
 Contoh :
 
@@ -322,7 +319,7 @@ Sepeda::kecepatan = kec;
 }
 ```
 
-#### Contoh  Pembuatan obyek Sepeda.
+#### Contoh Pembuatan obyek Sepeda.
 
 Buatlah project baru dan tulis kode berikut:
 
@@ -343,15 +340,15 @@ Merk: Polygon
 **Keterangan:**
 
 - Program diatas merupakan pengembangan dari program sebelumnya dimana
-  kita membuat satu lagi variabel `objSpd2`.
+ kita membuat satu lagi variabel `objSpd2`.
 - Terlihat bahwa masing-masing obyek sepeda yang terbuat memiliki data
-  yang berbeda-beda satu sama lain.
+ yang berbeda-beda satu sama lain.
 - Artinya class hanyalah merupakan template / blueprint saja, dimana
-  data-data dan tingkah laku dari kelas haruslah dilakukan oleh
-  obyeknya. Jadi obyek adalah bentuk nyata dari sebuah kelas yang
-  memiliki data dan method yang berbeda-beda satu sama lain.
+ data-data dan tingkah laku dari kelas haruslah dilakukan oleh
+ obyeknya. Jadi obyek adalah bentuk nyata dari sebuah kelas yang
+ memiliki data dan method yang berbeda-beda satu sama lain.
 
-#### Contoh  Pembuatan Obyek Array Sepeda
+#### Contoh Pembuatan Obyek Array Sepeda
 
 Buatlah program beikut ini:
 
@@ -386,32 +383,32 @@ Gigi: 14
 
 - Program diatas merupakan pengembangan lagi dari Contoh [contoh6-3](#contoh6-3).
 - Program diatas membuat obyek dari class Sepeda dalam bentuk Array 1
-  dimensi yang bertipe Sepeda.
+ dimensi yang bertipe Sepeda.
 - Array yang bertipe class Sepeda tersebut tetap memiliki indeks dari 0
-  sampai dengan n-1
+ sampai dengan n-1
 - Masing-masing obyek elemen array `objSpdArray` berisi data-data
-  yang berbeda-beda satu sama lainnya.
+ yang berbeda-beda satu sama lainnya.
 
 \begin{quotation}
-{\LARGE \ding{46}} 	**TIPS**
-	
+{\LARGE \ding{46}} **TIPS**
+
 	Kita juga
 	dapat melakukan assigment / penugasan terhadap obyek ke obyek lain.
 	Contoh kita memiliki class Sepeda dan kita membuat obyek spd1 dan spd2.
-	
+
 	```cpp
 	Sepeda spd1,spd2;
 	spd1.setMerk("X");
 	spd1.ubahKecepatan(50);
 	spd1.ubahGigi(4);
 	```
-	
+
 	maka bisa dilakukan:
-	
+
 	```cpp
 	spd2 = spd1;
 	```
-	
+
 	Jika `spd2` ditampilkan, dengan `sp2.tampilSepeda()`, maka
 	nilai yang ditampilkan akan sama persis dengan nilai `spd1`.
 \end{quotation}
@@ -462,45 +459,43 @@ bisa diakses dari luar class, harus dari dalam class tersebut atau
 berada dalam method class tersebut, sedangkan jika public maka bisa
 akses dari luar class.
 
-#### Contoh  Perbedaan private dan public pada member variabel
-
-	
+#### Contoh Perbedaan private dan public pada member variabel
 
 	- Buatlah program berikut:
-	
+
 \lstinputlisting[language=c++, caption=Public pada member variabel, label=contoh6-4]{../code/06-class-object-contoh6-4.c++}
-	
+
 - **Hasil:**
-	
+
 	\begin{lcverbatim}
 Pengaksesan public:
 Gigi: 3
 Kecepatan: 30
 Merk: Polygon
 	\end{lcverbatim}
-	
+
 - **Keterangan:**
-	
+
 	Semua variabel member yang bersifat public dapat diakses dan diisi
 	dengan baik dari luar class, dalam hal ini adalah function
 	`int\ main()`. Function `int\ main()` berada diluar class
 	Sepeda Akan terjadi hal yang berbeda jika kita mengakses semua variabel
 	member yang bersifat private.
-	
+
 - Ubahlah program pada Contoh [contoh6-4](#contoh6-4) diatas menjadi seperti berikut ini:
-	
+
 \lstinputlisting[language=c++, caption=Privat pada member variabel, label=contoh6-5]{../code/06-class-object-contoh6-5.c++}
-	
+
 - **Hasil:**
-	
+
 	\begin{figure}[htbp]
-		\centering
+ \centering
 \shadowimage[width=8cm]{Capture6-1}
 
 	\end{figure}
-	
+
 - **Keterangan:**
-	
+
 	Akan terjadi compile time error, karena kita mengakses variabel member
 	yang bersifat *private*. Berarti class Sepeda sudah bisa menerapkan
 	fungsi enkapsulasi dan melindungi data-datanya dari pengaksesan
@@ -534,7 +529,7 @@ minimal selalu mewakili semua member variabelnya. Misal kita memiliki 1
 buah member variabel bernama umur, maka minimal kita akan memiliki satu
 buah member function, misalnya bernama ubahUmur(int u).
 
-#### Contoh  Member function dan implementasinya.
+#### Contoh Member function dan implementasinya.
 
 Buatlah program berikut ini:
 
@@ -549,18 +544,18 @@ Merk: Federal
 **Keterangan:**
 
 - Semua member variabel yang dimiliki tidak diakses secara langsung dari
-  function main, tapi melalui method-methodnya.
+ function main, tapi melalui method-methodnya.
 - Pada program diatas setiap member variabel memiliki minimal satu buah
-  method member
+ method member
 - Terdapat satu buah method tambahan yang berfungsi untuk menampilkan
-  semua informasi mengenai sepeda
+ semua informasi mengenai sepeda
 - Setiap method member dapat menerima input dan mengeluarkan output.
 - Kata kunci `this->{`} pada method member berfungsi
-  untuk mengakses semua member variabel yang terdapat pada class Sepeda
-  yang biasanya bersifat private.
+ untuk mengakses semua member variabel yang terdapat pada class Sepeda
+ yang biasanya bersifat private.
 - Implementasi method member berada diluar class Sepeda dan dimulai
-  dengan nama classnya kemudian diikuti tanda :: yang artinya mengakses
-  member method.
+ dengan nama classnya kemudian diikuti tanda :: yang artinya mengakses
+ member method.
 
 ## Accessor dan Mutator
 Method<a name="accessor-dan-mutator-method"></a>
@@ -607,7 +602,7 @@ void set<NamaMemberVariabel>(<tipedataMemberVariabel> <namavariabel>);
 void setUmur(int u);
 ```
 
-#### Contoh  Penggunaan accessor dan mutator method
+#### Contoh Penggunaan accessor dan mutator method
 
 Tulislah program berikut ini:
 
@@ -618,21 +613,20 @@ Tulislah program berikut ini:
 	Kucingku bernama Katty,
 	dia berbobot 4 kg dan sudah berumur 2 tahun sekarang.
 ```
- 
 
 **Keterangan:**
 
 - Program diatas memperlihatkan bagaimana setiap member variabel
-  memiliki tepat dua buah method member, dimana setiap method member
-  yang satu berfungsi sebagai asesor method dan yang lain berfungsi
-  sebagai mutator method.
+ memiliki tepat dua buah method member, dimana setiap method member
+ yang satu berfungsi sebagai asesor method dan yang lain berfungsi
+ sebagai mutator method.
 - Terdapat sebuah method tambahan yaitu berlari yang hendak
-  menggambarkan bahwa selain asesor dan mutator kita masih diperbolehkan
-  membuat method lainnya.
+ menggambarkan bahwa selain asesor dan mutator kita masih diperbolehkan
+ membuat method lainnya.
 - Asesor method mengambil data member variabel sehingga dibuat fungsi
-  berupa function non void, sedangkan mutator method mengeset data
-  member variabel sehingga dibuat fungsi berupa function void yang
-  menerima parameter yang sesuai dengan tipe data member variabelnya.
+ berupa function non void, sedangkan mutator method mengeset data
+ member variabel sehingga dibuat fungsi berupa function void yang
+ menerima parameter yang sesuai dengan tipe data member variabelnya.
 
 ## Constructor dan
 Destructor<a name="constructor-dan-destructor"></a>
@@ -714,7 +708,7 @@ Sepeda sepedaku("Federal",2);
 Arti instasiasi diatas adalah kita memanggil konstruktor yang
 berparameter dua buah, string dan integer.
 
-#### Contoh  Menggunakan Constructor dan Destructor.
+#### Contoh Menggunakan Constructor dan Destructor.
 
 Buatlah program berikut:
 
@@ -725,20 +719,19 @@ Buatlah program berikut:
 	Kucingku bernama Katty, dia berbobot 4 kg dan sudah
 	berumur 2 tahun sekarang.
 ```
- 
 
 **Keterangan:**
 
 - Program diatas menunjukkan pemakaian konstruktor dan desktruktor.
-  Constructor digunakan untuk menginisialisasi umur kucing pada saat
-  awal pertama obyek dibuat, kemudian pada akhirnya kita juga tetap
-  dapat mengubah umur kucing dibagian akhir program.
+ Constructor digunakan untuk menginisialisasi umur kucing pada saat
+ awal pertama obyek dibuat, kemudian pada akhirnya kita juga tetap
+ dapat mengubah umur kucing dibagian akhir program.
 - Destruktor yang kita buat merupakan default desktruktor dimana
-  desktruktor tidak boleh memiliki parameter apapun.
+ desktruktor tidak boleh memiliki parameter apapun.
 
 \begin{quotation}
-{\LARGE \ding{46}} 	**TIPS** 
-	
+{\LARGE \ding{46}} **TIPS**
+
 	Jika kita
 	sudah membuat konstruktor yang memiliki parameter pada class kita, maka
 	secara otomatis default constructor yang dibuat oleh compiler tidak ada
@@ -767,7 +760,7 @@ defaultnya sudah hilang. Agar kita dapat menggunakan baris
 `Kucing\ kucingku2;` maka kita harus menambah method constructor
 lagi yang tidak berparameter.
 
-#### Contoh  Percobaan Menambah Constructor Method.
+#### Contoh Percobaan Menambah Constructor Method.
 
 Buatlah program berikut:
 
@@ -776,20 +769,20 @@ Buatlah program berikut:
 **Hasil:**
 
 \begin{lcverbatim}
-Kucingku bernama Katty, dia berbobot 4 kg dan 
+Kucingku bernama Katty, dia berbobot 4 kg dan
 sudah berumur 2 tahun sekarang.
-Lima tahun telah berlalu, sekarang kucingku 
+Lima tahun telah berlalu, sekarang kucingku
 sudah berumur:7 tahun
 \end{lcverbatim}
 
 **Keterangan:**
 
 - Pada program C++, kita dapat membuat konstruktor method lebih dari
-  satu, asal tidak sama. Konsep diatas dinamakan dengan polymorfisme
-  (OVERLOADING) yang akan dibahas lebih lanjut dibab-bab berikutnya.
+ satu, asal tidak sama. Konsep diatas dinamakan dengan polymorfisme
+ (OVERLOADING) yang akan dibahas lebih lanjut dibab-bab berikutnya.
 - Dengan mendefinisikan konstruktor tanpa parameter maka kita dapat
-  menginstansiasi obyek dengan cara biasa, seperti pada contoh Kucing
-  kucingku2;
+ menginstansiasi obyek dengan cara biasa, seperti pada contoh Kucing
+ kucingku2;
 
 ### Constructor Dengan nilai
 Default<a name="constructor-dengan-nilai-default"></a>
@@ -801,7 +794,7 @@ mempermudah menginisialisasi data variabel member. Penggunaan nilai
 default ini juga memungkinkan kita untuk tidak memasukkan semua
 parameter pada pemanggilan konstruktor.
 
-#### Contoh  Penggunaan Constructor dengan Nilai Default
+#### Contoh Penggunaan Constructor dengan Nilai Default
 
 Buatlah program berikut:
 
@@ -826,38 +819,38 @@ Jumlah halaman: 100
 **Keterangan:**
 
 - Program diatas menunukkan bahwa kita dapat membuat konstruktor dengan
-  nilai default, yaitu dengan menggunakan parameter dan langsung
-  diinisialisasi dengan menggunakan tanda sama dengan (=).
+ nilai default, yaitu dengan menggunakan parameter dan langsung
+ diinisialisasi dengan menggunakan tanda sama dengan (=).
 - Pada pemanggilan konstruktor, terlihat bahwa jika konstruktor tidak
-  diisi parameter apapun maka ketika data ditampilkan semua isi member
-  variabel sesuai dengan nilai defaultnya.
+ diisi parameter apapun maka ketika data ditampilkan semua isi member
+ variabel sesuai dengan nilai defaultnya.
 - Pada pemanggilan konstruktor kedua, yaitu dengan satu parameter
-  string, maka string tersebut mengacu pada parameter pertama, yaitu
-  Pengarang, sehingga judul dan jumlah halaman berisi nilai default.
+ string, maka string tersebut mengacu pada parameter pertama, yaitu
+ Pengarang, sehingga judul dan jumlah halaman berisi nilai default.
 - Pada pemanggilan konstruktor ketiga, yaitu dengan dua parameter
-  string, maka kedua parameter itu mengisi pengarang dan judulnya (hal
-  ini sesuai dengan urutan penempatan pada pendefinisian method
-  konstruktor pada program), sedangkan variabel member lain berisi
-  default
+ string, maka kedua parameter itu mengisi pengarang dan judulnya (hal
+ ini sesuai dengan urutan penempatan pada pendefinisian method
+ konstruktor pada program), sedangkan variabel member lain berisi
+ default
 - Pada pemanggilan ketiga, ketiga parameter diisi sehingga semua nilai
-  default berubah.
+ default berubah.
 
 \begin{quotation}
-{\LARGE \ding{46}} 	**TIPS** 
-	
+{\LARGE \ding{46}} **TIPS**
+
 	Kita juga
 	dapat memberi nilai default dengan cara lain, perhatikan contoh berikut:
-	
+
 \lstinputlisting[language=c++, caption=Memberi nilai default pada constructor, label=contoh6-11]{../code/06-class-object-contoh6-11.c++}
-	
+
 	**Hasil:**
-	
+
 \begin{lcverbatim}
 x=0 y=2 z=4
 \end{lcverbatim}
-	
+
 	**Keterangan:**
-	
+
 	Terlihat bahwa kita bisa menginisialisasi isi dari variabel member yang
 	kita miliki dengan cara menuliskannya pada bagian header method member
 	seperti pada contoh [contoh6-11](#contoh6-11). Dan ketika class diinstasiasi maka otomatis
@@ -888,7 +881,7 @@ void setUmur(int u);
 int getUmur() const;
 ```
 
-#### Contoh  Penggunaan const method.
+#### Contoh Penggunaan const method.
 
 Buatlah program berikut ini:
 
@@ -896,9 +889,9 @@ Buatlah program berikut ini:
 
 **Hasil:**
 \begin{lcverbatim}
-Kucingku bernama Katty, 
+Kucingku bernama Katty,
 dia berbobot 4 kg dan sudah
-berumur 2 tahun sekarang. 
+berumur 2 tahun sekarang.
 Lima tahun telah berlalu,
  sekarang kucingku sudah berumur: 7 tahun
 \end{lcverbatim}
@@ -906,31 +899,31 @@ Lima tahun telah berlalu,
 **Keterangan:**
 
 - Program diatas hasilnya sama dengan program sebelumnya karena kita
-  hanya mengubah bagian asesor method dengan cara menambah kata const
-  dibelakangnya. Bagian implementasi method tersebut juga harus
-  disesuaikan.
+ hanya mengubah bagian asesor method dengan cara menambah kata const
+ dibelakangnya. Bagian implementasi method tersebut juga harus
+ disesuaikan.
 - Dengan cara ini method asesor tersebut sudah bersifat read-only.
-  Ubahlah bagian method `void\ getUmur()\ const`; Kita coba
-  tambahkan baris program berikut sebelum return:
+ Ubahlah bagian method `void\ getUmur()\ const`; Kita coba
+ tambahkan baris program berikut sebelum return:
 
-  this->{}umur = 5.
-  Kode lengkapnya adalah:
-  
-  ```cpp
-  int Kucing::getUmur() const{
-  this->umur = 5;
-  return this->umur;
-  }
-  ```
-  
-  Jika kita kompilasi program diatas, maka akan terjadi error sebagai
-  berikut:
-  
-  \begin{figure}[htbp]
-  	\centering
+ this->{}umur = 5.
+ Kode lengkapnya adalah:
+
+ ```cpp
+ int Kucing::getUmur() const{
+ this->umur = 5;
+ return this->umur;
+ }
+ ```
+
+ Jika kita kompilasi program diatas, maka akan terjadi error sebagai
+ berikut:
+
+ \begin{figure}[htbp]
+ \centering
 \shadowimage[width=8cm]{Capture6-3}
 
-  \end{figure}
+ \end{figure}
 
 Mengapa hal ini terjadi? Karena method `getUmur` sudah dibuat
 menjadi *konstan*, yang artinya *readonly*. Di dalam
@@ -968,7 +961,7 @@ Pada contoh diatas terlihat bahwa pada class Manusia implementasi kode
 method setNama dan getNama langsung dituliskan didalam program tersebut.
 Hal itu disebut inline implementation.
 
-#### Contoh  Inline Implementation.
+#### Contoh Inline Implementation.
 
 Buatlah program berikut:
 
@@ -976,19 +969,18 @@ Buatlah program berikut:
 
 **Hasil:**
 \begin{lcverbatim}
-Nama: Susanto, Jenis Kelamin: L 
-Nama: Susanti, Jenis Kelamin: P 
+Nama: Susanto, Jenis Kelamin: L
+Nama: Susanti, Jenis Kelamin: P
 Nama: Rudi, Jenis Kelamin: L
 \end{lcverbatim}
- 
 
 **Keterangan:**
 
 - Program diatas hanya menjelaskan bagaimana kita dapat
-  mengimplementasikan method member langsung didalam tubuh class, tidak
-  diluar class.
+ mengimplementasikan method member langsung didalam tubuh class, tidak
+ diluar class.
 - Hal seperti ini biasa dilakukan pada bahasa pemrograman berorientasi
-  obyek lain seperti misalnya Java.
+ obyek lain seperti misalnya Java.
 - Inline implementation tidak berbeda dengan non-inline implementation.
 
 ## Class yang bertipe Class
@@ -1004,7 +996,7 @@ juga terdiri dari class Titik. Class dapat menjadi solusi yang baik
 untuk membuat tipe data baru yang memiliki member variabel dan member
 method yang tentunya sangat berguna.
 
-#### Contoh  Class Mobil dan Class Roda.
+#### Contoh Class Mobil dan Class Roda.
 
 Buatlah program berikut:
 
@@ -1030,26 +1022,26 @@ Merk: Bridgestone
 **Keterangan:**
 
 - Program diatas mendemonstrasikan kepada kita bahwa kita dapat membuat
-  class yang memiliki variabel member yang bertipe class lain.
+ class yang memiliki variabel member yang bertipe class lain.
 - Cara mendeklarasikan variabel member bertipe class sama seperti cara
-  mendefinisikan variabel member bertipe data biasa
+ mendefinisikan variabel member bertipe data biasa
 - Variabel member yang bertipe data class akan memiliki sifat-sifat
-  class tersebut.
+ class tersebut.
 - Pada contoh [contoh6-14](#contoh6-14), class Mobil memiliki variabel member
-  bertipe class Roda, maka variabel member
-  `roda_depan1,\ roda_depan2`,
-  `roda_belakang1,\ dan\ roda_belakang2` akan memiliki
-  sifat-sifat class Roda, dimana kita dapa mengakses semua variabel
-  member class Roda dan juga method member class Roda.
+ bertipe class Roda, maka variabel member
+ `roda_depan1,\ roda_depan2`,
+ `roda_belakang1,\ dan\ roda_belakang2` akan memiliki
+ sifat-sifat class Roda, dimana kita dapa mengakses semua variabel
+ member class Roda dan juga method member class Roda.
 - Cara mengakses variabel member dan method member class Roda sama
-  seperti biasa, yaitu dengan menggunakan tanda titik (.). Namun perlu
-  diingat bahwa kita tidak dapat langsung mengakses variabel member
-  class Roda karena variabel member tersebut bersifat private. Yang
-  dapat kita lakukan adalah mengakses method member yang menenkapsulasi
-  variabel member class Roda. Pada contoh [contoh6-14](#contoh6-14) kita mengakses method
-  `getMerk()` dan `getDiameter()`.
+ seperti biasa, yaitu dengan menggunakan tanda titik (.). Namun perlu
+ diingat bahwa kita tidak dapat langsung mengakses variabel member
+ class Roda karena variabel member tersebut bersifat private. Yang
+ dapat kita lakukan adalah mengakses method member yang menenkapsulasi
+ variabel member class Roda. Pada contoh [contoh6-14](#contoh6-14) kita mengakses method
+ `getMerk()` dan `getDiameter()`.
 
-#### Contoh  Class Titik dan Garis.
+#### Contoh Class Titik dan Garis.
 
 Buatlah program berikut ini:
 
@@ -1079,31 +1071,31 @@ Panjang garis da: 5
 **Keterangan:**
 
 - Program diatas juga menunjukkan contoh lain dari suatu class yang
-  memiliki member variabel yang bertipe class lain. Pada contoh [contoh6-15](#contoh6-15)
-  class Garis memiliki variabel member yang berasal dari class Titik.
-  Sehingga dari obyek Garis kita dapat mengakses semua method member
-  class Titik.
+ memiliki member variabel yang bertipe class lain. Pada contoh [contoh6-15](#contoh6-15)
+ class Garis memiliki variabel member yang berasal dari class Titik.
+ Sehingga dari obyek Garis kita dapat mengakses semua method member
+ class Titik.
 - Dengan menggunakan rumus matematis perhitungan jarak antara dua buah
-  koordinat (titik), maka kita bisa menghitung panjang garis. Untuk
-  perhitungan dibutuhkan function sqrt yang berarti akar kuadrat,
-  sehingga kita harus memasukan `header\ math.h`
+ koordinat (titik), maka kita bisa menghitung panjang garis. Untuk
+ perhitungan dibutuhkan function sqrt yang berarti akar kuadrat,
+ sehingga kita harus memasukan `header\ math.h`
 - Method `isOrigin` pada class Titik digunakan untuk mengetahui
-  apakah suatu koordinat berada di titik `0,0` atau tidak. Kita
-  dapat menambahkan method lain yang sesuai kebutuhan kita.
+ apakah suatu koordinat berada di titik `0,0` atau tidak. Kita
+ dapat menambahkan method lain yang sesuai kebutuhan kita.
 - Di dalam kelas Garis kita memiliki beberapa konstruktor, ada yang
-  tidak berparameter, ada yang berparameter 2 Titik dan berparameter 4
-  koordinat. Semuanya itu digunakan untuk tujuan yang sama, yaitu
-  menciptakan obyek Titik pada member variabel class Garis, karena Garis
-  pada dasarnya adalah terdiri dari 2 buah Titik.
+ tidak berparameter, ada yang berparameter 2 Titik dan berparameter 4
+ koordinat. Semuanya itu digunakan untuk tujuan yang sama, yaitu
+ menciptakan obyek Titik pada member variabel class Garis, karena Garis
+ pada dasarnya adalah terdiri dari 2 buah Titik.
 
 \begin{quotation}
-{\LARGE \ding{46}}  **TIPS** 
-	
+{\LARGE \ding{46}} **TIPS**
+
 Pada bahasa C++ kita tidak dapat memanggil konstruktor dari dalam konstruktor
 lain yang berada dalam satu class.
-	
+
 **Contoh:**
-	
+
 ```cpp
 class Halaman{
 private:
@@ -1122,7 +1114,7 @@ this->jenishal = jenishal;
 }
 };
 ```
-	
+
  Akan menghasilkan error!
 \end{quotation}
 

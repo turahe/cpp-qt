@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari konsep Pewarisan (Inheritance) dalam Pemrograman Berorientasi Objek:
 
@@ -9,7 +9,7 @@ Pada bab ini kita akan mempelajari konsep Pewarisan (Inheritance) dalam Pemrogra
 
 \minitoc
 
-## 🔄 Pewarisan (Inheritance)<a name="pewarisan-inheritance"></a>
+## Pewarisan (Inheritance)<a name="pewarisan-inheritance"></a>
 
 ### Apa itu Inheritance?
 
@@ -29,7 +29,7 @@ Pewarisan adalah fitur penting OOP yang memudahkan pemrogram dalam membuat progr
 - Pemrogram tinggal menambahkan anggota baru untuk fungsionalitas tambahan
 - Inheritance akan dibahas bersama dengan polimorfisme di bab berikutnya
 
-## 📝 Penulisan Inheritance<a name="penulisan-penurunan"></a>
+## Penulisan Inheritance<a name="penulisan-penurunan"></a>
 
 ### Sintaks Inheritance
 
@@ -55,7 +55,7 @@ class Silinder : public Lingkaran
 - Kelas dasar harus sudah dideklarasikan sebelum kelas turunan
 - Jika tidak, akan muncul pesan kesalahan kompiler
 
-#### 💡 Contoh Inheritance
+#### Contoh Inheritance
 
 - Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
 - Tulis kode berikut:
@@ -97,7 +97,7 @@ terhadap anggota-anggota warisan tersebut di dalam kelas Silinder, yaitu
 semua anggota yang diwariskan (baik berjenis public maupun protected)
 akan berubah menjadi private di dalam kelas Silinder.
 
-#### Contoh  Jenis Akses Public Pada Penurunan.
+#### Contoh Jenis Akses Public Pada Penurunan.
 
 - Buka project contoh [contoh7-1](#contoh7-1) di atas, kemudian tambahkan (edit) kode berikut
 pada fungsi
@@ -155,14 +155,13 @@ Berikut ini adalah perubahan jenis akses anggota dari kelas dasar ke
 kelas turunan berdasarkan jenis akses penurunan:
 
 \begin{quotation}
-{\LARGE \ding{46}} 	**TIPS** 
-	
+{\LARGE \ding{46}} **TIPS**
+
 	Pada
 	umumnya jenis akses penurunan adalah *public*, oleh karena itu
 	biasakan menuliskan jenis akses public ketika akan menurunakan suatu
 	kelas.
 \end{quotation}
- 
 
 ## Warisan<a name="warisan"></a>
 
@@ -218,27 +217,27 @@ apa-apa seperti berikut:
 <nama_kelas>(){}
 ```
 
-#### Contoh  Konstruktor default.
+#### Contoh Konstruktor default.
 
 - Buka Qt Creator, buat project Qt Console Application dengan nama
-  contoh [contoh7-3](#contoh7-3). Kemudian tulis kode berikut.
+ contoh [contoh7-3](#contoh7-3). Kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Konstruktor default, label=contoh7-3]{../code/contoh7-3.cpp}
 {../code/contoh7-3.cpp}
 
 - Tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai
-  berikut.
+ berikut.
 
 \begin{lcverbatim}
 Hai, apa khabar...?
 \end{lcverbatim}
 
 - Kemudian hapuslah konstruktor `Kelasku(){\`}, kemudian tekan
-  Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai
-  berikut.
-  \begin{lcverbatim}
+ Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai
+ berikut.
+ \begin{lcverbatim}
 Hai, apa khabar...?
-  \end{lcverbatim}
+ \end{lcverbatim}
 
 #### Keterangan Program
 
@@ -269,13 +268,13 @@ kelas turunan akan memanggil konstruktor kosong kelas dasarnya.
 #### Contoh Konstruktor default kelas turunan.
 
 - Buka Qt Creator, buka project Qt Console Application dengan nama
-  contoh [contoh7-4](#contoh7-4) tadi. Kemudian ubah isi konstruktor kelas Kelasku dan
-  tambahkan kelas Turunan berikut.
+ contoh [contoh7-4](#contoh7-4) tadi. Kemudian ubah isi konstruktor kelas Kelasku dan
+ tambahkan kelas Turunan berikut.
 
 \lstinputlisting[language=c++, caption=Konstruktor default kelas turunan, label=contoh7-4]{../code/contoh7-4.cpp}
 
 - Tekan Ctrl+R untuk menjalankan kode di atas, outputnya adalah sebagai
-  berikut.
+ berikut.
 
 \begin{lcverbatim}
 Konstruktor Kelas Dasar dijalankan...
@@ -284,38 +283,37 @@ Konstruktor Kelas Dasar dijalankan...
 #### Keterangan Program
 
 - Pada contoh [contoh7-4](#contoh7-4) program ini tampak bahwa tidak ada objek yang dibuat dari
-  kelas dasar, namun jika dilihat hasil eksekusinya, konstruktor yang
-  dijalankan adalah konstruktor kelas dasar. Ini berarti bahwa ada
-  pemanggilan kontruktor kelas dasar, yaitu pada waktu pembentukan objek
-  kelas Turunan.
+ kelas dasar, namun jika dilihat hasil eksekusinya, konstruktor yang
+ dijalankan adalah konstruktor kelas dasar. Ini berarti bahwa ada
+ pemanggilan kontruktor kelas dasar, yaitu pada waktu pembentukan objek
+ kelas Turunan.
 - Berdasarkan kenyataan bahwa tiap kelas pasti punya kontruktor, maka
-  ini berarti kelas Turunan juga mempunyai kontruktor namun konstruktor
-  tersebut di dalamnya ada pemanggilan kontruktor kelas dasarnya.
+ ini berarti kelas Turunan juga mempunyai kontruktor namun konstruktor
+ tersebut di dalamnya ada pemanggilan kontruktor kelas dasarnya.
 - Dari percobaan ini, bisa disimpulkan bahwa pada saat dikompilasi,
-  karena kelas turunan secara eksplisit tidak dituliskan konstruktor,
-  maka kompiler akan menambahakan konstukor kosong tanpa parameter yang
-  memanggil konstruktor kelas dasarnya seperti berikut :
+ karena kelas turunan secara eksplisit tidak dituliskan konstruktor,
+ maka kompiler akan menambahakan konstukor kosong tanpa parameter yang
+ memanggil konstruktor kelas dasarnya seperti berikut :
 
 ```cpp
 Turunan():Kelasku()\{\} //<-- Konstruktor default kelas
 Turunan
 ```
-  
 
 Karakteristik konstruktor kelas turunan ini penting untuk dipahami,
 karena kadang-kadang kita lupa bahwa pada pembuatan kelas turunan pasti
 di dalamnya ada pemanggilan konstruktor kelas dasarnya.
 
-#### Contoh  Konstruktor default kelas turunan memanggil konstruktor kelas dasar.
+#### Contoh Konstruktor default kelas turunan memanggil konstruktor kelas dasar.
 
 - Buka Qt Creator, buka project Qt Console Application dengan nama
-  ontoh [contoh7-5](#contoh7-5) tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti
-  berikut.
+ ontoh [contoh7-5](#contoh7-5) tadi. Kemudian ubah isi konstruktor kelas Kelasku seperti
+ berikut.
 
 \lstinputlisting[language=c++, caption=Konstruktor default kelas turunan memanggil konstruktor kelas dasar, label=contoh7-5]{../code/contoh7-5.cpp}
 
 - Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output
-  karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
+ karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
 
 \begin{figure}[htbp]
 \centering
@@ -360,19 +358,19 @@ Turunan seperti berikut.
 #### Contoh Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar.
 
 - Buka Qt Creator, buka project Qt Console Application dengan nama
-  contoh [contoh7-6](#contoh7-6) tadi. Kemudian tambahkan konstruktor pada kelas Turunan
-  seperti berikut.
+ contoh [contoh7-6](#contoh7-6) tadi. Kemudian tambahkan konstruktor pada kelas Turunan
+ seperti berikut.
 
 \lstinputlisting[language=c++, caption=Konstruktor kelas turunan harus memanggil salah satu konstruktor kelas dasar, label=contoh7-6]{../code/contoh7-6.cpp}
 
 - Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output
-  karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
-  
-  \begin{figure}[htbp]
-  	\centering
+ karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
+
+ \begin{figure}[htbp]
+ \centering
 \shadowimage[width=8cm]{Capture7-3}
-  	
-  \end{figure}
+
+ \end{figure}
 
 - **Keterangan Program**
 
@@ -382,7 +380,7 @@ tidak memanggil konstuktor kelas dasar. Namun tetap saja kompiler
 memberikan pesan kesalahan yang sama, yaitu :
 
 ```cpp
-no maching function call to 'Kelasku::Kelasku()' 
+no maching function call to 'Kelasku::Kelasku()'
 ```
 
 - Padahal jelas pada konstruktor yang ditulis pada kelas Turunan sama
@@ -394,33 +392,32 @@ kompiler akan menambahkan pemanggilan konstruktor default (konstruktor
 tanpa parameter) pada kelas dasar.
 
 - Sekarang ubahlah konstruktor kelas Turunan, agar secara eksplisit
-  memanggil konstuktor yang ada pada kelas dasar seperti berkut :
+ memanggil konstuktor yang ada pada kelas dasar seperti berkut :
 ```cpp
 class Turunan : public Kelasku\{ public: //memanggil konstruktor kelas
 ```
-  
+
 dasar dng sebuah parameter Turunan():Kelasku(``Hallo.. :-)''){} };
 
 Tekan Ctrl+R untuk menjalankan kode di atas, tidak akan ada output
 karena ada kesalahan dengan pesan kesalahan kompilasi sebagai berikut.
 
 \begin{lcverbatim}
-Konstruktor Kelas Dasar 
+Konstruktor Kelas Dasar
 Mengucapkan : Hallo.. :-)
 \end{lcverbatim}
- 
 
 **Keterangan Program:**
 
 - Pada program ini sekarang kelas Turunan mempunyai konstruktor yang
-  memanggil konstruktor kelas dasar. Karena pada kelas dasar hanya
-  mempunyai sebuah konstruktor dengan satu parameter bertipe string yang
-  tanpa nilai default, maka yang dipanggil adalah konstruktor dengan
-  sebuah parameter bertipe string.
+ memanggil konstruktor kelas dasar. Karena pada kelas dasar hanya
+ mempunyai sebuah konstruktor dengan satu parameter bertipe string yang
+ tanpa nilai default, maka yang dipanggil adalah konstruktor dengan
+ sebuah parameter bertipe string.
 - Dengan demikian perlu selalu diingat, bahwa konstuktor kelas turunan
-  harus memanggil salah satu konstruktor kelas dasar, jika tidak
-  dilakukan maka kompiler akan menambahkan pemanggilan konstruktor
-  default kelas dasar.
+ harus memanggil salah satu konstruktor kelas dasar, jika tidak
+ dilakukan maka kompiler akan menambahkan pemanggilan konstruktor
+ default kelas dasar.
 
 ## Mengganti Metode Kelas Dasar Pada Kelas Turunan (Overriding)<a name="mengganti-metode-kelas-dasar-pada-kelas-turunan-overriding"></a>
 
@@ -456,49 +453,46 @@ parameter tersebut.
 
 #### Contoh Melakukan Overriding.
 
-	
-	
 	- Buka project Qt Console Application projek contoh [contoh7-7](#contoh7-7) yang tadi sudah
 	dibuat, kemudian ubah kode menjadi seperti berikut
-	
+
 \lstinputlisting[language=c++, caption=Melakukan Overriding, label=contoh7-7]{../code/contoh7-7.cpp}
 
 - Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah
-		sebagai berikut.
+ sebagai berikut.
 
-	
 	\begin{lcverbatim}
 Luas Silinder = 54950 Cm2
 Milik Base Class --> 54950
 Volume drum = 6.86875e+006 Cm3
 	\end{lcverbatim}
-	
-	Bandingkan dengan hasil keluaan pada program di contoh [contoh7-2](#contoh7-2) 
-  seperti berikut:
-	
+
+	Bandingkan dengan hasil keluaan pada program di contoh [contoh7-2](#contoh7-2)
+ seperti berikut:
+
 	\begin{lcverbatim}
 Volume drum = 981250 Cm2
-Milik Base Class –> 7850
+Milik Base Class --> 7850
 	\end{lcverbatim}
 
 #### Keterangan
 
 - Pada program ini, pembuatan objek dilakukan dengan memberikan nilai
-  radius=50 dan tinggi = 125, ini tampak pada program utama (main()) :
-  `Silinder\ drum(50,125)`, sama dengan ketika membuat objek pada
-  contoh [contoh7-1](#contoh7-1). Namun tampak pada hasil eksekusi, Luas Silinder adalah
-  `54950\ Cm2` karena menggunakan rumus baru, tetapi pada
-  keluaran Milik Base Class nilainya juga sama yaitu `54950`, dan
-  akibatnya volume drum yang seharusnya `981250\ Cm3` manjadi
-  `6.86875e+006\ Cm3`. Ini semua terjadi karena pada kelas
-  Silinder tidak lagi memakai rumus `getLuas()` milik kelas
-  dasarnya. Pada satu sisi `getLuas()` pada kelas Silinder sudah
-  benar, sesuai dengan yang diharapkan, namun ketika metode
-  `getVolume()` menghitung volume memakai metode
-  `getLuas()`, ternyata sudah berubah menjadi rumus luas Silinder
-  yang akibatnya perhitungan volume menjadi sangat besar (salah).
+ radius=50 dan tinggi = 125, ini tampak pada program utama (main()) :
+ `Silinder\ drum(50,125)`, sama dengan ketika membuat objek pada
+ contoh [contoh7-1](#contoh7-1). Namun tampak pada hasil eksekusi, Luas Silinder adalah
+ `54950\ Cm2` karena menggunakan rumus baru, tetapi pada
+ keluaran Milik Base Class nilainya juga sama yaitu `54950`, dan
+ akibatnya volume drum yang seharusnya `981250\ Cm3` manjadi
+ `6.86875e+006\ Cm3`. Ini semua terjadi karena pada kelas
+ Silinder tidak lagi memakai rumus `getLuas()` milik kelas
+ dasarnya. Pada satu sisi `getLuas()` pada kelas Silinder sudah
+ benar, sesuai dengan yang diharapkan, namun ketika metode
+ `getVolume()` menghitung volume memakai metode
+ `getLuas()`, ternyata sudah berubah menjadi rumus luas Silinder
+ yang akibatnya perhitungan volume menjadi sangat besar (salah).
 - Walaupun pada kasus ini menimbulkan masalah, tetapi percobaan ini
-  memperlihatkan adanya overriding terhadap metode milik kelas dasar.
+ memperlihatkan adanya overriding terhadap metode milik kelas dasar.
 
 ## Memanggil Metode Kelas
 Dasar<a name="memanggil-metode-kelas-dasar"></a>
@@ -518,16 +512,16 @@ diikuti dengan dua titik dua (::) dan anggota yang akan diakases.
 <kelas_dasar>::<anggot
 ```
 
-#### Contoh  Mengakses metode kelas dasar.
+#### Contoh Mengakses metode kelas dasar.
 
 - Buka project Qt Console Application projek contoh [contoh7-8](#contoh7-8) yang baru saja
-  dibuat, kemudian ubah kode pada metode : `getLuas()`,
-  `getVolume()` dan program utama. Berikut ini adalah potongan
-  program yang mengalami perubahan saja:
+ dibuat, kemudian ubah kode pada metode : `getLuas()`,
+ `getVolume()` dan program utama. Berikut ini adalah potongan
+ program yang mengalami perubahan saja:
 
 \lstinputlisting[language=c++, caption=Mengakses metode kelas dasar, label=contoh7-8]{../code/07-turunan-contoh7-8.c++}
 - Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah
-  sebagai berikut.
+ sebagai berikut.
 
 \begin{lcverbatim}
 Luas Silinder = 54950 Cm2
@@ -538,26 +532,26 @@ Volume drum = 981250 Cm3
 #### Keterangan
 
 - Sekarang keluaran ``Luas Silinder'' dengan ``Milik Base Class''
-  berbeda, yaitu 54950 sedangkan ``Milik Base Class'' yang menghitung
-  luas lingkaran adalah 7850. Walaupun keduanya sama-sama memanggil
-  metode `getLuas()`, namun metode yang dipanggil pada ``Milik
-  Base Class'' adalah metode milik kelas Lingkaran, yaitu dengan cara
-  penulisan nama metode ditambahkan nama kelas dasar dan dua titik dua
-  (::) didepannya seperti berikut:
+ berbeda, yaitu 54950 sedangkan ``Milik Base Class'' yang menghitung
+ luas lingkaran adalah 7850. Walaupun keduanya sama-sama memanggil
+ metode `getLuas()`, namun metode yang dipanggil pada ``Milik
+ Base Class'' adalah metode milik kelas Lingkaran, yaitu dengan cara
+ penulisan nama metode ditambahkan nama kelas dasar dan dua titik dua
+ (::) didepannya seperti berikut:
 
 ```cpp
 drum.Lingkaran::getLuas()
 ```
 - Pada waktu menghitung `getLuas()` pada kelas Silinder, bisa
-  memanfaatkan metode `getLuas()` milik kelas dasar dengan cara
-  memanggil metode milik kelas dasar, sehingga dengan demikian metode
-  `getLuas()` ini seperti tampak pada kode program di atas, bisa
-  menjadi lebih ringkas.
+ memanfaatkan metode `getLuas()` milik kelas dasar dengan cara
+ memanggil metode milik kelas dasar, sehingga dengan demikian metode
+ `getLuas()` ini seperti tampak pada kode program di atas, bisa
+ menjadi lebih ringkas.
 - Demikian juga pada metode `getVolume()`, sekarang tidak ada
-  kesalahan seperti tadi, karena rumus `getLuas()` yang digunakan
-  sudah benar, yaitu metode `getLuas()` milik kelas dasar.
+ kesalahan seperti tadi, karena rumus `getLuas()` yang digunakan
+ sudah benar, yaitu metode `getLuas()` milik kelas dasar.
 - Dari percobaan contoh [contoh7-7](#contoh7-7) ini tampak cara melakukan overriding dan cara
-  memanggil anggota milik kelas dasar.
+ memanggil anggota milik kelas dasar.
 
 ## Penyembunyian Metode Kelas Dasar<a name="penyembunyian-metode-kelas-dasar"></a>
 
@@ -568,25 +562,25 @@ kepada kelas turunan.
 
 #### Contoh Penyembunyian metode kelas dasar.
 
-- Jalankan Qt Console Application projek, buat projek bernama contoh 
-  [contoh7-9](#contoh7-9)  seperti berikut:
+- Jalankan Qt Console Application projek, buat projek bernama contoh
+ [contoh7-9](#contoh7-9) seperti berikut:
 
 \lstinputlisting[language=c++, caption=Penyembunyian metode kelas dasar, label=contoh7-9]{../code/contoh7-9.cpp}
 
 - Tekan Ctrl+R untuk menjalankan program diatas, outputnya adalah
-  sebagai berikut.
+ sebagai berikut.
 
 \begin{lcverbatim}
 Ni hao ma
 \end{lcverbatim}
 
 - Hilangkan tanda comment pada pemanggilan metode hallo pada dua baris
-  di progam utama contoh [contoh7-9](#contoh7-9) menjadi seperti berikut:
+ di progam utama contoh [contoh7-9](#contoh7-9) menjadi seperti berikut:
 
 \lstinputlisting[language=c++, firstline=22, caption=Menghilangkan comment pada metode hallo, label=contoh7-10]{../code/contoh7-10.cpp}
 
 - Tekan Ctrl+R untuk menjalankan program diatas, maka tidak akan ada
-  output dan menucul pesan kesalahan saat kompilasi sepeti berikut.
+ output dan menucul pesan kesalahan saat kompilasi sepeti berikut.
 
 \begin{figure}[htbp]
 \centering
@@ -625,69 +619,68 @@ Percobaan berikut ini merupakan penyederhanaan dari kelas Lingkaran
 sebagai kelas dasardan kelas Silinder sebagai kelas turunan untuk
 memahami metode virtual.
 
-#### Contoh  Metode virtual dan non virtual.
+#### Contoh Metode virtual dan non virtual.
 
 - Jalankan Qt Console Application projek, buat projek bernama contoh [contoh7-11](#contoh7-11)
-  seperti berikut:
+ seperti berikut:
 
 \lstinputlisting[language=c++, caption=Metode virtual dan non virtual, label=contoh7-11]{../code/contoh7-11.cpp}
 
 - Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
-  sepeti berikut.
+ sepeti berikut.
 
 \begin{lcverbatim}
 Luas Silinder
-\end{lcverbatim} 
+\end{lcverbatim}
 - Sekarang hapuslah kata kunci pada contoh [contoh7-11](#contoh7-11) virtual metode getLuas() pada kelas
-  Lingkaran seperti berikut.
+ Lingkaran seperti berikut.
 
 \lstinputlisting[language=c++, firstline=4, lastline=10, caption=Menghapus methode getluas, label=contoh7-12]{../code/contoh7-12.cpp}
 
 - Tekan Ctrl+R untuk menjalankan program diatas, hasil keluaran adalah
-  sepeti berikut.
+ sepeti berikut.
 
 \begin{lcverbatim}
 Luas Lingkaran
-\end{lcverbatim} 
+\end{lcverbatim}
 
 #### Keterangan
 
 - Tampak pada program utama, variabel pointer bertipe kelas dasar
-  (Lingkaran) digunakan untuk menunjuk objek bertipe kelas turunan
-  (Silinder). Ketika dipanggil metode `getLuas()` yang ada di
-  kelas dasar maupun turunan, maka metode mana yang menanggapi
-  tergantung apakah metode tersebut bersifat virtual pada kelas dasar
-  atau tidak.
+ (Lingkaran) digunakan untuk menunjuk objek bertipe kelas turunan
+ (Silinder). Ketika dipanggil metode `getLuas()` yang ada di
+ kelas dasar maupun turunan, maka metode mana yang menanggapi
+ tergantung apakah metode tersebut bersifat virtual pada kelas dasar
+ atau tidak.
 - Pada percobaan pertama, metode `getLuas()` pada kelas Lingkaran
-  dibuat virtual, ketika program utama dijalankan, tampak bahwa yang
-  menanggapi adalah metode milik kelas turunan (metode yang ada pada
-  objek), yaitu mencetak ``Luas Silinder''.
+ dibuat virtual, ketika program utama dijalankan, tampak bahwa yang
+ menanggapi adalah metode milik kelas turunan (metode yang ada pada
+ objek), yaitu mencetak ``Luas Silinder''.
 - Pada percobaan kedua, tidak ada perubahan kode program sama sekali
-  kecuali menghilangkan kata kunci virtual pada metode
-  `getLuas()` pada kelas Lingkaran, hasilnya tampak bahwa yang
-  menanggapi adalah metode milik kelas dasar (metode yang ada pada kelas
-  Lingkaran), yaitu mencetak ``Luas Lingkaran''.
+ kecuali menghilangkan kata kunci virtual pada metode
+ `getLuas()` pada kelas Lingkaran, hasilnya tampak bahwa yang
+ menanggapi adalah metode milik kelas dasar (metode yang ada pada kelas
+ Lingkaran), yaitu mencetak ``Luas Lingkaran''.
 - Percobaan pertama, yaitu membuat metode virtual, adalah yang
-  diperlukan pada proses polimorfisme yang akan dibahas pada bab
-  berikutnya.
+ diperlukan pada proses polimorfisme yang akan dibahas pada bab
+ berikutnya.
 
 \begin{quotation}
- {\LARGE \ding{45}} 	**Catatan** 
+ {\LARGE \ding{45}} **Catatan**
 	
-		- [\ding{45}] Kata
-		kunci virtual tidak membuat metode tersebut harus dioverride.
-		- [\ding{45}] Pada kelas turunan metode virtual yang dioveride
-		otomatis virtual walaupun tidak dtiulis, namun sebaiknya untuk kemudahan
-		perawatan sebaiknya kata kunci virtual ditulis.
-		- [\ding{45}] Variabel pointer bertipe kelas dasar jika digunakan untuk menunjuk objek
-		bertipe kelas turunan, untuk mengakses anggota kelas turunannya, ia
-		hanya bisa memanggil metode virtual yang dioverride oleh kelas
-		turunannya. Dengan kata lain, variabel tersebut tidak bisa memanggil
-		metodemetode kelas turunan yang bukan merupakan override dari metode
-		virtual kelas dasar.
+ - [\ding{45}] Kata
+ kunci virtual tidak membuat metode tersebut harus dioverride.
+ - [\ding{45}] Pada kelas turunan metode virtual yang dioveride
+ otomatis virtual walaupun tidak dtiulis, namun sebaiknya untuk kemudahan
+ perawatan sebaiknya kata kunci virtual ditulis.
+ - [\ding{45}] Variabel pointer bertipe kelas dasar jika digunakan untuk menunjuk objek
+ bertipe kelas turunan, untuk mengakses anggota kelas turunannya, ia
+ hanya bisa memanggil metode virtual yang dioverride oleh kelas
+ turunannya. Dengan kata lain, variabel tersebut tidak bisa memanggil
+ metodemetode kelas turunan yang bukan merupakan override dari metode
+ virtual kelas dasar.
 	
 \end{quotation}
- 
 
 ## Pemotongan (Slicing)<a name="pemotongan-slicing"></a>
 
@@ -713,7 +706,7 @@ kelas Lingkaran yang dibahas pada contoh [contoh7-10](#contoh7-10) di atas.
 Pada konversi dari suatu variabel ke variabel lain, bisa terjadi
 Pemotongan (Silicing). Supaya lebih jelas lakukan percobaan berikut ini.
 
-#### Contoh  Metode virtual dan non virtual.
+#### Contoh Metode virtual dan non virtual.
 
 - Jalankan Qt Console Application projek, buka projek bernama contoh [contoh7-12](#contoh7-12)
 yang dibuat tadi, kemudian ubah kode progam pada bagian program utama
@@ -733,19 +726,19 @@ Nilai : Luas Lingkaran
 #### Keterangan
 
 - Tampak pada hasil percobaan, pointer dan referensi memanggil metode
-  virtual, sehingga yang dieksekusi adalah metode `getLuas()`
-  milik Silinder. Ini tampak pada 2 baris pertama hasil keluaran di
-  atas. Sedangkan pada baris ke 3 metode yang dieksekusi adalah metode
-  milik kelas dasar (Lingkaran) itu sendiri.
+ virtual, sehingga yang dieksekusi adalah metode `getLuas()`
+ milik Silinder. Ini tampak pada 2 baris pertama hasil keluaran di
+ atas. Sedangkan pada baris ke 3 metode yang dieksekusi adalah metode
+ milik kelas dasar (Lingkaran) itu sendiri.
 - Variabel objek3 bertipe kelas dasar (Lingkaran), maka ketika menerima
-  objek bertipe kelas turunan (Silinder) kompiler memotong (slices down)
-  objek Silinder menjadi bentuk kelas dasar (Lingkaran) saja. Oleh
-  karena itu ketika dipanggil metode `getLuas()` maka yang ada
-  hanya anggota-anggota kelas dasar (Lingkaran). Potongan objek bertipe
-  kelas turunan (Silinder) hilang, inilah efek dari variabel nilai yang
-  diberi nilai objek kelas turunannya, efek ini disebut Pemotongan
-  (Slicing) karena bagian kelas turunan (Silinder) dipotong keluar
-  ketika dikonversikan menjadi kelas dasar (Lingkaran).
+ objek bertipe kelas turunan (Silinder) kompiler memotong (slices down)
+ objek Silinder menjadi bentuk kelas dasar (Lingkaran) saja. Oleh
+ karena itu ketika dipanggil metode `getLuas()` maka yang ada
+ hanya anggota-anggota kelas dasar (Lingkaran). Potongan objek bertipe
+ kelas turunan (Silinder) hilang, inilah efek dari variabel nilai yang
+ diberi nilai objek kelas turunannya, efek ini disebut Pemotongan
+ (Slicing) karena bagian kelas turunan (Silinder) dipotong keluar
+ ketika dikonversikan menjadi kelas dasar (Lingkaran).
 
 ## Memakai static_cast<a name="memakai-staticux5fcast"></a>
 
@@ -777,7 +770,7 @@ data kelas turunan dengan cara:
 Kelas_turunan* variabel2 = static_cast<Kelas_turunan*>(variabel1);
 ```
 
-#### Contoh  Memakai static_cast.
+#### Contoh Memakai static_cast.
 
 - Jalankan Qt Console Application projek, buka projek bernama contoh [contoh7-13](#contoh7-13) di
 atas, ubah pada bagian program utama (main()) menjadi seperti berikut:
@@ -795,24 +788,24 @@ Volume Silinder
 #### Keterangan
 
 - Tampak pada program utama, variabel pointer bertipe kelas dasar
-  (Lingkaran), yaitu K, di-``down-casted'' menjadi tipe data kelas
-  turunan (Silinder). Ketika dipanggil metode `getVolume()` yang
-  sebenanya tidak ada di kelas dasar tetapi hanya ada di kelas turunan,
-  tampak bahwa metode `getVolume()` milik kelas Silinder
-  menanggapinya.
+ (Lingkaran), yaitu K, di-``down-casted'' menjadi tipe data kelas
+ turunan (Silinder). Ketika dipanggil metode `getVolume()` yang
+ sebenanya tidak ada di kelas dasar tetapi hanya ada di kelas turunan,
+ tampak bahwa metode `getVolume()` milik kelas Silinder
+ menanggapinya.
 - Percobaan ini menunjukkan bahwa tipe data pointer dapat dikonversikan
-  menjadi tipe data pointer lain.
+ menjadi tipe data pointer lain.
 
 \begin{quotation}
- {\LARGE \ding{45}}  **Catatan** 
+ {\LARGE \ding{45}} **Catatan**
 	
-		- [\ding{45}] Casting terhadap pointer hanya bisa dilakukan terhadap tipe-tipe yang
-		mempunyai hubungan kekerabatan (inheritance).
-		- [\ding{45}] Dengan casting kita bisa memaksa variabel pointer bertipe kelas dasar yang
-		digunakan untuk menunjuk objek bertipe kelas turunan untuk memanggil
-		metode yang bukan merupakan override dari metode virtual kelas dasar,
-		namun cara ini tidak cukup aman jika objek tersebut bukan dari kelas
-		turunan.
+ - [\ding{45}] Casting terhadap pointer hanya bisa dilakukan terhadap tipe-tipe yang
+ mempunyai hubungan kekerabatan (inheritance).
+ - [\ding{45}] Dengan casting kita bisa memaksa variabel pointer bertipe kelas dasar yang
+ digunakan untuk menunjuk objek bertipe kelas turunan untuk memanggil
+ metode yang bukan merupakan override dari metode virtual kelas dasar,
+ namun cara ini tidak cukup aman jika objek tersebut bukan dari kelas
+ turunan.
 	
 \end{quotation}
 

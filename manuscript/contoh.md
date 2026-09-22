@@ -888,5 +888,5 @@ Semua program dalam bab ini telah diuji dan dapat dijalankan dengan Qt Creator. 
 - **Membuat** program baru berdasarkan contoh yang ada
 
 <div align="center">
-**Selamat belajar dan happy coding!** 🚀
+**Selamat belajar dan happy coding!**
 </div>

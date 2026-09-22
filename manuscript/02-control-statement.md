@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari tentang Control Statement (Struktur Kendali) dalam C++:
 
@@ -8,7 +8,7 @@ Pada bab ini kita akan mempelajari tentang Control Statement (Struktur Kendali) 
 
 \minitoc
 
-## 🎯 Pengenalan Control Statement
+## Pengenalan Control Statement
 
 Program tidak selalu berjalan secara berurutan dari atas ke bawah. Kadang-kadang kita perlu:
 
@@ -24,9 +24,9 @@ Control Statement adalah pengatur aliran program yang memungkinkan kita:
 - Melanjutkan program jika kondisi terpenuhi
 - Memilih dari beberapa alternatif berdasarkan kondisi
 
-## 🔄 Percabangan (Conditional Statements)<a name="percabangan"></a>
+## Percabangan (Conditional Statements)<a name="percabangan"></a>
 
-Percabangan adalah perintah yang memungkinkan program memilih jalur yang berbeda berdasarkan kondisi tertentu. 
+Percabangan adalah perintah yang memungkinkan program memilih jalur yang berbeda berdasarkan kondisi tertentu.
 
 ### Apa itu Percabangan?
 
@@ -44,7 +44,7 @@ C++ memiliki tiga jenis perintah percabangan:
 - **if-else** - menjalankan kode berbeda berdasarkan kondisi
 - **switch** - memilih dari beberapa alternatif berdasarkan nilai
 
-### 🔀 Percabangan dengan if<a name="percabangan-dengan-if"></a>
+### Percabangan dengan if<a name="percabangan-dengan-if"></a>
 
 Percabangan **if** adalah yang paling sederhana. Program akan menjalankan kode di dalam blok if jika kondisi bernilai benar (true). Konsep ini pertama kali diperkenalkan dalam bahasa ALGOL 60[^1]: Naur, P. (1960). "Report on the Algorithmic Language ALGOL 60". Communications of the ACM..
 
@@ -75,7 +75,7 @@ Flowchart untuk statment percabangan if seperti pada gambar berikut
 \path[line] (statement) -- (stop);
 \end{tikzpicture}
 
-### 💡 Contoh Percabangan dengan if
+### Contoh Percabangan dengan if
 
 - Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
 - Tulis kode berikut:
@@ -93,9 +93,9 @@ Masukan nomor: 15
 
 - Program meminta input angka dari pengguna
 - Jika angka > 10, program menampilkan pesan "lebih besar dari 10"
-- Jika angka ≤ 10, program tidak menampilkan apa-apa
+- Jika angka $\leq$ 10, program tidak menampilkan apa-apa
 
-### 🔄 Percabangan dengan if-else<a name="percabangan-dengan-if-..-else"></a>
+### Percabangan dengan if-else<a name="percabangan-dengan-if-..-else"></a>
 
 Percabangan **if-else** memungkinkan program menjalankan kode yang berbeda berdasarkan kondisi.
 
@@ -119,7 +119,7 @@ if (kondisi) {
 Flowchart untuk statment ini adalah :
 
 \begin{quotation}
-{\LARGE \ding{45}} **💡 CATATAN PENTING**
+{\LARGE \ding{45}} **CATATAN PENTING**
 
 Di dalam blok `if()` maupun `else` bisa diisi dengan perintah `if()` lagi. Bentuk `if()` dalam `if()` ini sering disebut dengan **nested if** (if bersarang).
 \end{quotation}
@@ -141,7 +141,7 @@ Di dalam blok `if()` maupun `else` bisa diisi dengan perintah `if()` lagi. Bentu
 \path[line] (statement2) -- (decide);
 \end{tikzpicture}
 
-#### 💡 Contoh Program if-else
+#### Contoh Program if-else
 
 - Edit contoh [contoh2-3](#contoh2-3) dengan menambahkan kode berikut:
 
@@ -157,10 +157,10 @@ Masukan nomor: 4
 #### Penjelasan Program
 
 - Jika angka > 10, program menampilkan "lebih besar dari 10"
-- Jika angka ≤ 10, program menampilkan "kurang besar dari 10"
+- Jika angka $\leq$ 10, program menampilkan "kurang besar dari 10"
 - Program selalu memberikan respons, tidak ada kondisi yang dilewati
 
-### 🔄 Percabangan dengan if Bersarang (Nested if)
+### Percabangan dengan if Bersarang (Nested if)
 
 If bersarang adalah kondisi if yang berada di dalam blok if atau else lainnya. Ini memungkinkan kita membuat percabangan yang lebih kompleks.
 
@@ -198,7 +198,7 @@ Flowchart untuk statement if bersarang:
 
 \end{tikzpicture}
 
-### 🔀 Percabangan dengan switch<a name="percabangan-dengan-switch"></a>
+### Percabangan dengan switch<a name="percabangan-dengan-switch"></a>
 
 Percabangan **switch** digunakan sebagai alternatif dari `if-else` ketika kita memiliki banyak pilihan berdasarkan nilai tertentu. Switch statement diperkenalkan dalam bahasa C dan kemudian diadopsi oleh C++[^1]: Kernighan, B. W., & Ritchie, D. M. (1988). "The C Programming Language" (2nd ed.). Prentice Hall..
 
@@ -278,7 +278,7 @@ Flowchart untuk statement ini adalah :
 \path[line](decide) -- (titik);
 \end{tikzpicture}
 
-### 💡 Contoh Program switch
+### Contoh Program switch
 
 - Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
 - Tulis kode berikut:
@@ -298,7 +298,7 @@ sabtu
 - Karena nilai = 6, program menjalankan `case 6`
 - Program menampilkan "sabtu" ke layar
 
-## 🔄 Perulangan (Loops)<a name="perulangan"></a>
+## Perulangan (Loops)<a name="perulangan"></a>
 
 Perulangan digunakan untuk mengulang suatu perintah sebanyak yang diinginkan tanpa harus menulis ulang kode yang sama.
 
@@ -318,7 +318,7 @@ C++ memiliki tiga jenis perintah perulangan:
 - **while** - perulangan selama kondisi benar
 - **do-while** - perulangan yang minimal dijalankan sekali
 
-### 🔄 Perulangan dengan for<a name="perulangan-dengan-for"></a>
+### Perulangan dengan for<a name="perulangan-dengan-for"></a>
 
 Perulangan **for** digunakan ketika kita sudah mengetahui berapa kali perulangan akan dijalankan. For loop adalah salah satu konstruksi perulangan yang paling umum digunakan dalam pemrograman[^1]: Knuth, D. E. (1997). "The Art of Computer Programming, Volume 1: Fundamental Algorithms" (3rd ed.). Addison-Wesley..
 
@@ -344,7 +344,7 @@ Perulangan **for** digunakan ketika kita sudah mengetahui berapa kali perulangan
 \caption{flowchart perulangan dengan for}
 \end{figure}
 
-### 🔄 Perulangan dengan while<a name="perulangan-dengan-while"></a>
+### Perulangan dengan while<a name="perulangan-dengan-while"></a>
 
 Perulangan **while** digunakan untuk mengulangi perintah selama kondisi masih bernilai benar.
 
@@ -371,7 +371,7 @@ Perulangan **while** digunakan untuk mengulangi perintah selama kondisi masih be
 \caption{flowchart perulangan dengan while}
 \end{figure}
 
-### 🔄 Perulangan dengan do-while<a name="perulangan-dengan-do-while"></a>
+### Perulangan dengan do-while<a name="perulangan-dengan-do-while"></a>
 
 Perulangan **do-while** mirip dengan while, tetapi kondisi dicek di akhir perulangan. Ini berarti kode minimal akan dijalankan sekali.
 
@@ -398,7 +398,7 @@ Perulangan **do-while** mirip dengan while, tetapi kondisi dicek di akhir perula
 \caption{flowchart perulangan dengan do\dots while}
 \end{figure}
 
-### 📊 Perbandingan while vs do-while
+### Perbandingan while vs do-while
 
 <div align="center">
 | \hline
@@ -420,7 +420,7 @@ Kapan digunakan | Kondisi mungkin salah di awal | Kode harus dijalankan minimal 
 - **while**: mungkin tidak menjalankan kode sama sekali
 - **do-while**: minimal menjalankan kode sekali
 
-### ⏭️ Kata Kunci break dan continue<a name="kata-kunci-continue-dan-break"></a>
+### Kata Kunci break dan continue<a name="kata-kunci-continue-dan-break"></a>
 
 Kata kunci **break** dan **continue** digunakan untuk mengontrol aliran perulangan.
 
@@ -447,7 +447,7 @@ while(kondisi1) {
 }
 ```
 
-### 💡 Contoh Program break dan continue
+### Contoh Program break dan continue
 
 - Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
 - Tulis kode berikut:
@@ -468,9 +468,9 @@ Loop berhenti karena break
 - Jika i == 10, program menggunakan break untuk menghentikan perulangan
 - Hasilnya: angka 1-4, 6-9 ditampilkan, lalu loop berhenti
 
-## 🎯 Praktik Terbaik Control Statement
+## Praktik Terbaik Control Statement
 
-### 💡 Tips Menulis Control Statement yang Baik
+### Tips Menulis Control Statement yang Baik
 
 - **Gunakan kondisi yang jelas** - Hindari kondisi yang membingungkan
 - **Tulis kode yang mudah dibaca** - Gunakan indentasi yang konsisten
@@ -478,16 +478,16 @@ Loop berhenti karena break
 - **Gunakan switch untuk banyak pilihan** - Lebih efisien daripada if-else bertingkat
 - **Selalu gunakan kurung kurawal** - Meskipun hanya satu baris kode
 
-### ⚠️ Kesalahan Umum yang Harus Dihindari
+### Kesalahan Umum yang Harus Dihindari
 
 - **Lupa break dalam switch** - Bisa menyebabkan fall-through
 - **Infinite loop** - Perulangan yang tidak pernah berhenti
 - **Kondisi yang selalu benar/salah** - Perulangan atau percabangan yang tidak efektif
 - **Indentasi yang salah** - Membuat kode sulit dibaca
 
-## 📊 Ringkasan Control Statement
+## Ringkasan Control Statement
 
-### 🔄 Jenis-jenis Control Statement
+### Jenis-jenis Control Statement
 
 <div align="center">
 | \hline
@@ -512,7 +512,7 @@ continue | Melompati iterasi | continue; |
 | \hline |
 </div>
 
-### 🎯 Kapan Menggunakan Setiap Jenis
+### Kapan Menggunakan Setiap Jenis
 
 - **if**: Ketika ada satu kondisi yang perlu dicek
 - **if-else**: Ketika ada dua alternatif yang berbeda
@@ -523,13 +523,13 @@ continue | Melompati iterasi | continue; |
 - **break**: Ketika perlu menghentikan perulangan secara paksa
 - **continue**: Ketika perlu melompati iterasi tertentu
 
-## 🔍 Latihan dan Soal
+## Latihan dan Soal
 
-### 📝 Latihan 1: Program Kalkulator Sederhana
+### Latihan 1: Program Kalkulator Sederhana
 
 Buat program kalkulator sederhana yang menerima dua angka dan operator (+, -, *, /) dari pengguna, kemudian menampilkan hasilnya.
 
-### 📝 Latihan 2: Program Menentukan Grade
+### Latihan 2: Program Menentukan Grade
 
 Buat program yang menerima nilai (0-100) dan menampilkan grade:
 
@@ -539,7 +539,7 @@ Buat program yang menerima nilai (0-100) dan menampilkan grade:
 - D: 60-69
 - E: 0-59
 
-### 📝 Latihan 3: Program Menampilkan Pola
+### Latihan 3: Program Menampilkan Pola
 
 Buat program yang menampilkan pola bintang seperti berikut:
 \begin{lcverbatim}
@@ -550,7 +550,7 @@ Buat program yang menampilkan pola bintang seperti berikut:
 *****
 \end{lcverbatim}
 
-## 📚 Referensi dan Bacaan Lanjutan
+## Referensi dan Bacaan Lanjutan
 
 Control statement adalah konsep fundamental dalam pemrograman yang telah dikembangkan sejak awal era komputer. Konsep ini pertama kali diperkenalkan dalam bahasa pemrograman FORTRAN pada tahun 1957[^1]: Backus, J. W. (1957). "The FORTRAN Automatic Coding System". Proceedings of the Western Joint Computer Conference. dan kemudian dikembangkan lebih lanjut dalam bahasa ALGOL[^1]: Naur, P. (1960). "Report on the Algorithmic Language ALGOL 60". Communications of the ACM..
 
@@ -562,12 +562,12 @@ Untuk pemahaman yang lebih mendalam tentang control statement dalam C++, pembaca
 - **Effective C++** oleh Scott Meyers[^1]: Meyers, S. (2005). "Effective C++" (3rd ed.). Addison-Wesley.
 - **C++ Primer** oleh Stanley Lippman[^1]: Lippman, S. B., Lajoie, J., & Moo, B. E. (2012). "C++ Primer" (5th ed.). Addison-Wesley.
 
-## 🎉 Kesimpulan
+## Kesimpulan
 
 Control statement adalah alat fundamental yang memungkinkan program untuk membuat keputusan dan mengulang operasi. Dengan menguasai konsep ini, Anda telah memiliki fondasi yang kuat untuk mengembangkan program yang lebih kompleks dan dinamis.
 
 <div align="center">
-**Selamat! Anda telah menguasai dasar-dasar Control Statement dalam C++** 🎯
+**Selamat! Anda telah menguasai dasar-dasar Control Statement dalam C++**
 </div>
 
 

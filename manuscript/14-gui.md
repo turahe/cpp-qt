@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari tentang pemrograman GUI (Graphical User Interface) dengan Qt:
 
@@ -10,7 +10,7 @@ Pada bab ini kita akan mempelajari tentang pemrograman GUI (Graphical User Inter
 
 \minitoc
 
-## 🎨 Pengenalan GUI (Graphical User Interface)
+## Pengenalan GUI (Graphical User Interface)
 
 ### Apa itu GUI?
 
@@ -32,7 +32,7 @@ Qt adalah framework C++ yang powerful untuk membuat aplikasi GUI cross-platform.
 - **Qt Designer** - Tool visual untuk membuat UI
 - **Signal-Slot** - Mekanisme komunikasi antar komponen
 
-## 🏗️ Komponen Dasar Qt GUI
+## Komponen Dasar Qt GUI
 
 ### QWidget - Base Class
 
@@ -68,7 +68,7 @@ QWidget adalah kelas dasar untuk semua elemen GUI dalam Qt. Setiap widget dapat:
 - **QScrollArea** - Area dengan scroll
 - **QFrame** - Frame untuk border dan styling
 
-## 🔗 Signal dan Slot
+## Signal dan Slot
 
 ### Konsep Signal dan Slot
 
@@ -95,7 +95,7 @@ connect(sender, SIGNAL(signalName()), receiver, SLOT(slotName()));
 connect(button, SIGNAL(clicked()), this, SLOT(onButtonClicked()));
 ```
 
-## 💻 Membuat Aplikasi GUI Sederhana
+## Membuat Aplikasi GUI Sederhana
 
 ### Struktur Program GUI
 
@@ -121,36 +121,36 @@ Program GUI Qt terdiri dari:
 #include <QWidget>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+ : QMainWindow(parent)
 {
-    // Set window properties
-    setWindowTitle("Aplikasi GUI Sederhana");
-    setFixedSize(400, 300);
+ // Set window properties
+ setWindowTitle("Aplikasi GUI Sederhana");
+ setFixedSize(400, 300);
 
-    // Create central widget
-    QWidget *centralWidget = new QWidget(this);
-    setCentralWidget(centralWidget);
+ // Create central widget
+ QWidget *centralWidget = new QWidget(this);
+ setCentralWidget(centralWidget);
 
-    // Create layout
-    QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
+ // Create layout
+ QVBoxLayout *mainLayout = new QVBoxLayout(centralWidget);
 
-    // Create buttons
-    buttonA = new QPushButton("Tampilkan Gambar A", this);
-    buttonB = new QPushButton("Tampilkan Gambar B", this);
+ // Create buttons
+ buttonA = new QPushButton("Tampilkan Gambar A", this);
+ buttonB = new QPushButton("Tampilkan Gambar B", this);
 
-    // Create image label
-    imageLabel = new QLabel("Klik tombol untuk menampilkan gambar", this);
-    imageLabel->setAlignment(Qt::AlignCenter);
-    imageLabel->setStyleSheet("QLabel { border: 2px solid gray; padding: 10px; }");
+ // Create image label
+ imageLabel = new QLabel("Klik tombol untuk menampilkan gambar", this);
+ imageLabel->setAlignment(Qt::AlignCenter);
+ imageLabel->setStyleSheet("QLabel { border: 2px solid gray; padding: 10px; }");
 
-    // Add widgets to layout
-    mainLayout->addWidget(buttonA);
-    mainLayout->addWidget(buttonB);
-    mainLayout->addWidget(imageLabel);
+ // Add widgets to layout
+ mainLayout->addWidget(buttonA);
+ mainLayout->addWidget(buttonB);
+ mainLayout->addWidget(imageLabel);
 
-    // Connect signals to slots
-    connect(buttonA, SIGNAL(clicked()), this, SLOT(onButtonAClicked()));
-    connect(buttonB, SIGNAL(clicked()), this, SLOT(onButtonBClicked()));
+ // Connect signals to slots
+ connect(buttonA, SIGNAL(clicked()), this, SLOT(onButtonAClicked()));
+ connect(buttonB, SIGNAL(clicked()), this, SLOT(onButtonBClicked()));
 }
 
 MainWindow::~MainWindow()
@@ -159,14 +159,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::onButtonAClicked()
 {
-    imageLabel->setText("Gambar A ditampilkan");
-    imageLabel->setStyleSheet("QLabel { border: 2px solid blue; padding: 10px; background-color: lightblue; }");
+ imageLabel->setText("Gambar A ditampilkan");
+ imageLabel->setStyleSheet("QLabel { border: 2px solid blue; padding: 10px; background-color: lightblue; }");
 }
 
 void MainWindow::onButtonBClicked()
 {
-    imageLabel->setText("Gambar B ditampilkan");
-    imageLabel->setStyleSheet("QLabel { border: 2px solid red; padding: 10px; background-color: lightcoral; }");
+ imageLabel->setText("Gambar B ditampilkan");
+ imageLabel->setStyleSheet("QLabel { border: 2px solid red; padding: 10px; background-color: lightcoral; }");
 }
 ```
 
@@ -178,16 +178,16 @@ void MainWindow::onButtonBClicked()
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-    
-    MainWindow window;
-    window.show();
-    
-    return app.exec();
+ QApplication app(argc, argv);
+
+ MainWindow window;
+ window.show();
+
+ return app.exec();
 }
 ```
 
-## 📐 Layout Management
+## Layout Management
 
 ### Pentingnya Layout
 
@@ -224,7 +224,7 @@ Layout management memastikan:
 - Label dan input field otomatis tersusun
 - Cocok untuk dialog atau form pengaturan
 
-## 🎯 Event Handling
+## Event Handling
 
 ### Konsep Event
 
@@ -256,7 +256,7 @@ void MyWidget::mousePressEvent(QMouseEvent *event)
 }
 ```
 
-## 🎨 Styling dan Theming
+## Styling dan Theming
 
 ### Qt Style Sheets
 
@@ -289,7 +289,7 @@ QPushButton:pressed {
 }
 ```
 
-## 🔧 Best Practices GUI Programming
+## Best Practices GUI Programming
 
 ### Tips Menulis GUI yang Baik
 
@@ -306,7 +306,7 @@ QPushButton:pressed {
 - **Memory leak** - Lupa delete widget yang dibuat
 - **Blocking UI thread** - Aplikasi freeze saat operasi berat
 
-## 📱 Membuat Aplikasi Modern
+## Membuat Aplikasi Modern
 
 ### Qt Quick vs Qt Widgets
 
@@ -336,9 +336,9 @@ QML (Qt Modeling Language) adalah bahasa deklaratif untuk membuat UI modern:
 - **Responsive** - UI yang responsive terhadap input
 - **Cross-platform** - Sama di semua platform
 
-## 🔍 Latihan dan Project
+## Latihan dan Project
 
-### 📝 Latihan 1: Kalkulator Sederhana
+### Latihan 1: Kalkulator Sederhana
 
 Buat aplikasi kalkulator dengan GUI yang memiliki:
 
@@ -347,7 +347,7 @@ Buat aplikasi kalkulator dengan GUI yang memiliki:
 - Tombol operator (+, -, *, /)
 - Tombol equals (=) dan clear (C)
 
-### 📝 Latihan 2: Text Editor Sederhana
+### Latihan 2: Text Editor Sederhana
 
 Buat text editor dengan fitur:
 
@@ -356,7 +356,7 @@ Buat text editor dengan fitur:
 - Menu Edit (Copy, Paste, Cut)
 - Status bar untuk informasi
 
-### 📝 Latihan 3: Image Viewer
+### Latihan 3: Image Viewer
 
 Buat image viewer dengan:
 
@@ -365,7 +365,7 @@ Buat image viewer dengan:
 - Tombol untuk zoom in/out
 - Tombol untuk rotate image
 
-## 📚 Referensi dan Bacaan Lanjutan
+## Referensi dan Bacaan Lanjutan
 
 Qt GUI programming adalah topik yang luas dan terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
 
@@ -374,12 +374,12 @@ Qt GUI programming adalah topik yang luas dan terus berkembang. Untuk pemahaman 
 - **Qt 5 C++ GUI Programming Cookbook** oleh Lee Zhi Eng[^1]: Eng, L. Z. (2016). "Qt 5 C++ GUI Programming Cookbook". Packt Publishing.
 - **Qt Quick** - Framework modern untuk UI[^1]: Qt Company. (2023). "Qt Quick". https://doc.qt.io/qt-6/qtquick-index.html
 
-## 🎉 Kesimpulan
+## Kesimpulan
 
 Pemrograman GUI dengan Qt membuka dunia kemungkinan untuk membuat aplikasi desktop yang powerful dan user-friendly. Dengan memahami konsep widget, signal-slot, layout management, dan event handling, Anda dapat membuat aplikasi GUI yang profesional.
 
 <div align="center">
-**Selamat! Anda telah menguasai dasar-dasar GUI Programming dengan Qt** 🎨
+**Selamat! Anda telah menguasai dasar-dasar GUI Programming dengan Qt**
 </div>
 
 

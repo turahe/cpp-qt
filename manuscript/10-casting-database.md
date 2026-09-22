@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan membahas tentang Casting dan Database dalam C++:
 
@@ -9,7 +9,7 @@ Pada bab ini kita akan membahas tentang Casting dan Database dalam C++:
 
 \minitoc
 
-## 🔄 Mengenal Casting<a name="mengenal-casting"></a>
+## Mengenal Casting<a name="mengenal-casting"></a>
 
 ### Apa itu Casting?
 
@@ -45,7 +45,7 @@ Contoh nyata terdapat pada bahasa C dan C++. Pada bahasa C tidak terdapat tipe d
 
 \lstinputlisting[language=c++, numbers=none]{../code/casting-explicit-example.cpp}
 
-## 📊 Data Type Casting (Conversion)<a name="data-type-casting-conversion"></a>
+## Data Type Casting (Conversion)<a name="data-type-casting-conversion"></a>
 
 ### Apa itu Type Casting?
 
@@ -58,7 +58,7 @@ Konversi tersebut ada dua jenis:
 - **Implicit conversion** - konversi otomatis
 - **Explicit conversion** - konversi manual
 
-### 🔄 Implicit Conversion<a name="implicit-conversion"></a>
+### Implicit Conversion<a name="implicit-conversion"></a>
 
 #### Karakteristik
 
@@ -183,7 +183,7 @@ daripada integer.
 
 \begin{quotation}
 
-{\LARGE \ding{46}} **TIPS** 
+{\LARGE \ding{46}} **TIPS**
 
 Untuk melakukan casting yang benar, maka casting akan valid jika kita mengcasting tipe data yang berukuran lebih besar menjadi tipe data yang berukuran lebih kecil. Misalnya float dicast menjadi int.
 \end{quotation}
@@ -399,7 +399,7 @@ B * b = reinterpret_cast<B*>(a);
 ```
 
 \begin{quotation}
-{\LARGE \ding{46}}  **TIPS** 
+{\LARGE \ding{46}} **TIPS**
 
 Sebisa
 mungkin reinterpret_cast tidak digunakan jika tidak terpaksa karena
@@ -733,11 +733,11 @@ QtCreator.
 Sqlite berhasil!
 - Program diatas mengharuskan adanya urutan perintah yang harus
 dilakukan ketika kita akan melakukan koneksi ke database Sqlite,
-yaitu: 
+yaitu:
 
 - Load driver SQLITE Tambahkan bagian ini
-- setDatabaseName sesuai dengan nama file Sqlite yang akan diakses 
-- Kemudian open koneksi dengan memanggil method open 
+- setDatabaseName sesuai dengan nama file Sqlite yang akan diakses
+- Kemudian open koneksi dengan memanggil method open
 - Jika ada error tampilkan errornya, jika tidak tampilkan bahwa koneksi berhasil
 
 ### Membaca data pada tabel SQLITE
@@ -889,10 +889,10 @@ gagalditambahkan
 
 \begin{lcverbatim}
 "012011""Alif""3.3"
-"013021""Ananda""3.8" 
-"011041" "Wachid""3.1" 
-"012042""Arif""3.6" 
-"011012""Eko""3.4" 
+"013021""Ananda""3.8"
+"011041" "Wachid""3.1"
+"012042""Arif""3.6"
+"011012""Eko""3.4"
 
 \end{lcverbatim}
 
@@ -1126,12 +1126,12 @@ Pilihan:
  \end{lcverbatim}
 
 \begin{lcverbatim}
-"NIMNamaIPK" 
-"011041Wachid3.1" 
+"NIMNamaIPK"
+"011041Wachid3.1"
 "012042Arif3.6 "
 "011041Eko3.4"
-"012011Alif3.3" 
-"013012 Ramadhani 3.8" 
+"012011Alif3.3"
+"013012 Ramadhani 3.8"
 \end{lcverbatim}
 - Menu hapus data dan tampil data:
 
@@ -1149,14 +1149,14 @@ Penghapusan berhasil
 Tekan sembarang tombol . . .
 \end{lcverbatim}
 \begin{lcverbatim}
-"NIMNamaIPK" 
+"NIMNamaIPK"
 "012042Arif3.6 "
 "011041Eko3.4"
-"012011Alif3.3" 
-"013012 Ramadhani 3.8" 
+"012011Alif3.3"
+"013012 Ramadhani 3.8"
 \end{lcverbatim}
- 
-- Menu edit data dan tampil data: 
+
+- Menu edit data dan tampil data:
 
 Mengedit 011041 menjadi bernama
 Nur Wachid dan IPK menjadi 3.01
@@ -1177,11 +1177,11 @@ Tekan sembarang tombol . . .
 \end{lcverbatim}
 
 \begin{lcverbatim}
-"NIMNamaIPK" 
+"NIMNamaIPK"
 "012042Arif H3.6 "
 "011041Eko3.4"
-"012011Alif3.3" 
-"013012 Ramadhani 3.8" 
+"012011Alif3.3"
+"013012 Ramadhani 3.8"
 \end{lcverbatim}
 - Menu cari data:
 
@@ -1195,7 +1195,7 @@ MENU:
 6. Exit
 Pilihan: 4
 NIM yang akan dicari: 011042
-"NIMNamaIPK" 
+"NIMNamaIPK"
 "012042Arif H3.6 "
 Tekan sembarang tombol . . .
 \end{lcverbatim}
@@ -1254,7 +1254,7 @@ mengeditnya.
 
 \begin{quotation}
 
-{\LARGE \ding{46}} **TIPS:** 
+{\LARGE \ding{46}} **TIPS:**
 
 Untuk
 mengkonversi dari tipe data string menuju ke Qstring, digunakan

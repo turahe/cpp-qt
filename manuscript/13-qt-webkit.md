@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari tentang Qt WebKit dan cara membuat browser web sederhana:
 
@@ -10,7 +10,7 @@ Pada bab ini kita akan mempelajari tentang Qt WebKit dan cara membuat browser we
 
 \minitoc
 
-## 🌐 Pengenalan Qt WebKit
+## Pengenalan Qt WebKit
 
 ### Apa itu Qt WebKit?
 
@@ -36,7 +36,7 @@ QWebView adalah widget utama dari Qt WebKit yang dapat digunakan untuk menampilk
 - **Customizable** - Dapat dikustomisasi sesuai kebutuhan
 - **Performance** - Rendering yang cepat
 
-## 🚀 Browser Sederhana - Versi 1
+## Browser Sederhana - Versi 1
 
 ### Membuat Browser Dasar
 
@@ -45,7 +45,7 @@ Mari kita mulai dengan membuat browser sederhana yang dapat menampilkan halaman 
 #### Setup Project
 
 - Buka Qt Creator
-- File → New File or Project → Other Project → Empty Qt Project
+- File $\rightarrow$ New File or Project $\rightarrow$ Other Project $\rightarrow$ Empty Qt Project
 - Beri nama project "Browser1"
 - Klik Choose untuk melanjutkan
 
@@ -75,7 +75,7 @@ Then we need a main().
 #### Menambahkan Source File
 
 - Klik kanan pada nama project
-- Add new → C++ → C++ Source File
+- Add new $\rightarrow$ C++ $\rightarrow$ C++ Source File
 - Beri nama "main.cpp"
 
 \begin{figure}[htbp]
@@ -133,7 +133,7 @@ Jalankan program dengan Ctrl+R atau klik tombol Run. Hasilnya:
 - **webView.show()** - Menampilkan browser
 - **app.exec()** - Menjalankan event loop
 
-## 🎛️ Browser dengan Kontrol - Versi 2
+## Browser dengan Kontrol - Versi 2
 
 ### Mengapa Perlu Kontrol?
 
@@ -148,7 +148,7 @@ Browser versi 1 hanya bisa menampilkan halaman web, tetapi tidak memiliki kontro
 ### Setup Project Browser dengan UI
 
 - Klik kanan pada nama project
-- Add new → Applications → Qt GUI Application
+- Add new $\rightarrow$ Applications $\rightarrow$ Qt GUI Application
 - Beri nama "Browser2"
 
 \begin{figure}[htbp]
@@ -210,7 +210,7 @@ Mari kita buat interface browser dengan kontrol navigasi:
 Untuk membuat kode otomatis, gunakan fitur "Go to slot":
 
 - Klik kanan pada backButton
-- Go to slot → clicked()
+- Go to slot $\rightarrow$ clicked()
 
 \begin{figure}[htbp]
 \centering
@@ -220,12 +220,12 @@ Untuk membuat kode otomatis, gunakan fitur "Go to slot":
 
 Lakukan hal yang sama untuk tombol lainnya:
 
-- **forwardButton** → clicked()
-- **refreshButton** → clicked()
-- **goButton** → clicked()
-- **urlEdit** → returnPressed()
+- **forwardButton** $\rightarrow$ clicked()
+- **refreshButton** $\rightarrow$ clicked()
+- **goButton** $\rightarrow$ clicked()
+- **urlEdit** $\rightarrow$ returnPressed()
 
-## 💻 Menulis Kode untuk Slot
+## Menulis Kode untuk Slot
 
 ### Menambahkan Header
 
@@ -294,7 +294,7 @@ Test dengan URL lain:
 \caption{Test dengan URL yang berbeda}
 \end{figure}
 
-## 📁 Source Code Lengkap
+## Source Code Lengkap
 
 ### Header File (dialog.h)
 
@@ -400,7 +400,7 @@ void Dialog::on_urlEdit_returnPressed()
 }
 ```
 
-## 🔧 Fitur Lanjutan Browser
+## Fitur Lanjutan Browser
 
 ### Fitur yang Bisa Ditambahkan
 
@@ -437,7 +437,7 @@ webView->page()->mainFrame()->evaluateJavaScript("alert('Hello from Qt!')");
 webView->page()->mainFrame()->addToJavaScriptWindowObject("qt", this);
 ```
 
-## 🔧 Best Practices Qt WebKit
+## Best Practices Qt WebKit
 
 ### Tips Pengembangan Browser
 
@@ -463,7 +463,7 @@ webView->page()->mainFrame()->addToJavaScriptWindowObject("qt", this);
 - **Async loading** - Gunakan asynchronous loading
 - **Memory monitoring** - Monitor penggunaan memory
 
-## 📚 Referensi dan Bacaan Lanjutan
+## Referensi dan Bacaan Lanjutan
 
 Qt WebKit adalah teknologi yang terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
 
@@ -472,12 +472,12 @@ Qt WebKit adalah teknologi yang terus berkembang. Untuk pemahaman yang lebih men
 - **Qt WebEngine** - Modern web engine untuk Qt[^1]: Qt Company. (2023). "Qt WebEngine". https://doc.qt.io/qt-6/qtwebengine-index.html
 - **Browser Development** - Tutorial pengembangan browser[^1]: Mozilla Developer Network. (2023). "Browser Development". https://developer.mozilla.org/
 
-## 🎉 Kesimpulan
+## Kesimpulan
 
 Qt WebKit menyediakan cara yang powerful untuk mengintegrasikan konten web ke dalam aplikasi Qt. Dengan memahami QWebView dan kontrol navigasi, Anda dapat membuat browser sederhana hingga aplikasi web yang kompleks.
 
 <div align="center">
-**Selamat! Anda telah menguasai dasar-dasar Qt WebKit** 🌐
+**Selamat! Anda telah menguasai dasar-dasar Qt WebKit**
 </div>
 
 

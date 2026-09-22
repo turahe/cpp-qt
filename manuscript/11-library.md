@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari tentang Qt Library dan class-class penting yang disediakan oleh Qt:
 
@@ -10,7 +10,7 @@ Pada bab ini kita akan mempelajari tentang Qt Library dan class-class penting ya
 
 \minitoc
 
-## 📚 Pengenalan Qt Library
+## Pengenalan Qt Library
 
 ### Apa itu Qt Library?
 
@@ -40,7 +40,7 @@ Qt Core Module adalah library dasar yang dibutuhkan oleh setiap aplikasi Qt. Mod
 - **Object System** - QObject, QCoreApplication
 - **Threading** - QThread untuk pemrograman multi-thread
 
-## 🏗️ QObject - Base Class Penting
+## QObject - Base Class Penting
 
 ### Apa itu QObject?
 
@@ -79,7 +79,7 @@ QMap | - | Template class untuk map |
 - **Properties** - Dynamic property system
 - **Events** - Event handling system
 
-## 🧠 Automatic Memory Management
+## Automatic Memory Management
 
 ### Masalah Memory Management
 
@@ -101,7 +101,7 @@ QObject menyediakan automatic memory management:
 
 ### Contoh Memory Management
 
-#### ❌ Tanpa QObject (Manual Management)
+#### Tanpa QObject (Manual Management)
 
 - Buka Qt Creator dan buat project Qt Console Application baru
 - Tulis kode berikut:
@@ -127,7 +127,7 @@ destroy object
 - Risk memory leak jika lupa delete
 - Sulit dalam aplikasi kompleks
 
-#### ✅ Dengan QObject (Automatic Management)
+#### Dengan QObject (Automatic Management)
 
 - Buka Qt Creator dan buat project Qt Console Application baru
 - Tulis kode berikut:
@@ -137,10 +137,10 @@ destroy object
 - Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-"22002321"  :  8  kar
-"22002322"  :  8  kar
-"22002323"  :  8  kar
-"22002323"  :  8  kar
+"22002321" : 8 kar
+"22002322" : 8 kar
+"22002323" : 8 kar
+"22002323" : 8 kar
 \end{lcverbatim}
 
 **Analisis Program:**
@@ -159,7 +159,7 @@ QObject menggunakan sistem parent-child untuk memory management:
 - **Automatic Deletion** - Child dihapus saat parent dihapus
 - **Object Tree** - Hierarki objek yang terorganisir
 
-## 📝 QString - String Handling
+## QString - String Handling
 
 ### Mengapa Menggunakan QString?
 
@@ -203,7 +203,7 @@ Performance | Optimized | Standard |
 
 \begin{lcverbatim}
 "Erick Kurniawan"
-Ukuran string  15
+Ukuran string 15
 test not null
 test empty
 testing null
@@ -226,9 +226,9 @@ testing null
 - Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-firstName :  "Erick"
-lastName :  "Kurniawan"
-midName :  "Kurni"
+firstName : "Erick"
+lastName : "Kurniawan"
+midName : "Kurni"
 \end{lcverbatim}
 
 **Method yang Digunakan:**
@@ -248,7 +248,7 @@ midName :  "Kurni"
 - Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-Nama :  "Pak. Slamet ,BA"
+Nama : "Pak. Slamet ,BA"
 "Pak. Slamet ,BA ,SE"
 \end{lcverbatim}
 
@@ -269,7 +269,7 @@ Nama :  "Pak. Slamet ,BA"
 - Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-Balik :  "dihcaW ruN"
+Balik : "dihcaW ruN"
 \end{lcverbatim}
 
 **Method yang Digunakan:**
@@ -297,7 +297,7 @@ Balik :  "dihcaW ruN"
 - **startsWith()** - Cek apakah string dimulai dengan substring
 - **endsWith()** - Cek apakah string diakhiri dengan substring
 
-## 📦 Collection Classes
+## Collection Classes
 
 ### Apa itu Collection Classes?
 
@@ -459,7 +459,7 @@ QStringList adalah class khusus untuk list of strings. Class ini diturunkan dari
 - **replaceInStrings()** - Ganti substring dalam semua elemen
 - **filter()** - Filter elemen berdasarkan kondisi
 
-## 🗂️ Stack dan Queue
+## Stack dan Queue
 
 ### Stack - LIFO (Last In First Out)
 
@@ -477,12 +477,12 @@ QQueue adalah collection yang menggunakan prinsip FIFO. Elemen pertama yang masu
 - Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-Stack LIFO : 
+Stack LIFO :
 "budi"
 "katon"
 "anton"
 "17rick"
-Queue FIFO : 
+Queue FIFO :
 "17rick"
 "anton"
 "katon"
@@ -508,7 +508,7 @@ Use Case | Undo/Redo | Task Queue |
 | \hline |
 </div>
 
-## 🗺️ QMap - Key-Value Pair
+## QMap - Key-Value Pair
 
 ### Apa itu QMap?
 
@@ -529,15 +529,15 @@ QMap adalah collection yang menyimpan data dalam bentuk key-value pair. Setiap e
 - Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-erick age :  29
+erick age : 29
 menampilkan semua data yg ada di map :
-"anton"  :  29
-"erick"  :  29
-"katon"  :  42
+"anton" : 29
+"erick" : 29
+"katon" : 42
 Mengakses data menggunakan iterator
-"anton"  :  29
-"erick"  :  29
-"katon"  :  42
+"anton" : 29
+"erick" : 29
+"katon" : 42
 \end{lcverbatim}
 
 **Method QMap:**
@@ -549,7 +549,7 @@ Mengakses data menggunakan iterator
 - **values()** - Dapatkan semua value
 - **remove()** - Hapus key-value pair
 
-## 🔧 Best Practices Qt Library
+## Best Practices Qt Library
 
 ### Tips Menggunakan Qt Library
 
@@ -567,7 +567,7 @@ Mengakses data menggunakan iterator
 - **Type Mismatch** - Masukkan tipe data salah ke collection
 - **Inefficient Access** - Tidak gunakan iterator untuk loop
 
-## 📚 Referensi dan Bacaan Lanjutan
+## Referensi dan Bacaan Lanjutan
 
 Qt Library adalah topik yang luas dan terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
 
@@ -576,12 +576,12 @@ Qt Library adalah topik yang luas dan terus berkembang. Untuk pemahaman yang leb
 - **Qt 5 C++ GUI Programming Cookbook** oleh Lee Zhi Eng[^1]: Eng, L. Z. (2016). "Qt 5 C++ GUI Programming Cookbook". Packt Publishing.
 - **Qt Core Module** - Module dasar Qt[^1]: Qt Company. (2023). "Qt Core Module". https://doc.qt.io/qt-6/qtcore-index.html
 
-## 🎉 Kesimpulan
+## Kesimpulan
 
 Qt Library menyediakan class-class yang powerful dan type-safe untuk pengembangan aplikasi. Dengan memahami QObject, QString, dan collection classes, Anda dapat membuat aplikasi yang robust dan maintainable.
 
 <div align="center">
-**Selamat! Anda telah menguasai dasar-dasar Qt Library** 📚
+**Selamat! Anda telah menguasai dasar-dasar Qt Library**
 </div>
 
 

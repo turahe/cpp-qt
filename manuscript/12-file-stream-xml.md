@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari tentang bekerja dengan file, stream, dan XML dalam Qt:
 
@@ -10,7 +10,7 @@ Pada bab ini kita akan mempelajari tentang bekerja dengan file, stream, dan XML 
 
 \minitoc
 
-## 📁 Bekerja dengan Direktori dan Path
+## Bekerja dengan Direktori dan Path
 
 ### Apa itu QDir?
 
@@ -57,24 +57,24 @@ QFileInfo menyimpan informasi detail tentang file dan direktori:
 - Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-Drive :  "C:/"
-  "MATLAB"
-  "PerfLogs"
-  "Program Files"
-  "Program Files (x86)"
-  "Qt"
-  "system.sav"
-  "Users"
-  "Windows"
-Drive :  "D:/"
-  "Music"
-  "My Web Sites"
-  "Photo"
-  "Portable"
-  "Referensi"
-  "Software"
-  "video"
-  "webs"
+Drive : "C:/"
+ "MATLAB"
+ "PerfLogs"
+ "Program Files"
+ "Program Files (x86)"
+ "Qt"
+ "system.sav"
+ "Users"
+ "Windows"
+Drive : "D:/"
+ "Music"
+ "My Web Sites"
+ "Photo"
+ "Portable"
+ "Referensi"
+ "Software"
+ "video"
+ "webs"
 \end{lcverbatim}
 
 **Analisis Program:**
@@ -115,7 +115,7 @@ QDir::System | File sistem |
 | \hline |
 </div>
 
-## 📄 Bekerja dengan File
+## Bekerja dengan File
 
 ### Apa itu QFile?
 
@@ -147,7 +147,7 @@ QFile mendukung berbagai permission:
 - Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-File :  "testfile.txt"  tidak ditemukan
+File : "testfile.txt" tidak ditemukan
 \end{lcverbatim}
 
 - Buat file "testfile.txt" di folder build, lalu jalankan lagi:
@@ -162,7 +162,7 @@ File berhasil dibuka !
 - **open()** - Buka file dengan permission tertentu
 - **Error handling** - Tangani error jika file tidak bisa dibuka
 
-## 🌊 Stream - Membaca dan Menulis File
+## Stream - Membaca dan Menulis File
 
 ### Apa itu Stream?
 
@@ -232,7 +232,7 @@ content
 - **Operator >>** - Untuk membaca data dari stream
 - **QDataStream** - Untuk file biner
 
-## 📋 XML - Extensible Markup Language
+## XML - Extensible Markup Language
 
 ### Apa itu XML?
 
@@ -283,7 +283,7 @@ TEMPLATE = app
 SOURCES += main.cpp
 ```
 
-## 🌳 DOM - Document Object Model
+## DOM - Document Object Model
 
 ### Apa itu DOM?
 
@@ -381,7 +381,7 @@ Hasil modifikasi file "simplemodif.xml":
 - **createTextNode()** - Buat node teks
 - **appendChild()** - Tambah elemen ke parent
 
-## ⚡ QXMLStreamReader - Stream-based XML
+## QXMLStreamReader - Stream-based XML
 
 ### Apa itu QXMLStreamReader?
 
@@ -491,7 +491,7 @@ Hasil file XML "simple.xml":
 - **writeEndElement()** - Tulis end element
 - **writeEndDocument()** - Akhiri dokumen XML
 
-## 🔧 Best Practices File dan XML
+## Best Practices File dan XML
 
 ### Tips Menggunakan File I/O
 
@@ -517,7 +517,7 @@ Hasil file XML "simple.xml":
 - **Memory leak** - DOM tidak dihapus untuk file besar
 - **Encoding issues** - Encoding XML tidak sesuai
 
-## 📚 Referensi dan Bacaan Lanjutan
+## Referensi dan Bacaan Lanjutan
 
 File I/O dan XML adalah topik yang luas dan terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
 
@@ -526,12 +526,12 @@ File I/O dan XML adalah topik yang luas dan terus berkembang. Untuk pemahaman ya
 - **Qt File I/O** - Dokumentasi file I/O Qt[^1]: Qt Company. (2023). "QFile Class". https://doc.qt.io/qt-6/qfile.html
 - **Qt XML** - Dokumentasi XML Qt[^1]: Qt Company. (2023). "Qt XML Module". https://doc.qt.io/qt-6/qtxml-index.html
 
-## 🎉 Kesimpulan
+## Kesimpulan
 
 File I/O dan XML adalah komponen penting dalam pengembangan aplikasi. Dengan memahami QDir, QFile, stream, dan XML parsing, Anda dapat membuat aplikasi yang dapat bekerja dengan berbagai jenis data dan format.
 
 <div align="center">
-**Selamat! Anda telah menguasai dasar-dasar File I/O dan XML** 📄
+**Selamat! Anda telah menguasai dasar-dasar File I/O dan XML**
 </div>
 
 

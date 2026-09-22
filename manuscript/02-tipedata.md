@@ -1,4 +1,4 @@
-**📋 Apa yang akan dipelajari**
+**Apa yang akan dipelajari**
 
 Pada bab ini kita akan mempelajari tentang Tipe Data dan Identifier dalam C++:
 
@@ -9,7 +9,7 @@ Pada bab ini kita akan mempelajari tentang Tipe Data dan Identifier dalam C++:
 
 \minitoc
 
-## 🎯 Tipe Data dan Identifier<a name="tipe-data-dan-identifier"></a>
+## Tipe Data dan Identifier<a name="tipe-data-dan-identifier"></a>
 
 ### Apa itu Program?
 
@@ -42,7 +42,7 @@ Identifier (pengenal) adalah nama yang digunakan program untuk merujuk ke lokasi
 - Dengan identifier, kita tidak perlu mengetahui alamat memori yang sebenarnya
 - Identifier membuat program lebih mudah dibaca dan dipahami
 
-## 📊 Tipe Data Bahasa C++<a name="tipe-data-bahasa-c"></a>
+## Tipe Data Bahasa C++<a name="tipe-data-bahasa-c"></a>
 
 ### Apa itu Tipe Data?
 
@@ -87,7 +87,7 @@ double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
 
 \end{longtable}
 
-## 🔧 Variabel dan Konstanta<a name="variabel-dan-konstanta"></a>
+## Variabel dan Konstanta<a name="variabel-dan-konstanta"></a>
 
 ### Apa itu Variabel dan Konstanta?
 
@@ -164,14 +164,13 @@ tidak mengenal konstanta `kapasitas`, yang dikenal hanyalah
 bilangan 15.
 
 \begin{quotation}
-{\LARGE \ding{46}}**TIPS** 
+{\LARGE \ding{46}}**TIPS**
 
 Walaupun
 dengan memakai preprocessor directive `#define` tampak mudah,
 namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang
 pada standard C++ .
 \end{quotation}
- 
 
 Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan
 memakai kata kunci const seperti berikut :
@@ -191,12 +190,12 @@ diperlakukan sebagai tipe data tersebut.
 #### Contoh Tipe data dan Identifier.
 
 - Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh [contoh2-1](#contoh2-1), kemudian tulis kode berikut.
+ nama contoh [contoh2-1](#contoh2-1), kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Tipe data dan Identifier, label=contoh2-1]{../code/contoh2-1.cpp}
 
 - Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ adalah sebagai berikut.
 
 \begin{lcverbatim}
 Panjang =15
@@ -206,12 +205,12 @@ lebar =12
 #### Keterangan
 
 - Pada program di atas variabel panjang dan lebar dideklarasikan bertipe
-  int.
+ int.
 - Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi
-  nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat
-  diubah.
+ nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat
+ diubah.
 - Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak
-  ke layar.
+ ke layar.
 
 ## Statement<a name="statement"></a>
 
@@ -237,7 +236,7 @@ operator yang akan dibahas berikut ini.
 
 \begin{quotation}
  {\LARGE \ding{45}} **CATATAN**
- 
+
  Operator pengerjaan = akan mengambil nilai apapun yang ada disebelah
  kanannya kenudian memberikannya kepada apapun yang berada di sebelah
  kirinya. C++ mengenal juga operator pembanding == yang mempunyai
@@ -483,24 +482,24 @@ luas = panjang * lebar ;
 **Keterangan :**
 
 - Pada baris pertama dan kedua di atas digunakan hanya sebuah operator
-  `=` (yaitu jenjang ke 14), arah proses dari kanan ke kiri,
-  sehingga yang dilakukan :
+ `=` (yaitu jenjang ke 14), arah proses dari kanan ke kiri,
+ sehingga yang dilakukan :
 - Ekspresi : `15`, diberikan kepada variabel `panjang`
-  (dibaca dari kanan ke kiri).
+ (dibaca dari kanan ke kiri).
 - Ekspresi : `12`, diberikan kepada variabel `lebar`
-  (dibaca dari kanan ke kiri).
-- Pada baris ketiga terdapat 2 operator, yaitu operator =  (jenjang
-  ke 14) dan `*` operator = (yaitu jenjang ke 3).
-  Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu,
-  jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator.
-  Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada
-  pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator
-  `*` baru kemudian operator =, sehingga yang dilakukan:
-  - Ekspresi : `panjang\ *\ lebar` , berarti `panjang`
-  dikalikan `lebar` (dibaca dari kiri ke kanan), menghasilkan
-  nilai integer `180`. - Berikutnya operator = mengoperasikan
-  hasil ekspresi tersebut, yaitu nilai integer `180` diberikan
-  kepada variabel `luas` (dibaca dari kanan ke kiri).
+ (dibaca dari kanan ke kiri).
+- Pada baris ketiga terdapat 2 operator, yaitu operator = (jenjang
+ ke 14) dan `*` operator = (yaitu jenjang ke 3).
+ Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu,
+ jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator.
+ Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada
+ pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator
+ `*` baru kemudian operator =, sehingga yang dilakukan:
+ - Ekspresi : `panjang\ *\ lebar` , berarti `panjang`
+ dikalikan `lebar` (dibaca dari kiri ke kanan), menghasilkan
+ nilai integer `180`. - Berikutnya operator = mengoperasikan
+ hasil ekspresi tersebut, yaitu nilai integer `180` diberikan
+ kepada variabel `luas` (dibaca dari kanan ke kiri).
 
 \begin{quotation}
 {\LARGE \ding{46}} **TIPS**
@@ -510,7 +509,7 @@ Operator
 menjadi jenjang tertinggi, sehingga akan diproses terlebih dahulu.
 \end{quotation}
 
-###  Operator Unary<a name="a-operator-unary"></a>
+### Operator Unary<a name="a-operator-unary"></a>
 
 Operator unary adalah operator yang hanya menggunakan sebuah operand
 saja, operator unary yang dipakai pada kebanyakan bahasa pemrograman
@@ -696,11 +695,11 @@ Hasil akhir benar (True) dari ekspresi logika tersebut didapat dari
 langkah-langkah sebagai berikut:
 
 - Jenjang operator hubungan lebih tinggi dibandingkan dengan operator
-  logika, jadi operator hubungan dikerjakan terlebih dahulu.
+ logika, jadi operator hubungan dikerjakan terlebih dahulu.
 - Operator logika ``&&'' mempunyai jenjang lebih tinggi dari operator
-  ``|{}|{}'', sehingga operator ``&&'' dikerjakan
-  terlebih dahulu.
+ ``|{}|{}'', sehingga operator ``&&'' dikerjakan
+ terlebih dahulu.
 - Bagian yang paling akhir dikerjakan adalah operator
-  ``|{}|{}'', sehingga hasil akhir logika bernilai logika
-  benar atau True.
+ ``|{}|{}'', sehingga hasil akhir logika bernilai logika
+ benar atau True.
 

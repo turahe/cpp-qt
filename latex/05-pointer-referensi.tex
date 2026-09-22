@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan mempelajari tentang Pointer dan Reference dalam C++:
 
@@ -11,7 +11,7 @@ Pada bab ini kita akan mempelajari tentang Pointer dan Reference dalam C++:
 
 \minitoc
 
-\section{📍 Pointer (Penunjuk)}\label{apa-itu-pointer}
+\section{Pointer (Penunjuk)}\label{apa-itu-pointer}
 
 \subsection{Apa itu Pointer?}
 
@@ -26,7 +26,7 @@ Pointer adalah variabel yang dapat menyimpan alamat memori. Pointer memungkinkan
 \item \textbf{Efisien} - lebih cepat untuk data besar
 \end{itemize}
 
-\section{💾 Memory Komputer}\label{memory-komputer}
+\section{Memory Komputer}\label{memory-komputer}
 
 \subsection{Struktur Memory}
 
@@ -45,7 +45,7 @@ Memory komputer dibagi menjadi beberapa lokasi memori yang berurutan dan memilik
 
 Contoh pada gambar di bawah ini menunjukkan variabel dengan nama umur yang bertipe unsigned long. Byte pertama dari variabel umur disimpan pada alamat memori 102, maka alamat memori dari variabel umur adalah 102.
 
-\subsection{📍 Mengambil Alamat Memory dari Variabel}\label{mengambil-alamat-memory-dari-variabel}
+\subsection{Mengambil Alamat Memory dari Variabel}\label{mengambil-alamat-memory-dari-variabel}
 
 \subsubsection{Operator Address-of (\&)}
 
@@ -61,7 +61,7 @@ Jika Anda ingin mengetahui alamat memori tempat variabel disimpan, Anda dapat me
 \item Setiap variabel memiliki alamat yang unik
 \end{itemize}
 
-\subsubsection*{💡 Contoh Menampilkan Alamat Memory}
+\subsubsection*{Contoh Menampilkan Alamat Memory}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh", kemudian tulis kode berikut:
 
@@ -70,8 +70,8 @@ Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh
 Jalankan program dengan menekan Ctrl + R. Outputnya:
 
 \begin{lcverbatim}
-bil1 = 20 address = 0x28fe96 
-bil2 = 200000 address = 0x28fe90 
+bil1 = 20 address = 0x28fe96
+bil2 = 200000 address = 0x28fe90
 bil3 = -670000 address = 0x28fe8c
 \end{lcverbatim}
 
@@ -105,9 +105,9 @@ disebut dengan wild pointer karena bisa menunjuk ke alamat manapun, wild
 pointer harus dihindari karena sangat berbahaya.
 
 \begin{quotation}
-{\LARGE \ding{46}}  \textbf{TIPS} 
-	 
-	 Selalu lakukan inisialisasi ketika membuat pointer.
+{\LARGE \ding{46}} \textbf{TIPS}
+
+ Selalu lakukan inisialisasi ketika membuat pointer.
 \end{quotation}
 
 
@@ -153,7 +153,7 @@ dimana variabel bil disimpan, maka number akan bernilai 12.
 Pada kode diatas nilai dari variabel bil akan berubah menjadi 20, karena
 variabel bil direferensi oleh pointer \texttt{pBil}.
 
-\subsubsection*{Contoh  Memanipulasi data menggunakan Pointer}
+\subsubsection*{Contoh Memanipulasi data menggunakan Pointer}
 
 Buka Qt Creator, buat project Qt Console Application dengan nama contoh
 \ref{contoh5-2}. Kemudian tulis kode berikut.
@@ -179,19 +179,19 @@ pUmur : 30
 \begin{itemize}
 
 \item
-  Pada program diatas pointer \texttt{pUmur} mereferensi/menunjuk ke
-  alamat dimana nilai variabel umur disimpan.
+ Pada program diatas pointer \texttt{pUmur} mereferensi/menunjuk ke
+ alamat dimana nilai variabel umur disimpan.
 \item
-  Untuk mengakses nilai dari variabel umur lewat pointer dapat
-  menggunakan dereference operator (*).
+ Untuk mengakses nilai dari variabel umur lewat pointer dapat
+ menggunakan dereference operator (*).
 \item
-  Ketika nilai dereference pointer \texttt{*pUmur} diubah menjadi 28,
-  maka akan mempengaruhi nilai pada variabel umur yang akan menjadi 28
-  juga.
+ Ketika nilai dereference pointer \texttt{*pUmur} diubah menjadi 28,
+ maka akan mempengaruhi nilai pada variabel umur yang akan menjadi 28
+ juga.
 \item
-  Ketika nilai variabel umur diubah menjadi 30, dan anda mengakses
-  nilainya dengan menggunakan pointer \texttt{*pUmur} maka nilainya juga
-  akan berubah menjadi 30.
+ Ketika nilai variabel umur diubah menjadi 30, dan anda mengakses
+ nilainya dengan menggunakan pointer \texttt{*pUmur} maka nilainya juga
+ akan berubah menjadi 30.
 \end{itemize}
 
 \subsection{Mengganti alamat yang direferensi oleh
@@ -200,7 +200,7 @@ Pointer}\label{mengganti-alamat-yang-direferensi-oleh-pointer}
 Anda juga dapat mengganti alamat variabel yang direferensi oleh pointer
 tertentu tanpa harus mengetahui nilai dari variabel tersebut.
 
-\subsubsection*{Contoh  Mengganti alamat yang di referensi oleh pointer}
+\subsubsection*{Contoh Mengganti alamat yang di referensi oleh pointer}
 
 Buat project Qt Console Application baru, beri nama contoh \ref{contoh5-3}, kemudian
 tulis kode berikut
@@ -222,15 +222,15 @@ pUmur : 28 alamat : 0x28fe90
 \begin{itemize}
 
 \item
-  Pada program diatas dapat dilihat bahwa pertama kali pointer pUmur
-  mereferensi pada alamat variabel \texttt{umur1}, sehingga ketika
-  dicetak nilai dari \texttt{*pUmur} sama dengan nilai variabel
-  \texttt{umur1}.
+ Pada program diatas dapat dilihat bahwa pertama kali pointer pUmur
+ mereferensi pada alamat variabel \texttt{umur1}, sehingga ketika
+ dicetak nilai dari \texttt{*pUmur} sama dengan nilai variabel
+ \texttt{umur1}.
 \item
-  Anda dapat mengganti referensi dari \texttt{pUmur} yang tadinya
-  menunjuk ke alamat variabel \texttt{umur1} menjadi menunjuk ke alamat
-  variabel \texttt{umur2}, sehingga ketika \texttt{*pUmur} dicetak
-  menghasilkan nilai yang sama dengan variabel \texttt{umur2}.
+ Anda dapat mengganti referensi dari \texttt{pUmur} yang tadinya
+ menunjuk ke alamat variabel \texttt{umur1} menjadi menunjuk ke alamat
+ variabel \texttt{umur2}, sehingga ketika \texttt{*pUmur} dicetak
+ menghasilkan nilai yang sama dengan variabel \texttt{umur2}.
 \end{itemize}
 
 \section{Pointer dan Array}\label{pointer-dan-array}
@@ -247,12 +247,12 @@ Anda dapat menggunakan nama array sebagai konstan pointer, misalnya
 Numbers+3 adalah cara penulisan untuk mengakses pointer yang menunjuk ke
 \texttt{Numbers{[}3{]}}.
 
-\subsubsection*{Contoh  Pointer dan Array}
+\subsubsection*{Contoh Pointer dan Array}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-4}, kemudian tulis
 kode berikut.
 
-\lstinputlisting[language=c++, caption=Pointer dan Array, label=pointer-dan-array]{../code/05-pointer-referensi-pointer-dan-array.c++}
+\lstinputlisting[language=c++, caption=Pointer dan Array, label=lst-pointer-dan-array]{../code/05-pointer-referensi-pointer-dan-array.c++}
 
 Tekan Ctrl+R untuk menjalankan program, outputnya adalah sebagai
 berikut.
@@ -288,11 +288,11 @@ melihat kapan pointer biasa digunakan dalam pemrograman.
 \begin{itemize}
 
 \item
-  Pengaturan data pada free store / heap memory.
+ Pengaturan data pada free store / heap memory.
 \item
-  Mengakses class member dan data function.
+ Mengakses class member dan data function.
 \item
-  Passing variabel dengan reference pada function.
+ Passing variabel dengan reference pada function.
 \end{itemize}
 
 \subsection{Mengalokasikan tempat dengan keyword new}\label{mengalokasikan-tempat-dengan-keyword-new}
@@ -322,7 +322,7 @@ memory yang sudah anda hapus, agar tidak terjadi kesalahan setelah
 menghapus memory anda disarankan untuk memberi nilai null (0) pada
 pointer.
 
-\subsubsection*{Contoh  Mengalokasikan, menggunakan, dan mendelete Pointer}
+\subsubsection*{Contoh Mengalokasikan, menggunakan, dan mendelete Pointer}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-5}, kemudian tulis
 kode berikut:
@@ -344,25 +344,25 @@ Nilai pHeap : 100
 \begin{itemize}
 
 \item
-  \texttt{pHeap} adalah pointer yang menunjuk ke alamat memory yang
-  sudah dialokasikan dengan keyword `new', anda dapat menyimpan nilai
-  kedalam memory yang dialokasikan dengan \texttt{*pHeap=19}
+ \texttt{pHeap} adalah pointer yang menunjuk ke alamat memory yang
+ sudah dialokasikan dengan keyword `new', anda dapat menyimpan nilai
+ kedalam memory yang dialokasikan dengan \texttt{*pHeap=19}
 \item
-  Setelah selesai digunakan anda harus membersihkan memory dengan
-  menggunakan keyword `delete', jangan lupa menginisialisasi pointer
-  dengan null (0) agar tidak terus menunjuk ke alamat memory yang sudah
-  dihapus.
+ Setelah selesai digunakan anda harus membersihkan memory dengan
+ menggunakan keyword `delete', jangan lupa menginisialisasi pointer
+ dengan null (0) agar tidak terus menunjuk ke alamat memory yang sudah
+ dihapus.
 \end{itemize}
 
 
- 
+
  \begin{quotation}
- {\LARGE \ding{46}}  	 \textbf{TIPS}
- 	 
- 	 Setelah menghapus objek di memory dengan keyword delete anda harus
- 	 menginisialisasi pointer yang sudah tidak digunakan dengan nilai null
- 	 (0).
- \end{quotation} 
+ {\LARGE \ding{46}} \textbf{TIPS}
+
+ Setelah menghapus objek di memory dengan keyword delete anda harus
+ menginisialisasi pointer yang sudah tidak digunakan dengan nilai null
+ (0).
+ \end{quotation}
 
 \subsection{Membuat objek pada heap}\label{membuat-objek-pada-heap}
 
@@ -383,7 +383,7 @@ Ketika anda menghapus pointer yang menunjuk ke objek dengan keyword
 bagi programmer untuk membersihkan heap memory dari variabel yang sudah
 tidak digunakan.
 
-\subsubsection*{Contoh  Membuat dan menghapus objek dari Heap}
+\subsubsection*{Contoh Membuat dan menghapus objek dari Heap}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-6}, kemudian tulis
 kode berikut:
@@ -407,19 +407,19 @@ Destruktor dipanggil..
 \begin{itemize}
 
 \item
-  Pada program diatas kita membuat class Mahasiswa yang mempunyai objek
-  konstruktor dan destruktor.
+ Pada program diatas kita membuat class Mahasiswa yang mempunyai objek
+ konstruktor dan destruktor.
 \item
-  Pertama kali kita mendeklarasikan object mhs1 pada local variable
-  (stack), pembuatan object ini menyebabkan konstruktor dipanggil.
+ Pertama kali kita mendeklarasikan object mhs1 pada local variable
+ (stack), pembuatan object ini menyebabkan konstruktor dipanggil.
 \item
-  Kemudian dibuat pointer yang menunjuk ke objek di heap dengan nama
-  mhs2, ketika objek mhs2 dibuat, objek konstruktor dipanggil. Ketika
-  anda menghapus objek di heap menggunakan delete maka objek destruktor
-  akan dipanggil.
+ Kemudian dibuat pointer yang menunjuk ke objek di heap dengan nama
+ mhs2, ketika objek mhs2 dibuat, objek konstruktor dipanggil. Ketika
+ anda menghapus objek di heap menggunakan delete maka objek destruktor
+ akan dipanggil.
 \item
-  Objek desktruktor untuk mhs1 akan dipanggil ketika fungsi main
-  berakhir.
+ Objek desktruktor untuk mhs1 akan dipanggil ketika fungsi main
+ berakhir.
 \end{itemize}
 
 \subsection{Menggunakan const Pointer}\label{menggunakan-const-pointer}
@@ -435,27 +435,27 @@ Tiga statement diatas memiliki pengertian yang berbeda, yaitu:
 \begin{itemize}
 
 \item
-  Statement pertama : \texttt{pBil1} adalah pointer yang menunjuk ke
-  konstan integer, jadi nilai yang ditunjuk oleh pointer tidak dapat
-  diubah.
+ Statement pertama : \texttt{pBil1} adalah pointer yang menunjuk ke
+ konstan integer, jadi nilai yang ditunjuk oleh pointer tidak dapat
+ diubah.
 \item
-  Statement kedua : \texttt{pBil2} adalah konstan pointer yang menunjuk
-  ke variabel integer, nilai variabel integer dapat diubah namun pBil2
-  tidak dapat menunjuk ke variabel lain.
+ Statement kedua : \texttt{pBil2} adalah konstan pointer yang menunjuk
+ ke variabel integer, nilai variabel integer dapat diubah namun pBil2
+ tidak dapat menunjuk ke variabel lain.
 \item
-  Statement ketiga : \texttt{pBil3} adalah konstan pointer yang menunjuk
-  ke konstan variabel bertipe integer, nilai variabel tidak dapat diubah
-  dan pointer \texttt{pBil3} tidak dapat menunjuk ke variabel lain.
+ Statement ketiga : \texttt{pBil3} adalah konstan pointer yang menunjuk
+ ke konstan variabel bertipe integer, nilai variabel tidak dapat diubah
+ dan pointer \texttt{pBil3} tidak dapat menunjuk ke variabel lain.
 \end{itemize}
 
 \begin{quotation}
-{\LARGE \ding{46}} 	\textbf{TIPS}
-	
+{\LARGE \ding{46}} \textbf{TIPS}
+
 	Lihat
 	letak penulisan keyword const, jika sebelum tipe data maka nilai
 	konstan, jika setelah tipe data maka alamat pointer yang konstan.
 \end{quotation}
- 
+
 
 \section{Apa itu Reference}\label{apa-itu-reference}
 
@@ -477,7 +477,7 @@ Statement diatas dapat diartikan ``rBil adalah referensi dari variabel
 intBil'', reference berbeda dengan variabel biasa karena reference harus
 diinisialisasi ketika dibuat.
 
-\subsubsection*{Contoh  Membuat dan Menggunakan Reference.}
+\subsubsection*{Contoh Membuat dan Menggunakan Reference.}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-7}, kemudian tulis
 kode berikut:
@@ -504,19 +504,19 @@ Menampilkan alamat memory :
 \begin{itemize}
 
 \item
-  Pertama kita mendeklarasikan referensi \texttt{rBil=bil1}, maka ketika
-  dicetak nilai \texttt{rBil} sama dengan nilai variabel \texttt{bil1}
-  karena \texttt{rBil} merupakan reference / alias dari \texttt{bil1}.
+ Pertama kita mendeklarasikan referensi \texttt{rBil=bil1}, maka ketika
+ dicetak nilai \texttt{rBil} sama dengan nilai variabel \texttt{bil1}
+ karena \texttt{rBil} merupakan reference / alias dari \texttt{bil1}.
 \item
-  Ketika variabel \texttt{bil1} nilainya dirubah menjadi \texttt{19},
-  maka otomatis nilai dari \texttt{rBil} juga berubah menjadi
-  \texttt{19}.
+ Ketika variabel \texttt{bil1} nilainya dirubah menjadi \texttt{19},
+ maka otomatis nilai dari \texttt{rBil} juga berubah menjadi
+ \texttt{19}.
 \item
-  Demikian pula ketika \texttt{rBil} nilainya dirubah menjadi
-  \texttt{33}, maka nilai dari \texttt{bil1} juga ikut berubah.
+ Demikian pula ketika \texttt{rBil} nilainya dirubah menjadi
+ \texttt{33}, maka nilai dari \texttt{bil1} juga ikut berubah.
 \item
-  Anda juga dapat menampilkan alamat memory dari variabel dan variabel
-  reference dengan menambahkan keyword (\&) didepan variabel.
+ Anda juga dapat menampilkan alamat memory dari variabel dan variabel
+ reference dengan menambahkan keyword (\&) didepan variabel.
 \end{itemize}
 
 \subsection{Re-assign Reference Variable}\label{re-assign-reference-variable}
@@ -524,7 +524,7 @@ Menampilkan alamat memory :
 Variabel reference tidak dapat di re-assign (ditetapkan ulang). Agar
 lebih jelas perhatikan contoh dibawah ini:
 
-\subsubsection*{Contoh  Re-assign Reference Value}
+\subsubsection*{Contoh Re-assign Reference Value}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-8}, kemudian tulis
 kode berikut:
@@ -559,7 +559,7 @@ masalah diatas. Contoh dibawah ini akan menunjukan perbedaan penggunaan
 passing by value dan passing by reference (dengan pointer dan variaabel
 reference).
 
-\subsubsection*{Contoh  Passing by Value.}
+\subsubsection*{Contoh Passing by Value.}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-9}, kemudian tulis
 kode berikut:
@@ -608,7 +608,7 @@ lihat bahwa setelah fungsi \texttt{Tukar()} dijalankan variabel
 \texttt{x} dan \texttt{y} di main function nilainya sudah berhasil
 ditukar.
 
-\subsubsection*{Contoh  Menjalankan fungsi Tukar() dengan reference}
+\subsubsection*{Contoh Menjalankan fungsi Tukar() dengan reference}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-11}, kemudian
 tulis kode berikut:
@@ -641,7 +641,7 @@ function pass by reference. Karena function pass by reference dapat
 memanipulasi objek asli. Agar lebih jelas coba kerjakan contoh dibawah
 ini.
 
-\subsubsection*{Contoh  Mengembalikan beberapa nilai dengan pointer}
+\subsubsection*{Contoh Mengembalikan beberapa nilai dengan pointer}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-12}, kemudian
 tulis kode berikut:
@@ -663,22 +663,22 @@ pVolumeKubus : 125
 \begin{itemize}
 
 \item
-  Inputan untuk variabel number harus lebih besar dari 0, jika tidak
-  program akan menghasilkan pesan error.
+ Inputan untuk variabel number harus lebih besar dari 0, jika tidak
+ program akan menghasilkan pesan error.
 \item
-  Dapat dilihat bahwa function \texttt{Hitung()} mengembalikan 3 nilai
-  yaitu : nilai kembalian dari \texttt{function} itu sendiri yang
-  bertipe \texttt{integer}, \texttt{pLuasPersegi}, dan
-  \texttt{pVolumeKubus} yang merupakan parameter bertipe pointer.
+ Dapat dilihat bahwa function \texttt{Hitung()} mengembalikan 3 nilai
+ yaitu : nilai kembalian dari \texttt{function} itu sendiri yang
+ bertipe \texttt{integer}, \texttt{pLuasPersegi}, dan
+ \texttt{pVolumeKubus} yang merupakan parameter bertipe pointer.
 \item
-  \texttt{pLuasPersegi} dan \texttt{pVolumeKubus} nilainya dapat bukan
-  karena nilai kembalian dari function, tapi karena parameter by
-  reference dari function yang berupa pointer, sehingga ketika nilai
-  \texttt{pLuasPersegi} dan \texttt{pVolumeKubus} diubah di dalam
-  function nilai variabel asli di main function juga berubah.
+ \texttt{pLuasPersegi} dan \texttt{pVolumeKubus} nilainya dapat bukan
+ karena nilai kembalian dari function, tapi karena parameter by
+ reference dari function yang berupa pointer, sehingga ketika nilai
+ \texttt{pLuasPersegi} dan \texttt{pVolumeKubus} diubah di dalam
+ function nilai variabel asli di main function juga berubah.
 \end{itemize}
 
-\subsubsection*{Contoh  Mengembalikan beberapa nilai dengan reference variabel}
+\subsubsection*{Contoh Mengembalikan beberapa nilai dengan reference variabel}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-13}, kemudian
 tulis kode berikut:
@@ -700,14 +700,14 @@ pVolumeKubus : 125
 \begin{itemize}
 
 \item
-  Hasil program diatas sama dengan contoh \ref{contoh5-13} sebelumnya, namun
-  perbedaannya adalah program diatas menggunakan parameter reference
-  pada function \texttt{Hitung()} sehingga ketika variabel
-  \texttt{rLuasPersegi} dan \texttt{rVolumeKubus} pada function diubah
-  nilainya maka variabel di function main juga ikut berubah.
+ Hasil program diatas sama dengan contoh \ref{contoh5-13} sebelumnya, namun
+ perbedaannya adalah program diatas menggunakan parameter reference
+ pada function \texttt{Hitung()} sehingga ketika variabel
+ \texttt{rLuasPersegi} dan \texttt{rVolumeKubus} pada function diubah
+ nilainya maka variabel di function main juga ikut berubah.
 \item
-  Keyword enum digunakan untuk membuat objek enumerasi untuk mempermudah
-  pembacaan program.
+ Keyword enum digunakan untuk membuat objek enumerasi untuk mempermudah
+ pembacaan program.
 \end{itemize}
 
 \subsection{Passing By Reference untuk Efisiensi}\label{passing-by-reference-untuk-efisiensi}
@@ -718,7 +718,7 @@ atau class yang dibuat sendri oleh user) ini akan menurunkan performa
 dari program. Untuk melakukan passing parameter objek melalui function
 disarankan menggunakan reference pada objek.
 
-\subsubsection*{Contoh  Passing Object By Value}
+\subsubsection*{Contoh Passing Object By Value}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-14}, kemudian
 tulis kode berikut:
@@ -743,18 +743,18 @@ Memanggil Mahasiswa Destruktor
 \begin{itemize}
 
 \item
-  Dapat kita lihat diatas bahwa \emph{passing object by value} tidak
-  efisien karena setiap kali function dipanggil dan mengembalikan nilai
-  harus melakukan copy terhadap objek objMhs1.
+ Dapat kita lihat diatas bahwa \emph{passing object by value} tidak
+ efisien karena setiap kali function dipanggil dan mengembalikan nilai
+ harus melakukan copy terhadap objek objMhs1.
 \item
-  Hal ini dapat dilihat dari output yang dihasilkan, copy konstruktor
-  dipanggil sebanyak 2 kali, saat pemanggilan function dan pengembalian
-  nilai function.
+ Hal ini dapat dilihat dari output yang dihasilkan, copy konstruktor
+ dipanggil sebanyak 2 kali, saat pemanggilan function dan pengembalian
+ nilai function.
 \item
-  Cara yang lebih efisien akan dibahas pada contoh program selanjutnya.
+ Cara yang lebih efisien akan dibahas pada contoh program selanjutnya.
 \end{itemize}
 
-\subsubsection*{Contoh  Passing Object By Reference}
+\subsubsection*{Contoh Passing Object By Reference}
 
 Buat project Qt Console Application dengan nama contoh \ref{contoh5-15}, kemudian
 tulis kode berikut:
@@ -775,11 +775,11 @@ Mengembalikan FunctionMhs ..
 \begin{itemize}
 
 \item
-  Dengan menambahkan reference pada function dan parameter yang
-  dikirimkan, performa aplikasi anda dapat lebih efektif karena objek
-  tidak perlu dicopy ketika function dijalankan dan saat function
-  tersebut mengembalikan nilai.
+ Dengan menambahkan reference pada function dan parameter yang
+ dikirimkan, performa aplikasi anda dapat lebih efektif karena objek
+ tidak perlu dicopy ketika function dijalankan dan saat function
+ tersebut mengembalikan nilai.
 \item
-  Output yang dihasilkan lebih sedikit karena tidak perlu memanggil copy
-  objek konstruktor.
+ Output yang dihasilkan lebih sedikit karena tidak perlu memanggil copy
+ objek konstruktor.
 \end{itemize}

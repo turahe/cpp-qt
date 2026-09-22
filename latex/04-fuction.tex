@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan mempelajari tentang Fungsi dalam C++:
 
@@ -11,7 +11,7 @@ Pada bab ini kita akan mempelajari tentang Fungsi dalam C++:
 
 \minitoc
 
-\section{🔧 Fungsi (Function)}\label{fungsi}
+\section{Fungsi (Function)}\label{sec-fungsi}
 
 \subsection{Apa itu Fungsi?}
 
@@ -70,7 +70,7 @@ Ilustrasi pemanggilan fungsi seperti gambar \ref{gambar4-1}.
 \item \textbf{Fungsi User-defined} - dibuat sendiri oleh programmer
 \end{itemize}
 
-\section{🎯 Konsep Dasar Fungsi}\label{konsep-dasar-fungsi}
+\section{Konsep Dasar Fungsi}\label{konsep-dasar-fungsi}
 
 \subsection{Fungsi vs Prosedur}
 
@@ -91,11 +91,11 @@ Fungsi mirip dengan prosedur (dalam bahasa Pascal), keduanya disebut \textbf{Sub
 \item \textbf{Mudah dipelihara} - perubahan hanya perlu dilakukan di satu tempat
 \end{itemize}
 \begin{quotation}
-{\LARGE \ding{45}} \textbf{💡 Catatan Penting}
+{\LARGE \ding{45}} \textbf{Catatan Penting}
 
 Fungsi bisa dikatakan sebagai bentuk lain dari instruksi yang dapat memberikan sebuah nilai apabila diberi masukan yang dibutuhkan. Masukan tersebut dikenal dengan istilah \textbf{Parameter}.
 \end{quotation}
- 
+
 
 \subsection{Fungsi dalam Program C++}
 
@@ -123,7 +123,7 @@ Fungsi dapat melakukan berbagai tugas:
 \item Dan tugas-tugas lainnya
 \end{itemize}
 
-\section{📝 Mendefinisikan Fungsi}\label{mendefinisikan-fungsi}
+\section{Mendefinisikan Fungsi}\label{mendefinisikan-fungsi}
 
 \subsection{Komponen Fungsi}
 
@@ -168,14 +168,14 @@ Ada tiga cara mendeklarasikan fungsi (membuat \emph{prototype}), yaitu :
 \begin{itemize}
 
 \item
-  Menuliskan prototipe ke dalam sebuah file, kemudian menggunakan
-  directive \texttt{\#include} untuk menyertakannya.
+ Menuliskan prototipe ke dalam sebuah file, kemudian menggunakan
+ directive \texttt{\#include} untuk menyertakannya.
 \item
-  Tuliskan prototype di dalam file yang memakai fungsi tersebut.
+ Tuliskan prototype di dalam file yang memakai fungsi tersebut.
 \item
-  Definisikan fungsi di file yang memakai fungsi tersebut di posisi
-  sebelum pemanggilnya, dengan demikian definisi fungsi ini bertidak
-  sebagai prototype itu sendiri.
+ Definisikan fungsi di file yang memakai fungsi tersebut di posisi
+ sebelum pemanggilnya, dengan demikian definisi fungsi ini bertidak
+ sebagai prototype itu sendiri.
 \end{itemize}
 
 Meskipun kita dapat mendefiniskan fungsi sebelum digunakan, sehingga
@@ -207,23 +207,23 @@ pustaka sebagai contoh, fungsi pustaka \texttt{printf()}, prototypenya
 berada di dalam file judul \texttt{stdio.h}. Pencantuman prototype
 fungsi dapat menggunakan preprocessor directive \texttt{\#include}.
 
-\subsubsection*{Contoh  Membuat Fungsi yang mengembalikan nilai.}
+\subsubsection*{Contoh Membuat Fungsi yang mengembalikan nilai.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh4-1}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh4-1}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Membuat Fungsi yang mengembalikan nilai, label=contoh4-1]{../code/contoh4-1.cpp}
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl + R, outputnya
-  adalah sebagai berikut.
-  \begin{lcverbatim}
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl + R, outputnya
+ adalah sebagai berikut.
+ \begin{lcverbatim}
 Bilangan : -10
 Dimutlakkan menjadi : 10
-  \end{lcverbatim}
+ \end{lcverbatim}
 \end{enumerate}
 
 \subsubsection*{Analisa Program }
@@ -231,12 +231,12 @@ Dimutlakkan menjadi : 10
 \begin{itemize}
 
 \item
-  Pada program diatas baris ketiga tertulis :
-  \texttt{int\ absolut(int\ bil);} inilah yang disebut sebagai
-  prototype, ditulis sebelum fungsi yang memakainya, yaitu
-  \texttt{main()}.\\
+ Pada program diatas baris ketiga tertulis :
+ \texttt{int\ absolut(int\ bil);} inilah yang disebut sebagai
+ prototype, ditulis sebelum fungsi yang memakainya, yaitu
+ \texttt{main()}.\\
 \item
-  Pada tubuh pogram, terdapat pemanggilan fungsi :
+ Pada tubuh pogram, terdapat pemanggilan fungsi :
 
 
 \begin{lstlisting}[language=c++, numbers=none]
@@ -250,21 +250,21 @@ nilai 10, yaitu nilai kembalian fungsi, ini menunjukkan bahwa fungsi
 
 
 \item
-  Di bawah fungsi \texttt{main()} terdapat sebuah blok program dengan
-  nama \texttt{absolut()}, inilah yang\\
-  dinamakan definisi fungsi.
+ Di bawah fungsi \texttt{main()} terdapat sebuah blok program dengan
+ nama \texttt{absolut()}, inilah yang\\
+ dinamakan definisi fungsi.
 
 \end{itemize}
 \begin{quotation}
- {\LARGE \ding{45}} 	 \textbf{Catatan :}
-		
-		Nama parameter pada prototype tidak
-		harus sama dengan nama parameter pada definisi fungsi, oleh karena itu
-		prototype tersebut di atas boleh juga dituliskan seperti berikut :
-		
+ {\LARGE \ding{45}} \textbf{Catatan :}
+
+ Nama parameter pada prototype tidak
+ harus sama dengan nama parameter pada definisi fungsi, oleh karena itu
+ prototype tersebut di atas boleh juga dituliskan seperti berikut :
+
 \lstinputlisting[language=c++]{../code/04-fuction-code-4.c++}
-	
-	 
+
+
 \end{quotation}
 
 
@@ -279,19 +279,19 @@ tidak mempunyai nilai kembalian digunakan tipe data void untuk tipe
 fungsi tersebut dan pada tubuh definisi fungsi tidak ada satmenet
 return.
 
-\subsubsection*{Contoh  Membuat Fungsi yang tidak mengembalikan nilai.}
+\subsubsection*{Contoh Membuat Fungsi yang tidak mengembalikan nilai.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh4-2}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh4-2}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Membuat Fungsi yang tidak mengembalikan nilai, label=contoh4-2]{../code/contoh4-2.cpp}
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 \begin{lcverbatim}
 Hello World!
@@ -304,11 +304,11 @@ Hello World!
 
 \begin{itemize}
 \item
-  Pada program diatas baris ketiga tertulis :
-  \texttt{void\ hello(int\ kali)}; tampak tipe dari fungsi ini adalah
-  void, berarti tidak mengembalikan nilai.
+ Pada program diatas baris ketiga tertulis :
+ \texttt{void\ hello(int\ kali)}; tampak tipe dari fungsi ini adalah
+ void, berarti tidak mengembalikan nilai.
 \item
-  Pada tubuh pogram, terdapat pemanggilan fungsi :
+ Pada tubuh pogram, terdapat pemanggilan fungsi :
 
 
 \texttt{hello(3);}
@@ -319,9 +319,9 @@ diakses nilainya (dicetak dengan cout), ini menunjukkan bahwa fungsi
 
 
 \item
-  Di bawah fungsi \texttt{main()} terdapat sebuah blok program dengan
-  nama \texttt{hello()}, pada tubuh fungsi ini tidak ada perintah
-  \texttt{return} sama sekali, karena memang tidak mengembalikan nilai.
+ Di bawah fungsi \texttt{main()} terdapat sebuah blok program dengan
+ nama \texttt{hello()}, pada tubuh fungsi ini tidak ada perintah
+ \texttt{return} sama sekali, karena memang tidak mengembalikan nilai.
 \end{itemize}
 
 Jika suatu fungsi memberikan nilai kembalian, maka nilai kembalian yang
@@ -344,19 +344,19 @@ kurung kurawal) yang bersangkutan. Variabel lokal akan dihapus dari
 memori jika proses sudah meninggalkan blok statemen letak variable
 lokalnya.
 
-\subsubsection*{Contoh  Variabel Lokal.}
+\subsubsection*{Contoh Variabel Lokal.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh4-3}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh4-3}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Variabel Lokal, label=contoh4-3]{../code/contoh4-3.cpp}
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -369,24 +369,24 @@ Hasil = 28
 \begin{itemize}
 
 \item
-  Variable a, b dan c merupakan variabel lokal pada fungsi
-  \texttt{kali()}. Variabel ini tidak dikenal pada fungsi utama sehingga
-  variabel ini tidak dapat digunakan pada fungsi \texttt{main()} di
-  atas, sebaliknya variabel hasil adalah variabel yang sifatnya lokal
-  pada fungsi \texttt{main()}, sehingga tidak dikenal pada fungsi
-  \texttt{kali()}.\\
+ Variable a, b dan c merupakan variabel lokal pada fungsi
+ \texttt{kali()}. Variabel ini tidak dikenal pada fungsi utama sehingga
+ variabel ini tidak dapat digunakan pada fungsi \texttt{main()} di
+ atas, sebaliknya variabel hasil adalah variabel yang sifatnya lokal
+ pada fungsi \texttt{main()}, sehingga tidak dikenal pada fungsi
+ \texttt{kali()}.\\
 \item
-  Jika variabel a atau b atau c dibaca pada fungsi \texttt{main()} maka
-  akan terjadi kesalahan, yaitu bahwa variabel-variabel tersebut tidak
-  dikenal (tidak dideklarasikan), demikian juga jika variabel hasil
-  diakses di dalam fungsi \texttt{kali()}, maka variabel tersebut juga
-  tidak akan dikenal.\\
+ Jika variabel a atau b atau c dibaca pada fungsi \texttt{main()} maka
+ akan terjadi kesalahan, yaitu bahwa variabel-variabel tersebut tidak
+ dikenal (tidak dideklarasikan), demikian juga jika variabel hasil
+ diakses di dalam fungsi \texttt{kali()}, maka variabel tersebut juga
+ tidak akan dikenal.\\
 \item
-  Variabel lokal sifat kerjanya hanya sekali. Jadi ketika fungsi
-  \texttt{kali()} selesai dieksekusi, maka variabel a, b dan c
-  dibebaskan dari memori, ketika fungsi ini dipanggil kembali di waktu
-  lain, maka akan terjadi deklarasi (pemesanan tempat) lagi dan dianggap
-  sebagai variabel baru.
+ Variabel lokal sifat kerjanya hanya sekali. Jadi ketika fungsi
+ \texttt{kali()} selesai dieksekusi, maka variabel a, b dan c
+ dibebaskan dari memori, ketika fungsi ini dipanggil kembali di waktu
+ lain, maka akan terjadi deklarasi (pemesanan tempat) lagi dan dianggap
+ sebagai variabel baru.
 \end{itemize}
 
 \subsection{Variable Global}\label{variable-global}
@@ -397,20 +397,20 @@ pada satu blok statemen saja. Supaya menjadi variabel global, maka
 variabel global ini dideklarasikan di luar suatu blok ataupun di luar
 fungsi-fungsi yang mengguanakanya.
 
-\subsubsection*{Contoh  Variabel Global.}
+\subsubsection*{Contoh Variabel Global.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh4-4}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh4-4}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Variabel Global, label=contoh4-4]{../code/contoh4-4.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 \begin{lcverbatim}
 Variabel global hasil = 28
@@ -422,24 +422,24 @@ Variabel global hasil = 28
 \begin{itemize}
 
 \item
-  Variabel hasil dideklarasikan di luar blok program (di luar kurung
-  kurawal), maka variabel hasil merupakan variabel global yang dikenal
-  di blok manapun.
+ Variabel hasil dideklarasikan di luar blok program (di luar kurung
+ kurawal), maka variabel hasil merupakan variabel global yang dikenal
+ di blok manapun.
 \item
-  Ketika variabel hasil mengalami manipulasi di dalam fungsi
-  \texttt{kali()}, maka sebenarnya yang diubah adalah variabel hasil
-  yang sama, sehingga ketika ditampilkan dengan cout variabel ini
-  menghasilkan nilai perkalian antara a dan b seperti apa yang dilakukan
-  di dalam fungsi \texttt{kali()}.
+ Ketika variabel hasil mengalami manipulasi di dalam fungsi
+ \texttt{kali()}, maka sebenarnya yang diubah adalah variabel hasil
+ yang sama, sehingga ketika ditampilkan dengan cout variabel ini
+ menghasilkan nilai perkalian antara a dan b seperti apa yang dilakukan
+ di dalam fungsi \texttt{kali()}.
 \item
-  Perlu diperhatikan bahwa variabel hasil bersifat global bagi fungsi
-  \texttt{main()} maupun fungsi \texttt{kali()} karena deklarasi
-  variabel hasil tersebut diletakkan di atas kedua fungsi-fungsi
-  tersebut. Jadi letak deklarasi suatu vaiabel yang diluar blok,
-  menentukan cakupan sifat global variabel tersebut.
+ Perlu diperhatikan bahwa variabel hasil bersifat global bagi fungsi
+ \texttt{main()} maupun fungsi \texttt{kali()} karena deklarasi
+ variabel hasil tersebut diletakkan di atas kedua fungsi-fungsi
+ tersebut. Jadi letak deklarasi suatu vaiabel yang diluar blok,
+ menentukan cakupan sifat global variabel tersebut.
 \end{itemize}
 
-\subsection{ Variabel statik}\label{variabel-statik}
+\subsection{Variabel statik}\label{variabel-statik}
 
 Jika dilihat dari prinsip kerjanya, variabel statik bertentangan dengan
 variable lokal, variable lokal tidak lagi digunakan setelah suatu proses
@@ -450,7 +450,7 @@ pengubah (modifer) dari variable lokal atau global, sehingga variabel
 statik dapat bersifat statik lokal atau statik global tergantung dari
 letak pendeklarasianya.
 
-\subsubsection*{Contoh  Variabel Statik.}
+\subsubsection*{Contoh Variabel Statik.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 contoh \ref{contoh4-5}, kemudian tulis kode berikut.
@@ -462,28 +462,28 @@ adalah sebagai berikut.
 
 \begin{lcverbatim}
 5 Faktorial = 120
-\end{lcverbatim} 
+\end{lcverbatim}
 
 \subsubsection*{Analisa Program}
 
 \begin{itemize}
 
 \item
-  Dari contoh \ref{contoh4-5} program ini, variable \texttt{f} di fungsi
-  \texttt{kali\ ()} merupakan variable lokal yang bersifat statik yang
-  mempunyai nilai awal \texttt{1}. Pada fungsi ini nilai variabel
-  \texttt{f} yang lama akan dikalikan dengan nilai variable i untuk
-  mendapatkan nialai \texttt{f} yang baru.\\
+ Dari contoh \ref{contoh4-5} program ini, variable \texttt{f} di fungsi
+ \texttt{kali\ ()} merupakan variable lokal yang bersifat statik yang
+ mempunyai nilai awal \texttt{1}. Pada fungsi ini nilai variabel
+ \texttt{f} yang lama akan dikalikan dengan nilai variable i untuk
+ mendapatkan nialai \texttt{f} yang baru.\\
 \item
-  Pada fungsi utama, fungsi \texttt{kali()} akan dipanggil sebanyak n
-  kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan
-  nilai \texttt{n} (pada contoh \ref{contoh4-5} \texttt{n\ =\ 5}), sehingga akan
-  dihasilkan suatu niali n!.\\
+ Pada fungsi utama, fungsi \texttt{kali()} akan dipanggil sebanyak n
+ kali dengan nilai yang dikirim ke fungsi berupa nilai 1 sampai dengan
+ nilai \texttt{n} (pada contoh \ref{contoh4-5} \texttt{n\ =\ 5}), sehingga akan
+ dihasilkan suatu niali n!.\\
 \item
-  Supaya nilai variable \texttt{f} yang lama masih tetap dipertahankan,
-  maka variable ini perlu dibuat menjadi variable statik. Jika variabel
-  ini tidak bersifat static, maka setiap kali fungsi \texttt{kali()}
-  dipanggil, nilai variable \texttt{f} akan mempunyai nilai awal 1 lagi.
+ Supaya nilai variable \texttt{f} yang lama masih tetap dipertahankan,
+ maka variable ini perlu dibuat menjadi variable statik. Jika variabel
+ ini tidak bersifat static, maka setiap kali fungsi \texttt{kali()}
+ dipanggil, nilai variable \texttt{f} akan mempunyai nilai awal 1 lagi.
 \end{itemize}
 
 Penggunaan variabel lokal lebih disarankan, karena penggunaan variabel
@@ -493,16 +493,16 @@ global akan memnyebabkan dampak-dampak sebagai berikut :
 
 
 \item
-  Memboroskan memori computer karena computer masih menyimpan nilainya
-  walaupun sudah tidak diperlukan lagi.
+ Memboroskan memori computer karena computer masih menyimpan nilainya
+ walaupun sudah tidak diperlukan lagi.
 \item
-  Mudah terjadi kesalahan program karena satu perubahan dapat
-  menyebabkan perubahan menyeluruh pada program.
+ Mudah terjadi kesalahan program karena satu perubahan dapat
+ menyebabkan perubahan menyeluruh pada program.
 \item
-  Pembuatan fungsi lebih sulit, karena harus diketahui variable global
-  apa saja yang digunakan.
+ Pembuatan fungsi lebih sulit, karena harus diketahui variable global
+ apa saja yang digunakan.
 \item
-  Pendeteksian kesalahan program lebih sulit dilakukan.
+ Pendeteksian kesalahan program lebih sulit dilakukan.
 \end{enumerate}
 
 \section{Pengiriman Parameter}\label{pengiriman-parameter}
@@ -515,7 +515,7 @@ tersebut yang dinamakan nilai kembalian (\texttt{return\ value}). Jika
 kita mendeklarasikan seperti berikut:
 
 \begin{lstlisting}[language=c++, numbers=none]
-int fungsiku();  
+int fungsiku();
 \end{lstlisting}
 
 Ini berarti kita mendeklarasikan fungsi bernama fungsiku yang akan
@@ -523,7 +523,7 @@ mengembalikan nilai bertipe integer. Jika kita mendeklarasikan seperti
 berikut:
 
 \begin{lstlisting}[language=c++, numbers=none]
-int fungsiku(int nilaiInt, float nilaiFloat);  
+int fungsiku(int nilaiInt, float nilaiFloat);
 \end{lstlisting}
 
 Ini berarti kita mendeklarasikan fungsi bernama fungsiku yang juga akan
@@ -541,7 +541,7 @@ kurung, parameter ini dinamakan parameter aktual atau argumen. Sebagai
 contoh misalnya :
 
 \begin{lstlisting}[language=c++, numbers=none]
-Hasil = fungsiku(10, 12.5);  
+Hasil = fungsiku(10, 12.5);
 \end{lstlisting}
 
 Tampak bahwa nilai 10 (bertipe int) dan nilai 12.5 (bertipe float)
@@ -587,7 +587,7 @@ ketika tidak ada nilai yang diterima dari parameter aktual. Misalnya
 deklarasi prototype seperti berikut :
 
 \begin{lstlisting}[language=c++, numbers=none]
-int fungsiku(int nilaiInt = 10);  
+int fungsiku(int nilaiInt = 10);
 \end{lstlisting}
 
 Ini berarti, \texttt{fungsiku()} akan mengembalikan suatu nilai bertipe
@@ -597,14 +597,14 @@ parameter tidak diwajibkan pada prototype, maka prototype tersebut juga
 boleh ditulis :
 
 \begin{lstlisting}[language=c++, numbers=none]
-int fungsiku(int = 10);  
+int fungsiku(int = 10);
 \end{lstlisting}
 
 Pemakaian parameter default ini tidak mengubah definisi fungsi, header
 dari definisi fungsi tersebut tetap seperti berikut:
 
 \begin{lstlisting}[language=c++, numbers=none]
-int fungsiku(int x);  
+int fungsiku(int x);
 \end{lstlisting}
 
 Jika pemanggilan fungsi \texttt{fungsiku()} tidak disertai parameter
@@ -619,7 +619,7 @@ tersebut tidak boleh diberikan nilai default. Misalnya jika prototype
 suatu fungsi adalah sepoerti berikut:
 
 \begin{lstlisting}
-int fungsiku(int a, int b, int c);  
+int fungsiku(int a, int b, int c);
 \end{lstlisting}
 
 Berarti kita hanya boleh memberikan nilai default untuk b jika kita
@@ -637,24 +637,24 @@ contoh \ref{contoh4-6}, kemudian tulis kode berikut.
 int volume(int,int=1,int=1); /*prototype*/
 int main(int argc, char *argv[])
 {
-  using namespace std;
-  QCoreApplication a(argc, argv);
-  int panjang,lebar,tinggi;
-  panjang = 10;
-  lebar = 15;
-  tinggi = 25;
-  /*menghitun volume*/
-  cout << "Volume 1 --> " << volume(panjang,lebar,tinggi)<< endl;
-  cout << "Volume 2 --> " << volume(panjang,lebar)<< endl;
-  cout << "Volume 3 --> " << volume(panjang)<< endl;
-  return a.exec();
-  }
-  /*---Fungsi volume---*/
-  int volume(int p, int l, int t)
-  {
-  return p * l * t;
+ using namespace std;
+ QCoreApplication a(argc, argv);
+ int panjang,lebar,tinggi;
+ panjang = 10;
+ lebar = 15;
+ tinggi = 25;
+ /*menghitun volume*/
+ cout << "Volume 1 --> " << volume(panjang,lebar,tinggi)<< endl;
+ cout << "Volume 2 --> " << volume(panjang,lebar)<< endl;
+ cout << "Volume 3 --> " << volume(panjang)<< endl;
+ return a.exec();
+ }
+ /*---Fungsi volume---*/
+ int volume(int p, int l, int t)
+ {
+ return p * l * t;
 }
-   
+
 \end{lstlisting}
 
 Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
@@ -662,7 +662,7 @@ adalah sebagai berikut.
 \begin{lcverbatim}
 Volume 1 --> 3750
 Volume 2 --> 150
-Volume 3 -->  10
+Volume 3 --> 10
 \end{lcverbatim}
 
 
@@ -671,13 +671,13 @@ Volume 3 -->  10
 \begin{itemize}
 
 \item
-  Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 15 x 25 karena
-  semua parameter formal menerima nilai, maka hasilnya 3750.
+ Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 15 x 25 karena
+ semua parameter formal menerima nilai, maka hasilnya 3750.
 \item
-  Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 15 x 1 karena
-  parameter formal ketiga tidak menerima nilai, maka hasilnya 150.
+ Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 15 x 1 karena
+ parameter formal ketiga tidak menerima nilai, maka hasilnya 150.
 \item
-  Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 1 x 1 karena
-  parameter formal kedua dan ketiga tidak menerima nilai, maka hasilnya
-  10.
+ Dari contoh \ref{contoh4-6}, Volume 1 dihasilkan dari 10 x 1 x 1 karena
+ parameter formal kedua dan ketiga tidak menerima nilai, maka hasilnya
+ 10.
 \end{itemize}

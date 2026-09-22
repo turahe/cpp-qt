@@ -31,7 +31,7 @@
 {\endSaveVerbatim
 	\flushleft\fboxrule=0pt\fboxsep=.5em
 	\colorbox{cverbbg}{%
-		\makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+ \makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
 	}
 	\endflushleft
 }
@@ -50,19 +50,19 @@
 %	- title = Belajar C++ dengan Qt Creator
 %	- Author Nur Wachid
 %	- subjek dan Keyword = C++ Qt Creator
-%----------------------------------------------------------------------	
+%----------------------------------------------------------------------
 \usepackage[pdfpagelabels,colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
 \hypersetup{
 	pdftitle={Belajar C++ dengan Qt Creator},
 	pdfauthor={Nur Wachid},
 	pdfsubject={C++ Qt Creator},
 	pdfkeywords={C++ Qt Creator},
-	bookmarksnumbered=true,     
-	bookmarksopen=true,         
-	bookmarksopenlevel=2,       
-	colorlinks=true,            
-	pdfstartview=Fit,           
-	pdfpagemode=UseOutlines,    
+	bookmarksnumbered=true,
+	bookmarksopen=true,
+	bookmarksopenlevel=2,
+	colorlinks=true,
+	pdfstartview=Fit,
+	pdfpagemode=UseOutlines,
 	pdfpagelayout=TwoPageRight,
 	hypertexnames=false,
 	bookmarks=true
@@ -107,33 +107,33 @@
 %frame=shadowbox,
 	showstringspaces=false,
 	basicstyle=\small\ttfamily,
-	 numberstyle=\tiny,
+ numberstyle=\tiny,
 	commentstyle=\color{gray},
 	keywordstyle=\color{bluekeywords},
 	stringstyle=\color{redstrings},
 	identifierstyle =\color{greenidentifier},
 	numbers=left,
 	emph={QDebug,iostream,QtCore,QCoreApplication,QtSql,QtDebug,string,QDomDocument,algorithm,QTextStream,QFile,QDomElement,QDomText,QDataStream,QList,QColor, QDir, QFileInfo, QStack, QQueue, QDialog, QWebView, QApplication},
-	 emphstyle=\color{keyyellow},
-	emph={[2]dir, isFile,  isDir, isSymLink,absoluteDir,  exists,  isHidden, isReadable, isWritable, isExecutable,  fileName},
+ emphstyle=\color{keyyellow},
+	emph={[2]dir, isFile, isDir, isSymLink,absoluteDir, exists, isHidden, isReadable, isWritable, isExecutable, fileName},
 	emphstyle={[2]\color{cyan}}
-	 }
+ }
 
 % meananbahkan listing xml ke dalam dokumen
 %------------------------------------------
 \lstdefinelanguage{XML}
 {
-  basicstyle=\small\footnotesize,
-  morestring=[b]",
-  moredelim=[s][\bfseries\color{maroon}]{<}{\ },
-  moredelim=[s][\bfseries\color{maroon}]{</}{>},
-  moredelim=[l][\bfseries\color{maroon}]{/>},
-  moredelim=[l][\bfseries\color{maroon}]{>},
-  morecomment=[s]{<?}{?>},
-  morecomment=[s]{<!--}{-->},
-  commentstyle=\color{darkolivegreen},
-  stringstyle=\color{blue},
-  identifierstyle=\color{red}
+ basicstyle=\small\footnotesize,
+ morestring=[b]",
+ moredelim=[s][\bfseries\color{maroon}]{<}{\ },
+ moredelim=[s][\bfseries\color{maroon}]{</}{>},
+ moredelim=[l][\bfseries\color{maroon}]{/>},
+ moredelim=[l][\bfseries\color{maroon}]{>},
+ morecomment=[s]{<?}{?>},
+ morecomment=[s]{<!--}{-->},
+ commentstyle=\color{darkolivegreen},
+ stringstyle=\color{blue},
+ identifierstyle=\color{red}
 }
 %---------------------------------------------
 % ubah listing menjadi contoh
@@ -164,7 +164,7 @@
 % 4. Mencetak nama section terdekat pada bagian sisi sebelah kiri halaman di setiap halaman ganjil
 % 5. Mencetak nama section terdekat pada bagian sisi sebelah kanan halaman di setiap halaman genap
 % 6. Mengatur lebar garis pada setiap halaman di bawah header selebar 1,5 pt
-% 7. 
+% 7.
 % 8. menghapus garis pada bagian footer
 % 9. judul pada bagian kanan footer
 % 10. gambar logo qt pada sisi kiri footer
@@ -173,7 +173,7 @@
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\bfseries\chaptername\ \thechapter.\ #1}{}} % [1]
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\thesection\hspace{5pt}#1}{}} % [2]
-%\fancyhf{} 
+%\fancyhf{}
 \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % [3]
 \fancyhead[LO]{\rightmark} % [4]
 \fancyhead[RE]{\leftmark} % [5]
@@ -210,11 +210,11 @@
 	\tikzstyle{line} = [draw, -latex']
 	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,	minimum height=2em]
 	\tikzstyle{kotak} = [rectangle, draw, fill=green!20, text width=8em, text centered, rounded corners, minimum height=7em]
-	\tikzstyle{ling} =  [draw, circle,fill=red!20, node distance=3cm, minimum height=1em]
-	\tikzstyle{titik} =  [draw]
+	\tikzstyle{ling} = [draw, circle,fill=red!20, node distance=3cm, minimum height=1em]
+	\tikzstyle{titik} = [draw]
 
 %------------------------------------------
-% Efek shadow untuk gambar 
+% Efek shadow untuk gambar
 
 \usetikzlibrary{shadows,calc}
 
@@ -229,21 +229,21 @@
 
 % this draws a shadow under a rectangle node
 \newcommand\drawshadow[1]{
-    \begin{pgfonlayer}{shadow}
-        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
-        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
-        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
-        \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
-        \shade[top color=innercolor,bottom color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
-        \shade[left color=innercolor,right color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
-        \shade[bottom color=innercolor,top color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
-        \shade[outercolor,right color=innercolor,left color=outercolor] ($(#1.south west)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
-        \filldraw ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)-(\shadowradius/2,\shadowradius/2)$);
-    \end{pgfonlayer}
+ \begin{pgfonlayer}{shadow}
+ \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
+ \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
+ \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) circle (\shadowradius);
+ \shade[outercolor,inner color=innercolor,outer color=outercolor] ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,-\shadowradius/2)$) circle (\shadowradius);
+ \shade[top color=innercolor,bottom color=outercolor] ($(#1.south west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
+ \shade[left color=innercolor,right color=outercolor] ($(#1.south east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
+ \shade[bottom color=innercolor,top color=outercolor] ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$);
+ \shade[outercolor,right color=innercolor,left color=outercolor] ($(#1.south west)+(\shadowshift)+(-\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north west)+(\shadowshift)+(\shadowradius/2,-\shadowradius/2)$);
+ \filldraw ($(#1.south west)+(\shadowshift)+(\shadowradius/2,\shadowradius/2)$) rectangle ($(#1.north east)+(\shadowshift)-(\shadowradius/2,\shadowradius/2)$);
+ \end{pgfonlayer}
 }
 
 % create a shadow layer, so that we don't need to worry about overdrawing other things
-\pgfdeclarelayer{shadow} 
+\pgfdeclarelayer{shadow}
 \pgfsetlayers{shadow,main}
 
 
@@ -262,17 +262,17 @@
 
 %-------------------------------------------
 % Isi konten dari bagian dasar, OOP, interface, widget dan Library
-% memuat  bab
+% memuat bab
 \begin{document}
-	\dominitoc 
+	\dominitoc
 %	\pagecolor{aliceblue}
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-	\begingroup  
+	\begingroup
 	\thispagestyle{empty}
 	\begin{textblock*}{297mm}(0mm,0mm)
-		\ThisTileWallPaper{\paperwidth}{\paperheight}{cover.png}
+ \ThisTileWallPaper{\paperwidth}{\paperheight}{cover.png}
 	\end{textblock*}
 	\endgroup
 	\title{Belajar C++ dengan Qt Creator}
@@ -288,20 +288,20 @@
 
 \noindent \textcopyright{} 2016 Nur Wachid \\
 	All rights reserved.
-	
+
 	Buku ini boleh digandakan atau didistribusikan dengan
 	seizin penulis atau mencantumkan \emph{credit} kepada
 	website penulis atau email penulis. Tetapi pendistribusian
 	buku ini tidak boleh untuk kepentingan komersial.
-	
+
 \noindent Penulis: Nur Wachid \\
-	Website: \url{https://wach.id}  \\
-	Email: \texttt{wachid  (at) outlook dot com} \\
-	\phone  0858 7984 5219
-	
+	Website: \url{https://wach.id} \\
+	Email: \texttt{wachid (at) outlook dot com} \\
+	\phone 0858 7984 5219
+
 	\chapter{Tentang Penulis}
 	\input{00-about-authors}
-	
+
 	\endgroup
 	\tableofcontents
 	\cleardoublepage
@@ -322,31 +322,31 @@
 
 %---------------------------------------------
 % Dasar dari pemrograman C++ yakni mengenai
-% pengenalan, tipe data, control statement, array, string, 
+% pengenalan, tipe data, control statement, array, string,
 % fungsi, pointer, dan referensi
-%----------------------------------------------	
+%----------------------------------------------
 	\part{Dasar Pemrograman C++}\label{part-dasar}
 %-------------------------------------------------
 \input{1-dasar}
-%------------------------------------------------	
+%------------------------------------------------
 	\chapter{Pengenalan C++ dan Qt Creator}\label{pengenalan}
 	\input{01-pengenalan}
-	
+
 	\chapter{Tipe Data, Identifier dan Operator}\label{tipe-data}
 	\input{02-tipedata}
-	
+
 	\chapter{Control Statement}\label{control-statement}
 	\input{02-control-statement}
-	
+
 	\chapter{Array dan String}\label{array-dan-string}
 	\input{03-array-string}
-	
+
 	\chapter{Fungsi}\label{fungsi}
 	\input{04-fuction}
-	
+
 	\chapter{Pointer dan References}\label{pointer-dan-references}
 	\input{05-pointer-referensi}
-	
+
 	\chapter{Debugging}\label{debugging}
 	\input{06-debugging}
 
@@ -357,16 +357,16 @@
 	\part{Pemrograman Berorientasi Objek}\label{part-oop}
 %-------------------------------------------------
 \input{2-oop}
-%------------------------------------------------	
+%------------------------------------------------
 	\chapter{Class dan Object}\label{class-dan-object}
 	\input{06-class-object}
-	
+
 	\chapter{Inheritance}\label{inheritance}
 	\input{07-turunan}
-	
+
 	\chapter{Operator Overloading}\label{operator-overloading}
 	\input{08-operator}
-	
+
 	\chapter{Polymorphism}\label{polymorphism}
 	\input{09-Polymorphism}
 
@@ -378,11 +378,11 @@
 
 %-------------------------------------------
 % mempelajari tentang Qt Library dan komponen-komponennya
-%----------------------------------- 	
+%-----------------------------------
 	\part{Qt Library dan Komponen}\label{part-qt-library}
 %-------------------------------------------------
 \input{3-interface}
-%------------------------------------------------	
+%------------------------------------------------
 	\chapter{Qt Library}\label{qt-library}
 	\input{11-library}
 
@@ -390,25 +390,25 @@
 	\input{12-file-stream-xml}
 
 	\chapter{Qt WebKit}\label{qt-webkit}
-	\input{13-qt-webkit}	
+	\input{13-qt-webkit}
 
 %-------------------------------------------
 % mempelajari tentang antarmuka pengguna (GUI)
-%----------------------------------- 	
+%-----------------------------------
 	\part{Antarmuka Pengguna}\label{part-interface}
 %-------------------------------------------------
 \input{4-gui-intro}
 %------------------------------------------------
 	\chapter{GUI dengan Qt}\label{gui}
 	\input{14-gui}
-	
+
 	\appendix
 
 %-------------------------------------------------------------
 % Bagian Lampiran berisi tentang index dan bibliography
 %------------------------------------------------------------
 	\backmatter
-	\part{Lampiran}\label{part-lampiran}	
+	\part{Lampiran}\label{part-lampiran}
 
 	\chapter{Contoh Program}
 	\input{contoh}

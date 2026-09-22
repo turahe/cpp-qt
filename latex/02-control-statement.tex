@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan mempelajari tentang Control Statement (Struktur Kendali) dalam C++:
 
@@ -10,7 +10,7 @@ Pada bab ini kita akan mempelajari tentang Control Statement (Struktur Kendali) 
 
 \minitoc
 
-\section{🎯 Pengenalan Control Statement}
+\section{Pengenalan Control Statement}
 
 Program tidak selalu berjalan secara berurutan dari atas ke bawah. Kadang-kadang kita perlu:
 \begin{itemize}
@@ -28,9 +28,9 @@ Control Statement adalah pengatur aliran program yang memungkinkan kita:
 \item Memilih dari beberapa alternatif berdasarkan kondisi
 \end{itemize}
 
-\section{🔄 Percabangan (Conditional Statements)}\label{percabangan}
+\section{Percabangan (Conditional Statements)}\label{percabangan}
 
-Percabangan adalah perintah yang memungkinkan program memilih jalur yang berbeda berdasarkan kondisi tertentu. 
+Percabangan adalah perintah yang memungkinkan program memilih jalur yang berbeda berdasarkan kondisi tertentu.
 
 \subsection{Apa itu Percabangan?}
 
@@ -50,7 +50,7 @@ C++ memiliki tiga jenis perintah percabangan:
 \item \textbf{switch} - memilih dari beberapa alternatif berdasarkan nilai
 \end{itemize}
 
-\subsection{🔀 Percabangan dengan if}\label{percabangan-dengan-if}
+\subsection{Percabangan dengan if}\label{percabangan-dengan-if}
 
 Percabangan \textbf{if} adalah yang paling sederhana. Program akan menjalankan kode di dalam blok if jika kondisi bernilai benar (true). Konsep ini pertama kali diperkenalkan dalam bahasa ALGOL 60\footnote{Naur, P. (1960). "Report on the Algorithmic Language ALGOL 60". Communications of the ACM.}.
 
@@ -85,7 +85,7 @@ Flowchart untuk statment percabangan if seperti pada gambar berikut
 \end{tikzpicture}
 
 
-\subsection*{💡 Contoh Percabangan dengan if}
+\subsection*{Contoh Percabangan dengan if}
 
 \begin{enumerate}
 \item Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
@@ -104,10 +104,10 @@ Masukan nomor: 15
 \begin{itemize}
 \item Program meminta input angka dari pengguna
 \item Jika angka > 10, program menampilkan pesan "lebih besar dari 10"
-\item Jika angka ≤ 10, program tidak menampilkan apa-apa
+\item Jika angka $\leq$ 10, program tidak menampilkan apa-apa
 \end{itemize}
 \end{enumerate}
-\subsection{🔄 Percabangan dengan if-else}\label{percabangan-dengan-if-..-else}
+\subsection{Percabangan dengan if-else}\label{percabangan-dengan-if-..-else}
 
 Percabangan \textbf{if-else} memungkinkan program menjalankan kode yang berbeda berdasarkan kondisi.
 
@@ -127,7 +127,7 @@ Percabangan \textbf{if-else} memungkinkan program menjalankan kode yang berbeda 
 Flowchart untuk statment ini adalah :
 
 \begin{quotation}
-{\LARGE \ding{45}} \textbf{💡 CATATAN PENTING}
+{\LARGE \ding{45}} \textbf{CATATAN PENTING}
 
 Di dalam blok \texttt{if()} maupun \texttt{else} bisa diisi dengan perintah \texttt{if()} lagi. Bentuk \texttt{if()} dalam \texttt{if()} ini sering disebut dengan \textbf{nested if} (if bersarang).
 \end{quotation}
@@ -149,7 +149,7 @@ Di dalam blok \texttt{if()} maupun \texttt{else} bisa diisi dengan perintah \tex
 \path[line] (statement2) -- (decide);
 \end{tikzpicture}
 
-\subsubsection*{💡 Contoh Program if-else}
+\subsubsection*{Contoh Program if-else}
 
 \begin{enumerate}
 \item Edit contoh \ref{contoh2-3} dengan menambahkan kode berikut:
@@ -166,12 +166,12 @@ Masukan nomor: 4
 \subsubsection*{Penjelasan Program}
 \begin{itemize}
 \item Jika angka > 10, program menampilkan "lebih besar dari 10"
-\item Jika angka ≤ 10, program menampilkan "kurang besar dari 10"
+\item Jika angka $\leq$ 10, program menampilkan "kurang besar dari 10"
 \item Program selalu memberikan respons, tidak ada kondisi yang dilewati
 \end{itemize}
 \end{enumerate}
 
-\subsection{🔄 Percabangan dengan if Bersarang (Nested if)}
+\subsection{Percabangan dengan if Bersarang (Nested if)}
 
 If bersarang adalah kondisi if yang berada di dalam blok if atau else lainnya. Ini memungkinkan kita membuat percabangan yang lebih kompleks.
 
@@ -211,7 +211,7 @@ Flowchart untuk statement if bersarang:
 
 \end{tikzpicture}
 
-\subsection{🔀 Percabangan dengan switch}\label{percabangan-dengan-switch}
+\subsection{Percabangan dengan switch}\label{percabangan-dengan-switch}
 
 Percabangan \textbf{switch} digunakan sebagai alternatif dari \texttt{if-else} ketika kita memiliki banyak pilihan berdasarkan nilai tertentu. Switch statement diperkenalkan dalam bahasa C dan kemudian diadopsi oleh C++\footnote{Kernighan, B. W., \& Ritchie, D. M. (1988). "The C Programming Language" (2nd ed.). Prentice Hall.}.
 
@@ -302,7 +302,7 @@ Flowchart untuk statement ini adalah :
 
 
 
-\subsection{💡 Contoh Program switch}
+\subsection{Contoh Program switch}
 
 \begin{enumerate}
 \item Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
@@ -326,7 +326,7 @@ sabtu
 \item Program menampilkan "sabtu" ke layar
 \end{itemize}
 
-\section{🔄 Perulangan (Loops)}\label{perulangan}
+\section{Perulangan (Loops)}\label{perulangan}
 
 Perulangan digunakan untuk mengulang suatu perintah sebanyak yang diinginkan tanpa harus menulis ulang kode yang sama.
 
@@ -348,7 +348,7 @@ C++ memiliki tiga jenis perintah perulangan:
 \item \textbf{do-while} - perulangan yang minimal dijalankan sekali
 \end{itemize}
 
-\subsection{🔄 Perulangan dengan for}\label{perulangan-dengan-for}
+\subsection{Perulangan dengan for}\label{perulangan-dengan-for}
 
 Perulangan \textbf{for} digunakan ketika kita sudah mengetahui berapa kali perulangan akan dijalankan. For loop adalah salah satu konstruksi perulangan yang paling umum digunakan dalam pemrograman\footnote{Knuth, D. E. (1997). "The Art of Computer Programming, Volume 1: Fundamental Algorithms" (3rd ed.). Addison-Wesley.}.
 
@@ -378,7 +378,7 @@ Perulangan \textbf{for} digunakan ketika kita sudah mengetahui berapa kali perul
 \caption{flowchart perulangan dengan for}
 \end{figure}
 
-\subsection{🔄 Perulangan dengan while}\label{perulangan-dengan-while}
+\subsection{Perulangan dengan while}\label{perulangan-dengan-while}
 
 Perulangan \textbf{while} digunakan untuk mengulangi perintah selama kondisi masih bernilai benar.
 
@@ -409,7 +409,7 @@ Perulangan \textbf{while} digunakan untuk mengulangi perintah selama kondisi mas
 \caption{flowchart perulangan dengan while}
 \end{figure}
 
-\subsection{🔄 Perulangan dengan do-while}\label{perulangan-dengan-do-while}
+\subsection{Perulangan dengan do-while}\label{perulangan-dengan-do-while}
 
 Perulangan \textbf{do-while} mirip dengan while, tetapi kondisi dicek di akhir perulangan. Ini berarti kode minimal akan dijalankan sekali.
 
@@ -440,7 +440,7 @@ Perulangan \textbf{do-while} mirip dengan while, tetapi kondisi dicek di akhir p
 \caption{flowchart perulangan dengan do\dots while}
 \end{figure}
 
-\subsection{📊 Perbandingan while vs do-while}
+\subsection{Perbandingan while vs do-while}
 
 \begin{center}
 \begin{tabular}{|l|l|l|}
@@ -465,7 +465,7 @@ Kapan digunakan & Kondisi mungkin salah di awal & Kode harus dijalankan minimal 
 \item \textbf{do-while}: minimal menjalankan kode sekali
 \end{itemize}
 
-\subsection{⏭️ Kata Kunci break dan continue}\label{kata-kunci-continue-dan-break}
+\subsection{Kata Kunci break dan continue}\label{kata-kunci-continue-dan-break}
 
 Kata kunci \textbf{break} dan \textbf{continue} digunakan untuk mengontrol aliran perulangan.
 
@@ -489,7 +489,7 @@ Kata kunci \textbf{break} dan \textbf{continue} digunakan untuk mengontrol alira
 
 \lstinputlisting[language=c++]{../code/02-control-statement-code-1.c++}
 
-\subsection{💡 Contoh Program break dan continue}
+\subsection{Contoh Program break dan continue}
 
 \begin{enumerate}
 \item Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
@@ -513,9 +513,9 @@ Loop berhenti karena break
 \item Hasilnya: angka 1-4, 6-9 ditampilkan, lalu loop berhenti
 \end{itemize}
 
-\section{🎯 Praktik Terbaik Control Statement}
+\section{Praktik Terbaik Control Statement}
 
-\subsection{💡 Tips Menulis Control Statement yang Baik}
+\subsection{Tips Menulis Control Statement yang Baik}
 
 \begin{enumerate}
 \item \textbf{Gunakan kondisi yang jelas} - Hindari kondisi yang membingungkan
@@ -525,7 +525,7 @@ Loop berhenti karena break
 \item \textbf{Selalu gunakan kurung kurawal} - Meskipun hanya satu baris kode
 \end{enumerate}
 
-\subsection{⚠️ Kesalahan Umum yang Harus Dihindari}
+\subsection{Kesalahan Umum yang Harus Dihindari}
 
 \begin{itemize}
 \item \textbf{Lupa break dalam switch} - Bisa menyebabkan fall-through
@@ -534,9 +534,9 @@ Loop berhenti karena break
 \item \textbf{Indentasi yang salah} - Membuat kode sulit dibaca
 \end{itemize}
 
-\section{📊 Ringkasan Control Statement}
+\section{Ringkasan Control Statement}
 
-\subsection{🔄 Jenis-jenis Control Statement}
+\subsection{Jenis-jenis Control Statement}
 
 \begin{center}
 \begin{tabular}{|l|l|l|}
@@ -562,7 +562,7 @@ continue & Melompati iterasi & continue; \\
 \end{tabular}
 \end{center}
 
-\subsection{🎯 Kapan Menggunakan Setiap Jenis}
+\subsection{Kapan Menggunakan Setiap Jenis}
 
 \begin{itemize}
 \item \textbf{if}: Ketika ada satu kondisi yang perlu dicek
@@ -575,13 +575,13 @@ continue & Melompati iterasi & continue; \\
 \item \textbf{continue}: Ketika perlu melompati iterasi tertentu
 \end{itemize}
 
-\section{🔍 Latihan dan Soal}
+\section{Latihan dan Soal}
 
-\subsection{📝 Latihan 1: Program Kalkulator Sederhana}
+\subsection{Latihan 1: Program Kalkulator Sederhana}
 
 Buat program kalkulator sederhana yang menerima dua angka dan operator (+, -, *, /) dari pengguna, kemudian menampilkan hasilnya.
 
-\subsection{📝 Latihan 2: Program Menentukan Grade}
+\subsection{Latihan 2: Program Menentukan Grade}
 
 Buat program yang menerima nilai (0-100) dan menampilkan grade:
 \begin{itemize}
@@ -592,7 +592,7 @@ Buat program yang menerima nilai (0-100) dan menampilkan grade:
 \item E: 0-59
 \end{itemize}
 
-\subsection{📝 Latihan 3: Program Menampilkan Pola}
+\subsection{Latihan 3: Program Menampilkan Pola}
 
 Buat program yang menampilkan pola bintang seperti berikut:
 \begin{lcverbatim}
@@ -603,7 +603,7 @@ Buat program yang menampilkan pola bintang seperti berikut:
 *****
 \end{lcverbatim}
 
-\section{📚 Referensi dan Bacaan Lanjutan}
+\section{Referensi dan Bacaan Lanjutan}
 
 Control statement adalah konsep fundamental dalam pemrograman yang telah dikembangkan sejak awal era komputer. Konsep ini pertama kali diperkenalkan dalam bahasa pemrograman FORTRAN pada tahun 1957\footnote{Backus, J. W. (1957). "The FORTRAN Automatic Coding System". Proceedings of the Western Joint Computer Conference.} dan kemudian dikembangkan lebih lanjut dalam bahasa ALGOL\footnote{Naur, P. (1960). "Report on the Algorithmic Language ALGOL 60". Communications of the ACM.}.
 
@@ -617,12 +617,12 @@ Untuk pemahaman yang lebih mendalam tentang control statement dalam C++, pembaca
 \item \textbf{C++ Primer} oleh Stanley Lippman\footnote{Lippman, S. B., Lajoie, J., \& Moo, B. E. (2012). "C++ Primer" (5th ed.). Addison-Wesley.}
 \end{itemize}
 
-\section{🎉 Kesimpulan}
+\section{Kesimpulan}
 
 Control statement adalah alat fundamental yang memungkinkan program untuk membuat keputusan dan mengulang operasi. Dengan menguasai konsep ini, Anda telah memiliki fondasi yang kuat untuk mengembangkan program yang lebih kompleks dan dinamis.
 
 \begin{center}
-\textbf{Selamat! Anda telah menguasai dasar-dasar Control Statement dalam C++} 🎯
+\textbf{Selamat! Anda telah menguasai dasar-dasar Control Statement dalam C++}
 \end{center}
 
 \vspace{1cm}

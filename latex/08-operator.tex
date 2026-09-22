@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan membahas tentang Operator Types dan Operator Overloading dalam C++:
 
@@ -11,7 +11,7 @@ Pada bab ini kita akan membahas tentang Operator Types dan Operator Overloading 
 
 \minitoc
 
-\section{⚙️ Operator pada C++}\label{operator-pada-cpp}
+\section{Operator pada C++}\label{operator-pada-cpp}
 
 \subsection{Apa itu Operator Overloading?}
 
@@ -59,7 +59,7 @@ Ada 2 macam operator yang terdapat di C++:
 \item \textbf{Binary} - operator dengan dua operand
 \end{itemize}
 
-\subsection{🔢 Unary Operator}\label{unary-operator}
+\subsection{Unary Operator}\label{unary-operator}
 
 Unary operator hanya mempunyai satu operand saja.
 
@@ -90,7 +90,7 @@ Unary operator hanya mempunyai satu operand saja.
 
 Pada contoh di bawah ini kita akan membuat Class Kalender yang mempunyai tiga class member yang merepresentasikan hari, bulan, dan tahun (tipe integer). Anda dapat menggunakan operator ++ untuk menambahkan hari.
 
-\subsubsection*{💡 Contoh Increment Operator (Notasi prefix)}
+\subsubsection*{Contoh Increment Operator (Notasi prefix)}
 
 \begin{enumerate}
 \item Buka Qt Creator dan buat project Qt Console Application baru dengan nama "contoh"
@@ -100,8 +100,8 @@ Pada contoh di bawah ini kita akan membuat Class Kalender yang mempunyai tiga cl
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -117,20 +117,20 @@ Tanggal setelah notasi prefik dijalankan
 \begin{itemize}
 
 \item
-  Class Kalender berisi tiga member variabel yaitu \texttt{\_hari},
-  \texttt{\_bulan}, dan \texttt{\_tahun} yang merepresentasikan waktu
-  tertentu.
+ Class Kalender berisi tiga member variabel yaitu \texttt{\_hari},
+ \texttt{\_bulan}, dan \texttt{\_tahun} yang merepresentasikan waktu
+ tertentu.
 \item
-  operator \texttt{++} digunakan untuk menambahkan 1 hari kedalam objek
-  Kalender, dengan menggunakan operator \texttt{++} penulisan menjadi
-  lebih intuitif dan mudah dipahami, misal untuk menambahkan 1 hari
-  kedalam objek Kalender anda dapat menuliskan \texttt{++objKal}.
+ operator \texttt{++} digunakan untuk menambahkan 1 hari kedalam objek
+ Kalender, dengan menggunakan operator \texttt{++} penulisan menjadi
+ lebih intuitif dan mudah dipahami, misal untuk menambahkan 1 hari
+ kedalam objek Kalender anda dapat menuliskan \texttt{++objKal}.
 \item
-  Untuk memanggil operator \texttt{++} pada program diatas digunakan
-  notasi prefix (tanda ++ dituliskan sebelum nama objek).
+ Untuk memanggil operator \texttt{++} pada program diatas digunakan
+ notasi prefix (tanda ++ dituliskan sebelum nama objek).
 \item
-  Karena kode diatas menggunakan notasi prefix maka pada operator ++
-  akan mengakses objek by reference.
+ Karena kode diatas menggunakan notasi prefix maka pada operator ++
+ akan mengakses objek by reference.
 \end{itemize}
 
 Ada perbedaan penulisan notasi prefix dan postfix, sebagai contoh anda
@@ -147,19 +147,19 @@ Untuk contoh \ref{contoh8-2} dibawah ini kita akan mencoba menggunakan notasi
 menduplikat objek yang diinputkan, melakukan increment dan mengembalikan
 objek tersebut by value.
 
-\subsubsection*{Contoh  Menggunakan Operator Increment (notasi postfix).}
+\subsubsection*{Contoh Menggunakan Operator Increment (notasi postfix).}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh8-2}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh8-2}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Menggunakan Operator Increment (notasi postfix), label=contoh8-2]{../code/contoh8-2.cpp}
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -176,12 +176,12 @@ objKal : 24 / 10 / 2010
 \begin{itemize}
 
 \item
-  Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja
-  penulisan operator \texttt{++} menggunakan notasi \texttt{postfix}.
+ Output yang dihasilkan akan sama dengan kode sebelumnya, hanya saja
+ penulisan operator \texttt{++} menggunakan notasi \texttt{postfix}.
 \item
-  Karena menggunakan \texttt{postfix} maka yang dilakukan pada operator
-  \texttt{++} adalah mengkopi objek yang lama, menambahkan data,
-  kemudian mengembalikan objek tersebut by value.
+ Karena menggunakan \texttt{postfix} maka yang dilakukan pada operator
+ \texttt{++} adalah mengkopi objek yang lama, menambahkan data,
+ kemudian mengembalikan objek tersebut by value.
 \end{itemize}
 
 \section{Conversion Operator}\label{conversion-operator}
@@ -228,16 +228,16 @@ Integer yang sesuai dengan data 2011023
 \begin{itemize}
 
 \item
-  Pada operator \texttt{int()}, \texttt{variabel} \texttt{\_tahun},
-  \texttt{\_bulan}, dan \texttt{\_hari} dikalikan dengan bilangan
-  tertentu sehingga menghasilkan kembalian berupa \texttt{int}.
+ Pada operator \texttt{int()}, \texttt{variabel} \texttt{\_tahun},
+ \texttt{\_bulan}, dan \texttt{\_hari} dikalikan dengan bilangan
+ tertentu sehingga menghasilkan kembalian berupa \texttt{int}.
 \item
-  Statement int \texttt{nData\ =\ objKal} akan menjalankan operator
-  \texttt{int} dan mengembalikan nilai integer dari objek Kalender.
+ Statement int \texttt{nData\ =\ objKal} akan menjalankan operator
+ \texttt{int} dan mengembalikan nilai integer dari objek Kalender.
 \item
-  Dengan menggunakan operator int akan lebih mudah membandingkan dua
-  objek Kalender, karena objek tersebut dapat mengembalikan satu nilai
-  integer.
+ Dengan menggunakan operator int akan lebih mudah membandingkan dua
+ objek Kalender, karena objek tersebut dapat mengembalikan satu nilai
+ integer.
 \end{itemize}
 
 \subsection{Binary Operator}\label{binary-operator}
@@ -273,26 +273,26 @@ Contoh \ref{contoh8-4} program dibawah ini menggunakan operator Addition (+) unt
 menambahkan hari pada objek kalender, anda dapat menambahkan beberapa
 hari kedepan, misal 5 atau 10 hari dari tanggal sekarang.
 
-\subsubsection*{Contoh  Menggunakan Binary Addition Operator.}
+\subsubsection*{Contoh Menggunakan Binary Addition Operator.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh8-4}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh8-4}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Menggunakan Binary Addition Operator, label=contoh8-4]{../code/contoh8-4.cpp}
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
 Inisialisasi Data
 
 23 / 10 / 2011 Menambahkan 25 hari kedepan
-Hasil setelah ditambahkan 25 hari 18 / 11 / 2011 
+Hasil setelah ditambahkan 25 hari 18 / 11 / 2011
 13 / 11 / 2011
 \end{lcverbatim}
 
@@ -301,14 +301,14 @@ Hasil setelah ditambahkan 25 hari 18 / 11 / 2011
 \begin{itemize}
 
 \item
-  Dengan menggunakan operator + anda dapat menambahkan hari pada objek
-  Kalender, jumlah hari yang ditambahkan tergantung dari nilai yang
-  diinputkan pada parameter.
+ Dengan menggunakan operator + anda dapat menambahkan hari pada objek
+ Kalender, jumlah hari yang ditambahkan tergantung dari nilai yang
+ diinputkan pada parameter.
 \item
-  Anda dapat menambah hari dengan menggunakan operator + pada objek
-  Kalender, misal: \texttt{objKal\ =\ objKal\ +\ 25} atau dengan membuat
-  objek baru untuk menampung nilai hasil penambahan Kalender
-  \texttt{objKalBaru(objKal+20)}
+ Anda dapat menambah hari dengan menggunakan operator + pada objek
+ Kalender, misal: \texttt{objKal\ =\ objKal\ +\ 25} atau dengan membuat
+ objek baru untuk menampung nilai hasil penambahan Kalender
+ \texttt{objKalBaru(objKal+20)}
 \end{itemize}
 
 \section{Addition-Assignment
@@ -319,21 +319,21 @@ sintaks a += b, yang sama artinya dengan a = a + b. Pada contoh program
 dibawah ini operator \emph{Addition-Assignment} akan digunakan untuk
 menambahkan hari pada objek Kalender.
 
-\subsubsection*{Contoh  Menggunakan Addition Assigment Operator dan Substraction Assigment Operator.}
+\subsubsection*{Contoh Menggunakan Addition Assigment Operator dan Substraction Assigment Operator.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh8-5}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh8-5}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption= Menggunakan Addition Assigment Operator dan Substraction
 Assigment Operator, label=contoh8-5]{../code/contoh8-5.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -362,20 +362,20 @@ Anda dapat menggunakan equality operator (==) atau inequality operator
 operator yang mempunyai return value atau parameter yang berbeda, ini
 disebut dengan overloading operator.
 
-\subsubsection*{Contoh  Overloading Comparison Operator (Equality dan Inequality).}
+\subsubsection*{Contoh Overloading Comparison Operator (Equality dan Inequality).}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh8-6}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh8-6}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Overloading Comparison Operator (Equality dan Inequality, label=contoh8-6]{../code/contoh8-6.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -400,21 +400,21 @@ Nilai integer dari objKal2 dan intKal3 tidak sama
 \begin{itemize}
 
 \item
-  Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun
-  masing-masing ada 2 \emph{inequality} dan \emph{equality} operator
-  namun parameternya berbeda ini disebut sebagai \emph{overloading
-  operator}.
+ Pada kode diatas terdapat 4 comparison operator yang berbeda, walaupun
+ masing-masing ada 2 \emph{inequality} dan \emph{equality} operator
+ namun parameternya berbeda ini disebut sebagai \emph{overloading
+ operator}.
 \item
-  Pada operator equality (==) yang pertama membandingkan dua objek
-  Kalender dengan cara membandingkan member variabel hari, bulan, tahun
-  pada masing-masing objek yang dibandingkan, sedangkan operator == yang
-  kedua membandingkan objek Kalender yang terlebih dahulu sudah
-  dikonversi menjadi int.
+ Pada operator equality (==) yang pertama membandingkan dua objek
+ Kalender dengan cara membandingkan member variabel hari, bulan, tahun
+ pada masing-masing objek yang dibandingkan, sedangkan operator == yang
+ kedua membandingkan objek Kalender yang terlebih dahulu sudah
+ dikonversi menjadi int.
 \item
-  Anda dapat melihat bahwa kedua operator comparison diatas sama-sama
-  dapat membandingkan isi dari 2 objek Kalender, baik dengan cara
-  membandingkan member variabel maupun membandingkan nilai int (hasil
-  konversi dari objek Kalender).
+ Anda dapat melihat bahwa kedua operator comparison diatas sama-sama
+ dapat membandingkan isi dari 2 objek Kalender, baik dengan cara
+ membandingkan member variabel maupun membandingkan nilai int (hasil
+ konversi dari objek Kalender).
 \end{itemize}
 
 \section{Overloading Operator \textless{}, \textgreater{}, \textless{}=, \textgreater{}=}\label{overloading-operator}
@@ -424,19 +424,19 @@ Seperti pada contoh \ref{contoh8-6} sebelumnya anda juga dapat menggunakan opera
 membandingkan objek Kalender. Agar mudah untuk dibandingkan maka objek
 Kalender dikonversi terlebih dahulu menjadi tipe int.
 
-\subsubsection*{Contoh  Menggunakan Operator \textless{}. \textgreater{}, \textless{}=, \textgreater{}=.}
+\subsubsection*{Contoh Menggunakan Operator \textless{}. \textgreater{}, \textless{}=, \textgreater{}=.}
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh8-7}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh8-7}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Menggunakan Operator Overloading, label=contoh8-7]{../code/contoh8-7.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -460,12 +460,12 @@ objKal1 >= objKal3 = true
 \begin{itemize}
 
 \item
-  Pada program diatas penggunaan operator \textless{}, \textgreater{},
-  \textless{}=, \textgreater{}= digunakan untuk membandingkan dua objek
-  Kalender yang berbeda.
+ Pada program diatas penggunaan operator \textless{}, \textgreater{},
+ \textless{}=, \textgreater{}= digunakan untuk membandingkan dua objek
+ Kalender yang berbeda.
 \item
-  Untuk mempermudah membandingkan dua objek Kalender maka objek Kalender
-  tersebut dikonversi terlebih dahulu menjadi \texttt{int}.
+ Untuk mempermudah membandingkan dua objek Kalender maka objek Kalender
+ tersebut dikonversi terlebih dahulu menjadi \texttt{int}.
 \end{itemize}
 
 \section{Subscript Operator}\label{subscript-operator}
@@ -476,20 +476,20 @@ seperti ketika anda mengakses array, anda dapat menambahkan operator
 index tertentu dari objek. Contoh dibawah ini akan menjelaskan
 penggunaan subscript operator untuk membuat array yang dinamis.
 
-\subsubsection*{Contoh  Subscript Operator untuk Dynamic Array.}
+\subsubsection*{Contoh Subscript Operator untuk Dynamic Array.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh8-8}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh8-8}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Subscript Operator untuk Dynamic Array, label=contoh8-8]{../code/contoh8-8.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -509,20 +509,20 @@ Function operator digunakan jika anda ingin membuat objek bekerja
 seperti function. Untuk lebih jelasnya penggunaan function
 \texttt{operator()} anda dapat mencoba program dibawah ini.
 
-\subsubsection*{Contoh  Menggunakan operator() untuk membuat function object.}
+\subsubsection*{Contoh Menggunakan operator() untuk membuat function object.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh8-9}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh8-9}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Menggunakan operator() untuk membuat function object, label=contoh8-9]{../code/contoh8-9.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -534,8 +534,8 @@ Hello Function Operator !
 \begin{itemize}
 
 \item
-  Dengan membuat function operator maka anda dapat menggunakan objek
-  seperti ketika anda menggunakan function.
+ Dengan membuat function operator maka anda dapat menggunakan objek
+ seperti ketika anda menggunakan function.
 \item
-  Pada program diatas objek objTampil dapat dipanggil seperti function.
+ Pada program diatas objek objTampil dapat dipanggil seperti function.
 \end{itemize}

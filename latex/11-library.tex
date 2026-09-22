@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan mempelajari tentang Qt Library dan class-class penting yang disediakan oleh Qt:
 
@@ -12,7 +12,7 @@ Pada bab ini kita akan mempelajari tentang Qt Library dan class-class penting ya
 
 \minitoc
 
-\section{📚 Pengenalan Qt Library}
+\section{Pengenalan Qt Library}
 
 \subsection{Apa itu Qt Library?}
 
@@ -48,7 +48,7 @@ Qt Core Module adalah library dasar yang dibutuhkan oleh setiap aplikasi Qt. Mod
 \item \textbf{Threading} - QThread untuk pemrograman multi-thread
 \end{itemize}
 
-\section{🏗️ QObject - Base Class Penting}
+\section{QObject - Base Class Penting}
 
 \subsection{Apa itu QObject?}
 
@@ -92,7 +92,7 @@ QMap & - & Template class untuk map \\
 \item \textbf{Events} - Event handling system
 \end{enumerate}
 
-\section{🧠 Automatic Memory Management}
+\section{Automatic Memory Management}
 
 \subsection{Masalah Memory Management}
 
@@ -117,7 +117,7 @@ QObject menyediakan automatic memory management:
 
 \subsection{Contoh Memory Management}
 
-\subsubsection{❌ Tanpa QObject (Manual Management)}
+\subsubsection{Tanpa QObject (Manual Management)}
 
 \begin{enumerate}
 \item Buka Qt Creator dan buat project Qt Console Application baru
@@ -146,7 +146,7 @@ destroy object
 \item Sulit dalam aplikasi kompleks
 \end{itemize}
 
-\subsubsection{✅ Dengan QObject (Automatic Management)}
+\subsubsection{Dengan QObject (Automatic Management)}
 
 \begin{enumerate}
 \item Buka Qt Creator dan buat project Qt Console Application baru
@@ -157,10 +157,10 @@ destroy object
 \item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-"22002321"  :  8  kar
-"22002322"  :  8  kar
-"22002323"  :  8  kar
-"22002323"  :  8  kar
+"22002321" : 8 kar
+"22002322" : 8 kar
+"22002323" : 8 kar
+"22002323" : 8 kar
 \end{lcverbatim}
 \end{enumerate}
 
@@ -183,7 +183,7 @@ QObject menggunakan sistem parent-child untuk memory management:
 \item \textbf{Object Tree} - Hierarki objek yang terorganisir
 \end{itemize}
 
-\section{📝 QString - String Handling}
+\section{QString - String Handling}
 
 \subsection{Mengapa Menggunakan QString?}
 
@@ -231,7 +231,7 @@ Performance & Optimized & Standard \\
 
 \begin{lcverbatim}
 "Erick Kurniawan"
-Ukuran string  15
+Ukuran string 15
 test not null
 test empty
 testing null
@@ -257,9 +257,9 @@ testing null
 \item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-firstName :  "Erick"
-lastName :  "Kurniawan"
-midName :  "Kurni"
+firstName : "Erick"
+lastName : "Kurniawan"
+midName : "Kurni"
 \end{lcverbatim}
 \end{enumerate}
 
@@ -282,7 +282,7 @@ midName :  "Kurni"
 \item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-Nama :  "Pak. Slamet ,BA"
+Nama : "Pak. Slamet ,BA"
 "Pak. Slamet ,BA ,SE"
 \end{lcverbatim}
 \end{enumerate}
@@ -306,7 +306,7 @@ Nama :  "Pak. Slamet ,BA"
 \item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-Balik :  "dihcaW ruN"
+Balik : "dihcaW ruN"
 \end{lcverbatim}
 \end{enumerate}
 
@@ -340,7 +340,7 @@ Balik :  "dihcaW ruN"
 \item \textbf{endsWith()} - Cek apakah string diakhiri dengan substring
 \end{itemize}
 
-\section{📦 Collection Classes}
+\section{Collection Classes}
 
 \subsection{Apa itu Collection Classes?}
 
@@ -485,7 +485,7 @@ Ada berbagai cara untuk menambahkan data ke QList:
 \item \textbf{prepend()} - Tambah di awal list
 \item \textbf{insert()} - Sisip di posisi tertentu
 \item \textbf{operator<<()} - Operator untuk append
-\item \textbf{push_back()} - Tambah di akhir (STL style)
+\item \textbf{push\_back()} - Tambah di akhir (STL style)
 \end{itemize}
 
 \subsection{QStringList - Special String List}
@@ -521,7 +521,7 @@ QStringList adalah class khusus untuk list of strings. Class ini diturunkan dari
 \item \textbf{filter()} - Filter elemen berdasarkan kondisi
 \end{itemize}
 
-\section{🗂️ Stack dan Queue}
+\section{Stack dan Queue}
 
 \subsection{Stack - LIFO (Last In First Out)}
 
@@ -540,12 +540,12 @@ QQueue adalah collection yang menggunakan prinsip FIFO. Elemen pertama yang masu
 \item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-Stack LIFO : 
+Stack LIFO :
 "budi"
 "katon"
 "anton"
 "17rick"
-Queue FIFO : 
+Queue FIFO :
 "17rick"
 "anton"
 "katon"
@@ -573,7 +573,7 @@ Use Case & Undo/Redo & Task Queue \\
 \end{tabular}
 \end{center}
 
-\section{🗺️ QMap - Key-Value Pair}
+\section{QMap - Key-Value Pair}
 
 \subsection{Apa itu QMap?}
 
@@ -597,15 +597,15 @@ QMap adalah collection yang menyimpan data dalam bentuk key-value pair. Setiap e
 \item Jalankan program dan perhatikan output:
 
 \begin{lcverbatim}
-erick age :  29
+erick age : 29
 menampilkan semua data yg ada di map :
-"anton"  :  29
-"erick"  :  29
-"katon"  :  42
+"anton" : 29
+"erick" : 29
+"katon" : 42
 Mengakses data menggunakan iterator
-"anton"  :  29
-"erick"  :  29
-"katon"  :  42
+"anton" : 29
+"erick" : 29
+"katon" : 42
 \end{lcverbatim}
 \end{enumerate}
 
@@ -619,7 +619,7 @@ Mengakses data menggunakan iterator
 \item \textbf{remove()} - Hapus key-value pair
 \end{itemize}
 
-\section{🔧 Best Practices Qt Library}
+\section{Best Practices Qt Library}
 
 \subsection{Tips Menggunakan Qt Library}
 
@@ -641,7 +641,7 @@ Mengakses data menggunakan iterator
 \item \textbf{Inefficient Access} - Tidak gunakan iterator untuk loop
 \end{itemize}
 
-\section{📚 Referensi dan Bacaan Lanjutan}
+\section{Referensi dan Bacaan Lanjutan}
 
 Qt Library adalah topik yang luas dan terus berkembang. Untuk pemahaman yang lebih mendalam, pembaca dapat merujuk pada:
 
@@ -652,12 +652,12 @@ Qt Library adalah topik yang luas dan terus berkembang. Untuk pemahaman yang leb
 \item \textbf{Qt Core Module} - Module dasar Qt\footnote{Qt Company. (2023). "Qt Core Module". https://doc.qt.io/qt-6/qtcore-index.html}
 \end{itemize}
 
-\section{🎉 Kesimpulan}
+\section{Kesimpulan}
 
 Qt Library menyediakan class-class yang powerful dan type-safe untuk pengembangan aplikasi. Dengan memahami QObject, QString, dan collection classes, Anda dapat membuat aplikasi yang robust dan maintainable.
 
 \begin{center}
-\textbf{Selamat! Anda telah menguasai dasar-dasar Qt Library} 📚
+\textbf{Selamat! Anda telah menguasai dasar-dasar Qt Library}
 \end{center}
 
 \vspace{1cm}

@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan mempelajari tentang Tipe Data dan Identifier dalam C++:
 
@@ -11,7 +11,7 @@ Pada bab ini kita akan mempelajari tentang Tipe Data dan Identifier dalam C++:
 
 \minitoc
 
-\section{🎯 Tipe Data dan Identifier}\label{tipe-data-dan-identifier}
+\section{Tipe Data dan Identifier}\label{tipe-data-dan-identifier}
 
 \subsection{Apa itu Program?}
 
@@ -48,7 +48,7 @@ Identifier (pengenal) adalah nama yang digunakan program untuk merujuk ke lokasi
 \item Identifier membuat program lebih mudah dibaca dan dipahami
 \end{itemize}
 
-\section{📊 Tipe Data Bahasa C++}\label{tipe-data-bahasa-c}
+\section{Tipe Data Bahasa C++}\label{tipe-data-bahasa-c}
 
 \subsection{Apa itu Tipe Data?}
 
@@ -99,7 +99,7 @@ double & 8 bytes & 2.2e--308 to 1.8e308\tabularnewline
 \end{longtable}
 
 
-\section{🔧 Variabel dan Konstanta}\label{variabel-dan-konstanta}
+\section{Variabel dan Konstanta}\label{variabel-dan-konstanta}
 
 \subsection{Apa itu Variabel dan Konstanta?}
 
@@ -130,13 +130,13 @@ kombinasi antara huruf dengan angka dengan syarat.
 \begin{itemize}
 
 \item
-  Harus diawali dengan huruf
+ Harus diawali dengan huruf
 \item
-  Tidak boleh memakai karakter khusus kecuali \$ dan garis bawah (\_)
+ Tidak boleh memakai karakter khusus kecuali \$ dan garis bawah (\_)
 \item
-  Tidak boleh sama dengan kata kunci yang digunakan pada C++
+ Tidak boleh sama dengan kata kunci yang digunakan pada C++
 \item
-  Bersifat case sensitif (huruf besar dan kecil dibedakan)
+ Bersifat case sensitif (huruf besar dan kecil dibedakan)
 \end{itemize}
 
 Walaupun demikian, sebaiknya memberikan nama pengenal variabel sesuai
@@ -181,14 +181,14 @@ tidak mengenal konstanta \texttt{kapasitas}, yang dikenal hanyalah
 bilangan 15.
 
 \begin{quotation}
-{\LARGE \ding{46}}\textbf{TIPS} 
+{\LARGE \ding{46}}\textbf{TIPS}
 
 Walaupun
 dengan memakai preprocessor directive \texttt{\#define} tampak mudah,
 namun sebaiknya cara ini tidak digunakan, karena sudah dinyatakan usang
 pada standard C++ .
 \end{quotation}
- 
+
 
 Cara yang kedua untuk menginisialisasi sebuah konstanta adalah dengan
 memakai kata kunci const seperti berikut :
@@ -208,14 +208,14 @@ diperlakukan sebagai tipe data tersebut.
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh2-1}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh2-1}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Tipe data dan Identifier, label=contoh2-1]{../code/contoh2-1.cpp}
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 
 \begin{lcverbatim}
 Panjang =15
@@ -230,15 +230,15 @@ lebar =12
 \begin{itemize}
 
 \item
-  Pada program di atas variabel panjang dan lebar dideklarasikan bertipe
-  int.
+ Pada program di atas variabel panjang dan lebar dideklarasikan bertipe
+ int.
 \item
-  Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi
-  nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat
-  diubah.
+ Kemudian variabel panjang diberi nilai 15 (integer) dan lebar diberi
+ nilai 12 (integer), tampak bahwa nilai dari variabel tersebut dapat
+ diubah.
 \item
-  Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak
-  ke layar.
+ Pada baris berikutnya nilai dari variabel dapat diakses untuk dicetak
+ ke layar.
 \end{itemize}
 
 \section{Statement}\label{statement}
@@ -263,7 +263,7 @@ operator yang akan dibahas berikut ini.
 
 \begin{quotation}
  {\LARGE \ding{45}} \textbf{CATATAN}
- 
+
  Operator pengerjaan = akan mengambil nilai apapun yang ada disebelah
  kanannya kenudian memberikannya kepada apapun yang berada di sebelah
  kirinya. C++ mengenal juga operator pembanding == yang mempunyai
@@ -508,28 +508,28 @@ Pernyataan berikut ini yang disebut ekspresi adalah 15, 12 dan ``panjang
 \begin{itemize}
 
 \item
-  Pada baris pertama dan kedua di atas digunakan hanya sebuah operator
-  \texttt{=} (yaitu jenjang ke 14), arah proses dari kanan ke kiri,
-  sehingga yang dilakukan :
+ Pada baris pertama dan kedua di atas digunakan hanya sebuah operator
+ \texttt{=} (yaitu jenjang ke 14), arah proses dari kanan ke kiri,
+ sehingga yang dilakukan :
 \item
-  Ekspresi : \texttt{15}, diberikan kepada variabel \texttt{panjang}
-  (dibaca dari kanan ke kiri).
+ Ekspresi : \texttt{15}, diberikan kepada variabel \texttt{panjang}
+ (dibaca dari kanan ke kiri).
 \item
-  Ekspresi : \texttt{12}, diberikan kepada variabel \texttt{lebar}
-  (dibaca dari kanan ke kiri).
+ Ekspresi : \texttt{12}, diberikan kepada variabel \texttt{lebar}
+ (dibaca dari kanan ke kiri).
 \item
-  Pada baris ketiga terdapat 2 operator, yaitu operator =  (jenjang
-  ke 14) dan \texttt{*} operator = (yaitu jenjang ke 3).
-  Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu,
-  jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator.
-  Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada
-  pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator
-  \texttt{*} baru kemudian operator =, sehingga yang dilakukan:
-  - Ekspresi : \texttt{panjang\ *\ lebar} , berarti \texttt{panjang}
-  dikalikan \texttt{lebar} (dibaca dari kiri ke kanan), menghasilkan
-  nilai integer \texttt{180}. - Berikutnya operator = mengoperasikan
-  hasil ekspresi tersebut, yaitu nilai integer \texttt{180} diberikan
-  kepada variabel \texttt{luas} (dibaca dari kanan ke kiri).
+ Pada baris ketiga terdapat 2 operator, yaitu operator = (jenjang
+ ke 14) dan \texttt{*} operator = (yaitu jenjang ke 3).
+ Jenjang menunjukkan operator yang akan dikerjakan terlebih dahulu,
+ jika dalam sebuah ungkapan terdapat lebih dari satu jenis operator.
+ Jenjang nomor 1 adalah jenjang yang paling tinggi, maka pada
+ pernyataan di atas yang akan dikerjakan terlebih dahulu adalah orator
+ \texttt{*} baru kemudian operator =, sehingga yang dilakukan:
+ - Ekspresi : \texttt{panjang\ *\ lebar} , berarti \texttt{panjang}
+ dikalikan \texttt{lebar} (dibaca dari kiri ke kanan), menghasilkan
+ nilai integer \texttt{180}. - Berikutnya operator = mengoperasikan
+ hasil ekspresi tersebut, yaitu nilai integer \texttt{180} diberikan
+ kepada variabel \texttt{luas} (dibaca dari kanan ke kiri).
 \end{itemize}
 
 \begin{quotation}
@@ -541,7 +541,7 @@ menjadi jenjang tertinggi, sehingga akan diproses terlebih dahulu.
 \end{quotation}
 
 
-\subsection{ Operator Unary}\label{a-operator-unary}
+\subsection{Operator Unary}\label{a-operator-unary}
 
 Operator unary adalah operator yang hanya menggunakan sebuah operand
 saja, operator unary yang dipakai pada kebanyakan bahasa pemrograman
@@ -726,16 +726,16 @@ langkah-langkah sebagai berikut:
 
 
 \item
-  Jenjang operator hubungan lebih tinggi dibandingkan dengan operator
-  logika, jadi operator hubungan dikerjakan terlebih dahulu.
+ Jenjang operator hubungan lebih tinggi dibandingkan dengan operator
+ logika, jadi operator hubungan dikerjakan terlebih dahulu.
 \item
-  Operator logika ``\&\&'' mempunyai jenjang lebih tinggi dari operator
-  ``\textbar{}\textbar{}'', sehingga operator ``\&\&'' dikerjakan
-  terlebih dahulu.
+ Operator logika ``\&\&'' mempunyai jenjang lebih tinggi dari operator
+ ``\textbar{}\textbar{}'', sehingga operator ``\&\&'' dikerjakan
+ terlebih dahulu.
 \item
-  Bagian yang paling akhir dikerjakan adalah operator
-  ``\textbar{}\textbar{}'', sehingga hasil akhir logika bernilai logika
-  benar atau True.
+ Bagian yang paling akhir dikerjakan adalah operator
+ ``\textbar{}\textbar{}'', sehingga hasil akhir logika bernilai logika
+ benar atau True.
 \end{enumerate}
 
 

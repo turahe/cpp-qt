@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan mempelajari konsep Pemrograman Berorientasi Objek (OOP) dalam C++:
 
@@ -11,7 +11,7 @@ Pada bab ini kita akan mempelajari konsep Pemrograman Berorientasi Objek (OOP) d
 
 \minitoc
 
-\section{🎯 Pemrograman Berorientasi Objek (OOP)}\label{pemrograman-berorientasi-obyek}
+\section{Pemrograman Berorientasi Objek (OOP)}\label{pemrograman-berorientasi-obyek}
 
 \subsection{Perbedaan C dan C++}
 
@@ -88,7 +88,7 @@ Pemrograman berorientasi objek adalah cara untuk mengorganisasikan program ke da
 \item \textbf{Abstraction} - pengguna tidak melihat proses internal objek
 \end{itemize}
 
-\section{🏗️ Kelas (Class)}\label{kelas}
+\section{Kelas (Class)}\label{kelas}
 
 \subsection{Apa itu Kelas?}
 
@@ -110,7 +110,7 @@ Secara umum, ada dua bagian utama pada sebuah class C++:
 \item \textbf{Class body} - mendeklarasikan variabel dan method
 \end{itemize}
 
-\section{🎯 Objek (Object)}\label{object}
+\section{Objek (Object)}\label{object}
 
 \subsection{Apa itu Objek?}
 
@@ -135,11 +135,11 @@ Object Sepeda
 \begin{itemize}
 
 \item
-  Object Sepeda memiliki attribut (state) : pedal, roda, jeruji, warna,
-  stang, jumlah roda.
+ Object Sepeda memiliki attribut (state) : pedal, roda, jeruji, warna,
+ stang, jumlah roda.
 \item
-  Object Sepeda memiliki tingkah laku (behaviour): kecepatan menaik,
-  kecepatan menurun, memberhentikan, menjalankan, mengganti gigi.
+ Object Sepeda memiliki tingkah laku (behaviour): kecepatan menaik,
+ kecepatan menurun, memberhentikan, menjalankan, mengganti gigi.
 \end{itemize}
 
 \section{Class dan Object}\label{class-dan-object-1}
@@ -177,16 +177,16 @@ Contoh class:
 \lstinputlisting[language=c++]{../code/06-class-object-code-2.c++}
 
 \begin{quotation}
-{\LARGE \ding{46}} 		\textbf{TIPS}
+{\LARGE \ding{46}} \textbf{TIPS}
 
 \begin{itemize}
 \item Untuk membuat
 nama class, biasakanlah menggunakan huruf besar.
-				
-\textbf{ Contohnya:}
-				
+
+\textbf{Contohnya:}
+
  Kucing,Rumah, Handphone, dan lain-lain.
-				
+
 \item Untuk membuat nama
 variabel biasakanlah menggunakan nama yang mewakili property yang
 dimiliki dan melekat pada nama kelasnya. Pada contoh diatas, class
@@ -197,18 +197,18 @@ nama variabel hanya terdiri dari satu kata gunakanlah huruf kecil,
 sedangkan jika terdiri dari lebih dari satu kata, gunakan huruf kecil
 pada huruf kata pertama, sedangkan untuk kata selanjutnya gunakan huruf
 besar pada huruf-huruf pertamanya.
-				
+
  \textbf{Contoh: }string namaKucing, float
 ipkMahasiswa, int berat, dan lain-lain.
-				
+
 \item Untuk membuat
 nama member function, gunakanlah cara penulisan yang tepat untuk
 menggambarkan secara benar setiap nama function yang ada. Biasakanlah
 memberi nama function sesuai dengan behaviour yang memang dikerjakannya.
 Contohnya: \texttt{void\ cariData(string\ judul)}, atau
-				\texttt{int\ ambilNilai()} dan lain-lain.
-			\end{itemize}
-			
+ \texttt{int\ ambilNilai()} dan lain-lain.
+ \end{itemize}
+
 	\end{quotation}
 
 
@@ -254,7 +254,7 @@ dengan juga menggunakan tanda titik pada obyeknya. Contoh:
 
 \lstinputlisting[language=c++]{../code/06-class-object-code-7.c++}
 
-\subsubsection*{Contoh  Pembuatan class Sepeda}
+\subsubsection*{Contoh Pembuatan class Sepeda}
 
 Buatlah project baru dan tulis kode berikut:
 
@@ -271,31 +271,31 @@ Kecepatan: 30 Merk: Federal
 \begin{itemize}
 
 \item
-  Program diatas membuat sebuah class bernama Sepeda. Di dalam class
-  Sepeda, terdapat dua bagian, bagian pertama berisi semua member
-  variabel yang bersifat private, yaitu kecepatan, gigi, dan merk. Pada
-  bagian kedua terdapat member function yang hanya beisi judul method
-  saja sedangkan implementasinya diletakkan diluar class Sepeda.
+ Program diatas membuat sebuah class bernama Sepeda. Di dalam class
+ Sepeda, terdapat dua bagian, bagian pertama berisi semua member
+ variabel yang bersifat private, yaitu kecepatan, gigi, dan merk. Pada
+ bagian kedua terdapat member function yang hanya beisi judul method
+ saja sedangkan implementasinya diletakkan diluar class Sepeda.
 \item
-  Diluar kelas Sepeda, kita mendefinisikan semua implementasi method
-  dari semua member function yang sudah kita definisikan diatas. Untuk
-  mengakses member function dari luar kelasnya, digunakan tanda
-  \texttt{::} setelah nama class. Implementasi method bisa menggunakan
-  cara lain yang akan dijelaskan dibagian-bagian berikutnya.
+ Diluar kelas Sepeda, kita mendefinisikan semua implementasi method
+ dari semua member function yang sudah kita definisikan diatas. Untuk
+ mengakses member function dari luar kelasnya, digunakan tanda
+ \texttt{::} setelah nama class. Implementasi method bisa menggunakan
+ cara lain yang akan dijelaskan dibagian-bagian berikutnya.
 \item
-  Pada function main, kita membuat obyek dari class Sepeda yang bernama
-  objSpd dan kemudian kita akses semua member functionnya.
+ Pada function main, kita membuat obyek dari class Sepeda yang bernama
+ objSpd dan kemudian kita akses semua member functionnya.
 \item
-  Sebelum menampilkan hasil kita isi terlebih dahulu kecepatan, gigi,
-  dan merk dari Sepeda yang kita buat.
+ Sebelum menampilkan hasil kita isi terlebih dahulu kecepatan, gigi,
+ dan merk dari Sepeda yang kita buat.
 \item
-  Keyword this mengacu pada class itu sendiri (class Sepeda) dan
-  merupakan variabel pointer. Keyword tersebut digunakan untuk mengakses
-  semua member variabel dan member method class Sepeda.
+ Keyword this mengacu pada class itu sendiri (class Sepeda) dan
+ merupakan variabel pointer. Keyword tersebut digunakan untuk mengakses
+ semua member variabel dan member method class Sepeda.
 \end{itemize}
 \begin{quotation}
-{\LARGE \ding{46}} 	\textbf{TIPS} 
-	
+{\LARGE \ding{46}} \textbf{TIPS}
+
 	Keyword
 	\texttt{this} pada class Sepeda merupakan kata kunci untuk mengakses
 	class yang didefinisikan (kelas dirinya sendiri). Tanda
@@ -304,15 +304,15 @@ Kecepatan: 30 Merk: Federal
 	menggunakan \texttt{\textless{}namakelas\textgreater{}::} diikuti nama
 	method / variabel member .
 \end{quotation}
- 
- 
-  
+
+
+
 
 Contoh :
 
 \lstinputlisting[language=c++]{../code/06-class-object-code-9.c++}
 
-\subsubsection*{Contoh  Pembuatan obyek Sepeda.}
+\subsubsection*{Contoh Pembuatan obyek Sepeda.}
 
 Buatlah project baru dan tulis kode berikut:
 
@@ -335,19 +335,19 @@ Merk: Polygon
 \begin{itemize}
 
 \item
-  Program diatas merupakan pengembangan dari program sebelumnya dimana
-  kita membuat satu lagi variabel \texttt{objSpd2}.
+ Program diatas merupakan pengembangan dari program sebelumnya dimana
+ kita membuat satu lagi variabel \texttt{objSpd2}.
 \item
-  Terlihat bahwa masing-masing obyek sepeda yang terbuat memiliki data
-  yang berbeda-beda satu sama lain.
+ Terlihat bahwa masing-masing obyek sepeda yang terbuat memiliki data
+ yang berbeda-beda satu sama lain.
 \item
-  Artinya class hanyalah merupakan template / blueprint saja, dimana
-  data-data dan tingkah laku dari kelas haruslah dilakukan oleh
-  obyeknya. Jadi obyek adalah bentuk nyata dari sebuah kelas yang
-  memiliki data dan method yang berbeda-beda satu sama lain.
+ Artinya class hanyalah merupakan template / blueprint saja, dimana
+ data-data dan tingkah laku dari kelas haruslah dilakukan oleh
+ obyeknya. Jadi obyek adalah bentuk nyata dari sebuah kelas yang
+ memiliki data dan method yang berbeda-beda satu sama lain.
 \end{itemize}
 
-\subsubsection*{Contoh  Pembuatan Obyek Array Sepeda}
+\subsubsection*{Contoh Pembuatan Obyek Array Sepeda}
 
 Buatlah program beikut ini:
 
@@ -383,38 +383,38 @@ Gigi: 14
 \begin{itemize}
 
 \item
-  Program diatas merupakan pengembangan lagi dari Contoh \ref{contoh6-3}.
+ Program diatas merupakan pengembangan lagi dari Contoh \ref{contoh6-3}.
 \item
-  Program diatas membuat obyek dari class Sepeda dalam bentuk Array 1
-  dimensi yang bertipe Sepeda.
+ Program diatas membuat obyek dari class Sepeda dalam bentuk Array 1
+ dimensi yang bertipe Sepeda.
 \item
-  Array yang bertipe class Sepeda tersebut tetap memiliki indeks dari 0
-  sampai dengan n-1
+ Array yang bertipe class Sepeda tersebut tetap memiliki indeks dari 0
+ sampai dengan n-1
 \item
-  Masing-masing obyek elemen array \texttt{objSpdArray} berisi data-data
-  yang berbeda-beda satu sama lainnya.
+ Masing-masing obyek elemen array \texttt{objSpdArray} berisi data-data
+ yang berbeda-beda satu sama lainnya.
 \end{itemize}
 
 \begin{quotation}
-{\LARGE \ding{46}} 	\textbf{TIPS}
-	
+{\LARGE \ding{46}} \textbf{TIPS}
+
 	Kita juga
 	dapat melakukan assigment / penugasan terhadap obyek ke obyek lain.
 	Contoh kita memiliki class Sepeda dan kita membuat obyek spd1 dan spd2.
-	
+
 	\begin{lstlisting}[language=c++, numbers=none]
 	Sepeda spd1,spd2;
 	spd1.setMerk("X");
 	spd1.ubahKecepatan(50);
 	spd1.ubahGigi(4);
 	\end{lstlisting}
-	
+
 	maka bisa dilakukan:
-	
+
 	\begin{lstlisting}[language=c++, numbers=none]
 	spd2 = spd1;
 	\end{lstlisting}
-	
+
 	Jika \texttt{spd2} ditampilkan, dengan \texttt{sp2.tampilSepeda()}, maka
 	nilai yang ditampilkan akan sama persis dengan nilai \texttt{spd1}.
 \end{quotation}
@@ -466,45 +466,45 @@ bisa diakses dari luar class, harus dari dalam class tersebut atau
 berada dalam method class tersebut, sedangkan jika public maka bisa
 akses dari luar class.
 
-\subsubsection*{Contoh  Perbedaan private dan public pada member variabel}
+\subsubsection*{Contoh Perbedaan private dan public pada member variabel}
 \begin{enumerate}
-	
+
 
 	\item Buatlah program berikut:
-	
+
 \lstinputlisting[language=c++, caption=Public pada member variabel, label=contoh6-4]{../code/06-class-object-contoh6-4.c++}
-	
-\item 	\textbf{Hasil:}
-	
+
+\item \textbf{Hasil:}
+
 	\begin{lcverbatim}
 Pengaksesan public:
 Gigi: 3
 Kecepatan: 30
 Merk: Polygon
 	\end{lcverbatim}
-	
-\item 	\textbf{Keterangan:}
-	
+
+\item \textbf{Keterangan:}
+
 	Semua variabel member yang bersifat public dapat diakses dan diisi
 	dengan baik dari luar class, dalam hal ini adalah function
 	\texttt{int\ main()}. Function \texttt{int\ main()} berada diluar class
 	Sepeda Akan terjadi hal yang berbeda jika kita mengakses semua variabel
 	member yang bersifat private.
-	
-\item 	Ubahlah program pada Contoh \ref{contoh6-4} diatas menjadi seperti berikut ini:
-	
+
+\item Ubahlah program pada Contoh \ref{contoh6-4} diatas menjadi seperti berikut ini:
+
 \lstinputlisting[language=c++, caption=Privat pada member variabel, label=contoh6-5]{../code/06-class-object-contoh6-5.c++}
-	
-\item 	\textbf{Hasil:}
-	
+
+\item \textbf{Hasil:}
+
 	\begin{figure}[htbp]
-		\centering
+ \centering
 \shadowimage[width=8cm]{Capture6-1}
 
 	\end{figure}
-	
-\item 	\textbf{Keterangan:}
-	
+
+\item \textbf{Keterangan:}
+
 	Akan terjadi compile time error, karena kita mengakses variabel member
 	yang bersifat \emph{private}. Berarti class Sepeda sudah bisa menerapkan
 	fungsi enkapsulasi dan melindungi data-datanya dari pengaksesan
@@ -531,7 +531,7 @@ minimal selalu mewakili semua member variabelnya. Misal kita memiliki 1
 buah member variabel bernama umur, maka minimal kita akan memiliki satu
 buah member function, misalnya bernama ubahUmur(int u).
 
-\subsubsection*{Contoh  Member function dan implementasinya.}
+\subsubsection*{Contoh Member function dan implementasinya.}
 
 Buatlah program berikut ini:
 
@@ -549,24 +549,24 @@ Merk: Federal
 \begin{itemize}
 
 \item
-  Semua member variabel yang dimiliki tidak diakses secara langsung dari
-  function main, tapi melalui method-methodnya.
+ Semua member variabel yang dimiliki tidak diakses secara langsung dari
+ function main, tapi melalui method-methodnya.
 \item
-  Pada program diatas setiap member variabel memiliki minimal satu buah
-  method member
+ Pada program diatas setiap member variabel memiliki minimal satu buah
+ method member
 \item
-  Terdapat satu buah method tambahan yang berfungsi untuk menampilkan
-  semua informasi mengenai sepeda
+ Terdapat satu buah method tambahan yang berfungsi untuk menampilkan
+ semua informasi mengenai sepeda
 \item
-  Setiap method member dapat menerima input dan mengeluarkan output.
+ Setiap method member dapat menerima input dan mengeluarkan output.
 \item
-  Kata kunci \texttt{this-\textgreater{}} pada method member berfungsi
-  untuk mengakses semua member variabel yang terdapat pada class Sepeda
-  yang biasanya bersifat private.
+ Kata kunci \texttt{this-\textgreater{}} pada method member berfungsi
+ untuk mengakses semua member variabel yang terdapat pada class Sepeda
+ yang biasanya bersifat private.
 \item
-  Implementasi method member berada diluar class Sepeda dan dimulai
-  dengan nama classnya kemudian diikuti tanda :: yang artinya mengakses
-  member method.
+ Implementasi method member berada diluar class Sepeda dan dimulai
+ dengan nama classnya kemudian diikuti tanda :: yang artinya mengakses
+ member method.
 \end{itemize}
 
 \section{Accessor dan Mutator
@@ -606,7 +606,7 @@ Mutator method biasanya dinamai :
 
 \lstinputlisting[language=c++]{../code/06-class-object-code-21.c++}
 
-\subsubsection*{Contoh  Penggunaan accessor dan mutator method}
+\subsubsection*{Contoh Penggunaan accessor dan mutator method}
 
 Tulislah program berikut ini:
 
@@ -617,26 +617,26 @@ Tulislah program berikut ini:
 	Kucingku bernama Katty,
 	dia berbobot 4 kg dan sudah berumur 2 tahun sekarang.
 \end{lstlisting}
- 
+
 
 \textbf{Keterangan:}
 
 \begin{itemize}
 
 \item
-  Program diatas memperlihatkan bagaimana setiap member variabel
-  memiliki tepat dua buah method member, dimana setiap method member
-  yang satu berfungsi sebagai asesor method dan yang lain berfungsi
-  sebagai mutator method.
+ Program diatas memperlihatkan bagaimana setiap member variabel
+ memiliki tepat dua buah method member, dimana setiap method member
+ yang satu berfungsi sebagai asesor method dan yang lain berfungsi
+ sebagai mutator method.
 \item
-  Terdapat sebuah method tambahan yaitu berlari yang hendak
-  menggambarkan bahwa selain asesor dan mutator kita masih diperbolehkan
-  membuat method lainnya.
+ Terdapat sebuah method tambahan yaitu berlari yang hendak
+ menggambarkan bahwa selain asesor dan mutator kita masih diperbolehkan
+ membuat method lainnya.
 \item
-  Asesor method mengambil data member variabel sehingga dibuat fungsi
-  berupa function non void, sedangkan mutator method mengeset data
-  member variabel sehingga dibuat fungsi berupa function void yang
-  menerima parameter yang sesuai dengan tipe data member variabelnya.
+ Asesor method mengambil data member variabel sehingga dibuat fungsi
+ berupa function non void, sedangkan mutator method mengeset data
+ member variabel sehingga dibuat fungsi berupa function void yang
+ menerima parameter yang sesuai dengan tipe data member variabelnya.
 \end{itemize}
 
 \section{Constructor dan
@@ -701,7 +701,7 @@ Maka pada saat instansiasi kita menggunakan cara sebagai berikut:
 Arti instasiasi diatas adalah kita memanggil konstruktor yang
 berparameter dua buah, string dan integer.
 
-\subsubsection*{Contoh  Menggunakan Constructor dan Destructor.}
+\subsubsection*{Contoh Menggunakan Constructor dan Destructor.}
 
 Buatlah program berikut:
 
@@ -712,25 +712,25 @@ Buatlah program berikut:
 	Kucingku bernama Katty, dia berbobot 4 kg dan sudah
 	berumur 2 tahun sekarang.
 \end{lstlisting}
- 
+
 
 \textbf{Keterangan:}
 
 \begin{itemize}
 
 \item
-  Program diatas menunjukkan pemakaian konstruktor dan desktruktor.
-  Constructor digunakan untuk menginisialisasi umur kucing pada saat
-  awal pertama obyek dibuat, kemudian pada akhirnya kita juga tetap
-  dapat mengubah umur kucing dibagian akhir program.
+ Program diatas menunjukkan pemakaian konstruktor dan desktruktor.
+ Constructor digunakan untuk menginisialisasi umur kucing pada saat
+ awal pertama obyek dibuat, kemudian pada akhirnya kita juga tetap
+ dapat mengubah umur kucing dibagian akhir program.
 \item
-  Destruktor yang kita buat merupakan default desktruktor dimana
-  desktruktor tidak boleh memiliki parameter apapun.
+ Destruktor yang kita buat merupakan default desktruktor dimana
+ desktruktor tidak boleh memiliki parameter apapun.
 \end{itemize}
 
 \begin{quotation}
-{\LARGE \ding{46}} 	\textbf{TIPS} 
-	
+{\LARGE \ding{46}} \textbf{TIPS}
+
 	Jika kita
 	sudah membuat konstruktor yang memiliki parameter pada class kita, maka
 	secara otomatis default constructor yang dibuat oleh compiler tidak ada
@@ -758,7 +758,7 @@ defaultnya sudah hilang. Agar kita dapat menggunakan baris
 \texttt{Kucing\ kucingku2;} maka kita harus menambah method constructor
 lagi yang tidak berparameter.
 
-\subsubsection*{Contoh  Percobaan Menambah Constructor Method.}
+\subsubsection*{Contoh Percobaan Menambah Constructor Method.}
 
 Buatlah program berikut:
 
@@ -767,9 +767,9 @@ Buatlah program berikut:
 \textbf{Hasil:}
 
 \begin{lcverbatim}
-Kucingku bernama Katty, dia berbobot 4 kg dan 
+Kucingku bernama Katty, dia berbobot 4 kg dan
 sudah berumur 2 tahun sekarang.
-Lima tahun telah berlalu, sekarang kucingku 
+Lima tahun telah berlalu, sekarang kucingku
 sudah berumur:7 tahun
 \end{lcverbatim}
 
@@ -778,13 +778,13 @@ sudah berumur:7 tahun
 \begin{itemize}
 
 \item
-  Pada program C++, kita dapat membuat konstruktor method lebih dari
-  satu, asal tidak sama. Konsep diatas dinamakan dengan polymorfisme
-  (OVERLOADING) yang akan dibahas lebih lanjut dibab-bab berikutnya.
+ Pada program C++, kita dapat membuat konstruktor method lebih dari
+ satu, asal tidak sama. Konsep diatas dinamakan dengan polymorfisme
+ (OVERLOADING) yang akan dibahas lebih lanjut dibab-bab berikutnya.
 \item
-  Dengan mendefinisikan konstruktor tanpa parameter maka kita dapat
-  menginstansiasi obyek dengan cara biasa, seperti pada contoh Kucing
-  kucingku2;
+ Dengan mendefinisikan konstruktor tanpa parameter maka kita dapat
+ menginstansiasi obyek dengan cara biasa, seperti pada contoh Kucing
+ kucingku2;
 \end{itemize}
 
 \subsection{Constructor Dengan nilai
@@ -797,7 +797,7 @@ mempermudah menginisialisasi data variabel member. Penggunaan nilai
 default ini juga memungkinkan kita untuk tidak memasukkan semua
 parameter pada pemanggilan konstruktor.
 
-\subsubsection*{Contoh  Penggunaan Constructor dengan Nilai Default}
+\subsubsection*{Contoh Penggunaan Constructor dengan Nilai Default}
 
 Buatlah program berikut:
 
@@ -824,43 +824,43 @@ Jumlah halaman: 100
 \begin{itemize}
 
 \item
-  Program diatas menunukkan bahwa kita dapat membuat konstruktor dengan
-  nilai default, yaitu dengan menggunakan parameter dan langsung
-  diinisialisasi dengan menggunakan tanda sama dengan (=).
+ Program diatas menunukkan bahwa kita dapat membuat konstruktor dengan
+ nilai default, yaitu dengan menggunakan parameter dan langsung
+ diinisialisasi dengan menggunakan tanda sama dengan (=).
 \item
-  Pada pemanggilan konstruktor, terlihat bahwa jika konstruktor tidak
-  diisi parameter apapun maka ketika data ditampilkan semua isi member
-  variabel sesuai dengan nilai defaultnya.
+ Pada pemanggilan konstruktor, terlihat bahwa jika konstruktor tidak
+ diisi parameter apapun maka ketika data ditampilkan semua isi member
+ variabel sesuai dengan nilai defaultnya.
 \item
-  Pada pemanggilan konstruktor kedua, yaitu dengan satu parameter
-  string, maka string tersebut mengacu pada parameter pertama, yaitu
-  Pengarang, sehingga judul dan jumlah halaman berisi nilai default.
+ Pada pemanggilan konstruktor kedua, yaitu dengan satu parameter
+ string, maka string tersebut mengacu pada parameter pertama, yaitu
+ Pengarang, sehingga judul dan jumlah halaman berisi nilai default.
 \item
-  Pada pemanggilan konstruktor ketiga, yaitu dengan dua parameter
-  string, maka kedua parameter itu mengisi pengarang dan judulnya (hal
-  ini sesuai dengan urutan penempatan pada pendefinisian method
-  konstruktor pada program), sedangkan variabel member lain berisi
-  default
+ Pada pemanggilan konstruktor ketiga, yaitu dengan dua parameter
+ string, maka kedua parameter itu mengisi pengarang dan judulnya (hal
+ ini sesuai dengan urutan penempatan pada pendefinisian method
+ konstruktor pada program), sedangkan variabel member lain berisi
+ default
 \item
-  Pada pemanggilan ketiga, ketiga parameter diisi sehingga semua nilai
-  default berubah.
+ Pada pemanggilan ketiga, ketiga parameter diisi sehingga semua nilai
+ default berubah.
 \end{itemize}
 \begin{quotation}
-{\LARGE \ding{46}} 	\textbf{TIPS} 
-	
+{\LARGE \ding{46}} \textbf{TIPS}
+
 	Kita juga
 	dapat memberi nilai default dengan cara lain, perhatikan contoh berikut:
-	
+
 \lstinputlisting[language=c++, caption=Memberi nilai default pada constructor, label=contoh6-11]{../code/06-class-object-contoh6-11.c++}
-	
+
 	\textbf{Hasil:}
-	
+
 \begin{lcverbatim}
 x=0 y=2 z=4
 \end{lcverbatim}
-	
+
 	\textbf{Keterangan:}
-	
+
 	Terlihat bahwa kita bisa menginisialisasi isi dari variabel member yang
 	kita miliki dengan cara menuliskannya pada bagian header method member
 	seperti pada contoh \ref{contoh6-11}. Dan ketika class diinstasiasi maka otomatis
@@ -887,7 +887,7 @@ const pada akhir nama method tersebut. Contoh:
 
 \lstinputlisting[language=c++]{../code/06-class-object-code-35.c++}
 
-\subsubsection*{Contoh  Penggunaan const method.}
+\subsubsection*{Contoh Penggunaan const method.}
 
 Buatlah program berikut ini:
 
@@ -895,9 +895,9 @@ Buatlah program berikut ini:
 
 \textbf{Hasil:}
 \begin{lcverbatim}
-Kucingku bernama Katty, 
+Kucingku bernama Katty,
 dia berbobot 4 kg dan sudah
-berumur 2 tahun sekarang. 
+berumur 2 tahun sekarang.
 Lima tahun telah berlalu,
  sekarang kucingku sudah berumur: 7 tahun
 \end{lcverbatim}
@@ -907,33 +907,33 @@ Lima tahun telah berlalu,
 
 \begin{itemize}
 \item
-  Program diatas hasilnya sama dengan program sebelumnya karena kita
-  hanya mengubah bagian asesor method dengan cara menambah kata const
-  dibelakangnya. Bagian implementasi method tersebut juga harus
-  disesuaikan.
+ Program diatas hasilnya sama dengan program sebelumnya karena kita
+ hanya mengubah bagian asesor method dengan cara menambah kata const
+ dibelakangnya. Bagian implementasi method tersebut juga harus
+ disesuaikan.
 \item
-  Dengan cara ini method asesor tersebut sudah bersifat read-only.
-  Ubahlah bagian method \texttt{void\ getUmur()\ const}; Kita coba
-  tambahkan baris program berikut sebelum return:
+ Dengan cara ini method asesor tersebut sudah bersifat read-only.
+ Ubahlah bagian method \texttt{void\ getUmur()\ const}; Kita coba
+ tambahkan baris program berikut sebelum return:
 
-  this-\textgreater{}umur = 5.
-  Kode lengkapnya adalah:
-  
-  \begin{lstlisting}[language=c++, numbers=none]
-  int Kucing::getUmur() const{
-  this->umur = 5;
-  return this->umur;
-  }
-  \end{lstlisting}
-  
-  Jika kita kompilasi program diatas, maka akan terjadi error sebagai
-  berikut:
-  
-  \begin{figure}[htbp]
-  	\centering
+ this-\textgreater{}umur = 5.
+ Kode lengkapnya adalah:
+
+ \begin{lstlisting}[language=c++, numbers=none]
+ int Kucing::getUmur() const{
+ this->umur = 5;
+ return this->umur;
+ }
+ \end{lstlisting}
+
+ Jika kita kompilasi program diatas, maka akan terjadi error sebagai
+ berikut:
+
+ \begin{figure}[htbp]
+ \centering
 \shadowimage[width=8cm]{Capture6-3}
 
-  \end{figure}
+ \end{figure}
 \end{itemize}
 
 
@@ -962,7 +962,7 @@ Pada contoh diatas terlihat bahwa pada class Manusia implementasi kode
 method setNama dan getNama langsung dituliskan didalam program tersebut.
 Hal itu disebut inline implementation.
 
-\subsubsection*{Contoh  Inline Implementation.}
+\subsubsection*{Contoh Inline Implementation.}
 
 Buatlah program berikut:
 
@@ -970,25 +970,25 @@ Buatlah program berikut:
 
 \textbf{Hasil:}
 \begin{lcverbatim}
-Nama: Susanto, Jenis Kelamin: L 
-Nama: Susanti, Jenis Kelamin: P 
+Nama: Susanto, Jenis Kelamin: L
+Nama: Susanti, Jenis Kelamin: P
 Nama: Rudi, Jenis Kelamin: L
 \end{lcverbatim}
- 
+
 
 \textbf{Keterangan:}
 
 \begin{itemize}
 
 \item
-  Program diatas hanya menjelaskan bagaimana kita dapat
-  mengimplementasikan method member langsung didalam tubuh class, tidak
-  diluar class.
+ Program diatas hanya menjelaskan bagaimana kita dapat
+ mengimplementasikan method member langsung didalam tubuh class, tidak
+ diluar class.
 \item
-  Hal seperti ini biasa dilakukan pada bahasa pemrograman berorientasi
-  obyek lain seperti misalnya Java.
+ Hal seperti ini biasa dilakukan pada bahasa pemrograman berorientasi
+ obyek lain seperti misalnya Java.
 \item
-  Inline implementation tidak berbeda dengan non-inline implementation.
+ Inline implementation tidak berbeda dengan non-inline implementation.
 \end{itemize}
 
 \section{Class yang bertipe Class
@@ -1004,7 +1004,7 @@ juga terdiri dari class Titik. Class dapat menjadi solusi yang baik
 untuk membuat tipe data baru yang memiliki member variabel dan member
 method yang tentunya sangat berguna.
 
-\subsubsection*{Contoh  Class Mobil dan Class Roda.}
+\subsubsection*{Contoh Class Mobil dan Class Roda.}
 
 Buatlah program berikut:
 
@@ -1032,32 +1032,32 @@ Merk: Bridgestone
 \begin{itemize}
 
 \item
-  Program diatas mendemonstrasikan kepada kita bahwa kita dapat membuat
-  class yang memiliki variabel member yang bertipe class lain.
+ Program diatas mendemonstrasikan kepada kita bahwa kita dapat membuat
+ class yang memiliki variabel member yang bertipe class lain.
 \item
-  Cara mendeklarasikan variabel member bertipe class sama seperti cara
-  mendefinisikan variabel member bertipe data biasa
+ Cara mendeklarasikan variabel member bertipe class sama seperti cara
+ mendefinisikan variabel member bertipe data biasa
 \item
-  Variabel member yang bertipe data class akan memiliki sifat-sifat
-  class tersebut.
+ Variabel member yang bertipe data class akan memiliki sifat-sifat
+ class tersebut.
 \item
-  Pada contoh \ref{contoh6-14}, class Mobil memiliki variabel member
-  bertipe class Roda, maka variabel member
-  \texttt{roda\_depan1,\ roda\_depan2},
-  \texttt{roda\_belakang1,\ dan\ roda\_belakang2} akan memiliki
-  sifat-sifat class Roda, dimana kita dapa mengakses semua variabel
-  member class Roda dan juga method member class Roda.
+ Pada contoh \ref{contoh6-14}, class Mobil memiliki variabel member
+ bertipe class Roda, maka variabel member
+ \texttt{roda\_depan1,\ roda\_depan2},
+ \texttt{roda\_belakang1,\ dan\ roda\_belakang2} akan memiliki
+ sifat-sifat class Roda, dimana kita dapa mengakses semua variabel
+ member class Roda dan juga method member class Roda.
 \item
-  Cara mengakses variabel member dan method member class Roda sama
-  seperti biasa, yaitu dengan menggunakan tanda titik (.). Namun perlu
-  diingat bahwa kita tidak dapat langsung mengakses variabel member
-  class Roda karena variabel member tersebut bersifat private. Yang
-  dapat kita lakukan adalah mengakses method member yang menenkapsulasi
-  variabel member class Roda. Pada contoh \ref{contoh6-14} kita mengakses method
-  \texttt{getMerk()} dan \texttt{getDiameter()}.
+ Cara mengakses variabel member dan method member class Roda sama
+ seperti biasa, yaitu dengan menggunakan tanda titik (.). Namun perlu
+ diingat bahwa kita tidak dapat langsung mengakses variabel member
+ class Roda karena variabel member tersebut bersifat private. Yang
+ dapat kita lakukan adalah mengakses method member yang menenkapsulasi
+ variabel member class Roda. Pada contoh \ref{contoh6-14} kita mengakses method
+ \texttt{getMerk()} dan \texttt{getDiameter()}.
 \end{itemize}
 
-\subsubsection*{Contoh  Class Titik dan Garis.}
+\subsubsection*{Contoh Class Titik dan Garis.}
 
 Buatlah program berikut ini:
 
@@ -1089,38 +1089,38 @@ Panjang garis da: 5
 \begin{itemize}
 
 \item
-  Program diatas juga menunjukkan contoh lain dari suatu class yang
-  memiliki member variabel yang bertipe class lain. Pada contoh \ref{contoh6-15}
-  class Garis memiliki variabel member yang berasal dari class Titik.
-  Sehingga dari obyek Garis kita dapat mengakses semua method member
-  class Titik.
+ Program diatas juga menunjukkan contoh lain dari suatu class yang
+ memiliki member variabel yang bertipe class lain. Pada contoh \ref{contoh6-15}
+ class Garis memiliki variabel member yang berasal dari class Titik.
+ Sehingga dari obyek Garis kita dapat mengakses semua method member
+ class Titik.
 \item
-  Dengan menggunakan rumus matematis perhitungan jarak antara dua buah
-  koordinat (titik), maka kita bisa menghitung panjang garis. Untuk
-  perhitungan dibutuhkan function sqrt yang berarti akar kuadrat,
-  sehingga kita harus memasukan \texttt{header\ math.h}
+ Dengan menggunakan rumus matematis perhitungan jarak antara dua buah
+ koordinat (titik), maka kita bisa menghitung panjang garis. Untuk
+ perhitungan dibutuhkan function sqrt yang berarti akar kuadrat,
+ sehingga kita harus memasukan \texttt{header\ math.h}
 \item
-  Method \texttt{isOrigin} pada class Titik digunakan untuk mengetahui
-  apakah suatu koordinat berada di titik \texttt{0,0} atau tidak. Kita
-  dapat menambahkan method lain yang sesuai kebutuhan kita.
+ Method \texttt{isOrigin} pada class Titik digunakan untuk mengetahui
+ apakah suatu koordinat berada di titik \texttt{0,0} atau tidak. Kita
+ dapat menambahkan method lain yang sesuai kebutuhan kita.
 \item
-  Di dalam kelas Garis kita memiliki beberapa konstruktor, ada yang
-  tidak berparameter, ada yang berparameter 2 Titik dan berparameter 4
-  koordinat. Semuanya itu digunakan untuk tujuan yang sama, yaitu
-  menciptakan obyek Titik pada member variabel class Garis, karena Garis
-  pada dasarnya adalah terdiri dari 2 buah Titik.
+ Di dalam kelas Garis kita memiliki beberapa konstruktor, ada yang
+ tidak berparameter, ada yang berparameter 2 Titik dan berparameter 4
+ koordinat. Semuanya itu digunakan untuk tujuan yang sama, yaitu
+ menciptakan obyek Titik pada member variabel class Garis, karena Garis
+ pada dasarnya adalah terdiri dari 2 buah Titik.
 \end{itemize}
 
 \begin{quotation}
-{\LARGE \ding{46}}  \textbf{TIPS} 
-	
+{\LARGE \ding{46}} \textbf{TIPS}
+
 Pada bahasa C++ kita tidak dapat memanggil konstruktor dari dalam konstruktor
 lain yang berada dalam satu class.
-	
+
 \textbf{Contoh:}
-	
+
 \lstinputlisting[language=c++]{../code/06-class-object-code-42.c++}
-	
+
  Akan menghasilkan error!
 \end{quotation}
 

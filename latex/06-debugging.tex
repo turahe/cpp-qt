@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan mempelajari tentang debugging - seni menemukan dan memperbaiki bug dalam program:
 
@@ -12,7 +12,7 @@ Pada bab ini kita akan mempelajari tentang debugging - seni menemukan dan memper
 
 \minitoc
 
-\section{🐛 Pengenalan Debugging}
+\section{Pengenalan Debugging}
 
 \subsection{Apa itu Debugging?}
 
@@ -31,7 +31,7 @@ Debugging adalah proses menemukan, menganalisis, dan memperbaiki kesalahan (bug)
 \item \textbf{Meningkatkan skill pemrograman} - Belajar dari kesalahan
 \end{itemize}
 
-\section{🚨 Jenis-jenis Kesalahan dalam Pemrograman}
+\section{Jenis-jenis Kesalahan dalam Pemrograman}
 
 \subsection{1. Syntax Error (Kesalahan Sintaks)}
 
@@ -44,12 +44,12 @@ Syntax error adalah kesalahan dalam penulisan kode yang melanggar aturan bahasa 
 using namespace std;
 
 int main() {
-    cout << "Hello World"  // Lupa semicolon
-    int x = 5;
-    if (x == 5 {          // Lupa kurung tutup
-        cout << "x adalah 5";
-    }
-    return 0;
+ cout << "Hello World" // Lupa semicolon
+ int x = 5;
+ if (x == 5 { // Lupa kurung tutup
+ cout << "x adalah 5";
+ }
+ return 0;
 }
 \end{lstlisting}
 
@@ -73,11 +73,11 @@ Logic error adalah kesalahan dalam logika program yang menyebabkan program berja
 using namespace std;
 
 int main() {
-    int a = 10, b = 5;
-    int hasil = a - b;  // Seharusnya a + b
-    
-    cout << "Hasil: " << hasil << endl;  // Output: 5 (salah)
-    return 0;
+ int a = 10, b = 5;
+ int hasil = a - b; // Seharusnya a + b
+
+ cout << "Hasil: " << hasil << endl; // Output: 5 (salah)
+ return 0;
 }
 \end{lstlisting}
 
@@ -110,17 +110,17 @@ Runtime error adalah kesalahan yang terjadi saat program sedang berjalan.
 using namespace std;
 
 int main() {
-    int arr[5] = {1, 2, 3, 4, 5};
-    cout << arr[10] << endl;  // Array out of bounds
-    
-    int x = 10, y = 0;
-    int hasil = x / y;  // Division by zero
-    
-    return 0;
+ int arr[5] = {1, 2, 3, 4, 5};
+ cout << arr[10] << endl; // Array out of bounds
+
+ int x = 10, y = 0;
+ int hasil = x / y; // Division by zero
+
+ return 0;
 }
 \end{lstlisting}
 
-\section{🔧 Menggunakan Debugger di Qt Creator}
+\section{Menggunakan Debugger di Qt Creator}
 
 \subsection{Apa itu Debugger?}
 
@@ -177,21 +177,21 @@ Qt Creator menyediakan debugger yang terintegrasi dengan fitur-fitur:
 using namespace std;
 
 int hitungFaktorial(int n) {
-    if (n <= 1) {
-        return 1;
-    }
-    return n * hitungFaktorial(n - 1);
+ if (n <= 1) {
+ return 1;
+ }
+ return n * hitungFaktorial(n - 1);
 }
 
 int main() {
-    int angka;
-    cout << "Masukkan angka: ";
-    cin >> angka;
-    
-    int hasil = hitungFaktorial(angka);
-    cout << "Faktorial dari " << angka << " adalah: " << hasil << endl;
-    
-    return 0;
+ int angka;
+ cout << "Masukkan angka: ";
+ cin >> angka;
+
+ int hasil = hitungFaktorial(angka);
+ cout << "Faktorial dari " << angka << " adalah: " << hasil << endl;
+
+ return 0;
 }
 \end{lstlisting}
 
@@ -205,7 +205,7 @@ int main() {
 \item \textbf{Step Over} untuk melihat alur rekursi
 \end{enumerate}
 
-\section{🔍 Teknik Debugging yang Efektif}
+\section{Teknik Debugging yang Efektif}
 
 \subsection{1. Print Debugging}
 
@@ -216,15 +216,15 @@ Menambahkan output untuk melihat nilai variabel:
 using namespace std;
 
 int main() {
-    int x = 10, y = 5;
-    
-    cout << "DEBUG: x = " << x << ", y = " << y << endl;
-    
-    int hasil = x + y;
-    cout << "DEBUG: hasil = " << hasil << endl;
-    
-    cout << "Hasil: " << hasil << endl;
-    return 0;
+ int x = 10, y = 5;
+
+ cout << "DEBUG: x = " << x << ", y = " << y << endl;
+
+ int hasil = x + y;
+ cout << "DEBUG: hasil = " << hasil << endl;
+
+ cout << "Hasil: " << hasil << endl;
+ return 0;
 }
 \end{lstlisting}
 
@@ -238,16 +238,16 @@ Menggunakan assert untuk memverifikasi kondisi:
 using namespace std;
 
 int bagi(int a, int b) {
-    assert(b != 0 && "Pembagian dengan nol!");
-    return a / b;
+ assert(b != 0 && "Pembagian dengan nol!");
+ return a / b;
 }
 
 int main() {
-    int hasil = bagi(10, 2);
-    cout << "Hasil: " << hasil << endl;
-    
-    // hasil = bagi(10, 0); // Akan crash dengan pesan assert
-    return 0;
+ int hasil = bagi(10, 2);
+ cout << "Hasil: " << hasil << endl;
+
+ // hasil = bagi(10, 0); // Akan crash dengan pesan assert
+ return 0;
 }
 \end{lstlisting}
 
@@ -261,26 +261,26 @@ Menggunakan sistem logging untuk debug:
 using namespace std;
 
 void logDebug(const string& message) {
-    ofstream logFile("debug.log", ios::app);
-    logFile << "[DEBUG] " << message << endl;
-    logFile.close();
+ ofstream logFile("debug.log", ios::app);
+ logFile << "[DEBUG] " << message << endl;
+ logFile.close();
 }
 
 int main() {
-    logDebug("Program dimulai");
-    
-    int x = 10;
-    logDebug("x = " + to_string(x));
-    
-    int hasil = x * 2;
-    logDebug("hasil = " + to_string(hasil));
-    
-    logDebug("Program selesai");
-    return 0;
+ logDebug("Program dimulai");
+
+ int x = 10;
+ logDebug("x = " + to_string(x));
+
+ int hasil = x * 2;
+ logDebug("hasil = " + to_string(hasil));
+
+ logDebug("Program selesai");
+ return 0;
 }
 \end{lstlisting}
 
-\section{💡 Tips Menemukan dan Memperbaiki Bug}
+\section{Tips Menemukan dan Memperbaiki Bug}
 
 \subsection{Tips Umum}
 
@@ -320,7 +320,7 @@ int main() {
 \item \textbf{Periksa memory} - Pastikan alokasi berhasil
 \end{itemize}
 
-\section{🛠️ Best Practices untuk Debugging}
+\section{Best Practices untuk Debugging}
 
 \subsection{1. Tulis Kode yang Bersih}
 
@@ -350,15 +350,15 @@ int umur, tinggi, berat;
 \begin{lstlisting}[language=c++, caption=Komentar yang Berguna]
 // Hitung rata-rata dari array
 int hitungRataRata(int arr[], int ukuran) {
-    int total = 0;
-    
-    // Jumlahkan semua elemen
-    for(int i = 0; i < ukuran; i++) {
-        total += arr[i];
-    }
-    
-    // Bagi dengan jumlah elemen
-    return total / ukuran;
+ int total = 0;
+
+ // Jumlahkan semua elemen
+ for(int i = 0; i < ukuran; i++) {
+ total += arr[i];
+ }
+
+ // Bagi dengan jumlah elemen
+ return total / ukuran;
 }
 \end{lstlisting}
 
@@ -371,7 +371,7 @@ int hitungRataRata(int arr[], int ukuran) {
 \item \textbf{Review kode} - Minta teman review kode Anda
 \end{itemize}
 
-\section{🎯 Latihan Debugging}
+\section{Latihan Debugging}
 
 \subsection{Latihan 1: Debug Program Sederhana}
 
@@ -382,19 +382,19 @@ Debug program berikut yang memiliki beberapa bug:
 using namespace std;
 
 int main() {
-    int angka;
-    cout << "Masukkan angka: ";
-    cin >> angka;
-    
-    if (angka > 0) {
-        cout << "Angka positif" << endl;
-    } else if (angka < 0) {
-        cout << "Angka negatif" << endl;
-    } else {
-        cout << "Angka nol" << endl;
-    }
-    
-    return 0;
+ int angka;
+ cout << "Masukkan angka: ";
+ cin >> angka;
+
+ if (angka > 0) {
+ cout << "Angka positif" << endl;
+ } else if (angka < 0) {
+ cout << "Angka negatif" << endl;
+ } else {
+ cout << "Angka nol" << endl;
+ }
+
+ return 0;
 }
 \end{lstlisting}
 
@@ -407,22 +407,22 @@ Debug program array berikut:
 using namespace std;
 
 int main() {
-    int arr[5] = {1, 2, 3, 4, 5};
-    
-    // Hitung rata-rata
-    int total = 0;
-    for(int i = 0; i <= 5; i++) {  // Bug: seharusnya < 5
-        total += arr[i];
-    }
-    
-    int rataRata = total / 5;
-    cout << "Rata-rata: " << rataRata << endl;
-    
-    return 0;
+ int arr[5] = {1, 2, 3, 4, 5};
+
+ // Hitung rata-rata
+ int total = 0;
+ for(int i = 0; i <= 5; i++) { // Bug: seharusnya < 5
+ total += arr[i];
+ }
+
+ int rataRata = total / 5;
+ cout << "Rata-rata: " << rataRata << endl;
+
+ return 0;
 }
 \end{lstlisting}
 
-\section{📚 Referensi dan Bacaan Lanjutan}
+\section{Referensi dan Bacaan Lanjutan}
 
 Untuk pemahaman yang lebih mendalam tentang debugging, pembaca dapat merujuk pada:
 
@@ -433,12 +433,12 @@ Untuk pemahaman yang lebih mendalam tentang debugging, pembaca dapat merujuk pad
 \item \textbf{Debugging Techniques} - Artikel online\footnote{Stack Overflow. (2023). "Debugging Techniques". https://stackoverflow.com/questions/tagged/debugging}
 \end{itemize}
 
-\section{🎉 Kesimpulan}
+\section{Kesimpulan}
 
 Debugging adalah skill penting yang harus dikuasai oleh setiap programmer. Dengan memahami jenis-jenis kesalahan dan menggunakan tools debugging yang tepat, Anda dapat menjadi programmer yang lebih efektif dan produktif.
 
 \begin{center}
-\textbf{Ingat: Debugging adalah bagian dari proses pemrograman, bukan tanda kegagalan!} 🐛✨
+\textbf{Ingat: Debugging adalah bagian dari proses pemrograman, bukan tanda kegagalan!}
 \end{center}
 
 \vspace{1cm}

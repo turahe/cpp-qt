@@ -1,4 +1,4 @@
-\textbf{📋 Apa yang akan dipelajari}
+\textbf{Apa yang akan dipelajari}
 
 Pada bab ini kita akan membahas tentang teknik polimorfisme dalam C++:
 
@@ -11,7 +11,7 @@ Pada bab ini kita akan membahas tentang teknik polimorfisme dalam C++:
 
 \minitoc
 
-\section{🔄 Polimorfisme (Polymorphism)}\label{polymorphism}
+\section{Polimorfisme (Polymorphism)}\label{sec-polymorphism}
 
 \subsection{Apa itu Polimorfisme?}
 
@@ -66,7 +66,7 @@ Berikut ini akan dibahas secara lebih mendalam mengenai berbagai aspek polimorfi
 \item \texttt{abstract data type}
 \end{itemize}
 
-\section{🎯 Problema Pewarisan Tunggal (Single Inheritance)}\label{problema-pewarisan-tunggal-single-inheritance}
+\section{Problema Pewarisan Tunggal (Single Inheritance)}\label{problema-pewarisan-tunggal-single-inheritance}
 
 \subsection{Ilustrasi Masalah}
 
@@ -76,15 +76,15 @@ Untuk menjelaskan masalah ini, mari kita gunakan ilustrasi kelas binatang dan tu
 
 \begin{itemize}
 \item \textbf{Kelas Binatang} memiliki hirarki keturunan:
-  \begin{itemize}
-  \item \textbf{Mamalia} - memiliki member function \texttt{terbang()}
-  \item \textbf{Burung} - memiliki member function \texttt{terbang()}
-  \end{itemize}
+ \begin{itemize}
+ \item \textbf{Mamalia} - memiliki member function \texttt{terbang()}
+ \item \textbf{Burung} - memiliki member function \texttt{terbang()}
+ \end{itemize}
 \item \textbf{Kelas Mamalia} diturunkan menjadi:
-  \begin{itemize}
-  \item \texttt{Kuda} - memiliki member function \texttt{meringkik()} dan \texttt{melompat()}
-  \item \texttt{Anjing} - kelas turunan lainnya
-  \end{itemize}
+ \begin{itemize}
+ \item \texttt{Kuda} - memiliki member function \texttt{meringkik()} dan \texttt{melompat()}
+ \item \texttt{Anjing} - kelas turunan lainnya
+ \end{itemize}
 \end{itemize}
 
 \subsection{Problema Kuda Terbang}
@@ -143,20 +143,20 @@ ini tidak melakukan \texttt{terbang()}, baru nanti kalau berupa objek
 Kuda\_terbang, barulah \texttt{terbang()} yang sesungguhnya dikerjakan.
 Marilah kita melakukan percobaan berikut ini.
 
-\subsubsection*{Contoh  Meletakkan metode kelas turunan di kelas dasar.}
+\subsubsection*{Contoh Meletakkan metode kelas turunan di kelas dasar.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh9-1}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh9-1}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption= Meletakkan metode kelas turunan di kelas dasar, label=contoh9-1]{../code/contoh9-1.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -177,46 +177,46 @@ kuda tidak bisa terbang
 
 \begin{itemize}
 \item
-  Pada program diatas ada dua kelas, yaitu Kuda sebagai kelas dasar dan
-  \texttt{Kuda\_terbang} sebagai kelas turunan, Kuda mempunyai metode
-  \texttt{terbang()} yang sebenarnya diada-adakan supaya bisa terjadi
-  proses polimorfisme dengan baik, akibatnya metode \texttt{terbang()}
-  ini tidak melakukan terbang yang sesungguhnya. Kelas
-  \texttt{Kuda\_terbang} melakukan override terhadap metode virutal
-  \texttt{terbang()}, pada metode ini melakukan terbang yang
-  sesungguhnya.
+ Pada program diatas ada dua kelas, yaitu Kuda sebagai kelas dasar dan
+ \texttt{Kuda\_terbang} sebagai kelas turunan, Kuda mempunyai metode
+ \texttt{terbang()} yang sebenarnya diada-adakan supaya bisa terjadi
+ proses polimorfisme dengan baik, akibatnya metode \texttt{terbang()}
+ ini tidak melakukan terbang yang sesungguhnya. Kelas
+ \texttt{Kuda\_terbang} melakukan override terhadap metode virutal
+ \texttt{terbang()}, pada metode ini melakukan terbang yang
+ sesungguhnya.
 \item
-  Pada program utama disediakan program untuk menentukan 5 jenis kuda,
-  yang ditampung dalam pointer kudanya. Pointer ini bisa berpolimorfisme
-  kaena memenuhi syarat bahwa dia bertipe kelas dasar (Kuda) dan
-  memanggil metode virutual terbang().
+ Pada program utama disediakan program untuk menentukan 5 jenis kuda,
+ yang ditampung dalam pointer kudanya. Pointer ini bisa berpolimorfisme
+ kaena memenuhi syarat bahwa dia bertipe kelas dasar (Kuda) dan
+ memanggil metode virutual terbang().
 \item
-  Pada percobaan eksekusi di atas dipilih 0, 0, 1, 1, 0 yang berarti
-  array kandang berisi :
+ Pada percobaan eksekusi di atas dipilih 0, 0, 1, 1, 0 yang berarti
+ array kandang berisi :
 
 \begin{lstlisting}[language=c++, numbers=none]
-Kandang[0] <-- berisi objek Kuda 
-Kandang[1] <-- berisi objek Kuda 
-Kandang[2] <-- berisi objek Kuda_terbang 
-Kandang[3] <-- berisi objek Kuda_terbang 
-Kandang[4] <-- berisi objek Kuda 
+Kandang[0] <-- berisi objek Kuda
+Kandang[1] <-- berisi objek Kuda
+Kandang[2] <-- berisi objek Kuda_terbang
+Kandang[3] <-- berisi objek Kuda_terbang
+Kandang[4] <-- berisi objek Kuda
 \end{lstlisting}
 
-  Sehingga hasil keluaran berikutnya:
+ Sehingga hasil keluaran berikutnya:
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-3.c++}
 \item
-  Dari percobaan ini tampak \emph{polimorfisme} bisa berhasil dengan
-  baik. Namun seperti sudah dijelaskan di atas, harga yang harus dibayar
-  adalah sekarang ada metode \texttt{terbang()} pada kelas
-  \texttt{Kuda\_terbang} dan \texttt{Burung}, sehingga jika ada
-  perubahan di salah satu metode \texttt{terbang()}, maka harus selalu
-  diingat untuk merubah yang lainnya, ini sangat berisiko akan adanya
-  ketidakkonsistenan program.
+ Dari percobaan ini tampak \emph{polimorfisme} bisa berhasil dengan
+ baik. Namun seperti sudah dijelaskan di atas, harga yang harus dibayar
+ adalah sekarang ada metode \texttt{terbang()} pada kelas
+ \texttt{Kuda\_terbang} dan \texttt{Burung}, sehingga jika ada
+ perubahan di salah satu metode \texttt{terbang()}, maka harus selalu
+ diingat untuk merubah yang lainnya, ini sangat berisiko akan adanya
+ ketidakkonsistenan program.
 \end{itemize}
 \begin{quotation}
- {\LARGE \ding{45}} 	\textbf{Catatan}
-	
+ {\LARGE \ding{45}} \textbf{Catatan}
+
 	Pada	percobaan ini kelas telah disederhanakan untuk fokus pada pokok masalah
 	yang hendak dijelaskan. Konstruktor, destruktor dan sebagainya
 	dihilangkan supaya program tampak sederhana untuk membahas masalah
@@ -257,12 +257,12 @@ ini hanya dipanggil jika pointer menunjuk objek bertipe
 mendeteksi objek tipe apa yang sedang ditunjuk oleh pointer yang dikenal
 sebagai Runtime Type Identification (RTTI).
 \begin{quotation}
- {\LARGE \ding{45}}  \textbf{Catatan}
-	 
-	 Hati-hati dalam menggunakan RTTI dalam program. Kebutuhan untuk memakai
-	 RTTI bisa menjadi pertanda adanya desain hirarki pewarisan yang kurang
-	 baik. Untuk itu sebaiknya gunakan metode virtual, template atau multiple
-	 inheritance daripada memakai RTTI.
+ {\LARGE \ding{45}} \textbf{Catatan}
+
+ Hati-hati dalam menggunakan RTTI dalam program. Kebutuhan untuk memakai
+ RTTI bisa menjadi pertanda adanya desain hirarki pewarisan yang kurang
+ baik. Untuk itu sebaiknya gunakan metode virtual, template atau multiple
+ inheritance daripada memakai RTTI.
 \end{quotation}
 
 
@@ -292,20 +292,20 @@ dengan baik, jika tidak sesuai maka sebenarnya bukan objek
 \texttt{Kuda\_terbang} yang ditunjuk meliankan pointer kosong (null).
 Lakukan percobaan berikut ini.
 
-\subsubsection*{Contoh  Melakukan Down Casting.}
+\subsubsection*{Contoh Melakukan Down Casting.}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh9-2}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh9-2}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption= Melakukan Down Casting, label=contoh9-2]{../code/contoh9-2.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{lcverbatim}
@@ -326,18 +326,18 @@ Kuda biasa
 \begin{itemize}
 
 \item
-  Jalan keluar single inheritance ini berjalan dengan baik, namun tidak
-  direkomendasikan untuk memakai cara ini. Hasilnya hanya berupa
-  tambal-sulam saja, sebenarnya metode \texttt{terbang()} tidak ada di
-  kelas Kuda dan tidak dipanggil dari sana. Ketika dipanggil dengan
-  poiter \texttt{Kuda\_terbang} dilakukan casting secara eksplisit, maka
-  harus dipastikan bahwa pointer pKterb benar-bena berisi objek bertipe
-  \texttt{Kuda\_terbang} sebelum memanggil metode \texttt{terbang()}.
+ Jalan keluar single inheritance ini berjalan dengan baik, namun tidak
+ direkomendasikan untuk memakai cara ini. Hasilnya hanya berupa
+ tambal-sulam saja, sebenarnya metode \texttt{terbang()} tidak ada di
+ kelas Kuda dan tidak dipanggil dari sana. Ketika dipanggil dengan
+ poiter \texttt{Kuda\_terbang} dilakukan casting secara eksplisit, maka
+ harus dipastikan bahwa pointer pKterb benar-bena berisi objek bertipe
+ \texttt{Kuda\_terbang} sebelum memanggil metode \texttt{terbang()}.
 \item
-  Pemakain down casting semacam ini merupakan pertanda bahwa desain yang
-  dibuat kurang baik, program semacam ini merusak fungsi \emph{virtual
-  polimorfisme} karena ini dilakukan \texttt{casting} objek menjadi tipe
-  yang sesungguhnya (bukan polimorfisme).
+ Pemakain down casting semacam ini merupakan pertanda bahwa desain yang
+ dibuat kurang baik, program semacam ini merusak fungsi \emph{virtual
+ polimorfisme} karena ini dilakukan \texttt{casting} objek menjadi tipe
+ yang sesungguhnya (bukan polimorfisme).
 \end{itemize}
 
 \section{Menambahkan ke Dua Daftar}\label{menambahkan-ke-dua-daftar}
@@ -380,15 +380,15 @@ daftar objek tersebut.
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh9-3}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh9-3}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption=Multiple Inheritance, label=contoh9-3]{../code/contoh9-3.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 
 \begin{figure}[htbp]
@@ -401,58 +401,58 @@ daftar objek tersebut.
 
 \begin{itemize}
 \item
-  Pada kelas \texttt{Kuda\_terbang} tampak penggunaan multiple
-  inheritance, yaitu pada deklarasikelas \texttt{Kuda\_terbang} yang
-  merupakan keturunan dari Kuda dan Burung :
+ Pada kelas \texttt{Kuda\_terbang} tampak penggunaan multiple
+ inheritance, yaitu pada deklarasikelas \texttt{Kuda\_terbang} yang
+ merupakan keturunan dari Kuda dan Burung :
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-5.c++}
 \item
-  Kemudian kelas ini melakukan override terhadap metode
-  \texttt{berkicau()}, metode \texttt{berkicau()} pada
-  \texttt{Kuda\_terbang} ini mengerjakan pemanggilan metode
-  \texttt{meringkik()}, yaitu metode warisan dari kelas Kuda:
+ Kemudian kelas ini melakukan override terhadap metode
+ \texttt{berkicau()}, metode \texttt{berkicau()} pada
+ \texttt{Kuda\_terbang} ini mengerjakan pemanggilan metode
+ \texttt{meringkik()}, yaitu metode warisan dari kelas Kuda:
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-6.c++}
 \item
-  Tampak pada percobaan Contoh \ref{contoh9-3} ini ketika diciptakan objek bertipe
-  Kuda maka yang bekerja adalah konstruktor \texttt{Kuda}, demikian juga
-  ketika diciptakan objek \texttt{Burung} yang bekerja adalah
-  konstruktor \texttt{Burung}, namun ketika diciptakan
-  \texttt{Kuda\_terbang} yang bekerja tiga konstruktor sekaligus, yaitu
-  : konstruktor \texttt{Kuda}, konstruktor \texttt{Burung} dan
-  konstruktor \texttt{Kuda\_terbang}. Ini mempelihatkan bahwa kelas
-  \texttt{Kuda\_terbang} merupakan turunan dari kelas Kuda sekaligus
-  turunan kelas \texttt{Burung}. Dengan kata lain objek
-  \texttt{Kuda\_terbang} adalah objek yang di dalamnya terkandung bagian
-  objek Kuda dan bagian objek Burung.
+ Tampak pada percobaan Contoh \ref{contoh9-3} ini ketika diciptakan objek bertipe
+ Kuda maka yang bekerja adalah konstruktor \texttt{Kuda}, demikian juga
+ ketika diciptakan objek \texttt{Burung} yang bekerja adalah
+ konstruktor \texttt{Burung}, namun ketika diciptakan
+ \texttt{Kuda\_terbang} yang bekerja tiga konstruktor sekaligus, yaitu
+ : konstruktor \texttt{Kuda}, konstruktor \texttt{Burung} dan
+ konstruktor \texttt{Kuda\_terbang}. Ini mempelihatkan bahwa kelas
+ \texttt{Kuda\_terbang} merupakan turunan dari kelas Kuda sekaligus
+ turunan kelas \texttt{Burung}. Dengan kata lain objek
+ \texttt{Kuda\_terbang} adalah objek yang di dalamnya terkandung bagian
+ objek Kuda dan bagian objek Burung.
 \item
-  Kebalikannya saat dihapus, destruktor yang dijalankan : destruktor
-  \texttt{Kuda\_terbang}, destruktor Burung baru kemudian destruktor
-  Kuda. Ini adalah akibat adanya destruktor yang selalu virtual.
+ Kebalikannya saat dihapus, destruktor yang dijalankan : destruktor
+ \texttt{Kuda\_terbang}, destruktor Burung baru kemudian destruktor
+ Kuda. Ini adalah akibat adanya destruktor yang selalu virtual.
 \item
-  Pada saat ditampilkan \texttt{daftar\_kuda}, tampak pada program
-  sebenarnya yang pertama berisi objek Kuda sedangkan yang kedua berisi
-  objek \texttt{Kuda\_terbang} :
+ Pada saat ditampilkan \texttt{daftar\_kuda}, tampak pada program
+ sebenarnya yang pertama berisi objek Kuda sedangkan yang kedua berisi
+ objek \texttt{Kuda\_terbang} :
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-7.c++}
 \item
-  Demikian juga pada daftar\_burung, yang pertama berisi objek Burung
-  sedangkan yang kedua berisi Kuda\_terbang :
+ Demikian juga pada daftar\_burung, yang pertama berisi objek Burung
+ sedangkan yang kedua berisi Kuda\_terbang :
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-8.c++}
 \item
-  Ini menunjukkan bahwa baik \texttt{daftar\_kuda{[}{]}} maupun
-  \texttt{daftar\_burung{[}{]}} dapat berpolimorfisme dengan sempurna
-  berkat adanya multiple inheritance.
+ Ini menunjukkan bahwa baik \texttt{daftar\_kuda{[}{]}} maupun
+ \texttt{daftar\_burung{[}{]}} dapat berpolimorfisme dengan sempurna
+ berkat adanya multiple inheritance.
 \item
-  Pada waktu \texttt{daftar\_burung} berisi objek Kuda\_terbang, ketika
-  dipanggil metode berkicau berikut :
+ Pada waktu \texttt{daftar\_burung} berisi objek Kuda\_terbang, ketika
+ dipanggil metode berkicau berikut :
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-9.c++}
 \item
-  Maka yang menanggapi adalah metode hasil override di dalam kelas
-  \texttt{Kuda\_terbang} yaitu pemanggilan metode \texttt{meringkik()},
-  sehingga keluarannya adalah :
+ Maka yang menanggapi adalah metode hasil override di dalam kelas
+ \texttt{Kuda\_terbang} yaitu pemanggilan metode \texttt{meringkik()},
+ sehingga keluarannya adalah :
 
 \begin{lcverbatim}
 " Kikikikikkkk..."
@@ -508,7 +508,7 @@ Supaya bisa fokus pada pokok permasalahan, yaitu konstruktor, percobaan
 berikut ini menghilangkan berbagai macam anggota yang lain supaya
 terlihat sederhana dan mudah dipahami.
 
-\subsubsection*{Contoh  Konstruktor Kelas Multiple Inheritance.}
+\subsubsection*{Contoh Konstruktor Kelas Multiple Inheritance.}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 contoh \ref{contoh9-4}, kemudian tulis kode berikut.
@@ -528,26 +528,26 @@ Konstruktor Burung, warna = Merah
 
 \begin{itemize}
 \item
-  Kelas Kuda hanya mempunyai \texttt{sebuah} konstruktor dengan sebuah
-  parameter bertipe \texttt{string}, demikian juga kelas \texttt{Burung}
-  hanya mempunyai sebuah konstruktor dengan \texttt{sebuah} parameter
-  bertipe \texttt{string}.
+ Kelas Kuda hanya mempunyai \texttt{sebuah} konstruktor dengan sebuah
+ parameter bertipe \texttt{string}, demikian juga kelas \texttt{Burung}
+ hanya mempunyai sebuah konstruktor dengan \texttt{sebuah} parameter
+ bertipe \texttt{string}.
 \item
-  Pada kelas \texttt{Kuda\_terbang} tampak penggunaan multiple
-  inheritance, yaitu pada deklarasi kelas \texttt{Kuda\_terbang} yang
-  merupakan keturunan dari Kuda dan Burung :
+ Pada kelas \texttt{Kuda\_terbang} tampak penggunaan multiple
+ inheritance, yaitu pada deklarasi kelas \texttt{Kuda\_terbang} yang
+ merupakan keturunan dari Kuda dan Burung :
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-5.c++}
 \item
-  Oleh karena itu konstruktor kelas \texttt{Kuda\_terbang} ini harus
-  memanggil secara eksplisit konstruktor-konstruktor kelas dasarnya
-  seperti berikut:
+ Oleh karena itu konstruktor kelas \texttt{Kuda\_terbang} ini harus
+ memanggil secara eksplisit konstruktor-konstruktor kelas dasarnya
+ seperti berikut:
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-13.c++}
 \item
-  Tampak pada hasil output, instansiasi kelas Kuda\_terbang menjalankan
-  konstruktor Kuda dengan satu parameter dan konstruktor Burung dengan
-  satu parameter, baru kemudian menjalankan konstruktornya sendiri.
+ Tampak pada hasil output, instansiasi kelas Kuda\_terbang menjalankan
+ konstruktor Kuda dengan satu parameter dan konstruktor Burung dengan
+ satu parameter, baru kemudian menjalankan konstruktornya sendiri.
 \end{itemize}
 
 \section{Problem Ambiguitas}\label{problem-ambiguitas}
@@ -602,9 +602,9 @@ kelas turunan akan bisa terbentuk objek dengan 2 kemungkinan, yaitu:
 
 
 \item
-  Tercipta 2 objek kelas dasar (\textbf{Common Base Class})
+ Tercipta 2 objek kelas dasar (\textbf{Common Base Class})
 \item
-  Tercipta 1 Objek kelas dasar (\textbf{Diamond Inheritance})
+ Tercipta 1 Objek kelas dasar (\textbf{Diamond Inheritance})
 \end{enumerate}
 
 Sebagai ilustrasi seperti contoh \ref{contoh9-4} sebelumnya, \texttt{Kuda} dan
@@ -652,7 +652,7 @@ dari Kuda seperti berikut:
 
 Agar lebih jelas, lakukan pecobaan berikut ini.
 
-\subsubsection*{Contoh  Penurunan pada umumnya (Common Base Class).}
+\subsubsection*{Contoh Penurunan pada umumnya (Common Base Class).}
 
 Buka Qt Creator dan buat project Qt Console Application baru dengan nama
 contoh \ref{contoh9-5}, kemudian tulis kode berikut.
@@ -674,33 +674,33 @@ Kuda\ldots{}Umur : 5
 
 \begin{itemize}
 \item
-  Pada program Utama hanya menciptakan objek bertipe
-  \texttt{Kuda\_terbang}. Tampak pada hasil keluaran, dilihat dari
-  konstruktornya maka bisa disimpulkan bahwa terbentuk objek
-  \texttt{Binatang}, objek \texttt{Kuda}, objek \texttt{Binatang}, objek
-  \texttt{Burung} baru kemudian objek \texttt{Kuda\_terbang}. Ini
-  menunjukkan bahwa ada 2 objek Binatang yang masing-masing merupakan
-  bagian \texttt{Kuda} dan \texttt{Burung}.
+ Pada program Utama hanya menciptakan objek bertipe
+ \texttt{Kuda\_terbang}. Tampak pada hasil keluaran, dilihat dari
+ konstruktornya maka bisa disimpulkan bahwa terbentuk objek
+ \texttt{Binatang}, objek \texttt{Kuda}, objek \texttt{Binatang}, objek
+ \texttt{Burung} baru kemudian objek \texttt{Kuda\_terbang}. Ini
+ menunjukkan bahwa ada 2 objek Binatang yang masing-masing merupakan
+ bagian \texttt{Kuda} dan \texttt{Burung}.
 \item
-  Oleh karena \texttt{Kuda\_terbang} adalah turunan dari \texttt{Kuda}
-  dan \texttt{Burung}, maka jika ia memanggil metode \texttt{getUmur()}
-  yang merupakan warisan dari mereka, akan terjadi ambiguitas, oleh
-  karena itu pada kelas \texttt{Kuda\_terbang} dilakukan overriding
-  seperti berikut :
+ Oleh karena \texttt{Kuda\_terbang} adalah turunan dari \texttt{Kuda}
+ dan \texttt{Burung}, maka jika ia memanggil metode \texttt{getUmur()}
+ yang merupakan warisan dari mereka, akan terjadi ambiguitas, oleh
+ karena itu pada kelas \texttt{Kuda\_terbang} dilakukan overriding
+ seperti berikut :
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-20.c++}
 \item
-  Tampak pada hasil pemanggilan metode tersebut pada kelas
-  Kuda\_terbang: dari Kuda\_terbang\ldots{}dari Kuda\ldots{}Umur : 5 Ini
-  menunjukkan bahwa metode yang dipanggil adalah metode hasil override
-  pada kelas \texttt{Kuda\_tebang} yang di dalamnya sudah mengatasi
-  problem ambiguitas dengan memastikan yang dipanggil adalah
-  \texttt{getUmur()} dari kelas Kuda (yaitu : \texttt{Kuda::getUmur()}).
+ Tampak pada hasil pemanggilan metode tersebut pada kelas
+ Kuda\_terbang: dari Kuda\_terbang\ldots{}dari Kuda\ldots{}Umur : 5 Ini
+ menunjukkan bahwa metode yang dipanggil adalah metode hasil override
+ pada kelas \texttt{Kuda\_tebang} yang di dalamnya sudah mengatasi
+ problem ambiguitas dengan memastikan yang dipanggil adalah
+ \texttt{getUmur()} dari kelas Kuda (yaitu : \texttt{Kuda::getUmur()}).
 \item
-  Sekali lagi pada saat objek dihapus (delete), destruktor yang
-  dijalankan adalah untuk objek \texttt{Kuda\_terbang}, \texttt{Burung},
-  \texttt{Binatang}, \texttt{Kuda} dan Binatang ini menunjukkan bahwa
-  ada 2 objek Binatang tadi.
+ Sekali lagi pada saat objek dihapus (delete), destruktor yang
+ dijalankan adalah untuk objek \texttt{Kuda\_terbang}, \texttt{Burung},
+ \texttt{Binatang}, \texttt{Kuda} dan Binatang ini menunjukkan bahwa
+ ada 2 objek Binatang tadi.
 \end{itemize}
 
 \section{Penurunan Virtual (Virtual
@@ -713,24 +713,24 @@ konstruktor kelas dasar paling atas (Binatang), sehingga terbentuklah
 objek dengan bentuk Diamond Inheritance seperti gambar tadi. Supaya
 lebih jelas, lakukan pecobaan berikut ini.
 
-\subsubsection*{Contoh  Penurunan pada umumnya (Common Base Class).}
+\subsubsection*{Contoh Penurunan pada umumnya (Common Base Class).}
 
 \begin{enumerate}
 
 \item
-  Buka Qt Creator dan buat project Qt Console Application baru dengan
-  nama contoh \ref{contoh9-6}, kemudian tulis kode berikut.
+ Buka Qt Creator dan buat project Qt Console Application baru dengan
+ nama contoh \ref{contoh9-6}, kemudian tulis kode berikut.
 
 \lstinputlisting[language=c++, caption= Penurunan pada umumnya (Common Base Class), label=contoh9-6]{../code/contoh9-6.cpp}
 
 
 \item
-  Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
-  adalah sebagai berikut.
+ Kemudian jalankan kode diatas dengan menekan tombol Ctrl+R, outputnya
+ adalah sebagai berikut.
 \end{enumerate}
 \begin{lcverbatim}
 Konstruktor Binatang
-Konstruktor Kuda 
+Konstruktor Kuda
 Konstruktor Burung
 Konstruktor Kuda_terbang dari
 BinatangUmur : 5
@@ -741,16 +741,16 @@ BinatangUmur : 5
 
 \begin{itemize}
 \item
-  Pada program Utama, sama seperti percobaan Contoh \ref{contoh9-5}, hanya menciptakan
-  objek bertipe Kuda\_terbang. Tampak pada hasil keluaran, dilihat dari
-  konstruktornya maka bisa disimpulkan bahwa terbentuk objek Binatang,
-  objek Kuda, objek Binatang, objek Burung baru kemudian objek
-  Kuda\_terbang. Ini menunjukkan bahwa ada 2 hanya 1 objek Binatang yang
-  masing-masing merupakan bagian Kuda, dan Burung dan Kuda\_terbang.
+ Pada program Utama, sama seperti percobaan Contoh \ref{contoh9-5}, hanya menciptakan
+ objek bertipe Kuda\_terbang. Tampak pada hasil keluaran, dilihat dari
+ konstruktornya maka bisa disimpulkan bahwa terbentuk objek Binatang,
+ objek Kuda, objek Binatang, objek Burung baru kemudian objek
+ Kuda\_terbang. Ini menunjukkan bahwa ada 2 hanya 1 objek Binatang yang
+ masing-masing merupakan bagian Kuda, dan Burung dan Kuda\_terbang.
 \item
-  Walaupun Kuda\_terbang adalah turunan dari Kuda dan Burung, namun saat
-  instansiasi kelas Kuda\_terbang memanggil langsung konstruktor
-  Binatang seperti berikut:
+ Walaupun Kuda\_terbang adalah turunan dari Kuda dan Burung, namun saat
+ instansiasi kelas Kuda\_terbang memanggil langsung konstruktor
+ Binatang seperti berikut:
 
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-21.c++}
 \end{itemize}
@@ -780,7 +780,7 @@ adalah seperti gambar Daimond Inheritance di atas.
 
 \begin{quotation}
  {\LARGE \ding{45}} \textbf{Catatan}
-	
+
 \begin{itemize}
 \item [\ding{45}] Untuk memastikan kelas turunan hanya mempunyai sebuah kelas dasar bersama,
 deklarasikan kelas-kelas turunan secara virtual dari kelas dasar. Contoh:
@@ -791,7 +791,7 @@ deklarasikan kelas-kelas turunan secara virtual dari kelas dasar. Contoh:
 Kuda\_terbang akan memanggil konstruktor Binatang() walaupun tidak ditulis
 secara eksplisit, contoh konstruktor Kuda\_terbang() tanpa memanggil konstruktor
 Binatang() berikut ini akan menghasilkan hasil yang sama:
-		
+
 \lstinputlisting[language=c++]{../code/09-Polymorphism-code-24.c++}
 \end{itemize}
 
@@ -815,16 +815,16 @@ jika bisa dilakukan dengan cara single inheritance jangan memakai
 multiple inheritance.
 
 \begin{quotation}
- {\LARGE \ding{45}} 	\textbf{Catatan}
+ {\LARGE \ding{45}} \textbf{Catatan}
 	\begin{itemize}
-		\item Pakailah multiple inheritance jika suatu kelas baru memerlukan
-		fitur-fitur yang ada di dua kelas yang berbeda.
-		\item Pakailah penurunan secara virtual jika ada lebih dari satu kelas turunan
-		namun hanya diperlukan sebuah instan dari kelas dasar.
-		\item Pasti terjadi pemanggilan konstruktor kelas dasar bersama (shared base
-		class) dari kelas turunan paling bawah (multiple inheritance) ketika
-		memakai kelas dasar virtual.
+ \item Pakailah multiple inheritance jika suatu kelas baru memerlukan
+ fitur-fitur yang ada di dua kelas yang berbeda.
+ \item Pakailah penurunan secara virtual jika ada lebih dari satu kelas turunan
+ namun hanya diperlukan sebuah instan dari kelas dasar.
+ \item Pasti terjadi pemanggilan konstruktor kelas dasar bersama (shared base
+ class) dari kelas turunan paling bawah (multiple inheritance) ketika
+ memakai kelas dasar virtual.
 	\end{itemize}
 \end{quotation}
- 
+
 
